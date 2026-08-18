@@ -1,0 +1,8 @@
+#
+# Artosyn Display Support
+#
+menuconfig AR_NPU_DRV
+	bool "Driver for ar Deep Learning Accelerator"
+    default y
+	help
+	   Enable the driver for AR NPU

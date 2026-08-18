@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arVI_WDR_ATTR_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arVI_WDR_ATTR_S结构体 参考<div class="ingroups"><a class="el" href="group___m_p_i___v_i.html">MPI_VI</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ar__comm__vi_8h_source.html">ar_comm_vi.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a7fb63aee7c5d820c79eff6f7d0f46b20"><td class="memItemLeft" align="right" valign="top">WDR_MODE_E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_i___w_d_r___a_t_t_r___s.html#a7fb63aee7c5d820c79eff6f7d0f46b20">enWDRMode</a></td></tr>
+<tr class="separator:a7fb63aee7c5d820c79eff6f7d0f46b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76eb74c316f6dea1c3013e70afb793ca"><td class="memItemLeft" align="right" valign="top">AR_U32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_i___w_d_r___a_t_t_r___s.html#a76eb74c316f6dea1c3013e70afb793ca">u32CacheLine</a></td></tr>
+<tr class="separator:a76eb74c316f6dea1c3013e70afb793ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义WDR参数数据信息 </p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a7fb63aee7c5d820c79eff6f7d0f46b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb63aee7c5d820c79eff6f7d0f46b20">&#9670;&nbsp;</a></span>enWDRMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WDR_MODE_E enWDRMode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>WDR工作模式，分为帧模式、行模式、非WDR等三大类。 </p>
+
+</div>
+</div>
+<a id="a76eb74c316f6dea1c3013e70afb793ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76eb74c316f6dea1c3013e70afb793ca">&#9670;&nbsp;</a></span>u32CacheLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U32 u32CacheLine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>在线行模式WDR，离线PIPE数据缓存的行数。取值范围为[1，PIPE的图像高度u32MaxH]。根据带宽的使用情况和sensor的曝光行差等因素来调节到合适值。 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__vi_8h_source.html">ar_comm_vi.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

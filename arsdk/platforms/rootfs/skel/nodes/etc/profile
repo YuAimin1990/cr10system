@@ -1,0 +1,9 @@
+#
+# /etc/profile
+#
+
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/local/bin/:/local/usr/bin/:/local/usr/sbin:/usrdata/bin:."
+export LD_LIBRARY_PATH="/lib:/usr/lib:/local/lib:/local/usr/lib:/usrdata/lib:"
+export HOME="/root"
+
+#end of file

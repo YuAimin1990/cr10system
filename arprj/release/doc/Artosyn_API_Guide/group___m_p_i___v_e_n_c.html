@@ -1,0 +1,4060 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: MPI_VENC</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">MPI_VENC</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>本模块支持多路实时编码，且每路编码独立，编码协议和编码 profile 可以不同。 本模块支持视频编码同时，调度 Region 模块对编码图像内容进行叠加和遮挡。  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga7bad8feed5daca8ea2ddbc7bb941d0b5"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga7bad8feed5daca8ea2ddbc7bb941d0b5">AR_MPI_VENC_Init</a> (AR_VOID)</td></tr>
+<tr class="memdesc:ga7bad8feed5daca8ea2ddbc7bb941d0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC设备初始化，初始化基本的数据结构。  <a href="group___m_p_i___v_e_n_c.html#ga7bad8feed5daca8ea2ddbc7bb941d0b5">更多...</a><br /></td></tr>
+<tr class="separator:ga7bad8feed5daca8ea2ddbc7bb941d0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ec38dd840c1bba11bc358318c30a232"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga0ec38dd840c1bba11bc358318c30a232">AR_MPI_VENC_Exit</a> (AR_VOID)</td></tr>
+<tr class="memdesc:ga0ec38dd840c1bba11bc358318c30a232"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC设备去初始化去初始化基本的数据结构。  <a href="group___m_p_i___v_e_n_c.html#ga0ec38dd840c1bba11bc358318c30a232">更多...</a><br /></td></tr>
+<tr class="separator:ga0ec38dd840c1bba11bc358318c30a232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga699b5f45c88d3405437a19bef3739fe2"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga699b5f45c88d3405437a19bef3739fe2">AR_MPI_VENC_CreateChn</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga699b5f45c88d3405437a19bef3739fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建VENC通道。  <a href="group___m_p_i___v_e_n_c.html#ga699b5f45c88d3405437a19bef3739fe2">更多...</a><br /></td></tr>
+<tr class="separator:ga699b5f45c88d3405437a19bef3739fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98c4b06e304f7f4d65f6236d4d2acef9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga98c4b06e304f7f4d65f6236d4d2acef9">AR_MPI_VENC_DestroyChn</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga98c4b06e304f7f4d65f6236d4d2acef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁VENC通道，创建后才能销毁。  <a href="group___m_p_i___v_e_n_c.html#ga98c4b06e304f7f4d65f6236d4d2acef9">更多...</a><br /></td></tr>
+<tr class="separator:ga98c4b06e304f7f4d65f6236d4d2acef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga671ec1d8ecbf86e7ceb33c55d0473b25"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga671ec1d8ecbf86e7ceb33c55d0473b25">AR_MPI_VENC_ResetChn</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga671ec1d8ecbf86e7ceb33c55d0473b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置VENC通道，停止通道后才能重置。  <a href="group___m_p_i___v_e_n_c.html#ga671ec1d8ecbf86e7ceb33c55d0473b25">更多...</a><br /></td></tr>
+<tr class="separator:ga671ec1d8ecbf86e7ceb33c55d0473b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c8b8280da8259949491988b0a1f2987"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga9c8b8280da8259949491988b0a1f2987">AR_MPI_VENC_StartRecvFrame</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#aaeca0d07b36b37c19e2424e82b4b7a35">VENC_RECV_PIC_PARAM_S</a> *pstRecvParam)</td></tr>
+<tr class="memdesc:ga9c8b8280da8259949491988b0a1f2987"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC通道启动接收数据，创建后才能启动。  <a href="group___m_p_i___v_e_n_c.html#ga9c8b8280da8259949491988b0a1f2987">更多...</a><br /></td></tr>
+<tr class="separator:ga9c8b8280da8259949491988b0a1f2987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66c9ba3c54f60f83bc971cab50e3789b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga66c9ba3c54f60f83bc971cab50e3789b">AR_MPI_VENC_StopRecvFrame</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga66c9ba3c54f60f83bc971cab50e3789b"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC通道停止接收数据，启动后才能停止。  <a href="group___m_p_i___v_e_n_c.html#ga66c9ba3c54f60f83bc971cab50e3789b">更多...</a><br /></td></tr>
+<tr class="separator:ga66c9ba3c54f60f83bc971cab50e3789b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e34812a41adff68e34439ef10e624eb"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga1e34812a41adff68e34439ef10e624eb">AR_MPI_VENC_QueryStatus</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a7bcda30715302c4298ac2a016c1a9aae">VENC_CHN_STATUS_S</a> *pstStatus)</td></tr>
+<tr class="memdesc:ga1e34812a41adff68e34439ef10e624eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询VENC通道的状态，启动后才能查询。  <a href="group___m_p_i___v_e_n_c.html#ga1e34812a41adff68e34439ef10e624eb">更多...</a><br /></td></tr>
+<tr class="separator:ga1e34812a41adff68e34439ef10e624eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0fe22de20efdb5141f02226295ba890"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaa0fe22de20efdb5141f02226295ba890">AR_MPI_VENC_SetChnAttr</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *pstChnAttr)</td></tr>
+<tr class="memdesc:gaa0fe22de20efdb5141f02226295ba890"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的属性，创建通道后才能设置，建议先获取再设置。  <a href="group___m_p_i___v_e_n_c.html#gaa0fe22de20efdb5141f02226295ba890">更多...</a><br /></td></tr>
+<tr class="separator:gaa0fe22de20efdb5141f02226295ba890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga695305cc52d50d13ac07e124969f8a08"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga695305cc52d50d13ac07e124969f8a08">AR_MPI_VENC_GetChnAttr</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *pstChnAttr)</td></tr>
+<tr class="memdesc:ga695305cc52d50d13ac07e124969f8a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的属性，创建通道后才能获取。  <a href="group___m_p_i___v_e_n_c.html#ga695305cc52d50d13ac07e124969f8a08">更多...</a><br /></td></tr>
+<tr class="separator:ga695305cc52d50d13ac07e124969f8a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52b4d0f585f06a6ab77d28066bd7ab9b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga52b4d0f585f06a6ab77d28066bd7ab9b">AR_MPI_VENC_GetStream</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a> *pstStream, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:ga52b4d0f585f06a6ab77d28066bd7ab9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的码流。  <a href="group___m_p_i___v_e_n_c.html#ga52b4d0f585f06a6ab77d28066bd7ab9b">更多...</a><br /></td></tr>
+<tr class="separator:ga52b4d0f585f06a6ab77d28066bd7ab9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9c08eae8c7fc1ed934d7d549d53b675"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gae9c08eae8c7fc1ed934d7d549d53b675">AR_MPI_VENC_ReleaseStream</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a> *pstStream)</td></tr>
+<tr class="memdesc:gae9c08eae8c7fc1ed934d7d549d53b675"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放VENC通道的码流。  <a href="group___m_p_i___v_e_n_c.html#gae9c08eae8c7fc1ed934d7d549d53b675">更多...</a><br /></td></tr>
+<tr class="separator:gae9c08eae8c7fc1ed934d7d549d53b675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dda25d08794a31d46abc00ea0a5bd92"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga7dda25d08794a31d46abc00ea0a5bd92">AR_MPI_VENC_InsertUserData</a> (VENC_CHN VeChn, AR_U8 *pu8Data, AR_U32 u32Len)</td></tr>
+<tr class="memdesc:ga7dda25d08794a31d46abc00ea0a5bd92"><td class="mdescLeft">&#160;</td><td class="mdescRight">插入VENC通道的用户数据。  <a href="group___m_p_i___v_e_n_c.html#ga7dda25d08794a31d46abc00ea0a5bd92">更多...</a><br /></td></tr>
+<tr class="separator:ga7dda25d08794a31d46abc00ea0a5bd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6a58cd07f7f97007808f2163234bb6c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gab6a58cd07f7f97007808f2163234bb6c">AR_MPI_VENC_SendFrame</a> (VENC_CHN VeChn, const <a class="el" href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">VIDEO_FRAME_INFO_S</a> *pstFrame, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:gab6a58cd07f7f97007808f2163234bb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC通道发送一帧视频数据进行编码。  <a href="group___m_p_i___v_e_n_c.html#gab6a58cd07f7f97007808f2163234bb6c">更多...</a><br /></td></tr>
+<tr class="separator:gab6a58cd07f7f97007808f2163234bb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95bbb7e70a733d4dc6e97eeb85576303"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga95bbb7e70a733d4dc6e97eeb85576303">AR_MPI_VENC_SendFrameEx</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a63ce8772ca35ed2c285689f4f0bcb502">USER_FRAME_INFO_S</a> *pstFrame, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:ga95bbb7e70a733d4dc6e97eeb85576303"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC通道发送一帧用户视频数据进行编码。  <a href="group___m_p_i___v_e_n_c.html#ga95bbb7e70a733d4dc6e97eeb85576303">更多...</a><br /></td></tr>
+<tr class="separator:ga95bbb7e70a733d4dc6e97eeb85576303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacae4182b89b468db596ecb23b07fd9fc"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gacae4182b89b468db596ecb23b07fd9fc">AR_MPI_VENC_RequestIDR</a> (VENC_CHN VeChn, AR_BOOL bInstant)</td></tr>
+<tr class="memdesc:gacae4182b89b468db596ecb23b07fd9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">VENC通道立即编码一帧IDR帧。  <a href="group___m_p_i___v_e_n_c.html#gacae4182b89b468db596ecb23b07fd9fc">更多...</a><br /></td></tr>
+<tr class="separator:gacae4182b89b468db596ecb23b07fd9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37885ed30a502ba0a9c6a7fbfc82cee4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga37885ed30a502ba0a9c6a7fbfc82cee4">AR_MPI_VENC_GetFd</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga37885ed30a502ba0a9c6a7fbfc82cee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道对应的文件描述符。  <a href="group___m_p_i___v_e_n_c.html#ga37885ed30a502ba0a9c6a7fbfc82cee4">更多...</a><br /></td></tr>
+<tr class="separator:ga37885ed30a502ba0a9c6a7fbfc82cee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c8861ec13bb43d41a718f82f3fd61c7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga8c8861ec13bb43d41a718f82f3fd61c7">AR_MPI_VENC_CloseFd</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga8c8861ec13bb43d41a718f82f3fd61c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭VENC通道对应的文件描述符,建议在销毁通道后调用。  <a href="group___m_p_i___v_e_n_c.html#ga8c8861ec13bb43d41a718f82f3fd61c7">更多...</a><br /></td></tr>
+<tr class="separator:ga8c8861ec13bb43d41a718f82f3fd61c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ed9a556c14e96bb0517f151da024992"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga5ed9a556c14e96bb0517f151da024992">AR_MPI_VENC_SetRoiAttr</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a> *pstRoiAttr)</td></tr>
+<tr class="memdesc:ga5ed9a556c14e96bb0517f151da024992"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的ROI属性。  <a href="group___m_p_i___v_e_n_c.html#ga5ed9a556c14e96bb0517f151da024992">更多...</a><br /></td></tr>
+<tr class="separator:ga5ed9a556c14e96bb0517f151da024992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbfd112091fb553f855631a139370bb3"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gadbfd112091fb553f855631a139370bb3">AR_MPI_VENC_GetRoiAttr</a> (VENC_CHN VeChn, AR_U32 u32Index, <a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a> *pstRoiAttr)</td></tr>
+<tr class="memdesc:gadbfd112091fb553f855631a139370bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的ROI属性。  <a href="group___m_p_i___v_e_n_c.html#gadbfd112091fb553f855631a139370bb3">更多...</a><br /></td></tr>
+<tr class="separator:gadbfd112091fb553f855631a139370bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0abe7d64b0228b379e35e82addd79dce"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga0abe7d64b0228b379e35e82addd79dce">AR_MPI_VENC_GetRoiAttrEx</a> (VENC_CHN VeChn, AR_U32 u32Index, <a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a> *pstRoiAttrEx) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga0abe7d64b0228b379e35e82addd79dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的ROI扩展属性。  <a href="group___m_p_i___v_e_n_c.html#ga0abe7d64b0228b379e35e82addd79dce">更多...</a><br /></td></tr>
+<tr class="separator:ga0abe7d64b0228b379e35e82addd79dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa63efe05537ff45778f45a4837a4db97"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaa63efe05537ff45778f45a4837a4db97">AR_MPI_VENC_SetRoiAttrEx</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a> *pstRoiAttrEx) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gaa63efe05537ff45778f45a4837a4db97"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的ROI扩展属性。  <a href="group___m_p_i___v_e_n_c.html#gaa63efe05537ff45778f45a4837a4db97">更多...</a><br /></td></tr>
+<tr class="separator:gaa63efe05537ff45778f45a4837a4db97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace1f4fc28a1863d08a2d1aed6bd9c331"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gace1f4fc28a1863d08a2d1aed6bd9c331">AR_MPI_VENC_SetRoiBgFrameRate</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a> *pstRoiBgFrmRate) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gace1f4fc28a1863d08a2d1aed6bd9c331"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的ROI扩展属性。  <a href="group___m_p_i___v_e_n_c.html#gace1f4fc28a1863d08a2d1aed6bd9c331">更多...</a><br /></td></tr>
+<tr class="separator:gace1f4fc28a1863d08a2d1aed6bd9c331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f786717bbd9e9500e3cd20dce39e5e9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga1f786717bbd9e9500e3cd20dce39e5e9">AR_MPI_VENC_GetRoiBgFrameRate</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a> *pstRoiBgFrmRate) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga1f786717bbd9e9500e3cd20dce39e5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的ROI扩展属性。  <a href="group___m_p_i___v_e_n_c.html#ga1f786717bbd9e9500e3cd20dce39e5e9">更多...</a><br /></td></tr>
+<tr class="separator:ga1f786717bbd9e9500e3cd20dce39e5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab02af717d07d4b34dc35d6625730547c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gab02af717d07d4b34dc35d6625730547c">AR_MPI_VENC_SetH264SliceSplit</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a> *pstSliceSplit)</td></tr>
+<tr class="memdesc:gab02af717d07d4b34dc35d6625730547c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.264的条带分割参数。  <a href="group___m_p_i___v_e_n_c.html#gab02af717d07d4b34dc35d6625730547c">更多...</a><br /></td></tr>
+<tr class="separator:gab02af717d07d4b34dc35d6625730547c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8f1f48a2b31ff8a7cd333de47072a28"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaf8f1f48a2b31ff8a7cd333de47072a28">AR_MPI_VENC_GetH264SliceSplit</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a> *pstSliceSplit)</td></tr>
+<tr class="memdesc:gaf8f1f48a2b31ff8a7cd333de47072a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.264的条带分割参数。  <a href="group___m_p_i___v_e_n_c.html#gaf8f1f48a2b31ff8a7cd333de47072a28">更多...</a><br /></td></tr>
+<tr class="separator:gaf8f1f48a2b31ff8a7cd333de47072a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga554bfed9b0b9bc7d9735e59e852aa576"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga554bfed9b0b9bc7d9735e59e852aa576">AR_MPI_VENC_SetH264IntraPred</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a> *pstH264IntraPred)</td></tr>
+<tr class="memdesc:ga554bfed9b0b9bc7d9735e59e852aa576"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.264的帧内预测参数。  <a href="group___m_p_i___v_e_n_c.html#ga554bfed9b0b9bc7d9735e59e852aa576">更多...</a><br /></td></tr>
+<tr class="separator:ga554bfed9b0b9bc7d9735e59e852aa576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7f85a1403c325a40846cf4a9922811f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gab7f85a1403c325a40846cf4a9922811f">AR_MPI_VENC_GetH264IntraPred</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a> *pstH264IntraPred)</td></tr>
+<tr class="memdesc:gab7f85a1403c325a40846cf4a9922811f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.264的帧内预测参数。  <a href="group___m_p_i___v_e_n_c.html#gab7f85a1403c325a40846cf4a9922811f">更多...</a><br /></td></tr>
+<tr class="separator:gab7f85a1403c325a40846cf4a9922811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe72e464b129557b10795f136fff51a4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gabe72e464b129557b10795f136fff51a4">AR_MPI_VENC_SetH264Trans</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a> *pstH264Trans) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gabe72e464b129557b10795f136fff51a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.264协议编码通道的变换、量化属性。  <a href="group___m_p_i___v_e_n_c.html#gabe72e464b129557b10795f136fff51a4">更多...</a><br /></td></tr>
+<tr class="separator:gabe72e464b129557b10795f136fff51a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6541900af4c1d35b8dd711d63cdb502"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gac6541900af4c1d35b8dd711d63cdb502">AR_MPI_VENC_GetH264Trans</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a> *pstH264Trans) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gac6541900af4c1d35b8dd711d63cdb502"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取H.264协议编码通道的变换、量化属性。  <a href="group___m_p_i___v_e_n_c.html#gac6541900af4c1d35b8dd711d63cdb502">更多...</a><br /></td></tr>
+<tr class="separator:gac6541900af4c1d35b8dd711d63cdb502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d5cd528e3f633cc2406d2ae73281bc7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga9d5cd528e3f633cc2406d2ae73281bc7">AR_MPI_VENC_SetH264Entropy</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a> *pstH264EntropyEnc)</td></tr>
+<tr class="memdesc:ga9d5cd528e3f633cc2406d2ae73281bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.264的熵编码参数。  <a href="group___m_p_i___v_e_n_c.html#ga9d5cd528e3f633cc2406d2ae73281bc7">更多...</a><br /></td></tr>
+<tr class="separator:ga9d5cd528e3f633cc2406d2ae73281bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96dd1bf1be878c7c3b8d33b74d809ef2"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga96dd1bf1be878c7c3b8d33b74d809ef2">AR_MPI_VENC_GetH264Entropy</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a> *pstH264EntropyEnc)</td></tr>
+<tr class="memdesc:ga96dd1bf1be878c7c3b8d33b74d809ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.264的熵编码参数。  <a href="group___m_p_i___v_e_n_c.html#ga96dd1bf1be878c7c3b8d33b74d809ef2">更多...</a><br /></td></tr>
+<tr class="separator:ga96dd1bf1be878c7c3b8d33b74d809ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7de5064c28355278205f43a95fbbce9a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga7de5064c28355278205f43a95fbbce9a">AR_MPI_VENC_SetH264Dblk</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a> *pstH264Dblk)</td></tr>
+<tr class="memdesc:ga7de5064c28355278205f43a95fbbce9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.264的deblock参数。  <a href="group___m_p_i___v_e_n_c.html#ga7de5064c28355278205f43a95fbbce9a">更多...</a><br /></td></tr>
+<tr class="separator:ga7de5064c28355278205f43a95fbbce9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabf388a25785dac33624199800cea797"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaabf388a25785dac33624199800cea797">AR_MPI_VENC_GetH264Dblk</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a> *pstH264Dblk)</td></tr>
+<tr class="memdesc:gaabf388a25785dac33624199800cea797"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.264的deblock参数。  <a href="group___m_p_i___v_e_n_c.html#gaabf388a25785dac33624199800cea797">更多...</a><br /></td></tr>
+<tr class="separator:gaabf388a25785dac33624199800cea797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70d23a5b808ada0583d07ac3c935c4cf"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga70d23a5b808ada0583d07ac3c935c4cf">AR_MPI_VENC_SetH264Vui</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a> *pstH264Vui)</td></tr>
+<tr class="memdesc:ga70d23a5b808ada0583d07ac3c935c4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.264编码的VUI配置。  <a href="group___m_p_i___v_e_n_c.html#ga70d23a5b808ada0583d07ac3c935c4cf">更多...</a><br /></td></tr>
+<tr class="separator:ga70d23a5b808ada0583d07ac3c935c4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff5c84506c886e8673ec31aab6ad091f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaff5c84506c886e8673ec31aab6ad091f">AR_MPI_VENC_GetH264Vui</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a> *pstH264Vui)</td></tr>
+<tr class="memdesc:gaff5c84506c886e8673ec31aab6ad091f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取H.264编码的VUI配置。  <a href="group___m_p_i___v_e_n_c.html#gaff5c84506c886e8673ec31aab6ad091f">更多...</a><br /></td></tr>
+<tr class="separator:gaff5c84506c886e8673ec31aab6ad091f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e04d3aa0e0b1f3fffea4ea0e10755f9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga2e04d3aa0e0b1f3fffea4ea0e10755f9">AR_MPI_VENC_SetH265Vui</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a> *pstH265Vui)</td></tr>
+<tr class="memdesc:ga2e04d3aa0e0b1f3fffea4ea0e10755f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.265编码的VUI配置。  <a href="group___m_p_i___v_e_n_c.html#ga2e04d3aa0e0b1f3fffea4ea0e10755f9">更多...</a><br /></td></tr>
+<tr class="separator:ga2e04d3aa0e0b1f3fffea4ea0e10755f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52d38461a48b71be2d3b39924191960f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga52d38461a48b71be2d3b39924191960f">AR_MPI_VENC_GetH265Vui</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a> *pstH265Vui)</td></tr>
+<tr class="memdesc:ga52d38461a48b71be2d3b39924191960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.265编码的VUI配置。  <a href="group___m_p_i___v_e_n_c.html#ga52d38461a48b71be2d3b39924191960f">更多...</a><br /></td></tr>
+<tr class="separator:ga52d38461a48b71be2d3b39924191960f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cfc22e494b3eddcfb1118b2120bc8cb"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga6cfc22e494b3eddcfb1118b2120bc8cb">AR_MPI_VENC_SetJpegParam</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a> *pstJpegParam)</td></tr>
+<tr class="memdesc:ga6cfc22e494b3eddcfb1118b2120bc8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道Jpeg的编码参数。  <a href="group___m_p_i___v_e_n_c.html#ga6cfc22e494b3eddcfb1118b2120bc8cb">更多...</a><br /></td></tr>
+<tr class="separator:ga6cfc22e494b3eddcfb1118b2120bc8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0907c0ca71e3afcc759ba8e8f1c5a4c4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga0907c0ca71e3afcc759ba8e8f1c5a4c4">AR_MPI_VENC_GetJpegParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a> *pstJpegParam)</td></tr>
+<tr class="memdesc:ga0907c0ca71e3afcc759ba8e8f1c5a4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道Jpeg的编码参数。  <a href="group___m_p_i___v_e_n_c.html#ga0907c0ca71e3afcc759ba8e8f1c5a4c4">更多...</a><br /></td></tr>
+<tr class="separator:ga0907c0ca71e3afcc759ba8e8f1c5a4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1faff4c0a60abc03f862271538129642"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga1faff4c0a60abc03f862271538129642">AR_MPI_VENC_SetMjpegParam</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a> *pstMjpegParam)</td></tr>
+<tr class="memdesc:ga1faff4c0a60abc03f862271538129642"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道MJpeg的编码参数。  <a href="group___m_p_i___v_e_n_c.html#ga1faff4c0a60abc03f862271538129642">更多...</a><br /></td></tr>
+<tr class="separator:ga1faff4c0a60abc03f862271538129642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadfffb501be71be0237c55b89647501e"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaadfffb501be71be0237c55b89647501e">AR_MPI_VENC_GetMjpegParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a> *pstMjpegParam)</td></tr>
+<tr class="memdesc:gaadfffb501be71be0237c55b89647501e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道MJpeg的编码参数。  <a href="group___m_p_i___v_e_n_c.html#gaadfffb501be71be0237c55b89647501e">更多...</a><br /></td></tr>
+<tr class="separator:gaadfffb501be71be0237c55b89647501e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8622435b0a0331bc78ee5f25c37f7115"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga8622435b0a0331bc78ee5f25c37f7115">AR_MPI_VENC_GetRcParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__rc_8h.html#a575936a2c429a2fd8cc222232009df92">VENC_RC_PARAM_S</a> *pstRcParam)</td></tr>
+<tr class="memdesc:ga8622435b0a0331bc78ee5f25c37f7115"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道码控的参数。  <a href="group___m_p_i___v_e_n_c.html#ga8622435b0a0331bc78ee5f25c37f7115">更多...</a><br /></td></tr>
+<tr class="separator:ga8622435b0a0331bc78ee5f25c37f7115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga516b0d6cec2ab53f76eb3a792104403a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga516b0d6cec2ab53f76eb3a792104403a">AR_MPI_VENC_SetRcParam</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__rc_8h.html#a575936a2c429a2fd8cc222232009df92">VENC_RC_PARAM_S</a> *pstRcParam)</td></tr>
+<tr class="memdesc:ga516b0d6cec2ab53f76eb3a792104403a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道码控的参数。  <a href="group___m_p_i___v_e_n_c.html#ga516b0d6cec2ab53f76eb3a792104403a">更多...</a><br /></td></tr>
+<tr class="separator:ga516b0d6cec2ab53f76eb3a792104403a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa94f9ebfce94b9a8e44cc026a68a3c1c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaa94f9ebfce94b9a8e44cc026a68a3c1c">AR_MPI_VENC_SetRefParam</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a> *pstRefParam)</td></tr>
+<tr class="memdesc:gaa94f9ebfce94b9a8e44cc026a68a3c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.264和H.264的高级跳帧参考参数。  <a href="group___m_p_i___v_e_n_c.html#gaa94f9ebfce94b9a8e44cc026a68a3c1c">更多...</a><br /></td></tr>
+<tr class="separator:gaa94f9ebfce94b9a8e44cc026a68a3c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga713efe331076e36ed20141c6a2111c19"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga713efe331076e36ed20141c6a2111c19">AR_MPI_VENC_GetRefParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a> *pstRefParam)</td></tr>
+<tr class="memdesc:ga713efe331076e36ed20141c6a2111c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.264和H.264的高级跳帧参考参数。  <a href="group___m_p_i___v_e_n_c.html#ga713efe331076e36ed20141c6a2111c19">更多...</a><br /></td></tr>
+<tr class="separator:ga713efe331076e36ed20141c6a2111c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22656e2558978a1f9fbf16cfe5044715"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga22656e2558978a1f9fbf16cfe5044715">AR_MPI_VENC_SetJpegEncodeMode</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a> enJpegEncodeMode) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga22656e2558978a1f9fbf16cfe5044715"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置JPEG抓拍通道的抓拍模式。  <a href="group___m_p_i___v_e_n_c.html#ga22656e2558978a1f9fbf16cfe5044715">更多...</a><br /></td></tr>
+<tr class="separator:ga22656e2558978a1f9fbf16cfe5044715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3eace20a7e1bc1ee6d278e589ca93f7b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga3eace20a7e1bc1ee6d278e589ca93f7b">AR_MPI_VENC_GetJpegEncodeMode</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a> *penJpegEncodeMode) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga3eace20a7e1bc1ee6d278e589ca93f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置JPEG抓拍通道的抓拍模式。  <a href="group___m_p_i___v_e_n_c.html#ga3eace20a7e1bc1ee6d278e589ca93f7b">更多...</a><br /></td></tr>
+<tr class="separator:ga3eace20a7e1bc1ee6d278e589ca93f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58886d9ddf7667eeb9817f689f711ee7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga58886d9ddf7667eeb9817f689f711ee7">AR_MPI_VENC_EnableIDR</a> (VENC_CHN VeChn, AR_BOOL bEnableIDR)</td></tr>
+<tr class="memdesc:ga58886d9ddf7667eeb9817f689f711ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道码控的参数。  <a href="group___m_p_i___v_e_n_c.html#ga58886d9ddf7667eeb9817f689f711ee7">更多...</a><br /></td></tr>
+<tr class="separator:ga58886d9ddf7667eeb9817f689f711ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36011b3b972de5e998a1ca3ee9b7bac4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga36011b3b972de5e998a1ca3ee9b7bac4">AR_MPI_VENC_GetStreamBufInfo</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a04f1f45d320905e393a9ca0acdbfe8c3">VENC_STREAM_BUF_INFO_S</a> *pstStreamBufInfo)</td></tr>
+<tr class="memdesc:ga36011b3b972de5e998a1ca3ee9b7bac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取码流buffer的物理地址和大小。  <a href="group___m_p_i___v_e_n_c.html#ga36011b3b972de5e998a1ca3ee9b7bac4">更多...</a><br /></td></tr>
+<tr class="separator:ga36011b3b972de5e998a1ca3ee9b7bac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79de6162630352a05b96421ef3d77985"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga79de6162630352a05b96421ef3d77985">AR_MPI_VENC_SetH265SliceSplit</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a> *pstSliceSplit)</td></tr>
+<tr class="memdesc:ga79de6162630352a05b96421ef3d77985"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.265的条带分割参数。  <a href="group___m_p_i___v_e_n_c.html#ga79de6162630352a05b96421ef3d77985">更多...</a><br /></td></tr>
+<tr class="separator:ga79de6162630352a05b96421ef3d77985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabaf2708e6792f9e8d7c0e6ac9ef16c59"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gabaf2708e6792f9e8d7c0e6ac9ef16c59">AR_MPI_VENC_GetH265SliceSplit</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a> *pstSliceSplit)</td></tr>
+<tr class="memdesc:gabaf2708e6792f9e8d7c0e6ac9ef16c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.265的条带分割参数。  <a href="group___m_p_i___v_e_n_c.html#gabaf2708e6792f9e8d7c0e6ac9ef16c59">更多...</a><br /></td></tr>
+<tr class="separator:gabaf2708e6792f9e8d7c0e6ac9ef16c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74a48d1366c9ec820972beb03b2868f8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga74a48d1366c9ec820972beb03b2868f8">AR_MPI_VENC_SetH265PredUnit</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a> *pstePredUnit)</td></tr>
+<tr class="memdesc:ga74a48d1366c9ec820972beb03b2868f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.265的预测参数。  <a href="group___m_p_i___v_e_n_c.html#ga74a48d1366c9ec820972beb03b2868f8">更多...</a><br /></td></tr>
+<tr class="separator:ga74a48d1366c9ec820972beb03b2868f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa831e051eaa7e7639c1acd6320b42b32"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaa831e051eaa7e7639c1acd6320b42b32">AR_MPI_VENC_GetH265PredUnit</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a> *pstPredUnit)</td></tr>
+<tr class="memdesc:gaa831e051eaa7e7639c1acd6320b42b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.265的预测参数。  <a href="group___m_p_i___v_e_n_c.html#gaa831e051eaa7e7639c1acd6320b42b32">更多...</a><br /></td></tr>
+<tr class="separator:gaa831e051eaa7e7639c1acd6320b42b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a68c83a4ec4b9e18f1dd679e9c0fd61"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga9a68c83a4ec4b9e18f1dd679e9c0fd61">AR_MPI_VENC_SetH265Trans</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a> *pstH265Trans) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga9a68c83a4ec4b9e18f1dd679e9c0fd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.265协议编码通道的变换、量化的属性。  <a href="group___m_p_i___v_e_n_c.html#ga9a68c83a4ec4b9e18f1dd679e9c0fd61">更多...</a><br /></td></tr>
+<tr class="separator:ga9a68c83a4ec4b9e18f1dd679e9c0fd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e3dbddecdddd273940c192a10716efc"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga6e3dbddecdddd273940c192a10716efc">AR_MPI_VENC_GetH265Trans</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a> *pstH265Trans) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga6e3dbddecdddd273940c192a10716efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取H.265协议编码通道的变换、量化的属性。  <a href="group___m_p_i___v_e_n_c.html#ga6e3dbddecdddd273940c192a10716efc">更多...</a><br /></td></tr>
+<tr class="separator:ga6e3dbddecdddd273940c192a10716efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cb7b0260db804d0902030e65e4a1983"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga0cb7b0260db804d0902030e65e4a1983">AR_MPI_VENC_SetH265Entropy</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a> *pstH265Entropy) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga0cb7b0260db804d0902030e65e4a1983"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.265通道的熵编码属性。  <a href="group___m_p_i___v_e_n_c.html#ga0cb7b0260db804d0902030e65e4a1983">更多...</a><br /></td></tr>
+<tr class="separator:ga0cb7b0260db804d0902030e65e4a1983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2af584c8e475b9ca5caa84e0af39d8a6"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga2af584c8e475b9ca5caa84e0af39d8a6">AR_MPI_VENC_GetH265Entropy</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a> *pstH265Entropy) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga2af584c8e475b9ca5caa84e0af39d8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.265通道的熵编码属性。  <a href="group___m_p_i___v_e_n_c.html#ga2af584c8e475b9ca5caa84e0af39d8a6">更多...</a><br /></td></tr>
+<tr class="separator:ga2af584c8e475b9ca5caa84e0af39d8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga382564b0d8e2f247b43552b3e0a97e00"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga382564b0d8e2f247b43552b3e0a97e00">AR_MPI_VENC_SetH265Dblk</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a> *pstH265Dblk)</td></tr>
+<tr class="memdesc:ga382564b0d8e2f247b43552b3e0a97e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.265的deblock参数。  <a href="group___m_p_i___v_e_n_c.html#ga382564b0d8e2f247b43552b3e0a97e00">更多...</a><br /></td></tr>
+<tr class="separator:ga382564b0d8e2f247b43552b3e0a97e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61381965085e09f25b25dba839e608b8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga61381965085e09f25b25dba839e608b8">AR_MPI_VENC_GetH265Dblk</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a> *pstH265Dblk)</td></tr>
+<tr class="memdesc:ga61381965085e09f25b25dba839e608b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.265的deblock参数。  <a href="group___m_p_i___v_e_n_c.html#ga61381965085e09f25b25dba839e608b8">更多...</a><br /></td></tr>
+<tr class="separator:ga61381965085e09f25b25dba839e608b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a88c90b990056a9db8d79924883fc12"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga0a88c90b990056a9db8d79924883fc12">AR_MPI_VENC_SetH265Sao</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a> *pstH265Sao)</td></tr>
+<tr class="memdesc:ga0a88c90b990056a9db8d79924883fc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道H.265的SAO参数。  <a href="group___m_p_i___v_e_n_c.html#ga0a88c90b990056a9db8d79924883fc12">更多...</a><br /></td></tr>
+<tr class="separator:ga0a88c90b990056a9db8d79924883fc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a773caee88ffea3ec4ab396d4f8eee0"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga4a773caee88ffea3ec4ab396d4f8eee0">AR_MPI_VENC_GetH265Sao</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a> *pstH265Sao)</td></tr>
+<tr class="memdesc:ga4a773caee88ffea3ec4ab396d4f8eee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道H.265的SAO参数。  <a href="group___m_p_i___v_e_n_c.html#ga4a773caee88ffea3ec4ab396d4f8eee0">更多...</a><br /></td></tr>
+<tr class="separator:ga4a773caee88ffea3ec4ab396d4f8eee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae210e36dc23e064dd6f829f92859c06b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gae210e36dc23e064dd6f829f92859c06b">AR_MPI_VENC_SetIntraRefresh</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a> *pstIntraRefresh)</td></tr>
+<tr class="memdesc:gae210e36dc23e064dd6f829f92859c06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的帧内刷新参数。  <a href="group___m_p_i___v_e_n_c.html#gae210e36dc23e064dd6f829f92859c06b">更多...</a><br /></td></tr>
+<tr class="separator:gae210e36dc23e064dd6f829f92859c06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83d18e11e424c72582126e120b2e1ce9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga83d18e11e424c72582126e120b2e1ce9">AR_MPI_VENC_GetIntraRefresh</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a> *pstIntraRefresh)</td></tr>
+<tr class="memdesc:ga83d18e11e424c72582126e120b2e1ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的帧内刷新参数。  <a href="group___m_p_i___v_e_n_c.html#ga83d18e11e424c72582126e120b2e1ce9">更多...</a><br /></td></tr>
+<tr class="separator:ga83d18e11e424c72582126e120b2e1ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25b53168db7d9a5af89bc3a815b29a9a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga25b53168db7d9a5af89bc3a815b29a9a">AR_MPI_VENC_GetSSERegion</a> (VENC_CHN VeChn, AR_U32 u32Index, <a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a> *pstSSECfg) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga25b53168db7d9a5af89bc3a815b29a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取H.264/H.265通道的SSE属性。  <a href="group___m_p_i___v_e_n_c.html#ga25b53168db7d9a5af89bc3a815b29a9a">更多...</a><br /></td></tr>
+<tr class="separator:ga25b53168db7d9a5af89bc3a815b29a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab17360d5bd50ddd9a3d1372720e23919"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gab17360d5bd50ddd9a3d1372720e23919">AR_MPI_VENC_SetSSERegion</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a> *pstSSECfg) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gab17360d5bd50ddd9a3d1372720e23919"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置H.264/H.265 通道的SSE属性。  <a href="group___m_p_i___v_e_n_c.html#gab17360d5bd50ddd9a3d1372720e23919">更多...</a><br /></td></tr>
+<tr class="separator:gab17360d5bd50ddd9a3d1372720e23919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01c6d6e4017640b65a40dc1f0f9df152"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga01c6d6e4017640b65a40dc1f0f9df152">AR_MPI_VENC_SetChnParam</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a> *pstChnParam)</td></tr>
+<tr class="memdesc:ga01c6d6e4017640b65a40dc1f0f9df152"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的帧内刷新参数。  <a href="group___m_p_i___v_e_n_c.html#ga01c6d6e4017640b65a40dc1f0f9df152">更多...</a><br /></td></tr>
+<tr class="separator:ga01c6d6e4017640b65a40dc1f0f9df152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70e78fa62d66a8fea420df5bca595411"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga70e78fa62d66a8fea420df5bca595411">AR_MPI_VENC_GetChnParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a> *pstChnParam)</td></tr>
+<tr class="memdesc:ga70e78fa62d66a8fea420df5bca595411"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的帧内刷新参数。  <a href="group___m_p_i___v_e_n_c.html#ga70e78fa62d66a8fea420df5bca595411">更多...</a><br /></td></tr>
+<tr class="separator:ga70e78fa62d66a8fea420df5bca595411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32679c6f91c5a77c0772b694bc15b30d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga32679c6f91c5a77c0772b694bc15b30d">AR_MPI_VENC_SetModParam</a> (const <a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a> *pstModParam)</td></tr>
+<tr class="memdesc:ga32679c6f91c5a77c0772b694bc15b30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的模块参数。  <a href="group___m_p_i___v_e_n_c.html#ga32679c6f91c5a77c0772b694bc15b30d">更多...</a><br /></td></tr>
+<tr class="separator:ga32679c6f91c5a77c0772b694bc15b30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e0e0fad10da11df4653d5c23ba76d19"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga2e0e0fad10da11df4653d5c23ba76d19">AR_MPI_VENC_GetModParam</a> (<a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a> *pstModParam)</td></tr>
+<tr class="memdesc:ga2e0e0fad10da11df4653d5c23ba76d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的模块参数。  <a href="group___m_p_i___v_e_n_c.html#ga2e0e0fad10da11df4653d5c23ba76d19">更多...</a><br /></td></tr>
+<tr class="separator:ga2e0e0fad10da11df4653d5c23ba76d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44545a26db3f108f21f989a5a25aba07"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga44545a26db3f108f21f989a5a25aba07">AR_MPI_VENC_AttachVbPool</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#adec737010157c6290f14b06c185fc5c6">VENC_CHN_POOL_S</a> *pstPool)</td></tr>
+<tr class="memdesc:ga44545a26db3f108f21f989a5a25aba07"><td class="mdescLeft">&#160;</td><td class="mdescRight">将编码通道绑定到某个视频缓存VB池中。  <a href="group___m_p_i___v_e_n_c.html#ga44545a26db3f108f21f989a5a25aba07">更多...</a><br /></td></tr>
+<tr class="separator:ga44545a26db3f108f21f989a5a25aba07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3639e0938fd26426c52a7296b9bbcbb5"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga3639e0938fd26426c52a7296b9bbcbb5">AR_MPI_VENC_DetachVbPool</a> (VENC_CHN VeChn)</td></tr>
+<tr class="memdesc:ga3639e0938fd26426c52a7296b9bbcbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">将编码通道从某个视频缓存VB池中解绑定。  <a href="group___m_p_i___v_e_n_c.html#ga3639e0938fd26426c52a7296b9bbcbb5">更多...</a><br /></td></tr>
+<tr class="separator:ga3639e0938fd26426c52a7296b9bbcbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41f200be5c7a5a45c8714c18c5809895"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga41f200be5c7a5a45c8714c18c5809895">AR_MPI_VENC_SetCuPrediction</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a> *pstCuPrediction) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga41f200be5c7a5a45c8714c18c5809895"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 CU 模式选择的倾向性。  <a href="group___m_p_i___v_e_n_c.html#ga41f200be5c7a5a45c8714c18c5809895">更多...</a><br /></td></tr>
+<tr class="separator:ga41f200be5c7a5a45c8714c18c5809895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaead13cbf4df3ac28efebc835e1db2abc"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaead13cbf4df3ac28efebc835e1db2abc">AR_MPI_VENC_GetCuPrediction</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a> *pstCuPrediction) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gaead13cbf4df3ac28efebc835e1db2abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 CU 模式选择的倾向性。  <a href="group___m_p_i___v_e_n_c.html#gaead13cbf4df3ac28efebc835e1db2abc">更多...</a><br /></td></tr>
+<tr class="separator:gaead13cbf4df3ac28efebc835e1db2abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92deb8b9128a16530b31349e3aa27089"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga92deb8b9128a16530b31349e3aa27089">AR_MPI_VENC_SetDeBreathEffect</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a> *pstDeBreathEffect)</td></tr>
+<tr class="memdesc:ga92deb8b9128a16530b31349e3aa27089"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的去呼吸效应强度。  <a href="group___m_p_i___v_e_n_c.html#ga92deb8b9128a16530b31349e3aa27089">更多...</a><br /></td></tr>
+<tr class="separator:ga92deb8b9128a16530b31349e3aa27089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga156dfce45297f8557cedc9286da69457"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga156dfce45297f8557cedc9286da69457">AR_MPI_VENC_GetDeBreathEffect</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a> *pstDeBreathEffect)</td></tr>
+<tr class="memdesc:ga156dfce45297f8557cedc9286da69457"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的去呼吸效应强度。  <a href="group___m_p_i___v_e_n_c.html#ga156dfce45297f8557cedc9286da69457">更多...</a><br /></td></tr>
+<tr class="separator:ga156dfce45297f8557cedc9286da69457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab183bf10536a626474d62c94c1f93092"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gab183bf10536a626474d62c94c1f93092">AR_MPI_VENC_SetHierarchicalQp</a> (VENC_CHN VeChn, const <a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a> *pstHierarchicalQp) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:gab183bf10536a626474d62c94c1f93092"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的去呼吸效应强度。  <a href="group___m_p_i___v_e_n_c.html#gab183bf10536a626474d62c94c1f93092">更多...</a><br /></td></tr>
+<tr class="separator:gab183bf10536a626474d62c94c1f93092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga513142f7246ca038a7ace9923ce44e90"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga513142f7246ca038a7ace9923ce44e90">AR_MPI_VENC_GetHierarchicalQp</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a> *pstHierarchicalQp) __attribute__((unavailable(&quot;todo&quot;)))</td></tr>
+<tr class="memdesc:ga513142f7246ca038a7ace9923ce44e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的去呼吸效应强度。  <a href="group___m_p_i___v_e_n_c.html#ga513142f7246ca038a7ace9923ce44e90">更多...</a><br /></td></tr>
+<tr class="separator:ga513142f7246ca038a7ace9923ce44e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa995c849350ee8adf85a570b97a66967"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#gaa995c849350ee8adf85a570b97a66967">AR_MPI_VENC_SetChnRotationParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a> *pstRotationParam)</td></tr>
+<tr class="memdesc:gaa995c849350ee8adf85a570b97a66967"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的逆时针旋转角度参数, 必须在AR_MPI_VENC_StartRecvFrame调用之前设置才能生效  <a href="group___m_p_i___v_e_n_c.html#gaa995c849350ee8adf85a570b97a66967">更多...</a><br /></td></tr>
+<tr class="separator:gaa995c849350ee8adf85a570b97a66967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c5f052436796cbfc8e61499a3a56495"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga2c5f052436796cbfc8e61499a3a56495">AR_MPI_VENC_GetChnRotationParam</a> (VENC_CHN VeChn, <a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a> *pstRotationParam)</td></tr>
+<tr class="memdesc:ga2c5f052436796cbfc8e61499a3a56495"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的逆时针旋转角度参数  <a href="group___m_p_i___v_e_n_c.html#ga2c5f052436796cbfc8e61499a3a56495">更多...</a><br /></td></tr>
+<tr class="separator:ga2c5f052436796cbfc8e61499a3a56495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c190edcccee0feecb099e507884d837"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga8c190edcccee0feecb099e507884d837">AR_MPI_VENC_SetChnMirroParam</a> (VENC_CHN VeChn, <a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">VENC_MIRROR_PARAM_S</a> *pstMirrorParam)</td></tr>
+<tr class="memdesc:ga8c190edcccee0feecb099e507884d837"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置VENC通道的镜像方向参数, 必须在AR_MPI_VENC_StartRecvFrame调用之前设置才能生效  <a href="group___m_p_i___v_e_n_c.html#ga8c190edcccee0feecb099e507884d837">更多...</a><br /></td></tr>
+<tr class="separator:ga8c190edcccee0feecb099e507884d837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga752b8d9ab20bb976ad7f061382571e17"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_e_n_c.html#ga752b8d9ab20bb976ad7f061382571e17">AR_MPI_VENC_GetChnMirrorParam</a> (VENC_CHN VeChn, <a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">VENC_MIRROR_PARAM_S</a> *pstMirrorParam)</td></tr>
+<tr class="memdesc:ga752b8d9ab20bb976ad7f061382571e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取VENC通道的镜像方向参数  <a href="group___m_p_i___v_e_n_c.html#ga752b8d9ab20bb976ad7f061382571e17">更多...</a><br /></td></tr>
+<tr class="separator:ga752b8d9ab20bb976ad7f061382571e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga131f6568e0b6c9df7aefda3b7d4bf7d9"><td class="memItemLeft" align="right" valign="top"><a id="ga131f6568e0b6c9df7aefda3b7d4bf7d9"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_VENC_Suspend</b> (VENC_CHN VeChn)</td></tr>
+<tr class="separator:ga131f6568e0b6c9df7aefda3b7d4bf7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2b3ff0248d3aa641bb6c412fb7b58b1"><td class="memItemLeft" align="right" valign="top"><a id="gad2b3ff0248d3aa641bb6c412fb7b58b1"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_VENC_Resume</b> (VENC_CHN VeChn)</td></tr>
+<tr class="separator:gad2b3ff0248d3aa641bb6c412fb7b58b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>本模块支持多路实时编码，且每路编码独立，编码协议和编码 profile 可以不同。 本模块支持视频编码同时，调度 Region 模块对编码图像内容进行叠加和遮挡。 </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga44545a26db3f108f21f989a5a25aba07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44545a26db3f108f21f989a5a25aba07">&#9670;&nbsp;</a></span>AR_MPI_VENC_AttachVbPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_AttachVbPool </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#adec737010157c6290f14b06c185fc5c6">VENC_CHN_POOL_S</a> *&#160;</td>
+          <td class="paramname"><em>pstPool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将编码通道绑定到某个视频缓存VB池中。 </p>
+<dl class="section note"><dt>注解</dt><dd>目前只支持使用VENC_CHN_POOL_S中的hPicVbPool，此vb pool中最小的buffer数量为2， </dd>
+<dd>
+每块buffer的size计算方法为：align32(width)*align32(height) + align16(align32(width)/2)*align32(height) </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 通道号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstPool</td><td>: 视频缓存VB池的Id号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga8c8861ec13bb43d41a718f82f3fd61c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c8861ec13bb43d41a718f82f3fd61c7">&#9670;&nbsp;</a></span>AR_MPI_VENC_CloseFd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_CloseFd </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭VENC通道对应的文件描述符,建议在销毁通道后调用。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga699b5f45c88d3405437a19bef3739fe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga699b5f45c88d3405437a19bef3739fe2">&#9670;&nbsp;</a></span>AR_MPI_VENC_CreateChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_CreateChn </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建VENC通道。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号，创建之后不能重复。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstAttr</td><td>: VENC通道属性指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga98c4b06e304f7f4d65f6236d4d2acef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98c4b06e304f7f4d65f6236d4d2acef9">&#9670;&nbsp;</a></span>AR_MPI_VENC_DestroyChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_DestroyChn </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>销毁VENC通道，创建后才能销毁。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga3639e0938fd26426c52a7296b9bbcbb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3639e0938fd26426c52a7296b9bbcbb5">&#9670;&nbsp;</a></span>AR_MPI_VENC_DetachVbPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_DetachVbPool </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将编码通道从某个视频缓存VB池中解绑定。 </p>
+<dl class="section note"><dt>注解</dt><dd></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 通道号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga58886d9ddf7667eeb9817f689f711ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58886d9ddf7667eeb9817f689f711ee7">&#9670;&nbsp;</a></span>AR_MPI_VENC_EnableIDR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_EnableIDR </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_BOOL&#160;</td>
+          <td class="paramname"><em>bEnableIDR</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道码控的参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bEnableIDR</td><td>: 是否打开IDR。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga0ec38dd840c1bba11bc358318c30a232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ec38dd840c1bba11bc358318c30a232">&#9670;&nbsp;</a></span>AR_MPI_VENC_Exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_Exit </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC设备去初始化去初始化基本的数据结构。 </p>
+<dl class="section attention"><dt>注意</dt><dd>新添加接口 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga695305cc52d50d13ac07e124969f8a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga695305cc52d50d13ac07e124969f8a08">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetChnAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetChnAttr </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstChnAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的属性，创建通道后才能获取。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstChnAttr</td><td>: VENC通道属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga752b8d9ab20bb976ad7f061382571e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga752b8d9ab20bb976ad7f061382571e17">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetChnMirrorParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetChnMirrorParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">VENC_MIRROR_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMirrorParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的镜像方向参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstHierarchicalQp</td><td>: 镜像方向参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga70e78fa62d66a8fea420df5bca595411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70e78fa62d66a8fea420df5bca595411">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetChnParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetChnParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstChnParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的帧内刷新参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstChnParam</td><td>: 编码通道的参数结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga2c5f052436796cbfc8e61499a3a56495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c5f052436796cbfc8e61499a3a56495">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetChnRotationParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetChnRotationParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRotationParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的逆时针旋转角度参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRotationParam</td><td>: 逆时针旋转角度参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaead13cbf4df3ac28efebc835e1db2abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaead13cbf4df3ac28efebc835e1db2abc">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetCuPrediction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetCuPrediction </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a> *&#160;</td>
+          <td class="paramname"><em>pstCuPrediction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 CU 模式选择的倾向性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 通道号 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstCuPrediction</td><td>: CU模式选择的倾向性参数指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga156dfce45297f8557cedc9286da69457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga156dfce45297f8557cedc9286da69457">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetDeBreathEffect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetDeBreathEffect </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstDeBreathEffect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的去呼吸效应强度。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstDeBreathEffect</td><td>: 帧内刷新参数结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga37885ed30a502ba0a9c6a7fbfc82cee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37885ed30a502ba0a9c6a7fbfc82cee4">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetFd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetFd </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道对应的文件描述符。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaabf388a25785dac33624199800cea797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabf388a25785dac33624199800cea797">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264Dblk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264Dblk </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Dblk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.264的deblock参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264Dblk</td><td>: H.264的deblock的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga96dd1bf1be878c7c3b8d33b74d809ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96dd1bf1be878c7c3b8d33b74d809ef2">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264Entropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264Entropy </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264EntropyEnc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.264的熵编码参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264EntropyEnc</td><td>: H.264的熵编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gab7f85a1403c325a40846cf4a9922811f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7f85a1403c325a40846cf4a9922811f">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264IntraPred()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264IntraPred </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264IntraPred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.264的帧内预测参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264IntraPred</td><td>: H.264的帧内预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaf8f1f48a2b31ff8a7cd333de47072a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8f1f48a2b31ff8a7cd333de47072a28">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264SliceSplit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264SliceSplit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSliceSplit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.264的条带分割参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstSliceSplit</td><td>: H.264的条带分割参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gac6541900af4c1d35b8dd711d63cdb502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6541900af4c1d35b8dd711d63cdb502">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264Trans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264Trans </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Trans</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取H.264协议编码通道的变换、量化属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264Trans</td><td>: H.264协议编码通道的变换、量化参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaff5c84506c886e8673ec31aab6ad091f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff5c84506c886e8673ec31aab6ad091f">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH264Vui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH264Vui </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Vui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取H.264编码的VUI配置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 编码通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264Vui</td><td>: H.264协议编码通道的Vui参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga61381965085e09f25b25dba839e608b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61381965085e09f25b25dba839e608b8">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265Dblk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265Dblk </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Dblk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.265的deblock参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH265Dblk</td><td>: H.265的deblock的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga2af584c8e475b9ca5caa84e0af39d8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2af584c8e475b9ca5caa84e0af39d8a6">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265Entropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265Entropy </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Entropy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.265通道的熵编码属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH265Entropy</td><td>: H.265协议编码通道熵编码的结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaa831e051eaa7e7639c1acd6320b42b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa831e051eaa7e7639c1acd6320b42b32">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265PredUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265PredUnit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a> *&#160;</td>
+          <td class="paramname"><em>pstPredUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.265的预测参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstPredUnit</td><td>: H.265的预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga4a773caee88ffea3ec4ab396d4f8eee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a773caee88ffea3ec4ab396d4f8eee0">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265Sao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265Sao </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Sao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.265的SAO参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH265Sao</td><td>: H.265的SAO的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gabaf2708e6792f9e8d7c0e6ac9ef16c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabaf2708e6792f9e8d7c0e6ac9ef16c59">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265SliceSplit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265SliceSplit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSliceSplit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.265的条带分割参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSliceSplit</td><td>: H.265的条带分割参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga6e3dbddecdddd273940c192a10716efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e3dbddecdddd273940c192a10716efc">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265Trans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265Trans </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Trans</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取H.265协议编码通道的变换、量化的属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH265Trans</td><td>: H.265协议编码通道变换、量化结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga52d38461a48b71be2d3b39924191960f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52d38461a48b71be2d3b39924191960f">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetH265Vui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetH265Vui </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Vui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.265编码的VUI配置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 编码通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstH264Vui</td><td>: H.265协议编码通道的Vui参数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga513142f7246ca038a7ace9923ce44e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga513142f7246ca038a7ace9923ce44e90">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetHierarchicalQp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetHierarchicalQp </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a> *&#160;</td>
+          <td class="paramname"><em>pstHierarchicalQp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的去呼吸效应强度。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstHierarchicalQp</td><td>: 帧内刷新参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga83d18e11e424c72582126e120b2e1ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83d18e11e424c72582126e120b2e1ce9">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetIntraRefresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetIntraRefresh </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a> *&#160;</td>
+          <td class="paramname"><em>pstIntraRefresh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的帧内刷新参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstIntraRefresh</td><td>: 帧内刷新参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga3eace20a7e1bc1ee6d278e589ca93f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3eace20a7e1bc1ee6d278e589ca93f7b">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetJpegEncodeMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetJpegEncodeMode </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a> *&#160;</td>
+          <td class="paramname"><em>penJpegEncodeMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置JPEG抓拍通道的抓拍模式。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">enJpegEncodeMode</td><td>: 通道抓拍模式。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga0907c0ca71e3afcc759ba8e8f1c5a4c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0907c0ca71e3afcc759ba8e8f1c5a4c4">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetJpegParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetJpegParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstJpegParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道Jpeg的编码参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstJpegParam</td><td>: Jpeg的编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaadfffb501be71be0237c55b89647501e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaadfffb501be71be0237c55b89647501e">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetMjpegParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetMjpegParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMjpegParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道MJpeg的编码参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstMjpegParam</td><td>: MJpeg的编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga2e0e0fad10da11df4653d5c23ba76d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e0e0fad10da11df4653d5c23ba76d19">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetModParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetModParam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a> *&#160;</td>
+          <td class="paramname"><em>pstModParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的模块参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstModParam</td><td>: 模块的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga8622435b0a0331bc78ee5f25c37f7115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8622435b0a0331bc78ee5f25c37f7115">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetRcParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetRcParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__rc_8h.html#a575936a2c429a2fd8cc222232009df92">VENC_RC_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRcParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道码控的参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRcParam</td><td>: 码控参数的指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga713efe331076e36ed20141c6a2111c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga713efe331076e36ed20141c6a2111c19">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetRefParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetRefParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRefParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道H.264和H.264的高级跳帧参考参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRefParam</td><td>: H.264和H.265的预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gadbfd112091fb553f855631a139370bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadbfd112091fb553f855631a139370bb3">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetRoiAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetRoiAttr </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的ROI属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>接口参数变化。需要先AR_MPI_VENC_SetRoiAttr，才能AR_MPI_VENC_GetRoiAttr，否则返回失败。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Index</td><td>: ROI区域的索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRoiAttr</td><td>: VENC ROI属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga0abe7d64b0228b379e35e82addd79dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0abe7d64b0228b379e35e82addd79dce">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetRoiAttrEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetRoiAttrEx </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiAttrEx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的ROI扩展属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Index</td><td>: ROI区域的索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRoiAttrEx</td><td>: 对应ROI区域的配置参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga1f786717bbd9e9500e3cd20dce39e5e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f786717bbd9e9500e3cd20dce39e5e9">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetRoiBgFrameRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetRoiBgFrameRate </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiBgFrmRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的ROI扩展属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRoiBgFrmRate</td><td>: VENC ROI属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga25b53168db7d9a5af89bc3a815b29a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25b53168db7d9a5af89bc3a815b29a9a">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetSSERegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetSSERegion </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSSECfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取H.264/H.265通道的SSE属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstSSECfg</td><td>: SSE区域参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga52b4d0f585f06a6ab77d28066bd7ab9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52b4d0f585f06a6ab77d28066bd7ab9b">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetStream </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_S32&#160;</td>
+          <td class="paramname"><em>s32MilliSec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的码流。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstStream</td><td>: VENC码流结构体指针。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s32MilliSec</td><td>: 获取码流等待时间，-1代表阻塞。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga36011b3b972de5e998a1ca3ee9b7bac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga36011b3b972de5e998a1ca3ee9b7bac4">&#9670;&nbsp;</a></span>AR_MPI_VENC_GetStreamBufInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_GetStreamBufInfo </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a04f1f45d320905e393a9ca0acdbfe8c3">VENC_STREAM_BUF_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstStreamBufInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取码流buffer的物理地址和大小。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstStreamBufInfo</td><td>: 码流结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga7bad8feed5daca8ea2ddbc7bb941d0b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7bad8feed5daca8ea2ddbc7bb941d0b5">&#9670;&nbsp;</a></span>AR_MPI_VENC_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_Init </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC设备初始化，初始化基本的数据结构。 </p>
+<dl class="section attention"><dt>注意</dt><dd>新添加接口 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga7dda25d08794a31d46abc00ea0a5bd92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dda25d08794a31d46abc00ea0a5bd92">&#9670;&nbsp;</a></span>AR_MPI_VENC_InsertUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_InsertUserData </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U8 *&#160;</td>
+          <td class="paramname"><em>pu8Data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>插入VENC通道的用户数据。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pu8Data</td><td>: 用户数据地址。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Len</td><td>: 用户数据长度。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga1e34812a41adff68e34439ef10e624eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e34812a41adff68e34439ef10e624eb">&#9670;&nbsp;</a></span>AR_MPI_VENC_QueryStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_QueryStatus </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a7bcda30715302c4298ac2a016c1a9aae">VENC_CHN_STATUS_S</a> *&#160;</td>
+          <td class="paramname"><em>pstStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询VENC通道的状态，启动后才能查询。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstStatus</td><td>: VENC通道状态结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gae9c08eae8c7fc1ed934d7d549d53b675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9c08eae8c7fc1ed934d7d549d53b675">&#9670;&nbsp;</a></span>AR_MPI_VENC_ReleaseStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_ReleaseStream </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstStream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>释放VENC通道的码流。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstStream</td><td>: VENC码流结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gacae4182b89b468db596ecb23b07fd9fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacae4182b89b468db596ecb23b07fd9fc">&#9670;&nbsp;</a></span>AR_MPI_VENC_RequestIDR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_RequestIDR </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_BOOL&#160;</td>
+          <td class="paramname"><em>bInstant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC通道立即编码一帧IDR帧。 </p>
+<dl class="section note"><dt>注解</dt><dd>接口参数变化 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bInstant</td><td>: 立即编码IDR，只支持true。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga671ec1d8ecbf86e7ceb33c55d0473b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga671ec1d8ecbf86e7ceb33c55d0473b25">&#9670;&nbsp;</a></span>AR_MPI_VENC_ResetChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_ResetChn </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置VENC通道，停止通道后才能重置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gab6a58cd07f7f97007808f2163234bb6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6a58cd07f7f97007808f2163234bb6c">&#9670;&nbsp;</a></span>AR_MPI_VENC_SendFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SendFrame </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">VIDEO_FRAME_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_S32&#160;</td>
+          <td class="paramname"><em>s32MilliSec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC通道发送一帧视频数据进行编码。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstFrame</td><td>: 视频帧信息结构体指针。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s32MilliSec</td><td>: 等待时间，-1代表阻塞。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga95bbb7e70a733d4dc6e97eeb85576303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95bbb7e70a733d4dc6e97eeb85576303">&#9670;&nbsp;</a></span>AR_MPI_VENC_SendFrameEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SendFrameEx </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a63ce8772ca35ed2c285689f4f0bcb502">USER_FRAME_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_S32&#160;</td>
+          <td class="paramname"><em>s32MilliSec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC通道发送一帧用户视频数据进行编码。 </p>
+<dl class="section note"><dt>注解</dt><dd>接口参数变化。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstFrame</td><td>: 用户视频帧信息结构体指针。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s32MilliSec</td><td>: 等待时间，-1代表阻塞。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaa0fe22de20efdb5141f02226295ba890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0fe22de20efdb5141f02226295ba890">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetChnAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetChnAttr </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstChnAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的属性，创建通道后才能设置，建议先获取再设置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstChnAttr</td><td>: VENC通道属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga8c190edcccee0feecb099e507884d837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c190edcccee0feecb099e507884d837">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetChnMirroParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetChnMirroParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">VENC_MIRROR_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMirrorParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的镜像方向参数, 必须在AR_MPI_VENC_StartRecvFrame调用之前设置才能生效 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRotationParam</td><td>: 镜像方向参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga01c6d6e4017640b65a40dc1f0f9df152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01c6d6e4017640b65a40dc1f0f9df152">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetChnParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetChnParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstChnParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的帧内刷新参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstChnParam</td><td>: 编码通道的参数结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaa995c849350ee8adf85a570b97a66967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa995c849350ee8adf85a570b97a66967">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetChnRotationParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetChnRotationParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRotationParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的逆时针旋转角度参数, 必须在AR_MPI_VENC_StartRecvFrame调用之前设置才能生效 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstHierarchicalQp</td><td>: 逆时针旋转角度参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga41f200be5c7a5a45c8714c18c5809895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41f200be5c7a5a45c8714c18c5809895">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetCuPrediction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetCuPrediction </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a> *&#160;</td>
+          <td class="paramname"><em>pstCuPrediction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 CU 模式选择的倾向性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 通道号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstCuPrediction</td><td>: CU模式选择的倾向性参数指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga92deb8b9128a16530b31349e3aa27089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92deb8b9128a16530b31349e3aa27089">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetDeBreathEffect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetDeBreathEffect </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstDeBreathEffect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的去呼吸效应强度。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstDeBreathEffect</td><td>: 帧内刷新参数结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga7de5064c28355278205f43a95fbbce9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7de5064c28355278205f43a95fbbce9a">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264Dblk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264Dblk </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Dblk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.264的deblock参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264Dblk</td><td>: H.264的deblock的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga9d5cd528e3f633cc2406d2ae73281bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d5cd528e3f633cc2406d2ae73281bc7">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264Entropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264Entropy </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264EntropyEnc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.264的熵编码参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264EntropyEnc</td><td>: H.264的熵编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga554bfed9b0b9bc7d9735e59e852aa576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga554bfed9b0b9bc7d9735e59e852aa576">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264IntraPred()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264IntraPred </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264IntraPred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.264的帧内预测参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264IntraPred</td><td>: H.264的帧内预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gab02af717d07d4b34dc35d6625730547c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab02af717d07d4b34dc35d6625730547c">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264SliceSplit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264SliceSplit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSliceSplit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.264的条带分割参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSliceSplit</td><td>: H.264的条带分割参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gabe72e464b129557b10795f136fff51a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe72e464b129557b10795f136fff51a4">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264Trans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264Trans </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Trans</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.264协议编码通道的变换、量化属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264Trans</td><td>: H.264协议编码通道的变换、量化参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga70d23a5b808ada0583d07ac3c935c4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70d23a5b808ada0583d07ac3c935c4cf">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH264Vui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH264Vui </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH264Vui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.264编码的VUI配置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 编码通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264Vui</td><td>: H.264协议编码通道的Vui参数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga382564b0d8e2f247b43552b3e0a97e00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga382564b0d8e2f247b43552b3e0a97e00">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265Dblk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265Dblk </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Dblk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.265的deblock参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH265Dblk</td><td>: H.265的deblock的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga0cb7b0260db804d0902030e65e4a1983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cb7b0260db804d0902030e65e4a1983">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265Entropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265Entropy </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Entropy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.265通道的熵编码属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH265Entropy</td><td>: H.265协议编码通道熵编码的结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga74a48d1366c9ec820972beb03b2868f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74a48d1366c9ec820972beb03b2868f8">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265PredUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265PredUnit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a> *&#160;</td>
+          <td class="paramname"><em>pstePredUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.265的预测参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstePredUnit</td><td>: H.265的预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga0a88c90b990056a9db8d79924883fc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a88c90b990056a9db8d79924883fc12">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265Sao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265Sao </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Sao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.265的SAO参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH265Sao</td><td>: H.265的SAO的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga79de6162630352a05b96421ef3d77985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79de6162630352a05b96421ef3d77985">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265SliceSplit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265SliceSplit </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSliceSplit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.265的条带分割参数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSliceSplit</td><td>: H.265的条带分割参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga9a68c83a4ec4b9e18f1dd679e9c0fd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a68c83a4ec4b9e18f1dd679e9c0fd61">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265Trans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265Trans </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Trans</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.265协议编码通道的变换、量化的属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH265Trans</td><td>: H.265协议编码通道变换、量化结构体参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga2e04d3aa0e0b1f3fffea4ea0e10755f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e04d3aa0e0b1f3fffea4ea0e10755f9">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetH265Vui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetH265Vui </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a> *&#160;</td>
+          <td class="paramname"><em>pstH265Vui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.265编码的VUI配置。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: 编码通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstH264Vui</td><td>: H.265协议编码通道的Vui参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gab183bf10536a626474d62c94c1f93092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab183bf10536a626474d62c94c1f93092">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetHierarchicalQp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetHierarchicalQp </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a> *&#160;</td>
+          <td class="paramname"><em>pstHierarchicalQp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取VENC通道的去呼吸效应强度。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstDeBreathEffect</td><td>: 帧内刷新参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gae210e36dc23e064dd6f829f92859c06b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae210e36dc23e064dd6f829f92859c06b">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetIntraRefresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetIntraRefresh </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a> *&#160;</td>
+          <td class="paramname"><em>pstIntraRefresh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的帧内刷新参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstIntraRefresh</td><td>: 帧内刷新参数结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga22656e2558978a1f9fbf16cfe5044715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22656e2558978a1f9fbf16cfe5044715">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetJpegEncodeMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetJpegEncodeMode </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a>&#160;</td>
+          <td class="paramname"><em>enJpegEncodeMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置JPEG抓拍通道的抓拍模式。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enJpegEncodeMode</td><td>: 通道抓拍模式。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga6cfc22e494b3eddcfb1118b2120bc8cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cfc22e494b3eddcfb1118b2120bc8cb">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetJpegParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetJpegParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstJpegParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道Jpeg的编码参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstJpegParam</td><td>: Jpeg的编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga1faff4c0a60abc03f862271538129642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1faff4c0a60abc03f862271538129642">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetMjpegParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetMjpegParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMjpegParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道MJpeg的编码参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstMjpegParam</td><td>: MJpeg的编码参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga32679c6f91c5a77c0772b694bc15b30d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga32679c6f91c5a77c0772b694bc15b30d">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetModParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetModParam </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a> *&#160;</td>
+          <td class="paramname"><em>pstModParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的模块参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstModParam</td><td>: 模块的参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga516b0d6cec2ab53f76eb3a792104403a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga516b0d6cec2ab53f76eb3a792104403a">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetRcParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetRcParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__rc_8h.html#a575936a2c429a2fd8cc222232009df92">VENC_RC_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRcParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道码控的参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRcParam</td><td>: 码控参数的指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaa94f9ebfce94b9a8e44cc026a68a3c1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa94f9ebfce94b9a8e44cc026a68a3c1c">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetRefParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetRefParam </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRefParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道H.264和H.264的高级跳帧参考参数。 </p>
+<dl class="section note"><dt>注解</dt><dd>参数有更新。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRefParam</td><td>: H.264和H.265的预测参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga5ed9a556c14e96bb0517f151da024992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ed9a556c14e96bb0517f151da024992">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetRoiAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetRoiAttr </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的ROI属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>接口变化。支持无限设置。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRoiAttr</td><td>: VENC ROI属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gaa63efe05537ff45778f45a4837a4db97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa63efe05537ff45778f45a4837a4db97">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetRoiAttrEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetRoiAttrEx </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiAttrEx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的ROI扩展属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRoiAttrEx</td><td>: 对应ROI区域的配置参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gace1f4fc28a1863d08a2d1aed6bd9c331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace1f4fc28a1863d08a2d1aed6bd9c331">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetRoiBgFrameRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetRoiBgFrameRate </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRoiBgFrmRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置VENC通道的ROI扩展属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRoiBgFrmRate</td><td>: VENC ROI属性结构体指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="gab17360d5bd50ddd9a3d1372720e23919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab17360d5bd50ddd9a3d1372720e23919">&#9670;&nbsp;</a></span>AR_MPI_VENC_SetSSERegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_SetSSERegion </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSSECfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置H.264/H.265 通道的SSE属性。 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持。 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSSECfg</td><td>: SSE区域参数指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga9c8b8280da8259949491988b0a1f2987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c8b8280da8259949491988b0a1f2987">&#9670;&nbsp;</a></span>AR_MPI_VENC_StartRecvFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_StartRecvFrame </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ar__comm__venc_8h.html#aaeca0d07b36b37c19e2424e82b4b7a35">VENC_RECV_PIC_PARAM_S</a> *&#160;</td>
+          <td class="paramname"><em>pstRecvParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC通道启动接收数据，创建后才能启动。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRecvParam</td><td>: VENC接收图片参数指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+<a id="ga66c9ba3c54f60f83bc971cab50e3789b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66c9ba3c54f60f83bc971cab50e3789b">&#9670;&nbsp;</a></span>AR_MPI_VENC_StopRecvFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VENC_StopRecvFrame </td>
+          <td>(</td>
+          <td class="paramtype">VENC_CHN&#160;</td>
+          <td class="paramname"><em>VeChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VENC通道停止接收数据，启动后才能停止。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VeChn</td><td>: VENC通道号。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>: 成功。 </td></tr>
+    <tr><td class="paramname">non-zero</td><td>: 失败，其值为错误码。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><br  />
+N/A </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

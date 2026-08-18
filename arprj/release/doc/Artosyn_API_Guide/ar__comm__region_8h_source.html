@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: ar_comm_region.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ar_comm_region.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ar__comm__region_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __AR_COMM_REGION_H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __AR_COMM_REGION_H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__common_8h.html">ar_common.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__comm__video_8h.html">ar_comm_video.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;hal_errno.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ar_defines.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/********************************Macro Definition********************************/</span>  </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define RGN_COLOR_LUT_NUM 2</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define RGN_MAX_BMP_UPDATE_NUM 16</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define RGN_BATCHHANDLE_MAX 24</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* PingPong buffer change when set attr, it needs to remap memory in mpi interface */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define AR_NOTICE_RGN_BUFFER_CHANGE  AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_NOTICE, AR_SUCCESS)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/* invlalid device ID */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_INVALID_DEVID     AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_INVALID_DEVID)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* invlalid channel ID */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_INVALID_CHNID     AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_INVALID_CHNID)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* at lease one parameter is illagal ,eg, an illegal enumeration value  */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_ILLEGAL_PARAM     AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_ILLEGAL_PARAM)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* channel exists */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_EXIST             AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_EXIST)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/*UN exist*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_UNEXIST           AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_UNEXIST)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* using a NULL point */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NULL_PTR          AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NULL_PTR)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* try to enable or initialize system,device or channel, before configing attribute */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOT_CONFIG        AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_CONFIG)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/* operation is not supported by NOW */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOT_SUPPORT       AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_SUPPORT)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* operation is not permitted ,eg, try to change stati attribute */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOT_PERM          AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_PERM)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* failure caused by malloc memory */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOMEM             AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOMEM)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* failure caused by malloc buffer */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOBUF             AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOBUF)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/* no data in buffer */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_BUF_EMPTY         AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_EMPTY)</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* no buffer for new data */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_BUF_FULL          AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_FULL)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/* bad address, eg. used for copy_from_user &amp; copy_to_user */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_BADADDR           AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_BADADDR)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* resource is busy, eg. destroy a venc chn without unregistering it */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_BUSY              AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUSY)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* System is not ready,maybe not initialed or loaded.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * Returning the error code when opening a device file failed.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define AR_ERR_RGN_NOTREADY          AR_MPP_DEF_ERR(AR_ID_RGN, HAL_ERR_LEVEL_ERROR, HAL_ERR_SYS_NOTREADY)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/*************************** Structure Definition ****************************/</span>  </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">   75</a></span>&#160;<span class="keyword">typedef</span> AR_U32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">   78</a></span>&#160;<span class="keyword">typedef</span> AR_U32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">RGN_HANDLEGROUP</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#gae7ea594bf2b388392023771c330e3d1c">   81</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae7ea594bf2b388392023771c330e3d1c">arRGN_TYPE_E</a></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    OVERLAY_RGN = 0,     <span class="comment">/* video overlay region */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    COVER_RGN,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    COVEREX_RGN,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    OVERLAYEX_RGN,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    MOSAIC_RGN,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    RGN_BUTT</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga24e2123a19bb2428223f93992a6ae85c">RGN_TYPE_E</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#ga317bf1a3573fe213041f78adc7b46a66">   92</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga317bf1a3573fe213041f78adc7b46a66">arINVERT_COLOR_MODE_E</a></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    LESSTHAN_LUM_THRESH = 0,   <span class="comment">/* the lum of the video is less than the lum threshold which is set by u32LumThresh  */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    MORETHAN_LUM_THRESH,       <span class="comment">/* the lum of the video is more than the lum threshold which is set by u32LumThresh  */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    INVERT_COLOR_BUTT</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gab40af8fa0741cca12399b04674e5e6cd">INVERT_COLOR_MODE_E</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y___q_p___i_n_f_o___s.html">  100</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y___q_p___i_n_f_o___s.html">arOVERLAY_QP_INFO_S</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    AR_BOOL     bAbsQp;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    AR_S32         s32Qp;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    AR_BOOL        bQpDisable;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7c1fca0b3b4ad873fe967e0195ebaedd">OVERLAY_QP_INFO_S</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y___i_n_v_e_r_t___c_o_l_o_r___s.html">  108</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y___i_n_v_e_r_t___c_o_l_o_r___s.html">arOVERLAY_INVERT_COLOR_S</a></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="structar_s_i_z_e___s.html">SIZE_S</a> stInvColArea;                <span class="comment">//It must be multipe of 16 but not more than 64.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    AR_U32 u32LumThresh;                <span class="comment">//The threshold to decide whether invert the OSD&#39;s color or not.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gab40af8fa0741cca12399b04674e5e6cd">INVERT_COLOR_MODE_E</a> enChgMod;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    AR_BOOL bInvColEn;                  <span class="comment">//The switch of inverting color.</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga8360a502f01c3c3e33cd3690dc676c69">OVERLAY_INVERT_COLOR_S</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#ga63c020607092b9d2902b3e3d07e30b28">  117</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga63c020607092b9d2902b3e3d07e30b28">arATTACH_DEST_E</a></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ATTACH_JPEG_MAIN =0,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ATTACH_JPEG_MPF0,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ATTACH_JPEG_MPF1,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    ATTACH_JPEG_BUTT</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gadb685463ccc38bd1b42f5e95985bd4ac">ATTACH_DEST_E</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y___a_t_t_r___s.html">  126</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y___a_t_t_r___s.html">arOVERLAY_ATTR_S</a></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">/* bitmap pixel format,now only support ARGB1555 or ARGB4444 */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    PIXEL_FORMAT_E enPixelFmt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">/* background color, pixel format depends on &quot;enPixelFmt&quot; */</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    AR_U32 u32BgColor;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">/* region size,W:[2,RGN_OVERLAY_MAX_WIDTH],align:2,H:[2,RGN_OVERLAY_MAX_HEIGHT],align:2 */</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="structar_s_i_z_e___s.html">SIZE_S</a> stSize;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    AR_U32 u32CanvasNum;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaaf144ad260344a4766fbb03f662154b5">OVERLAY_ATTR_S</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y___c_h_n___a_t_t_r___s.html">  140</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y___c_h_n___a_t_t_r___s.html">arOVERLAY_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">/* X:[0,OVERLAY_MAX_X_VENC],align:2,Y:[0,OVERLAY_MAX_Y_VENC],align:2 */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="structar_p_o_i_n_t___s.html">POINT_S</a> stPoint;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">/* background an foreground transparence when pixel format is ARGB1555</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">      * the pixel format is ARGB1555,when the alpha bit is 1 this alpha is value!</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">      * range:[0,128]</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">      */</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    AR_U32 u32FgAlpha;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">/* background an foreground transparence when pixel format is ARGB1555</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">      * the pixel format is ARGB1555,when the alpha bit is 0 this alpha is value!</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">      * range:[0,128]</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">      */</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    AR_U32 u32BgAlpha;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    AR_U32 u32Layer;   <span class="comment">/* OVERLAY region layer range:[0,7]*/</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y___q_p___i_n_f_o___s.html">OVERLAY_QP_INFO_S</a> stQpInfo;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y___i_n_v_e_r_t___c_o_l_o_r___s.html">OVERLAY_INVERT_COLOR_S</a> stInvertColor;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gadb685463ccc38bd1b42f5e95985bd4ac">ATTACH_DEST_E</a> enAttachDest;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    AR_U16 u16ColorLUT[RGN_COLOR_LUT_NUM];</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga5e73b257768914f68b1903fe36af0c22">OVERLAY_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#gad1aff9142cd675966b64e7e0cdfd0f8e">  169</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gad1aff9142cd675966b64e7e0cdfd0f8e">arRGN_AREA_TYPE_E</a></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    AREA_RECT = 0,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    AREA_QUAD_RANGLE,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    AREA_BUTT</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga23d186978a30fc4a30eba67fe7272828">RGN_AREA_TYPE_E</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#ga050f8aa1de8ebdbd2d528afb07588404">  177</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga050f8aa1de8ebdbd2d528afb07588404">arRGN_COORDINATE_E</a></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    RGN_ABS_COOR = 0,   <span class="comment">/*Absolute coordinate*/</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    RGN_RATIO_COOR      <span class="comment">/*Ratio coordinate*/</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga3881d254820fbd2bfbac2c119c91f9ea">RGN_COORDINATE_E</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="structar_r_g_n___q_u_a_d_r_a_n_g_l_e___s.html">  184</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___q_u_a_d_r_a_n_g_l_e___s.html">arRGN_QUADRANGLE_S</a></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    AR_BOOL bSolid;            <span class="comment">/* whether solid or dashed quadrangle */</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    AR_U32 u32Thick;           <span class="comment">/* Line Width of quadrangle, valid when dashed quadrangle */</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="structar_p_o_i_n_t___s.html">POINT_S</a> stPoint[4];        <span class="comment">/* points of quadrilateral */</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga3932eb4952ea8e0ab0fbd457c0c06984">RGN_QUADRANGLE_S</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="structar_c_o_v_e_r___c_h_n___a_t_t_r___s.html">  192</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_c_o_v_e_r___c_h_n___a_t_t_r___s.html">arCOVER_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga23d186978a30fc4a30eba67fe7272828">RGN_AREA_TYPE_E</a>     enCoverType;        <span class="comment">/* rect or arbitary quadrilateral COVER */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">union</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="structar_r_e_c_t___s.html">RECT_S</a>              stRect;            <span class="comment">/* config of rect */</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="structar_r_g_n___q_u_a_d_r_a_n_g_l_e___s.html">RGN_QUADRANGLE_S</a>    stQuadRangle;      <span class="comment">/* config of arbitary quadrilateral COVER */</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    };</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    AR_U32 u32Color;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    AR_U32 u32Layer;                           <span class="comment">/* COVER region layer */</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga3881d254820fbd2bfbac2c119c91f9ea">RGN_COORDINATE_E</a> enCoordinate;           <span class="comment">/*ratio coordiante or abs coordinate*/</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga40fbdf33978494e2425128480be75a0e">COVER_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="structar_c_o_v_e_r_e_x___c_h_n___a_t_t_r___s.html">  206</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_c_o_v_e_r_e_x___c_h_n___a_t_t_r___s.html">arCOVEREX_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga23d186978a30fc4a30eba67fe7272828">RGN_AREA_TYPE_E</a>     enCoverType;       <span class="comment">/* rect or arbitary quadrilateral COVER */</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">union</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="structar_r_e_c_t___s.html">RECT_S</a>              stRect;        <span class="comment">/* config of rect */</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="structar_r_g_n___q_u_a_d_r_a_n_g_l_e___s.html">RGN_QUADRANGLE_S</a>    stQuadRangle;  <span class="comment">/* config of arbitary quadrilateral COVER */</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    };</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    AR_U32 u32Color;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    AR_U32 u32Layer;   <span class="comment">/* COVEREX region layer range */</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaba8e7470e907a37a95665acf95e4d8f1">COVEREX_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#ga33c2277a3002f78d8d7d00095385efe1">  219</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga33c2277a3002f78d8d7d00095385efe1">arMOSAIC_BLK_SIZE_E</a></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    MOSAIC_BLK_SIZE_8 = 0,    <span class="comment">/*block size 8*8 of MOSAIC*/</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    MOSAIC_BLK_SIZE_16,       <span class="comment">/*block size 16*16 of MOSAIC*/</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    MOSAIC_BLK_SIZE_32,       <span class="comment">/*block size 32*32 of MOSAIC*/</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    MOSAIC_BLK_SIZE_64,       <span class="comment">/*block size 64*64 of MOSAIC*/</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    MOSAIC_BLK_SIZE_BUTT</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga60f681757a9c7f4fe55533033fe03dcd">MOSAIC_BLK_SIZE_E</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="structar_m_o_s_a_i_c___c_h_n___a_t_t_r___s.html">  229</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_m_o_s_a_i_c___c_h_n___a_t_t_r___s.html">arMOSAIC_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;{</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="structar_r_e_c_t___s.html">RECT_S</a> stRect;                 <span class="comment">/*location of MOSAIC*/</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga60f681757a9c7f4fe55533033fe03dcd">MOSAIC_BLK_SIZE_E</a> enBlkSize;   <span class="comment">/*block size of MOSAIC*/</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    AR_U32 u32Layer;               <span class="comment">/*MOSAIC region layer range:[0,3] */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7360dc184d9c75060486dfd69f6fb51d">MOSAIC_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y_e_x___c_o_m_m___a_t_t_r___s.html">  237</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y_e_x___c_o_m_m___a_t_t_r___s.html">arOVERLAYEX_COMM_ATTR_S</a></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    PIXEL_FORMAT_E enPixelFmt;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">/* background color, pixel format depends on &quot;enPixelFmt&quot; */</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    AR_U32 u32BgColor;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">/* region size,W:[2,RGN_OVERLAY_MAX_WIDTH],align:2,H:[2,RGN_OVERLAY_MAX_HEIGHT],align:2 */</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="structar_s_i_z_e___s.html">SIZE_S</a> stSize;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    AR_U32 u32CanvasNum;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga183b7068022c5f3864bc9f74d172aa05">OVERLAYEX_ATTR_S</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="structar_o_v_e_r_l_a_y_e_x___c_h_n___a_t_t_r___s.html">  250</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_o_v_e_r_l_a_y_e_x___c_h_n___a_t_t_r___s.html">arOVERLAYEX_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">/* X:[0,RGN_OVERLAY_MAX_X],align:2,Y:[0,RGN_OVERLAY_MAX_Y],align:2 */</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="structar_p_o_i_n_t___s.html">POINT_S</a> stPoint;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">/* background an foreground transparence when pixel format is ARGB1555</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">      * the pixel format is ARGB1555,when the alpha bit is 1 this alpha is value!</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">      * range:[0,255]</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">      */</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    AR_U32 u32FgAlpha;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">/* background an foreground transparence when pixel format is ARGB1555</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">      * the pixel format is ARGB1555,when the alpha bit is 0 this alpha is value!</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">      * range:[0,255]</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">      */</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    AR_U32 u32BgAlpha;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    AR_U32 u32Layer;   <span class="comment">/* OVERLAYEX region layer range:[0,15]*/</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga1e434fa6039d567c6a162afd9f44dca3">OVERLAYEX_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="unionar_r_g_n___a_t_t_r___u.html">  271</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">union </span><a class="code" href="unionar_r_g_n___a_t_t_r___u.html">arRGN_ATTR_U</a></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y___a_t_t_r___s.html">OVERLAY_ATTR_S</a>      stOverlay;      <span class="comment">/* attribute of overlay region */</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y_e_x___c_o_m_m___a_t_t_r___s.html">OVERLAYEX_ATTR_S</a>    stOverlayEx;    <span class="comment">/* attribute of overlayex region */</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga8e5c62725969aa9444cf7f2d11809adb">RGN_ATTR_U</a>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="unionar_r_g_n___c_h_n___a_t_t_r___u.html">  278</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">union </span><a class="code" href="unionar_r_g_n___c_h_n___a_t_t_r___u.html">arRGN_CHN_ATTR_U</a></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y___c_h_n___a_t_t_r___s.html">OVERLAY_CHN_ATTR_S</a>      stOverlayChn;      <span class="comment">/* attribute of overlay region */</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="structar_c_o_v_e_r___c_h_n___a_t_t_r___s.html">COVER_CHN_ATTR_S</a>        stCoverChn;        <span class="comment">/* attribute of cover region */</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="structar_c_o_v_e_r_e_x___c_h_n___a_t_t_r___s.html">COVEREX_CHN_ATTR_S</a>      stCoverExChn;      <span class="comment">/* attribute of coverex region */</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y_e_x___c_h_n___a_t_t_r___s.html">OVERLAYEX_CHN_ATTR_S</a>    stOverlayExChn;    <span class="comment">/* attribute of overlayex region */</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="structar_m_o_s_a_i_c___c_h_n___a_t_t_r___s.html">MOSAIC_CHN_ATTR_S</a>       stMosaicChn;       <span class="comment">/* attribute of mosic region */</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga71e21f1f763d32326ac9be616c3132c3">RGN_CHN_ATTR_U</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="structar_r_g_n___a_t_t_r___s.html">  288</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___a_t_t_r___s.html">arRGN_ATTR_S</a></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga24e2123a19bb2428223f93992a6ae85c">RGN_TYPE_E</a> enType;  <span class="comment">/* region type */</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="unionar_r_g_n___a_t_t_r___u.html">RGN_ATTR_U</a> unAttr;  <span class="comment">/* region attribute */</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaba13df475b6393e245392ac43c222312">RGN_ATTR_S</a>;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="structar_r_g_n___c_h_n___a_t_t_r___s.html">  295</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___c_h_n___a_t_t_r___s.html">arRGN_CHN_ATTR_S</a></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;{</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    AR_BOOL           bShow;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga24e2123a19bb2428223f93992a6ae85c">RGN_TYPE_E</a>        enType;     <span class="comment">/* region type */</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="unionar_r_g_n___c_h_n___a_t_t_r___u.html">RGN_CHN_ATTR_U</a>    unChnAttr;  <span class="comment">/* region attribute */</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga88bd5abbc48d23411b4f7e81636648b7">RGN_CHN_ATTR_S</a>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="structar_r_g_n___c_h_n___p_a_r_a___s.html">  303</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___c_h_n___p_a_r_a___s.html">arRGN_CHN_PARA_S</a></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    AR_BOOL           bCopyBufEnable;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga949c424f11d6c72d7695d65537121294">RGN_CHN_PARA_S</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="structar_r_g_n___d_r_a_w___i_n_f_o___o_u_t___s.html">  310</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___d_r_a_w___i_n_f_o___o_u_t___s.html">arRGN_DRAW_INFO_OUT_S</a></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    AR_U32             QPNum;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="structar_o_v_e_r_l_a_y___q_p___i_n_f_o___s.html">OVERLAY_QP_INFO_S</a> *QPInfo;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gab60a6b9fa0aebd106ba9b594bbb6320a">RGN_DRAW_INFO_OUT_S</a>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="structar_r_g_n___b_m_p___u_p_d_a_t_e___s.html">  317</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___b_m_p___u_p_d_a_t_e___s.html">arRGN_BMP_UPDATE_S</a></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="structar_p_o_i_n_t___s.html">POINT_S</a>             stPoint;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="structar_b_i_t_m_a_p___s.html">BITMAP_S</a>            stBmp;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    AR_U32              u32Stride;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7846bd786903437aac63596c6a0530ce">RGN_BMP_UPDATE_S</a>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="structar_r_g_n___b_m_p___u_p_d_a_t_e___c_f_g___s.html">  325</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___b_m_p___u_p_d_a_t_e___c_f_g___s.html">arRGN_BMP_UPDATE_CFG_S</a></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    AR_U32              u32BmpCnt;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="structar_r_g_n___b_m_p___u_p_d_a_t_e___s.html">RGN_BMP_UPDATE_S</a>    astBmpUpdate[RGN_MAX_BMP_UPDATE_NUM];</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga1322026b4bd11915b6aab8ce1a1a5ce0">RGN_BMP_UPDATE_CFG_S</a>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="structar_r_g_n___c_a_n_v_a_s___i_n_f_o___s.html">  332</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___c_a_n_v_a_s___i_n_f_o___s.html">arRGN_CANVAS_INFO_S</a></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    AR_U64         u64PhyAddr;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    AR_U64         u64VirtAddr;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="structar_s_i_z_e___s.html">SIZE_S</a>         stSize;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    AR_U32         u32Stride;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    PIXEL_FORMAT_E enPixelFmt;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;} <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga2535a07c16187df5f7d2acf431dc0677">RGN_CANVAS_INFO_S</a>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="structar_r_g_n___d_r_a_w___p_a_r_a___i_n___s.html">  342</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___d_r_a_w___p_a_r_a___i_n___s.html">arRGN_DRAW_PARA_IN_S</a></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">VIDEO_FRAME_INFO_S</a> *pstFrameInfoIn;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    AR_U64              u64RgnMask;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gac3aa05238e26aa808cd60e82e680f879">RGN_DRAW_PARA_IN_S</a>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="structar_r_g_n___d_r_a_w___p_a_r_a___o_u_t___s.html">  349</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_r_g_n___d_r_a_w___p_a_r_a___o_u_t___s.html">arRGN_DRAW_PARA_OUT_S</a></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">VIDEO_FRAME_INFO_S</a>    stFrameInfoOut;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    AR_BOOL               IsCopy;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="structar_r_g_n___d_r_a_w___i_n_f_o___o_u_t___s.html">RGN_DRAW_INFO_OUT_S</a>  *pstInfo;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga0ddffbf0d26516e77e58c755e44e482f">RGN_DRAW_PARA_OUT_S</a>;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#gaaec4f08bff3416fddacbb79bb4083232">  357</a></span>&#160;<span class="keyword">typedef</span> AR_S32 (*<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaaec4f08bff3416fddacbb79bb4083232">AR_MPI_FUNC_RGN_DRAW_CB</a>)(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>     *pstChn,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                                  <a class="code" href="structar_r_g_n___d_r_a_w___p_a_r_a___i_n___s.html">RGN_DRAW_PARA_IN_S</a>  *pstParaIn,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                                  <a class="code" href="structar_r_g_n___d_r_a_w___p_a_r_a___o_u_t___s.html">RGN_DRAW_PARA_OUT_S</a> *pstParaOut);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="group___m_p_i___r_e_g_i_o_n.html#ga1b2a3a119d880e5535f7f3a6aa9bf7df">  362</a></span>&#160;<span class="keyword">typedef</span> AR_S32 (*<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga1b2a3a119d880e5535f7f3a6aa9bf7df">AR_MPI_FUNC_RGN_RELEASE_FRAME_CB</a>)(<a class="code" href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">VIDEO_FRAME_INFO_S</a> *pstFrameInfo);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="struct_r_g_n___r_e_g_i_s_t_e_r___c_b___s.html">  365</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    MOD_ID_E enModId;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    AR_S32 (*attach_call_back)(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaaec4f08bff3416fddacbb79bb4083232">AR_MPI_FUNC_RGN_DRAW_CB</a> draw_cb, <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga1b2a3a119d880e5535f7f3a6aa9bf7df">AR_MPI_FUNC_RGN_RELEASE_FRAME_CB</a> release_cb);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    AR_S32 (*detach_call_back)(AR_VOID);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;} <a class="code" href="struct_r_g_n___r_e_g_i_s_t_e_r___c_b___s.html">RGN_REGISTER_CB_S</a>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __AR_COMM_REGION_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructar_r_g_n___d_r_a_w___p_a_r_a___o_u_t___s_html"><div class="ttname"><a href="structar_r_g_n___d_r_a_w___p_a_r_a___o_u_t___s.html">arRGN_DRAW_PARA_OUT_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:349</div></div>
+<div class="ttc" id="astructar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s_html"><div class="ttname"><a href="structar_v_i_d_e_o___f_r_a_m_e___i_n_f_o___s.html">arVIDEO_FRAME_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:529</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7846bd786903437aac63596c6a0530ce"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7846bd786903437aac63596c6a0530ce">RGN_BMP_UPDATE_S</a></div><div class="ttdeci">struct arRGN_BMP_UPDATE_S RGN_BMP_UPDATE_S</div></div>
+<div class="ttc" id="astructar_r_g_n___b_m_p___u_p_d_a_t_e___s_html"><div class="ttname"><a href="structar_r_g_n___b_m_p___u_p_d_a_t_e___s.html">arRGN_BMP_UPDATE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:317</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga88bd5abbc48d23411b4f7e81636648b7"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga88bd5abbc48d23411b4f7e81636648b7">RGN_CHN_ATTR_S</a></div><div class="ttdeci">struct arRGN_CHN_ATTR_S RGN_CHN_ATTR_S</div></div>
+<div class="ttc" id="astructar_r_g_n___b_m_p___u_p_d_a_t_e___c_f_g___s_html"><div class="ttname"><a href="structar_r_g_n___b_m_p___u_p_d_a_t_e___c_f_g___s.html">arRGN_BMP_UPDATE_CFG_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:325</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gae7ea594bf2b388392023771c330e3d1c"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gae7ea594bf2b388392023771c330e3d1c">arRGN_TYPE_E</a></div><div class="ttdeci">arRGN_TYPE_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:81</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga60f681757a9c7f4fe55533033fe03dcd"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga60f681757a9c7f4fe55533033fe03dcd">MOSAIC_BLK_SIZE_E</a></div><div class="ttdeci">enum arMOSAIC_BLK_SIZE_E MOSAIC_BLK_SIZE_E</div></div>
+<div class="ttc" id="astructar_r_e_c_t___s_html"><div class="ttname"><a href="structar_r_e_c_t___s.html">arRECT_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:84</div></div>
+<div class="ttc" id="astructar_c_o_v_e_r_e_x___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_c_o_v_e_r_e_x___c_h_n___a_t_t_r___s.html">arCOVEREX_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:206</div></div>
+<div class="ttc" id="astructar_p_o_i_n_t___s_html"><div class="ttname"><a href="structar_p_o_i_n_t___s.html">arPOINT_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:72</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga183b7068022c5f3864bc9f74d172aa05"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga183b7068022c5f3864bc9f74d172aa05">OVERLAYEX_ATTR_S</a></div><div class="ttdeci">struct arOVERLAYEX_COMM_ATTR_S OVERLAYEX_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga050f8aa1de8ebdbd2d528afb07588404"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga050f8aa1de8ebdbd2d528afb07588404">arRGN_COORDINATE_E</a></div><div class="ttdeci">arRGN_COORDINATE_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:177</div></div>
+<div class="ttc" id="astructar_r_g_n___c_a_n_v_a_s___i_n_f_o___s_html"><div class="ttname"><a href="structar_r_g_n___c_a_n_v_a_s___i_n_f_o___s.html">arRGN_CANVAS_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:332</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga949c424f11d6c72d7695d65537121294"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga949c424f11d6c72d7695d65537121294">RGN_CHN_PARA_S</a></div><div class="ttdeci">struct arRGN_CHN_PARA_S RGN_CHN_PARA_S</div></div>
+<div class="ttc" id="astructar_r_g_n___q_u_a_d_r_a_n_g_l_e___s_html"><div class="ttname"><a href="structar_r_g_n___q_u_a_d_r_a_n_g_l_e___s.html">arRGN_QUADRANGLE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:184</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga1322026b4bd11915b6aab8ce1a1a5ce0"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga1322026b4bd11915b6aab8ce1a1a5ce0">RGN_BMP_UPDATE_CFG_S</a></div><div class="ttdeci">struct arRGN_BMP_UPDATE_CFG_S RGN_BMP_UPDATE_CFG_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga317bf1a3573fe213041f78adc7b46a66"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga317bf1a3573fe213041f78adc7b46a66">arINVERT_COLOR_MODE_E</a></div><div class="ttdeci">arINVERT_COLOR_MODE_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:92</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga3881d254820fbd2bfbac2c119c91f9ea"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga3881d254820fbd2bfbac2c119c91f9ea">RGN_COORDINATE_E</a></div><div class="ttdeci">enum arRGN_COORDINATE_E RGN_COORDINATE_E</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga3932eb4952ea8e0ab0fbd457c0c06984"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga3932eb4952ea8e0ab0fbd457c0c06984">RGN_QUADRANGLE_S</a></div><div class="ttdeci">struct arRGN_QUADRANGLE_S RGN_QUADRANGLE_S</div></div>
+<div class="ttc" id="astructar_m_p_p___c_h_n___s_html"><div class="ttname"><a href="structar_m_p_p___c_h_n___s.html">arMPP_CHN_S</a></div><div class="ttdef"><b>Definition:</b> ar_common.h:195</div></div>
+<div class="ttc" id="astructar_r_g_n___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_r_g_n___c_h_n___a_t_t_r___s.html">arRGN_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:295</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y_e_x___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y_e_x___c_h_n___a_t_t_r___s.html">arOVERLAYEX_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:250</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaaf144ad260344a4766fbb03f662154b5"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaaf144ad260344a4766fbb03f662154b5">OVERLAY_ATTR_S</a></div><div class="ttdeci">struct arOVERLAY_ATTR_S OVERLAY_ATTR_S</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y___a_t_t_r___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y___a_t_t_r___s.html">arOVERLAY_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:126</div></div>
+<div class="ttc" id="aar__comm__video_8h_html"><div class="ttname"><a href="ar__comm__video_8h.html">ar_comm_video.h</a></div><div class="ttdoc">描述视频相关的通用数据结构</div></div>
+<div class="ttc" id="astruct_r_g_n___r_e_g_i_s_t_e_r___c_b___s_html"><div class="ttname"><a href="struct_r_g_n___r_e_g_i_s_t_e_r___c_b___s.html">RGN_REGISTER_CB_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:365</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga71e21f1f763d32326ac9be616c3132c3"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga71e21f1f763d32326ac9be616c3132c3">RGN_CHN_ATTR_U</a></div><div class="ttdeci">union arRGN_CHN_ATTR_U RGN_CHN_ATTR_U</div></div>
+<div class="ttc" id="aunionar_r_g_n___a_t_t_r___u_html"><div class="ttname"><a href="unionar_r_g_n___a_t_t_r___u.html">arRGN_ATTR_U</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:271</div></div>
+<div class="ttc" id="astructar_m_o_s_a_i_c___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_m_o_s_a_i_c___c_h_n___a_t_t_r___s.html">arMOSAIC_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:229</div></div>
+<div class="ttc" id="astructar_c_o_v_e_r___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_c_o_v_e_r___c_h_n___a_t_t_r___s.html">arCOVER_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:192</div></div>
+<div class="ttc" id="astructar_r_g_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_r_g_n___a_t_t_r___s.html">arRGN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:288</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y___i_n_v_e_r_t___c_o_l_o_r___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y___i_n_v_e_r_t___c_o_l_o_r___s.html">arOVERLAY_INVERT_COLOR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:108</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga2535a07c16187df5f7d2acf431dc0677"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga2535a07c16187df5f7d2acf431dc0677">RGN_CANVAS_INFO_S</a></div><div class="ttdeci">struct arRGN_CANVAS_INFO_S RGN_CANVAS_INFO_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gab40af8fa0741cca12399b04674e5e6cd"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gab40af8fa0741cca12399b04674e5e6cd">INVERT_COLOR_MODE_E</a></div><div class="ttdeci">enum arINVERT_COLOR_MODE_E INVERT_COLOR_MODE_E</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gae13450a8e912bd849b6cc1c8db39ba95"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a></div><div class="ttdeci">AR_U32 RGN_HANDLE</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:75</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gac3aa05238e26aa808cd60e82e680f879"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gac3aa05238e26aa808cd60e82e680f879">RGN_DRAW_PARA_IN_S</a></div><div class="ttdeci">struct arRGN_DRAW_PARA_IN_S RGN_DRAW_PARA_IN_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaeb34f917de5ab124d905e1109fe7646e"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">RGN_HANDLEGROUP</a></div><div class="ttdeci">AR_U32 RGN_HANDLEGROUP</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:78</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga23d186978a30fc4a30eba67fe7272828"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga23d186978a30fc4a30eba67fe7272828">RGN_AREA_TYPE_E</a></div><div class="ttdeci">enum arRGN_AREA_TYPE_E RGN_AREA_TYPE_E</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga24e2123a19bb2428223f93992a6ae85c"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga24e2123a19bb2428223f93992a6ae85c">RGN_TYPE_E</a></div><div class="ttdeci">enum arRGN_TYPE_E RGN_TYPE_E</div></div>
+<div class="ttc" id="aunionar_r_g_n___c_h_n___a_t_t_r___u_html"><div class="ttname"><a href="unionar_r_g_n___c_h_n___a_t_t_r___u.html">arRGN_CHN_ATTR_U</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:278</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga1b2a3a119d880e5535f7f3a6aa9bf7df"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga1b2a3a119d880e5535f7f3a6aa9bf7df">AR_MPI_FUNC_RGN_RELEASE_FRAME_CB</a></div><div class="ttdeci">AR_S32(* AR_MPI_FUNC_RGN_RELEASE_FRAME_CB)(VIDEO_FRAME_INFO_S *pstFrameInfo)</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:362</div></div>
+<div class="ttc" id="astructar_r_g_n___c_h_n___p_a_r_a___s_html"><div class="ttname"><a href="structar_r_g_n___c_h_n___p_a_r_a___s.html">arRGN_CHN_PARA_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:303</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gadb685463ccc38bd1b42f5e95985bd4ac"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gadb685463ccc38bd1b42f5e95985bd4ac">ATTACH_DEST_E</a></div><div class="ttdeci">enum arATTACH_DEST_E ATTACH_DEST_E</div></div>
+<div class="ttc" id="astructar_r_g_n___d_r_a_w___p_a_r_a___i_n___s_html"><div class="ttname"><a href="structar_r_g_n___d_r_a_w___p_a_r_a___i_n___s.html">arRGN_DRAW_PARA_IN_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:342</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y___q_p___i_n_f_o___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y___q_p___i_n_f_o___s.html">arOVERLAY_QP_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:100</div></div>
+<div class="ttc" id="aar__common_8h_html"><div class="ttname"><a href="ar__common_8h.html">ar_common.h</a></div><div class="ttdoc">描述通用的宏定义和数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7c1fca0b3b4ad873fe967e0195ebaedd"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7c1fca0b3b4ad873fe967e0195ebaedd">OVERLAY_QP_INFO_S</a></div><div class="ttdeci">struct arOVERLAY_QP_INFO_S OVERLAY_QP_INFO_S</div></div>
+<div class="ttc" id="astructar_r_g_n___d_r_a_w___i_n_f_o___o_u_t___s_html"><div class="ttname"><a href="structar_r_g_n___d_r_a_w___i_n_f_o___o_u_t___s.html">arRGN_DRAW_INFO_OUT_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:310</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y_e_x___c_o_m_m___a_t_t_r___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y_e_x___c_o_m_m___a_t_t_r___s.html">arOVERLAYEX_COMM_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:237</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga1e434fa6039d567c6a162afd9f44dca3"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga1e434fa6039d567c6a162afd9f44dca3">OVERLAYEX_CHN_ATTR_S</a></div><div class="ttdeci">struct arOVERLAYEX_CHN_ATTR_S OVERLAYEX_CHN_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaaec4f08bff3416fddacbb79bb4083232"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaaec4f08bff3416fddacbb79bb4083232">AR_MPI_FUNC_RGN_DRAW_CB</a></div><div class="ttdeci">AR_S32(* AR_MPI_FUNC_RGN_DRAW_CB)(const MPP_CHN_S *pstChn, RGN_DRAW_PARA_IN_S *pstParaIn, RGN_DRAW_PARA_OUT_S *pstParaOut)</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:357</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7360dc184d9c75060486dfd69f6fb51d"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7360dc184d9c75060486dfd69f6fb51d">MOSAIC_CHN_ATTR_S</a></div><div class="ttdeci">struct arMOSAIC_CHN_ATTR_S MOSAIC_CHN_ATTR_S</div></div>
+<div class="ttc" id="astructar_b_i_t_m_a_p___s_html"><div class="ttname"><a href="structar_b_i_t_m_a_p___s.html">arBITMAP_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:555</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga5e73b257768914f68b1903fe36af0c22"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga5e73b257768914f68b1903fe36af0c22">OVERLAY_CHN_ATTR_S</a></div><div class="ttdeci">struct arOVERLAY_CHN_ATTR_S OVERLAY_CHN_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaba8e7470e907a37a95665acf95e4d8f1"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaba8e7470e907a37a95665acf95e4d8f1">COVEREX_CHN_ATTR_S</a></div><div class="ttdeci">struct arCOVEREX_CHN_ATTR_S COVEREX_CHN_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga0ddffbf0d26516e77e58c755e44e482f"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga0ddffbf0d26516e77e58c755e44e482f">RGN_DRAW_PARA_OUT_S</a></div><div class="ttdeci">struct arRGN_DRAW_PARA_OUT_S RGN_DRAW_PARA_OUT_S</div></div>
+<div class="ttc" id="astructar_s_i_z_e___s_html"><div class="ttname"><a href="structar_s_i_z_e___s.html">arSIZE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:78</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gad1aff9142cd675966b64e7e0cdfd0f8e"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gad1aff9142cd675966b64e7e0cdfd0f8e">arRGN_AREA_TYPE_E</a></div><div class="ttdeci">arRGN_AREA_TYPE_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:169</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga8360a502f01c3c3e33cd3690dc676c69"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga8360a502f01c3c3e33cd3690dc676c69">OVERLAY_INVERT_COLOR_S</a></div><div class="ttdeci">struct arOVERLAY_INVERT_COLOR_S OVERLAY_INVERT_COLOR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaba13df475b6393e245392ac43c222312"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaba13df475b6393e245392ac43c222312">RGN_ATTR_S</a></div><div class="ttdeci">struct arRGN_ATTR_S RGN_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga40fbdf33978494e2425128480be75a0e"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga40fbdf33978494e2425128480be75a0e">COVER_CHN_ATTR_S</a></div><div class="ttdeci">struct arCOVER_CHN_ATTR_S COVER_CHN_ATTR_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga33c2277a3002f78d8d7d00095385efe1"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga33c2277a3002f78d8d7d00095385efe1">arMOSAIC_BLK_SIZE_E</a></div><div class="ttdeci">arMOSAIC_BLK_SIZE_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:219</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gab60a6b9fa0aebd106ba9b594bbb6320a"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gab60a6b9fa0aebd106ba9b594bbb6320a">RGN_DRAW_INFO_OUT_S</a></div><div class="ttdeci">struct arRGN_DRAW_INFO_OUT_S RGN_DRAW_INFO_OUT_S</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga8e5c62725969aa9444cf7f2d11809adb"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga8e5c62725969aa9444cf7f2d11809adb">RGN_ATTR_U</a></div><div class="ttdeci">union arRGN_ATTR_U RGN_ATTR_U</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga63c020607092b9d2902b3e3d07e30b28"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga63c020607092b9d2902b3e3d07e30b28">arATTACH_DEST_E</a></div><div class="ttdeci">arATTACH_DEST_E</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:117</div></div>
+<div class="ttc" id="astructar_o_v_e_r_l_a_y___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_o_v_e_r_l_a_y___c_h_n___a_t_t_r___s.html">arOVERLAY_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:140</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

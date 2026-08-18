@@ -1,0 +1,445 @@
+/*
+ * Copyright 2015 Chen-Yu Tsai <wens@csie.org>
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+#include "skeleton.dtsi"
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/thermal/thermal.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	model = "Artosyn Sirius Core";
+	compatible = "artosyn,sirius-demo";
+	#address-cells = <1>;
+	#size-cells = <1>;    
+	interrupt-parent = <&gic>;
+
+	cpus {
+		enable-method = "artosyn,sirius-demo";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu@0 {
+			compatible = "arm,cortex-a7";
+			device_type = "cpu";
+			clock-frequency = <1000000000>;
+			reg = <0>;
+		};
+		
+		cpu@1 {
+			compatible = "arm,cortex-a7";
+			device_type = "cpu";
+			clock-frequency = <1000000000>;
+			reg = <1>;
+		};
+
+		cpu@2 {
+			compatible = "arm,cortex-a7";
+			device_type = "cpu";
+			clock-frequency = <1000000000>;
+			reg = <2>;
+		};
+
+		cpu@3 {
+			compatible = "arm,cortex-a7";
+			device_type = "cpu";
+			clock-frequency = <1000000000>;
+			reg = <3>;
+		};
+	
+	};
+
+	timer {
+		compatible = "arm,armv7-timer";
+		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+		clock-frequency = <1000000000>; 
+		arm,cpu-registers-not-fw-configured;
+	};
+
+	pmu {
+		status = "disabled";
+		compatible = "arm,cortex-a7-pmu", "arm,cortex-a15-pmu";
+		interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	clocks {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		osc24M: osc24M {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <24000000>;
+		};
+
+		osc32k: clk@0 {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <32768>;
+			clock-output-names = "osc32k";
+		};	
+	};
+
+	soc {
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+	    timer@40000000 {
+	    	compatible = "snps,dw-apb-timer";
+	    	reg = <0x40000000 0xa0>;
+	    	interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+	    	clock-frequency = <300000000>; 
+	    };
+
+	    cpucfg@60610000 {
+	    	compatible = "artosyn,sirius-cpuconfig";
+	    	reg = <0x60610000 0x300>;
+	    };
+	
+	    gic: interrupt-controller@2c000000 {
+	    	compatible = "arm,cortex-a7-gic";
+	    	reg = <0x2c001000 0x1000>,
+	    	      <0x2c002000 0x1000>,
+	    	      <0x2c004000 0x2000>,
+	    	      <0x2c006000 0x2000>;
+	    	interrupt-controller;
+	    	#interrupt-cells = <3>;
+	    	interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+	    };
+        
+	    uart0: serial@40500000 {
+	    	compatible = "snps,dw-apb-uart";
+	    	reg = <0x40500000 0x400>;
+	    	interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+	    	reg-shift = <2>;
+	    	reg-io-width = <4>;
+	    	clock-frequency = <24000000>;
+	    	/*resets = <&apb2_rst 16>;*/
+	    	/*dmas = <&dma 6>, <&dma 6>;*/
+	    	/*dma-names = "rx", "tx";*/
+	    	status = "okay";
+	    };
+	
+    #if 0
+    	uart1: serial@40510000 {
+    		compatible = "snps,dw-apb-uart";
+    		reg = <0x40510000 0x400>;
+    		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
+    		reg-shift = <2>;
+    		reg-io-width = <4>;
+    		clocks = <&apb2_gates 17>;
+    		resets = <&apb2_rst 17>;
+    		dmas = <&dma 7>, <&dma 7>;
+    		dma-names = "rx", "tx";
+    		status = "disabled";
+    	};
+        
+    	uart2: serial@40520000 {
+    		compatible = "snps,dw-apb-uart";
+    		reg = <0x40510000 0x400>;
+    		interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+    		reg-shift = <2>;
+    		reg-io-width = <4>;
+    		clocks = <&apb2_gates 18>;
+    		resets = <&apb2_rst 18>;
+    		dmas = <&dma 8>, <&dma 8>;
+    		dma-names = "rx", "tx";
+    		status = "disabled";
+    	};
+        
+    	uart3: serial@40530000 {
+    		compatible = "snps,dw-apb-uart";
+    		reg = <0x40530000 0x400>;
+    		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+    		reg-shift = <2>;
+    		reg-io-width = <4>;
+    		clocks = <&apb2_gates 19>;
+    		resets = <&apb2_rst 19>;
+    		dmas = <&dma 9>, <&dma 9>;
+    		dma-names = "rx", "tx";
+    		status = "disabled";
+    	};
+    	 
+    	uart4: serial@01c29000 {
+    		compatible = "snps,dw-apb-uart";
+    		reg = <0x01c29000 0x400>;
+    		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+    		reg-shift = <2>;
+    		reg-io-width = <4>;
+    		clocks = <&apb2_gates 20>;
+    		resets = <&apb2_rst 20>;
+    		dmas = <&dma 10>, <&dma 10>;
+    		dma-names = "rx", "tx";
+    		status = "disabled";
+    	};
+        
+    	uart5: serial@01c29400 {
+    		compatible = "snps,dw-apb-uart";
+    		reg = <0x01c29400 0x400>;
+    		interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
+    		reg-shift = <2>;
+    		reg-io-width = <4>;
+    		clocks = <&apb2_gates 21>;
+    		resets = <&apb2_rst 21>;
+    		dmas = <&dma 22>, <&dma 22>;
+    		dma-names = "rx", "tx";
+    		status = "disabled";
+    	};
+        
+    	i2c0: i2c@01c2ac00 {
+    		compatible = "artosyn,sun6i-a31-i2c";
+    		reg = <0x01c2ac00 0x400>;
+    		interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&apb2_gates 0>;
+    		resets = <&apb2_rst 0>;
+    		status = "disabled";
+    		#address-cells = <1>;
+    		#size-cells = <0>;
+    	};
+        
+    	i2c1: i2c@01c2b000 {
+    		compatible = "artosyn,sun6i-a31-i2c";
+    		reg = <0x01c2b000 0x400>;
+    		interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&apb2_gates 1>;
+    		resets = <&apb2_rst 1>;
+    		status = "disabled";
+    		#address-cells = <1>;
+    		#size-cells = <0>;
+    	};
+        
+    	i2c2: i2c@01c2b400 {
+    		compatible = "artosyn,sun6i-a31-i2c";
+    		reg = <0x01c2b400 0x400>;
+    		interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&apb2_gates 2>;
+    		resets = <&apb2_rst 2>;
+    		status = "disabled";
+    		#address-cells = <1>;
+    		#size-cells = <0>;
+    	};
+        
+    	i2c3: i2c@01c2b800 {
+    		compatible = "artosyn,sun6i-a31-i2c";
+    		reg = <0x01c2b800 0x400>;
+    		interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&apb2_gates 3>;
+    		resets = <&apb2_rst 3>;
+    		status = "disabled";
+    		#address-cells = <1>;
+    		#size-cells = <0>;
+    	};
+        
+    	gmac: ethernet@01c30000 {
+    		compatible = "artosyn,sun7i-a20-gmac";
+    		reg = <0x01c30000 0x1054>;
+    		interrupts = <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>;
+    		interrupt-names = "macirq";
+    		clocks = <&ahb1_gates 17>, <&gmac_tx_clk>;
+    		clock-names = "stmmaceth", "artosyn_gmac_tx";
+    		resets = <&ahb1_rst 17>;
+    		reset-names = "stmmaceth";
+    		snps,pbl = <2>;
+    		snps,fixed-burst;
+    		snps,force_sf_dma_mode;
+    		status = "disabled";
+    		#address-cells = <1>;
+    		#size-cells = <0>;
+    	};
+        
+    	crypto: crypto-engine@01c15000 {
+    		compatible = "artosyn,sun4i-a10-crypto";
+    		reg = <0x01c15000 0x1000>;
+    		interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 5>, <&ss_clk>;
+    		clock-names = "ahb", "mod";
+    		resets = <&ahb1_rst 5>;
+    		reset-names = "ahb";
+    		status = "disabled";
+    	};
+        
+    	/*external timer*/
+    	timer@01c60000 {
+    		compatible = "artosyn,sun6i-a31-hstimer",
+    			     "artosyn,sun7i-a20-hstimer";
+    		reg = <0x01c60000 0x1000>;
+    		interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>,
+    			     <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>,
+    			     <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>,
+    			     <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 19>;
+    		resets = <&ahb1_rst 19>;
+    		status = "disabled";
+    	};
+        
+    	spi0: spi@01c68000 {
+    		compatible = "artosyn,sun6i-a31-spi";
+    		reg = <0x01c68000 0x1000>;
+    		interrupts = <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 20>, <&spi0_clk>;
+    		clock-names = "ahb", "mod";
+    		dmas = <&dma 23>, <&dma 23>;
+    		dma-names = "rx", "tx";
+    		resets = <&ahb1_rst 20>;
+    		status = "disabled";
+    	};
+        
+    	spi1: spi@01c69000 {
+    		compatible = "artosyn,sun6i-a31-spi";
+    		reg = <0x01c69000 0x1000>;
+    		interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 21>, <&spi1_clk>;
+    		clock-names = "ahb", "mod";
+    		dmas = <&dma 24>, <&dma 24>;
+    		dma-names = "rx", "tx";
+    		resets = <&ahb1_rst 21>;
+    		status = "disabled";
+    	};
+        
+    	spi2: spi@01c6a000 {
+    		compatible = "artosyn,sun6i-a31-spi";
+    		reg = <0x01c6a000 0x1000>;
+    		interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 22>, <&spi2_clk>;
+    		clock-names = "ahb", "mod";
+    		dmas = <&dma 25>, <&dma 25>;
+    		dma-names = "rx", "tx";
+    		resets = <&ahb1_rst 22>;
+    		status = "disabled";
+    	};
+        
+    	spi3: spi@01c6b000 {
+    		compatible = "artosyn,sun6i-a31-spi";
+    		reg = <0x01c6b000 0x1000>;
+    		interrupts = <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>;
+    		clocks = <&ahb1_gates 23>, <&spi3_clk>;
+    		clock-names = "ahb", "mod";
+    		dmas = <&dma 26>, <&dma 26>;
+    		dma-names = "rx", "tx";
+    		resets = <&ahb1_rst 23>;
+    		status = "disabled";
+    	};
+    
+    	rtc: rtc@01f00000 {
+    		compatible = "artosyn,sun6i-a31-rtc";
+    		reg = <0x01f00000 0x54>;
+    		interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
+    			     <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+    		status = "disabled";
+    	};
+    
+    	nmi_intc: interrupt-controller@01f00c0c {
+    		compatible = "artosyn,sun6i-a31-sc-nmi";
+    		interrupt-controller;
+    		#interrupt-cells = <2>;
+    		reg = <0x01f00c0c 0x38>;
+    		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+    		status = "disabled";
+    	};
+    
+    	prcm@01f01400 {
+    		compatible = "artosyn,sun6i-a31-prcm";
+    		reg = <0x01f01400 0x200>;
+    		status = "disabled";
+    		
+    		ar100: ar100_clk {
+    			compatible = "artosyn,sun6i-a31-ar100-clk";
+    			#clock-cells = <0>;
+    			clocks = <&osc32k>, <&osc24M>, <&pll6 0>,
+    				 <&pll6 0>;
+    			clock-output-names = "ar100";
+    		};
+    
+    		ahb0: ahb0_clk {
+    			compatible = "fixed-factor-clock";
+    			#clock-cells = <0>;
+    			clock-div = <1>;
+    			clock-mult = <1>;
+    			clocks = <&ar100>;
+    			clock-output-names = "ahb0";
+    		};
+    
+    		apb0: apb0_clk {
+    			compatible = "artosyn,sun6i-a31-apb0-clk";
+    			#clock-cells = <0>;
+    			clocks = <&ahb0>;
+    			clock-output-names = "apb0";
+    		};
+    
+    		apb0_gates: apb0_gates_clk {
+    			compatible = "artosyn,sun6i-a31-apb0-gates-clk";
+    			#clock-cells = <1>;
+    			clocks = <&apb0>;
+    			clock-output-names = "apb0_pio", "apb0_ir",
+    					"apb0_timer", "apb0_p2wi",
+    					"apb0_uart", "apb0_1wire",
+    					"apb0_i2c";
+    		};
+    
+    		ir_clk: ir_clk {
+    			#clock-cells = <0>;
+    			compatible = "artosyn,sun4i-a10-mod0-clk";
+    			clocks = <&osc32k>, <&osc24M>;
+    			clock-output-names = "ir";
+    		};
+    
+    		apb0_rst: apb0_rst {
+    			compatible = "artosyn,sun6i-a31-clock-reset";
+    			#reset-cells = <1>;
+    		};
+    	};
+    #endif
+	
+	}; /*End of soc node*/
+
+	
+	
+}; /*End of root node*/
+

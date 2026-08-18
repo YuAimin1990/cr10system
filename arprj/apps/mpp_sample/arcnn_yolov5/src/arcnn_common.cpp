@@ -1,0 +1,156 @@
+//Common APIs
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <pthread.h>
+#include <math.h>
+#include <ctype.h>
+#include "mpi_npu_api.h"
+#include "hal_sys.h"
+#include "arcnn_common.h"
+#include "arcnn_yolov5.h"
+
+AR_S32 CmpImageAndTensorName(AR_CHAR * pchFileName, AR_CHAR * pchTensorName)
+{
+	AR_CHAR * pchExt = NULL;
+	AR_CHAR * pchPre = NULL;
+	//AR_CHAR * pchTmp = NULL;
+	AR_S32 s32Ret = 0;
+	AR_CHAR fileExt[32] = {0};
+
+	if(!pchFileName)
+	{
+		s32Ret = INVALID_IMG_FILE;
+		return s32Ret;
+	}
+
+	//ignore "." ".." and any non-image files
+	if(strcmp(pchFileName, ".") == 0 || strcmp(pchFileName, "..") == 0)
+	{
+		s32Ret = INVALID_IMG_FILE;
+		return s32Ret;
+	}
+	pchExt = strrchr(pchFileName, '.');
+	if(!pchExt || pchExt == pchFileName)
+	{
+	 	s32Ret = INVALID_IMG_FILE;
+	 	return s32Ret;
+	}
+
+	pchPre = strrchr(pchFileName, '/');
+	if(!pchPre)
+	{
+	 	s32Ret = INVALID_IMG_FILE;
+	 	return s32Ret;
+	}
+
+	strncpy(fileExt, pchPre + 1, strlen(pchPre) - strlen(pchExt) -1);
+
+	//printf("%s\n",fileExt);
+
+	if(strcmp(fileExt, pchTensorName))
+	{
+	    	s32Ret = INVALID_IMG_FILE;
+	 	return s32Ret;
+	}
+
+	return s32Ret;
+}
+
+
+AR_S32 GetImageFileType(AR_CHAR * pchFileName)
+{
+    AR_CHAR * pchExt = NULL;
+    AR_CHAR * pchTmp = NULL;
+    AR_S32 s32Ret = 0;
+    AR_CHAR fileExt[16] = {0};
+
+    if(!pchFileName)
+    {
+        s32Ret = INVALID_IMG_FILE;
+        return s32Ret;
+    }
+
+    //ignore "." ".." and any non-image files
+    if(strcmp(pchFileName, ".") == 0 || strcmp(pchFileName, "..") == 0)
+    {
+        s32Ret = INVALID_IMG_FILE;
+        return s32Ret;
+    }
+
+    pchExt = strrchr(pchFileName, '.');
+    if(!pchExt || pchExt == pchFileName)
+    {
+        s32Ret = INVALID_IMG_FILE;
+        return s32Ret;
+    }
+
+    //convert to lowercase
+    strcpy(fileExt, pchExt);
+    pchTmp = fileExt;
+    for(; *pchTmp; ++pchTmp) *pchTmp = tolower(*pchTmp); 
+    if(strcmp(fileExt, ".jpg") == 0 || strcmp(fileExt, ".bmp") == 0
+        || strcmp(fileExt, ".png") == 0 || strcmp(fileExt, ".jpeg") == 0)
+    {
+        s32Ret = JPG_BMP_PNG_IMG_FILE;
+    }
+	else if(strcmp(fileExt, ".yuv420p") == 0)
+    {
+        s32Ret = YUV420P_FILE;
+    }
+	else if(strcmp(fileExt, ".nv12") == 0)
+    {
+        s32Ret = NV12_RAW_DATA_FILE;
+    }
+    else if(strcmp(fileExt, ".nv21") == 0)
+    {
+        s32Ret = NV21_RAW_DATA_FILE;
+    }
+    else
+    {
+        s32Ret = INVALID_IMG_FILE;
+    }
+
+    //Need to add RGBD or RGB interleave format later..
+
+    return s32Ret;
+}
+
+void GetImageSize(string filename, AR_S32 *imgw, AR_S32 *imgh)
+{
+	int strlen = filename.size();
+	const char *strptr = filename.data();
+	char widthstr[32] = {0};
+	char heightstr[32] = {0};
+	bool InFlag = false;
+	int hid = 0, wid = 0;
+	for(int i = 0; i < strlen; i++)
+	{
+		if(strptr[i] == 'x'){
+			InFlag = true;
+			continue;
+		}
+		else{
+			if(InFlag){
+				if((strptr[i] == '_') || strptr[i] == '-' || strptr[i] == '.')
+					break;
+				else{
+					heightstr[hid] = strptr[i];
+					hid++;
+				}
+			}
+			else{
+				widthstr[wid] = strptr[i];
+				wid++;
+			}
+		}
+	}
+	*imgw = atoi(widthstr);
+	*imgh = atoi(heightstr);
+}
+
+

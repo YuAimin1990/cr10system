@@ -1,0 +1,71 @@
+/*-----------------------------------------------------------------------
+//
+// Copyright 2014 - 2017 Synopsys, Inc.
+//
+// This Synopsys software and all associated documentation
+// are proprietary to Synopsys, Inc. and may only be used pursuant to the
+// terms and conditions of a written license agreement with Synopsys,
+// Inc. All other use, reproduction, modification, or distribution of the
+// Synopsys software or the associated documentation
+// is strictly prohibited.
+//
+//-----------------------------------------------------------------------
+
+Current version numbers:
+                                  Image           Minimum Host
+Synopsys Product             Version Number    Library Version
+DWC_TROOT_C3_Firmware             0005                1.05 GA00
+EPN-A001                          0003                V 0003
+
+=========================================================================
+
+Release Notes:
+V0005 --- AUG 2017 - 1.05a_ga00
+- Added Mode 2 Copy and Encryption options.
+- Encryption will verify and then decrypt in 2 separate actions.
+  Note:  Destination memory for the decrypted image must be in trusted
+  memory to ensure secure operation of the SecureBoot process.
+- Memory limitation for virtual internal addressing.
+  See troot_base_config.cfg [SPACC_INTERNAL_MEMORY_ADDRESS]
+- troot_sboot.cfg will have a hex address instead of a decimal address.
+- SecureStore GPI to allow enabling and disabling of the SecureStore
+  application.
+- SecureStore header encryption and decryption modifications.  Note:
+  Decryption is backwards compatible.  SecureStore verifies and then verifies
+  and decrypts.  This update prevents a security vulnerability.
+
+
+V0004 --- JUN 2017 - 1.04a_ga00
+- Product Name/Number change
+- Added Mode 2 Certification operation.
+- Added AES ciphers
+- sbtool renamed as keytool
+- troot_sb.cfg renamed as troot_sboot.cfg
+- read_err_stat tool used to read the ERR_STAT and OOB_STAT values.
+- troot_sap_certificate_tool creates the mode 2 certificates.
+- troot_exception_viewer_interface decodes the exception binary information.
+- UART logging firmware version not supported in this release.
+- fixed second validation successful using GPI start (star:9001163423)
+- troot_config_base_interface usage is updated (star:9001136723)
+Limitations:
+- Copy of the image not available.
+- Decryption of the image not available.
+
+V0003 --- Dec 02, 2015
+- 32 bit external addresses for HLC_SB_Start, HLC_SB_UpdateAddress.
+- Added certification
+
+V0001 --- Mar 31, 2015
+- first release
+
+V0001.0000 --- Mar 2, 2015
+- Beta Release.
+
+V0.1.0.0 --- Jan 28, 2015
+- Alpha Release.
+
+
+
+
+
+

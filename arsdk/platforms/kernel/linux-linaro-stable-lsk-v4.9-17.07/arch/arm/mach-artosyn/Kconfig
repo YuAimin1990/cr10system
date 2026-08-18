@@ -1,0 +1,20 @@
+menuconfig ARCH_ARTOSYN
+	bool "Artosyn SoCs"  # if ARCH_MULTI_V7
+	select ARCH_REQUIRE_GPIOLIB
+	select ARCH_HAS_RESET_CONTROLLER
+	select CLKSRC_MMIO
+	select GENERIC_IRQ_CHIP
+	select PINCTRL
+	select RESET_CONTROLLER
+	select INLINE_SPIN_UNLOCK_IRQ
+if ARCH_ARTOSYN
+
+config MACH_SIRIUS
+	bool "Artosyn Sirius SoCs support"
+	default ARCH_ARTOSYN
+	select ARM_GIC
+	select DW_APB_TIMER_OF
+
+config SIRIUS_FPGA_SIMULATION
+	bool "Select if you are running on a FPGA platform"
+endif

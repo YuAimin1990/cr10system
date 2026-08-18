@@ -1,0 +1,9 @@
+{
+	"user_0":	{
+		"enable":	1,
+		"userName":	"admin",
+		"password":	"admin",
+		"userRight":	2,
+		"sid":	-1
+	}
+}

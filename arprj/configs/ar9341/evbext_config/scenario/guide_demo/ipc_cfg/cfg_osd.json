@@ -1,0 +1,450 @@
+{
+	"channel_0":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH0-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH0-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH0-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH0-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_1":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH1-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH1-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH1-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH1-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_2":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH2-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH2-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH2-2",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH2-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_3":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH3-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH3-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH3-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH3-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_4":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH4-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH4-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH4-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH4-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_5":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH5-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH5-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH5-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH5-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_6":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH6-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH6-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH6-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH6-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	},
+	"channel_7":	{
+		"stream_0":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH7-0",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_1":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	1,
+			"osdChannelName_text":	"CH7-1",
+			"osdDatetime_enable":	1,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_2":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH7-2",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	0,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_3":	{
+			"x":	0,
+			"y":	0,
+			"osdChannelName_enable":	0,
+			"osdChannelName_text":	"CH7-3",
+			"osdDatetime_enable":	0,
+			"osdDatetime_dateFormat":	0,
+			"osdDatetime_dateSprtr":	0,
+			"osdDatetime_timeFmt":	0,
+			"osdDatetime_displayWeek":	1,
+			"attached_to":	"vpss",
+			"alg_osd_enable":	0
+		},
+		"stream_4":	{
+		}
+	}
+}

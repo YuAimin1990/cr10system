@@ -1,0 +1,31 @@
+
+#include "thread_synchronization.h"
+#include "uart.h"
+#include <string.h>
+#include <vec-c.h>
+
+
+lock_t * spinlock_initialization()
+{
+	lock_t * lock = NULL;
+
+	lock = (lock_t * )malloc(sizeof(lock_t));
+	debug_print("lock:%x\r\n", lock);
+	memset((void *)lock, 0x0, sizeof(lock_t));
+
+	return lock;
+}
+
+void spinlock_initialization_static(lock_t * lock)
+{
+	memset((void *)lock, 0x0, sizeof(lock_t));
+	return;
+}
+
+int spinlock_destory(lock_t * lock)
+{
+	free(lock);
+	return SYNCHRONIZATION_SUCCEED;
+}
+
+

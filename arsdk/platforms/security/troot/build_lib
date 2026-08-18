@@ -1,0 +1,357 @@
+#-----------------------------------------------------------------------
+#
+# Copyright 2014 - 2017 Synopsys, Inc.
+#
+# This Synopsys software and all associated documentation
+# are proprietary to Synopsys, Inc. and may only be used pursuant to the
+# terms and conditions of a written license agreement with Synopsys,
+# Inc. All other use, reproduction, modification, or distribution of the
+# Synopsys software or the associated documentation
+# is strictly prohibited.
+#
+#-----------------------------------------------------------------------
+########################
+# Common Services Library - DO NOT MODIFY
+# The methods below are for internal tool support and will wrap future changes
+########################
+
+
+########################
+# Init support
+########################
+
+function abspath
+{
+    # Description
+    #    Provides bash compatible way to resolve relative paths
+    # Input:
+    #    $1     path string that may need resolve to abspath
+    #    $2     1 to create if not exists; 0 to abort on not exist
+    # Output:
+    #   echos $1 resolved to absolute path on stdout
+    #   returns 0 on success
+
+    if [[ -d "$1" ]]
+    then
+        pushd "$1" >/dev/null
+        pwd
+        popd >/dev/null
+    elif [[ -e $1 ]]
+    then
+        pushd "$(dirname "$1")" >/dev/null
+        echo "$(pwd)/$(basename "$1")"
+        popd >/dev/null
+    else
+        if [[ $2 == 1 ]]; then
+            mkdir -p "$1"
+            abspath "$1"
+        else
+            echo "$1" does not exist! >&2
+            return 127
+        fi
+    fi
+}
+
+print_caller() {
+  local frame=0
+  while caller $frame; do
+    ((frame++));
+  done
+  echo "$*"
+}
+
+########################
+# Cert Support
+########################
+function PKG_EXPORT_CERTS()
+{
+    # Description:
+    #   Method to export all found source path certs into destination path
+    #   Intermediate step for chain processing.  Extracts pub from x509
+    #   and links pk8 priv if available
+    #
+    # Inputs:
+    #   $1                      source path of certs (full path)
+    #   $2                      destination path for export (full path)
+    # Outputs:
+    #   files created in destination path for each found .cert:
+    #       .pub                extracted public key
+    #       .pk8                symlink to source pk8 if exists
+    #   returns: 0 on success
+    local src_path=$(abspath $1)
+    local dest_path=$(abspath $2)
+
+    local files=${src_path}/*.cert
+
+    cd ${dest_path}
+    for f in ${files}
+    do
+        local f_base=$(basename ${f} .cert)
+
+        echo "Exporting ${f_base}.cert public key to ${f_base}.pub..."
+        ${PKG_PATH_TOOLS}/keytool export ${src_path}/${f_base} ./${f_base}.pub
+
+        # pk8 present? symlink it into dest
+        if [[ -e "${src_path}/${f_base}.pk8" ]]; then
+            echo "Symlinking ${f_base}.pk8 private key..."
+            ln -sf "${src_path}/${f_base}.pk8" ./
+        fi
+    done
+    cd - > /dev/null
+
+    return 0
+}
+
+function PKG_SAAP_XPORTS()
+{
+    # Description:
+    #   Method to synopsys xport all found .pub and .pk8 into saap format
+    #   Intermediate step for chain processing.
+    #
+    # Inputs:
+    #   none
+    # Outputs:
+    #   files created in current path for each found .pub:
+    #       .pub.bin            synopsys format public key
+    #       .pub.bin.le         synopsys format public key (little endian)
+    #       .priv.bin           synopsys format private key (if .pk8 found)
+    #   returns: 0 on success
+    local src_path=$(pwd)
+    local files=${src_path}/*.pub
+
+    for f in ${files}
+    do
+        local f_base=$(basename ${f} .pub)
+        local cert_priv_pwd=""
+
+        echo "SAAP XPORT ${f_base}.pub/pk8..."
+
+        # pk8 also exists for this cert basename ?
+        if [[ -e "${src_path}/${f_base}.pk8" ]]; then
+            # export pub and pk8
+            cert_priv_pwd=$(PKG_LOOKUP_PK8_PRIV_PWD ${f_base})
+            ${PKG_PATH_TOOLS}/troot_sap_certificate_tool -g xPORT \
+                -d ${src_path}/${f_base}.cfg -b ${f_base} -p ${cert_priv_pwd}
+        else
+            # export only pub
+            ${PKG_PATH_TOOLS}/troot_sap_certificate_tool -g xPORT \
+                -d ${src_path}/${f_base}.cfg -b ${f_base}
+        fi
+    done
+
+    return 0
+}
+
+function PKG_SAAP_XCERT()
+{
+    # Description:
+    #   Method to create synopsys saap cert
+    #   Intermediate step for chain processing.
+    #
+    # Inputs:
+    #   $1                      cert basename to create
+    #   $2                      optional signing cert basename
+    #   $3                      optional custom data file injected into cert (full path)
+    #   $4                      optional cert type: required for leaf
+    # Outputs:
+    #   files created in current path:
+    #       $1.bin              synopsys saap cert
+    #   returns: 0 on success
+
+    local cert_basename=$1
+    local signing_cert_basename=$2
+    local custom_data_file=$3
+    local cert_type=$4
+    local src_path=$(pwd)
+    local cmd_opt=""
+
+    if [[ -n ${signing_cert_basename} ]]; then
+         cmd_opt="${cmd_opt} -s ${signing_cert_basename}"
+    fi
+
+    if [[ -n ${custom_data_file} ]]; then
+         cmd_opt="${cmd_opt} -u ${custom_data_file}"
+    fi
+
+    if [[ -n ${cert_type} ]]; then
+        cmd_opt="${cmd_opt} -t ${cert_type}"
+    fi
+
+    # create cert with provisioned signature block and/or custom data
+    ${PKG_PATH_TOOLS}/troot_sap_certificate_tool -g xCERT \
+           -d ${src_path}/${cert_basename}.cfg -b ${cert_basename} ${cmd_opt}
+
+    if [[ -n ${signing_cert_basename} ]]; then
+        # get signinature of saap cert
+        PKG_SIGN_BIN    ${cert_basename}.bin    ${signing_cert_basename}
+
+        # attach to saap cert
+        cat ${cert_basename}.bin ${cert_basename}.bin.sig > tmp.bin
+        # and replace cert with the cert+sig version
+        mv tmp.bin ${cert_basename}.bin
+    fi
+
+    return 0
+}
+
+
+########################
+# Secure Boot Support
+########################
+
+function PKG_SB_TOOL()
+{
+    # Description:
+    #   Method to bind secureboot cert chain to the image
+    #   Intermediate step for chain processing.
+    #
+    # Inputs:
+    #   $1                      secure boot phase (0, 1, 2)
+    #   $2                      root certificate basename
+    #   $3                      secureboot config to be updated (full path)
+    #   $4                      secure boot mode
+    #   $5                      Image File
+    #   $6                      Image Key for encryption
+    #   $7                      Image Iv  for encryption
+    #   $8                      Header IV
+    # Outputs:
+    #   files created in current path:
+    #       M2_hdr.bin          secureboot header to bind with entity
+    #       $3                  an updated secureboot config of same name
+    #   returns: 0 on success
+
+    local sb_phase=$1
+    local cert_root_basename=$2
+    local sb_cfg=$3
+    local sb_cfg_output=./$(basename ${sb_cfg})
+    local sb_mode=$4
+    local image_file_path=$5
+    local image_key_path=$6
+    local image_iv_path=$7
+    local header_iv_path=$8
+
+    # fetch phase parameters by expansion and eval
+    eval local image_size=$(stat -c%s "$image_file_path")
+    eval local image_src_addr='$PKG_SB_PHASE'"${sb_phase}"'_IMAGE_SRC_ADDRESS'
+    eval local image_dest_addr='$PKG_SB_PHASE'"${sb_phase}"'_IMAGE_DEST_ADDRESS'
+    eval local certchain_addr='$PKG_SB_PHASE'"${sb_phase}"'_CERTCHAIN_ADDRESS'
+    local image_file_basename=$(basename ${image_file_path})
+    if [[ ${image_key_path} == "" ]]; then
+       ${PKG_PATH_TOOLS}/troot_sb_tool -m ${sb_mode} -a ${image_src_addr} -f ${image_size} -c ${sb_cfg} \
+           -s ${image_file_basename}.sig -k ${cert_root_basename}.pub -b MX_hdr.bin \
+           -o ${sb_cfg_output}_tmp -D 123456 -l ${certchain_addr} -d ${image_dest_addr}
+    else
+       ${PKG_PATH_TOOLS}/troot_sb_tool -m ${sb_mode} -a ${image_src_addr} -f ${image_size} -c ${sb_cfg} \
+           -s ${image_file_basename}.sig -k ${cert_root_basename}.pub -b MX_hdr.bin \
+           -o ${sb_cfg_output}_tmp -D 123456 -l ${certchain_addr} -d ${image_dest_addr} \
+           -K ${image_key_path} -V ${image_iv_path} -v ${header_iv_path}
+    fi
+
+    mv ${sb_cfg_output}_tmp ${sb_cfg_output}
+
+    return 0
+}
+
+function PKG_SB_SAAP_XCHAIN()
+{
+    # Description:
+    #   Method to build secureboot certificate chain
+    #   Completion step for chain processing.
+    #
+    # Inputs:
+    #   $1                      secure boot phase (0, 1, 2)
+    #   $2                      root certificate basename
+    #   $3                      entity certificate basename
+    # Outputs:
+    #   files created in current path:
+    #       $3_certs.img        secureboot certificate chain for specified phase
+    #   returns: 0 on success
+
+    local sb_phase=$1
+    local root_cert_basename=$2
+    local entity_cert_basename=$3
+    local src_path=$(pwd)
+    local s_opt=""
+    local sub_cert=""
+
+    # build -s options for which sub certs to include in chain
+    for ((i=0;i<=sb_phase;i++))
+    do
+        eval sub_cert='$PKG_SB_CERT_S'"${i}"'_BASENAME'
+        s_opt="${s_opt} -s ${sub_cert}"
+    done
+
+    ${PKG_PATH_TOOLS}/troot_sap_certificate_tool \
+        -g xCHAIN \
+        -d ${src_path}/${entity_cert_basename}.cfg \
+        -b ${entity_cert_basename} \
+        -e ${entity_cert_basename} \
+        -r ${root_cert_basename} \
+        -n "$((sb_phase+1))-1" \
+        ${s_opt}
+
+    return 0
+}
+
+########################
+# Secure Debug Support
+########################
+
+function PKG_SD_CERTCHAIN_FW_IMAGE()
+{
+    # Description:
+    #   Method to build FW securedebug certificate chain
+    #   Completion step for chain processing.
+    #
+    # Inputs:
+    #   $1                      certchain basename
+    # Outputs:
+    #   files created in current path:
+    #       $1_signers.le       securedebug sub cert chain
+    #       $1_appcert.le       encrypted leaf and private key
+    #   returns: 0 on success
+
+    local certchain_basename=$1
+    local src_path=$(pwd)
+
+    ${PKG_PATH_TOOLS}/troot_esm_certificate_tool \
+        -c ${PKG_PATH_CONFIGS}/certificate.crt \
+        -l ${PKG_PATH_CONFIGS}/licensekey.lic \
+        -d ${PKG_PATH_CONFIGS}/${PKG_TROOT_SAM_CFG} \
+        -b ${certchain_basename} \
+        -k ${PKG_SD_CERT_RK_BASENAME}.pub.bin \
+        -r ${PKG_SD_CERT_ROOT_BASENAME} \
+        -n 1-1 \
+        -s ${PKG_SD_CERT_S0_BASENAME} \
+        -e ${PKG_SD_CERT_E0_BASENAME}
+
+    return 0
+}
+
+function PKG_SD_CERTCHAIN_CLIENT_IMAGE()
+{
+    # Description:
+    #   Method to build client securedebug certificate chain
+    #   Completion step for chain processing.
+    #
+    # Inputs:
+    #   $1                      certchain basename
+    # Outputs:
+    #   files created in current path:
+    #       $1_certs.img
+    #   returns: 0 on success
+
+    local certchain_basename=$1
+    local src_path=$(pwd)
+
+    ${PKG_PATH_TOOLS}/troot_sap_certificate_tool \
+        -g xCHAIN \
+        -d ${src_path}/${PKG_SD_CERT_E0_BASENAME}.cfg \
+        -b ${certchain_basename} \
+        -e ${PKG_SD_CERT_E0_BASENAME} \
+        -r ${PKG_SD_CERT_ROOT_BASENAME} \
+        -n "1-1" \
+        -s ${PKG_SD_CERT_S0_BASENAME}
+
+    return 0
+}

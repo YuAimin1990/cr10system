@@ -1,0 +1,297 @@
+/*
+ * Copyright 2015 Artosyn Co., Ltd.
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+#include "../../common/artosyn-kernel.dtsi"
+/*#include "artosyn-memory.dtsi" */
+
+/delete-node/ &icc_artosyn;
+/delete-node/ &cpu2;
+/delete-node/ &cpu3;
+
+&pmu0 {
+	interrupts =    <GIC_SPI 9  IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-affinity =    <&cpu0>,
+				<&cpu1>;
+};
+
+&uart0 {
+	status = "okay";
+};
+
+&dw_ceva_dmac {
+	status = "disabled";
+};
+
+&can0 {
+	status = "disabled";
+};
+
+&can1 {
+	status = "disabled";
+};
+
+&can2 {
+	status = "disabled";
+};
+
+&can3 {
+	status = "disabled";
+};
+
+&vbus_regulator0 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg0_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portb1 5 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&vbus_regulator1 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg1_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portb1 6 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&vbus_regulator2 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg2_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portb1 7 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&usb_otg0 {
+	dr_mode = "peripheral";
+	vbus-supply = <&vbus_regulator0>;
+	status = "okay";
+};
+
+&usb_otg1 {
+	dr_mode = "host";
+	vbus-supply = <&vbus_regulator1>;
+	status = "okay";
+};
+
+&usb_otg2 {
+	dr_mode = "host";
+	vbus-supply = <&vbus_regulator2>;
+	status = "okay";
+};
+
+&wdt0 {
+	status = "okay";
+};
+
+&sec_wdt {
+    status = "okay";
+};
+
+&rtc0 {
+	status = "okay";
+};
+
+&pwm0 {
+	status = "okay";
+};
+
+&pwm1 {
+	status = "okay";
+};
+
+&tzc {
+	status = "disabled";
+};
+
+&i2c0 {
+	status = "okay";
+	rtc@68 {
+		status = "okay";
+		compatible = "ds1307";
+		reg = <0x68>;
+	};
+
+	pmic0: da9062@58 {
+		status = "disabled";
+		compatible = "dlg,da9062";
+		reg = <0x58>;
+		interrupt-parent = <&porta2>;
+		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
+		interrupt-controller;
+		//gpios = <&portc1 6 GPIO_ACTIVE_LOW>;
+
+		rtc {
+			compatible = "dlg,da9062-rtc";
+		};
+
+		watchdog {
+			compatible = "dlg,da9062-watchdog";
+		};
+
+		thermal {
+			compatible = "dlg,da9062-thermal";
+			polling-delay-passive = <3000>;
+		};
+
+		regulators {
+			DA9062_BUCK1: buck1 {
+				regulator-name = "BUCK1";
+				regulator-min-microvolt = <300000>;
+				regulator-max-microvolt = <1570000>;
+				regulator-min-microamp = <500000>;
+				regulator-max-microamp = <2000000>;
+				regulator-boot-on;
+			};
+			DA9062_BUCK2: buck2 {
+				regulator-name = "BUCK2";
+				regulator-min-microvolt = <300000>;
+				regulator-max-microvolt = <1570000>;
+				regulator-min-microamp = <500000>;
+				regulator-max-microamp = <2000000>;
+				regulator-boot-on;
+			};
+			DA9062_LDO3: ldo3 {
+				regulator-name = "LDO_3";
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-boot-on;
+			};
+			DA9062_LDO4: ldo4 {
+				regulator-name = "LDO_4";
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-boot-on;
+			};
+		};
+	};
+};
+
+
+&i2c1 {
+	status = "okay";
+};
+
+&i2c2 {
+	status = "okay";
+};
+
+&i2c3 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+};
+
+&emmc {
+//	/delete-property/voltage-ranges;
+//	/delete-property/no-1-8-v;
+	/delete-property/full-pwr-cycle;
+//	vqmmc-supply = <&DA9062_LDO4>;
+//	mmc-hs200-1_8v;
+	status = "okay";
+};
+
+&sdmmc {
+	clock-frequency = <100000000>;
+	clock-freq-min-max = <400000 100000000>;
+	//vqmmc-supply = <&DA9062_LDO3>;
+	/delete-property/sd-uhs-sdr12;
+	/delete-property/sd-uhs-sdr25;
+	/delete-property/sd-uhs-sdr50;
+	/delete-property/sd-uhs-sdr104;
+	status = "okay";
+};
+
+&mdio {
+	status = "okay";
+
+	phy0: ethernet-phy@1 {
+		status = "okay";
+	};
+};
+
+&gmac {
+	mac-address = [00 00 01 02 03 04]; /*This should not be here if uboot has set mac already*/
+	phy-mode = "rmii";
+	phy-handle = <&phy0>;
+	tzc-handle = <&tzc>;
+	tx-fifo-depth = <3>;
+	tx-fifo-depth-1000 = <2>;
+	tx-bd-num = <64>; /*total 128 bds, rx-bd-num = 128 - tx-bd-num*/
+	tx-enhance;
+	rx-enhance;
+	status = "okay";
+};
+
+&qspi {
+	clock-frequency = <150000000>;
+	dma-channel = <0>;
+	timing-cfg = <0>;
+	status = "okay";
+
+	flash@0 {
+		compatible = "jedec,spi-nor";
+		reg = <SPI_NOR_CS0>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@1 {
+		compatible = "spi-nand";
+		reg = <SPI_NAND_CS0>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@2 {
+		compatible = "jedec,spi-nor";
+		reg = <SPI_NOR_CS1>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@3 {
+		compatible = "spi-nand";
+		reg = <SPI_NAND_CS1>;
+		spi-max-frequency = <150000000>;
+	};
+};

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 5 resources" deleteContents="true" description="Delete 5 resources" element1="/ArICC" element2="/ArPrint" element3="/cJSON" element4="/CSL" element5="/SysCom" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1677740568651"/>
+</session>

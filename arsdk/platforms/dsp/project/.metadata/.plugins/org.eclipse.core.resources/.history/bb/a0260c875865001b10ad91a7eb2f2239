@@ -1,0 +1,16 @@
+
+#ifndef _MEMORY_ATTRIBUTION_H_
+#define _MEMORY_ATTRIBUTION_H_
+
+#include "RegisterAddr.h"
+#include "RegisterContent.h"
+
+
+
+extern int xConfigRegionCacheable(unsigned int addr, unsigned int region_index);
+extern unsigned int xGetRegionStartAddr(const unsigned int region_index);
+extern int xConfigRegionNonCacheable(unsigned int addr, unsigned int region_index);
+extern int xConfigRegionProgramCacheable(unsigned int addr, unsigned int region_index);
+
+#endif // _MEMORY_ATTRIBUTION_H_
+

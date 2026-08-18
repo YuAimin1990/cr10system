@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.ceva.common.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.tcf.debug.ui.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.toolchain.elf.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.utility.optassistant.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.utility.profiler.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.utility.scripting.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.utility.tcsmanager.feature:18.0.0.202001221551"/>
+		<item value="com.ceva.utility.xtend.feature:18.0.0.202001221551"/>
+		<item value="org.eclipse.cdt.build.crossgcc:9.4.3.201802261533"/>
+		<item value="org.eclipse.cdt.gdb:9.4.3.201802261533"/>
+		<item value="org.eclipse.cdt.launch.remote:9.4.3.201802261533"/>
+		<item value="org.eclipse.cdt:9.4.3.201802261533"/>
+		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
+		<item value="org.eclipse.ease.feature:0.8.0.I201908201446"/>
+		<item value="org.eclipse.ease.lang.jvm.feature:0.8.0.I201908141044"/>
+		<item value="org.eclipse.ease.lang.python.feature:0.8.0.I201908141044"/>
+		<item value="org.eclipse.ease.python.jython.feature:0.8.0.I201908201446"/>
+		<item value="org.eclipse.emf.common:2.16.0.v20190625-1131"/>
+		<item value="org.eclipse.emf.ecore:2.19.0.v20190822-1451"/>
+		<item value="org.eclipse.epp.mpc:1.6.4.v20180214-1810"/>
+		<item value="org.eclipse.help:2.2.104.v20180330-0640"/>
+		<item value="org.eclipse.oomph.p2:1.8.0.v20170410-0909"/>
+		<item value="org.eclipse.oomph.setup.core:1.8.0.v20170531-0903"/>
+		<item value="org.eclipse.oomph.setup:1.8.0.v20170531-0903"/>
+		<item value="org.eclipse.platform:4.7.3.v20180330-0640"/>
+		<item value="org.eclipse.rcp:4.7.3.v20180330-0640"/>
+		<item value="org.eclipse.userstorage:1.1.0.v20170526-1605"/>
+		<item value="org.eclipse.zest:1.7.0.201606061308"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

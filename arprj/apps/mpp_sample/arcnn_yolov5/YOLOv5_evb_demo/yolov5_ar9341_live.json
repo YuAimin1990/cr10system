@@ -1,0 +1,25 @@
+{
+	"network":	{
+		"id":"123",
+		"priority":"normal",
+		"callback_to_arm":"yes",
+		"npubin":"./YOLOv5s-sim-opt2_ar9341.npubin",
+		"ifc-pre-process":"yes",
+		"mode":"live",
+		"devname":"/dev/video_yuv-0",
+		"local_path":"./imgResizePad",
+		"draw_osd":"yes",
+		"vpss_grp":"1",
+		"vpss_chn":"2",
+		"log_level":"5",
+		"sram_addr":"0x017c0000",
+		"sram_size":"0x00000",
+		"input_width":"640",
+		"input_height":"640",
+		"img_width":"640",
+		"img_height":"640",
+		"conf_thr":"0.5",
+		"nms_thr":"0.3",
+		"rslt_path":"./rslts"
+	}
+}

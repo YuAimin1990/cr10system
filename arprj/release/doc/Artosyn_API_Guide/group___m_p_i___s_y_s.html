@@ -1,0 +1,1287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: MPI_SYS</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">MPI_SYS</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>系统控制根据芯片特性，完成硬件各个部件的复位、基本初始化工作，同时负责完成系统 各个业务模块的初始化、去初始化以及管理系统各个业务模块的工作状态、提供当前系统的版本信 息、提供大块物理内存管理等功能。  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gae00d69e0e3d051cefc6c9a185c1f68e8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gae00d69e0e3d051cefc6c9a185c1f68e8">AR_MPI_SYS_Init</a> (AR_VOID)</td></tr>
+<tr class="memdesc:gae00d69e0e3d051cefc6c9a185c1f68e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区域、视频处理、图形处理等模块都会被初始化.  <a href="group___m_p_i___s_y_s.html#gae00d69e0e3d051cefc6c9a185c1f68e8">更多...</a><br /></td></tr>
+<tr class="separator:gae00d69e0e3d051cefc6c9a185c1f68e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d14a42e961f91ac37e0221347c307db"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga4d14a42e961f91ac37e0221347c307db">AR_MPI_SYS_Exit</a> (AR_VOID)</td></tr>
+<tr class="memdesc:ga4d14a42e961f91ac37e0221347c307db"><td class="mdescLeft">&#160;</td><td class="mdescRight">去初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区 域、视频处理、图形处理等模块都会被销毁或者禁用.  <a href="group___m_p_i___s_y_s.html#ga4d14a42e961f91ac37e0221347c307db">更多...</a><br /></td></tr>
+<tr class="separator:ga4d14a42e961f91ac37e0221347c307db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25c9baa5c07619dbdc604c3a771b9d0f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga25c9baa5c07619dbdc604c3a771b9d0f">AR_MPI_SYS_SetConfig</a> (const <a class="el" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a> *pstSysConfig)</td></tr>
+<tr class="memdesc:ga25c9baa5c07619dbdc604c3a771b9d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置系统控制参数.  <a href="group___m_p_i___s_y_s.html#ga25c9baa5c07619dbdc604c3a771b9d0f">更多...</a><br /></td></tr>
+<tr class="separator:ga25c9baa5c07619dbdc604c3a771b9d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65995f6acf1a0b261123fe542b33308a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga65995f6acf1a0b261123fe542b33308a">AR_MPI_SYS_GetConfig</a> (<a class="el" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a> *pstSysConfig)</td></tr>
+<tr class="memdesc:ga65995f6acf1a0b261123fe542b33308a"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置系统控制参数.  <a href="group___m_p_i___s_y_s.html#ga65995f6acf1a0b261123fe542b33308a">更多...</a><br /></td></tr>
+<tr class="separator:ga65995f6acf1a0b261123fe542b33308a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1dba6cdf4e4ccbfc93a9c087327efc84"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga1dba6cdf4e4ccbfc93a9c087327efc84">AR_MPI_SYS_Bind</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstSrcChn, const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstDestChn)</td></tr>
+<tr class="memdesc:ga1dba6cdf4e4ccbfc93a9c087327efc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据源到数据接收者绑定接口.  <a href="group___m_p_i___s_y_s.html#ga1dba6cdf4e4ccbfc93a9c087327efc84">更多...</a><br /></td></tr>
+<tr class="separator:ga1dba6cdf4e4ccbfc93a9c087327efc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3634b970eb28afce2d6de6666fe5703"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gab3634b970eb28afce2d6de6666fe5703">AR_MPI_SYS_UnBind</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstSrcChn, const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstDestChn)</td></tr>
+<tr class="memdesc:gab3634b970eb28afce2d6de6666fe5703"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据源到数据接收者解绑定接口.  <a href="group___m_p_i___s_y_s.html#gab3634b970eb28afce2d6de6666fe5703">更多...</a><br /></td></tr>
+<tr class="separator:gab3634b970eb28afce2d6de6666fe5703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e2d6fbb7ad5c05d0497b789aff316e8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga3e2d6fbb7ad5c05d0497b789aff316e8">AR_MPI_SYS_GetBindbyDest</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstDestChn, <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstSrcChn)</td></tr>
+<tr class="memdesc:ga3e2d6fbb7ad5c05d0497b789aff316e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此通道上绑定的源通道的信息.  <a href="group___m_p_i___s_y_s.html#ga3e2d6fbb7ad5c05d0497b789aff316e8">更多...</a><br /></td></tr>
+<tr class="separator:ga3e2d6fbb7ad5c05d0497b789aff316e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee5cbcfee374d6d961a65520066c22cd"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gaee5cbcfee374d6d961a65520066c22cd">AR_MPI_SYS_GetBindbySrc</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstSrcChn, <a class="el" href="structar_m_p_p___b_i_n_d___d_e_s_t___s.html">MPP_BIND_DEST_S</a> *pstBindDest)</td></tr>
+<tr class="memdesc:gaee5cbcfee374d6d961a65520066c22cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此通道上绑定的源通道的信息.  <a href="group___m_p_i___s_y_s.html#gaee5cbcfee374d6d961a65520066c22cd">更多...</a><br /></td></tr>
+<tr class="separator:gaee5cbcfee374d6d961a65520066c22cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga938ff65ae8775b0c877a52f4112046f3"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga938ff65ae8775b0c877a52f4112046f3">AR_MPI_SYS_GetVersion</a> (<a class="el" href="structar_m_p_p___v_e_r_s_i_o_n___s.html">MPP_VERSION_S</a> *pstVersion)</td></tr>
+<tr class="memdesc:ga938ff65ae8775b0c877a52f4112046f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取MPP版本号.  <a href="group___m_p_i___s_y_s.html#ga938ff65ae8775b0c877a52f4112046f3">更多...</a><br /></td></tr>
+<tr class="separator:ga938ff65ae8775b0c877a52f4112046f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f00b0489dc32b2db4dd6a86cf23fe81"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga0f00b0489dc32b2db4dd6a86cf23fe81">AR_MPI_SYS_GetChipId</a> (AR_U32 *pu32ChipId)</td></tr>
+<tr class="memdesc:ga0f00b0489dc32b2db4dd6a86cf23fe81"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前芯片的 ID.  <a href="group___m_p_i___s_y_s.html#ga0f00b0489dc32b2db4dd6a86cf23fe81">更多...</a><br /></td></tr>
+<tr class="separator:ga0f00b0489dc32b2db4dd6a86cf23fe81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga871222a9e31a86d6550d46a3885584ae"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga871222a9e31a86d6550d46a3885584ae">AR_MPI_SYS_GetCustomCode</a> (AR_U32 *pu32CustomCode)</td></tr>
+<tr class="memdesc:ga871222a9e31a86d6550d46a3885584ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前芯片的 CustomCode.  <a href="group___m_p_i___s_y_s.html#ga871222a9e31a86d6550d46a3885584ae">更多...</a><br /></td></tr>
+<tr class="separator:ga871222a9e31a86d6550d46a3885584ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8c196563f79ae5538498e6c4eb14764"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gac8c196563f79ae5538498e6c4eb14764">AR_MPI_SYS_GetCurPTS</a> (AR_U64 *pu64CurPTS)</td></tr>
+<tr class="memdesc:gac8c196563f79ae5538498e6c4eb14764"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前的时间戳.  <a href="group___m_p_i___s_y_s.html#gac8c196563f79ae5538498e6c4eb14764">更多...</a><br /></td></tr>
+<tr class="separator:gac8c196563f79ae5538498e6c4eb14764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8de97f703c5316dd68fb2c1e940e2899"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga8de97f703c5316dd68fb2c1e940e2899">AR_MPI_SYS_InitPTSBase</a> (AR_U64 u64PTSBase)</td></tr>
+<tr class="memdesc:ga8de97f703c5316dd68fb2c1e940e2899"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化 MPP 的时间戳基准.  <a href="group___m_p_i___s_y_s.html#ga8de97f703c5316dd68fb2c1e940e2899">更多...</a><br /></td></tr>
+<tr class="separator:ga8de97f703c5316dd68fb2c1e940e2899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5404f5f338ca72d0c9f8ed07c39e25e"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gad5404f5f338ca72d0c9f8ed07c39e25e">AR_MPI_SYS_SyncPTS</a> (AR_U64 u64PTSBase)</td></tr>
+<tr class="memdesc:gad5404f5f338ca72d0c9f8ed07c39e25e"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步 MPP 的时间戳.  <a href="group___m_p_i___s_y_s.html#gad5404f5f338ca72d0c9f8ed07c39e25e">更多...</a><br /></td></tr>
+<tr class="separator:gad5404f5f338ca72d0c9f8ed07c39e25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61c51a0fd7df5814cac4a12b2e073ce0"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga61c51a0fd7df5814cac4a12b2e073ce0">AR_MPI_SYS_MmzAlloc</a> (AR_U64 *pu64PhyAddr, AR_VOID **ppVirAddr, const AR_CHAR *strMmb, const AR_CHAR *strZone, AR_U32 u32Len)</td></tr>
+<tr class="memdesc:ga61c51a0fd7df5814cac4a12b2e073ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">在用户态分配MMZ内存.  <a href="group___m_p_i___s_y_s.html#ga61c51a0fd7df5814cac4a12b2e073ce0">更多...</a><br /></td></tr>
+<tr class="separator:ga61c51a0fd7df5814cac4a12b2e073ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2171d552dd00cdfce5a8b0b756e565ed"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga2171d552dd00cdfce5a8b0b756e565ed">AR_MPI_SYS_MmzAlloc_Cached</a> (AR_U64 *pu64PhyAddr, AR_VOID **ppVirAddr, const AR_CHAR *pstrMmb, const AR_CHAR *pstrZone, AR_U32 u32Len)</td></tr>
+<tr class="memdesc:ga2171d552dd00cdfce5a8b0b756e565ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">在用户态分配MMZ内存，该内存支持cache缓存.  <a href="group___m_p_i___s_y_s.html#ga2171d552dd00cdfce5a8b0b756e565ed">更多...</a><br /></td></tr>
+<tr class="separator:ga2171d552dd00cdfce5a8b0b756e565ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96b3843d37b3b935f6a470a9ffb8c9c8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga96b3843d37b3b935f6a470a9ffb8c9c8">AR_MPI_SYS_MmzFree</a> (AR_U64 u64PhyAddr, AR_VOID *pVirAddr)</td></tr>
+<tr class="memdesc:ga96b3843d37b3b935f6a470a9ffb8c9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">在用户态释放MMZ内存.  <a href="group___m_p_i___s_y_s.html#ga96b3843d37b3b935f6a470a9ffb8c9c8">更多...</a><br /></td></tr>
+<tr class="separator:ga96b3843d37b3b935f6a470a9ffb8c9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga249bf12111c3c22f26f7f573eed6b444"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga249bf12111c3c22f26f7f573eed6b444">AR_MPI_SYS_MmzFlushCache</a> (AR_U64 u64PhyAddr, AR_VOID *pVirAddr, AR_U32 u32Size)</td></tr>
+<tr class="memdesc:ga249bf12111c3c22f26f7f573eed6b444"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新 cache里的内容到内存并且使cache里的内容无效.  <a href="group___m_p_i___s_y_s.html#ga249bf12111c3c22f26f7f573eed6b444">更多...</a><br /></td></tr>
+<tr class="separator:ga249bf12111c3c22f26f7f573eed6b444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4cc53e524451a9bc97aeecfa275158fd"><td class="memItemLeft" align="right" valign="top">AR_VOID *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga4cc53e524451a9bc97aeecfa275158fd">AR_MPI_SYS_Mmap</a> (AR_U64 u64PhyAddr, AR_U32 u32Size)</td></tr>
+<tr class="memdesc:ga4cc53e524451a9bc97aeecfa275158fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory存储映射接口.  <a href="group___m_p_i___s_y_s.html#ga4cc53e524451a9bc97aeecfa275158fd">更多...</a><br /></td></tr>
+<tr class="separator:ga4cc53e524451a9bc97aeecfa275158fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4cd767c18a5a39e2f27958ef5ab58d3"><td class="memItemLeft" align="right" valign="top">AR_VOID *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gae4cd767c18a5a39e2f27958ef5ab58d3">AR_MPI_SYS_MmapCache</a> (AR_U64 u64PhyAddr, AR_U32 u32Size)</td></tr>
+<tr class="memdesc:gae4cd767c18a5a39e2f27958ef5ab58d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储映射接口，映射成cache属性.  <a href="group___m_p_i___s_y_s.html#gae4cd767c18a5a39e2f27958ef5ab58d3">更多...</a><br /></td></tr>
+<tr class="separator:gae4cd767c18a5a39e2f27958ef5ab58d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b6d339006f23cdf7d498118e2ac074e"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga5b6d339006f23cdf7d498118e2ac074e">AR_MPI_SYS_Munmap</a> (AR_VOID *pVirAddr, AR_U32 u32Size)</td></tr>
+<tr class="memdesc:ga5b6d339006f23cdf7d498118e2ac074e"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储反映射接口.  <a href="group___m_p_i___s_y_s.html#ga5b6d339006f23cdf7d498118e2ac074e">更多...</a><br /></td></tr>
+<tr class="separator:ga5b6d339006f23cdf7d498118e2ac074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0c8725e38ed45bbae969a12f04ada34"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gac0c8725e38ed45bbae969a12f04ada34">AR_MPI_SYS_MflushCache</a> (AR_U64 u64PhyAddr, AR_VOID *pVirAddr, AR_U32 u32Size)</td></tr>
+<tr class="memdesc:gac0c8725e38ed45bbae969a12f04ada34"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新 cache里的内容到内存并且使cache里的内容无效.  <a href="group___m_p_i___s_y_s.html#gac0c8725e38ed45bbae969a12f04ada34">更多...</a><br /></td></tr>
+<tr class="separator:gac0c8725e38ed45bbae969a12f04ada34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62c2b3d6792fbc88322825e0eba35efc"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga62c2b3d6792fbc88322825e0eba35efc">AR_MPI_SYS_SetMemConfig</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstMppChn, const AR_CHAR *pcMmzName)</td></tr>
+<tr class="memdesc:ga62c2b3d6792fbc88322825e0eba35efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置内存参数，设置模块设备通道使用的 MMZ 区域名称.  <a href="group___m_p_i___s_y_s.html#ga62c2b3d6792fbc88322825e0eba35efc">更多...</a><br /></td></tr>
+<tr class="separator:ga62c2b3d6792fbc88322825e0eba35efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga326034eb0413fdb9c78af64cca898fef"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga326034eb0413fdb9c78af64cca898fef">AR_MPI_SYS_GetMemConfig</a> (const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstMppChn, AR_CHAR *pcMmzName)</td></tr>
+<tr class="memdesc:ga326034eb0413fdb9c78af64cca898fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取模块设备通道使用的 MMZ 区域名称.  <a href="group___m_p_i___s_y_s.html#ga326034eb0413fdb9c78af64cca898fef">更多...</a><br /></td></tr>
+<tr class="separator:ga326034eb0413fdb9c78af64cca898fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31caf1f9234087f7e855382fef0e9909"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga31caf1f9234087f7e855382fef0e9909">AR_MPI_SYS_CloseFd</a> (AR_VOID)</td></tr>
+<tr class="memdesc:ga31caf1f9234087f7e855382fef0e9909"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭所有 SYS 打开的日志、系统、内存 Fd.  <a href="group___m_p_i___s_y_s.html#ga31caf1f9234087f7e855382fef0e9909">更多...</a><br /></td></tr>
+<tr class="separator:ga31caf1f9234087f7e855382fef0e9909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga764c8aace99a904b2c94148ad4a3ced3"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga764c8aace99a904b2c94148ad4a3ced3">AR_MPI_SYS_GetVirMemInfo</a> (const void *pVirAddr, <a class="el" href="structar_s_y_s___v_i_r_m_e_m___i_n_f_o___s.html">SYS_VIRMEM_INFO_S</a> *pstMemInfo)</td></tr>
+<tr class="memdesc:ga764c8aace99a904b2c94148ad4a3ced3"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据虚拟地址获取对应的内存信息，包括物理地址及 cached 属性.  <a href="group___m_p_i___s_y_s.html#ga764c8aace99a904b2c94148ad4a3ced3">更多...</a><br /></td></tr>
+<tr class="separator:ga764c8aace99a904b2c94148ad4a3ced3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf055173598a377eeccc73cc0b7961bdc"><td class="memItemLeft" align="right" valign="top"><a id="gaf055173598a377eeccc73cc0b7961bdc"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_SetScaleCoefLevel</b> (const <a class="el" href="structar_s_c_a_l_e___r_a_n_g_e___s.html">SCALE_RANGE_S</a> *pstScaleRange, const <a class="el" href="structar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s.html">SCALE_COEFF_LEVEL_S</a> *pstScaleCoeffLevel)</td></tr>
+<tr class="separator:gaf055173598a377eeccc73cc0b7961bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a1136b90da4feccb4e108fcc58a2a66"><td class="memItemLeft" align="right" valign="top"><a id="ga6a1136b90da4feccb4e108fcc58a2a66"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_GetScaleCoefLevel</b> (const <a class="el" href="structar_s_c_a_l_e___r_a_n_g_e___s.html">SCALE_RANGE_S</a> *pstScaleRange, <a class="el" href="structar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s.html">SCALE_COEFF_LEVEL_S</a> *pstScaleCoeffLevel)</td></tr>
+<tr class="separator:ga6a1136b90da4feccb4e108fcc58a2a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd573ac6217a3fced4e198a05e866789"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#gabd573ac6217a3fced4e198a05e866789">AR_MPI_SYS_SetTimeZone</a> (AR_S32 s32TimeZone)</td></tr>
+<tr class="memdesc:gabd573ac6217a3fced4e198a05e866789"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置时区信息.(Set/Get local timezone, range: [-86400, 86400] seconds (that is: [-24, 24] hours))  <a href="group___m_p_i___s_y_s.html#gabd573ac6217a3fced4e198a05e866789">更多...</a><br /></td></tr>
+<tr class="separator:gabd573ac6217a3fced4e198a05e866789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga901198da5e0572308c0e0aefa262f071"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga901198da5e0572308c0e0aefa262f071">AR_MPI_SYS_GetTimeZone</a> (AR_S32 *ps32TimeZone)</td></tr>
+<tr class="memdesc:ga901198da5e0572308c0e0aefa262f071"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取时区信息.  <a href="group___m_p_i___s_y_s.html#ga901198da5e0572308c0e0aefa262f071">更多...</a><br /></td></tr>
+<tr class="separator:ga901198da5e0572308c0e0aefa262f071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40eec58f84edfc704d6d23379ebd91c6"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga40eec58f84edfc704d6d23379ebd91c6">AR_MPI_SYS_SetGPSInfo</a> (const <a class="el" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *pstGPSInfo)</td></tr>
+<tr class="memdesc:ga40eec58f84edfc704d6d23379ebd91c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 GPS 信息.  <a href="group___m_p_i___s_y_s.html#ga40eec58f84edfc704d6d23379ebd91c6">更多...</a><br /></td></tr>
+<tr class="separator:ga40eec58f84edfc704d6d23379ebd91c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91e3a8eddac92095986c8a8662bd88f2"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___s_y_s.html#ga91e3a8eddac92095986c8a8662bd88f2">AR_MPI_SYS_GetGPSInfo</a> (<a class="el" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *pstGPSInfo)</td></tr>
+<tr class="memdesc:ga91e3a8eddac92095986c8a8662bd88f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 GPS 信息.  <a href="group___m_p_i___s_y_s.html#ga91e3a8eddac92095986c8a8662bd88f2">更多...</a><br /></td></tr>
+<tr class="separator:ga91e3a8eddac92095986c8a8662bd88f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81086ecc77ede33ad10e91d3d9898338"><td class="memItemLeft" align="right" valign="top"><a id="ga81086ecc77ede33ad10e91d3d9898338"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_SetTuningConnect</b> (AR_S32 s32Connect)</td></tr>
+<tr class="separator:ga81086ecc77ede33ad10e91d3d9898338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98c3446210c77c784be4fc785fd097ae"><td class="memItemLeft" align="right" valign="top"><a id="ga98c3446210c77c784be4fc785fd097ae"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_GetTuningConnect</b> (AR_S32 *ps32Connect)</td></tr>
+<tr class="separator:ga98c3446210c77c784be4fc785fd097ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf94761ffe9028f3d373008aa601fbf97"><td class="memItemLeft" align="right" valign="top"><a id="gaf94761ffe9028f3d373008aa601fbf97"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_SetVIVPSSMode</b> (const <a class="el" href="structar_v_i___v_p_s_s___m_o_d_e___s.html">VI_VPSS_MODE_S</a> *pstVIVPSSMode)</td></tr>
+<tr class="separator:gaf94761ffe9028f3d373008aa601fbf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d61c14f9ca160d12463eb2490c6c3c2"><td class="memItemLeft" align="right" valign="top"><a id="ga7d61c14f9ca160d12463eb2490c6c3c2"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_SYS_GetVIVPSSMode</b> (<a class="el" href="structar_v_i___v_p_s_s___m_o_d_e___s.html">VI_VPSS_MODE_S</a> *pstVIVPSSMode)</td></tr>
+<tr class="separator:ga7d61c14f9ca160d12463eb2490c6c3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>系统控制根据芯片特性，完成硬件各个部件的复位、基本初始化工作，同时负责完成系统 各个业务模块的初始化、去初始化以及管理系统各个业务模块的工作状态、提供当前系统的版本信 息、提供大块物理内存管理等功能。 </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga1dba6cdf4e4ccbfc93a9c087327efc84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1dba6cdf4e4ccbfc93a9c087327efc84">&#9670;&nbsp;</a></span>AR_MPI_SYS_Bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_Bind </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSrcChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstDestChn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>数据源到数据接收者绑定接口. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSrcChn</td><td>源通道指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstDestChn</td><td>目的通道指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga31caf1f9234087f7e855382fef0e9909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31caf1f9234087f7e855382fef0e9909">&#9670;&nbsp;</a></span>AR_MPI_SYS_CloseFd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_CloseFd </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭所有 SYS 打开的日志、系统、内存 Fd. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4d14a42e961f91ac37e0221347c307db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d14a42e961f91ac37e0221347c307db">&#9670;&nbsp;</a></span>AR_MPI_SYS_Exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_Exit </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>去初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区 域、视频处理、图形处理等模块都会被销毁或者禁用. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3e2d6fbb7ad5c05d0497b789aff316e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e2d6fbb7ad5c05d0497b789aff316e8">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetBindbyDest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetBindbyDest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstDestChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSrcChn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取此通道上绑定的源通道的信息. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSrcChn</td><td>源通道指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstDestChn</td><td>目的通道指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaee5cbcfee374d6d961a65520066c22cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee5cbcfee374d6d961a65520066c22cd">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetBindbySrc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetBindbySrc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSrcChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structar_m_p_p___b_i_n_d___d_e_s_t___s.html">MPP_BIND_DEST_S</a> *&#160;</td>
+          <td class="paramname"><em>pstBindDest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取此通道上绑定的源通道的信息. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSrcChn</td><td>源通道指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstBindDest</td><td>绑定的目的指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0f00b0489dc32b2db4dd6a86cf23fe81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f00b0489dc32b2db4dd6a86cf23fe81">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetChipId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetChipId </td>
+          <td>(</td>
+          <td class="paramtype">AR_U32 *&#160;</td>
+          <td class="paramname"><em>pu32ChipId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前芯片的 ID. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pu32ChipId</td><td>芯片 ID 指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga65995f6acf1a0b261123fe542b33308a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65995f6acf1a0b261123fe542b33308a">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSysConfig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>配置系统控制参数. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac8c196563f79ae5538498e6c4eb14764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8c196563f79ae5538498e6c4eb14764">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetCurPTS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetCurPTS </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64 *&#160;</td>
+          <td class="paramname"><em>pu64CurPTS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前的时间戳. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pu64CurPTS</td><td>当前时间戳指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga871222a9e31a86d6550d46a3885584ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga871222a9e31a86d6550d46a3885584ae">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetCustomCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetCustomCode </td>
+          <td>(</td>
+          <td class="paramtype">AR_U32 *&#160;</td>
+          <td class="paramname"><em>pu32CustomCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前芯片的 CustomCode. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga91e3a8eddac92095986c8a8662bd88f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91e3a8eddac92095986c8a8662bd88f2">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetGPSInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetGPSInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstGPSInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 GPS 信息. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga326034eb0413fdb9c78af64cca898fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga326034eb0413fdb9c78af64cca898fef">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetMemConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetMemConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMppChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_CHAR *&#160;</td>
+          <td class="paramname"><em>pcMmzName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取模块设备通道使用的 MMZ 区域名称. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga901198da5e0572308c0e0aefa262f071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga901198da5e0572308c0e0aefa262f071">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetTimeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetTimeZone </td>
+          <td>(</td>
+          <td class="paramtype">AR_S32 *&#160;</td>
+          <td class="paramname"><em>ps32TimeZone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取时区信息. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga938ff65ae8775b0c877a52f4112046f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga938ff65ae8775b0c877a52f4112046f3">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetVersion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structar_m_p_p___v_e_r_s_i_o_n___s.html">MPP_VERSION_S</a> *&#160;</td>
+          <td class="paramname"><em>pstVersion</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取MPP版本号. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstVersion</td><td>版本号描述指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga764c8aace99a904b2c94148ad4a3ced3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga764c8aace99a904b2c94148ad4a3ced3">&#9670;&nbsp;</a></span>AR_MPI_SYS_GetVirMemInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_GetVirMemInfo </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>pVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structar_s_y_s___v_i_r_m_e_m___i_n_f_o___s.html">SYS_VIRMEM_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMemInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据虚拟地址获取对应的内存信息，包括物理地址及 cached 属性. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae00d69e0e3d051cefc6c9a185c1f68e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae00d69e0e3d051cefc6c9a185c1f68e8">&#9670;&nbsp;</a></span>AR_MPI_SYS_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_Init </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区域、视频处理、图形处理等模块都会被初始化. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8de97f703c5316dd68fb2c1e940e2899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8de97f703c5316dd68fb2c1e940e2899">&#9670;&nbsp;</a></span>AR_MPI_SYS_InitPTSBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_InitPTSBase </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PTSBase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化 MPP 的时间戳基准. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64_pts_base</td><td>时间戳基准。单位：微秒. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac0c8725e38ed45bbae969a12f04ada34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0c8725e38ed45bbae969a12f04ada34">&#9670;&nbsp;</a></span>AR_MPI_SYS_MflushCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_MflushCache </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_VOID *&#160;</td>
+          <td class="paramname"><em>pVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>刷新 cache里的内容到内存并且使cache里的内容无效. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64PhyAddr</td><td>待操作数据的起始物理地址，需要 4字节对齐. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pVirAddr</td><td>待操作数据的起始虚拟地址指针，必须为用户态地址， 且不能为空，虚拟地址必须为物理地址映射的地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Size</td><td>待操作数据的大小，不能为0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>无效地址 , 其它 有效地址. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>此接口应与ar_hal_sys_mmap_cache接口配套使用,用户需要确保传入参数的合法性 </dd></dl>
+
+</div>
+</div>
+<a id="ga4cc53e524451a9bc97aeecfa275158fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4cc53e524451a9bc97aeecfa275158fd">&#9670;&nbsp;</a></span>AR_MPI_SYS_Mmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_VOID* AR_MPI_SYS_Mmap </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>memory存储映射接口. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64PhyAddr</td><td>需映射的内存单元起始地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Size</td><td>映射的字节数。取值范围为（0, 0xFFFFF000）. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>无效地址 , 其它 有效地址. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>open的节点是dev/mmz_userdev，在MMZ中实现映射非device类型（不可cache、可reorder）的DDR 地址 输入的地址需为合法的物理地址,对应的解映射接口为ar_hal_sys_munmap </dd></dl>
+
+</div>
+</div>
+<a id="gae4cd767c18a5a39e2f27958ef5ab58d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4cd767c18a5a39e2f27958ef5ab58d3">&#9670;&nbsp;</a></span>AR_MPI_SYS_MmapCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_VOID* AR_MPI_SYS_MmapCache </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>存储映射接口，映射成cache属性. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64PhyAddr</td><td>需映射的内存单元起始地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Size</td><td>映射的字节数。取值范围为（0, 0xFFFFF000）. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>无效地址 , 其它 有效地址. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>输入的地址需为合法的物理地址 </dd></dl>
+
+</div>
+</div>
+<a id="ga61c51a0fd7df5814cac4a12b2e073ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61c51a0fd7df5814cac4a12b2e073ce0">&#9670;&nbsp;</a></span>AR_MPI_SYS_MmzAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_MmzAlloc </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64 *&#160;</td>
+          <td class="paramname"><em>pu64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_VOID **&#160;</td>
+          <td class="paramname"><em>ppVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AR_CHAR *&#160;</td>
+          <td class="paramname"><em>strMmb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AR_CHAR *&#160;</td>
+          <td class="paramname"><em>strZone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在用户态分配MMZ内存. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pu64PhyAddr</td><td>分配的物理地址指针. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ppVirAddr</td><td>指向分配的虚拟地址指针的指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">strMmb</td><td>Mmb 名称的字符串指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">strZone</td><td>MMZ zone 名称的字符串指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Len</td><td>内存块大小. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>MMZ分为许多区域（Zone），每个区域下有多个Mmb，调用此接口在MMZ的名为 pstr_zone 的区域中分配一个名为*pstr_mmb 的内存块，大小为u32_len，并返回物理地 址和用户态虚拟地址指针。如果MMZ中有名为anonymous的区域，*pstr_zone可设为 NULL。如果*pstr_mmb 设为NULL，创建的Mmb 分块名为“&lt;null&gt;” </dd></dl>
+
+</div>
+</div>
+<a id="ga2171d552dd00cdfce5a8b0b756e565ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2171d552dd00cdfce5a8b0b756e565ed">&#9670;&nbsp;</a></span>AR_MPI_SYS_MmzAlloc_Cached()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_MmzAlloc_Cached </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64 *&#160;</td>
+          <td class="paramname"><em>pu64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_VOID **&#160;</td>
+          <td class="paramname"><em>ppVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AR_CHAR *&#160;</td>
+          <td class="paramname"><em>pstrMmb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AR_CHAR *&#160;</td>
+          <td class="paramname"><em>pstrZone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在用户态分配MMZ内存，该内存支持cache缓存. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pu64PhyAddr</td><td>分配的物理地址指针. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ppVirAddr</td><td>指向分配的虚拟地址指针的指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstrMmb</td><td>Mmb 名称的字符串指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstrZone</td><td>MMZ zone 名称的字符串指针. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Len</td><td>内存块大小. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>本接口与ar_hal_sys_mmz_alloc接口的区别：通过本接口分配的内存支持cache 缓存，对于频繁使用的内存，最好使用本接口分配内存，这样可以提高cpu读写 的效率，提升系统性能，如用户在使用ive算子时，就存在大量数据频繁读写，此 时使用此接口来分配内存，就能很好的提高cpu 的效率 当cpu访问此接口分配的内存时，会将内存中的数据放在cache 中，而硬件设备 只能访问物理内存，不能访问cache 的内容，对于这种cpu和硬件会共同 操作的内存，需调用ar_hal_sys_mmz_flush_cache做好数据同步 </dd></dl>
+
+</div>
+</div>
+<a id="ga249bf12111c3c22f26f7f573eed6b444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga249bf12111c3c22f26f7f573eed6b444">&#9670;&nbsp;</a></span>AR_MPI_SYS_MmzFlushCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_MmzFlushCache </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_VOID *&#160;</td>
+          <td class="paramname"><em>pVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>刷新 cache里的内容到内存并且使cache里的内容无效. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64PhyAddr</td><td>待操作数据的起始物理地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pVirAddr</td><td>待操作数据的起始虚拟地址指针，不能传NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Size</td><td>待操作数据的大小. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>当 cache里的数据为最新数据时，为了保证不能直接访问cache 的硬件在访 问内存时能够得到正确的数据，此时需要先调用此接口将cache里的内容更新到 内存，这样，当硬件访问内存时，保证了数据的一致性和正确性 此接口应与ar_hal_sys_mmz_alloc_cached接口配套使用 若将u32PhyAddr 设为0，则表示操作整个cache 区域 用户需要确保传入参数的合法性 用户必须保证进行flush操作时不能调用ar_hal_sys_mmz_free接口释放当前 flush 的内存，否则会引发不可预知的异常 </dd></dl>
+
+</div>
+</div>
+<a id="ga96b3843d37b3b935f6a470a9ffb8c9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96b3843d37b3b935f6a470a9ffb8c9c8">&#9670;&nbsp;</a></span>AR_MPI_SYS_MmzFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_MmzFree </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PhyAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_VOID *&#160;</td>
+          <td class="paramname"><em>pVirAddr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在用户态释放MMZ内存. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64PhyAddr</td><td>物理地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pVirAddr</td><td>虚拟地址指针.. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>输入的地址必须为有效的物理地址，虚拟地址指针可以置为NULL 不能释放正在进行flush操作的内存，否则会引发不可预知的异常 </dd></dl>
+
+</div>
+</div>
+<a id="ga5b6d339006f23cdf7d498118e2ac074e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b6d339006f23cdf7d498118e2ac074e">&#9670;&nbsp;</a></span>AR_MPI_SYS_Munmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_Munmap </td>
+          <td>(</td>
+          <td class="paramtype">AR_VOID *&#160;</td>
+          <td class="paramname"><em>pVirAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>存储反映射接口. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64_phy_addr</td><td>需映射的内存单元起始地址. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32Size</td><td>映射的字节数。取值范围为（0, 0xFFFFF000）. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>无效地址 , 其它 有效地址. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>等同于系统munmap 函数 </dd></dl>
+
+</div>
+</div>
+<a id="ga25c9baa5c07619dbdc604c3a771b9d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25c9baa5c07619dbdc604c3a771b9d0f">&#9670;&nbsp;</a></span>AR_MPI_SYS_SetConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_SetConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSysConfig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>配置系统控制参数. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga40eec58f84edfc704d6d23379ebd91c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40eec58f84edfc704d6d23379ebd91c6">&#9670;&nbsp;</a></span>AR_MPI_SYS_SetGPSInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_SetGPSInfo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *&#160;</td>
+          <td class="paramname"><em>pstGPSInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 GPS 信息. </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga62c2b3d6792fbc88322825e0eba35efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62c2b3d6792fbc88322825e0eba35efc">&#9670;&nbsp;</a></span>AR_MPI_SYS_SetMemConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_SetMemConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstMppChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AR_CHAR *&#160;</td>
+          <td class="paramname"><em>pcMmzName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>配置内存参数，设置模块设备通道使用的 MMZ 区域名称. </p>
+<dl class="section note"><dt>注解</dt><dd>未实现 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabd573ac6217a3fced4e198a05e866789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd573ac6217a3fced4e198a05e866789">&#9670;&nbsp;</a></span>AR_MPI_SYS_SetTimeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_SetTimeZone </td>
+          <td>(</td>
+          <td class="paramtype">AR_S32&#160;</td>
+          <td class="paramname"><em>s32TimeZone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置时区信息.(Set/Get local timezone, range: [-86400, 86400] seconds (that is: [-24, 24] hours)) </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad5404f5f338ca72d0c9f8ed07c39e25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5404f5f338ca72d0c9f8ed07c39e25e">&#9670;&nbsp;</a></span>AR_MPI_SYS_SyncPTS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_SyncPTS </td>
+          <td>(</td>
+          <td class="paramtype">AR_U64&#160;</td>
+          <td class="paramname"><em>u64PTSBase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同步 MPP 的时间戳. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u64_pts_base</td><td>时间戳基准。单位：微秒. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab3634b970eb28afce2d6de6666fe5703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3634b970eb28afce2d6de6666fe5703">&#9670;&nbsp;</a></span>AR_MPI_SYS_UnBind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_SYS_UnBind </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstSrcChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *&#160;</td>
+          <td class="paramname"><em>pstDestChn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>数据源到数据接收者解绑定接口. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstSrcChn</td><td>源通道指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstDestChn</td><td>目的通道指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

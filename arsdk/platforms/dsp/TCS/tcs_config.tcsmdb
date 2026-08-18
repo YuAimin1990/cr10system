@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:TCSConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.example.org/model">
+  <tcssystems name="System" tcsdriver="//@tcsdrivers[name='Driver']">
+    <tcsclusters name="Cluster" target="cevaxm6" coreType="Simulation" type="Standard" port="58597">
+      <tcsfeaturevalues name="Enable log" value="false"/>
+      <tcsfeaturevalues name="Log path" value=""/>
+      <tcsfeaturevalues name="Log name" value=""/>
+      <tcsfeaturevalues name="Log level" value="0"/>
+      <tcscores name="Core" type="Simulation">
+        <tcsfeaturevalues name="Attributes XML" value="C:/Users/bfchen/AppData/Local/Temp/System_Cluster_Core.xml"/>
+        <tcsfeaturevalues name="Memory XML" value="C:/Users/bfchen/AppData/Local/Temp/System_Cluster_Core_memDef.xml"/>
+        <tcsfeaturevalues name="Simulation Built-In profiler configuration XML" value=""/>
+        <tcsfeaturevalues name="Simulation CEVA-Xtend Location" value=""/>
+        <tcsfeaturevalues name="Simulation CEVA-Xtend Name" value=""/>
+        <tcsfeaturevalues name="Simulation Calling convention check" value="false"/>
+        <tcsfeaturevalues name="Simulation Exceptions" value="Generic Toolbox Exceptions Configuration"/>
+        <tcsfeaturevalues name="Simulation Exceptions XML" value="E:/dsp_918/dsp/.metadata/.plugins/com.ceva.tcf.debug.ui.plugin/exceptions_configurations/Generic Toolbox Exceptions Configuration"/>
+        <tcsfeaturevalues name="Simulation Execution Mode" value="Performance Accurate Mode"/>
+        <tcsfeaturevalues name="Simulation MSS memory access" value="true"/>
+        <tcsfeaturevalues name="Simulation VCD trace XML" value=""/>
+      </tcscores>
+    </tcsclusters>
+  </tcssystems>
+  <tcsdrivers name="Driver" type="SIMULATION"/>
+</model:TCSConfiguration>

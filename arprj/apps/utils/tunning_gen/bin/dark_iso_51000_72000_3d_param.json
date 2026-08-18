@@ -1,0 +1,19 @@
+{
+	"network":	{
+		"id":"109",
+		"npubin":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_51000_72000_3d_param.npubin",
+		"priority":"normal",
+                "callback_enable":"no",
+		"callback_to_arm":"yes",
+		"ifc-pre-process":"no",
+		"mode":"local",
+		"devname":"/dev/video_yuv-0",
+		"local_path":"./",
+		"draw_osd":"no",
+		"log_level":"5",
+                "img_width":"0",
+                "img_height":"0",
+                "sram_addr":"0x017c0000",
+                "sram_size":"0x40000"
+	}
+}

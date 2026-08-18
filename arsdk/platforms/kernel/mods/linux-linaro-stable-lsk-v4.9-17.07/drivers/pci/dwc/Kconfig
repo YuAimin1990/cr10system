@@ -1,0 +1,56 @@
+menu "DesignWare PCI Core Support"
+
+config PCIE_DW
+    bool
+
+config PCIE_DW_HOST
+    bool
+    depends on PCI
+    depends on PCI_MSI_IRQ_DOMAIN
+    select PCIE_DW
+
+config PCIE_DW_EP
+    bool
+    depends on PCI_ENDPOINT
+    select PCIE_DW
+
+config PCIE_DW_PLAT
+	bool "Platform bus based DesignWare PCIe Controller"
+	depends on PCI
+	depends on PCI_MSI_IRQ_DOMAIN
+	select PCIE_DW_HOST
+	---help---
+	 This selects the DesignWare PCIe controller support. Select this if
+	 you have a PCIe controller on Platform bus.
+
+	 If you have a controller with this interface, say Y or M here.
+
+	 If unsure, say N.
+
+config PCI_AR91XX
+    bool "AR PCIe controller"
+    depends on (PCI && PCI_MSI_IRQ_DOMAIN) || PCI_ENDPOINT
+    help
+        Artosyn DUAL role PCIe controller. In order to enable host-specific features PCI_AR91XX_HOST must be selected and in order to enable device-specific features PCI_AR91XX_EP must be selected. This uses the Designware core.
+
+if PCI_AR91XX
+
+config PCI_AR91XX_HOST
+    bool "PCI AR91XX Host Mode"
+    depends on PCI
+    depends on PCI_MSI_IRQ_DOMAIN
+    select PCIE_DW_HOST
+    default y
+    help
+        Enables support for the PCIe controller in the AR91XX SoC to work in host mode.
+
+config PCI_AR91XX_EP
+    bool "PCI AR91XX Endpoint Mode"
+    depends on PCI_ENDPOINT
+    select PCIE_DW_EP
+    help
+        Enables support for the PCIe controller in the AR91XX SoC to work in endpoint mode.
+
+endif
+
+endmenu

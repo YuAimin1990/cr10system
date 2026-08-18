@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<spoc:Target xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:spoc="http://www.ceva-dsp.com/spocModel">
+  <core name="CEVA-XM6">
+    <rtl name="1.3.x">
+      <categories xsi:type="spoc:Core">
+        <attributes xsi:type="spoc:EnumAttribute" name="Instructions Fetch-Line Size (Bit)" value="256"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="BTB - number of ways" value="4"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="BTB - number of entries" value="256"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="NLO (Non Linear Operations)" value="2"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Timers" value="4"/>
+      </categories>
+      <categories xsi:type="spoc:DMSS">
+        <attributes xsi:type="spoc:EnumAttribute" name="Data TCM - Size (KB)" value="512"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Data TCM - Number of Blocks" value="4"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="External Data Port (EDP) Width (bit)" value="128"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Auxiliary AXI Master Port (bit)" value="128"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="External Device Access Port (EDAP) Width (bit)" value="128"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Auxiliary AXI Slave Port - Slave0 (bit)" value="Disabled"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Auxiliary AXI Slave Port - Slave1 (bit)" value="Disabled"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Auxiliary AXI Slave Port - Slave2 (bit)" value="Disabled"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="DMAN Configuration - DMA Manager Queue Count" value="8"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Number Of DPRAW &#x9;(Prot. Read-After-Write)" value="16"/>
+      </categories>
+      <categories xsi:type="spoc:PMSS">
+        <attributes xsi:type="spoc:EnumAttribute" name="Instruction TCM Size (KB)" value="64"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="Instruction Cache Size (KB)" value="64"/>
+        <attributes xsi:type="spoc:EnumAttribute" name="External Program Port (EPP) Width (bit)" value="128"/>
+        <attributes xsi:type="spoc:BooleanAttribute" name="Instruction Memories ECC Protection"/>
+      </categories>
+      <categories xsi:type="spoc:Xtend">
+        <attributes xsi:type="spoc:BooleanAttribute" name="CEVA-Xtend"/>
+        <attributes xsi:type="spoc:TextAttribute" name="CEVA-Xtend Project" value="" regex=""/>
+      </categories>
+      <categories xsi:type="spoc:SFLP">
+        <attributes xsi:type="spoc:EnumAttribute" name="Scalar Floating Point Units" value="4"/>
+      </categories>
+      <categories xsi:type="spoc:VFLP">
+        <attributes xsi:type="spoc:EnumAttribute" name="Vector Floating Point Units" value="2"/>
+      </categories>
+    </rtl>
+  </core>
+  <externalMemories>
+    <attributes xsi:type="spoc:EnumAttribute" name="Type" value="Shared"/>
+    <attributes xsi:type="spoc:TextAttribute" name="Block Name" value="EXTERNAL" regex="^[_a-zA-Z][\w\W\d\s]*"/>
+    <attributes xsi:type="spoc:TextAttribute" name="Base Address" value="0x40000000" regex="\b(0x[0-9a-fA-F]+|0X[0-9a-fA-F]+|[0-9]+)\b"/>
+    <attributes xsi:type="spoc:TextAttribute" name="Size (bytes)" value="0x10000000" regex="\b(0x[0-9a-fA-F]+|0X[0-9a-fA-F]+|[0-9]+)\b"/>
+    <attributes xsi:type="spoc:TextAttribute" name="Latency (cycles)" value="0" regex="\b(0x[0-9a-fA-F]+|0X[0-9a-fA-F]+|[0-9]+)\b"/>
+    <attributes xsi:type="spoc:TextAttribute" name="Middle Access Latency (cycles)" value="0" regex="\b(0x[0-9a-fA-F]+|0X[0-9a-fA-F]+|[0-9]+)\b"/>
+    <attributes xsi:type="spoc:BooleanAttribute" name="Read Only"/>
+  </externalMemories>
+</spoc:Target>

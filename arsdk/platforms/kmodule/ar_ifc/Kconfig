@@ -1,0 +1,8 @@
+#
+# Artosyn IFC Support
+#
+menuconfig AR_IFC_DRV
+	bool "Driver for AR Image Format Converter"
+    default y
+	help
+	   Enable the driver for AR IFC

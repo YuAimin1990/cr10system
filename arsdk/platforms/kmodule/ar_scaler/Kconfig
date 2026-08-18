@@ -1,0 +1,8 @@
+#
+# Artosyn Scaler Support
+#
+menuconfig AR_SCALER_DRV
+	bool "Driver for AR Scaler module"
+    default y
+	help
+	   Enable the driver for AR Scaler

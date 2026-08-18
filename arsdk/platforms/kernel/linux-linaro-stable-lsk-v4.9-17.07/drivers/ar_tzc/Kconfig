@@ -1,0 +1,5 @@
+config ARTOSYN_TZC
+	bool "Artosyn tzc driver"
+	default y
+
+

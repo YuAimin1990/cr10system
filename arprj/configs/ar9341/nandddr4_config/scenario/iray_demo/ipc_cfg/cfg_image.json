@@ -1,0 +1,54 @@
+{
+	"image_vi_0":	{
+		"scene_mode":	0,
+		"image_style":	0,
+		"infra_enable":	0,
+		"irCut_control":	0,
+		"irCut_mode":	1,
+		"denoise2d_strength":	1,
+		"denoise3d_strength":	50,
+		"lowlight_mode":	3,
+		"exposure_mode":	0,
+		"dcIris_enable":	1,
+		"anti_flicker_freq":	50,
+		"backLight_enable":	1,
+		"backLight_level":	3,
+		"brightness":	50,
+		"saturation":	50,
+		"contrast":	50,
+		"sharpness":	50,
+		"hue":	50
+	},
+	"image_vi_1":	{
+		"scene_mode":	0,
+		"image_style":	0,
+		"infra_enable":	0,
+		"irCut_control":	0,
+		"irCut_mode":	1,
+		"denoise2d_strength":	1,
+		"denoise3d_strength":	50,
+		"lowlight_mode":	3,
+		"exposure_mode":	0,
+		"dcIris_enable":	1,
+		"anti_flicker_freq":	50,
+		"backLight_enable":	1,
+		"backLight_level":	3,
+		"brightness":	50,
+		"saturation":	50,
+		"contrast":	50,
+		"sharpness":	50,
+		"hue":	50
+	},
+	"image_vi_2":	{
+	},
+	"image_vi_3":	{
+	},
+	"image_vi_4":	{
+	},
+	"image_vi_5":	{
+	},
+	"image_vi_6":	{
+	},
+	"image_vi_7":	{
+	}
+}

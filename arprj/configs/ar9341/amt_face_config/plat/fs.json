@@ -1,0 +1,33 @@
+{
+    "all_rootfs":{
+        "component_list" : [ "prebuilds/rootfs/rootfs.tar.gz:",
+                             "out/middlewares/lib/*.so:usr/lib",
+                             "out/hal/lib/*.so:usr/lib",
+                             "out/mpp/lib/*.so:usr/lib",
+                             "out/hal/bin/*:usr/bin",
+                             "prebuilds/ko:mod",
+                             "prebuilds/apps/bin/artosyn_upgrade:usr/bin",
+                             "<BOARD_CONFIG_DIR>/scenario/start*.sh:etc/init.d"]
+    },
+	"usr_data":{
+        "component_list" : [ "<BOARD_CONFIG_DIR>/scenario/run.sh:",
+                             "<BOARD_CONFIG_DIR>/scenario/start_network_upgrade.sh:",
+                             "<BOARD_CONFIG_DIR>/scenario/start.conf:local/factory",
+                             "<BOARD_CONFIG_DIR>/../common/tools/*:tools",
+                             "prebuilds/apps/lib/*.so*:lib",
+                             "prebuilds/apps/bin:bin",
+                             "../apps/utils/tunning_gen/bin/*:local/factory/tunning/cam_imx307",
+                             "../apps/mpp_sample/aropenpose/aropenpose:openpose_demo",
+                             "../../arsdk/platforms/dsp/output/ceva*.bin:local/ceva",
+                             "<BOARD_CONFIG_DIR>/scenario/codec_factory_cfg.cjson:local/factory",
+                             "<BOARD_CONFIG_DIR>/scenario/font_16_26.bin:local/factory/font",
+                             "<BOARD_CONFIG_DIR>/scenario/ssd-mobilenet_caffe.npubin:local/mbssd",
+                             "<BOARD_CONFIG_DIR>/scenario/0.json:local/mbssd",
+                             "<BOARD_CONFIG_DIR>/scenario/multi_input_npu_model/two_input_caffe.npubin:local/npu_multi_input",
+                             "<BOARD_CONFIG_DIR>/scenario/multi_input_npu_model/two_input_caffe.json:local/npu_multi_input",
+                             "<BOARD_CONFIG_DIR>/scenario/multi_input_npu_model/output_406.bin:local/npu_multi_input",
+                             "<BOARD_CONFIG_DIR>/scenario/multi_input_npu_model/input.fmat:local/npu_multi_input",
+                             "<BOARD_CONFIG_DIR>/scenario/multi_input_npu_model/input.1.rgb:local/npu_multi_input"],
+        "debug_component" : [ "../configs/common/debug/:tools"]
+	}
+}

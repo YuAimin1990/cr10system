@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arVENC_PRORES_PARAM_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arVENC_PRORES_PARAM_S结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a94243349dba09c986d2526538e4be954"><td class="memItemLeft" align="right" valign="top">AR_U8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html#a94243349dba09c986d2526538e4be954">u8LumaQt</a> [64]</td></tr>
+<tr class="separator:a94243349dba09c986d2526538e4be954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcbe97b57af845e7d45d49796e5e22f7"><td class="memItemLeft" align="right" valign="top">AR_U8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html#abcbe97b57af845e7d45d49796e5e22f7">u8ChromaQt</a> [64]</td></tr>
+<tr class="separator:abcbe97b57af845e7d45d49796e5e22f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05ccbae38c1112105990bf77647db09"><td class="memItemLeft" align="right" valign="top">AR_CHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html#ad05ccbae38c1112105990bf77647db09">encoder_identifier</a> [4]</td></tr>
+<tr class="separator:ad05ccbae38c1112105990bf77647db09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="ad05ccbae38c1112105990bf77647db09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05ccbae38c1112105990bf77647db09">&#9670;&nbsp;</a></span>encoder_identifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_CHAR encoder_identifier[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 标识生成压缩帧的编码器供应商或产品。 </p>
+
+</div>
+</div>
+<a id="abcbe97b57af845e7d45d49796e5e22f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcbe97b57af845e7d45d49796e5e22f7">&#9670;&nbsp;</a></span>u8ChromaQt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U8 u8ChromaQt[64]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 取值范围:[1, 255]; 色度量化表。 </p>
+
+</div>
+</div>
+<a id="a94243349dba09c986d2526538e4be954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94243349dba09c986d2526538e4be954">&#9670;&nbsp;</a></span>u8LumaQt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U8 u8LumaQt[64]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 取值范围:[1, 255]; 亮度量化表。 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__venc_8h_source.html">ar_comm_venc.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,169 @@
+#-----------------------------------------------------------------------
+#
+# Copyright 2014 - 2017 Synopsys, Inc.
+#
+# This Synopsys software and all associated documentation
+# are proprietary to Synopsys, Inc. and may only be used pursuant to the
+# terms and conditions of a written license agreement with Synopsys,
+# Inc. All other use, reproduction, modification, or distribution of the
+# Synopsys software or the associated documentation
+# is strictly prohibited.
+#
+#-----------------------------------------------------------------------
+#########################
+# CUSTOMIZABLE METHODS
+# The methods below are customizable to accommodate flexibility
+# in crypto key operation such as certificate generation, signing, and passwords
+########################
+
+function PKG_LOOKUP_PK8_PRIV_PWD()
+{
+    # Description:
+    #   Method to for centralized password lookup for pk8 privates keys
+    #
+    # Inputs:
+    #   $1      basename of cert to lookup priv pwd
+    # Outputs:
+    #   echos password of matching cert private on stdout
+    #   returns: 0 on success
+
+    local cert_basename=$1
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # For sample purposes, priv password is always the basename
+    # This can be replaced with array lookup mechanism or more advanced tool lookups as needed
+    echo $cert_basename
+
+    return 0
+}
+
+function PKG_GET_CERT()
+{
+    # Description:
+    #   Method to find/create key pair by name
+    #   This will create two files in current directory:
+    #       * X509 .cert
+    #       * and optionally associated pk8 private key
+    #   If files already exist, method does nothing and assumes reuse of existing cert/pk8
+    #
+    # Inputs:
+    #   $1              basename of cert to find/create
+    #   $2              1 to extract associated pk8 private key; otherwise 0
+    #                   (typically only Entitys will require pk8 extractable)
+    #   $3              key type e.g. rsa3072, ecc256 etc.
+    # Outputs:
+    #   files created:
+    #       $1.cert     x509 formated cert
+    #       $1.pk8      pk8 private key (only required to be created when $2==1)
+    #   returns: 0 on success
+
+    local cert_basename=$1
+    local do_extract_priv=$2
+    local key_type=$3
+    local cert_priv_pwd=""
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # For sample purposes we create a new cert here with associated pk8 only
+    # if they don't already exit.  This can be replaced with similar HSM client
+    # calls to create/export compatible x509 cert and optionally extracted pk8 private key
+    if [[ ! -e "${cert_basename}.cert" ]]; then
+        echo "Creating x509 Cert ${cert_basename}.cert"
+        cert_priv_pwd=$(PKG_LOOKUP_PK8_PRIV_PWD ${cert_basename})
+        ${PKG_PATH_TOOLS}/keytool certgen ${cert_basename} ${cert_priv_pwd} ${key_type} \
+             "./distinguishedName=CodeSigner/emailAddress=user@site.com"
+    else
+        echo "Skipping x509 creation; ${cert_basename}.cert already exists"
+    fi
+
+    # Complete the sample implementation by emulating no pk8 priv creation if requested
+    if [[ ${do_extract_priv} == 0 ]]; then
+        rm -f ./${cert_basename}.pk8
+    fi
+
+    return 0
+}
+
+function PKG_SIGN_BIN()
+{
+    # Description:
+    #   Method to sign a binary with specified key by name
+    #
+    # Inputs:
+    #   $1                      filename of binary to be signed (full path)
+    #   $2                      basename of cert used for signing
+    # Outputs:
+    #   files created:
+    #       basename($1).sig    signature of provided binary (in current path)
+    #   returns: 0 on success
+    local image_file=$1
+    local cert_basename=$2
+    local cert_priv_pwd=""
+    local image_file_sig=./$(basename "$1.sig")
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # For sample purposes, we use software signing which requires all certs extracted private keys present.
+    # This can be replaced with similar HSM client calls to provide sign function
+    # By using HSM client calls, the private keys can remain unextracted in PKG_GET_CERT calls
+    cert_priv_pwd=$(PKG_LOOKUP_PK8_PRIV_PWD ${cert_basename})
+    ${PKG_PATH_TOOLS}/keytool sign ${image_file} ${cert_basename} ${cert_priv_pwd} ${image_file_sig}
+}
+
+function PKG_WRAP_BIN()
+{
+    # Description:
+    #   Method to NIST wrap data using a specified kek.
+    #
+    # Inputs:
+    #   $1                      filename of binary to be wrapped (full path)
+    #   $2                      filename of binary containing the kek (full path)
+    # Outputs:
+    #   $3                      filename of wrapped binary data (full path)
+    #   returns: 0 on success
+    local rawdata_file=$1
+    local kek_file=$2
+    local wrapped_file=$2
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # For sample purposes, we use software wrapping.
+    # This can be replaced with similar HSM client calls to provide wrap function
+    ${PKG_PATH_TOOLS}/keytool wrap ${rawdata_file} ${kek_file} ${wrapped_file}
+}
+
+function PKG_GET_IV()
+{
+    # Description:
+    #    Method to generate a unique IV.
+    #
+    # Outputs:
+    # $1                       Binary file name for the IV.
+    local iv_bin_name=$1
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # The keytool generates a unique IV for the sample.
+    ${PKG_PATH_TOOLS}/keytool gen_hdr_iv ${iv_bin_name}
+}
+
+function PKG_ENCRYPT_IMAGE()
+{
+    # Decription:
+    #    Method to encrypt the data image
+    #
+    # Inputs:
+    # $1                       filename of image data
+    # $2                       filename containing the image key.
+    # $3                       filename of the image IV.
+    #
+    # Outputs:
+    # $4                       filename of the encrypted image binary
+
+    local image_data_path=$1
+    local image_key_path=$2
+    local image_iv_path=$3
+    local encrypted_image_bin_path=$4
+
+    # SAMPLE IMPLEMENTATION NOTE:
+    # Image is encrypted using AES-CTR.
+    rm -f ${encrypted_image_bin_path}
+    ${PKG_PATH_TOOLS}/keytool crypt ctr ${image_key_path} ${image_data_path} ${encrypted_image_bin_path} ${image_iv_path}
+
+}

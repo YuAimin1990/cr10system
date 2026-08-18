@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arADEC_DECODER_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arADEC_DECODER_S结构体 参考<div class="ingroups"><a class="el" href="group___m_p_i___a_u_d_i_o.html">MPI_AUDIO</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ar__comm__adec_8h_source.html">ar_comm_adec.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a200c89713558651e7530e77cc3fa28ec"><td class="memItemLeft" align="right" valign="top"><a id="a200c89713558651e7530e77cc3fa28ec"></a>
+PAYLOAD_TYPE_E&#160;</td><td class="memItemRight" valign="bottom"><b>enType</b></td></tr>
+<tr class="separator:a200c89713558651e7530e77cc3fa28ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb042747000dc0a7ac5e9b7831beb14a"><td class="memItemLeft" align="right" valign="top">AR_CHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#afb042747000dc0a7ac5e9b7831beb14a">aszName</a> [17]</td></tr>
+<tr class="separator:afb042747000dc0a7ac5e9b7831beb14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a80706e786c3495781c4d299dff80fd"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#a9a80706e786c3495781c4d299dff80fd">pfnOpenDecoder</a> )(AR_VOID *pDecoderAttr, AR_VOID **ppDecoder)</td></tr>
+<tr class="separator:a9a80706e786c3495781c4d299dff80fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b3c547a096293a2844a537f04f9886"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#a27b3c547a096293a2844a537f04f9886">pfnDecodeFrm</a> )(AR_VOID *pDecoder, AR_U8 **pu8Inbuf, AR_S32 *ps32LeftByte, AR_U16 *pu16Outbuf, AR_U32 *pu32OutLen, AR_U32 *pu32Chns)</td></tr>
+<tr class="separator:a27b3c547a096293a2844a537f04f9886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ba06e7c4351f6d2bd83cba4c610e68"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#a04ba06e7c4351f6d2bd83cba4c610e68">pfnGetFrmInfo</a> )(AR_VOID *pDecoder, AR_VOID *pInfo)</td></tr>
+<tr class="separator:a04ba06e7c4351f6d2bd83cba4c610e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3eac17612c1f38017d3010613bd002"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#a3f3eac17612c1f38017d3010613bd002">pfnCloseDecoder</a> )(AR_VOID *pDecoder)</td></tr>
+<tr class="separator:a3f3eac17612c1f38017d3010613bd002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a860f360abc473089d4e45463a8e6acb0"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html#a860f360abc473089d4e45463a8e6acb0">pfnResetDecoder</a> )(AR_VOID *pDecoder)</td></tr>
+<tr class="separator:a860f360abc473089d4e45463a8e6acb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义解码器属性结构体 </p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a id="afb042747000dc0a7ac5e9b7831beb14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb042747000dc0a7ac5e9b7831beb14a">&#9670;&nbsp;</a></span>aszName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_CHAR aszName[17]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>音频解码协议类型 </p>
+
+</div>
+</div>
+<a id="a3f3eac17612c1f38017d3010613bd002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3eac17612c1f38017d3010613bd002">&#9670;&nbsp;</a></span>pfnCloseDecoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnCloseDecoder(AR_VOID *pDecoder)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取音频帧信息的函数指针 </p>
+
+</div>
+</div>
+<a id="a27b3c547a096293a2844a537f04f9886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b3c547a096293a2844a537f04f9886">&#9670;&nbsp;</a></span>pfnDecodeFrm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnDecodeFrm(AR_VOID *pDecoder, AR_U8 **pu8Inbuf, AR_S32 *ps32LeftByte, AR_U16 *pu16Outbuf, AR_U32 *pu32OutLen, AR_U32 *pu32Chns)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>打开解码器的函数指针 </p>
+
+</div>
+</div>
+<a id="a04ba06e7c4351f6d2bd83cba4c610e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04ba06e7c4351f6d2bd83cba4c610e68">&#9670;&nbsp;</a></span>pfnGetFrmInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnGetFrmInfo(AR_VOID *pDecoder, AR_VOID *pInfo)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>进行解码的函数指针 </p>
+
+</div>
+</div>
+<a id="a9a80706e786c3495781c4d299dff80fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a80706e786c3495781c4d299dff80fd">&#9670;&nbsp;</a></span>pfnOpenDecoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnOpenDecoder(AR_VOID *pDecoderAttr, AR_VOID **ppDecoder)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>解码器名称 </p>
+
+</div>
+</div>
+<a id="a860f360abc473089d4e45463a8e6acb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860f360abc473089d4e45463a8e6acb0">&#9670;&nbsp;</a></span>pfnResetDecoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnResetDecoder(AR_VOID *pDecoder)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>关闭解码器的函数指针 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__adec_8h_source.html">ar_comm_adec.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

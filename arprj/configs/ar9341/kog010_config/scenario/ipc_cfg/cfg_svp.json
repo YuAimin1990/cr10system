@@ -1,0 +1,12 @@
+{
+	"svp":	{
+		"enable":	0,
+		"net_name":	"ssd",
+		"npu_bin":	"/usrdata/local/mbssd/ssd-mobilenet_caffe.npubin",
+		"vpss_grp":	1,
+		"vpss_chn":	3,
+		"osd_enable":	1,
+		"osd_vpss_grp":	1,
+		"osd_chn":	3
+	}
+}

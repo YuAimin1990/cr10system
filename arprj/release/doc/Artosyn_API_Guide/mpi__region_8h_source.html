@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: mpi_region.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mpi_region.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mpi__region_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __MPI_REGION_H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __MPI_REGION_H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__comm__region_8h.html">ar_comm_region.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga6fc699a872766496dac173dccf035ee8">AR_MPI_RGN_Create</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_r_g_n___a_t_t_r___s.html">RGN_ATTR_S</a> *pstRegion);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gac6f8b7f696da155accab13550703fdb9">AR_MPI_RGN_Destroy</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7af524b820e3c62fb3a3600ace420bcf">AR_MPI_RGN_GetAttr</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <a class="code" href="structar_r_g_n___a_t_t_r___s.html">RGN_ATTR_S</a> *pstRegion);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga4364df4308e006b001908cb7226e7bc3">AR_MPI_RGN_SetAttr</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_r_g_n___a_t_t_r___s.html">RGN_ATTR_S</a> *pstRegion);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7c413ebc35ab57dbdcd2ef5f72142dce">AR_MPI_RGN_SetBitMap</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_b_i_t_m_a_p___s.html">BITMAP_S</a> *pstBitmap);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gab755f6a7abfc518a3102eeb66a7fbfcd">AR_MPI_RGN_AttachToChn</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstChn, <span class="keyword">const</span> <a class="code" href="structar_r_g_n___c_h_n___a_t_t_r___s.html">RGN_CHN_ATTR_S</a> *pstChnAttr);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga41dc1f992ab8e33bce2f6b1c143d50a0">AR_MPI_RGN_DetachFromChn</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstChn);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga9d448125ef9e3b8cf3ffc1568b391fca">AR_MPI_RGN_SetDisplayAttr</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstChn, <span class="keyword">const</span> <a class="code" href="structar_r_g_n___c_h_n___a_t_t_r___s.html">RGN_CHN_ATTR_S</a> *pstChnAttr);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga7de0b711c45c12b48daf295277eb2a8f">AR_MPI_RGN_GetDisplayAttr</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstChn, <a class="code" href="structar_r_g_n___c_h_n___a_t_t_r___s.html">RGN_CHN_ATTR_S</a> *pstChnAttr);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaf6fa57ec4e2f4bfb3e9419ad465faf31">AR_MPI_RGN_GetCanvasInfo</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle, <a class="code" href="structar_r_g_n___c_a_n_v_a_s___i_n_f_o___s.html">RGN_CANVAS_INFO_S</a> *pstCanvasInfo);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gac0202e0ffa0569d5de503df9cb128aad">AR_MPI_RGN_UpdateCanvas</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> Handle);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gac4382ca55e09ffce05d09a4fc322ee59">AR_MPI_RGN_BatchBegin</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">RGN_HANDLEGROUP</a> *pu32Group,AR_U32 u32Num,<span class="keyword">const</span> <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a> handle[]);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga626c7beafee811ede6f90958c64dd2c2">AR_MPI_RGN_BatchEnd</a>(<a class="code" href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">RGN_HANDLEGROUP</a> u32Group);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga5642bfc56901142a9cd68ab31654081b">AR_MPI_RGN_GetFd</a>(AR_VOID);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga47f2d6eca4291fcc64d55f10c6dcb183">AR_MPI_RGN_RegistCb</a>(<a class="code" href="struct_r_g_n___r_e_g_i_s_t_e_r___c_b___s.html">RGN_REGISTER_CB_S</a> *pstCb);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga1de63808271218ed31a0e6b1a007b2a5">AR_MPI_RGN_UnRegistCb</a>(MOD_ID_E enModId);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga80f410afc886bf7a6670b66e055cd54a">AR_MPI_RGN_Set_Chn_Para</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstChn, <span class="keyword">const</span> <a class="code" href="structar_r_g_n___c_h_n___p_a_r_a___s.html">RGN_CHN_PARA_S</a> *pstChnAttr);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga8924a32af959bb1f4c486a811b8ad176">AR_MPI_RGN_Suspend</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;AR_S32 <a class="code" href="group___m_p_i___r_e_g_i_o_n.html#ga25b795519496736b31184b32c946b534">AR_MPI_RGN_Resume</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifndef __MPI_REGION_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga1de63808271218ed31a0e6b1a007b2a5"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga1de63808271218ed31a0e6b1a007b2a5">AR_MPI_RGN_UnRegistCb</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_UnRegistCb(MOD_ID_E enModId)</div><div class="ttdoc">rgn回调销毁函数</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga4364df4308e006b001908cb7226e7bc3"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga4364df4308e006b001908cb7226e7bc3">AR_MPI_RGN_SetAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_SetAttr(RGN_HANDLE Handle, const RGN_ATTR_S *pstRegion)</div><div class="ttdoc">获取区域属性</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga8924a32af959bb1f4c486a811b8ad176"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga8924a32af959bb1f4c486a811b8ad176">AR_MPI_RGN_Suspend</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_Suspend(void)</div><div class="ttdoc">使RGN模块进入睡眠状态</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga5642bfc56901142a9cd68ab31654081b"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga5642bfc56901142a9cd68ab31654081b">AR_MPI_RGN_GetFd</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_GetFd(AR_VOID)</div><div class="ttdoc">获取区域模块的句柄</div></div>
+<div class="ttc" id="astructar_r_g_n___c_a_n_v_a_s___i_n_f_o___s_html"><div class="ttname"><a href="structar_r_g_n___c_a_n_v_a_s___i_n_f_o___s.html">arRGN_CANVAS_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:332</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga6fc699a872766496dac173dccf035ee8"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga6fc699a872766496dac173dccf035ee8">AR_MPI_RGN_Create</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_Create(RGN_HANDLE Handle, const RGN_ATTR_S *pstRegion)</div><div class="ttdoc">创建区域</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gac4382ca55e09ffce05d09a4fc322ee59"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gac4382ca55e09ffce05d09a4fc322ee59">AR_MPI_RGN_BatchBegin</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_BatchBegin(RGN_HANDLEGROUP *pu32Group, AR_U32 u32Num, const RGN_HANDLE handle[])</div><div class="ttdoc">开始区域批量配置</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga80f410afc886bf7a6670b66e055cd54a"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga80f410afc886bf7a6670b66e055cd54a">AR_MPI_RGN_Set_Chn_Para</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_Set_Chn_Para(const MPP_CHN_S *pstChn, const RGN_CHN_PARA_S *pstChnAttr)</div><div class="ttdoc">设置chn参数接口，用于设置该chn是否需要带copy属性</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga25b795519496736b31184b32c946b534"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga25b795519496736b31184b32c946b534">AR_MPI_RGN_Resume</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_Resume(void)</div><div class="ttdoc">唤醒RGN模块</div></div>
+<div class="ttc" id="astructar_m_p_p___c_h_n___s_html"><div class="ttname"><a href="structar_m_p_p___c_h_n___s.html">arMPP_CHN_S</a></div><div class="ttdef"><b>Definition:</b> ar_common.h:195</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gac6f8b7f696da155accab13550703fdb9"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gac6f8b7f696da155accab13550703fdb9">AR_MPI_RGN_Destroy</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_Destroy(RGN_HANDLE Handle)</div><div class="ttdoc">删除区域</div></div>
+<div class="ttc" id="astructar_r_g_n___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_r_g_n___c_h_n___a_t_t_r___s.html">arRGN_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:295</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7de0b711c45c12b48daf295277eb2a8f"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7de0b711c45c12b48daf295277eb2a8f">AR_MPI_RGN_GetDisplayAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_GetDisplayAttr(RGN_HANDLE Handle, const MPP_CHN_S *pstChn, RGN_CHN_ATTR_S *pstChnAttr)</div><div class="ttdoc">获取区域在通道上的显示属性</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7c413ebc35ab57dbdcd2ef5f72142dce"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7c413ebc35ab57dbdcd2ef5f72142dce">AR_MPI_RGN_SetBitMap</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_SetBitMap(RGN_HANDLE Handle, const BITMAP_S *pstBitmap)</div><div class="ttdoc">对区域进行位图填充</div></div>
+<div class="ttc" id="astruct_r_g_n___r_e_g_i_s_t_e_r___c_b___s_html"><div class="ttname"><a href="struct_r_g_n___r_e_g_i_s_t_e_r___c_b___s.html">RGN_REGISTER_CB_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:365</div></div>
+<div class="ttc" id="astructar_r_g_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_r_g_n___a_t_t_r___s.html">arRGN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:288</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gae13450a8e912bd849b6cc1c8db39ba95"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gae13450a8e912bd849b6cc1c8db39ba95">RGN_HANDLE</a></div><div class="ttdeci">AR_U32 RGN_HANDLE</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:75</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaeb34f917de5ab124d905e1109fe7646e"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaeb34f917de5ab124d905e1109fe7646e">RGN_HANDLEGROUP</a></div><div class="ttdeci">AR_U32 RGN_HANDLEGROUP</div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:78</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga47f2d6eca4291fcc64d55f10c6dcb183"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga47f2d6eca4291fcc64d55f10c6dcb183">AR_MPI_RGN_RegistCb</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_RegistCb(RGN_REGISTER_CB_S *pstCb)</div><div class="ttdoc">rgn回调注册函数</div></div>
+<div class="ttc" id="astructar_r_g_n___c_h_n___p_a_r_a___s_html"><div class="ttname"><a href="structar_r_g_n___c_h_n___p_a_r_a___s.html">arRGN_CHN_PARA_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_region.h:303</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga9d448125ef9e3b8cf3ffc1568b391fca"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga9d448125ef9e3b8cf3ffc1568b391fca">AR_MPI_RGN_SetDisplayAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_SetDisplayAttr(RGN_HANDLE Handle, const MPP_CHN_S *pstChn, const RGN_CHN_ATTR_S *pstChnAttr)</div><div class="ttdoc">设置区域在通道上的显示属性</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gaf6fa57ec4e2f4bfb3e9419ad465faf31"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gaf6fa57ec4e2f4bfb3e9419ad465faf31">AR_MPI_RGN_GetCanvasInfo</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_GetCanvasInfo(RGN_HANDLE Handle, RGN_CANVAS_INFO_S *pstCanvasInfo)</div><div class="ttdoc">获取区域画布信息</div></div>
+<div class="ttc" id="aar__comm__region_8h_html"><div class="ttname"><a href="ar__comm__region_8h.html">ar_comm_region.h</a></div><div class="ttdoc">描述region相关的通用数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga7af524b820e3c62fb3a3600ace420bcf"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga7af524b820e3c62fb3a3600ace420bcf">AR_MPI_RGN_GetAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_GetAttr(RGN_HANDLE Handle, RGN_ATTR_S *pstRegion)</div><div class="ttdoc">设置区域属性</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gac0202e0ffa0569d5de503df9cb128aad"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gac0202e0ffa0569d5de503df9cb128aad">AR_MPI_RGN_UpdateCanvas</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_UpdateCanvas(RGN_HANDLE Handle)</div><div class="ttdoc">更新区域画布</div></div>
+<div class="ttc" id="astructar_b_i_t_m_a_p___s_html"><div class="ttname"><a href="structar_b_i_t_m_a_p___s.html">arBITMAP_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_video.h:555</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga41dc1f992ab8e33bce2f6b1c143d50a0"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga41dc1f992ab8e33bce2f6b1c143d50a0">AR_MPI_RGN_DetachFromChn</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_DetachFromChn(RGN_HANDLE Handle, const MPP_CHN_S *pstChn)</div><div class="ttdoc">将区域从指定通道上解绑</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_gab755f6a7abfc518a3102eeb66a7fbfcd"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#gab755f6a7abfc518a3102eeb66a7fbfcd">AR_MPI_RGN_AttachToChn</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_AttachToChn(RGN_HANDLE Handle, const MPP_CHN_S *pstChn, const RGN_CHN_ATTR_S *pstChnAttr)</div><div class="ttdoc">将区域绑定到指定通道上</div></div>
+<div class="ttc" id="agroup___m_p_i___r_e_g_i_o_n_html_ga626c7beafee811ede6f90958c64dd2c2"><div class="ttname"><a href="group___m_p_i___r_e_g_i_o_n.html#ga626c7beafee811ede6f90958c64dd2c2">AR_MPI_RGN_BatchEnd</a></div><div class="ttdeci">AR_S32 AR_MPI_RGN_BatchEnd(RGN_HANDLEGROUP u32Group)</div><div class="ttdoc">结束区域批量配置</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

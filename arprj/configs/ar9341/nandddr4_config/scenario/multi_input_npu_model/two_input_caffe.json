@@ -1,0 +1,17 @@
+{
+	"network":	{
+		"id":"123",
+		"priority":"normal",
+		"callback_to_arm":"yes",
+		"npubin":"two_input_caffe.npubin",
+		"ifc-pre-process-0":"no",
+                "ifc-pre-process-1":"yes",
+		"local_path":"./",
+		"draw_osd":"no",
+		"log_level":"5",
+		"sram_addr":"0x017c0000",
+		"sram_size":"0x40000",
+		"img_width":"0",
+		"img_height":"0"
+	}
+}

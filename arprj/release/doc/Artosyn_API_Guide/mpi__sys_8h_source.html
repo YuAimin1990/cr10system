@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: mpi_sys.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mpi_sys.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mpi__sys_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __MPI_SYS_H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __MPI_SYS_H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;hal_type.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__common_8h.html">ar_common.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__comm__sys_8h.html">ar_comm_sys.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#gae00d69e0e3d051cefc6c9a185c1f68e8">AR_MPI_SYS_Init</a>(AR_VOID);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga4d14a42e961f91ac37e0221347c307db">AR_MPI_SYS_Exit</a>(AR_VOID);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga25c9baa5c07619dbdc604c3a771b9d0f">AR_MPI_SYS_SetConfig</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a>* pstSysConfig);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga65995f6acf1a0b261123fe542b33308a">AR_MPI_SYS_GetConfig</a>(<a class="code" href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">MPP_SYS_CONFIG_S</a>* pstSysConfig);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;AR_S32  <a class="code" href="group___m_p_i___s_y_s.html#ga1dba6cdf4e4ccbfc93a9c087327efc84">AR_MPI_SYS_Bind</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstSrcChn, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstDestChn);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;AR_S32  <a class="code" href="group___m_p_i___s_y_s.html#gab3634b970eb28afce2d6de6666fe5703">AR_MPI_SYS_UnBind</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstSrcChn, <span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstDestChn);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;AR_S32  <a class="code" href="group___m_p_i___s_y_s.html#ga3e2d6fbb7ad5c05d0497b789aff316e8">AR_MPI_SYS_GetBindbyDest</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstDestChn, <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstSrcChn);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;AR_S32  <a class="code" href="group___m_p_i___s_y_s.html#gaee5cbcfee374d6d961a65520066c22cd">AR_MPI_SYS_GetBindbySrc</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a> *pstSrcChn, <a class="code" href="structar_m_p_p___b_i_n_d___d_e_s_t___s.html">MPP_BIND_DEST_S</a> *pstBindDest);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga938ff65ae8775b0c877a52f4112046f3">AR_MPI_SYS_GetVersion</a>(<a class="code" href="structar_m_p_p___v_e_r_s_i_o_n___s.html">MPP_VERSION_S</a>* pstVersion);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga0f00b0489dc32b2db4dd6a86cf23fe81">AR_MPI_SYS_GetChipId</a>(AR_U32 *pu32ChipId);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga871222a9e31a86d6550d46a3885584ae">AR_MPI_SYS_GetCustomCode</a>(AR_U32 *pu32CustomCode);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#gac8c196563f79ae5538498e6c4eb14764">AR_MPI_SYS_GetCurPTS</a>(AR_U64* pu64CurPTS);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga8de97f703c5316dd68fb2c1e940e2899">AR_MPI_SYS_InitPTSBase</a>(AR_U64 u64PTSBase);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#gad5404f5f338ca72d0c9f8ed07c39e25e">AR_MPI_SYS_SyncPTS</a>(AR_U64 u64PTSBase);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga61c51a0fd7df5814cac4a12b2e073ce0">AR_MPI_SYS_MmzAlloc</a>(AR_U64* pu64PhyAddr, AR_VOID** ppVirAddr,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                           <span class="keyword">const</span> AR_CHAR* strMmb, <span class="keyword">const</span> AR_CHAR* strZone, AR_U32 u32Len);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga2171d552dd00cdfce5a8b0b756e565ed">AR_MPI_SYS_MmzAlloc_Cached</a>(AR_U64* pu64PhyAddr, AR_VOID** ppVirAddr,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                  <span class="keyword">const</span> AR_CHAR* pstrMmb, <span class="keyword">const</span> AR_CHAR* pstrZone, AR_U32 u32Len);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga96b3843d37b3b935f6a470a9ffb8c9c8">AR_MPI_SYS_MmzFree</a>(AR_U64 u64PhyAddr, AR_VOID* pVirAddr);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga249bf12111c3c22f26f7f573eed6b444">AR_MPI_SYS_MmzFlushCache</a>(AR_U64 u64PhyAddr, AR_VOID* pVirAddr, AR_U32 u32Size);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;AR_VOID* <a class="code" href="group___m_p_i___s_y_s.html#ga4cc53e524451a9bc97aeecfa275158fd">AR_MPI_SYS_Mmap</a>(AR_U64 u64PhyAddr, AR_U32 u32Size);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;AR_VOID* <a class="code" href="group___m_p_i___s_y_s.html#gae4cd767c18a5a39e2f27958ef5ab58d3">AR_MPI_SYS_MmapCache</a>(AR_U64 u64PhyAddr, AR_U32 u32Size);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga5b6d339006f23cdf7d498118e2ac074e">AR_MPI_SYS_Munmap</a>(AR_VOID* pVirAddr, AR_U32 u32Size);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#gac0c8725e38ed45bbae969a12f04ada34">AR_MPI_SYS_MflushCache</a>(AR_U64 u64PhyAddr, AR_VOID *pVirAddr, AR_U32 u32Size);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga62c2b3d6792fbc88322825e0eba35efc">AR_MPI_SYS_SetMemConfig</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstMppChn, <span class="keyword">const</span> AR_CHAR* pcMmzName);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga326034eb0413fdb9c78af64cca898fef">AR_MPI_SYS_GetMemConfig</a>(<span class="keyword">const</span> <a class="code" href="structar_m_p_p___c_h_n___s.html">MPP_CHN_S</a>* pstMppChn, AR_CHAR* pcMmzName);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga31caf1f9234087f7e855382fef0e9909">AR_MPI_SYS_CloseFd</a>(AR_VOID);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga764c8aace99a904b2c94148ad4a3ced3">AR_MPI_SYS_GetVirMemInfo</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pVirAddr, <a class="code" href="structar_s_y_s___v_i_r_m_e_m___i_n_f_o___s.html">SYS_VIRMEM_INFO_S</a>* pstMemInfo);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">/* Set/get Scale coefficient level for VPSS/VGS*/</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;AR_S32 AR_MPI_SYS_SetScaleCoefLevel(<span class="keyword">const</span> <a class="code" href="structar_s_c_a_l_e___r_a_n_g_e___s.html">SCALE_RANGE_S</a> *pstScaleRange, <span class="keyword">const</span> <a class="code" href="structar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s.html">SCALE_COEFF_LEVEL_S</a> *pstScaleCoeffLevel);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;AR_S32 AR_MPI_SYS_GetScaleCoefLevel(<span class="keyword">const</span> <a class="code" href="structar_s_c_a_l_e___r_a_n_g_e___s.html">SCALE_RANGE_S</a> *pstScaleRange, <a class="code" href="structar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s.html">SCALE_COEFF_LEVEL_S</a> *pstScaleCoeffLevel);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#gabd573ac6217a3fced4e198a05e866789">AR_MPI_SYS_SetTimeZone</a>(AR_S32 s32TimeZone);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga901198da5e0572308c0e0aefa262f071">AR_MPI_SYS_GetTimeZone</a>(AR_S32 *ps32TimeZone);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga40eec58f84edfc704d6d23379ebd91c6">AR_MPI_SYS_SetGPSInfo</a>(<span class="keyword">const</span> <a class="code" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *pstGPSInfo);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;AR_S32 <a class="code" href="group___m_p_i___s_y_s.html#ga91e3a8eddac92095986c8a8662bd88f2">AR_MPI_SYS_GetGPSInfo</a>(<a class="code" href="structar_g_p_s___i_n_f_o___s.html">GPS_INFO_S</a> *pstGPSInfo);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;AR_S32 AR_MPI_SYS_SetTuningConnect(AR_S32 s32Connect);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;AR_S32 AR_MPI_SYS_GetTuningConnect(AR_S32* ps32Connect);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;AR_S32 AR_MPI_SYS_SetVIVPSSMode(<span class="keyword">const</span> <a class="code" href="structar_v_i___v_p_s_s___m_o_d_e___s.html">VI_VPSS_MODE_S</a>* pstVIVPSSMode);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;AR_S32 AR_MPI_SYS_GetVIVPSSMode(<a class="code" href="structar_v_i___v_p_s_s___m_o_d_e___s.html">VI_VPSS_MODE_S</a>* pstVIVPSSMode);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*__MPI_SYS_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga764c8aace99a904b2c94148ad4a3ced3"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga764c8aace99a904b2c94148ad4a3ced3">AR_MPI_SYS_GetVirMemInfo</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetVirMemInfo(const void *pVirAddr, SYS_VIRMEM_INFO_S *pstMemInfo)</div><div class="ttdoc">根据虚拟地址获取对应的内存信息，包括物理地址及 cached 属性.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga65995f6acf1a0b261123fe542b33308a"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga65995f6acf1a0b261123fe542b33308a">AR_MPI_SYS_GetConfig</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetConfig(MPP_SYS_CONFIG_S *pstSysConfig)</div><div class="ttdoc">配置系统控制参数.</div></div>
+<div class="ttc" id="astructar_v_i___v_p_s_s___m_o_d_e___s_html"><div class="ttname"><a href="structar_v_i___v_p_s_s___m_o_d_e___s.html">arVI_VPSS_MODE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:148</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga4cc53e524451a9bc97aeecfa275158fd"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga4cc53e524451a9bc97aeecfa275158fd">AR_MPI_SYS_Mmap</a></div><div class="ttdeci">AR_VOID * AR_MPI_SYS_Mmap(AR_U64 u64PhyAddr, AR_U32 u32Size)</div><div class="ttdoc">memory存储映射接口.</div></div>
+<div class="ttc" id="astructar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s_html"><div class="ttname"><a href="structar_s_c_a_l_e___c_o_e_f_f___l_e_v_e_l___s.html">arSCALE_COEFF_LEVEL_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:97</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga871222a9e31a86d6550d46a3885584ae"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga871222a9e31a86d6550d46a3885584ae">AR_MPI_SYS_GetCustomCode</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetCustomCode(AR_U32 *pu32CustomCode)</div><div class="ttdoc">获取当前芯片的 CustomCode.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gab3634b970eb28afce2d6de6666fe5703"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gab3634b970eb28afce2d6de6666fe5703">AR_MPI_SYS_UnBind</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_UnBind(const MPP_CHN_S *pstSrcChn, const MPP_CHN_S *pstDestChn)</div><div class="ttdoc">数据源到数据接收者解绑定接口.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gad5404f5f338ca72d0c9f8ed07c39e25e"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gad5404f5f338ca72d0c9f8ed07c39e25e">AR_MPI_SYS_SyncPTS</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_SyncPTS(AR_U64 u64PTSBase)</div><div class="ttdoc">同步 MPP 的时间戳.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga61c51a0fd7df5814cac4a12b2e073ce0"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga61c51a0fd7df5814cac4a12b2e073ce0">AR_MPI_SYS_MmzAlloc</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_MmzAlloc(AR_U64 *pu64PhyAddr, AR_VOID **ppVirAddr, const AR_CHAR *strMmb, const AR_CHAR *strZone, AR_U32 u32Len)</div><div class="ttdoc">在用户态分配MMZ内存.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga91e3a8eddac92095986c8a8662bd88f2"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga91e3a8eddac92095986c8a8662bd88f2">AR_MPI_SYS_GetGPSInfo</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetGPSInfo(GPS_INFO_S *pstGPSInfo)</div><div class="ttdoc">获取 GPS 信息.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gac8c196563f79ae5538498e6c4eb14764"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gac8c196563f79ae5538498e6c4eb14764">AR_MPI_SYS_GetCurPTS</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetCurPTS(AR_U64 *pu64CurPTS)</div><div class="ttdoc">获取当前的时间戳.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gaee5cbcfee374d6d961a65520066c22cd"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gaee5cbcfee374d6d961a65520066c22cd">AR_MPI_SYS_GetBindbySrc</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetBindbySrc(const MPP_CHN_S *pstSrcChn, MPP_BIND_DEST_S *pstBindDest)</div><div class="ttdoc">获取此通道上绑定的源通道的信息.</div></div>
+<div class="ttc" id="astructar_m_p_p___b_i_n_d___d_e_s_t___s_html"><div class="ttname"><a href="structar_m_p_p___b_i_n_d___d_e_s_t___s.html">arMPP_BIND_DEST_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:39</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga62c2b3d6792fbc88322825e0eba35efc"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga62c2b3d6792fbc88322825e0eba35efc">AR_MPI_SYS_SetMemConfig</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_SetMemConfig(const MPP_CHN_S *pstMppChn, const AR_CHAR *pcMmzName)</div><div class="ttdoc">配置内存参数，设置模块设备通道使用的 MMZ 区域名称.</div></div>
+<div class="ttc" id="astructar_m_p_p___c_h_n___s_html"><div class="ttname"><a href="structar_m_p_p___c_h_n___s.html">arMPP_CHN_S</a></div><div class="ttdef"><b>Definition:</b> ar_common.h:195</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga326034eb0413fdb9c78af64cca898fef"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga326034eb0413fdb9c78af64cca898fef">AR_MPI_SYS_GetMemConfig</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetMemConfig(const MPP_CHN_S *pstMppChn, AR_CHAR *pcMmzName)</div><div class="ttdoc">获取模块设备通道使用的 MMZ 区域名称.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga901198da5e0572308c0e0aefa262f071"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga901198da5e0572308c0e0aefa262f071">AR_MPI_SYS_GetTimeZone</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetTimeZone(AR_S32 *ps32TimeZone)</div><div class="ttdoc">获取时区信息.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga8de97f703c5316dd68fb2c1e940e2899"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga8de97f703c5316dd68fb2c1e940e2899">AR_MPI_SYS_InitPTSBase</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_InitPTSBase(AR_U64 u64PTSBase)</div><div class="ttdoc">初始化 MPP 的时间戳基准.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga1dba6cdf4e4ccbfc93a9c087327efc84"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga1dba6cdf4e4ccbfc93a9c087327efc84">AR_MPI_SYS_Bind</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_Bind(const MPP_CHN_S *pstSrcChn, const MPP_CHN_S *pstDestChn)</div><div class="ttdoc">数据源到数据接收者绑定接口.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga25c9baa5c07619dbdc604c3a771b9d0f"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga25c9baa5c07619dbdc604c3a771b9d0f">AR_MPI_SYS_SetConfig</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_SetConfig(const MPP_SYS_CONFIG_S *pstSysConfig)</div><div class="ttdoc">配置系统控制参数.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga0f00b0489dc32b2db4dd6a86cf23fe81"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga0f00b0489dc32b2db4dd6a86cf23fe81">AR_MPI_SYS_GetChipId</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetChipId(AR_U32 *pu32ChipId)</div><div class="ttdoc">获取当前芯片的 ID.</div></div>
+<div class="ttc" id="astructar_s_c_a_l_e___r_a_n_g_e___s_html"><div class="ttname"><a href="structar_s_c_a_l_e___r_a_n_g_e___s.html">arSCALE_RANGE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:105</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gae4cd767c18a5a39e2f27958ef5ab58d3"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gae4cd767c18a5a39e2f27958ef5ab58d3">AR_MPI_SYS_MmapCache</a></div><div class="ttdeci">AR_VOID * AR_MPI_SYS_MmapCache(AR_U64 u64PhyAddr, AR_U32 u32Size)</div><div class="ttdoc">存储映射接口，映射成cache属性.</div></div>
+<div class="ttc" id="astructar_g_p_s___i_n_f_o___s_html"><div class="ttname"><a href="structar_g_p_s___i_n_f_o___s.html">arGPS_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:117</div></div>
+<div class="ttc" id="aar__comm__sys_8h_html"><div class="ttname"><a href="ar__comm__sys_8h.html">ar_comm_sys.h</a></div><div class="ttdoc">描述系统控制模块相关的通用数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga5b6d339006f23cdf7d498118e2ac074e"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga5b6d339006f23cdf7d498118e2ac074e">AR_MPI_SYS_Munmap</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_Munmap(AR_VOID *pVirAddr, AR_U32 u32Size)</div><div class="ttdoc">存储反映射接口.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gac0c8725e38ed45bbae969a12f04ada34"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gac0c8725e38ed45bbae969a12f04ada34">AR_MPI_SYS_MflushCache</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_MflushCache(AR_U64 u64PhyAddr, AR_VOID *pVirAddr, AR_U32 u32Size)</div><div class="ttdoc">刷新 cache里的内容到内存并且使cache里的内容无效.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga31caf1f9234087f7e855382fef0e9909"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga31caf1f9234087f7e855382fef0e9909">AR_MPI_SYS_CloseFd</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_CloseFd(AR_VOID)</div><div class="ttdoc">关闭所有 SYS 打开的日志、系统、内存 Fd.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga938ff65ae8775b0c877a52f4112046f3"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga938ff65ae8775b0c877a52f4112046f3">AR_MPI_SYS_GetVersion</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetVersion(MPP_VERSION_S *pstVersion)</div><div class="ttdoc">获取MPP版本号.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga3e2d6fbb7ad5c05d0497b789aff316e8"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga3e2d6fbb7ad5c05d0497b789aff316e8">AR_MPI_SYS_GetBindbyDest</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_GetBindbyDest(const MPP_CHN_S *pstDestChn, MPP_CHN_S *pstSrcChn)</div><div class="ttdoc">获取此通道上绑定的源通道的信息.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga2171d552dd00cdfce5a8b0b756e565ed"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga2171d552dd00cdfce5a8b0b756e565ed">AR_MPI_SYS_MmzAlloc_Cached</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_MmzAlloc_Cached(AR_U64 *pu64PhyAddr, AR_VOID **ppVirAddr, const AR_CHAR *pstrMmb, const AR_CHAR *pstrZone, AR_U32 u32Len)</div><div class="ttdoc">在用户态分配MMZ内存，该内存支持cache缓存.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gabd573ac6217a3fced4e198a05e866789"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gabd573ac6217a3fced4e198a05e866789">AR_MPI_SYS_SetTimeZone</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_SetTimeZone(AR_S32 s32TimeZone)</div><div class="ttdoc">设置时区信息.(Set/Get local timezone, range: [-86400, 86400] seconds (that is: [-24, 24] hours))</div></div>
+<div class="ttc" id="aar__common_8h_html"><div class="ttname"><a href="ar__common_8h.html">ar_common.h</a></div><div class="ttdoc">描述通用的宏定义和数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga96b3843d37b3b935f6a470a9ffb8c9c8"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga96b3843d37b3b935f6a470a9ffb8c9c8">AR_MPI_SYS_MmzFree</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_MmzFree(AR_U64 u64PhyAddr, AR_VOID *pVirAddr)</div><div class="ttdoc">在用户态释放MMZ内存.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga4d14a42e961f91ac37e0221347c307db"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga4d14a42e961f91ac37e0221347c307db">AR_MPI_SYS_Exit</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_Exit(AR_VOID)</div><div class="ttdoc">去初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区 域、视频处理、图形处理等模块都会被销毁或者禁用.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga40eec58f84edfc704d6d23379ebd91c6"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga40eec58f84edfc704d6d23379ebd91c6">AR_MPI_SYS_SetGPSInfo</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_SetGPSInfo(const GPS_INFO_S *pstGPSInfo)</div><div class="ttdoc">设置 GPS 信息.</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_ga249bf12111c3c22f26f7f573eed6b444"><div class="ttname"><a href="group___m_p_i___s_y_s.html#ga249bf12111c3c22f26f7f573eed6b444">AR_MPI_SYS_MmzFlushCache</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_MmzFlushCache(AR_U64 u64PhyAddr, AR_VOID *pVirAddr, AR_U32 u32Size)</div><div class="ttdoc">刷新 cache里的内容到内存并且使cache里的内容无效.</div></div>
+<div class="ttc" id="astructar_m_p_p___v_e_r_s_i_o_n___s_html"><div class="ttname"><a href="structar_m_p_p___v_e_r_s_i_o_n___s.html">arMPP_VERSION_S</a></div><div class="ttdef"><b>Definition:</b> ar_common.h:59</div></div>
+<div class="ttc" id="agroup___m_p_i___s_y_s_html_gae00d69e0e3d051cefc6c9a185c1f68e8"><div class="ttname"><a href="group___m_p_i___s_y_s.html#gae00d69e0e3d051cefc6c9a185c1f68e8">AR_MPI_SYS_Init</a></div><div class="ttdeci">AR_S32 AR_MPI_SYS_Init(AR_VOID)</div><div class="ttdoc">初始化 MPP 系统。包括音频输入输出、视频输入输出、视频编解码、视频叠加区域、视频处理、图形处理等模块都会被初始化.</div></div>
+<div class="ttc" id="astructar_s_y_s___v_i_r_m_e_m___i_n_f_o___s_html"><div class="ttname"><a href="structar_s_y_s___v_i_r_m_e_m___i_n_f_o___s.html">arSYS_VIRMEM_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:33</div></div>
+<div class="ttc" id="astructar_m_p_p___s_y_s___c_o_n_f_i_g___s_html"><div class="ttname"><a href="structar_m_p_p___s_y_s___c_o_n_f_i_g___s.html">arMPP_SYS_CONFIG_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_sys.h:27</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

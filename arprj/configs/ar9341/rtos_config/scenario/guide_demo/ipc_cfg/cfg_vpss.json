@@ -1,0 +1,1362 @@
+{
+	"group_0":	{
+		"enable":	1,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":        1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":        256,
+			"height":	192,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	0,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_1":	{
+		"enable":	1,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	256,
+			"height":	192,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	0,
+			"width":	1024,
+			"height":	768,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	0,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_2":	{
+		"enable":	1,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	256,
+			"height":	192,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	256,
+			"height":	192,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	0,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_3":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_4":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_5":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_6":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_7":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_8":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_9":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_10":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_11":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_12":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_13":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_14":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	},
+	"group_15":	{
+		"enable":	0,
+		"eis_enable":	0,
+		"ldc_enable":	0,
+		"flip_enable":	0,
+		"mirror_enable":	0,
+		"rotate":	{
+			"enable":	0,
+			"angle":	0
+		},
+		"mosaic":	{
+			"number":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"rect_1":	[0, 0, 0, 0],
+			"rect_2":	[0, 0, 0, 0],
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"cover":	{
+			"number":	0,
+			"color_0":	0,
+			"rect_0":	[0, 0, 0, 0],
+			"color_1":	0,
+			"rect_1":	[0, 0, 0, 0],
+			"color_2":	0,
+			"rect_2":	[0, 0, 0, 0],
+			"color_3":	0,
+			"rect_3":	[0, 0, 0, 0]
+		},
+		"ldc_coeff":	{
+			"k0":	0,
+			"k1":	0,
+			"k2":	0,
+			"k":	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+		},
+		"channel_0":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_1":	{
+			"enable":	1,
+			"width":	640,
+			"height":	480,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_2":	{
+			"enable":	0,
+			"width":	320,
+			"height":	240,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_3":	{
+			"enable":	1,
+			"width":	1920,
+			"height":	1080,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		},
+		"channel_4":	{
+			"enable":	0,
+			"width":	300,
+			"height":	300,
+			"crop_enable":	0,
+			"crop_rect":	[0, 0, 0, 0],
+			"flip_enable":	0,
+			"mirror_enable":	0,
+			"yuv2rgb_enable":	0
+		}
+	}
+}

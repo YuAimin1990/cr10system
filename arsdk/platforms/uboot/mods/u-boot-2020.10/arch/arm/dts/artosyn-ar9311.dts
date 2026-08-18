@@ -1,0 +1,123 @@
+/*
+ * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
+ *
+ * Minimal dts file for the MSI Primo81 for u-boot only
+ *
+ * SPDX-License-Identifier:     GPL-2.0+ or X11
+ */
+
+/dts-v1/;
+
+#include "artosyn-ar9311.dtsi"
+
+/ {
+	model = "Artosyn demo board";
+	compatible = "artosyn, sirius-demo";
+
+	aliases {
+		console = &uart0;
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+};
+
+&uart0 {
+	u-boot,dm-pre-reloc;
+	status = "okay";
+};
+
+&gpio0 {
+	u-boot,dm-pre-reloc;
+};
+
+&vqmmc_sdhci {
+	u-boot,dm-pre-reloc;
+	gpios = <&portc0 25 GPIO_ACTIVE_HIGH>;
+};
+
+&emmc {
+	u-boot,dm-pre-reloc;
+//	max-frequency = <200000000>;
+//	/delete-property/voltage-ranges;
+//	/delete-property/no-1-8-v;
+//	vqmmc-supply = <&vqmmc_sdhci>;
+//	mmc-hs200-1_8v;
+	status = "okay";
+};
+
+&sdmmc0 {
+	u-boot,dm-pre-reloc;
+	max-frequency = <50000000>;
+	fifo-depth = <128>;
+	bus-width = <1>;
+	status = "okay";
+};
+
+&sdmmc1 {
+	u-boot,dm-pre-reloc;
+	max-frequency = <50000000>;
+	fifo-depth = <128>;
+	bus-width = <4>;
+	status = "okay";
+};
+
+&enet0 {
+	status = "okay";
+};
+
+&usb_otg0 {
+	vbus-supply = <&vbus_regulator0>;
+	dr_mode = "host";
+	status = "okay";
+};
+
+&usb_device0 {
+	status = "okay";
+};
+
+&wdt0 {
+	u-boot,dm-pre-reloc;
+	status = "okay";
+};
+
+&qspi {
+	u-boot,dm-pre-reloc;
+	status = "okay";
+
+	flash@0 {
+		u-boot,dm-pre-reloc;
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "jedec,spi-nor";
+		reg = <0>;
+		spi-max-frequency = <100000000>;
+		spi-tx-bus-width = <4>;
+		spi-rx-bus-width = <4>;
+	};
+
+	flash@1 {
+		u-boot,dm-pre-reloc;
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "jedec,spi-nor";
+		reg = <1>;
+		spi-max-frequency = <200000000>;
+		spi-tx-bus-width = <4>;
+		spi-rx-bus-width = <4>;
+	};
+
+	flash@2 {
+		u-boot,dm-pre-reloc;
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "spi-nand";
+		reg = <2>;
+		spi-max-frequency = <100000000>;
+		spi-tx-bus-width = <4>;
+		spi-rx-bus-width = <4>;
+	};
+};

@@ -1,0 +1,19 @@
+/*
+ * system_common.h
+ *
+ *  Created on: 2017Äê4ÔÂ27ÈÕ
+ *      Author: jianliu
+ */
+
+#ifndef SYSTEM_COMMON_H_
+#define SYSTEM_COMMON_H_
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+extern void block_instructuon(int instrucments)__attribute__((section(".CSECT internal_code_sec")));
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* SYSTEM_COMMON_H_ */

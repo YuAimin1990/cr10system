@@ -1,0 +1,15 @@
+12:04:30 **** Incremental Build of configuration Debug for project ARApp ****
+"C:\\CEVA-ToolBox\\V18\\XM6\\common\\make" all 
+'Building file: ../App/src/main.c'
+'Invoking: CEVA-ELF C Compiler'
+C:\CEVA-ToolBox\V18\XM6\toolbox\../cevatools/bin/clang -c -fmessage-length=0 -Os -g -Wall -pedantic -Wa,-rstr-check-args="-quick -verbose" -I"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\App\include" -I"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\App\include\xm6" -I"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\App\src" -I"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\FreeRTOS_10.3.1\Source\include" -I"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\FreeRTOS_10.3.1\Source\portable\CEVA-DSP\cevaxm6" -D_LIBCPP_INLINE_VISIBILITY="" -D_LIBCPP_EXTERN_TEMPLATE_INLINE_VISIBILITY="" -MMD -MP -MF"App/src/main.d" -MT"App/src/main.o" --target=cevaxm6-elf -mcpu=cevaxm6v1.3.0 -mnonlinear=2 -mfp=4 -mvfp=2 -o "App/src/main.o" "../App/src/main.c"
+'Finished building: ../App/src/main.c'
+' '
+'Building target: ARApp.elf'
+'Invoking: CEVA-ELF Linker'
+C:\CEVA-ToolBox\V18\XM6\toolbox\../cevatools/bin/ceva-elf-ld -Map=ARApp.map -T ..\ARApp.ld --no-relax --no-gc-sections -L"C:\Users\bfchen\Desktop\rtos\ceva_xm6\dsp_sdk\ARApp\App\lib" -defsym __internal_data_size=512k -defsym __internal_code_size=64k -L"C:/CEVA-ToolBox/V18/XM6/cevatools/lib/clang/7.1.0/cevaxm6-unknown-unknown-elf/rtlv1.2.0-fp4/lib"  ./FreeRTOS_10.3.1/Source/portable/MemMang/heap_4.o  ./FreeRTOS_10.3.1/Source/portable/CEVA-DSP/cevaxm6/port.o ./FreeRTOS_10.3.1/Source/portable/CEVA-DSP/cevaxm6/xm6_port.o  ./FreeRTOS_10.3.1/Source/croutine.o ./FreeRTOS_10.3.1/Source/event_groups.o ./FreeRTOS_10.3.1/Source/list.o ./FreeRTOS_10.3.1/Source/queue.o ./FreeRTOS_10.3.1/Source/stream_buffer.o ./FreeRTOS_10.3.1/Source/tasks.o ./FreeRTOS_10.3.1/Source/timers.o  ./App/src/ArCbARMFormat.o ./App/src/ArCbARMResize.o ./App/src/ArCbDLALrn.o ./App/src/ArCbDLAPooling.o ./App/src/ArCevaPlat.o ./App/src/ArDlaPlat.o ./App/src/ArTasksSchedule.o ./App/src/main.o  C:/CEVA-ToolBox/V18/XM6/cevatools/lib/clang/7.1.0/cevaxm6-unknown-unknown-elf/rtlv1.2.0-fp4/lib/crt0.o C:/CEVA-ToolBox/V18/XM6/cevatools/lib/clang/7.1.0/cevaxm6-unknown-unknown-elf/rtlv1.2.0-fp4/lib/crtn.o --start-group -lCSL -lSysCom -lArPrint -lcJSON -lArICC -lc++ -lc++abi -lc -lcompiler-rt --end-group -o  "ARApp.elf"
+'Finished building target: ARApp.elf'
+' '
+------------------------------------
+ARApp: Total 0 errors, 0 Warnings
+

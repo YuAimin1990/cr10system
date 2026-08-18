@@ -1,0 +1,67 @@
+################# select sensor type for your sample ###############################
+####    SONY_IMX290_MIPI_2M_30FPS_12BIT            #################
+####    SONY_IMX290_SLAVE_MIPI_2M_60FPS_10BIT      #################
+####    SONY_IMX334_MIPI_8M_30FPS_12BIT            #################
+####    NVP6324_MIPI_2M_30FPS_8BIT                 #################
+
+SENSOR0_TYPE ?= SONY_IMX290_MIPI_2M_30FPS_12BIT
+SENSOR1_TYPE ?= TIMO256_DVP_256_IR
+SENSOR2_TYPE ?= ELF1_DVP_256_IR
+SENSOR3_TYPE ?= ISP_VIN_COMMON_INF
+
+#SENSOR1_TYPE ?= ISP_VIN_0_MEM_2M_30FPS_12BIT
+#SENSOR2_TYPE ?= SONY_IMX290_SLAVE_MIPI_2M_60FPS_10BIT
+#SENSOR3_TYPE ?= SONY_IMX290_SLAVE_MIPI_2M_60FPS_10BIT
+SENSOR4_TYPE ?= SONY_IMX334_MIPI_8M_30FPS_12BIT
+SENSOR5_TYPE ?= TP9930_DVP_SINGLE_CH
+SENSOR6_TYPE ?= TP9930_DVP_MULTIPLEX_2CH
+SENSOR7_TYPE ?= SONY_IMX415_MIPI_8M_30FPS_12BIT
+SENSOR8_TYPE ?= SONY_IMX415_MIPI_8M_60FPS_12BIT
+SENSOR9_TYPE ?= SONY_IMX290_MIPI_2M_30FPS_12BIT_WDR2TO1
+SENSOR10_TYPE ?= SONY_IMX464_MIPI_4M_30FPS_12BIT_WDR2TO1
+SENSOR11_TYPE ?= TP9930_DVP_MULTIPLEX_4CH
+SENSOR12_TYPE ?= SONY_IMX307_MIPI_2M_25FPS_12BIT_YUV420_SP
+
+SENSOR13_TYPE ?= OV_OS04A10_MIPI_4M_30FPS_12BIT
+SENSOR14_TYPE ?= OV_OS04A10_MIPI_4M_30FPS_10BIT_WDR2TO1
+SENSOR15_TYPE ?= SONY_IMX464_MIPI_4M_30FPS_10BIT
+
+CFLAGS += -DSENSOR0_TYPE=$(SENSOR0_TYPE)
+CFLAGS += -DSENSOR1_TYPE=$(SENSOR1_TYPE)
+CFLAGS += -DSENSOR2_TYPE=$(SENSOR2_TYPE)
+CFLAGS += -DSENSOR3_TYPE=$(SENSOR3_TYPE)
+CFLAGS += -DSENSOR4_TYPE=$(SENSOR4_TYPE)
+CFLAGS += -DSENSOR5_TYPE=$(SENSOR5_TYPE)
+CFLAGS += -DSENSOR6_TYPE=$(SENSOR6_TYPE)
+CFLAGS += -DSENSOR7_TYPE=$(SENSOR7_TYPE)
+CFLAGS += -DSENSOR8_TYPE=$(SENSOR8_TYPE)
+CFLAGS += -DSENSOR9_TYPE=$(SENSOR9_TYPE)
+CFLAGS += -DSENSOR10_TYPE=$(SENSOR10_TYPE)
+CFLAGS += -DSENSOR12_TYPE=$(SENSOR12_TYPE)
+CFLAGS += -DSENSOR13_TYPE=$(SENSOR13_TYPE)
+CFLAGS += -DSENSOR14_TYPE=$(SENSOR14_TYPE)
+CFLAGS += -DSENSOR15_TYPE=$(SENSOR15_TYPE)
+
+ifeq ($(BASE_BOARD), evb)
+	CFLAGS += -D USE_EVB
+else ifeq ($(BASE_BOARD), evbext)
+	CFLAGS += -D USE_EVB_EXT
+endif
+
+CFLAGS  += -I$(OUTPUT_APPLICATION_HEADER_DIR)
+ifeq ($(CONFIG_BIT), 32bits)
+CFLAGS  += -D_FILE_OFFSET_BITS=64
+endif
+LDFLAGS += -Wl,-rpath-link=$(OUTPUT_APPLICATION_LIB_DIR) -lswresample -lavutil -lavcodec -lavformat
+
+LDFLAGS += -losal -lutils -lm -lhal_dbglog -lhal_ge2d -lhal_vb -lhal_sys -lhal_vdec -lhal_venc -lhal_vin -lhal_vo -lhal_aio -lhal_gpio -lhal_i2c -lhal_region -lhal_clk -lhal_scaler -lhal_gdc -lhal_npu -lhal_dsp -lhal_vgs -lbinder_ipc -lhal_proc -lhal_adec -lhal_aenc
+LDFLAGS += -lmpi_dbglog -lmpi_vin -lmpi_vo -lmpi_vb -lmpi_vdec -lmpi_venc -lmpi_vpss -lmpi_sys -lmpi_hdmi -lmpi_region -lmpi_scaler -lmpi_gdc -lmpi_ifc -lmpi_ai -lmpi_ao -lmpi_vgs -lmpi_adec -lmpi_aenc -lmpi_acodec
+LDFLAGS += -L$(OUTPUT_APPLICATION_LIB_DIR) -lsns_imx290 -lsns_isp_in_0 -lcjson_utils -lsns_imx290_1 -lsns_tp9930 -lsns_imx415 -lsns_imx464 -lsns_os04a10 -lsns_isp_in_inf -lsns_isp_in1_inf -lsns_timo256 -lsns_timo256af -lsns_elf1 -lsns_timo120
+
+ifeq ($(CONFIG_FEAT_EIS),y)
+LDFLAGS += -lhal_eis -lmpi_eis
+endif
+
+LDFLAGS += -lfuse3 -lrpc_fs -lrpc_proxy
+
+LDFLAGS += -lhal_analyze_time -lmpp_service -lswresample -lavutil

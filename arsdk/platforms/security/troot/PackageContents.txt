@@ -1,0 +1,73 @@
+/*-----------------------------------------------------------------------
+//
+//               (C) COPYRIGHT 2014 - 2017 SYNOPSYS, INC.
+//                         ALL RIGHTS RESERVED
+//
+// This software and the associated documentation are confidential and
+// proprietary to Synopsys, Inc. Your use or disclosure of this software
+// is subject to the terms and conditions of a written license agreement
+// between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//-----------------------------------------------------------------------
+
+------------------------------ File Contents in the Package -------------------------------
+.:
+build_fw_sboot_certchain.sh
+build_fw.sh
+build_lib
+custom_config
+firmware
+PackageContents.txt
+README.TXT
+ReleaseNotes.txt
+samples
+tools
+
+./custom_config:
+build_keyops
+sboot
+
+./custom_config/sboot:
+build_fw_sboot_parms
+troot_sb_base_header.cfg
+troot_sb_cert.cfg
+troot_sb_cert_root.cfg
+troot_sb_cert_sub.cfg
+
+./firmware:
+firmware.aic
+firmware.rom
+
+./samples:
+image_key.bin
+licensekey_sample.lic
+sboot_p0_image_sample.bin
+sboot_p1_image_sample.bin
+sboot_p2_image_sample.bin
+sboot_root_sample.cert
+sboot_root_sample.pk8
+Secure_Boot
+
+./samples/Secure_Boot:
+AUID.txt
+certificate_sample.crt
+troot_base_config.cfg
+troot_gpio_mapping.cfg
+troot_hpi_interrupt_mapping.cfg
+troot_sboot.cfg
+
+./tools:
+aictool
+config
+keytool
+log_viewer
+read_err_stat
+troot_base_config_interface
+troot_exception_viewer_interface
+troot_sap_certificate_tool
+troot_sboot_cfg.so
+troot_sb_tool
+
+./tools/config:

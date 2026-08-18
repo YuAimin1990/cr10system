@@ -1,0 +1,44 @@
+if ARTOSYN_AR9311
+
+choice
+	prompt "Artosyn 9311 SoC Board select"
+	default TARGET_EVB_AR9311
+
+config TARGET_EVB_AR9311
+	bool "Artosyn AR9311 EVB"
+
+config TARGET_VELOCE_AR9311
+	bool "AR9311 on veloce platform"
+
+config TARGET_FPGA_AR9311
+	bool "AR9311 on fpga platform"
+
+config TARGET_QEMU_AR9311
+	bool "AR9311 on qemu platform"
+
+endchoice
+
+config ARTOSYN_BOOT_MODE_REG
+	default 0xff010200
+
+config SYS_SOC
+	default "ar9311"
+
+config SYS_MALLOC_F_LEN
+	default 0x400
+
+config SPL_SERIAL_SUPPORT
+	default y
+
+config DEBUG_UART_CHANNEL
+	int "Mux channel to use for debug UART2/UART3"
+	depends on DEBUG_UART_BOARD_INIT
+	default 0
+	help
+	  UART2 and UART3 can use two different set of pins to route the output.
+	  For using the UART for early debugging the route to use needs
+	  to be declared (0 or 1).
+
+source "board/artosyn/evb_ar9311/Kconfig"
+
+endif

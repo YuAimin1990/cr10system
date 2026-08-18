@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: mpi_audio.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mpi_audio.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mpi__audio_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __MPI_AUDIO_H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __MPI_AUDIO_H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;hal_type.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__common_8h.html">ar_common.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__comm__aio_8h.html">ar_comm_aio.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ar_comm_aenc.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ar_comm_adec.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/******************************* API declaration *****************************/</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define AENC_ADAPT_MAGIC 0Xfcfcfcfc</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* AI function api. */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gafb3d0be2db0c18ecc68ff88a0b1ea0f4">AR_MPI_AUDIO_SetModParam</a>(<span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___m_o_d___p_a_r_a_m___s.html">AUDIO_MOD_PARAM_S</a> *pstModParam);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga6367438a33ba0c01bcab6395c256ef23">AR_MPI_AUDIO_GetModParam</a>(<a class="code" href="structar_a_u_d_i_o___m_o_d___p_a_r_a_m___s.html">AUDIO_MOD_PARAM_S</a> *pstModParam);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* AI function api. */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga071580061b241bd27d37ba7abc37cab8">AR_MPI_AI_SetPubAttr</a>(AUDIO_DEV AiDevId, <span class="keyword">const</span> <a class="code" href="structar_a_i_o___a_t_t_r___s.html">AIO_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga98e7d5181ee1436d59fc254b825a2c3c">AR_MPI_AI_GetPubAttr</a>(AUDIO_DEV AiDevId, <a class="code" href="structar_a_i_o___a_t_t_r___s.html">AIO_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga879d9426f08178792802fc0e1d97b52f">AR_MPI_AI_Enable</a>(AUDIO_DEV AiDevId);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga9298ee1c4bbaf92108c0cb4371048980">AR_MPI_AI_Disable</a>(AUDIO_DEV AiDevId);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga39d5c7ac2ebfa5cd4819c870e8acf932">AR_MPI_AI_EnableChn</a>(AUDIO_DEV AiDevId, AI_CHN AiChn);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga11365b2348ad3bb4819e0b81f2f26e89">AR_MPI_AI_DisableChn</a>(AUDIO_DEV AiDevId, AI_CHN AiChn);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gabdbd401c0036a941a2276900d19cc106">AR_MPI_AI_GetFrame</a>(AUDIO_DEV AiDevId, AI_CHN AiChn, <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___s.html">AUDIO_FRAME_S</a> *pstFrm, <a class="code" href="structar_a_e_c___f_r_a_m_e___s.html">AEC_FRAME_S</a> *pstAecFrm, AR_S32 s32MilliSec);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga01646075f80b5b6aa992c15562f6100e">AR_MPI_AI_ReleaseFrame</a>(AUDIO_DEV AiDevId, AI_CHN AiChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___s.html">AUDIO_FRAME_S</a> *pstFrm, <span class="keyword">const</span> <a class="code" href="structar_a_e_c___f_r_a_m_e___s.html">AEC_FRAME_S</a> *pstAecFrm);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gac74b9632a7c510d30e4aa584e4cdc800">AR_MPI_AI_SetChnParam</a>(AUDIO_DEV AiDevId, AI_CHN AiChn, <span class="keyword">const</span> <a class="code" href="structar_a_i___c_h_n___p_a_r_a_m___s.html">AI_CHN_PARAM_S</a> *pstChnParam);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga6ab9aa546977d352f08c000da18426c8">AR_MPI_AI_GetChnParam</a>(AUDIO_DEV AiDevId, AI_CHN AiChn, <a class="code" href="structar_a_i___c_h_n___p_a_r_a_m___s.html">AI_CHN_PARAM_S</a> *pstChnParam);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">/*AR_S32 AR_MPI_AI_SetRecordVqeAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, const AI_RECORDVQE_CONFIG_S *pstVqeConfig);</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_GetRecordVqeAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, AI_RECORDVQE_CONFIG_S *pstVqeConfig);</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_EnableVqe(AUDIO_DEV AiDevId, AI_CHN AiChn);</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_DisableVqe(AUDIO_DEV AiDevId, AI_CHN AiChn);</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_EnableReSmp(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_SAMPLE_RATE_E enOutSampleRate);</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_DisableReSmp(AUDIO_DEV AiDevId, AI_CHN AiChn);</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_SetTrackMode(AUDIO_DEV AiDevId, AUDIO_TRACK_MODE_E enTrackMode);</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_GetTrackMode(AUDIO_DEV AiDevId, AUDIO_TRACK_MODE_E *penTrackMode);</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_SaveFile(AUDIO_DEV AiDevId, AI_CHN AiChn, const AUDIO_SAVE_FILE_INFO_S *pstSaveFileInfo);</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_QueryFileStatus(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_FILE_STATUS_S* pstFileStatus);*/</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gadb03a358f992f8f6f97b7753ef8ccb26">AR_MPI_AI_ClrPubAttr</a>(AUDIO_DEV AiDevId);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga961d574db4832d1b4d29d9d2edac0c74">AR_MPI_AI_GetFd</a>(AUDIO_DEV AiDevId, AI_CHN AiChn);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga457a5bbb823e7fc1701e76ddf6604906">AR_MPI_AI_SuspendChn</a>(AUDIO_DEV AiDevId, AI_CHN AiChn);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gadf18b7e41afe32f31a3e8d351429588c">AR_MPI_AI_ResumeChn</a>(AUDIO_DEV AiDevId, AI_CHN AiChn);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">/*AR_S32 AR_MPI_AI_EnableAecRefFrame(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_DEV AoDevId, AO_CHN AoChn);</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_DisableAecRefFrame(AUDIO_DEV AiDevId, AI_CHN AiChn);</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_SetTalkVqeAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_DEV AoDevId, AO_CHN AoChn, const AI_TALKVQE_CONFIG_S *pstVqeConfig);</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">AR_S32 AR_MPI_AI_GetTalkVqeAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, AI_TALKVQE_CONFIG_S *pstVqeConfig);*/</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">/* AO function api. */</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga6daaebd5f84540f845525c9521e49d31">AR_MPI_AO_SetPubAttr</a>(AUDIO_DEV AoDevId, <span class="keyword">const</span> <a class="code" href="structar_a_i_o___a_t_t_r___s.html">AIO_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga4d961b247f894b0dc74a877fc2be2f0c">AR_MPI_AO_GetPubAttr</a>(AUDIO_DEV AoDevId, <a class="code" href="structar_a_i_o___a_t_t_r___s.html">AIO_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga142a05126b01d968edeb5063c032ec0c">AR_MPI_AO_Enable</a>(AUDIO_DEV AoDevId);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gaf95573cbfc074ebc359deb3fd6ab586b">AR_MPI_AO_Disable</a>(AUDIO_DEV AoDevId);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga001291f6a6838f2f3c54bc44c274e15a">AR_MPI_AO_EnableChn</a>(AUDIO_DEV AoDevId, AO_CHN AoChn);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga1fc6e0c50f344d8b7592b1f26eadc30c">AR_MPI_AO_DisableChn</a>(AUDIO_DEV AoDevId, AO_CHN AoChn);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga77a9dd843ddbea2a5789e04ee20080fe">AR_MPI_AO_SendFrame</a>(AUDIO_DEV AoDevId, AO_CHN AoChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___s.html">AUDIO_FRAME_S</a> *pstData, AR_S32 s32MilliSec);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">/*AR_S32 AR_MPI_AO_EnableReSmp(AUDIO_DEV AoDevId, AO_CHN AoChn, AUDIO_SAMPLE_RATE_E enInSampleRate);</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_DisableReSmp(AUDIO_DEV AoDevId, AO_CHN AoChn);*/</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga6a5780eeecde6a7467bd7b90e329082e">AR_MPI_AO_ClearChnBuf</a>(AUDIO_DEV AoDevId ,AO_CHN AoChn);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga2a418d8cbb41b7bbf32fe031a7800ef7">AR_MPI_AO_QueryChnStat</a>(AUDIO_DEV AoDevId ,AO_CHN AoChn, <a class="code" href="structar_a_o___c_h_n___s_t_a_t_e___s.html">AO_CHN_STATE_S</a> *pstStatus);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gae2eb8898a1ad8f4fe864e59e10e0c710">AR_MPI_AO_SuspendChn</a>(AUDIO_DEV AoDevId, AI_CHN AoChn);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga408f55f44c0d0196ec1a5be805c52922">AR_MPI_AO_PauseChn</a>(AUDIO_DEV AoDevId, AO_CHN AoChn);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga533a530ac909ce1ee8859d13cb211ae6">AR_MPI_AO_ResumeChn</a>(AUDIO_DEV AoDevId, AO_CHN AoChn);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">/*AR_S32 AR_MPI_AO_SetVolume(AUDIO_DEV AoDevId, AR_S32 s32VolumeDb);</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_GetVolume(AUDIO_DEV AoDevId, AR_S32 *ps32VolumeDb);</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_SetMute(AUDIO_DEV AoDevId, AR_BOOL bEnable, const AUDIO_FADE_S *pstFade);</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_GetMute(AUDIO_DEV AoDevId, AR_BOOL *pbEnable, AUDIO_FADE_S *pstFade);</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_SetTrackMode(AUDIO_DEV AoDevId, AUDIO_TRACK_MODE_E enTrackMode);</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_GetTrackMode(AUDIO_DEV AoDevId, AUDIO_TRACK_MODE_E *penTrackMode);*/</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga454784ba98ddc4c6d3c0982b889736ae">AR_MPI_AO_GetFd</a>(AUDIO_DEV AoDevId, AO_CHN AoChn);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gaa5ceabb3721c0d4b7ab8f3521dc97142">AR_MPI_AO_ClrPubAttr</a>(AUDIO_DEV AoDevId);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">/*AR_S32 AR_MPI_AO_SetVqeAttr(AUDIO_DEV AoDevId, AO_CHN AoChn, const AO_VQE_CONFIG_S *pstVqeConfig);</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_GetVqeAttr(AUDIO_DEV AoDevId, AO_CHN AoChn, AO_VQE_CONFIG_S *pstVqeConfig);</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_EnableVqe(AUDIO_DEV AoDevId, AO_CHN AoChn);</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment">AR_S32 AR_MPI_AO_DisableVqe(AUDIO_DEV AoDevId, AO_CHN AoChn);*/</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga809187fb3bd4d4c2201a8c7cc4e6c2a2">AR_MPI_AENC_CreateChn</a>(AENC_CHN AeChn, <span class="keyword">const</span> <a class="code" href="structar_a_e_n_c___c_h_n___a_t_t_r___s.html">AENC_CHN_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga171fe382bc294c2a8fdbc41b1913135f">AR_MPI_AENC_DestroyChn</a>(AENC_CHN AeChn);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga6cb331b1286a7f875730ad9b792272c0">AR_MPI_AENC_SendFrame</a>(AENC_CHN AeChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___s.html">AUDIO_FRAME_S</a> *pstFrm, <span class="keyword">const</span> <a class="code" href="structar_a_e_c___f_r_a_m_e___s.html">AEC_FRAME_S</a> *pstAecFrm);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga971a7e6f88596a14f3c36920f790c024">AR_MPI_AENC_GetStream</a>(AENC_CHN AeChn, <a class="code" href="structar_a_u_d_i_o___s_t_r_e_a_m___s.html">AUDIO_STREAM_S</a> *pstStream, AR_S32 s32MilliSec);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gaf5cec3ecfbce885f65e33cd92b5baecd">AR_MPI_AENC_ReleaseStream</a>(AENC_CHN AeChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___s_t_r_e_a_m___s.html">AUDIO_STREAM_S</a> *pstStream);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gac68b0b652e9ce98c580d4548be9953e4">AR_MPI_AENC_GetFd</a>(AENC_CHN AeChn);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga5d1b4df6cb3fa63761d284b159cf2f67">AR_MPI_AENC_RegisterEncoder</a>(AR_S32 *ps32Handle, <span class="keyword">const</span> <a class="code" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html">AENC_ENCODER_S</a> *pstEncoder);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga2c338ea91d6134e3cbcc77f3c040b5f4">AR_MPI_AENC_UnRegisterEncoder</a>(AR_S32 s32Handle);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga2307f39ec7efad43d1083f69b2512b45">AR_MPI_AENC_GetStreamBufInfo</a>(AENC_CHN AeChn, AR_U64* pu64PhysAddr, AR_U32* pu32Size);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga792c3723f0f722a4bb4d99566f35bbdf">AR_MPI_ADEC_CreateChn</a>(ADEC_CHN AdChn, <span class="keyword">const</span> <a class="code" href="structar_a_d_e_c___c_h___a_t_t_r___s.html">ADEC_CHN_ATTR_S</a> *pstAttr);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga80ba84cc901b0434f9c725e882922041">AR_MPI_ADEC_DestroyChn</a>(ADEC_CHN AdChn);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gad5ea7a91f2fa8401b36374ba3f9cff7c">AR_MPI_ADEC_SendStream</a>(ADEC_CHN AdChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___s_t_r_e_a_m___s.html">AUDIO_STREAM_S</a> *pstStream, AR_BOOL bBlock);</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gabb7cda0c3a3bb70fac9525fe30c2ef00">AR_MPI_ADEC_ClearChnBuf</a>(ADEC_CHN AdChn);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga35c1dd290fac4383a79921ccbded6a74">AR_MPI_ADEC_RegisterDecoder</a>(AR_S32 *ps32Handle, <span class="keyword">const</span> <a class="code" href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html">ADEC_DECODER_S</a> *pstDecoder);</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#gad2a9ab8c218975eb5df4cb57934b9992">AR_MPI_ADEC_UnRegisterDecoder</a>(AR_S32 s32Handle);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga9012ebed70853ab460ba2e536e4ebbe9">AR_MPI_ADEC_GetFrame</a>(ADEC_CHN AdChn, <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___i_n_f_o___s.html">AUDIO_FRAME_INFO_S</a> *pstFrmInfo, AR_BOOL bBlock);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga57ed9f2f666e112a9105d97fb66a07c8">AR_MPI_ADEC_ReleaseFrame</a>(ADEC_CHN AdChn, <span class="keyword">const</span> <a class="code" href="structar_a_u_d_i_o___f_r_a_m_e___i_n_f_o___s.html">AUDIO_FRAME_INFO_S</a> *pstFrmInfo);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;AR_S32 <a class="code" href="group___m_p_i___a_u_d_i_o.html#ga73a5720bb717869fad38f4bb1d14b747">AR_MPI_ADEC_SendEndOfStream</a>(ADEC_CHN AdChn, AR_BOOL bInstant);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  </div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;}</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __MPI_AI_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructar_a_u_d_i_o___f_r_a_m_e___i_n_f_o___s_html"><div class="ttname"><a href="structar_a_u_d_i_o___f_r_a_m_e___i_n_f_o___s.html">arAUDIO_FRAME_INFO_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:230</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga5d1b4df6cb3fa63761d284b159cf2f67"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga5d1b4df6cb3fa63761d284b159cf2f67">AR_MPI_AENC_RegisterEncoder</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_RegisterEncoder(AR_S32 *ps32Handle, const AENC_ENCODER_S *pstEncoder)</div><div class="ttdoc">注册编码器</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga9298ee1c4bbaf92108c0cb4371048980"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga9298ee1c4bbaf92108c0cb4371048980">AR_MPI_AI_Disable</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_Disable(AUDIO_DEV AiDevId)</div><div class="ttdoc">禁用AI设备 如果AI设备已经处于禁用状态，则直接返回成功 要求在禁用AI设备之前，先禁用与之关联、使用AI的音频数据的AENC通道和AO设备，否则可能导致该接口调用失败 禁用AI设备前必须先禁用该设备...</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gaf95573cbfc074ebc359deb3fd6ab586b"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gaf95573cbfc074ebc359deb3fd6ab586b">AR_MPI_AO_Disable</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_Disable(AUDIO_DEV AoDevId)</div><div class="ttdoc">禁用AO设备，如果AO设备已经禁用，则直接返回成功;禁用AO设备前必须先禁用设备下所有AO通道</div></div>
+<div class="ttc" id="astructar_a_o___c_h_n___s_t_a_t_e___s_html"><div class="ttname"><a href="structar_a_o___c_h_n___s_t_a_t_e___s.html">arAO_CHN_STATE_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:247</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga98e7d5181ee1436d59fc254b825a2c3c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga98e7d5181ee1436d59fc254b825a2c3c">AR_MPI_AI_GetPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_GetPubAttr(AUDIO_DEV AiDevId, AIO_ATTR_S *pstAttr)</div><div class="ttdoc">获取AI设备属性，获取的属性为前一次配置的属性，如果从来没有配置过属性，则返回失败</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gaf5cec3ecfbce885f65e33cd92b5baecd"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gaf5cec3ecfbce885f65e33cd92b5baecd">AR_MPI_AENC_ReleaseStream</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_ReleaseStream(AENC_CHN AeChn, const AUDIO_STREAM_S *pstStream)</div><div class="ttdoc">释放从音频编码通道获取的码流</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga6cb331b1286a7f875730ad9b792272c0"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga6cb331b1286a7f875730ad9b792272c0">AR_MPI_AENC_SendFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_SendFrame(AENC_CHN AeChn, const AUDIO_FRAME_S *pstFrm, const AEC_FRAME_S *pstAecFrm)</div><div class="ttdoc">发送音频编码音频帧</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga001291f6a6838f2f3c54bc44c274e15a"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga001291f6a6838f2f3c54bc44c274e15a">AR_MPI_AO_EnableChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_EnableChn(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">启用AO通道，启用AO通道前，必须先启用其所属的AO设备，否则返回设备未启动的错误码</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga961d574db4832d1b4d29d9d2edac0c74"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga961d574db4832d1b4d29d9d2edac0c74">AR_MPI_AI_GetFd</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_GetFd(AUDIO_DEV AiDevId, AI_CHN AiChn)</div><div class="ttdoc">获取音频输入通道号对应的设备文件句柄</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga1fc6e0c50f344d8b7592b1f26eadc30c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga1fc6e0c50f344d8b7592b1f26eadc30c">AR_MPI_AO_DisableChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_DisableChn(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">禁用AO通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gafb3d0be2db0c18ecc68ff88a0b1ea0f4"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gafb3d0be2db0c18ecc68ff88a0b1ea0f4">AR_MPI_AUDIO_SetModParam</a></div><div class="ttdeci">AR_S32 AR_MPI_AUDIO_SetModParam(const AUDIO_MOD_PARAM_S *pstModParam)</div><div class="ttdoc">设置 Audio 模块参数属性</div></div>
+<div class="ttc" id="astructar_a_e_n_c___c_h_n___a_t_t_r___s_html"><div class="ttname"><a href="structar_a_e_n_c___c_h_n___a_t_t_r___s.html">arAENC_CHN_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aenc.h:60</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga9012ebed70853ab460ba2e536e4ebbe9"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga9012ebed70853ab460ba2e536e4ebbe9">AR_MPI_ADEC_GetFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_GetFrame(ADEC_CHN AdChn, AUDIO_FRAME_INFO_S *pstFrmInfo, AR_BOOL bBlock)</div><div class="ttdoc">获取音频解码帧数据</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga77a9dd843ddbea2a5789e04ee20080fe"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga77a9dd843ddbea2a5789e04ee20080fe">AR_MPI_AO_SendFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_SendFrame(AUDIO_DEV AoDevId, AO_CHN AoChn, const AUDIO_FRAME_S *pstData, AR_S32 s32MilliSec)</div><div class="ttdoc">发送AO音频帧； 该接口用于用户主动发送音频帧至AO输出， 如果AO通道已经通过系统绑定（AR_MPI_SYS_Bind）接口与AI或ADEC绑定，不需要也不建议调此接口</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga35c1dd290fac4383a79921ccbded6a74"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga35c1dd290fac4383a79921ccbded6a74">AR_MPI_ADEC_RegisterDecoder</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_RegisterDecoder(AR_S32 *ps32Handle, const ADEC_DECODER_S *pstDecoder)</div><div class="ttdoc">注册解码器</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga11365b2348ad3bb4819e0b81f2f26e89"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga11365b2348ad3bb4819e0b81f2f26e89">AR_MPI_AI_DisableChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_DisableChn(AUDIO_DEV AiDevId, AI_CHN AiChn)</div><div class="ttdoc">禁用AI通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga792c3723f0f722a4bb4d99566f35bbdf"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga792c3723f0f722a4bb4d99566f35bbdf">AR_MPI_ADEC_CreateChn</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_CreateChn(ADEC_CHN AdChn, const ADEC_CHN_ATTR_S *pstAttr)</div><div class="ttdoc">创建音频解码通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga6ab9aa546977d352f08c000da18426c8"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga6ab9aa546977d352f08c000da18426c8">AR_MPI_AI_GetChnParam</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_GetChnParam(AUDIO_DEV AiDevId, AI_CHN AiChn, AI_CHN_PARAM_S *pstChnParam)</div><div class="ttdoc">获取AI通道参数</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga454784ba98ddc4c6d3c0982b889736ae"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga454784ba98ddc4c6d3c0982b889736ae">AR_MPI_AO_GetFd</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_GetFd(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">获取音频输出通道号对应的设备文件句柄</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga2a418d8cbb41b7bbf32fe031a7800ef7"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga2a418d8cbb41b7bbf32fe031a7800ef7">AR_MPI_AO_QueryChnStat</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_QueryChnStat(AUDIO_DEV AoDevId, AO_CHN AoChn, AO_CHN_STATE_S *pstStatus)</div><div class="ttdoc">查询AO通道中当前的音频数据缓存状态； 在AO通道成功启用后再调用此接口</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga879d9426f08178792802fc0e1d97b52f"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga879d9426f08178792802fc0e1d97b52f">AR_MPI_AI_Enable</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_Enable(AUDIO_DEV AiDevId)</div><div class="ttdoc">启用AI设备 必须在启用前配置AI设备属性，否则返回属性未配置错误 如果AI设备已经处于启用状态，则直接返回成功</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga6daaebd5f84540f845525c9521e49d31"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga6daaebd5f84540f845525c9521e49d31">AR_MPI_AO_SetPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_SetPubAttr(AUDIO_DEV AoDevId, const AIO_ATTR_S *pstAttr)</div><div class="ttdoc">设置AO设备属性</div></div>
+<div class="ttc" id="astructar_a_e_c___f_r_a_m_e___s_html"><div class="ttname"><a href="structar_a_e_c___f_r_a_m_e___s.html">arAEC_FRAME_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:222</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga73a5720bb717869fad38f4bb1d14b747"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga73a5720bb717869fad38f4bb1d14b747">AR_MPI_ADEC_SendEndOfStream</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_SendEndOfStream(ADEC_CHN AdChn, AR_BOOL bInstant)</div><div class="ttdoc">向解码器发送码流结束</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga57ed9f2f666e112a9105d97fb66a07c8"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga57ed9f2f666e112a9105d97fb66a07c8">AR_MPI_ADEC_ReleaseFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_ReleaseFrame(ADEC_CHN AdChn, const AUDIO_FRAME_INFO_S *pstFrmInfo)</div><div class="ttdoc">释放获取到的音频解码帧数据</div></div>
+<div class="ttc" id="aar__comm__aio_8h_html"><div class="ttname"><a href="ar__comm__aio_8h.html">ar_comm_aio.h</a></div><div class="ttdoc">描述视频输入输出相关的通用数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga6a5780eeecde6a7467bd7b90e329082e"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga6a5780eeecde6a7467bd7b90e329082e">AR_MPI_AO_ClearChnBuf</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_ClearChnBuf(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">清除AO通道中当前的音频数据缓存； 为完全清除解码回放通路上所有缓存数据，此接口还应该与AR_MPI_ADEC_ClearChnBuf接口配合使用</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga533a530ac909ce1ee8859d13cb211ae6"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga533a530ac909ce1ee8859d13cb211ae6">AR_MPI_AO_ResumeChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_ResumeChn(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">恢复AO通道，AO通道暂停后可以通过调用此接口重新恢复</div></div>
+<div class="ttc" id="astructar_a_u_d_i_o___s_t_r_e_a_m___s_html"><div class="ttname"><a href="structar_a_u_d_i_o___s_t_r_e_a_m___s.html">arAUDIO_STREAM_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:237</div></div>
+<div class="ttc" id="astructar_a_i___c_h_n___p_a_r_a_m___s_html"><div class="ttname"><a href="structar_a_i___c_h_n___p_a_r_a_m___s.html">arAI_CHN_PARAM_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:203</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga809187fb3bd4d4c2201a8c7cc4e6c2a2"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga809187fb3bd4d4c2201a8c7cc4e6c2a2">AR_MPI_AENC_CreateChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_CreateChn(AENC_CHN AeChn, const AENC_CHN_ATTR_S *pstAttr)</div><div class="ttdoc">创建音频编码通道</div></div>
+<div class="ttc" id="astructar_a_u_d_i_o___f_r_a_m_e___s_html"><div class="ttname"><a href="structar_a_u_d_i_o___f_r_a_m_e___s.html">arAUDIO_FRAME_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:209</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga142a05126b01d968edeb5063c032ec0c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga142a05126b01d968edeb5063c032ec0c">AR_MPI_AO_Enable</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_Enable(AUDIO_DEV AoDevId)</div><div class="ttdoc">启用AO设备，要求在启用前配置AO设备属性，否则会返回属性未配置的错误;如果AO设备已经启用，则直接返回成功</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga2307f39ec7efad43d1083f69b2512b45"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga2307f39ec7efad43d1083f69b2512b45">AR_MPI_AENC_GetStreamBufInfo</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_GetStreamBufInfo(AENC_CHN AeChn, AR_U64 *pu64PhysAddr, AR_U32 *pu32Size)</div><div class="ttdoc">获取音频码流 buffer 相关信息</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gabb7cda0c3a3bb70fac9525fe30c2ef00"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gabb7cda0c3a3bb70fac9525fe30c2ef00">AR_MPI_ADEC_ClearChnBuf</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_ClearChnBuf(ADEC_CHN AdChn)</div><div class="ttdoc">清除 ADEC 通道中当前的音频数据缓存</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gadf18b7e41afe32f31a3e8d351429588c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gadf18b7e41afe32f31a3e8d351429588c">AR_MPI_AI_ResumeChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_ResumeChn(AUDIO_DEV AiDevId, AI_CHN AiChn)</div><div class="ttdoc">唤醒音频输入设备对应通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga01646075f80b5b6aa992c15562f6100e"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga01646075f80b5b6aa992c15562f6100e">AR_MPI_AI_ReleaseFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_ReleaseFrame(AUDIO_DEV AiDevId, AI_CHN AiChn, const AUDIO_FRAME_S *pstFrm, const AEC_FRAME_S *pstAecFrm)</div><div class="ttdoc">释放音频帧</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga4d961b247f894b0dc74a877fc2be2f0c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga4d961b247f894b0dc74a877fc2be2f0c">AR_MPI_AO_GetPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_GetPubAttr(AUDIO_DEV AoDevId, AIO_ATTR_S *pstAttr)</div><div class="ttdoc">获取AO设备属性</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga171fe382bc294c2a8fdbc41b1913135f"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga171fe382bc294c2a8fdbc41b1913135f">AR_MPI_AENC_DestroyChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_DestroyChn(AENC_CHN AeChn)</div><div class="ttdoc">销毁音频编码通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga457a5bbb823e7fc1701e76ddf6604906"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga457a5bbb823e7fc1701e76ddf6604906">AR_MPI_AI_SuspendChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_SuspendChn(AUDIO_DEV AiDevId, AI_CHN AiChn)</div><div class="ttdoc">音频输入设备对应通道进入休眠</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga971a7e6f88596a14f3c36920f790c024"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga971a7e6f88596a14f3c36920f790c024">AR_MPI_AENC_GetStream</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_GetStream(AENC_CHN AeChn, AUDIO_STREAM_S *pstStream, AR_S32 s32MilliSec)</div><div class="ttdoc">获取编码后码流</div></div>
+<div class="ttc" id="astructar_a_e_n_c___e_n_c_o_d_e_r___s_html"><div class="ttname"><a href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html">arAENC_ENCODER_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aenc.h:48</div></div>
+<div class="ttc" id="aar__common_8h_html"><div class="ttname"><a href="ar__common_8h.html">ar_common.h</a></div><div class="ttdoc">描述通用的宏定义和数据结构</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gae2eb8898a1ad8f4fe864e59e10e0c710"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gae2eb8898a1ad8f4fe864e59e10e0c710">AR_MPI_AO_SuspendChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_SuspendChn(AUDIO_DEV AoDevId, AI_CHN AoChn)</div><div class="ttdoc">音频输出设备对应通道进入休眠</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga80ba84cc901b0434f9c725e882922041"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga80ba84cc901b0434f9c725e882922041">AR_MPI_ADEC_DestroyChn</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_DestroyChn(ADEC_CHN AdChn)</div><div class="ttdoc">销毁音频解码通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga39d5c7ac2ebfa5cd4819c870e8acf932"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga39d5c7ac2ebfa5cd4819c870e8acf932">AR_MPI_AI_EnableChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_EnableChn(AUDIO_DEV AiDevId, AI_CHN AiChn)</div><div class="ttdoc">启用AI通道，启用AI通道前，必须先启用其所属的AI设备，否则返回设备未启动的错误码</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gad5ea7a91f2fa8401b36374ba3f9cff7c"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gad5ea7a91f2fa8401b36374ba3f9cff7c">AR_MPI_ADEC_SendStream</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_SendStream(ADEC_CHN AdChn, const AUDIO_STREAM_S *pstStream, AR_BOOL bBlock)</div><div class="ttdoc">向音频解码通道发送音频</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gac74b9632a7c510d30e4aa584e4cdc800"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gac74b9632a7c510d30e4aa584e4cdc800">AR_MPI_AI_SetChnParam</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_SetChnParam(AUDIO_DEV AiDevId, AI_CHN AiChn, const AI_CHN_PARAM_S *pstChnParam)</div><div class="ttdoc">设置AI通道参数，通道参数目前只有一个成员变量，用于设置用户获取音频帧的缓存深度，默认深度为0。该成员变量的值不能大于30</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gabdbd401c0036a941a2276900d19cc106"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gabdbd401c0036a941a2276900d19cc106">AR_MPI_AI_GetFrame</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_GetFrame(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_FRAME_S *pstFrm, AEC_FRAME_S *pstAecFrm, AR_S32 s32MilliSec)</div><div class="ttdoc">获取音频帧，获取音频帧数据前，必须先使能对应的AI通道</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gaa5ceabb3721c0d4b7ab8f3521dc97142"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gaa5ceabb3721c0d4b7ab8f3521dc97142">AR_MPI_AO_ClrPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_ClrPubAttr(AUDIO_DEV AoDevId)</div><div class="ttdoc">清除AO设备属性，清除设备属性前，需要先停止设备</div></div>
+<div class="ttc" id="astructar_a_i_o___a_t_t_r___s_html"><div class="ttname"><a href="structar_a_i_o___a_t_t_r___s.html">arAIO_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:184</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga071580061b241bd27d37ba7abc37cab8"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga071580061b241bd27d37ba7abc37cab8">AR_MPI_AI_SetPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_SetPubAttr(AUDIO_DEV AiDevId, const AIO_ATTR_S *pstAttr)</div><div class="ttdoc">设置AI设备属性 音频输入设备的属性决定了输入数据的格式， 输入设备属性包括工作模式、采样率、采样精度、buffer大小、每帧的采样点数、扩展标志、时钟选择和通道数目。 这些属性应与对接Codec配置的...</div></div>
+<div class="ttc" id="astructar_a_d_e_c___d_e_c_o_d_e_r___s_html"><div class="ttname"><a href="structar_a_d_e_c___d_e_c_o_d_e_r___s.html">arADEC_DECODER_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_adec.h:64</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gac68b0b652e9ce98c580d4548be9953e4"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gac68b0b652e9ce98c580d4548be9953e4">AR_MPI_AENC_GetFd</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_GetFd(AENC_CHN AeChn)</div><div class="ttdoc">获取音频编码通道号对应的设备文件句柄</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga408f55f44c0d0196ec1a5be805c52922"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga408f55f44c0d0196ec1a5be805c52922">AR_MPI_AO_PauseChn</a></div><div class="ttdeci">AR_S32 AR_MPI_AO_PauseChn(AUDIO_DEV AoDevId, AO_CHN AoChn)</div><div class="ttdoc">暂停AO通道，AO通道暂停后； 如果绑定的ADEC通道继续向此通道发送音频帧数据，发送的音频帧数据将会被阻塞； 而如果绑定的AI通道继续向此通道发送音频帧数据，在通道缓冲未满的情况下则将音频帧放入缓冲区...</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga2c338ea91d6134e3cbcc77f3c040b5f4"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga2c338ea91d6134e3cbcc77f3c040b5f4">AR_MPI_AENC_UnRegisterEncoder</a></div><div class="ttdeci">AR_S32 AR_MPI_AENC_UnRegisterEncoder(AR_S32 s32Handle)</div><div class="ttdoc">注销编码器</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gadb03a358f992f8f6f97b7753ef8ccb26"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gadb03a358f992f8f6f97b7753ef8ccb26">AR_MPI_AI_ClrPubAttr</a></div><div class="ttdeci">AR_S32 AR_MPI_AI_ClrPubAttr(AUDIO_DEV AiDevId)</div><div class="ttdoc">清空Pub属性</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_ga6367438a33ba0c01bcab6395c256ef23"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#ga6367438a33ba0c01bcab6395c256ef23">AR_MPI_AUDIO_GetModParam</a></div><div class="ttdeci">AR_S32 AR_MPI_AUDIO_GetModParam(AUDIO_MOD_PARAM_S *pstModParam)</div><div class="ttdoc">获取 AUDIO 模块参数属性</div></div>
+<div class="ttc" id="astructar_a_d_e_c___c_h___a_t_t_r___s_html"><div class="ttname"><a href="structar_a_d_e_c___c_h___a_t_t_r___s.html">arADEC_CH_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_adec.h:55</div></div>
+<div class="ttc" id="astructar_a_u_d_i_o___m_o_d___p_a_r_a_m___s_html"><div class="ttname"><a href="structar_a_u_d_i_o___m_o_d___p_a_r_a_m___s.html">arAUDIO_MOD_PARAM_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_aio.h:501</div></div>
+<div class="ttc" id="agroup___m_p_i___a_u_d_i_o_html_gad2a9ab8c218975eb5df4cb57934b9992"><div class="ttname"><a href="group___m_p_i___a_u_d_i_o.html#gad2a9ab8c218975eb5df4cb57934b9992">AR_MPI_ADEC_UnRegisterDecoder</a></div><div class="ttdeci">AR_S32 AR_MPI_ADEC_UnRegisterDecoder(AR_S32 s32Handle)</div><div class="ttdoc">注销解码器</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

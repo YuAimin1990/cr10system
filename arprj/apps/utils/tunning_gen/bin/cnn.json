@@ -1,0 +1,15 @@
+{
+	"Net_num":"12",
+	"Net0":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_100_400_3d_param.json",
+    "Net1":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_400_800_3d_param.json",
+	"Net2":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_800_1600_3d_param.json",
+	"Net3":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_1600_3200_3d_param.json",
+	"Net4":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_3200_6400_3d_param.json",
+	"Net5":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_6400_12000_3d_param.json",
+	"Net6":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_12000_24000_3d_param.json",
+	"Net7":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_24000_38000_3d_param.json",
+	"Net8":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_38000_51000_3d_param.json",
+    "Net9":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_51000_72000_3d_param.json",
+	"Net10":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_72000_102000_3d_param.json",
+	"Net11":"/usrdata/local/factory/tunning/cam_imx307/dark_iso_102000_120000_3d_param.json"
+}

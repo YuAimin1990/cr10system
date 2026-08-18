@@ -1,0 +1,11 @@
+#ifndef __SAMPLE_VPSS_VIO_OSD_H__
+#define __SAMPLE_VPSS_VIO_OSD_H__
+
+AR_S32 SAMPLE_VPSS_Init_Osd(VPSS_GRP VpssGrp, VPSS_CHN VpssChn);
+AR_S32 SAMPLE_VPSS_UnInit_Osd(AR_VOID);
+AR_S32 SAMPLE_VPSS_Add_Rgn(VPSS_GRP VpssGrp, VPSS_CHN VpssChn);
+AR_S32 SAMPLE_VPSS_Remove_Rgn(VPSS_GRP VpssGrp, VPSS_CHN VpssChn);
+AR_VOID SAMPLE_VPSS_Set_Text_Color(VPSS_GRP VpssGrp, VPSS_CHN VpssChn, AR_U32 color);
+AR_S32 SAMPLE_VPSS_DrawText(VPSS_GRP VpssGrp, VPSS_CHN VpssChn, AR_U32 x, AR_U32 y, AR_CHAR* str);
+
+#endif

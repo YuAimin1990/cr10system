@@ -1,0 +1,17 @@
+choice
+	prompt "Artosyn SDRAM drivers"
+	default AR93XX_SDRAM_DDR4
+	help
+	  There is several DDR type supported by ARTOSYN, choose
+	  one to work.
+
+config AR93XX_SDRAM_DDR4
+	bool "DDR4"
+	help
+	  Enable DDR4 driver.
+
+config AR93XX_SDRAM_DDR3
+	bool "DDR3"
+	help
+	  Enable DDR3 driver.
+endchoice

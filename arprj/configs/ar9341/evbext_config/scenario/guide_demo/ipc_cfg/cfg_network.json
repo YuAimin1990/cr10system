@@ -1,0 +1,64 @@
+{
+	"lan":	{
+		"enable":	1,
+		"netName":	"eth0",
+		"ipversion":	0,
+		"mac":	"28:E3:83:F6:40:12",
+		"dhcp":	1,
+		"upnp":	0,
+		"ip":	"192.168.10.25",
+		"netmask":	"255.255.255.0",
+		"gateway":	"192.168.10.1",
+		"multicast":	"192.168.10.255",
+		"autoDns":	1,
+		"dns1":	"114.114.114.114",
+		"dns2":	"8.8.8.8"
+	},
+	"email":	{
+		"enable":	1,
+		"attachPicture":	1,
+		"smtpServer":	"",
+		"smtpPort":	25,
+		"pop3Server":	"",
+		"pop3Port":	110,
+		"cryptionType":	0,
+		"user":	"",
+		"password":	"",
+		"fromAddrList":	"",
+		"toAddrList0":	"",
+		"toAddrList1":	"",
+		"toAddrList2":	"",
+		"toAddrList3":	"",
+		"ccAddrList0":	"",
+		"ccAddrList1":	"",
+		"ccAddrList2":	"",
+		"ccAddrList3":	"",
+		"bccAddrList0":	"",
+		"bccAddrList1":	"",
+		"bccAddrList2":	"",
+		"bccAddrList3":	""
+	},
+	"ftp":	{
+		"enable":	0,
+		"address":	"",
+		"port":	0,
+		"userName":	"",
+		"password":	"",
+		"datapath":	"MDSnapshot",
+		"filename":	"image.jpg"
+	},
+	"port":	{
+		"httpPort":	80,
+		"rtspPort":	554
+	},
+	"wireless":	{
+		"enable":	1,
+		"mode":	0,
+		"channel":	0,
+		"wpaMode":	0,
+		"dhcp":	0,
+		"standard":	"802.11bgn",
+		"ssid":	"artosyn_ipc",
+		"password":	"123456789"
+	}
+}

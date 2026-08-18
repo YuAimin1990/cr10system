@@ -1,0 +1,121 @@
+/******************************************************************************
+* Copyright (C), artosyn 
+* File name: register_content.h    
+* Author : jianliu    Version:Initial Draft     Create: 2017骞�6鏈�25鏃�
+* Description : register_content.c header file
+* Others :
+* History :
+* 1.Date : 2017骞�6鏈�25鏃�   Author : jianliu   Modify content : Create File
+* 
+******************************************************************************/
+#ifndef _REGISTERCONTENT_H_
+#define _REGISTERCONTENT_H_
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+//=============memory attribution============//
+
+typedef struct
+{
+	unsigned int region_start : 20;
+	unsigned int region_mid : 8;
+	unsigned int inactive : 1;
+	unsigned int reserved : 3;
+}addx_start_st;
+
+typedef struct
+{
+	unsigned int reserved : 16;
+	unsigned int mom : 1;
+	unsigned int ap : 3;
+	unsigned int reserved1 : 4;
+	unsigned int rqos :4;
+	unsigned int wqos : 4;
+}addx_attr0_st;
+
+typedef struct
+{
+	unsigned int exact_rd : 1;
+	unsigned int lxa_wr : 4;
+	unsigned int lxa_rd : 4;
+	unsigned int dabsz : 4;
+	unsigned int dadol : 4;
+	unsigned int reserved : 1;
+	unsigned int dauol : 3;
+	unsigned int reserved1 : 11;
+}addx_att1_st;
+
+typedef struct
+{
+	unsigned int region_start : 20;
+	unsigned int reserved : 8;
+	unsigned int inactive : 1;
+	unsigned int reserved1 : 3;
+}p_addx_start_st;
+
+typedef struct
+{
+	unsigned int cacheable : 1;
+	unsigned int lock : 1;
+	unsigned int reserved : 2;
+	unsigned int ap : 3;
+	unsigned int reserved1 : 1;
+	unsigned int p_lxa : 4;
+	unsigned int reserved2 : 12;
+	unsigned int p_rqos : 4;
+	unsigned int reserved3 : 4;
+}p_addx_attr0_st;
+
+typedef union
+{
+	addx_start_st field;
+	unsigned int overlay;
+}addx_start_t;
+
+typedef union
+{
+	addx_attr0_st field;
+	unsigned int overlay;
+}addx_attr0_t;
+
+typedef union
+{
+	addx_att1_st field;
+	unsigned int overlay;
+}addx_att1_t;
+
+typedef union
+{
+	p_addx_start_st field;
+	unsigned int overlay;
+}p_addx_start_t;
+
+typedef union
+{
+	p_addx_attr0_st field;
+	unsigned int overlay;
+}p_addx_attr0_t;
+
+/*----------------------------------------------*
+ * global types                                 *
+ *----------------------------------------------*/
+
+/*----------------------------------------------*
+ * global variable                              *
+ *----------------------------------------------*/
+
+/*----------------------------------------------*
+ * global constant variables                    *
+ *----------------------------------------------*/
+
+/*----------------------------------------------*
+ * global function                              *
+ *----------------------------------------------*/
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // _REGISTER_CONTENT_H_
+

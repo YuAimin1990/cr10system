@@ -1,0 +1,4 @@
+config ARTOSYN_DVFS
+	tristate "DVFS for artosyn"
+	help
+	  Choose this option if you wish to use dvfs on artosyn Platform.

@@ -1,0 +1,33 @@
+/ {
+	reserved_memory: reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		icc_reserved: icc@0x22200000 {
+				compatible="icc-region";
+				reg = <0 0x22200000 0 0x200000>;
+		};
+
+		dsp_reserved: dsp@0x32400000 {
+				reg = <0 0x32400000 0 0x2000000>;
+		};
+
+		system_heap_reserved: system_heap@0x34400000 {
+				compatible="ion-region";
+				reg = <0 0x34400000 0 0x400000>;
+		};
+
+	};
+        ion_artosyn: ion-artosyn {
+               compatible = "artosyn,ion", "linux,ion";
+               ion-system-heap {
+                       compatible = "artosyn,system", "linux,ion-heap-system";
+               };
+
+               ion-sys-heap-region {
+                       compatible = "artosyn,carveout-linux-sys-heap","linux,ion-heap-carveout";
+                       memory-region = <&system_heap_reserved>;
+               };
+       };
+};

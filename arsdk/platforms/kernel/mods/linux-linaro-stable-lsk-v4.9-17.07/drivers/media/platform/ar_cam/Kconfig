@@ -1,0 +1,36 @@
+config VIDEO_ARTOSYN_CAM
+        tristate "Artosyn camera support"
+        depends on ARCH_ARTOSYN
+        #select VIDEOBUF2_DMA_CONTIG
+	#select VIDEOBUF2_VMALLOC
+	select VIDEOBUF2_CORE
+	#select ARTOSYN_CAM_RPC
+	#select ARTOSYN_CAM_RPC_API
+	#select ARTOSYN_CAM_RPC_LOG
+	#select ARTOSYN_CAM_RPC_DEBUG
+        ---help---
+          This is a v4l2 driver for Artosyn Sirius camera
+
+config ARTOSYN_CAM_RPC
+	bool "Artosyn camera RPC"
+#	#depends on VIDEO_ARTOSYN_CAM
+#	---help---
+#	  The RPC for Artosyn camera, must select
+#
+config ARTOSYN_CAM_RPC_API
+	bool "Artosyn camera RPC API"
+#	#depends on ARTOSYN_CAM_RPC
+#	---help---
+#	  Artosyn RPC API support for cameras
+#
+config ARTOSYN_CAM_RPC_LOG
+	bool "Artosyn camera RPC log"
+#	depends on ARTOSYN_CAM_RPC
+#	---help---
+#	  Artosyn logs support for camera
+#
+config ARTOSYN_CAM_RPC_DEBUG
+	bool "Artosyn camera RPC debugfs support"
+#	#depends on ARTOSYN_CAM_RPC
+#	---help---
+#	  Artosyn RPC debugfs support for camera

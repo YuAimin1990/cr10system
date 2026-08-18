@@ -1,0 +1,44 @@
+{
+	"deviceinfo":	{
+		"deviceName":	"IPCAM",
+		"description":	"JH",
+		"deviceType":	"IPC_B1",
+		"sensorType":	0,
+		"languageType":	1,
+		"videoType":	0,
+		"isUpdateAPSSid":	1,
+		"serial_0":	"JOY-000836-HYTWE",
+		"serial_1":	"LPURNQ",
+		"serial_2":	"0",
+		"serial_3":	"0",
+		"softwareVersion":	"S-1.230.586",
+		"softwareBuildDate":	"20190808",
+		"firmwareVersion":	"F-1.0",
+		"firmwareReleaseDate":	"20150928",
+		"hardwareVersion":	"H-1.1.1",
+		"hardwareBuildDate":	"20150928",
+		"webVersion":	"W-1.0",
+		"webBuildDate":	"20150928",
+		"updateSoftware":	0
+	},
+	"timezone":	{
+		"timeZone":	0
+	},
+	"netDST":	{
+		"netDstCfg.enableDST":	0,
+		"netDstCfg.dSTBias":	0,
+		"netDstCfg.beginTime":	"2015.8.30",
+		"netDstCfg.endTime":	"2015.8.30"
+	},
+	"NTP":	{
+		"ntpCfg_enable":	1,
+		"ntpCfg_serverDomain":	"time-a.nist.gov"
+	},
+	"Maintain":	{
+		"enable":	0,
+		"index":	2,
+		"hour":	3,
+		"minute":	0,
+		"second":	0
+	}
+}

@@ -1,0 +1,21 @@
+baudrate=115200
+board=artosyn
+board_name=artosyn_9301
+bootargs=console=ttyS0,115200,earlyprintk loglevel=8,quiet root=/dev/mmcblk1p7 rootwait rootfstype=ext4
+bootcmd=mmc dev 0 0; part number mmc 0 kernel kernel_part; part start mmc 0 $kernel_part kernel_start; part size mmc 0 $kernel_part kernel_size; part number mmc 0 dtb dtb_part; part start mmc 0 $dtb_part dtb_start; part size mmc 0 $dtb_part dtb_size; mmc read 0x200a0000 $kernel_start $kernel_size; mmc read 0x22080000 $dtb_start $dtb_size; booti 0x200a0000 - 0x22080000
+bootdelay=2
+bootm_boot_mode=nosec
+cpu=armv8
+ethact=sirius-gmac
+ethaddr=00:00:01:02:03:04
+ethprime=sirius-gmac
+fdt_high=0xffffffffffffffff
+ipaddr=192.168.199.138
+netmask=255.255.255.0
+serverip=192.168.199.114
+soc=artosyn
+stderr=serial
+stdin=serial
+stdout=serial
+test1=1234
+verify=1

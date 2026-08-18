@@ -1,0 +1,499 @@
+/*
+ * Copyright 2015 Artosyn Co., Ltd.
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+#include "../../common/artosyn-kernel.dtsi"
+#include "artosyn-memory.dtsi"
+#if 0
+//example for single cpu regulater
+&cpu0 {
+	cpu-supply = <&DA9062_BUCK1>;
+};
+
+&cpu1 {
+	cpu-supply = <&DA9062_BUCK1>;
+};
+
+&cpu2 {
+	cpu-supply = <&DA9062_BUCK1>;
+};
+
+&cpu3 {
+	cpu-supply = <&DA9062_BUCK1>;
+};
+#endif
+
+//example for dual cpu regulater
+&cpu0 {
+	cpu-dual-0-supply = <&DA9062_BUCK1>;
+	cpu-dual-1-supply = <&DA9062_BUCK2>;
+};
+
+&cpu1 {
+	cpu-dual-0-supply = <&DA9062_BUCK1>;
+	cpu-dual-1-supply = <&DA9062_BUCK2>;
+};
+
+&cpu2 {
+	cpu-dual-0-supply = <&DA9062_BUCK1>;
+	cpu-dual-1-supply = <&DA9062_BUCK2>;
+};
+
+&cpu3 {
+	cpu-dual-0-supply = <&DA9062_BUCK1>;
+	cpu-dual-1-supply = <&DA9062_BUCK2>;
+};
+
+&a53_opp_table {
+
+	opp-100000000 {
+		opp-hz = /bits/ 64 <100000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+		opp-suspend;
+	};
+
+	opp-200000000 {
+		opp-hz = /bits/ 64 <200000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+	};
+
+	opp-400000000 {
+		opp-hz = /bits/ 64 <400000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+	};
+
+	opp-800000000 {
+		opp-hz = /bits/ 64 <800000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+	};
+
+	opp-900000000 {
+		opp-hz = /bits/ 64 <900000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+	};
+
+#if 0
+	//just for cpu overclock
+	opp-1000000000 {
+		opp-hz = /bits/ 64 <1000000000>;
+		opp-microvolt = <900000>,
+				<900000>;
+		clock-latency-ns = <150000>;
+	};
+
+	opp-1100000000 {
+		opp-hz = /bits/ 64 <1100000000>;
+		opp-microvolt = <950000>,
+				<950000>;
+		clock-latency-ns = <150000>;
+		//turbo-mode;
+	};
+
+	opp-1200000000 {
+		opp-hz = /bits/ 64 <1200000000>;
+		opp-microvolt = <1000000>,
+				<1000000>;
+		clock-latency-ns = <150000>;
+		//turbo-mode;
+	};
+
+	opp-1300000000 {
+		opp-hz = /bits/ 64 <1300000000>;
+		opp-microvolt = <1050000>,
+				<1050000>;
+		clock-latency-ns = <150000>;
+		//turbo-mode;
+	};
+#endif
+};
+&uart0 {
+	status = "okay";
+};
+
+&uart1 {
+	status = "okay";
+};
+
+&uart2 {
+	status = "okay";
+};
+
+&uart3 {
+	status = "okay";
+};
+
+&uart4 {
+	status = "okay";
+};
+
+&vbus_regulator0 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg0_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portd1 4 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&vbus_regulator1 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg1_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portd1 5 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&vbus_regulator2 {
+	compatible = "regulator-fixed";
+	regulator-name = "usb_otg2_vbus";
+	regulator-min-microvolt = <5000000>;
+	regulator-max-microvolt = <5000000>;
+	gpio = <&portd1 6 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+};
+
+&usb_otg0 {
+	dr_mode = "peripheral";
+	vbus-supply = <&vbus_regulator0>;
+	status = "okay";
+};
+
+&usb_otg1 {
+	dr_mode = "host";
+	vbus-supply = <&vbus_regulator1>;
+	status = "okay";
+};
+
+&usb_otg2 {
+	dr_mode = "host";
+	vbus-supply = <&vbus_regulator2>;
+	status = "okay";
+};
+
+&wdt0 {
+	status = "okay";
+};
+
+&sec_wdt {
+    status = "okay";
+};
+
+&rtc0 {
+	status = "okay";
+};
+
+&pwm0 {
+	status = "okay";
+};
+
+&pwm1 {
+	status = "okay";
+};
+
+&tzc {
+	status = "disabled";
+};
+
+&spi0 {
+	status = "disabled";
+};
+
+&spi1 {
+	status = "okay";
+#ifdef AR_FEAT_EIS
+	num-cs = <2>;
+	cs-gpios = <&portb3 3 0>,
+				<&porta3 0 0>;
+	spidev00: spidev00 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "spidev";
+		reg = <0>;
+		spi-cs-high;
+		spi-max-frequency = <20000000>;
+	};
+	mpu0_spi: mpu6509 {
+		status = "okay";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "tdk,mpu6509";
+		reg = <1>;
+		spi-max-frequency = <20000000>;
+		interrupt-parent = <&porta1>;
+		interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+	};
+#else
+    num-cs = <1>;
+    cs-gpios = <&portb3 3 0>;
+    //status = "disabled";
+    spidev00: spidev00 {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        compatible = "spidev";
+        reg = <0>;
+        spi-max-frequency = <20000000>;
+    };
+#endif
+};
+
+&spi0_s {
+	status = "disabled";
+};
+
+&spi1_s {
+	status = "disabled";
+};
+
+&i2c0 {
+	status = "okay";
+
+	pmic0: da9062@58 {
+		status = "okay";
+		compatible = "dlg,da9062";
+		reg = <0x58>;
+		interrupt-parent = <&porta2>;
+		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
+		interrupt-controller;
+		//gpios = <&portc1 6 GPIO_ACTIVE_LOW>;
+
+		rtc {
+			compatible = "dlg,da9062-rtc";
+		};
+
+		watchdog {
+			compatible = "dlg,da9062-watchdog";
+		};
+
+		thermal {
+			compatible = "dlg,da9062-thermal";
+			polling-delay-passive = <3000>;
+		};
+
+		regulators {
+			DA9062_BUCK1: buck1 {
+				regulator-name = "BUCK1";
+				regulator-min-microvolt = <300000>;
+				regulator-max-microvolt = <1570000>;
+				regulator-min-microamp = <500000>;
+				regulator-max-microamp = <2000000>;
+				regulator-boot-on;
+			};
+			DA9062_BUCK2: buck2 {
+				regulator-name = "BUCK2";
+				regulator-min-microvolt = <300000>;
+				regulator-max-microvolt = <1570000>;
+				regulator-min-microamp = <500000>;
+				regulator-max-microamp = <2000000>;
+				regulator-boot-on;
+			};
+			DA9062_LDO3: ldo3 {
+				regulator-name = "LDO_3";
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-boot-on;
+			};
+			DA9062_LDO4: ldo4 {
+				regulator-name = "LDO_4";
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-boot-on;
+			};
+		};
+	};
+};
+
+&i2c1 {
+	status = "okay";
+};
+
+&i2c2 {
+	status = "okay";
+
+	mpu0_i2c: mpu6509@68 {
+		status = "okay";
+		compatible = "tdk,mpu6509";
+		reg = <0x68>;
+		interrupt-parent = <&porta1>;
+		interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+	};
+};
+
+&i2c3 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+};
+
+&emmc {
+//	/delete-property/voltage-ranges;
+//	/delete-property/no-1-8-v;
+	/delete-property/full-pwr-cycle;
+//	vqmmc-supply = <&DA9062_LDO4>;
+//	mmc-hs200-1_8v;
+	status = "okay";
+};
+
+&sdmmc {
+	clock-frequency = <100000000>;
+	clock-freq-min-max = <400000 100000000>;
+	vqmmc-supply = <&DA9062_LDO3>;
+	num-slots = <3>;
+	cap-sdio-irq;
+	/delete-property/no-sdio;
+	status = "okay";
+};
+
+&mdio {
+	status = "okay";
+
+	phy0: ethernet-phy@1 {
+		status = "okay";
+	};
+};
+
+&gmac {
+	mac-address = [00 00 01 02 03 04]; /*This should not be here if uboot has set mac already*/
+	phy-mode = "rgmii";
+	phy-handle = <&phy0>;
+	tzc-handle = <&tzc>;
+	tx-fifo-depth = <3>;
+	tx-fifo-depth-1000 = <2>;
+	tx-bd-num = <64>; /*total 128 bds, rx-bd-num = 128 - tx-bd-num*/
+	tx-enhance;
+	rx-enhance;
+	status = "okay";
+};
+
+&qspi {
+	status = "okay";
+
+	flash@0 {
+		compatible = "jedec,spi-nor";
+		reg = <SPI_NOR_CS0>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@1 {
+		compatible = "spi-nand";
+		reg = <SPI_NAND_CS0>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@2 {
+		compatible = "jedec,spi-nor";
+		reg = <SPI_NOR_CS1>;
+		spi-max-frequency = <150000000>;
+	};
+	flash@3 {
+		compatible = "spi-nand";
+		reg = <SPI_NAND_CS1>;
+		spi-max-frequency = <150000000>;
+	};
+};
+
+/ {
+	gpio_keys {
+		compatible = "gpio-keys-polled";
+		poll-interval = <100>;
+		autorepeat = <1>;
+
+		button0 {
+			label = "GPIO Key 0";
+			linux,code = <105>;
+			gpios = <&portb0 7 GPIO_ACTIVE_LOW>;
+		};
+	};
+
+	gpio_keys_int {
+		compatible = "gpio-keys";
+		autorepeat = <1>;
+
+		button0 {
+			label = "GPIO Key 0";
+			linux,code = <106>;
+			gpios = <&porta0 5 GPIO_ACTIVE_LOW>;
+		};
+	};
+};
+
+&ipsec {
+    status = "disabled";
+};
+
+&pka {
+    status = "disabled";
+};
+
+&hwrng {
+    status = "disabled";
+};
+
+/ {
+	test_pwm {
+		compatible = "artosyn,test-pwm";
+		pwms =  <&pwm0 0 1000000000>,
+			<&pwm0 1 1000000000>,
+			<&pwm0 2 1000000000>,
+			<&pwm0 3 1000000000>,
+			<&pwm0 4 1000000000>,
+			<&pwm0 5 1000000000>,
+			<&pwm0 6 1000000000>,
+			<&pwm0 7 1000000000>,
+			<&pwm1 0 1000000000>,
+			<&pwm1 1 1000000000>;
+		pwm-names = 	"pwm0", "pwm1", "pwm2", "pwm3", "pwm4",
+				"pwm5", "pwm6", "pwm7", "pwm8", "pwm9";
+	};
+};
+

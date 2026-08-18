@@ -1,0 +1,310 @@
+.text
+;.CSECT internal_code_sec
+	.global vInternalCpmRead
+	; internal_cpm_read( addr )
+vInternalCpmRead:
+	sc0.in {cpm} (r0.ui).di, r0.di
+    nop
+	nop
+	nop
+	nop
+	nop
+	nop
+    nop
+	pcu.ret {ds1}
+
+	.global vExternalCpmRead
+	; external_cpm_read( addr )
+vExternalCpmRead:
+	ld  (r0.ui).di, r0.di
+	nop
+	nop
+	pcu.ret {ds1}
+
+	.global vIoRead
+	; io_read( addr )
+vIoRead:
+	sc0.in (r0.ui).di, r0.di
+
+	nop
+    nop
+    nop
+    nop
+	nop
+
+	pcu.ret {ds1}
+
+
+	.global vInternalCpmWrite
+	; internal_cpm_write( addr, value )
+internal_cpm_write:
+	out {cpm} r1.ui, (r0.ui).di
+
+	nop
+
+	nop
+
+	pcu.ret {ds1}
+
+	.global external_cpm_write
+	; external_cpm_write( addr, value )
+external_cpm_write:
+	st r1.ui, (r0.ui).di
+
+	nop
+
+	nop
+
+	pcu.ret {ds1}
+
+
+
+
+.global internal_cpm_bit_set
+	; internal_cpm_bit_set( addr, bit, value )
+internal_cpm_bit_set:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	;shiftl r2.i, r1.i, r2.i || ld (r0.ui).di, r9.di
+	shiftl r2.i, r1.i, r2.i || in {cpm} (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;or r2.i, r9.i, r9.i
+	or r2.s2, r9.s2, r9.s2
+	out {cpm} r9.ui, (r0.ui).di
+	;st r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+.global external_cpm_bit_set
+	; external_cpm_bit_set( addr, bit, value )
+external_cpm_bit_set:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	shiftl r2.i, r1.i, r2.i || ld (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;or r2.i, r9.i, r9.i
+	or r2.s2, r9.s2, r9.s2
+	st r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+
+
+
+.global internal_cpm_bit_clear
+	; internal_cpm_bit_clear( addr, bit )
+internal_cpm_bit_clear:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	;shiftl r2.i, r1.i, r2.i || ld (r0.ui).di, r9.di
+	sc1.shiftl r2.i, r1.i, r2.i || in {cpm} (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	sc2.andnot r9.s2, r2.s2, r9.s2
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	out {cpm} r9.ui, (r0.ui).di
+	;st r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+.global external_cpm_bit_clear
+	; external_cpm_bit_clear( addr, bit, value )
+external_cpm_bit_clear:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	shiftl r2.i, r1.i, r2.i || ld (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	sc2.andnot r9.s2, r2.s2, r9.s2
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	st r9.ui, (r0.ui).di
+	;st r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+
+
+
+	.global internal_cpm_bit_read
+	; internal_cpm_read( addr, bit )
+internal_cpm_bit_read:
+	push {in2} r9.i, r10.i
+	;ld (r0.ui).di, r9.di || mov #1, r10.i
+	in {cpm} (r0.ui).di, r0.di || mov #0x1, r10.i
+	shiftl r10.i, r1.i, r10.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	;and  r10.ui, r9.i, r9.i
+	and  r10.us2, r9.s2, r9.s2
+	shiftr r9.i, r1.ui, r0.i, pr0.b2
+	pop {in2} r9.i, r10.i
+
+	pcu.ret {ds1}
+
+
+	.global external_cpm_bit_read
+	; external_cpm_read( addr, bit )
+external_cpm_bit_read:
+	push {in2} r9.i, r10.i
+	ld (r0.ui).di, r9.di || mov #0x1, r10.i
+	shiftl r10.i, r1.i, r10.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	;and  r10.ui, r9.i, r9.i
+	and  r10.us2, r9.s2, r9.s2
+	shiftr r9.i, r1.ui, r0.i, pr0.b2
+	pop {in2} r9.i, r10.i
+
+	pcu.ret {ds1}
+
+
+
+
+.global io_write
+	; io_write( addr, value )
+io_write:
+	sc0.out r1.ui, (r0.ui).di
+
+	nop
+    nop
+    nop
+    nop
+	nop
+
+	pcu.ret {ds1}
+
+.global io_bit_set
+	; io_bit_set( addr, bit, value )
+io_bit_set:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	shiftl r2.i, r1.i, r2.i || in (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;or r2.i, r9.i, r9.i
+	or r2.s2, r9.s2, r9.s2
+	out r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+.global io_bit_clear
+	; io_bit_clear( addr, bit)
+io_bit_clear:
+	push {in2} r9.i, r2.i
+	nop #0x3
+	nop #0x3
+	mov #0x1, r2.ui
+	nop #0x3
+	nop #0x3
+	shiftl r2.i, r1.i, r2.i || in (r0.ui).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	sc2.andnot r9.s2, r2.s2, r9.s2
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	out r9.ui, (r0.ui).di
+	pop {in2} r9.i, r2.i
+
+	pcu.ret {ds1}
+
+.global io_bit_read
+	; io_bit_read( addr, bit)
+io_bit_read:
+	push {in2} r9.i, r10.i
+	nop #0x3
+	nop #0x3
+	in (r0.ui).di, r9.di || mov #0x1, r10.i
+	nop #0x3
+	nop #0x3
+	shiftl r10.i, r1.i, r10.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	;and  r10.ui, r9.i, r9.i
+	and  r10.us2, r9.s2, r9.s2
+	shiftr r9.i, r1.ui, r0.i, pr0.b2
+	pop {in2} r9.i, r10.i
+
+	pcu.ret {ds1}
+
+.global read_moda
+	; read_moda()
+read_moda:
+	mov moda.ui, r0.ui
+
+	pcu.ret {ds1}
+
+

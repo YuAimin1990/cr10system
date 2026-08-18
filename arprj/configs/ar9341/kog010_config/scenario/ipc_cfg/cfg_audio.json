@@ -1,0 +1,13 @@
+{
+	"audio":	{
+		"i2sType":	"iner",
+		"mode":	0,
+		"type":	0,
+		"chans":	2,
+		"sampleRate":	32000,
+		"sampleBitWidth":	16,
+		"inputVolume":	46,
+		"outputVolume":	8,
+		"rebootMute":	0
+	}
+}

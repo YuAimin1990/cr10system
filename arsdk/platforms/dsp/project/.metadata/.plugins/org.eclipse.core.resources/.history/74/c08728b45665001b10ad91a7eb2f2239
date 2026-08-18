@@ -1,0 +1,32 @@
+/*
+ * IO_operation.h
+ *
+ *  Created on: 2017Äê3ÔÂ21ÈÕ
+ *      Author: jianliu
+ */
+
+#ifndef IO_OPERATION_H_
+#define IO_OPERATION_H_
+#ifdef __cplusplus
+extern "C"{
+#endif
+extern int vInternalCpmRead( int reg_addr );
+extern int xExternalCpmRead( int reg_addr );
+extern int xIoRead( int reg_addr );
+extern void vInternalCpmWrite(int reg_addr, unsigned int val);
+extern void vExternalCpmWrite(int reg_addr, unsigned int val);
+extern void vInternalCpmBitRead(int reg_addr, int bit);
+extern void vExternalCpmBitRead( int reg_addr, int bit);
+extern void vInternalCpmBitSet( int reg_addr, int bit);
+extern void vExternalCpmBitSet( int reg_addr, int bit);
+extern void vInternaLCpmBitClear( int reg_addr, int bit);
+extern void vExternalCpmBitClear( int reg_addr, int bit);
+extern void vIoWrite( int reg_addr, unsigned int val );
+extern void vIoBitSet(int addr, int bit);
+extern void vIoBitClear(int addr, int bit);
+extern int xIoBitRead(int addr, int bit);
+extern unsigned int xReadModa();
+#ifdef __cplusplus
+}
+#endif
+#endif /* IO_OPERATION_H_ */

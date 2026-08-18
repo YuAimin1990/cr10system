@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Exceptions>
+    <ExceptionGroup description="" displayed="false" name="Common" stops="false">
+        <ExceptionGroup description="" displayed="false" name="Memory" stops="false">
+            <ExceptionGroup description="Access to unmapped memory" displayed="false" name="UnmappedAccess" stops="false">
+                <ExceptionGroup description="" displayed="false" name="UnmappedData" stops="false">
+                    <ExceptionGroup description="" displayed="false" name="UnmappedInternalData" stops="false">
+                        <Exception description="Read from unmapped internal data memory" displayed="false" name="UnmappedInternalDataRead" stops="false" type="SimulationError"/>
+                        <Exception description="Write to unmapped internal data memory" displayed="false" name="UnmappedInternalDataWrite" stops="false" type="SimulationError"/>
+                    </ExceptionGroup>
+                    <ExceptionGroup description="" displayed="false" name="UnmappedExternalData" stops="false">
+                        <Exception description="Read from unmapped external data memory" displayed="false" name="UnmappedExternalDataRead" stops="false" type="SimulationError"/>
+                        <Exception description="Write to unmapped external data memory" displayed="false" name="UnmappedExternalDataWrite" stops="false" type="SimulationError"/>
+                    </ExceptionGroup>
+                </ExceptionGroup>
+                <Exception description="Access to unmapped code memory" displayed="false" name="UnmappedCode" stops="false" type="SimulationError"/>
+                <Exception description="Access to unmapped I/O memory" displayed="false" name="UnmappedIO" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+            <ExceptionGroup description="Read from uninitialized memory" displayed="false" name="UninitializedRead" stops="false">
+                <ExceptionGroup description="" displayed="false" name="UninitializedData" stops="false">
+                    <Exception description="Read from uninitialized internal data memory" displayed="false" name="UninitializedInternalData" stops="false" type="SimulationError"/>
+                    <Exception description="Read from uninitialized external data memory" displayed="false" name="UninitializedExternalData" stops="false" type="SimulationError"/>
+                </ExceptionGroup>
+                <Exception description="Read from uninitialized I/O memory" displayed="false" name="UninitializedIO" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="RegisterWriteError" stops="false">
+            <Exception description="A reserved value was written to a register" displayed="true" name="ReservedValueWritten" stops="false" type="SimulationError"/>
+            <Exception description="A read only register was written to" displayed="true" name="ReadOnlyRegisterWritten" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="MSS" stops="false">
+            <Exception description="Transaction violates access protection" displayed="true" name="AccessProtectionViolation" stops="true" type="SimulationError"/>
+            <Exception description="Transaction crosses internal memory boundary" displayed="true" name="InternalBoundary" stops="false" type="SimulationError"/>
+            <Exception description="Only one exclusive access transaction initiated by the core is ongoing at any time" displayed="true" name="TwoActiveExclusiveAcess" stops="false" type="SimulationError"/>
+            <Exception description="Exclusive access was not initiated by the user" displayed="true" name="ExclusiveStoreBeforeLoad" stops="false" type="SimulationError"/>
+            <Exception description="External slave does not support exclusive accesses or wrong destination" displayed="true" name="ExclusiveStoreForWrongAddress" stops="false" type="SimulationError"/>
+            <Exception description="External slave does not support exclusive accesses or wrong destination" displayed="true" name="ExclusiveAccessFailed" stops="false" type="SimulationError"/>
+            <Exception description="Slave port access is out of range" displayed="true" name="SlaveOutOfRange" stops="false" type="SimulationError"/>
+            <Exception description="Transaction crosses memory regions" displayed="true" name="RegionCross" stops="false" type="SimulationError"/>
+            <Exception description="Blank memory region accessed" displayed="true" name="BlankRegion" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Debugger General" stops="false">
+            <Exception description="Unable to obtain license" displayed="true" name="LicenseError" stops="true" type="DebuggerError"/>
+            <Exception description="Invalid Line Number" displayed="true" name="InvalidLine" stops="false" type="DebuggerWarning"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Function Profiler" stops="false">
+            <Exception description="Missing or unable to open setup" displayed="true" name="FuncProfilerSetup" stops="true" type="FuncProfilerError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Decoder" stops="false">
+            <Exception description="Instruction packet crosses memory range boundary (Internal to External for example)" displayed="true" name="PacketCrossRange" stops="true" type="DecoderError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Coff Loader" stops="false">
+            <Exception description="General load coff error" displayed="true" name="CoffLoaderError" stops="false" type="CoffLoaderError"/>
+            <Exception description="General load coff warning" displayed="true" name="CoffLoaderWarning" stops="false" type="CoffLoaderWarning"/>
+            <Exception description="Load coff append limit reached" displayed="true" name="CoffAppendLimit" stops="false" type="CoffLoaderError"/>
+            <Exception description="Code section mapping contradicts the MSS mapping" displayed="true" name="CoffCodeSectionContradiction" stops="false" type="CoffLoaderWarning"/>
+            <Exception description="Code section mapping contradicts the MSS mapping" displayed="true" name="CoffDataSectionContradiction" stops="false" type="CoffLoaderWarning"/>
+            <Exception description="Memory loaded a second time" displayed="true" name="CoffLoadMemSecondTime" stops="false" type="CoffLoaderWarning"/>
+            <Exception description="Attempt to load into read-only I/O memory" displayed="true" name="CoffLoadReadOnlyIO" stops="false" type="CoffLoaderError"/>
+            <Exception description="Unexpected end of coff section" displayed="true" name="UnexpectedEndOfCoffSection" stops="false" type="CoffLoaderError"/>
+            <Exception description="A reference to invalide section in the coff" displayed="true" name="InvalidCoffSection" stops="false" type="CoffLoaderError"/>
+            <Exception description="Executable missing some of the symbols needed for file-io operations" displayed="true" name="MissingFileIOSymbols" stops="false" type="CoffLoaderError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Debugger CLI" stops="false">
+            <Exception description="CLI syntax error" displayed="true" name="CliSyntax" stops="false" type="CliError"/>
+            <Exception description="Symbol not found" displayed="true" name="SymNotFound" stops="false" type="CliError"/>
+            <Exception description="CLI address range error" displayed="true" name="AddrRange" stops="false" type="CliError"/>
+            <Exception description="CLI wrong code address expression" displayed="true" name="CodeAddrExpr" stops="false" type="CliError"/>
+            <Exception description="CLI wrong data address expression" displayed="true" name="DataAddrExpr" stops="false" type="CliError"/>
+            <Exception description="CLI number too big" displayed="true" name="NumberTooBig" stops="false" type="CliError"/>
+            <Exception description="CLI internal parser error" displayed="true" name="InternalParse" stops="false" type="CliError"/>
+            <Exception description="Deprecated command" displayed="true" name="DeprecatedCLI" stops="false" type="CliError"/>
+            <Exception description="Wrong parameter given in the CLI" displayed="true" name="WrongParameter" stops="false" type="CliWarning"/>
+            <Exception description="CLI command not available" displayed="true" name="CLINotAvailable" stops="false" type="CliWarning"/>
+            <Exception description="Invalid CPM address" displayed="true" name="InvalidCpmAddress" stops="true" type="CliError"/>
+        </ExceptionGroup>
+        <Exception description="Dynamic restriction checker error" displayed="false" name="RestrictionError" stops="false" type="SimulationError"/>
+        <Exception description="Internal error" displayed="true" name="InternalError" stops="false" type="SimulationError"/>
+        <Exception description="Simulation is stuck on infinite wait" displayed="true" name="InfiniteWait" stops="true" type="SimulationError"/>
+        <Exception description="Stack pointer points outside the stack" displayed="false" name="StackViolation" stops="false" type="SimulationError"/>
+        <Exception description="End of execution reached" displayed="true" name="EndOfExecution" stops="true" type="SimulationInfo"/>
+        <Exception description="bkrep maximal nesting level exceeded" displayed="true" name="BkrepExceeded" stops="true" type="SimulationError"/>
+        <Exception description="Modulo operation constraint" displayed="true" name="ModuloViolation" stops="true" type="SimulationError"/>
+        <Exception description="Instruction decoding error" displayed="true" name="DecodingError" stops="true" type="SimulationError"/>
+        <Exception description="Instruction not implemented, executed nop instead" displayed="true" name="NotImplemnted" stops="false" type="SimulationError"/>
+        <Exception description="Illegal loop count value on a bkrep instruction" displayed="true" name="IllegalLoopCount" stops="true" type="SimulationError"/>
+        <Exception description="Failed to create a logger" displayed="true" name="LoggerFailed" stops="false" type="SimulationError"/>
+    </ExceptionGroup>
+    <ExceptionGroup description="" displayed="false" name="Core Specific" stops="false">
+        <ExceptionGroup description="" displayed="false" name="Ceva-X" stops="false">
+            <ExceptionGroup description="" displayed="false" name="MSS" stops="false">
+                <ExceptionGroup description="" displayed="false" name="DmaManager" stops="false">
+                    <Exception description="A Queue Manager index is out of bounds" displayed="true" name="QmanIndexOutOfBounds" stops="false" type="SimulationError"/>
+                </ExceptionGroup>
+            </ExceptionGroup>
+            <Exception description="Verify assertion failed" displayed="true" name="VerifyError" stops="true" type="SimulationError"/>
+            <Exception description="Instruction is not implemented in simulator" displayed="false" name="InstructionNotImplemented" stops="false" type="SimulationError"/>
+            <Exception description="Instruction has performed restricted action" displayed="false" name="InstructionRestrictionWarning" stops="false" type="SimulationError"/>
+            <Exception description="Restricted action was performed and core must stops" displayed="true" name="InstructionRestrictionError" stops="true" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Coherency and Cache" stops="false">
+            <Exception description="Region cant Configure as cacheable with Strong Order access policy" displayed="true" name="CacheableAndStrongOrder" stops="true" type="SimulationError"/>
+            <Exception description="Region cant Configure as cacheable with zero cache size" displayed="true" name="CachableCacheSizeZero" stops="true" type="SimulationError"/>
+            <Exception description="Region cant Configure as cacheable with non EDP port" displayed="true" name="CacheableNoEDP" stops="true" type="SimulationError"/>
+            <Exception description="Region cant Configure as shareable with non EDP port" displayed="true" name="ShareableNoEDP" stops="true" type="SimulationError"/>
+            <Exception description="Region cant configure as Shareable with Write-Through cache policy" displayed="true" name="ShareableWTPolicy" stops="true" type="SimulationError"/>
+            <Exception description="Region cant configure as shareable and use FIXED Dma transaction" displayed="true" name="ShareableFixedTransaction" stops="true" type="SimulationError"/>
+            <Exception description="Its restricted to use SWOP on non-cacheble region" displayed="true" name="SWOPNonCacheable" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Security" stops="false">
+            <Exception description="Config registers must be in secure supervisor mode" displayed="true" name="DacuIacuConfig" stops="false" type="SimulationError"/>
+            <Exception description="SWOP must be configure with the registers associated to the security mode" displayed="true" name="SWOPConfig" stops="false" type="SimulationError"/>
+            <Exception description="The security mode of the SWOU operation not match the the security mode of the memory it access" displayed="true" name="SWOPConfigAddresses" stops="false" type="SimulationError"/>
+            <Exception description="Config Registers Security violation" displayed="true" name="RegisterConfig" stops="false" type="SimulationError"/>
+            <Exception description="Config Registers must be in supervisor mode" displayed="true" name="RegisterConfigPrivilege" stops="false" type="SimulationError"/>
+            <Exception description="Core access security violation" displayed="true" name="SecureMemoryAccess" stops="false" type="SimulationError"/>
+            <Exception description="Core executed security instruction with restricted security level or privilege" displayed="true" name="SecureInstructionAccess" stops="false" type="SimulationError"/>
+            <Exception description="config timer security mode not match the agent security mode" displayed="true" name="TimerConfig" stops="false" type="SimulationError"/>
+            <Exception description="config dma security mode registers not match the agent security mode" displayed="true" name="DmaConfig" stops="false" type="SimulationError"/>
+            <Exception description="config QMAN security mode registers not match the agent security mode" displayed="true" name="QmanConfig" stops="false" type="SimulationError"/>
+            <Exception description="config BMAN security mode registers not match the agent security mode" displayed="true" name="BmanConfig" stops="false" type="SimulationError"/>
+            <Exception description="Privilege level of QMAN adresses must allowed read/write access type" displayed="true" name="QMANPrivilege" stops="true" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="DMA Address Matching" stops="false"/>
+        <ExceptionGroup description="" displayed="false" name="DMA Burst Size" stops="false">
+            <Exception description="DMA Not Supported Burst Size or Type" displayed="true" name="DmaBurstSize" stops="true" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="Ceva-XC" stops="false">
+            <ExceptionGroup description="" displayed="false" name="VDIV" stops="false">
+                <Exception description="Illegal VDIV unit number" displayed="true" name="VdivUnit" stops="true" type="SimulationError"/>
+                <Exception description="vdiv illegal indexes" displayed="true" name="VdivIndices" stops="true" type="SimulationError"/>
+                <Exception description="Wrong number of vdiv operations" displayed="true" name="VdivOperationCount" stops="true" type="SimulationError"/>
+                <Exception description="Illegal vy[Y] value on a vdivdw instruction" displayed="true" name="VdivIllegalVyY" stops="true" type="SimulationError"/>
+            </ExceptionGroup>
+            <ExceptionGroup description="" displayed="false" name="MSS" stops="false">
+                <Exception description="Big endian access not aligned to element size" displayed="true" name="BigEndianUnaligned" stops="false" type="SimulationError"/>
+                <Exception description="A row stride instruction is out of range" displayed="true" name="RowStrideOutOfRange" stops="true" type="SimulationError"/>
+                <Exception description="A VCU transaction accesses cache" displayed="true" name="VcuCache" stops="false" type="SimulationError"/>
+                <Exception description="A bank is accessed twice from two parallel address" displayed="true" name="SameBankOnParallelAccess" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+            <Exception description="Verify assertion failed" displayed="true" name="VerifyError" stops="true" type="SimulationError"/>
+            <Exception description="Overflow in insert/extract instruction" displayed="true" name="InsertExtractOverflow" stops="true" type="SimulationError"/>
+            <Exception description="md and brv are set simultaneously" displayed="true" name="MdAndBrvAreSet" stops="true" type="SimulationError"/>
+            <Exception description="Undeclared saturation has occurred" displayed="true" name="UndeclaredSaturation" stops="true" type="SimulationError"/>
+            <Exception description="st collides with previous vst" displayed="true" name="StAfterVst" stops="true" type="SimulationError"/>
+            <Exception description="MLD instruction without MLD unit" displayed="true" name="NoMld" stops="true" type="SimulationError"/>
+            <Exception description="Illegal VPS value on double precision instruction" displayed="true" name="DoublePrecisionVps" stops="true" type="SimulationError"/>
+            <Exception description="Illegal vcY value on a vtrans instruction" displayed="true" name="VtransVcy" stops="false" type="SimulationError"/>
+            <Exception description="VSHF value illegal" displayed="true" name="IllegalVshf" stops="true" type="SimulationError"/>
+            <Exception description="A negative number was used with uu switch" displayed="true" name="UuNegative" stops="true" type="SimulationError"/>
+            <Exception description="BRV or MD used with row stride switch" displayed="true" name="RowStrideBrvMd" stops="true" type="SimulationError"/>
+            <Exception description="Illegal shift value used with VSATAW and unsigned numbers" displayed="true" name="ShiftValueVmacsxp" stops="true" type="SimulationError"/>
+            <Exception description="ARF latency restriction" displayed="true" name="ArfLatency" stops="true" type="SimulationError"/>
+            <Exception description="Illegal shift value" displayed="true" name="IllegalShift" stops="true" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="CEVA-XM4" stops="false">
+            <ExceptionGroup description="" displayed="false" name="MSS" stops="false">
+                <ExceptionGroup description="" displayed="false" name="Watchdog" stops="false">
+                    <Exception description="System watchdog was reset before minimum threshold was reached" displayed="true" name="WatchdogMin" stops="false" type="SimulationError"/>
+                    <Exception description="System watchdog was not reset before maximum threshold was reached" displayed="true" name="WatchdogMax" stops="false" type="SimulationError"/>
+                    <Exception description="Port transactions did not complete before watchdog threshold was reached" displayed="true" name="PortWatchdog" stops="true" type="SimulationError"/>
+                </ExceptionGroup>
+                <Exception description="A memory bank is accessed twice on a parallel load/store" displayed="true" name="BankAccessedTwice" stops="false" type="SimulationError"/>
+                <Exception description="RAW on either a parallel read or a parallel write" displayed="true" name="ParallelRaw" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+            <ExceptionGroup description="" displayed="false" name="SPU" stops="false">
+                <Exception description="Overflow in SPU instruction" displayed="false" name="OverflowException" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+            <Exception description="An address is not aligned to the restriction" displayed="true" name="AddressNotAligned" stops="false" type="SimulationError"/>
+            <Exception description="Shifting more than variable size" displayed="false" name="ShiftingError" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="CEVA-X-MSS" stops="false">
+            <ExceptionGroup description="" displayed="false" name="MSS" stops="false">
+                <ExceptionGroup description="" displayed="false" name="DMA" stops="false">
+                    <Exception description="DMA configured with zero transfer size" displayed="true" name="ZeroTransferSize" stops="false" type="SimulationError"/>
+                    <Exception description="DMA queue is written while full" displayed="true" name="DmaOverflow" stops="false" type="SimulationError"/>
+                    <Exception description="Changing QAUTO while DMA is busy" displayed="true" name="QautoRestriction" stops="true" type="SimulationError"/>
+                </ExceptionGroup>
+                <ExceptionGroup description="" displayed="false" name="DmaManager" stops="false">
+                    <Exception description="An empty QMAN has enabled tasks" displayed="true" name="EmptyQueueViolation" stops="false" type="SimulationError"/>
+                    <Exception description="Another BMAN configure to the same start address" displayed="true" name="ConfigureBMAN" stops="true" type="SimulationError"/>
+                    <Exception description="Queue address unaligned to queue descriptor" displayed="true" name="UnalignedQueue" stops="true" type="SimulationError"/>
+                    <Exception description="Unaligned buffer address or size" displayed="true" name="UnalignedBuffer" stops="false" type="SimulationError"/>
+                </ExceptionGroup>
+                <Exception description="Trying to access a disabled port" displayed="true" name="DisabledPort" stops="true" type="SimulationError"/>
+            </ExceptionGroup>
+            <Exception description="Unsupported master port configured" displayed="true" name="UnsupportedPort" stops="true" type="SimulationError"/>
+            <Exception description="Access to an unmapped region" displayed="true" name="UnmappedRegion" stops="true" type="SimulationError"/>
+            <Exception description="An inactive region cannot be followed by an active one" displayed="true" name="InActiveRegion" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="CEVA-XM" stops="false">
+            <ExceptionGroup description="" displayed="false" name="Histogram" stops="false">
+                <Exception description="More than two vhist instructions in two cycles" displayed="true" name="HistogramInputOverflow" stops="false" type="SimulationError"/>
+                <Exception description="A histogram weight has arithmetic overflow" displayed="true" name="HistogramWeightOverflow" stops="false" type="SimulationError"/>
+                <Exception description="A histogram address is out of bounds" displayed="true" name="HistogramNoTcm" stops="false" type="SimulationError"/>
+                <Exception description="vhist rM value is not aligned to 64 bytes, bits 0-5 will be ignored" displayed="true" name="UnalignedVhistVal" stops="false" type="SimulationInfo"/>
+            </ExceptionGroup>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="System Multi Core" stops="false">
+            <Exception description="Core number not exists" displayed="true" name="SlavePortInvalidCoreNumber" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="MISCELLANEOUS" stops="false">
+            <Exception description="External write counter overflow" displayed="true" name="WriteCounterOverflow" stops="true" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="CEVA-NCX" stops="false">
+            <ExceptionGroup description="" displayed="false" name="SPU" stops="false">
+                <Exception description="Overflow in SPU instruction" displayed="false" name="OverflowException" stops="false" type="SimulationError"/>
+                <Exception description="Division by zero in SPU instruction" displayed="false" name="Div0Violation" stops="false" type="SimulationError"/>
+                <Exception description="Shifting more than variable size" displayed="false" name="ShiftingError" stops="false" type="SimulationError"/>
+            </ExceptionGroup>
+            <Exception description="Potential performance improvement in short brrcmplp. Please, refer to Chapter Loop Support in Architecture Specification Volume I" displayed="false" name="BrrcmplCycleCountImprovement" stops="false" type="SimulationInfo"/>
+            <Exception description="DMA address or size is not aligned" displayed="true" name="UnalignedDma" stops="true" type="SimulationError"/>
+            <Exception description="Unknown Trace Item request" displayed="true" name="UnknownTraceItem" stops="false" type="SimulationInfo"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="SPECIAL-CEVAX" stops="false">
+            <Exception description="For DmanQueue and DmanBuffer restricted configuration" displayed="true" name="TargetConfiguration" stops="false" type="SimulationError"/>
+            <Exception description="Core is reading more than configured DSP packet size" displayed="true" name="DspPacketSizeViolation" stops="false" type="SimulationError"/>
+            <Exception description="Error indication is recieved from EPP access - can be caused because unmapped code address" displayed="true" name="PortEPPError" stops="false" type="SimulationError"/>
+        </ExceptionGroup>
+        <ExceptionGroup description="" displayed="false" name="MULTI IO WRITE" stops="false">
+            <Exception description="Multi DW IO access is not aligned according to access width" displayed="true" name="UnalignedMultiDwIOAccess" stops="false" type="DebuggerWarning"/>
+        </ExceptionGroup>
+    </ExceptionGroup>
+</Exceptions>

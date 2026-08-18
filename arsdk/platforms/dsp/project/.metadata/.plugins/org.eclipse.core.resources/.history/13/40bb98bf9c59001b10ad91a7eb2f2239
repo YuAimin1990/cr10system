@@ -1,0 +1,120 @@
+/*
+ * register_addr.h
+ *
+ *  Created on: 2017Äê3ÔÂ21ÈÕ
+ *      Author: jianliu
+ */
+#ifndef REGISTER_ADDR_H_
+#define REGISTER_ADDR_H_
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+//=============memory attribution============//
+#define ADD_ADDR_OFFSET (0x10)
+#define ADD0_START (0x920)
+#define ADD0_ATT1  (0x928)
+#define P_ADD_ADDR_OFFSET (0x10)
+#define P_ADD0_START (0x414)
+#define P_ADD0_ATT0  (0x418)
+
+//=========core==========================//
+#define CORE_ID_CPM_ADDR (0x178)
+
+//=========mcci==========================//
+#define COMM_INT_EN_ADDR 0x84
+#define MCCI_STS_OFFSET 0X80
+
+
+#define REGISTER_BASE_ADDR 0x64570000
+#define CORE_ADDR_INC_INT 0X1000
+#define MCCI_MES_INTERRUPT_BIT 0
+
+#define CORE0_INT0_MASK_OFFSET (REGISTER_BASE_ADDR + 0x4000)
+#define CORE0_INT1_MASK_OFFSET (REGISTER_BASE_ADDR + 0x4004)
+#define CORE0_INT2_MASK_OFFSET (REGISTER_BASE_ADDR + 0x400c)
+
+
+//==========debg gen============================//
+#define DBG_GEN_MASK (0Xd28)
+#define DBG_GEN_2_MASK (0Xd2c)
+
+
+
+#if 0
+
+#define CORE0_OFFSET_ADDR 0x62000000
+#define CORE1_OFFSET_ADDR 0x62800000
+#define CORE2_OFFSET_ADDR 0x63000000
+#define CORE3_OFFSET_ADDR 0x63800000
+
+#define CORE_OFFSET 0x800000
+#define CPM_OFFSET 0x400000
+
+#define CORE0_MCCI_OFFSET_ADDR (CORE0_OFFSET_ADDR + CPM_OFFSET)
+#define CORE1_MCCI_OFFSET_ADDR (CORE1_OFFSET_ADDR + CPM_OFFSET)
+#define CORE2_MCCI_OFFSET_ADDR (CORE2_OFFSET_ADDR + CPM_OFFSET)
+#define CORE3_MCCI_OFFSET_ADDR (CORE3_OFFSET_ADDR + CPM_OFFSET)
+
+
+//+++++++++++++++++++++++++++++++++++++
+
+#define ADDx_ATT1_ADDR 0x928
+
+
+#define CORE_INT_INC_INT 0X4
+
+#define COMM_STS_ADDR 0x80
+#define MCCI_OFFSET 0x0
+#define MCCI_REG_ADDR_OFFSET 0x4
+
+
+
+#define CORE0_MCCI_STS_OFFSET_ADDR (CORE0_OFFSET_ADDR + CPM_OFFSET + MCCI_STS_OFFSET)
+#define CORE1_MCCI_STS_OFFSET_ADDR (CORE1_OFFSET_ADDR + CPM_OFFSET + MCCI_STS_OFFSET)
+#define CORE2_MCCI_STS_OFFSET_ADDR (CORE2_OFFSET_ADDR + CPM_OFFSET + MCCI_STS_OFFSET)
+#define CORE3_MCCI_STS_OFFSET_ADDR (CORE3_OFFSET_ADDR + CPM_OFFSET + MCCI_STS_OFFSET)
+
+
+
+
+#define TO_ARM_INTERRUPT_CORE_OFFSET 0x1000
+
+#define TO_ARM_INTERRUPT0_BASE (REGISTER_BASE_ADDR + 0x4020)
+#define TO_ARM_INTERRUPT0_MASK_BASE (REGISTER_BASE_ADDR + 0x4024)
+#define TO_ARM_INTERRUPT1_BASE (REGISTER_BASE_ADDR + 0x4028)
+#define TO_ARM_INTERRUPT1_MASK_BASE (REGISTER_BASE_ADDR + 0x402C)
+
+
+#define MCCI_MES_INTERRUPT_BIT 0
+#define DMA_INTERRUPT_BIT 0
+
+#define DBG_GEN (0Xd14)
+#define DBG_GEN_2 (0Xd24)
+
+
+#define SYSTIML (0x710)
+#define SYSTIMH (0x714)
+
+#define ADD0_START (0x920)
+#define ADD0_ATT0  (0x924)
+#define ADD0_ATT1  (0x928)
+#define ADD_ADDR_OFFSET (0x10)
+
+#define MSS_PCR_REG  (0x404)
+#define P_ADD0_START (0x414)
+#define P_ADD0_ATT0  (0x418)
+#define P_ADD_ADDR_OFFSET (0x10)
+
+#define ACU_SLV_ACC (REGISTER_BASE_ADDR + 0x302c)
+#define CORE0_DSP_IDLE_ADDR (REGISTER_BASE_ADDR + 0X3048c)
+#define CORE0_CORE_IDLE_ADDR (REGISTER_BASE_ADDR + 0X3050)
+#define REG_CORE_OFFSET (0X100)
+#define IDLE_REG_OFFSET_INTER_CORE (0x100)
+
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* REGISTER_ADDR_H_ */

@@ -1,0 +1,33 @@
+syntax = "proto2";
+package tutorial;
+
+
+message OpParseParam {
+        required int32  netID = 1;
+        optional string cbJsonStr = 2;   //[input]  cb json string
+        optional string usrJsonStr = 3;  //[input]  usr json string
+}
+
+message OpFInferParam {
+        optional int32 networkID = 1;
+        optional int32 callbackID = 2;
+        optional bytes tensorIn = 3;     //[input] input tensor data
+        optional bytes tensorOut = 4;    //[output] output tensor data
+}
+
+enum CommandType {
+   CmdNone          = 0;
+   CmdHeartBeat     = 1;
+   CmdOpFInfer      = 2;
+   CmdOpFInferAck   = 3;
+   CmdShutDown      = 4;
+   CmdShutDownAck   = 5;
+}
+
+message CallbackData {
+  required CommandType cmdType = 1;         //command type
+  optional int32 status = 2;                //call result. 0--success -1:not supported
+  optional OpParseParam opParseParam = 3;   //parse param
+  optional OpFInferParam opFInferParam = 4; //FInfer param
+}
+

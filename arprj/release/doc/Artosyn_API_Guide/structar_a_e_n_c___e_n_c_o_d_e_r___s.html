@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arAENC_ENCODER_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arAENC_ENCODER_S结构体 参考<div class="ingroups"><a class="el" href="group___m_p_i___a_u_d_i_o.html">MPI_AUDIO</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ar__comm__aenc_8h_source.html">ar_comm_aenc.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a200c89713558651e7530e77cc3fa28ec"><td class="memItemLeft" align="right" valign="top">PAYLOAD_TYPE_E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#a200c89713558651e7530e77cc3fa28ec">enType</a></td></tr>
+<tr class="separator:a200c89713558651e7530e77cc3fa28ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae699a7fdfcc52f5f30810e6148f740e4"><td class="memItemLeft" align="right" valign="top">AR_U32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#ae699a7fdfcc52f5f30810e6148f740e4">u32MaxFrmLen</a></td></tr>
+<tr class="separator:ae699a7fdfcc52f5f30810e6148f740e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb042747000dc0a7ac5e9b7831beb14a"><td class="memItemLeft" align="right" valign="top">AR_CHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#afb042747000dc0a7ac5e9b7831beb14a">aszName</a> [17]</td></tr>
+<tr class="separator:afb042747000dc0a7ac5e9b7831beb14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811bd267b4bc40d63d8defa627986907"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#a811bd267b4bc40d63d8defa627986907">pfnOpenEncoder</a> )(AR_VOID *pEncoderAttr, AR_VOID **ppEncoder)</td></tr>
+<tr class="separator:a811bd267b4bc40d63d8defa627986907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7bb8547aa71ad34306e0d785e9ccff"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#abe7bb8547aa71ad34306e0d785e9ccff">pfnEncodeFrm</a> )(AR_VOID *pEncoder, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstData, AR_U8 *pu8Outbuf, AR_U32 *pu32OutLen)</td></tr>
+<tr class="separator:abe7bb8547aa71ad34306e0d785e9ccff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811003a066c9fb5aba610756ed5d4668"><td class="memItemLeft" align="right" valign="top">AR_S32(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_a_e_n_c___e_n_c_o_d_e_r___s.html#a811003a066c9fb5aba610756ed5d4668">pfnCloseEncoder</a> )(AR_VOID *pEncoder)</td></tr>
+<tr class="separator:a811003a066c9fb5aba610756ed5d4668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义编码器属性结构体 </p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a id="afb042747000dc0a7ac5e9b7831beb14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb042747000dc0a7ac5e9b7831beb14a">&#9670;&nbsp;</a></span>aszName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_CHAR aszName[17]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码器名称 </p>
+
+</div>
+</div>
+<a id="a200c89713558651e7530e77cc3fa28ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200c89713558651e7530e77cc3fa28ec">&#9670;&nbsp;</a></span>enType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PAYLOAD_TYPE_E enType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码协议类型 </p>
+
+</div>
+</div>
+<a id="a811003a066c9fb5aba610756ed5d4668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811003a066c9fb5aba610756ed5d4668">&#9670;&nbsp;</a></span>pfnCloseEncoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnCloseEncoder(AR_VOID *pEncoder)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>关闭编码器的函数指针 </p>
+
+</div>
+</div>
+<a id="abe7bb8547aa71ad34306e0d785e9ccff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7bb8547aa71ad34306e0d785e9ccff">&#9670;&nbsp;</a></span>pfnEncodeFrm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnEncodeFrm(AR_VOID *pEncoder, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstData, AR_U8 *pu8Outbuf, AR_U32 *pu32OutLen)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>进行编码的函数指针 </p>
+
+</div>
+</div>
+<a id="a811bd267b4bc40d63d8defa627986907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811bd267b4bc40d63d8defa627986907">&#9670;&nbsp;</a></span>pfnOpenEncoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32(* pfnOpenEncoder(AR_VOID *pEncoderAttr, AR_VOID **ppEncoder)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>打开编码器的函数指针 </p>
+
+</div>
+</div>
+<a id="ae699a7fdfcc52f5f30810e6148f740e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae699a7fdfcc52f5f30810e6148f740e4">&#9670;&nbsp;</a></span>u32MaxFrmLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U32 u32MaxFrmLen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>最大码流长度 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__aenc_8h_source.html">ar_comm_aenc.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

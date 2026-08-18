@@ -1,0 +1,273 @@
+.EXTERN _test1
+.EXTERN _test2
+
+.text
+	.global vSpinLock
+	; cpm_in( addr )
+vSpinLock:
+	push {in2} r7.i, r9.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	LOOP_LOCK:
+	LS0.ld (r0.ui).ui, r7.ui || monitor {on}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;SC0.cmp {neq} r7.ui, #0x0, pr0
+	SC0.cmp {neq} r7.ui, #0, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;PCU.brr #LOOP_LOCK, ?pr0.b ; || mov #0x1, r7.ui
+	brr {ds2} #LOOP_LOCK, #0x0, #0x0, ?pr0.b 
+	nop
+	nop
+	mov #0x1, r7.ui
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
+	;st r7.ui, (#_test1).ui//!!!test
+	;LS0.st r7.ui, (r0.ui).ui
+	;LS0.st r7.ui, (r0.ui).ui || in {cpm} (#0xd14).di, r9.di
+	st r7.ui, (r0.ui).ui || monitor {off}
+	;LS0.st r7.ui, (r0.ui).ui || monitor {off}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	mov modc.ui, r9.ui
+	;st r9.ui, (#_test2).ui//!!!test
+	nop
+	nop
+	SC0.tst {bit} r9.i, #0x0, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	;brr #LOOP_LOCK, ?pr1
+	brr {ds2} #LOOP_LOCK, #0x0, #0x0, ?pr0.b
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	pop {in2} r7.i, r9.i
+	pcu.ret {ds2}
+	nop
+	nop
+
+	.global vSpinUnlock
+vSpinUnlock:
+
+	push {in2} r7.i, r9.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	LOOP_UNLOCK:
+	LS0.ld (r0.ui).ui, r7.ui || monitor {on}
+	;LS0.ld (r0.ui).ui, r7.ui
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;nop #0x2
+	;cmp {eq} r7.ui, #0x1, pr0
+	;nop #0x2
+	;brr #LOOP, ?pr0
+	mov #0x0, r7.ui
+	nop
+	nop
+	nop
+	nop
+	;LS0.st r7.ui, (r0.ui).ui || in {cpm} (#0xd14).di, r9.di
+	st r7.ui, (r0.ui).ui || monitor {off}
+	;LS0.st r7.ui, (r0.ui).ui || monitor {off}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	mov modc.ui, r9.ui
+	;st r9.ui, (#_test2).ui//!!!test
+    nop
+    nop
+	SC0.tst {bit} r9.i, #0x0, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	brr {ds2} #LOOP_UNLOCK, #0x0, #0x0, ?pr0.b
+	nop
+	nop
+	nop
+	nop
+	pop {in2} r7.i, r9.i
+	pcu.ret {ds2}
+	nop
+	nop
+
+	.global cas_integer
+cas_integer:
+	push {in2} r7.i, r9.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	LS0.ld (r0.ui).ui, r7.ui || monitor {on}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	SC0.cmp {eq} r7.ui, r7.ui, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	brr {ds2} #EQUAL, #0x0, #0x0, ?pr0.b
+    nop
+    nop
+UNEQUAL:
+	mov #0x0, r0.ui || pop {in2} r7.i, r9.i
+	brr {ds2} #EXIT, #0x0, #0x0, ?pr0.b
+	nop
+	nop
+EQUAL:
+	mov r2.i, r7.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	st r7.ui, (r0.ui).ui || monitor {off} || in {cpm} (#0xd14).di, r9.di
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	SC0.tst {bit} r9.i, #0x5, pr0.b2, pr1.b2 || mov #0x1, r0.ui
+	nop
+	nop
+	nop
+	mov #0x0, r0.ui, ?pr0.b || pop {in2} r7.i, r9.i
+EXIT:
+	pcu.ret {ds1}
+
+
+	.global atomic_inc
+atomic_inc:
+	push {in2} r7.i, r9.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+LOOP_INC:
+	LS0.ld (r0.ui).ui, r7.ui || monitor {on}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	;inc r7.ui, r7.ui
+	SC0.add r7.ui, #1, r7.ui
+	st r7.ui, (r0.ui).ui || monitor {off}
+	;LS0.st r7.ui, (r0.ui).ui || monitor {off}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	mov modc.ui, r9.ui
+	nop
+	nop
+	;st r9.ui, (#_test2).ui//!!!test
+	SC0.tst {bit} r9.i, #0x0, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	brr {ds2} #LOOP_INC, #0x0, #0x0, ?pr0.b
+	nop
+	nop
+	pop {in2} r7.i, r9.i || mov #0x1, r0.ui
+
+	pcu.ret {ds1}
+
+
+	.global atomic_assignment
+atomic_assignment:
+	push {in2} r7.i, r9.i
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+LOOP_ASSIGNMENT:
+	LS0.ld (r0.ui).ui, r7.ui || monitor {on}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	mov r1.i, r7.i
+	st r7.ui, (r0.ui).ui || monitor {off}
+	;LS0.st r7.ui, (r0.ui).ui || monitor {off}
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	mov modc.ui, r9.ui
+	nop
+	nop
+	;st r9.ui, (#_test2).ui//!!!test
+	SC0.tst {bit} r9.i, #0x0, pr0.b2, pr1.b2
+	nop
+	nop
+	nop
+	brr {ds2} #LOOP_ASSIGNMENT, #0x0, #0x0, ?pr0.b
+	nop
+	nop
+	pop {in2} r7.i, r9.i || mov #0x1, r0.ui
+
+	pcu.ret {ds1}

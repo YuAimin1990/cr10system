@@ -1,0 +1,10 @@
+{
+	"md":	{
+		"enable":	0,
+		"group_id":	1,
+		"channel_id":	0,
+		"match_threshold":	20,
+		"area_percentage":	20,
+		"post_method":	0
+	}
+}

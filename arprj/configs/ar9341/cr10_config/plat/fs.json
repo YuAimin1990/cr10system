@@ -1,0 +1,32 @@
+{
+    "all_rootfs": {
+        "component_list": [
+            "prebuilds/rootfs/rootfs.tar.gz:",
+            "out/middlewares/lib/*.so:usr/lib",
+            "out/hal/lib/*.so:usr/lib",
+            "out/mpp/lib/*.so:usr/lib",
+            "out/hal/bin/*:usr/bin",
+            "prebuilds/ko:mod",
+            "prebuilds/apps/bin/artosyn_upgrade:usr/bin",
+            "<BOARD_CONFIG_DIR>/scenario/start*.sh:etc/init.d",
+            "<BOARD_CONFIG_DIR>/scenario/wifi_tool/*:var"
+        ]
+    },
+    "usr_data": {
+        "component_list": [
+            "<BOARD_CONFIG_DIR>/scenario/run.sh:",
+            "<BOARD_CONFIG_DIR>/scenario/test_vo.yuv:",
+            "<BOARD_CONFIG_DIR>/scenario/test.wav:",
+            "<BOARD_CONFIG_DIR>/scenario/lib/*:lib",
+            "<BOARD_CONFIG_DIR>/../common/tools/*:tools",
+            "prebuilds/apps/lib/*.so*:lib",
+            "prebuilds/apps/bin:bin",
+            "../apps/utils/tunning_gen/bin/imx307_tuning_preview_rgb*.bin:local/factory/tunning/cam_imx307",
+            "../apps/utils/tunning_gen/bin/imx307_tuning_preview_ir*.bin:local/factory/tunning/cam_imx307",
+            "<BOARD_CONFIG_DIR>/scenario/codec_factory_cfg.cjson:local/factory"
+        ],
+        "debug_component": [
+            "../configs/common/debug/:tools"
+        ]
+    }
+}

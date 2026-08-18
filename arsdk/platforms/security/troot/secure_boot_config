@@ -1,0 +1,7 @@
+
+config secure_boot
+    bool "build secure boot component"
+    default y
+    help
+    set y to build secure boot
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivateStatus version="1.0" xmlns="http://www.hikvision.com/ver10/XMLSchema">
+    <Activated>true</Activated>
+</ActivateStatus>

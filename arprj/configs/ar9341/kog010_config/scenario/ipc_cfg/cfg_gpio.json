@@ -1,0 +1,17 @@
+{
+	"rec_snap":	{
+		"enable":	0,
+		"gpio":	"Cn_m",
+		"value":	0
+	},
+	"led":	{
+		"enable":	0,
+		"gpio":	"Dn_m",
+		"value":	0
+	},
+	"ircut":	{
+		"enable":	1,
+		"enable_gpio":	"C1_3",
+		"fbc_gpio":	"C1_2"
+	}
+}

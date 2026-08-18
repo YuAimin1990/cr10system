@@ -1,0 +1,121 @@
+#-----------------------------------------------------------------------
+#
+# Copyright 2014 - 2017 Synopsys, Inc.
+#
+# This Synopsys software and all associated documentation
+# are proprietary to Synopsys, Inc. and may only be used pursuant to the
+# terms and conditions of a written license agreement with Synopsys,
+# Inc. All other use, reproduction, modification, or distribution of the
+# Synopsys software or the associated documentation
+# is strictly prohibited.
+#
+#-----------------------------------------------------------------------
+## Secure Boot FW Build Configuration
+#
+# This sets up secure boot cert chain details.  We describe entire chain here
+# and indicate phase/stage components.  This configuration is read
+# by secure boot cert chain script when building secure boot application.
+
+########################
+# PHASE/STAGE components
+#
+# Note:  Addresses need to be in decimal.  Hex is not accepted.
+#
+#
+# For Mode 0 and Mode 1:
+# Only PHASE0 values are used.  PHASE1 and PHASE2 are ignored.
+# For Mode 0, the PKG_SB_PHASE0_CERTCHAIN_ADDRESS is ignored.
+# For Mode 1, the header address location is the PKG_SB_PHASE0_CERTCHAIN_ADDRESS.
+# The PKG_SB_PHASE0_IMAGE_ENCRYPT does not apply to Mode 0 and Mode 1.
+#
+SB_MODE=1
+PKG_SB_CRYPTO_KEY_TYPE=rsa3072
+PKG_SB_PHASE0_HDRCFG=${PKG_PATH_SB_CERT_CONFIGS}/troot_sb_base_header.cfg
+PKG_SB_PHASE0_IMAGE_PATH=${PKG_PATH_SAMPLES}/u-boot-spl.bin
+PKG_SB_PHASE0_IMAGE_SIZE=$(stat -c%s "${PKG_SB_PHASE0_IMAGE_PATH}")
+
+#sram troot address: 0x17c0000 + 0x10000 = 0x17d0000
+#sram spl image address: 0x17E9800 + 0x400 (1K M1_hdr.bin) = 0x17E9c00
+PKG_SB_PHASE0_IMAGE_SRC_ADDRESS=25074688
+PKG_SB_PHASE0_IMAGE_DEST_ADDRESS=0
+
+#sram certification address: 0x17d0000 + 0x19800 (102*1024: troot bin file size) = 0x17E9800 (25073664)
+PKG_SB_PHASE0_CERTCHAIN_ADDRESS=25073664
+PKG_SB_PHASE0_IMAGE_ENCRYPT_KEY_PATH=0
+
+# Example for Mode 2 with copy
+PKG_SB_PHASE1_HDRCFG=${PKG_PATH_SB_CERT_CONFIGS}/troot_sb_base_header.cfg
+PKG_SB_PHASE1_IMAGE_PATH=${PKG_PATH_SAMPLES}/sboot_p1_image_sample.bin
+PKG_SB_PHASE1_IMAGE_SIZE=$(stat -c%s "${PKG_SB_PHASE1_IMAGE_PATH}")
+PKG_SB_PHASE1_IMAGE_SRC_ADDRESS=268447020
+PKG_SB_PHASE1_IMAGE_DEST_ADDRESS=268445892
+PKG_SB_PHASE1_CERTCHAIN_ADDRESS=268442892
+PKG_SB_PHASE1_IMAGE_ENCRYPT_KEY_PATH=
+
+# Example for Mode 2 with encryption
+PKG_SB_PHASE2_HDRCFG=${PKG_PATH_SB_CERT_CONFIGS}/troot_sb_base_header.cfg
+PKG_SB_PHASE2_IMAGE_PATH=${PKG_PATH_SAMPLES}/sboot_p2_image_sample.bin
+PKG_SB_PHASE2_IMAGE_SIZE=$(stat -c%s "${PKG_SB_PHASE2_IMAGE_PATH}")
+PKG_SB_PHASE2_IMAGE_SRC_ADDRESS=268447748
+PKG_SB_PHASE2_IMAGE_DEST_ADDRESS=268454172
+PKG_SB_PHASE2_CERTCHAIN_ADDRESS=268442956
+PKG_SB_PHASE2_IMAGE_ENCRYPT_KEY_PATH=${PKG_PATH_SAMPLES}/image_key.bin
+# Note: image_key.bin is a AES-CTR encryption key in raw format.
+
+#
+# Process to create additional phases:
+# 1. Create new phase information updating the <Index> and information.
+# 2. Edit the build_fw.sh script with the new phase information.
+#    ./build_fw_sboot_certchain.sh <Index>
+# 3. Execute the build_fw.sh script to build the new phase information.
+#    Note:  The placement instructions will not be updated at the end of the build_fw.sh.
+#PKG_SB_PHASE<Index>_HDRCFG=
+#PKG_SB_PHASE<Index>_IMAGE_PATH=
+#PKG_SB_PHASE<Index>_IMAGE_SIZE=
+#PKG_SB_PHASE<Index>_IMAGE_SRC_ADDRESS=
+#PKG_SB_PHASE<Index>_IMAGE_DEST_ADDRESS=
+#PKG_SB_PHASE<Index>_CERTCHAIN_ADDRESS=
+#PKG_SB_PHASE<Index>_IMAGE_ENCRYPT_KEY_PATH=
+
+########################
+# CERT CHAIN
+# Where cert chain is described as:
+#       ROOT
+#       |
+#       S0
+#       |-----E0
+#       S1
+#       |-----E1
+#       S2
+#       |-----E0
+#
+# Note:
+#   Unused chain elements can be left empty;
+#
+# The cert basenames will be the key names used during calls to PKG_GET_CERT, PKG_SIGN_BIN, etc.
+# If providing CUSTOMIZED versions of these methods, these could also be HSM/PKCS11 find object names or handles.
+#
+# The _EXTRACT_PRIV flag for each certificate will be passed to PKG_GET_CERT calls.  To support software signing key operations the
+# private key will be required to be extracted for all chain certs.  To support HSM or other custom key operation implementations,
+# the private keys only need to be extracted if any key operation in build_keyops requires it for functionality.
+
+PKG_SB_CERT_ROOT_BASENAME=sboot_root_sample
+PKG_SB_CERT_ROOT_EXTRACT_PRIV=1
+
+PKG_SB_CERT_S0_BASENAME=sboot_S0_sample
+PKG_SB_CERT_S0_EXTRACT_PRIV=1
+
+PKG_SB_CERT_E0_BASENAME=sboot_E0_sample
+PKG_SB_CERT_E0_EXTRACT_PRIV=1
+
+PKG_SB_CERT_S1_BASENAME=sboot_S1_sample
+PKG_SB_CERT_S1_EXTRACT_PRIV=1
+
+PKG_SB_CERT_E1_BASENAME=sboot_E1_sample
+PKG_SB_CERT_E1_EXTRACT_PRIV=1
+
+PKG_SB_CERT_S2_BASENAME=sboot_S2_sample
+PKG_SB_CERT_S2_EXTRACT_PRIV=1
+
+PKG_SB_CERT_E2_BASENAME=sboot_E2_sample
+PKG_SB_CERT_E2_EXTRACT_PRIV=1

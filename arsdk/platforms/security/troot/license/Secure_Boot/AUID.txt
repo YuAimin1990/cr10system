@@ -1,0 +1,5 @@
+The Application User Identification (AUID) is the application number required to reference the application for control purposes.  It is used in Host Library command functions to control the application operations.  Each application instance has a unique AUID assigned by Synopsys for your configuration.  
+
+AUID = Application Instance Type
+--------------------------------
+1    = Secure Boot

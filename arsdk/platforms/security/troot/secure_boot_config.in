@@ -1,0 +1,8 @@
+ifeq ($(CONFIG_secure_boot), y)
+BUILD_COMPONENT_LIST += tRoot_component
+endif
+
+ifeq ($(make_debug),y)
+$(info secure boot config: BUILD_COMPONENT_LIST: $(BUILD_COMPONENT_LIST))
+endif
+

@@ -1,0 +1,4 @@
+config ARTOSYN_MEMPOOL
+	bool "Artosyn mempool driver"
+	default y
+

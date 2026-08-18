@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: mpi_audio.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">mpi_audio.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>描述音频相关的数据结构和接口.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;hal_type.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__common_8h_source.html">ar_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__comm__aio_8h_source.html">ar_comm_aio.h</a>&quot;</code><br />
+<code>#include &quot;ar_comm_aenc.h&quot;</code><br />
+<code>#include &quot;ar_comm_adec.h&quot;</code><br />
+</div>
+<p><a href="mpi__audio_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga19354e8fdd0f5010ea46341cd1ed1fc2"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AENC_ADAPT_MAGIC</b>&#160;&#160;&#160;0Xfcfcfcfc</td></tr>
+<tr class="separator:ga19354e8fdd0f5010ea46341cd1ed1fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gafb3d0be2db0c18ecc68ff88a0b1ea0f4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gafb3d0be2db0c18ecc68ff88a0b1ea0f4">AR_MPI_AUDIO_SetModParam</a> (const <a class="el" href="group___m_p_i___a_u_d_i_o.html#gae949a574ccfa0b187c0def62e1b51037">AUDIO_MOD_PARAM_S</a> *pstModParam)</td></tr>
+<tr class="memdesc:gafb3d0be2db0c18ecc68ff88a0b1ea0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 Audio 模块参数属性  <a href="group___m_p_i___a_u_d_i_o.html#gafb3d0be2db0c18ecc68ff88a0b1ea0f4">更多...</a><br /></td></tr>
+<tr class="separator:gafb3d0be2db0c18ecc68ff88a0b1ea0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6367438a33ba0c01bcab6395c256ef23"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga6367438a33ba0c01bcab6395c256ef23">AR_MPI_AUDIO_GetModParam</a> (<a class="el" href="group___m_p_i___a_u_d_i_o.html#gae949a574ccfa0b187c0def62e1b51037">AUDIO_MOD_PARAM_S</a> *pstModParam)</td></tr>
+<tr class="memdesc:ga6367438a33ba0c01bcab6395c256ef23"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 AUDIO 模块参数属性  <a href="group___m_p_i___a_u_d_i_o.html#ga6367438a33ba0c01bcab6395c256ef23">更多...</a><br /></td></tr>
+<tr class="separator:ga6367438a33ba0c01bcab6395c256ef23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga071580061b241bd27d37ba7abc37cab8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga071580061b241bd27d37ba7abc37cab8">AR_MPI_AI_SetPubAttr</a> (AUDIO_DEV AiDevId, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#gae4e82d6fa104eedc31cf4add7e43cbca">AIO_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga071580061b241bd27d37ba7abc37cab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置AI设备属性 音频输入设备的属性决定了输入数据的格式， 输入设备属性包括工作模式、采样率、采样精度、buffer大小、每帧的采样点数、扩展标志、时钟选择和通道数目。 这些属性应与对接Codec配置的时序一致，即能成功对接。  <a href="group___m_p_i___a_u_d_i_o.html#ga071580061b241bd27d37ba7abc37cab8">更多...</a><br /></td></tr>
+<tr class="separator:ga071580061b241bd27d37ba7abc37cab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98e7d5181ee1436d59fc254b825a2c3c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga98e7d5181ee1436d59fc254b825a2c3c">AR_MPI_AI_GetPubAttr</a> (AUDIO_DEV AiDevId, <a class="el" href="group___m_p_i___a_u_d_i_o.html#gae4e82d6fa104eedc31cf4add7e43cbca">AIO_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga98e7d5181ee1436d59fc254b825a2c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取AI设备属性，获取的属性为前一次配置的属性，如果从来没有配置过属性，则返回失败  <a href="group___m_p_i___a_u_d_i_o.html#ga98e7d5181ee1436d59fc254b825a2c3c">更多...</a><br /></td></tr>
+<tr class="separator:ga98e7d5181ee1436d59fc254b825a2c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga879d9426f08178792802fc0e1d97b52f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga879d9426f08178792802fc0e1d97b52f">AR_MPI_AI_Enable</a> (AUDIO_DEV AiDevId)</td></tr>
+<tr class="memdesc:ga879d9426f08178792802fc0e1d97b52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用AI设备 必须在启用前配置AI设备属性，否则返回属性未配置错误 如果AI设备已经处于启用状态，则直接返回成功  <a href="group___m_p_i___a_u_d_i_o.html#ga879d9426f08178792802fc0e1d97b52f">更多...</a><br /></td></tr>
+<tr class="separator:ga879d9426f08178792802fc0e1d97b52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9298ee1c4bbaf92108c0cb4371048980"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga9298ee1c4bbaf92108c0cb4371048980">AR_MPI_AI_Disable</a> (AUDIO_DEV AiDevId)</td></tr>
+<tr class="memdesc:ga9298ee1c4bbaf92108c0cb4371048980"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用AI设备 如果AI设备已经处于禁用状态，则直接返回成功 要求在禁用AI设备之前，先禁用与之关联、使用AI的音频数据的AENC通道和AO设备，否则可能导致该接口调用失败 禁用AI设备前必须先禁用该设备下已启用的所有AI通道  <a href="group___m_p_i___a_u_d_i_o.html#ga9298ee1c4bbaf92108c0cb4371048980">更多...</a><br /></td></tr>
+<tr class="separator:ga9298ee1c4bbaf92108c0cb4371048980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39d5c7ac2ebfa5cd4819c870e8acf932"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga39d5c7ac2ebfa5cd4819c870e8acf932">AR_MPI_AI_EnableChn</a> (AUDIO_DEV AiDevId, AI_CHN AiChn)</td></tr>
+<tr class="memdesc:ga39d5c7ac2ebfa5cd4819c870e8acf932"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用AI通道，启用AI通道前，必须先启用其所属的AI设备，否则返回设备未启动的错误码  <a href="group___m_p_i___a_u_d_i_o.html#ga39d5c7ac2ebfa5cd4819c870e8acf932">更多...</a><br /></td></tr>
+<tr class="separator:ga39d5c7ac2ebfa5cd4819c870e8acf932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11365b2348ad3bb4819e0b81f2f26e89"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga11365b2348ad3bb4819e0b81f2f26e89">AR_MPI_AI_DisableChn</a> (AUDIO_DEV AiDevId, AI_CHN AiChn)</td></tr>
+<tr class="memdesc:ga11365b2348ad3bb4819e0b81f2f26e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用AI通道  <a href="group___m_p_i___a_u_d_i_o.html#ga11365b2348ad3bb4819e0b81f2f26e89">更多...</a><br /></td></tr>
+<tr class="separator:ga11365b2348ad3bb4819e0b81f2f26e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdbd401c0036a941a2276900d19cc106"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gabdbd401c0036a941a2276900d19cc106">AR_MPI_AI_GetFrame</a> (AUDIO_DEV AiDevId, AI_CHN AiChn, <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstFrm, <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga5c80ad7e63b655488df998e782befd28">AEC_FRAME_S</a> *pstAecFrm, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:gabdbd401c0036a941a2276900d19cc106"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频帧，获取音频帧数据前，必须先使能对应的AI通道  <a href="group___m_p_i___a_u_d_i_o.html#gabdbd401c0036a941a2276900d19cc106">更多...</a><br /></td></tr>
+<tr class="separator:gabdbd401c0036a941a2276900d19cc106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01646075f80b5b6aa992c15562f6100e"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga01646075f80b5b6aa992c15562f6100e">AR_MPI_AI_ReleaseFrame</a> (AUDIO_DEV AiDevId, AI_CHN AiChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstFrm, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga5c80ad7e63b655488df998e782befd28">AEC_FRAME_S</a> *pstAecFrm)</td></tr>
+<tr class="memdesc:ga01646075f80b5b6aa992c15562f6100e"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放音频帧  <a href="group___m_p_i___a_u_d_i_o.html#ga01646075f80b5b6aa992c15562f6100e">更多...</a><br /></td></tr>
+<tr class="separator:ga01646075f80b5b6aa992c15562f6100e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac74b9632a7c510d30e4aa584e4cdc800"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gac74b9632a7c510d30e4aa584e4cdc800">AR_MPI_AI_SetChnParam</a> (AUDIO_DEV AiDevId, AI_CHN AiChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga21fe8b04f6d3b27814c4661f2c795801">AI_CHN_PARAM_S</a> *pstChnParam)</td></tr>
+<tr class="memdesc:gac74b9632a7c510d30e4aa584e4cdc800"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置AI通道参数，通道参数目前只有一个成员变量，用于设置用户获取音频帧的缓存深度，默认深度为0。该成员变量的值不能大于30  <a href="group___m_p_i___a_u_d_i_o.html#gac74b9632a7c510d30e4aa584e4cdc800">更多...</a><br /></td></tr>
+<tr class="separator:gac74b9632a7c510d30e4aa584e4cdc800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ab9aa546977d352f08c000da18426c8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga6ab9aa546977d352f08c000da18426c8">AR_MPI_AI_GetChnParam</a> (AUDIO_DEV AiDevId, AI_CHN AiChn, <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga21fe8b04f6d3b27814c4661f2c795801">AI_CHN_PARAM_S</a> *pstChnParam)</td></tr>
+<tr class="memdesc:ga6ab9aa546977d352f08c000da18426c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取AI通道参数  <a href="group___m_p_i___a_u_d_i_o.html#ga6ab9aa546977d352f08c000da18426c8">更多...</a><br /></td></tr>
+<tr class="separator:ga6ab9aa546977d352f08c000da18426c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb03a358f992f8f6f97b7753ef8ccb26"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gadb03a358f992f8f6f97b7753ef8ccb26">AR_MPI_AI_ClrPubAttr</a> (AUDIO_DEV AiDevId)</td></tr>
+<tr class="memdesc:gadb03a358f992f8f6f97b7753ef8ccb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空Pub属性  <a href="group___m_p_i___a_u_d_i_o.html#gadb03a358f992f8f6f97b7753ef8ccb26">更多...</a><br /></td></tr>
+<tr class="separator:gadb03a358f992f8f6f97b7753ef8ccb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga961d574db4832d1b4d29d9d2edac0c74"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga961d574db4832d1b4d29d9d2edac0c74">AR_MPI_AI_GetFd</a> (AUDIO_DEV AiDevId, AI_CHN AiChn)</td></tr>
+<tr class="memdesc:ga961d574db4832d1b4d29d9d2edac0c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频输入通道号对应的设备文件句柄  <a href="group___m_p_i___a_u_d_i_o.html#ga961d574db4832d1b4d29d9d2edac0c74">更多...</a><br /></td></tr>
+<tr class="separator:ga961d574db4832d1b4d29d9d2edac0c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga457a5bbb823e7fc1701e76ddf6604906"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga457a5bbb823e7fc1701e76ddf6604906">AR_MPI_AI_SuspendChn</a> (AUDIO_DEV AiDevId, AI_CHN AiChn)</td></tr>
+<tr class="memdesc:ga457a5bbb823e7fc1701e76ddf6604906"><td class="mdescLeft">&#160;</td><td class="mdescRight">音频输入设备对应通道进入休眠  <a href="group___m_p_i___a_u_d_i_o.html#ga457a5bbb823e7fc1701e76ddf6604906">更多...</a><br /></td></tr>
+<tr class="separator:ga457a5bbb823e7fc1701e76ddf6604906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf18b7e41afe32f31a3e8d351429588c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gadf18b7e41afe32f31a3e8d351429588c">AR_MPI_AI_ResumeChn</a> (AUDIO_DEV AiDevId, AI_CHN AiChn)</td></tr>
+<tr class="memdesc:gadf18b7e41afe32f31a3e8d351429588c"><td class="mdescLeft">&#160;</td><td class="mdescRight">唤醒音频输入设备对应通道  <a href="group___m_p_i___a_u_d_i_o.html#gadf18b7e41afe32f31a3e8d351429588c">更多...</a><br /></td></tr>
+<tr class="separator:gadf18b7e41afe32f31a3e8d351429588c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6daaebd5f84540f845525c9521e49d31"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga6daaebd5f84540f845525c9521e49d31">AR_MPI_AO_SetPubAttr</a> (AUDIO_DEV AoDevId, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#gae4e82d6fa104eedc31cf4add7e43cbca">AIO_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga6daaebd5f84540f845525c9521e49d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置AO设备属性  <a href="group___m_p_i___a_u_d_i_o.html#ga6daaebd5f84540f845525c9521e49d31">更多...</a><br /></td></tr>
+<tr class="separator:ga6daaebd5f84540f845525c9521e49d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d961b247f894b0dc74a877fc2be2f0c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga4d961b247f894b0dc74a877fc2be2f0c">AR_MPI_AO_GetPubAttr</a> (AUDIO_DEV AoDevId, <a class="el" href="group___m_p_i___a_u_d_i_o.html#gae4e82d6fa104eedc31cf4add7e43cbca">AIO_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga4d961b247f894b0dc74a877fc2be2f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取AO设备属性  <a href="group___m_p_i___a_u_d_i_o.html#ga4d961b247f894b0dc74a877fc2be2f0c">更多...</a><br /></td></tr>
+<tr class="separator:ga4d961b247f894b0dc74a877fc2be2f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga142a05126b01d968edeb5063c032ec0c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga142a05126b01d968edeb5063c032ec0c">AR_MPI_AO_Enable</a> (AUDIO_DEV AoDevId)</td></tr>
+<tr class="memdesc:ga142a05126b01d968edeb5063c032ec0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用AO设备，要求在启用前配置AO设备属性，否则会返回属性未配置的错误;如果AO设备已经启用，则直接返回成功  <a href="group___m_p_i___a_u_d_i_o.html#ga142a05126b01d968edeb5063c032ec0c">更多...</a><br /></td></tr>
+<tr class="separator:ga142a05126b01d968edeb5063c032ec0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf95573cbfc074ebc359deb3fd6ab586b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gaf95573cbfc074ebc359deb3fd6ab586b">AR_MPI_AO_Disable</a> (AUDIO_DEV AoDevId)</td></tr>
+<tr class="memdesc:gaf95573cbfc074ebc359deb3fd6ab586b"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用AO设备，如果AO设备已经禁用，则直接返回成功;禁用AO设备前必须先禁用设备下所有AO通道  <a href="group___m_p_i___a_u_d_i_o.html#gaf95573cbfc074ebc359deb3fd6ab586b">更多...</a><br /></td></tr>
+<tr class="separator:gaf95573cbfc074ebc359deb3fd6ab586b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga001291f6a6838f2f3c54bc44c274e15a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga001291f6a6838f2f3c54bc44c274e15a">AR_MPI_AO_EnableChn</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga001291f6a6838f2f3c54bc44c274e15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用AO通道，启用AO通道前，必须先启用其所属的AO设备，否则返回设备未启动的错误码  <a href="group___m_p_i___a_u_d_i_o.html#ga001291f6a6838f2f3c54bc44c274e15a">更多...</a><br /></td></tr>
+<tr class="separator:ga001291f6a6838f2f3c54bc44c274e15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fc6e0c50f344d8b7592b1f26eadc30c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga1fc6e0c50f344d8b7592b1f26eadc30c">AR_MPI_AO_DisableChn</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga1fc6e0c50f344d8b7592b1f26eadc30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用AO通道  <a href="group___m_p_i___a_u_d_i_o.html#ga1fc6e0c50f344d8b7592b1f26eadc30c">更多...</a><br /></td></tr>
+<tr class="separator:ga1fc6e0c50f344d8b7592b1f26eadc30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77a9dd843ddbea2a5789e04ee20080fe"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga77a9dd843ddbea2a5789e04ee20080fe">AR_MPI_AO_SendFrame</a> (AUDIO_DEV AoDevId, AO_CHN AoChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstData, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:ga77a9dd843ddbea2a5789e04ee20080fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送AO音频帧； 该接口用于用户主动发送音频帧至AO输出， 如果AO通道已经通过系统绑定（AR_MPI_SYS_Bind）接口与AI或ADEC绑定，不需要也不建议调此接口  <a href="group___m_p_i___a_u_d_i_o.html#ga77a9dd843ddbea2a5789e04ee20080fe">更多...</a><br /></td></tr>
+<tr class="separator:ga77a9dd843ddbea2a5789e04ee20080fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a5780eeecde6a7467bd7b90e329082e"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga6a5780eeecde6a7467bd7b90e329082e">AR_MPI_AO_ClearChnBuf</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga6a5780eeecde6a7467bd7b90e329082e"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除AO通道中当前的音频数据缓存； 为完全清除解码回放通路上所有缓存数据，此接口还应该与AR_MPI_ADEC_ClearChnBuf接口配合使用  <a href="group___m_p_i___a_u_d_i_o.html#ga6a5780eeecde6a7467bd7b90e329082e">更多...</a><br /></td></tr>
+<tr class="separator:ga6a5780eeecde6a7467bd7b90e329082e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a418d8cbb41b7bbf32fe031a7800ef7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga2a418d8cbb41b7bbf32fe031a7800ef7">AR_MPI_AO_QueryChnStat</a> (AUDIO_DEV AoDevId, AO_CHN AoChn, <a class="el" href="group___m_p_i___a_u_d_i_o.html#gab802cae7196d976c4a074a31e29b21ef">AO_CHN_STATE_S</a> *pstStatus)</td></tr>
+<tr class="memdesc:ga2a418d8cbb41b7bbf32fe031a7800ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询AO通道中当前的音频数据缓存状态； 在AO通道成功启用后再调用此接口  <a href="group___m_p_i___a_u_d_i_o.html#ga2a418d8cbb41b7bbf32fe031a7800ef7">更多...</a><br /></td></tr>
+<tr class="separator:ga2a418d8cbb41b7bbf32fe031a7800ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2eb8898a1ad8f4fe864e59e10e0c710"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gae2eb8898a1ad8f4fe864e59e10e0c710">AR_MPI_AO_SuspendChn</a> (AUDIO_DEV AoDevId, AI_CHN AoChn)</td></tr>
+<tr class="memdesc:gae2eb8898a1ad8f4fe864e59e10e0c710"><td class="mdescLeft">&#160;</td><td class="mdescRight">音频输出设备对应通道进入休眠  <a href="group___m_p_i___a_u_d_i_o.html#gae2eb8898a1ad8f4fe864e59e10e0c710">更多...</a><br /></td></tr>
+<tr class="separator:gae2eb8898a1ad8f4fe864e59e10e0c710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga408f55f44c0d0196ec1a5be805c52922"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga408f55f44c0d0196ec1a5be805c52922">AR_MPI_AO_PauseChn</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga408f55f44c0d0196ec1a5be805c52922"><td class="mdescLeft">&#160;</td><td class="mdescRight">暂停AO通道，AO通道暂停后； 如果绑定的ADEC通道继续向此通道发送音频帧数据，发送的音频帧数据将会被阻塞； 而如果绑定的AI通道继续向此通道发送音频帧数据，在通道缓冲未满的情况下则将音频帧放入缓冲区，在满的情况下则将音频帧丢弃。  <a href="group___m_p_i___a_u_d_i_o.html#ga408f55f44c0d0196ec1a5be805c52922">更多...</a><br /></td></tr>
+<tr class="separator:ga408f55f44c0d0196ec1a5be805c52922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga533a530ac909ce1ee8859d13cb211ae6"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga533a530ac909ce1ee8859d13cb211ae6">AR_MPI_AO_ResumeChn</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga533a530ac909ce1ee8859d13cb211ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复AO通道，AO通道暂停后可以通过调用此接口重新恢复  <a href="group___m_p_i___a_u_d_i_o.html#ga533a530ac909ce1ee8859d13cb211ae6">更多...</a><br /></td></tr>
+<tr class="separator:ga533a530ac909ce1ee8859d13cb211ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga454784ba98ddc4c6d3c0982b889736ae"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga454784ba98ddc4c6d3c0982b889736ae">AR_MPI_AO_GetFd</a> (AUDIO_DEV AoDevId, AO_CHN AoChn)</td></tr>
+<tr class="memdesc:ga454784ba98ddc4c6d3c0982b889736ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频输出通道号对应的设备文件句柄  <a href="group___m_p_i___a_u_d_i_o.html#ga454784ba98ddc4c6d3c0982b889736ae">更多...</a><br /></td></tr>
+<tr class="separator:ga454784ba98ddc4c6d3c0982b889736ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5ceabb3721c0d4b7ab8f3521dc97142"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gaa5ceabb3721c0d4b7ab8f3521dc97142">AR_MPI_AO_ClrPubAttr</a> (AUDIO_DEV AoDevId)</td></tr>
+<tr class="memdesc:gaa5ceabb3721c0d4b7ab8f3521dc97142"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除AO设备属性，清除设备属性前，需要先停止设备  <a href="group___m_p_i___a_u_d_i_o.html#gaa5ceabb3721c0d4b7ab8f3521dc97142">更多...</a><br /></td></tr>
+<tr class="separator:gaa5ceabb3721c0d4b7ab8f3521dc97142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga809187fb3bd4d4c2201a8c7cc4e6c2a2"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga809187fb3bd4d4c2201a8c7cc4e6c2a2">AR_MPI_AENC_CreateChn</a> (AENC_CHN AeChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga31a09d9fbabecf559728e420e34ca90e">AENC_CHN_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga809187fb3bd4d4c2201a8c7cc4e6c2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建音频编码通道  <a href="group___m_p_i___a_u_d_i_o.html#ga809187fb3bd4d4c2201a8c7cc4e6c2a2">更多...</a><br /></td></tr>
+<tr class="separator:ga809187fb3bd4d4c2201a8c7cc4e6c2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga171fe382bc294c2a8fdbc41b1913135f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga171fe382bc294c2a8fdbc41b1913135f">AR_MPI_AENC_DestroyChn</a> (AENC_CHN AeChn)</td></tr>
+<tr class="memdesc:ga171fe382bc294c2a8fdbc41b1913135f"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁音频编码通道  <a href="group___m_p_i___a_u_d_i_o.html#ga171fe382bc294c2a8fdbc41b1913135f">更多...</a><br /></td></tr>
+<tr class="separator:ga171fe382bc294c2a8fdbc41b1913135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cb331b1286a7f875730ad9b792272c0"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga6cb331b1286a7f875730ad9b792272c0">AR_MPI_AENC_SendFrame</a> (AENC_CHN AeChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga8abb47f0802d4b88075fd658a61c51b9">AUDIO_FRAME_S</a> *pstFrm, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga5c80ad7e63b655488df998e782befd28">AEC_FRAME_S</a> *pstAecFrm)</td></tr>
+<tr class="memdesc:ga6cb331b1286a7f875730ad9b792272c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送音频编码音频帧  <a href="group___m_p_i___a_u_d_i_o.html#ga6cb331b1286a7f875730ad9b792272c0">更多...</a><br /></td></tr>
+<tr class="separator:ga6cb331b1286a7f875730ad9b792272c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga971a7e6f88596a14f3c36920f790c024"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga971a7e6f88596a14f3c36920f790c024">AR_MPI_AENC_GetStream</a> (AENC_CHN AeChn, <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga1708a267ae55d824690bc76626bba9f9">AUDIO_STREAM_S</a> *pstStream, AR_S32 s32MilliSec)</td></tr>
+<tr class="memdesc:ga971a7e6f88596a14f3c36920f790c024"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取编码后码流  <a href="group___m_p_i___a_u_d_i_o.html#ga971a7e6f88596a14f3c36920f790c024">更多...</a><br /></td></tr>
+<tr class="separator:ga971a7e6f88596a14f3c36920f790c024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5cec3ecfbce885f65e33cd92b5baecd"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gaf5cec3ecfbce885f65e33cd92b5baecd">AR_MPI_AENC_ReleaseStream</a> (AENC_CHN AeChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga1708a267ae55d824690bc76626bba9f9">AUDIO_STREAM_S</a> *pstStream)</td></tr>
+<tr class="memdesc:gaf5cec3ecfbce885f65e33cd92b5baecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放从音频编码通道获取的码流  <a href="group___m_p_i___a_u_d_i_o.html#gaf5cec3ecfbce885f65e33cd92b5baecd">更多...</a><br /></td></tr>
+<tr class="separator:gaf5cec3ecfbce885f65e33cd92b5baecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac68b0b652e9ce98c580d4548be9953e4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gac68b0b652e9ce98c580d4548be9953e4">AR_MPI_AENC_GetFd</a> (AENC_CHN AeChn)</td></tr>
+<tr class="memdesc:gac68b0b652e9ce98c580d4548be9953e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频编码通道号对应的设备文件句柄  <a href="group___m_p_i___a_u_d_i_o.html#gac68b0b652e9ce98c580d4548be9953e4">更多...</a><br /></td></tr>
+<tr class="separator:gac68b0b652e9ce98c580d4548be9953e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d1b4df6cb3fa63761d284b159cf2f67"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga5d1b4df6cb3fa63761d284b159cf2f67">AR_MPI_AENC_RegisterEncoder</a> (AR_S32 *ps32Handle, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga7d02ed56be6d38ce4466e31b01e92676">AENC_ENCODER_S</a> *pstEncoder)</td></tr>
+<tr class="memdesc:ga5d1b4df6cb3fa63761d284b159cf2f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册编码器  <a href="group___m_p_i___a_u_d_i_o.html#ga5d1b4df6cb3fa63761d284b159cf2f67">更多...</a><br /></td></tr>
+<tr class="separator:ga5d1b4df6cb3fa63761d284b159cf2f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c338ea91d6134e3cbcc77f3c040b5f4"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga2c338ea91d6134e3cbcc77f3c040b5f4">AR_MPI_AENC_UnRegisterEncoder</a> (AR_S32 s32Handle)</td></tr>
+<tr class="memdesc:ga2c338ea91d6134e3cbcc77f3c040b5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">注销编码器  <a href="group___m_p_i___a_u_d_i_o.html#ga2c338ea91d6134e3cbcc77f3c040b5f4">更多...</a><br /></td></tr>
+<tr class="separator:ga2c338ea91d6134e3cbcc77f3c040b5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2307f39ec7efad43d1083f69b2512b45"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga2307f39ec7efad43d1083f69b2512b45">AR_MPI_AENC_GetStreamBufInfo</a> (AENC_CHN AeChn, AR_U64 *pu64PhysAddr, AR_U32 *pu32Size)</td></tr>
+<tr class="memdesc:ga2307f39ec7efad43d1083f69b2512b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频码流 buffer 相关信息  <a href="group___m_p_i___a_u_d_i_o.html#ga2307f39ec7efad43d1083f69b2512b45">更多...</a><br /></td></tr>
+<tr class="separator:ga2307f39ec7efad43d1083f69b2512b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga792c3723f0f722a4bb4d99566f35bbdf"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga792c3723f0f722a4bb4d99566f35bbdf">AR_MPI_ADEC_CreateChn</a> (ADEC_CHN AdChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga19a35af1bd370b25c8fc9712da91cde8">ADEC_CHN_ATTR_S</a> *pstAttr)</td></tr>
+<tr class="memdesc:ga792c3723f0f722a4bb4d99566f35bbdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建音频解码通道  <a href="group___m_p_i___a_u_d_i_o.html#ga792c3723f0f722a4bb4d99566f35bbdf">更多...</a><br /></td></tr>
+<tr class="separator:ga792c3723f0f722a4bb4d99566f35bbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80ba84cc901b0434f9c725e882922041"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga80ba84cc901b0434f9c725e882922041">AR_MPI_ADEC_DestroyChn</a> (ADEC_CHN AdChn)</td></tr>
+<tr class="memdesc:ga80ba84cc901b0434f9c725e882922041"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁音频解码通道  <a href="group___m_p_i___a_u_d_i_o.html#ga80ba84cc901b0434f9c725e882922041">更多...</a><br /></td></tr>
+<tr class="separator:ga80ba84cc901b0434f9c725e882922041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5ea7a91f2fa8401b36374ba3f9cff7c"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gad5ea7a91f2fa8401b36374ba3f9cff7c">AR_MPI_ADEC_SendStream</a> (ADEC_CHN AdChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga1708a267ae55d824690bc76626bba9f9">AUDIO_STREAM_S</a> *pstStream, AR_BOOL bBlock)</td></tr>
+<tr class="memdesc:gad5ea7a91f2fa8401b36374ba3f9cff7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">向音频解码通道发送音频  <a href="group___m_p_i___a_u_d_i_o.html#gad5ea7a91f2fa8401b36374ba3f9cff7c">更多...</a><br /></td></tr>
+<tr class="separator:gad5ea7a91f2fa8401b36374ba3f9cff7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb7cda0c3a3bb70fac9525fe30c2ef00"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gabb7cda0c3a3bb70fac9525fe30c2ef00">AR_MPI_ADEC_ClearChnBuf</a> (ADEC_CHN AdChn)</td></tr>
+<tr class="memdesc:gabb7cda0c3a3bb70fac9525fe30c2ef00"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除 ADEC 通道中当前的音频数据缓存  <a href="group___m_p_i___a_u_d_i_o.html#gabb7cda0c3a3bb70fac9525fe30c2ef00">更多...</a><br /></td></tr>
+<tr class="separator:gabb7cda0c3a3bb70fac9525fe30c2ef00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35c1dd290fac4383a79921ccbded6a74"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga35c1dd290fac4383a79921ccbded6a74">AR_MPI_ADEC_RegisterDecoder</a> (AR_S32 *ps32Handle, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga1c91f32b642438dabba9c601688a39e9">ADEC_DECODER_S</a> *pstDecoder)</td></tr>
+<tr class="memdesc:ga35c1dd290fac4383a79921ccbded6a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册解码器  <a href="group___m_p_i___a_u_d_i_o.html#ga35c1dd290fac4383a79921ccbded6a74">更多...</a><br /></td></tr>
+<tr class="separator:ga35c1dd290fac4383a79921ccbded6a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2a9ab8c218975eb5df4cb57934b9992"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#gad2a9ab8c218975eb5df4cb57934b9992">AR_MPI_ADEC_UnRegisterDecoder</a> (AR_S32 s32Handle)</td></tr>
+<tr class="memdesc:gad2a9ab8c218975eb5df4cb57934b9992"><td class="mdescLeft">&#160;</td><td class="mdescRight">注销解码器  <a href="group___m_p_i___a_u_d_i_o.html#gad2a9ab8c218975eb5df4cb57934b9992">更多...</a><br /></td></tr>
+<tr class="separator:gad2a9ab8c218975eb5df4cb57934b9992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9012ebed70853ab460ba2e536e4ebbe9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga9012ebed70853ab460ba2e536e4ebbe9">AR_MPI_ADEC_GetFrame</a> (ADEC_CHN AdChn, <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga06f18d5e8538b8b972a05b5229b44fb1">AUDIO_FRAME_INFO_S</a> *pstFrmInfo, AR_BOOL bBlock)</td></tr>
+<tr class="memdesc:ga9012ebed70853ab460ba2e536e4ebbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频解码帧数据  <a href="group___m_p_i___a_u_d_i_o.html#ga9012ebed70853ab460ba2e536e4ebbe9">更多...</a><br /></td></tr>
+<tr class="separator:ga9012ebed70853ab460ba2e536e4ebbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57ed9f2f666e112a9105d97fb66a07c8"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga57ed9f2f666e112a9105d97fb66a07c8">AR_MPI_ADEC_ReleaseFrame</a> (ADEC_CHN AdChn, const <a class="el" href="group___m_p_i___a_u_d_i_o.html#ga06f18d5e8538b8b972a05b5229b44fb1">AUDIO_FRAME_INFO_S</a> *pstFrmInfo)</td></tr>
+<tr class="memdesc:ga57ed9f2f666e112a9105d97fb66a07c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放获取到的音频解码帧数据  <a href="group___m_p_i___a_u_d_i_o.html#ga57ed9f2f666e112a9105d97fb66a07c8">更多...</a><br /></td></tr>
+<tr class="separator:ga57ed9f2f666e112a9105d97fb66a07c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73a5720bb717869fad38f4bb1d14b747"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___a_u_d_i_o.html#ga73a5720bb717869fad38f4bb1d14b747">AR_MPI_ADEC_SendEndOfStream</a> (ADEC_CHN AdChn, AR_BOOL bInstant)</td></tr>
+<tr class="memdesc:ga73a5720bb717869fad38f4bb1d14b747"><td class="mdescLeft">&#160;</td><td class="mdescRight">向解码器发送码流结束  <a href="group___m_p_i___a_u_d_i_o.html#ga73a5720bb717869fad38f4bb1d14b747">更多...</a><br /></td></tr>
+<tr class="separator:ga73a5720bb717869fad38f4bb1d14b747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>描述音频相关的数据结构和接口. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

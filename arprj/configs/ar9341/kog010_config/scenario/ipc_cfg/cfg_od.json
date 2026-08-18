@@ -1,0 +1,8 @@
+{
+	"od":	{
+		"enable":	0,
+		"group_id":	1,
+		"channel_id":	0,
+		"alarmblocknum_threshold":	30
+	}
+}

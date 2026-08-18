@@ -1,0 +1,11 @@
+{
+	"all_rootfs":{
+        "component_list" : [ "prebuilds/rootfs/rootfs.tar.gz:",
+		                     "prebuilds/kernel/artosyn-ar9301-evb.dtb:usr"]
+	},
+	"usr_data":{
+        "component_list" : [ "prebuilds/apps/bin:",
+		                     "prebuilds/kernel/board-cfg.dtb:cfg.dtb"],
+        "debug_component" : [ "../configs/common/debug/:tools"]
+	}
+}

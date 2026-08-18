@@ -1,0 +1,116 @@
+/**
+ * @file hal_errno.h
+ * @brief  
+ * @author Artosyn Software Team
+ * @version 0.0.1
+ * @date 2021/04/21
+ * @license 2021-2025, Artosyn. Co., Ltd.
+**/
+#ifndef __AR_ERRNO_H__
+#define __AR_ERRNO_H__
+
+#ifdef __cplusplus
+#if __cplusplus
+extern "C"{
+#endif
+#endif /* End of #ifdef __cplusplus */
+
+
+/* 1010 0000b
+ * VTOP use APPID from 0~31
+ * so, artosyn use APPID based on 32
+ */
+#define AR_ERR_APPID  (0x80000000L)
+
+typedef enum
+{
+    HAL_ERR_LEVEL_DEBUG = 0,  /* debug-level                                  */
+    HAL_ERR_LEVEL_INFO,       /* informational                                */
+    HAL_ERR_LEVEL_NOTICE,     /* normal but significant condition             */
+    HAL_ERR_LEVEL_WARNING,    /* warning conditions                           */
+    HAL_ERR_LEVEL_ERROR,      /* error conditions                             */
+    HAL_ERR_LEVEL_CRIT,       /* critical conditions                          */
+    HAL_ERR_LEVEL_ALERT,      /* action must be taken immediately             */
+    HAL_ERR_LEVEL_FATAL,      /* just for compatibility with previous version */
+    HAL_ERR_LEVEL_BUTT
+}ENUM_HAL_ERR_LEVEL;
+
+typedef enum
+{
+    HAL = 0,  /* hal layer    */
+    MPP,       /* mpp layer  */
+    KMODULE    /* KMODULE layer  */
+}ENUM_LAYER;
+
+/******************************************************************************
+|----------------------------------------------------------------|
+| 1 |   APP_ID   |   MOD_ID    | ERR_LEVEL | LAYER_ID |  ERR_ID  |
+|----------------------------------------------------------------|
+|<--><--7bits----><----8bits---><--3bits--><--3bits---><-10bits->|
+******************************************************************************/
+#define AR_DEF_ERR( module, level, layer, errid) \
+    ((AR_S32)( (AR_ERR_APPID) | ((module) << 16 ) | ((level)<<13) | ((layer)<<10) | (errid) ))
+
+#define AR_HAL_DEF_ERR( module, level, errid) AR_DEF_ERR( module, level, HAL, errid)
+#define AR_MPP_DEF_ERR( module, level, errid) AR_DEF_ERR( module, level, MPP, errid)
+#define AR_KMODULE_DEF_ERR( module, level, errid) AR_DEF_ERR( module, level, KMODULE, errid)
+
+#define AR_GET_ERRID(err)     ((AR_S32)(err & ((1 << 10)-1)))
+
+/* NOTE! the following defined all common error code,
+** all module must reserved 0~63 for their common error code
+*/
+typedef enum
+{
+    HAL_ERR_INVALID_DEVID = 1, /* invlalid device ID                           */
+    HAL_ERR_INVALID_CHNID = 2, /* invlalid channel ID                          */
+    HAL_ERR_ILLEGAL_PARAM = 3, /* at lease one parameter is illagal
+                               * eg, an illegal enumeration value             */
+    HAL_ERR_EXIST         = 4, /* resource exists                              */
+    HAL_ERR_UNEXIST       = 5, /* resource unexists                            */
+
+    HAL_ERR_NULL_PTR      = 6, /* using a NULL point                           */
+
+    HAL_ERR_NOT_CONFIG    = 7, /* try to enable or initialize system, device
+                              ** or channel, before configing attribute       */
+
+    HAL_ERR_NOT_SUPPORT   = 8, /* operation or type is not supported by NOW    */
+    HAL_ERR_NOT_PERM      = 9, /* operation is not permitted
+                              ** eg, try to change static attribute           */
+    HAL_ERR_INVALID_PIPEID = 10, /* invlalid pipe ID                           */
+    HAL_ERR_INVALID_STITCHGRPID  = 11, /* invlalid stitch group ID                           */
+
+    HAL_ERR_NOMEM         = 12,/* failure caused by malloc memory              */
+    HAL_ERR_NOBUF         = 13,/* failure caused by malloc buffer              */
+
+    HAL_ERR_BUF_EMPTY     = 14,/* no data in buffer                            */
+    HAL_ERR_BUF_FULL      = 15,/* no buffer for new data                       */
+
+    HAL_ERR_SYS_NOTREADY  = 16,/* System is not ready,maybe not initialed or
+                              ** loaded. Returning the error code when opening
+                              ** a device file failed.                        */
+
+    HAL_ERR_BADADDR       = 17,/* bad address,
+                              ** eg. used for copy_from_user & copy_to_user   */
+
+    HAL_ERR_BUSY          = 18,/* resource is busy,
+                              ** eg. destroy a venc chn without unregister it */
+    HAL_ERR_SIZE_NOT_ENOUGH = 19, /* buffer size is smaller than the actual size required */
+
+    HAL_ERR_TIMEOUT       = 20, /* timeout:
+                                ** eg. msg queue send timeout*/
+
+    HAL_ERR_BUTT          = 63,/* maxium code, private error code of all modules
+                              ** must be greater than it                      */
+} ENUM_HAL_ERR_CODE;
+
+#define HAL_NO_ERROR	(0x0)
+
+#ifdef __cplusplus
+#if __cplusplus
+}
+#endif
+#endif /* __cplusplus */
+
+#endif  /* __AR_ERRNO_H__ */
+

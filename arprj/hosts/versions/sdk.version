@@ -1,0 +1,7 @@
+gSDK_VERSION=0.16.03-00
+
+# upgrade object version
+gOBJ_VERSION=1
+# 0: no depend, must upgrade all partitions, and it must less than gOBJ_VERSION
+# if not 0, you can upgrade all partitions or partial partitions
+gDEP_VERSION=0

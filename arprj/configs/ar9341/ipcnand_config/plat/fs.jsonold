@@ -1,0 +1,32 @@
+{
+    "all_rootfs":{
+        "component_list" : [ "prebuilds/rootfs/rootfs.tar.gz:",
+                             "out/middlewares/lib/*.so:usr/lib",
+                             "out/hal/lib/*.so:usr/lib",
+                             "out/mpp/lib/*.so:usr/lib",
+			     "out/hal/bin/*:usr/bin",
+                             "prebuilds/ko:mod",
+                             "prebuilds/apps/bin/artosyn_upgrade:usr/bin",
+                             "<BOARD_CONFIG_DIR>/scenario/start*.sh:etc/init.d"]
+    },
+	"usr_data":{
+        "component_list" : [ "<BOARD_CONFIG_DIR>/scenario/run.sh:",
+                             "<BOARD_CONFIG_DIR>/scenario/run_web.sh:",
+                             "<BOARD_CONFIG_DIR>/scenario/start_network_upgrade.sh:",
+			     "prebuilds/apps/lib/*.so*:lib",
+                             "prebuilds/apps/bin:bin",
+			     "prebuilds/apps/web_service:local/web_service",
+			     "prebuilds/apps/web_service/resources/Etc:resources/Etc",
+                             "<BOARD_CONFIG_DIR>/scenario/shutdown.sh:local/web_service/scripts/",
+                             "../apps/utils/tunning_gen/bin/imx307_tuning*:local/factory/tunning/cam_imx307",
+                             "../apps/utils/tunning_gen/bin/imx415_tuning_preview.bin:local/factory/tunning/cam_imx415",
+                             "../apps/utils/tunning_gen/bin/imx415_tuning_preview_hdr.bin:local/factory/tunning/cam_imx415",
+                             "../apps/utils/tunning_gen/bin/imx464_tuning_preview.bin:local/factory/tunning/cam_imx464",
+                             "../apps/utils/tunning_gen/bin/imx464_hdr_tuning_preview.bin:local/factory/tunning/cam_imx464",
+                             "<BOARD_CONFIG_DIR>/scenario/codec_factory_cfg.cjson:local/factory",
+                             "<BOARD_CONFIG_DIR>/scenario/font_16_26.bin:local/factory/font",
+                             "<BOARD_CONFIG_DIR>/scenario/ssd-mobilenet_caffe.npubin:local/mbssd",
+                             "<BOARD_CONFIG_DIR>/scenario/0.json:local/mbssd"]
+                 
+	}
+}

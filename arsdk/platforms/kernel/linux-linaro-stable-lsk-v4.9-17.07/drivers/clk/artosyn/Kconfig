@@ -1,0 +1,13 @@
+config CLK_AR9301
+	bool "Artosyn AR9301 clock unit support"
+	depends on ARM64
+	default n
+	help
+		Build the driver for AR9301 Clock Driver
+
+config CLK_AR9311
+	bool "Artosyn AR9311 clock unit support"
+	depends on ARM64
+	default n
+	help
+		Build the driver for AR9311 Clock Driver

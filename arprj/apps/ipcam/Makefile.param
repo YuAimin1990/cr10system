@@ -1,0 +1,19 @@
+################# select sensor type for your sample ###############################
+####    SONY_IMX290_MIPI_2M_30FPS_12BIT            #################
+####    SONY_IMX290_SLAVE_MIPI_2M_60FPS_10BIT      #################
+####    SONY_IMX334_MIPI_8M_30FPS_12BIT            #################
+####    NVP6324_MIPI_2M_30FPS_8BIT                 #################
+
+LDFLAGS += -losal -lutils -lhal_dbglog -lhal_sysctl -lhal_ge2d -lhal_vb -lhal_sys -lhal_vdec -lhal_venc -lhal_vin -lhal_vo -lhal_aio -lhal_gpio -lhal_region -lhal_clk -lhal_scaler -lhal_gdc -lhal_npu -lhal_dsp -laac_codec -lhal_adec -lhal_aenc
+LDFLAGS += -lmpi_sysctl -lmpi_vin -lmpi_vo -lmpi_vb -lmpi_vdec -lmpi_venc -lmpi_vpss -lmpi_sys -lmpi_hdmi -lmpi_region -lmpi_ai -lmpi_ao -lmpi_scaler -lmpi_gdc -lmpi_ifc -lmpi_dsp -lmpi_npu -lmpi_aaccodec -lmpi_acodec -lmpi_adec -lmpi_aenc -lhal_analyze_time
+
+LDFLAGS += -L$(OUTPUT_APPLICATION_LIB_DIR)
+# -lsns_imx290 -lsns_imx290_slave -lsns_imx291 -lsns_imx334 -lsns_imx377
+
+ifeq ($(CONFIG_FEAT_EIS),y)
+LDFLAGS += -lhal_eis -lmpi_eis
+endif
+
+LDFLAGS += -lfuse3 -lrpc_fs -lrpc_proxy
+
+LDFLAGS += -lmpp_service -lswresample -lavutil

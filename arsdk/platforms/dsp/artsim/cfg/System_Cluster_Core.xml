@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Core Name="CEVA-XM6">
+	<Category Name="Xtend">
+		<Attribute>
+			<Name>Use CEVA-Xtend</Name>
+			<Value>false</Value>
+		</Attribute>
+	</Category>
+	<Category Name="SFLP">
+		<Attribute>
+			<Name>FP Units</Name>
+			<Value>4</Value>
+		</Attribute>
+	</Category>
+	<Category Name="PMSS">
+		<Attribute>
+			<Name>EPP width</Name>
+			<Value>128 Bit</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Internal Code Size</Name>
+			<Value>64KB</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Code Cache Size</Name>
+			<Value>64KB</Value>
+		</Attribute>
+	</Category>
+	<Category Name="DMSS">
+		<Attribute>
+			<Name>AXI master width</Name>
+			<Value>128 Bit</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Data blocks number</Name>
+			<Value>4</Value>
+		</Attribute>
+		<Attribute>
+			<Name>AXI slave 2 width</Name>
+			<Value>0</Value>
+		</Attribute>
+		<Attribute>
+			<Name>EDAP width</Name>
+			<Value>128 Bit</Value>
+		</Attribute>
+		<Attribute>
+			<Name>DMAN queue count</Name>
+			<Value>8</Value>
+		</Attribute>
+		<Attribute>
+			<Name>AXI slave 0 width</Name>
+			<Value>0</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Internal Data Size</Name>
+			<Value>512KB</Value>
+		</Attribute>
+		<Attribute>
+			<Name>EDP width</Name>
+			<Value>128 Bit</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Number Of DPRAW</Name>
+			<Value>16</Value>
+		</Attribute>
+		<Attribute>
+			<Name>AXI slave 1 width</Name>
+			<Value>0</Value>
+		</Attribute>
+	</Category>
+	<Category Name="VFLP">
+		<Attribute>
+			<Name>VFP Units</Name>
+			<Value>2</Value>
+		</Attribute>
+	</Category>
+	<Category Name="Core">
+		<Attribute>
+			<Name>BTB size</Name>
+			<Value>256</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Fetch line width</Name>
+			<Value>256 Bit</Value>
+		</Attribute>
+		<Attribute>
+			<Name>BTB ways count</Name>
+			<Value>4</Value>
+		</Attribute>
+		<Attribute>
+			<Name>Timers</Name>
+			<Value>4</Value>
+		</Attribute>
+	</Category>
+	<Category Name="HW Configuration">
+		<Attribute>
+			<Name>RTL Version</Name>
+			<Value>1.3.x</Value>
+		</Attribute>
+	</Category>
+</Core>

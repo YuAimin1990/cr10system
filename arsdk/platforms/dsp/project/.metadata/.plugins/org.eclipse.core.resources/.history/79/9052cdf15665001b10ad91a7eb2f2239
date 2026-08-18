@@ -1,0 +1,86 @@
+/*
+ * system_IO.h
+ *
+ *  Created on: 2017Äê4ÔÂ5ÈÕ
+ *      Author: jianliu
+ */
+
+#ifndef SYSTEM_IO_H_
+#define SYSTEM_IO_H_
+#include "register_addr.h"
+#include "IO_operation.h"
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+
+#define config_addx_attribute() cpm_out(ADD0_ATT1, 0x44)
+#define get_self_core_id() cpm_in(CORE_ID_CPM_ADDR)
+
+#define enable_all_mcci_interrupt() internal_cpm_write(COMM_INT_EN_ADDR,0Xffffffff)
+#define config_mcci_interrupt(core_id) io_bit_set(CORE0_INT0_MASK_OFFSET + CORE_ADDR_INC_INT * core_id, MCCI_MES_INTERRUPT_BIT)
+#define clear_mcci_sts_whole_reg_self() internal_cpm_write(MCCI_STS_OFFSET, 0xffffffff)
+
+#define mask_dbg_gen() internal_cpm_write(DBG_GEN_MASK, 0xffffffff)
+#define mask_dbg_gen_2() internal_cpm_write(DBG_GEN_2_MASK, 0xffffffff)
+
+#define trigger_to_arm_interrupt0(core_id) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT0_BASE, 1)
+#define clear_to_arm_interrupt0(core_id) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT0_BASE, 0)
+#define read_to_arm_interrupt0(core_id) io_read(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT0_BASE)
+#define enable_to_arm_interrupt0(core_id) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT0_MASK_BASE, 1)
+#define read_to_arm_interrupt0_mask(core_id) io_read(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT0_MASK_BASE)
+
+#define trigger_to_arm_interrupt1(core_id, value) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT1_BASE, (value))
+#define clear_to_arm_interrupt1(core_id) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT1_BASE, 0)
+#define read_to_arm_interrupt1(core_id) io_read(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT1_BASE)
+#define enable_to_arm_interrupt1(core_id) io_write(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT1_MASK_BASE, 0xffffffff)
+#define read_to_arm_interrupt1_mask(core_id) io_read(core_id * TO_ARM_INTERRUPT_CORE_OFFSET + TO_ARM_INTERRUPT1_MASK_BASE)
+
+
+
+#if 0
+#define clear_comm_sts_register() internal_cpm_write(COMM_STS_ADDR,COMM_STS_INIT_VALUE)
+
+
+
+#define mask_mcci_interrupt(core_id) io_bit_clear(CORE0_INT0_MASK_OFFSET + CORE_ADDR_INC_INT * core_id, MCCI_MES_INTERRUPT_BIT)
+#define config_dma_interrupt(core_id) io_bit_set(CORE0_INT1_MASK_OFFSET + CORE_ADDR_INC_INT * core_id, DMA_INTERRUPT_BIT)
+#define mask_dma_interrupt(core_id) io_bit_clear(CORE0_INT1_MASK_OFFSET + CORE_ADDR_INC_INT * core_id, DMA_INTERRUPT_BIT)
+#define config_core1_mcci_interrupt() io_write((CORE0_INT0_MASK_OFFSET + CORE_ADDR_INC_INT), 1)
+#define get_interrupt_regsiter_value(interrupt_id, core_id) io_read(CORE0_INT0_MASK_OFFSET + CORE_ADDR_INC_INT * core_id + CORE_INT_INC_INT * interrupt_id)
+#define write_mcci_core1_reg0(value) do{\
+	external_cpm_write(CORE1_MCCI_OFFSET_ADDR, value);\
+	__asm__("nop #0x8");\
+	__asm__("nop #0x4");\
+	}while(0)
+#define read_mcci_core1_reg0() external_cpm_read(CORE1_MCCI_OFFSET_ADDR)
+
+#define clear_mcci_sts_self(bit) internal_cpm_bit_set(MCCI_STS_OFFSET, bit)
+#define get_mcci_sts_value() internal_cpm_read(MCCI_STS_OFFSET)
+#define clear_mcci_reg_self(reg_index) internal_cpm_write(MCCI_OFFSET + MCCI_REG_ADDR_OFFSET * reg_index, 0)
+#define clear_core_mcci_reg(core_id, reg_index) external_cpm_write(CORE0_MCCI_OFFSET_ADDR + CORE_OFFSET * core_id + MCCI_REG_ADDR_OFFSET * reg_index, 0)
+#define get_self_specify_mcci_reg_value(reg_index) internal_cpm_read(MCCI_OFFSET + MCCI_REG_ADDR_OFFSET * reg_index)
+#define get_mcci_value_self() internal_cpm_read(MCCI_OFFSET)
+#define is_dsp_mcci_free(core_id) (unsigned char)external_cpm_read(CORE0_MCCI_STS_OFFSET_ADDR + (CORE_OFFSET * core_id))
+
+
+#define get_self_dbg_gen_value() internal_cpm_read(DBG_GEN)
+#define get_self_dbg_gen_2_value() internal_cpm_read(DBG_GEN_2)
+#define get_self_timel_value() internal_cpm_read(SYSTIML)
+#define get_self_timeh_value() internal_cpm_read(SYSTIMH)
+
+#define set_pcache_enable() internal_cpm_write(MSS_PCR_REG, 0xC)
+
+
+
+#define config_acu_slv_acc(core_id)	io_write(core_id * REG_CORE_OFFSET + ACU_SLV_ACC, 1)
+#define clear_acu_slv_acc(core_id)	io_write(core_id * REG_CORE_OFFSET + ACU_SLV_ACC, 0)
+#define read_acu_slv_acc(core_id)	io_read(core_id * REG_CORE_OFFSET + ACU_SLV_ACC)
+#define read_cevaxm4_idle_status(core_id) io_read(CORE0_DSP_IDLE_ADDR + IDLE_REG_OFFSET_INTER_CORE * core_id)
+#define read_dsp_core_idle_status(core_id) io_read(CORE0_CORE_IDLE_ADDR + IDLE_REG_OFFSET_INTER_CORE * core_id)
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* SYSTEM_IO_H_ */

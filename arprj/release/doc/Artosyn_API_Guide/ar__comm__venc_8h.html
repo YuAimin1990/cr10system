@@ -1,0 +1,2671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: ar_comm_venc.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle">
+<div class="title">ar_comm_venc.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>描述视频编码相关的通用数据结构  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;hal_type.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__common_8h_source.html">ar_common.h</a>&quot;</code><br />
+<code>#include &quot;hal_errno.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__comm__video_8h_source.html">ar_comm_video.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__comm__rc_8h_source.html">ar_comm_rc.h</a>&quot;</code><br />
+<code>#include &quot;ar_comm_vb.h&quot;</code><br />
+</div>
+<p><a href="ar__comm__venc_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionar_v_e_n_c___d_a_t_a___t_y_p_e___u.html">arVENC_DATA_TYPE_U</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_a_c_k___i_n_f_o___s.html">arVENC_PACK_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_a_c_k___s.html">arVENC_PACK_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h264___s.html">arVENC_STREAM_INFO_H264_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h265___s.html">arVENC_STREAM_INFO_H265_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_s_e___i_n_f_o___s.html">arVENC_SSE_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h264___s.html">arVENC_STREAM_ADVANCE_INFO_H264_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_ADVANCE_INFO_JPEG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_ADVANCE_INFO_PRORES_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h265___s.html">arVENC_STREAM_ADVANCE_INFO_H265_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_INFO_PRORES_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_INFO_JPEG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___s.html">arVENC_STREAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___s.html">arVENC_STREAM_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_p_f___c_f_g___s.html">arVENC_MPF_CFG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___j_p_e_g___s.html">arVENC_ATTR_JPEG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___m_j_p_e_g___s.html">arVENC_ATTR_MJPEG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___h264___s.html">arVENC_ATTR_H264_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___h265___s.html">arVENC_ATTR_H265_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___p_r_o_r_e_s___s.html">arVENC_ATTR_PRORES_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___a_t_t_r___s.html">arVENC_ATTR_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___n_o_r_m_a_l_p___s.html">arVENC_GOP_NORMALP_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___d_u_a_l_p___s.html">arVENC_GOP_DUALP_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___s_m_a_r_t_p___s.html">arVENC_GOP_SMARTP_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___a_d_v_s_m_a_r_t_p___s.html">arVENC_GOP_ADVSMARTP_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___b_i_p_r_e_d_b___s.html">arVENC_GOP_BIPREDB_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___g_o_p___a_t_t_r___s.html">arVENC_GOP_ATTR_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_h_n___a_t_t_r___s.html">arVENC_CHN_ATTR_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_e_c_v___p_i_c___p_a_r_a_m___s.html">arVENC_RECV_PIC_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_h_n___s_t_a_t_u_s___s.html">arVENC_CHN_STATUS_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H264_SLICE_SPLIT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___i_n_t_r_a___p_r_e_d___s.html">arVENC_H264_INTRA_PRED_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___t_r_a_n_s___s.html">arVENC_H264_TRANS_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___e_n_t_r_o_p_y___s.html">arVENC_H264_ENTROPY_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___p_o_c___s.html">arVENC_H264_POC_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___d_b_l_k___s.html">arVENC_H264_DBLK_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___v_u_i___t_i_m_e___i_n_f_o___s.html">arVENC_H264_VUI_TIME_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___v_u_i___a_s_p_e_c_t___r_a_t_i_o___s.html">arVENC_VUI_ASPECT_RATIO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___v_u_i___v_i_d_e_o___s_i_g_n_a_l___s.html">arVENC_VUI_VIDEO_SIGNAL_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___v_u_i___b_i_t_s_t_r_e_a_m___r_e_s_t_r_i_c___s.html">arVENC_VUI_BITSTREAM_RESTRIC_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h264___v_u_i___s.html">arVENC_H264_VUI_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___v_u_i___h265___t_i_m_e___i_n_f_o___s.html">arVENC_VUI_H265_TIME_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___v_u_i___s.html">arVENC_H265_VUI_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___j_p_e_g___p_a_r_a_m___s.html">arVENC_JPEG_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_j_p_e_g___p_a_r_a_m___s.html">arVENC_MJPEG_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html">arVENC_PRORES_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___s.html">arVENC_ROI_ATTR_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___e_x___s.html">arVENC_ROI_ATTR_EX_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_o_i_b_g___f_r_a_m_e___r_a_t_e___s.html">arVENC_ROIBG_FRAME_RATE_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html">arVENC_REF_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___b_u_f___i_n_f_o___s.html">arVENC_STREAM_BUF_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H265_SLICE_SPLIT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___p_u___s.html">arVENC_H265_PU_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___t_r_a_n_s___s.html">arVENC_H265_TRANS_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___e_n_t_r_o_p_y___s.html">arVENC_H265_ENTROPY_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___d_b_l_k___s.html">arVENC_H265_DBLK_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h265___s_a_o___s.html">arVENC_H265_SAO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___i_n_t_r_a___r_e_f_r_e_s_h___s.html">arVENC_INTRA_REFRESH_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___h264_e___s.html">arVENC_MOD_H264E_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___h265_e___s.html">arVENC_MOD_H265E_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___j_p_e_g_e___s.html">arVENC_MOD_JPEGE_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___r_c___s.html">arVENC_MOD_RC_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___v_e_n_c___s.html">arVENC_MOD_VENC_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d___e_v_e_n_t___s.html">arVENC_MOD_EVENT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_o_d_p_a_r_a_m___s.html">arVENC_MODPARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_u_s_e_r___r_c___i_n_f_o___s.html">arUSER_RC_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_u_s_e_r___f_r_a_m_e___i_n_f_o___s.html">arUSER_FRAME_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_s_e___c_f_g___s.html">arVENC_SSE_CFG_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_r_o_p___i_n_f_o___s.html">arVENC_CROP_INFO_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___f_r_a_m_e___r_a_t_e___s.html">arVENC_FRAME_RATE_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_h_n___p_a_r_a_m___s.html">arVENC_CHN_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___f_o_r_e_g_r_o_u_n_d___p_r_o_t_e_c_t___s.html">arVENC_FOREGROUND_PROTECT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___d_e_b_r_e_a_t_h_e_f_f_e_c_t___s.html">arVENC_DEBREATHEFFECT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_u___p_r_e_d_i_c_t_i_o_n___s.html">arVENC_CU_PREDICTION_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___s_k_i_p___b_i_a_s___s.html">arVENC_SKIP_BIAS_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___h_i_e_r_a_r_c_h_i_c_a_l___q_p___s.html">arVENC_HIERARCHICAL_QP_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___c_h_n___p_o_o_l___s.html">arVENC_CHN_POOL_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_c___a_d_v_p_a_r_a_m___s.html">arVENC_RC_ADVPARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_o_t_a_t_i_o_n___p_a_r_a_m___s.html">arVENC_ROTATION_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">arVENC_MIRROR_PARAM_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ac9e7c1363dd80b74e2388a1eecbdbcc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac9e7c1363dd80b74e2388a1eecbdbcc3">AR_ERR_VENC_INVALID_CHNID</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_INVALID_CHNID)</td></tr>
+<tr class="separator:ac9e7c1363dd80b74e2388a1eecbdbcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817dcc942bf15ef64240b01eea009908"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a817dcc942bf15ef64240b01eea009908">AR_ERR_VENC_ILLEGAL_PARAM</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_ILLEGAL_PARAM)</td></tr>
+<tr class="separator:a817dcc942bf15ef64240b01eea009908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5d0c3fc4bb2a8780736805cb16a8fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a5f5d0c3fc4bb2a8780736805cb16a8fd">AR_ERR_VENC_EXIST</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_EXIST)</td></tr>
+<tr class="separator:a5f5d0c3fc4bb2a8780736805cb16a8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64fa3fdcc0924f9d6973876abbdff167"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a64fa3fdcc0924f9d6973876abbdff167">AR_ERR_VENC_UNEXIST</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_UNEXIST)</td></tr>
+<tr class="separator:a64fa3fdcc0924f9d6973876abbdff167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b873b4b2219bef1015a6d7565fc7ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a72b873b4b2219bef1015a6d7565fc7ef">AR_ERR_VENC_NULL_PTR</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NULL_PTR)</td></tr>
+<tr class="separator:a72b873b4b2219bef1015a6d7565fc7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d10ce1029dee49d79625fc60ce823a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a3d10ce1029dee49d79625fc60ce823a7">AR_ERR_VENC_NOT_CONFIG</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_CONFIG)</td></tr>
+<tr class="separator:a3d10ce1029dee49d79625fc60ce823a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376ec7984864349ec3b558d37a93b3e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a376ec7984864349ec3b558d37a93b3e2">AR_ERR_VENC_NOT_SUPPORT</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_SUPPORT)</td></tr>
+<tr class="separator:a376ec7984864349ec3b558d37a93b3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72976d6c1bc9df4963ac147be132d3d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a72976d6c1bc9df4963ac147be132d3d0">AR_ERR_VENC_NOT_PERM</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_PERM)</td></tr>
+<tr class="separator:a72976d6c1bc9df4963ac147be132d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15e1ecc35ac8321dc8019aa6994b203"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#af15e1ecc35ac8321dc8019aa6994b203">AR_ERR_VENC_NOMEM</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOMEM)</td></tr>
+<tr class="separator:af15e1ecc35ac8321dc8019aa6994b203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6667337af205b17fed0c5f42a734d5b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a6667337af205b17fed0c5f42a734d5b6">AR_ERR_VENC_NOBUF</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOBUF)</td></tr>
+<tr class="separator:a6667337af205b17fed0c5f42a734d5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409d2709ce51b51c8f11a5362aa39e89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a409d2709ce51b51c8f11a5362aa39e89">AR_ERR_VENC_BUF_EMPTY</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_EMPTY)</td></tr>
+<tr class="separator:a409d2709ce51b51c8f11a5362aa39e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c1c9c9dfc49d382be374984cce6a04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a36c1c9c9dfc49d382be374984cce6a04">AR_ERR_VENC_BUF_FULL</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_FULL)</td></tr>
+<tr class="separator:a36c1c9c9dfc49d382be374984cce6a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83461d8a9832e8272b85942dcf2760c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a83461d8a9832e8272b85942dcf2760c0">AR_ERR_VENC_SYS_NOTREADY</a>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_SYS_NOTREADY)</td></tr>
+<tr class="separator:a83461d8a9832e8272b85942dcf2760c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0067148a95f71fa01cb9f2f93dd0a0"><td class="memItemLeft" align="right" valign="top"><a id="aac0067148a95f71fa01cb9f2f93dd0a0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VENC_BUSY</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUSY)</td></tr>
+<tr class="separator:aac0067148a95f71fa01cb9f2f93dd0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aa0368e1c9559a4bb37a1ec0537cb557c"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2">arH264E_NALU_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aa0368e1c9559a4bb37a1ec0537cb557c">H264E_NALU_TYPE_E</a></td></tr>
+<tr class="separator:aa0368e1c9559a4bb37a1ec0537cb557c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58314adfc5678b6ab2e0da8b2ba34f8e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260">arH265E_NALU_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a58314adfc5678b6ab2e0da8b2ba34f8e">H265E_NALU_TYPE_E</a></td></tr>
+<tr class="separator:a58314adfc5678b6ab2e0da8b2ba34f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad85377bb13d3d43c4bb4991a8111cf9"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4ce">arH264E_REFSLICE_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aad85377bb13d3d43c4bb4991a8111cf9">H264E_REFSLICE_TYPE_E</a></td></tr>
+<tr class="separator:aad85377bb13d3d43c4bb4991a8111cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade7570fa29b9ec34b3212e824bf6cf07"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5">arJPEGE_PACK_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ade7570fa29b9ec34b3212e824bf6cf07">JPEGE_PACK_TYPE_E</a></td></tr>
+<tr class="separator:ade7570fa29b9ec34b3212e824bf6cf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fdc25331e0d57b2da975481db6bb819"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a9bc0b1751ef3a49f22c8c7a81f3ad7d3">arPRORES_PACK_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a6fdc25331e0d57b2da975481db6bb819">PRORES_PACK_TYPE_E</a></td></tr>
+<tr class="separator:a6fdc25331e0d57b2da975481db6bb819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca856aca55a36bf9ef3e43e6f19ee17"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="unionar_v_e_n_c___d_a_t_a___t_y_p_e___u.html">arVENC_DATA_TYPE_U</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8ca856aca55a36bf9ef3e43e6f19ee17">VENC_DATA_TYPE_U</a></td></tr>
+<tr class="separator:a8ca856aca55a36bf9ef3e43e6f19ee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe689f88f6dfbd9287fef1ff586739dc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___p_a_c_k___i_n_f_o___s.html">arVENC_PACK_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#afe689f88f6dfbd9287fef1ff586739dc">VENC_PACK_INFO_S</a></td></tr>
+<tr class="separator:afe689f88f6dfbd9287fef1ff586739dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f85d2e25d90d356c8a38a05cbae9cd6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___p_a_c_k___s.html">arVENC_PACK_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a9f85d2e25d90d356c8a38a05cbae9cd6">VENC_PACK_S</a></td></tr>
+<tr class="separator:a9f85d2e25d90d356c8a38a05cbae9cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4eab438f476edf2919f4b5b0e7eeb5"><td class="memItemLeft" align="right" valign="top"><a id="adc4eab438f476edf2919f4b5b0e7eeb5"></a>
+typedef enum <a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516">arH264E_REF_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><b>H264E_REF_TYPE_E</b></td></tr>
+<tr class="separator:adc4eab438f476edf2919f4b5b0e7eeb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785a2932eea17d2993d1c1c1ce412d30"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516">arH264E_REF_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a785a2932eea17d2993d1c1c1ce412d30">H265E_REF_TYPE_E</a></td></tr>
+<tr class="separator:a785a2932eea17d2993d1c1c1ce412d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2962ae3d20176a9f81c321465d9bde9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h264___s.html">arVENC_STREAM_INFO_H264_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac2962ae3d20176a9f81c321465d9bde9">VENC_STREAM_INFO_H264_S</a></td></tr>
+<tr class="separator:ac2962ae3d20176a9f81c321465d9bde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4850a8e1f507ca33dc74b4cf935ac86"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h265___s.html">arVENC_STREAM_INFO_H265_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aa4850a8e1f507ca33dc74b4cf935ac86">VENC_STREAM_INFO_H265_S</a></td></tr>
+<tr class="separator:aa4850a8e1f507ca33dc74b4cf935ac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2040ff4132307da8ec715303bff4c2c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_s_e___i_n_f_o___s.html">arVENC_SSE_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ae2040ff4132307da8ec715303bff4c2c">VENC_SSE_INFO_S</a></td></tr>
+<tr class="separator:ae2040ff4132307da8ec715303bff4c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b69ace12426cc1b3cc35a90785db2d4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h264___s.html">arVENC_STREAM_ADVANCE_INFO_H264_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a5b69ace12426cc1b3cc35a90785db2d4">VENC_STREAM_ADVANCE_INFO_H264_S</a></td></tr>
+<tr class="separator:a5b69ace12426cc1b3cc35a90785db2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac917edc186872f850fb5f8ab9d65c5cb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_ADVANCE_INFO_JPEG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac917edc186872f850fb5f8ab9d65c5cb">VENC_STREAM_ADVANCE_INFO_JPEG_S</a></td></tr>
+<tr class="separator:ac917edc186872f850fb5f8ab9d65c5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb9c3401445d340bb0c0f52d78fa3b3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_ADVANCE_INFO_PRORES_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a3fb9c3401445d340bb0c0f52d78fa3b3">VENC_STREAM_ADVANCE_INFO_PRORES_S</a></td></tr>
+<tr class="separator:a3fb9c3401445d340bb0c0f52d78fa3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13feeb32e7e2d49c49ff629cf9ebf3b6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h265___s.html">arVENC_STREAM_ADVANCE_INFO_H265_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a13feeb32e7e2d49c49ff629cf9ebf3b6">VENC_STREAM_ADVANCE_INFO_H265_S</a></td></tr>
+<tr class="separator:a13feeb32e7e2d49c49ff629cf9ebf3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2ffaf3bb3c583163f91fb8c50de778"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_INFO_PRORES_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a3d2ffaf3bb3c583163f91fb8c50de778">VENC_STREAM_INFO_PRORES_S</a></td></tr>
+<tr class="separator:a3d2ffaf3bb3c583163f91fb8c50de778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62708381ffceb77edfd0ac55bdbbf220"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_INFO_JPEG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a62708381ffceb77edfd0ac55bdbbf220">VENC_STREAM_INFO_JPEG_S</a></td></tr>
+<tr class="separator:a62708381ffceb77edfd0ac55bdbbf220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b3ff17f45e65c1e804db95e39b80e3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___s.html">arVENC_STREAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a></td></tr>
+<tr class="separator:ab9b3ff17f45e65c1e804db95e39b80e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e204c7d98d27ea3b30b07dec74b639"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___s.html">arVENC_STREAM_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac2e204c7d98d27ea3b30b07dec74b639">VENC_STREAM_INFO_S</a></td></tr>
+<tr class="separator:ac2e204c7d98d27ea3b30b07dec74b639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ec10ee65a6961cb517f153c55e81b8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_p_f___c_f_g___s.html">arVENC_MPF_CFG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a16ec10ee65a6961cb517f153c55e81b8">VENC_MPF_CFG_S</a></td></tr>
+<tr class="separator:a16ec10ee65a6961cb517f153c55e81b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bc11f0450c94feca379f8945aeb9c3"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760e">arVENC_PIC_RECEIVE_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#af3bc11f0450c94feca379f8945aeb9c3">VENC_PIC_RECEIVE_MODE_E</a></td></tr>
+<tr class="separator:af3bc11f0450c94feca379f8945aeb9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa3a12491eb7e7aad6fc65e45d82d1e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___j_p_e_g___s.html">arVENC_ATTR_JPEG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a2fa3a12491eb7e7aad6fc65e45d82d1e">VENC_ATTR_JPEG_S</a></td></tr>
+<tr class="separator:a2fa3a12491eb7e7aad6fc65e45d82d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86726c82baf6dc2d20302e42dee8d15d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___m_j_p_e_g___s.html">arVENC_ATTR_MJPEG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a86726c82baf6dc2d20302e42dee8d15d">VENC_ATTR_MJPEG_S</a></td></tr>
+<tr class="separator:a86726c82baf6dc2d20302e42dee8d15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ae4f5e49bb3ccd446387b0094e9bc4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___h264___s.html">arVENC_ATTR_H264_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a43ae4f5e49bb3ccd446387b0094e9bc4">VENC_ATTR_H264_S</a></td></tr>
+<tr class="separator:a43ae4f5e49bb3ccd446387b0094e9bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e10d94049a5b5b9ce32537e4b0b9f5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___h265___s.html">arVENC_ATTR_H265_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a51e10d94049a5b5b9ce32537e4b0b9f5">VENC_ATTR_H265_S</a></td></tr>
+<tr class="separator:a51e10d94049a5b5b9ce32537e4b0b9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1742bb68027488f42a0576f9139c388"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8">arPRORES_FRAMERATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad1742bb68027488f42a0576f9139c388">PRORES_FRAMERATE</a></td></tr>
+<tr class="separator:ad1742bb68027488f42a0576f9139c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aaa1a316a9a2c0a189f50ec5deba3ac"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4d">arPRORES_ASPECT_RATIO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a3aaa1a316a9a2c0a189f50ec5deba3ac">PRORES_ASPECT_RATIO</a></td></tr>
+<tr class="separator:a3aaa1a316a9a2c0a189f50ec5deba3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada04cadce7b4a0e1ea169c865b4b071b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___p_r_o_r_e_s___s.html">arVENC_ATTR_PRORES_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ada04cadce7b4a0e1ea169c865b4b071b">VENC_ATTR_PRORES_S</a></td></tr>
+<tr class="separator:ada04cadce7b4a0e1ea169c865b4b071b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfa4df8f96537222f6b833dc7b3a595"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___s.html">arVENC_ATTR_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a5dfa4df8f96537222f6b833dc7b3a595">VENC_ATTR_S</a></td></tr>
+<tr class="separator:a5dfa4df8f96537222f6b833dc7b3a595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47eea2b1d8114437a15b93af9390a572"><td class="memItemLeft" align="right" valign="top">typedef enum arVENC_GOP_MODE_E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a47eea2b1d8114437a15b93af9390a572">VENC_GOP_MODE_E</a></td></tr>
+<tr class="separator:a47eea2b1d8114437a15b93af9390a572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d697452096c8b8e613516eca4100805"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___n_o_r_m_a_l_p___s.html">arVENC_GOP_NORMALP_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8d697452096c8b8e613516eca4100805">VENC_GOP_NORMALP_S</a></td></tr>
+<tr class="separator:a8d697452096c8b8e613516eca4100805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351dfa6725975976b626e92295831e11"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___d_u_a_l_p___s.html">arVENC_GOP_DUALP_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a351dfa6725975976b626e92295831e11">VENC_GOP_DUALP_S</a></td></tr>
+<tr class="separator:a351dfa6725975976b626e92295831e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db52970bbfb75be2608811d32acfb77"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___s_m_a_r_t_p___s.html">arVENC_GOP_SMARTP_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8db52970bbfb75be2608811d32acfb77">VENC_GOP_SMARTP_S</a></td></tr>
+<tr class="separator:a8db52970bbfb75be2608811d32acfb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c351908ffa7369bd6650bbe42160ac"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___a_d_v_s_m_a_r_t_p___s.html">arVENC_GOP_ADVSMARTP_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a00c351908ffa7369bd6650bbe42160ac">VENC_GOP_ADVSMARTP_S</a></td></tr>
+<tr class="separator:a00c351908ffa7369bd6650bbe42160ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3b8731f8bbb6b65595cdb087bfab73"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___b_i_p_r_e_d_b___s.html">arVENC_GOP_BIPREDB_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a4b3b8731f8bbb6b65595cdb087bfab73">VENC_GOP_BIPREDB_S</a></td></tr>
+<tr class="separator:a4b3b8731f8bbb6b65595cdb087bfab73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b597f58a8b7eabd7d86e159319daea"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___a_t_t_r___s.html">arVENC_GOP_ATTR_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a48b597f58a8b7eabd7d86e159319daea">VENC_GOP_ATTR_S</a></td></tr>
+<tr class="separator:a48b597f58a8b7eabd7d86e159319daea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a133cd7c7de99b87e0d85b85531f176"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___a_t_t_r___s.html">arVENC_CHN_ATTR_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a></td></tr>
+<tr class="separator:a1a133cd7c7de99b87e0d85b85531f176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeca0d07b36b37c19e2424e82b4b7a35"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_e_c_v___p_i_c___p_a_r_a_m___s.html">arVENC_RECV_PIC_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aaeca0d07b36b37c19e2424e82b4b7a35">VENC_RECV_PIC_PARAM_S</a></td></tr>
+<tr class="separator:aaeca0d07b36b37c19e2424e82b4b7a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bcda30715302c4298ac2a016c1a9aae"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___s_t_a_t_u_s___s.html">arVENC_CHN_STATUS_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a7bcda30715302c4298ac2a016c1a9aae">VENC_CHN_STATUS_S</a></td></tr>
+<tr class="separator:a7bcda30715302c4298ac2a016c1a9aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ced0cefe7ded92b05e8600d4a9738ca"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H264_SLICE_SPLIT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a></td></tr>
+<tr class="separator:a8ced0cefe7ded92b05e8600d4a9738ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a1ee2aaed49c1e864e929be5235f2c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___i_n_t_r_a___p_r_e_d___s.html">arVENC_H264_INTRA_PRED_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a></td></tr>
+<tr class="separator:ad2a1ee2aaed49c1e864e929be5235f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485a084778bcc9a2af739a809b44c138"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___t_r_a_n_s___s.html">arVENC_H264_TRANS_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a></td></tr>
+<tr class="separator:a485a084778bcc9a2af739a809b44c138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e7e45beaf745552ae88e17c8ae5ae2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___e_n_t_r_o_p_y___s.html">arVENC_H264_ENTROPY_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a></td></tr>
+<tr class="separator:ac0e7e45beaf745552ae88e17c8ae5ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301bfa274d96c63eae3744ac70243f7c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___p_o_c___s.html">arVENC_H264_POC_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a301bfa274d96c63eae3744ac70243f7c">VENC_H264_POC_S</a></td></tr>
+<tr class="separator:a301bfa274d96c63eae3744ac70243f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa88bde983727dd522ee08f2ecee7c2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___d_b_l_k___s.html">arVENC_H264_DBLK_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a></td></tr>
+<tr class="separator:a1fa88bde983727dd522ee08f2ecee7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04e1b5c7e1e660e6e162292b5fcbc6b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___v_u_i___t_i_m_e___i_n_f_o___s.html">arVENC_H264_VUI_TIME_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ae04e1b5c7e1e660e6e162292b5fcbc6b">VENC_VUI_H264_TIME_INFO_S</a></td></tr>
+<tr class="separator:ae04e1b5c7e1e660e6e162292b5fcbc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ed217cc968d1305e96ab715a99b6bb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___a_s_p_e_c_t___r_a_t_i_o___s.html">arVENC_VUI_ASPECT_RATIO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad2ed217cc968d1305e96ab715a99b6bb">VENC_VUI_ASPECT_RATIO_S</a></td></tr>
+<tr class="separator:ad2ed217cc968d1305e96ab715a99b6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a1a0ca169884091bd8ac038b7ad30d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___v_i_d_e_o___s_i_g_n_a_l___s.html">arVENC_VUI_VIDEO_SIGNAL_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a57a1a0ca169884091bd8ac038b7ad30d">VENC_VUI_VIDEO_SIGNAL_S</a></td></tr>
+<tr class="separator:a57a1a0ca169884091bd8ac038b7ad30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add76515ebe97ac5cce845c038c8eb26e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___b_i_t_s_t_r_e_a_m___r_e_s_t_r_i_c___s.html">arVENC_VUI_BITSTREAM_RESTRIC_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#add76515ebe97ac5cce845c038c8eb26e">VENC_VUI_BITSTREAM_RESTRIC_S</a></td></tr>
+<tr class="separator:add76515ebe97ac5cce845c038c8eb26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3450fe14086f1e19b3c7470db9de95b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h264___v_u_i___s.html">arVENC_H264_VUI_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a></td></tr>
+<tr class="separator:ad3450fe14086f1e19b3c7470db9de95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09b84b3939026d6a34656467610a312"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___h265___t_i_m_e___i_n_f_o___s.html">arVENC_VUI_H265_TIME_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac09b84b3939026d6a34656467610a312">VENC_VUI_H265_TIME_INFO_S</a></td></tr>
+<tr class="separator:ac09b84b3939026d6a34656467610a312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7531fecc75b9d08992fc4e884dcd8b31"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___v_u_i___s.html">arVENC_H265_VUI_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a></td></tr>
+<tr class="separator:a7531fecc75b9d08992fc4e884dcd8b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbb35a5e045bc02c12c8bbbfbe72938"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___j_p_e_g___p_a_r_a_m___s.html">arVENC_JPEG_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a></td></tr>
+<tr class="separator:a0fbb35a5e045bc02c12c8bbbfbe72938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8031e0babd18683705b10332438927"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_j_p_e_g___p_a_r_a_m___s.html">arVENC_MJPEG_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a></td></tr>
+<tr class="separator:a7d8031e0babd18683705b10332438927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf09855fbb467b2838937f933b37181"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html">arVENC_PRORES_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aaaf09855fbb467b2838937f933b37181">VENC_PRORES_PARAM_S</a></td></tr>
+<tr class="separator:aaaf09855fbb467b2838937f933b37181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab4b7bfeac25690867968da2854d962"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___s.html">arVENC_ROI_ATTR_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a></td></tr>
+<tr class="separator:aaab4b7bfeac25690867968da2854d962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f3ebd471844ea6c1b34e835f5c8342"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___e_x___s.html">arVENC_ROI_ATTR_EX_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a></td></tr>
+<tr class="separator:a59f3ebd471844ea6c1b34e835f5c8342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e30eeac6bad14aef176a0fb4aa27e2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i_b_g___f_r_a_m_e___r_a_t_e___s.html">arVENC_ROIBG_FRAME_RATE_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a></td></tr>
+<tr class="separator:a87e30eeac6bad14aef176a0fb4aa27e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f69d8d0bf35f0ab03e5df2378e0de3e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html">arVENC_REF_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a></td></tr>
+<tr class="separator:a0f69d8d0bf35f0ab03e5df2378e0de3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba2c7b1aaa4e142a82a74402f0b8ec5"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bf">arVENC_JPEG_ENCODE_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a></td></tr>
+<tr class="separator:adba2c7b1aaa4e142a82a74402f0b8ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f1f45d320905e393a9ca0acdbfe8c3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___b_u_f___i_n_f_o___s.html">arVENC_STREAM_BUF_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a04f1f45d320905e393a9ca0acdbfe8c3">VENC_STREAM_BUF_INFO_S</a></td></tr>
+<tr class="separator:a04f1f45d320905e393a9ca0acdbfe8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad508f8a38b119dbdf26a1812d6df2c8b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H265_SLICE_SPLIT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a></td></tr>
+<tr class="separator:ad508f8a38b119dbdf26a1812d6df2c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21999e84254574e24928da7c1449d478"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___p_u___s.html">arVENC_H265_PU_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a></td></tr>
+<tr class="separator:a21999e84254574e24928da7c1449d478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28eeec9573f11f0899064785252c02de"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___t_r_a_n_s___s.html">arVENC_H265_TRANS_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a></td></tr>
+<tr class="separator:a28eeec9573f11f0899064785252c02de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc828b8da2cc94e3dfafd1c59ff92973"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___e_n_t_r_o_p_y___s.html">arVENC_H265_ENTROPY_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a></td></tr>
+<tr class="separator:acc828b8da2cc94e3dfafd1c59ff92973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca15ad88091570d01ab54b98dfab559"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___d_b_l_k___s.html">arVENC_H265_DBLK_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a></td></tr>
+<tr class="separator:a5ca15ad88091570d01ab54b98dfab559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e14b7bbb739bf500005ae3ed97967af"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h265___s_a_o___s.html">arVENC_H265_SAO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a></td></tr>
+<tr class="separator:a4e14b7bbb739bf500005ae3ed97967af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2d395e3cd1b221c66e837cb6fbd3a9"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650">arVENC_INTRA_REFRESH_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aaa2d395e3cd1b221c66e837cb6fbd3a9">VENC_INTRA_REFRESH_MODE_E</a></td></tr>
+<tr class="separator:aaa2d395e3cd1b221c66e837cb6fbd3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c79767548988c013abb6d318a362863"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___i_n_t_r_a___r_e_f_r_e_s_h___s.html">arVENC_INTRA_REFRESH_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a></td></tr>
+<tr class="separator:a8c79767548988c013abb6d318a362863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94e006c7e813ce12cf5c42dbb046ebf"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9">arVENC_MODTYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aa94e006c7e813ce12cf5c42dbb046ebf">VENC_MODTYPE_E</a></td></tr>
+<tr class="separator:aa94e006c7e813ce12cf5c42dbb046ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dd8abfe209fdf6b234cdf94424f85e3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___h264_e___s.html">arVENC_MOD_H264E_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8dd8abfe209fdf6b234cdf94424f85e3">VENC_MOD_H264E_S</a></td></tr>
+<tr class="separator:a8dd8abfe209fdf6b234cdf94424f85e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa301f5117469b882e28afe89f86f2983"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___h265_e___s.html">arVENC_MOD_H265E_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aa301f5117469b882e28afe89f86f2983">VENC_MOD_H265E_S</a></td></tr>
+<tr class="separator:aa301f5117469b882e28afe89f86f2983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64441b7712821e3835c3fb80c8b6862f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___j_p_e_g_e___s.html">arVENC_MOD_JPEGE_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a64441b7712821e3835c3fb80c8b6862f">VENC_MOD_JPEGE_S</a></td></tr>
+<tr class="separator:a64441b7712821e3835c3fb80c8b6862f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2d0df429c044128bc7c4cf6bf95b78"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___r_c___s.html">arVENC_MOD_RC_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a9f2d0df429c044128bc7c4cf6bf95b78">VENC_MOD_RC_S</a></td></tr>
+<tr class="separator:a9f2d0df429c044128bc7c4cf6bf95b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea75ec8a3899cd5e88f7d03b41183663"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___v_e_n_c___s.html">arVENC_MOD_VENC_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aea75ec8a3899cd5e88f7d03b41183663">VENC_MOD_VENC_S</a></td></tr>
+<tr class="separator:aea75ec8a3899cd5e88f7d03b41183663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856e7df8a5a1bdaa86add394a961b59a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___e_v_e_n_t___s.html">arVENC_MOD_EVENT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a856e7df8a5a1bdaa86add394a961b59a">VENC_MOD_EVENT_S</a></td></tr>
+<tr class="separator:a856e7df8a5a1bdaa86add394a961b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fceadc87c68b8cddd93327937a77317"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d_p_a_r_a_m___s.html">arVENC_MODPARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a></td></tr>
+<tr class="separator:a8fceadc87c68b8cddd93327937a77317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3afce7f00a29cfb946432013cb01738"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2">arVENC_FRAME_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ae3afce7f00a29cfb946432013cb01738">VENC_FRAME_TYPE_E</a></td></tr>
+<tr class="separator:ae3afce7f00a29cfb946432013cb01738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b80300666faefdf4cdf08f7f27181de"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_u_s_e_r___r_c___i_n_f_o___s.html">arUSER_RC_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a2b80300666faefdf4cdf08f7f27181de">USER_RC_INFO_S</a></td></tr>
+<tr class="separator:a2b80300666faefdf4cdf08f7f27181de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ce8772ca35ed2c285689f4f0bcb502"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_u_s_e_r___f_r_a_m_e___i_n_f_o___s.html">arUSER_FRAME_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a63ce8772ca35ed2c285689f4f0bcb502">USER_FRAME_INFO_S</a></td></tr>
+<tr class="separator:a63ce8772ca35ed2c285689f4f0bcb502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f421dab2efdfcd3cbfa65cedfa1f6a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_s_e___c_f_g___s.html">arVENC_SSE_CFG_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a></td></tr>
+<tr class="separator:a55f421dab2efdfcd3cbfa65cedfa1f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5343e8087e0c7f33a9c5cbb6db7f70"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_r_o_p___i_n_f_o___s.html">arVENC_CROP_INFO_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a4d5343e8087e0c7f33a9c5cbb6db7f70">VENC_CROP_INFO_S</a></td></tr>
+<tr class="separator:a4d5343e8087e0c7f33a9c5cbb6db7f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b04bf8c74d38fe003afd4d9fee54fbe"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___f_r_a_m_e___r_a_t_e___s.html">arVENC_FRAME_RATE_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a9b04bf8c74d38fe003afd4d9fee54fbe">VENC_FRAME_RATE_S</a></td></tr>
+<tr class="separator:a9b04bf8c74d38fe003afd4d9fee54fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42f1a703771de1d36bdcc5924468391"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___p_a_r_a_m___s.html">arVENC_CHN_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a></td></tr>
+<tr class="separator:ac42f1a703771de1d36bdcc5924468391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86325af9940800029d6721d91e8d160"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___f_o_r_e_g_r_o_u_n_d___p_r_o_t_e_c_t___s.html">arVENC_FOREGROUND_PROTECT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad86325af9940800029d6721d91e8d160">VENC_FOREGROUND_PROTECT_S</a></td></tr>
+<tr class="separator:ad86325af9940800029d6721d91e8d160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9133403e99802ae5b4425b42be71febd"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079f">arVENC_SCENE_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a9133403e99802ae5b4425b42be71febd">VENC_SCENE_MODE_E</a></td></tr>
+<tr class="separator:a9133403e99802ae5b4425b42be71febd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9ec7f941027aec51c5f910479326b7"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___d_e_b_r_e_a_t_h_e_f_f_e_c_t___s.html">arVENC_DEBREATHEFFECT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a></td></tr>
+<tr class="separator:afe9ec7f941027aec51c5f910479326b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f036704f4ce1a9358c3f6a8c5b5a881"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_u___p_r_e_d_i_c_t_i_o_n___s.html">arVENC_CU_PREDICTION_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a></td></tr>
+<tr class="separator:a8f036704f4ce1a9358c3f6a8c5b5a881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e2154947b5253090dcec8930960ea8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___s_k_i_p___b_i_a_s___s.html">arVENC_SKIP_BIAS_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a93e2154947b5253090dcec8930960ea8">VENC_SKIP_BIAS_S</a></td></tr>
+<tr class="separator:a93e2154947b5253090dcec8930960ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b3aecc6c776680189fb5deac536736"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___h_i_e_r_a_r_c_h_i_c_a_l___q_p___s.html">arVENC_HIERARCHICAL_QP_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a></td></tr>
+<tr class="separator:a26b3aecc6c776680189fb5deac536736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec737010157c6290f14b06c185fc5c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___p_o_o_l___s.html">arVENC_CHN_POOL_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#adec737010157c6290f14b06c185fc5c6">VENC_CHN_POOL_S</a></td></tr>
+<tr class="separator:adec737010157c6290f14b06c185fc5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6fa78d46d695b0e0a3750614f4ba66"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_c___a_d_v_p_a_r_a_m___s.html">arVENC_RC_ADVPARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a8b6fa78d46d695b0e0a3750614f4ba66">VENC_RC_ADVPARAM_S</a></td></tr>
+<tr class="separator:a8b6fa78d46d695b0e0a3750614f4ba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef9a62a53983af871aa983b3187df8a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_e_n_c___r_o_t_a_t_i_o_n___p_a_r_a_m___s.html">arVENC_ROTATION_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a></td></tr>
+<tr class="separator:a3ef9a62a53983af871aa983b3187df8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab40ba8962ebb57a58bf649a2c4ef814"><td class="memItemLeft" align="right" valign="top"><a id="aab40ba8962ebb57a58bf649a2c4ef814"></a>
+typedef struct <a class="el" href="structar_v_e_n_c___m_i_r_r_o_r___p_a_r_a_m___s.html">arVENC_MIRROR_PARAM_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VENC_MIRROR_PARAM_S</b></td></tr>
+<tr class="separator:aab40ba8962ebb57a58bf649a2c4ef814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a4130fa5f2b4567425fddbd4a62c33e35"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a4130fa5f2b4567425fddbd4a62c33e35">ENUM_MPI_VENC_EXTENSION_FLAGS</a> { <a class="el" href="ar__comm__venc_8h.html#a4130fa5f2b4567425fddbd4a62c33e35aa3e938e3c83ee763691be28656a5cc27">AR_VIDEO_CODEC_PARAM_MPI_EXT_INSTANCE_PARALLESIM</a> = 1
+ }</td></tr>
+<tr class="separator:a4130fa5f2b4567425fddbd4a62c33e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf16a456bf620d6c641f9ea25edc29d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2">arH264E_NALU_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2a30abee849e30d4dfab0185f52cf0c7b6">H264E_NALU_BSLICE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2aed2e3097696f563a3df55c91024046e1">H264E_NALU_PSLICE</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2a003fb6b59c28b68ea82f5a259eddbdae">H264E_NALU_ISLICE</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2ab146fffb61f0e6f6157e35d780bc4236">H264E_NALU_IDRSLICE</a> = 5, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2afb608a9897a3de06645dae34cdb4cc97">H264E_NALU_SEI</a> = 6, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2a60d59b16f7269a9f7b1f2fb811b289e2">H264E_NALU_SPS</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2a52f7dc64a2dca6ee9001c85801283c9a">H264E_NALU_PPS</a> = 8, 
+<br />
+&#160;&#160;<b>H264E_NALU_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:abf16a456bf620d6c641f9ea25edc29d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82510ff859192fcfa8e002f013175260"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260">arH265E_NALU_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a346c461c353d7ef50b854f62826a3b83">H265E_NALU_BSLICE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a79bd6efcb63e7c0abda521b92342a09a">H265E_NALU_PSLICE</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a2885bfec9c7fe8c19f8b682105eaf71a">H265E_NALU_ISLICE</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a77fae44e343a1c99e8591670d5bc6525">H265E_NALU_IDRSLICE</a> = 19, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a84fcb6fe28728822c522ee02a8bed56c">H265E_NALU_VPS</a> = 32, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a3020c1a38915a2780d084b1a66e521d2">H265E_NALU_SPS</a> = 33, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260a21beee8ac578d7258965817360a1544f">H265E_NALU_PPS</a> = 34, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260aceec4d2fb262a595af6cc8de9967b069">H265E_NALU_SEI</a> = 39, 
+<br />
+&#160;&#160;<b>H265E_NALU_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a82510ff859192fcfa8e002f013175260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f38c1c767d81ea78666866d9cdf4ce"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4ce">arH264E_REFSLICE_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4ceaa1348aa480d40018f920bdae147f4ca1">H264E_REFSLICE_FOR_1X</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4cead4718f8960833ba17d425c76fec9a6ef">H264E_REFSLICE_FOR_2X</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4cea89be39cd64ca7c118ca22fe45a81e262">H264E_REFSLICE_FOR_4X</a> = 5, 
+<br />
+&#160;&#160;<b>H264E_REFSLICE_FOR_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a00f38c1c767d81ea78666866d9cdf4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79c59988b3a2a2e5da79ba4bc8b70a5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5">arJPEGE_PACK_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5ae0baf276927228f7c920ea73d394a1c8">JPEGE_PACK_ECS</a> = 5, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5a29a1d566e5e4ca29c0b383484e5172e5">JPEGE_PACK_APP</a> = 6, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5a4ad58d0c4d4fcd5e5b4fb8d90c33d54c">JPEGE_PACK_VDO</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5aa2aed89b4f2986ac26fc04b2d67c3ec5">JPEGE_PACK_PIC</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5a08a97d6fafb3c6f730f50c8417e0bbbe">JPEGE_PACK_DCF</a> = 9, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5aa974c7247eeea54ec4951c1549d8eda1">JPEGE_PACK_DCF_PIC</a> = 10, 
+<br />
+&#160;&#160;<b>JPEGE_PACK_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ad79c59988b3a2a2e5da79ba4bc8b70a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc0b1751ef3a49f22c8c7a81f3ad7d3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a9bc0b1751ef3a49f22c8c7a81f3ad7d3">arPRORES_PACK_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a9bc0b1751ef3a49f22c8c7a81f3ad7d3a3237e7f080fec0bf9205268329b0f611">PRORES_PACK_PIC</a> = 1, 
+<br />
+&#160;&#160;<b>PRORES_PACK_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a9bc0b1751ef3a49f22c8c7a81f3ad7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ff8d2d414c4b63175a1e11109e5516"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516">arH264E_REF_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a45a0530f142b1f363db1a439c57a55d4">BASE_IDRSLICE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a89eb8d85843ca4ee29ac8f4d3975bcb4">BASE_PSLICE_REFTOIDR</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a4389f3995986cab12089736640864685">BASE_PSLICE_REFBYBASE</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a7d105e0ec7ef7cc312d2196a2da28e3c">BASE_PSLICE_REFBYENHANCE</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a9924f0326bf48dab39ac0eab9516e780">ENHANCE_PSLICE_REFBYENHANCE</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516a9ea2ab8b7e2e65c02a9923b0ea19b239">ENHANCE_PSLICE_NOTFORREF</a>, 
+<br />
+&#160;&#160;<b>ENHANCE_PSLICE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a01ff8d2d414c4b63175a1e11109e5516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d36251005a830085fd6b5f1914760e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760e">arVENC_PIC_RECEIVE_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760ea7d41f792a3c2a9bc5834ed291422cdf4">VENC_PIC_RECEIVE_SINGLE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760ea3900bb388486166f13d0aa76413f335b">VENC_PIC_RECEIVE_MULTI</a>, 
+<br />
+&#160;&#160;<b>VENC_PIC_RECEIVE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a47d36251005a830085fd6b5f1914760e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25e33706510615d313ce3f7cf785be8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8">arPRORES_FRAMERATE</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8aa3f18cf2b58ef7d45462f13d2b864a0f">PRORES_FR_UNKNOWN</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a02e6463a55b01c826918697dd952362e">PRORES_FR_23_976</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a0fea0644ed5c16c4cc27bd58074d66cd">PRORES_FR_24</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a2d80c4e1b407cbc15fc2b0bd8f549160">PRORES_FR_25</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a6fb98463c8037f68cd623cc86495175e">PRORES_FR_29_97</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a287f2bfbfa29813d59ed986bfb68afa4">PRORES_FR_30</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8af806a02e49c56c130ecdc259cef16cac">PRORES_FR_50</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8af6247f1c30709c2b0cd6e2c55b440de0">PRORES_FR_59_94</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8a467ee5d04711724d5720cdf4cb3e0a73">PRORES_FR_60</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8ac7c60712d0091628b88993bfdf851219">PRORES_FR_100</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8aeb7ff24e766c844cf0cb1150dc945200">PRORES_FR_119_88</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8ae931c2f5be1a1eef9244a0a4b5b9b876">PRORES_FR_120</a>, 
+<br />
+&#160;&#160;<b>PRORES_FR_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ad25e33706510615d313ce3f7cf785be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9928797d24d6a2305bc721a9111e4d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4d">arPRORES_ASPECT_RATIO</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4daa1b09212687ee153df86cf558c30c163">PRORES_ASPECT_RATIO_UNKNOWN</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4da8262a48cc8ae6f0fd06657e94cd3f0d9">PRORES_ASPECT_RATIO_SQUARE</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4da25471321d5b69115ab2523ca641da913">PRORES_ASPECT_RATIO_4_3</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4da8e481048adbc74dec40a5c91601cce1a">PRORES_ASPECT_RATIO_16_9</a>, 
+<br />
+&#160;&#160;<b>PRORES_ASPECT_RATIO_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a6e9928797d24d6a2305bc721a9111e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09af4c632b2d8a1493f52228b4e3cd40"><td class="memItemLeft" align="right" valign="top"><a id="a09af4c632b2d8a1493f52228b4e3cd40"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>arVENC_GOP_MODE_E</b> { <br />
+&#160;&#160;<b>VENC_GOPMODE_NORMALP</b> = 0, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_DUALP</b> = 1, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_SMARTP</b> = 2, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_ADVSMARTP</b> = 3, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_BIPREDB</b> = 4, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_LOWDELAYB</b> = 5, 
+<br />
+&#160;&#160;<b>VENC_GOPMODE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a09af4c632b2d8a1493f52228b4e3cd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066b4317906197480f5b76cf713ae4bf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bf">arVENC_JPEG_ENCODE_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bfa18695fbf037e4cd81c45e0d85590132b">JPEG_ENCODE_ALL</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bfae56141f9b6c71fa22d0c5b1e69b0951d">JPEG_ENCODE_SNAP</a> = 1, 
+<br />
+&#160;&#160;<b>JPEG_ENCODE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a066b4317906197480f5b76cf713ae4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad69d69c1da17ceb6aeaaee09af51650"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650">arVENC_INTRA_REFRESH_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650ae88c2dcc8a0b3312a4a505d83ff2f6f7">INTRA_REFRESH_ROW</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650afc694e0efb237e7a77dc9db9ae959354">INTRA_REFRESH_COLUMN</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650ade05dc5b2d51a21b721de000d52639e2">INTRA_REFRESH_NUM</a>, 
+<br />
+&#160;&#160;<b>INTRA_REFRESH_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:aad69d69c1da17ceb6aeaaee09af51650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a044e8469aa27edd49bff36d740e763c9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9">arVENC_MODTYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9a748b6a5aee43eef8c1b5b5119dbd6151">MODTYPE_VENC</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9a53b49b59ee330c2cb037c0b8171b4b62">MODTYPE_H264E</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9a15257093f8ece703c746c5de58cb0b4d">MODTYPE_H265E</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9aa2c8de38d2d0e2ccb8d551a773329437">MODTYPE_JPEGE</a>, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9a1c0302a47470fa30f5c9acd35ed50f0a">MODTYPE_RC</a>, 
+<br />
+&#160;&#160;<b>MODTYPE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a044e8469aa27edd49bff36d740e763c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c8fdaf4ab763338c803ddb55783ec2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2">arVENC_FRAME_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2a1f6977e8d715413d646af29bfdfdbcf2">VENC_FRAME_TYPE_NONE</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2a377d487b26f5abb49b3d6b704c9b5267">VENC_FRAME_TYPE_IDR</a>, 
+<br />
+&#160;&#160;<b>VENC_FRAME_TYPE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ae1c8fdaf4ab763338c803ddb55783ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d726d36c5eb491354e73eee36a079f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079f">arVENC_SCENE_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079fa718ce70a4822792325ef041c94dd28a3">SCENE_0</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079faf4b4ecae1bbc5ab7c0426c73dd69c9df">SCENE_1</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079fabde03e8f3722127c778be49fcbdf7b87">SCENE_2</a> = 2, 
+<br />
+&#160;&#160;<b>SCENE_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a44d726d36c5eb491354e73eee36a079f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>描述视频编码相关的通用数据结构 </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a409d2709ce51b51c8f11a5362aa39e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409d2709ce51b51c8f11a5362aa39e89">&#9670;&nbsp;</a></span>AR_ERR_VENC_BUF_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_BUF_EMPTY&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_EMPTY)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：缓冲区中数据满 </p>
+
+</div>
+</div>
+<a id="a36c1c9c9dfc49d382be374984cce6a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c1c9c9dfc49d382be374984cce6a04">&#9670;&nbsp;</a></span>AR_ERR_VENC_BUF_FULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_BUF_FULL&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_FULL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：系统没有初始化或没有加载相应模块 </p>
+
+</div>
+</div>
+<a id="a5f5d0c3fc4bb2a8780736805cb16a8fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5d0c3fc4bb2a8780736805cb16a8fd">&#9670;&nbsp;</a></span>AR_ERR_VENC_EXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_EXIST&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_EXIST)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：试图使用或者销毁不存在的设备、通道或者资源 </p>
+
+</div>
+</div>
+<a id="a817dcc942bf15ef64240b01eea009908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817dcc942bf15ef64240b01eea009908">&#9670;&nbsp;</a></span>AR_ERR_VENC_ILLEGAL_PARAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_ILLEGAL_PARAM&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_ILLEGAL_PARAM)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：试图申请或者创建已经存在的设备、通道或者资源 </p>
+
+</div>
+</div>
+<a id="ac9e7c1363dd80b74e2388a1eecbdbcc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e7c1363dd80b74e2388a1eecbdbcc3">&#9670;&nbsp;</a></span>AR_ERR_VENC_INVALID_CHNID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_INVALID_CHNID&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_INVALID_CHNID)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt; 错误码：通道 ID 超出合法范围 错误码：参数超出合法范围 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a6667337af205b17fed0c5f42a734d5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6667337af205b17fed0c5f42a734d5b6">&#9670;&nbsp;</a></span>AR_ERR_VENC_NOBUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NOBUF&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOBUF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：缓冲区中无数据 </p>
+
+</div>
+</div>
+<a id="af15e1ecc35ac8321dc8019aa6994b203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15e1ecc35ac8321dc8019aa6994b203">&#9670;&nbsp;</a></span>AR_ERR_VENC_NOMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NOMEM&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOMEM)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：分配缓存失败，如申请的数据缓存去太大 </p>
+
+</div>
+</div>
+<a id="a3d10ce1029dee49d79625fc60ce823a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d10ce1029dee49d79625fc60ce823a7">&#9670;&nbsp;</a></span>AR_ERR_VENC_NOT_CONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NOT_CONFIG&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_CONFIG)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：不支持的操作或者功能 </p>
+
+</div>
+</div>
+<a id="a72976d6c1bc9df4963ac147be132d3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72976d6c1bc9df4963ac147be132d3d0">&#9670;&nbsp;</a></span>AR_ERR_VENC_NOT_PERM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NOT_PERM&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_PERM)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：分配内存失败，如系统内存不足 </p>
+
+</div>
+</div>
+<a id="a376ec7984864349ec3b558d37a93b3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a376ec7984864349ec3b558d37a93b3e2">&#9670;&nbsp;</a></span>AR_ERR_VENC_NOT_SUPPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NOT_SUPPORT&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_SUPPORT)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码： 该操作不允许，如试图修改静态配置参数 </p>
+
+</div>
+</div>
+<a id="a72b873b4b2219bef1015a6d7565fc7ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b873b4b2219bef1015a6d7565fc7ef">&#9670;&nbsp;</a></span>AR_ERR_VENC_NULL_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_NULL_PTR&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_NULL_PTR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：使用前未初始化系统，设备或通道。 </p>
+
+</div>
+</div>
+<a id="a83461d8a9832e8272b85942dcf2760c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83461d8a9832e8272b85942dcf2760c0">&#9670;&nbsp;</a></span>AR_ERR_VENC_SYS_NOTREADY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_SYS_NOTREADY&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_SYS_NOTREADY)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：VENC系统忙 </p>
+
+</div>
+</div>
+<a id="a64fa3fdcc0924f9d6973876abbdff167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64fa3fdcc0924f9d6973876abbdff167">&#9670;&nbsp;</a></span>AR_ERR_VENC_UNEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_ERR_VENC_UNEXIST&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VENC, HAL_ERR_LEVEL_ERROR, HAL_ERR_UNEXIST)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>错误码：函数参数中有空指针 </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="aa0368e1c9559a4bb37a1ec0537cb557c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0368e1c9559a4bb37a1ec0537cb557c">&#9670;&nbsp;</a></span>H264E_NALU_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2">arH264E_NALU_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#aa0368e1c9559a4bb37a1ec0537cb557c">H264E_NALU_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265码流NALU类型。 </p>
+
+</div>
+</div>
+<a id="aad85377bb13d3d43c4bb4991a8111cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad85377bb13d3d43c4bb4991a8111cf9">&#9670;&nbsp;</a></span>H264E_REFSLICE_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4ce">arH264E_REFSLICE_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#aad85377bb13d3d43c4bb4991a8111cf9">H264E_REFSLICE_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG码流的PACK类型。 </p>
+
+</div>
+</div>
+<a id="a58314adfc5678b6ab2e0da8b2ba34f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58314adfc5678b6ab2e0da8b2ba34f8e">&#9670;&nbsp;</a></span>H265E_NALU_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260">arH265E_NALU_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#a58314adfc5678b6ab2e0da8b2ba34f8e">H265E_NALU_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264编码条带参考类型。 </p>
+
+</div>
+</div>
+<a id="a785a2932eea17d2993d1c1c1ce412d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785a2932eea17d2993d1c1c1ce412d30">&#9670;&nbsp;</a></span>H265E_REF_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516">arH264E_REF_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#a785a2932eea17d2993d1c1c1ce412d30">H265E_REF_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议码流特征信息。 </p>
+
+</div>
+</div>
+<a id="ade7570fa29b9ec34b3212e824bf6cf07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade7570fa29b9ec34b3212e824bf6cf07">&#9670;&nbsp;</a></span>JPEGE_PACK_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5">arJPEGE_PACK_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#ade7570fa29b9ec34b3212e824bf6cf07">JPEGE_PACK_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES码流的PACK类型。 </p>
+
+</div>
+</div>
+<a id="a3aaa1a316a9a2c0a189f50ec5deba3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aaa1a316a9a2c0a189f50ec5deba3ac">&#9670;&nbsp;</a></span>PRORES_ASPECT_RATIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4d">arPRORES_ASPECT_RATIO</a> <a class="el" href="ar__comm__venc_8h.html#a3aaa1a316a9a2c0a189f50ec5deba3ac">PRORES_ASPECT_RATIO</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES属性结构体。 </p>
+
+</div>
+</div>
+<a id="ad1742bb68027488f42a0576f9139c388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1742bb68027488f42a0576f9139c388">&#9670;&nbsp;</a></span>PRORES_FRAMERATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8">arPRORES_FRAMERATE</a> <a class="el" href="ar__comm__venc_8h.html#ad1742bb68027488f42a0576f9139c388">PRORES_FRAMERATE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES幅型比定义。 </p>
+
+</div>
+</div>
+<a id="a6fdc25331e0d57b2da975481db6bb819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fdc25331e0d57b2da975481db6bb819">&#9670;&nbsp;</a></span>PRORES_PACK_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a9bc0b1751ef3a49f22c8c7a81f3ad7d3">arPRORES_PACK_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#a6fdc25331e0d57b2da975481db6bb819">PRORES_PACK_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义码流结果类型 </p>
+
+</div>
+</div>
+<a id="a63ce8772ca35ed2c285689f4f0bcb502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ce8772ca35ed2c285689f4f0bcb502">&#9670;&nbsp;</a></span>USER_FRAME_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_u_s_e_r___f_r_a_m_e___i_n_f_o___s.html">arUSER_FRAME_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#a63ce8772ca35ed2c285689f4f0bcb502">USER_FRAME_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SSERegion模块中参数。 </p>
+
+</div>
+</div>
+<a id="a2b80300666faefdf4cdf08f7f27181de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b80300666faefdf4cdf08f7f27181de">&#9670;&nbsp;</a></span>USER_RC_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_u_s_e_r___r_c___i_n_f_o___s.html">arUSER_RC_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#a2b80300666faefdf4cdf08f7f27181de">USER_RC_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>用户发送图像信息结构体。 </p>
+
+</div>
+</div>
+<a id="a43ae4f5e49bb3ccd446387b0094e9bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ae4f5e49bb3ccd446387b0094e9bc4">&#9670;&nbsp;</a></span>VENC_ATTR_H264_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___h264___s.html">arVENC_ATTR_H264_S</a> <a class="el" href="ar__comm__venc_8h.html#a43ae4f5e49bb3ccd446387b0094e9bc4">VENC_ATTR_H264_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265编码属性结构体。 </p>
+
+</div>
+</div>
+<a id="a51e10d94049a5b5b9ce32537e4b0b9f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51e10d94049a5b5b9ce32537e4b0b9f5">&#9670;&nbsp;</a></span>VENC_ATTR_H265_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___h265___s.html">arVENC_ATTR_H265_S</a> <a class="el" href="ar__comm__venc_8h.html#a51e10d94049a5b5b9ce32537e4b0b9f5">VENC_ATTR_H265_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES帧定义。 </p>
+
+</div>
+</div>
+<a id="a2fa3a12491eb7e7aad6fc65e45d82d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa3a12491eb7e7aad6fc65e45d82d1e">&#9670;&nbsp;</a></span>VENC_ATTR_JPEG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___j_p_e_g___s.html">arVENC_ATTR_JPEG_S</a> <a class="el" href="ar__comm__venc_8h.html#a2fa3a12491eb7e7aad6fc65e45d82d1e">VENC_ATTR_JPEG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义MJPEG抓拍属性结构体。 </p>
+
+</div>
+</div>
+<a id="a86726c82baf6dc2d20302e42dee8d15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86726c82baf6dc2d20302e42dee8d15d">&#9670;&nbsp;</a></span>VENC_ATTR_MJPEG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___m_j_p_e_g___s.html">arVENC_ATTR_MJPEG_S</a> <a class="el" href="ar__comm__venc_8h.html#a86726c82baf6dc2d20302e42dee8d15d">VENC_ATTR_MJPEG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264编码属性结构体。 </p>
+
+</div>
+</div>
+<a id="ada04cadce7b4a0e1ea169c865b4b071b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada04cadce7b4a0e1ea169c865b4b071b">&#9670;&nbsp;</a></span>VENC_ATTR_PRORES_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___p_r_o_r_e_s___s.html">arVENC_ATTR_PRORES_S</a> <a class="el" href="ar__comm__venc_8h.html#ada04cadce7b4a0e1ea169c865b4b071b">VENC_ATTR_PRORES_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>参数有更新; 定义编码器属性结构体。 </dd></dl>
+
+</div>
+</div>
+<a id="a5dfa4df8f96537222f6b833dc7b3a595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfa4df8f96537222f6b833dc7b3a595">&#9670;&nbsp;</a></span>VENC_ATTR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___a_t_t_r___s.html">arVENC_ATTR_S</a> <a class="el" href="ar__comm__venc_8h.html#a5dfa4df8f96537222f6b833dc7b3a595">VENC_ATTR_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264/H.265 GOP类型。 </p>
+
+</div>
+</div>
+<a id="a1a133cd7c7de99b87e0d85b85531f176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a133cd7c7de99b87e0d85b85531f176">&#9670;&nbsp;</a></span>VENC_CHN_ATTR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___a_t_t_r___s.html">arVENC_CHN_ATTR_S</a> <a class="el" href="ar__comm__venc_8h.html#a1a133cd7c7de99b87e0d85b85531f176">VENC_CHN_ATTR_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码通道连续接收并编码的帧数结构体。 </p>
+
+</div>
+</div>
+<a id="ac42f1a703771de1d36bdcc5924468391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42f1a703771de1d36bdcc5924468391">&#9670;&nbsp;</a></span>VENC_CHN_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___p_a_r_a_m___s.html">arVENC_CHN_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#ac42f1a703771de1d36bdcc5924468391">VENC_CHN_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>前景保护参数结构体。 </p>
+
+</div>
+</div>
+<a id="adec737010157c6290f14b06c185fc5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec737010157c6290f14b06c185fc5c6">&#9670;&nbsp;</a></span>VENC_CHN_POOL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___p_o_o_l___s.html">arVENC_CHN_POOL_S</a> <a class="el" href="ar__comm__venc_8h.html#adec737010157c6290f14b06c185fc5c6">VENC_CHN_POOL_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义RC模块的高级参数，此接口会包含与码流控制算法无关的功能，并且未来版本还有可能扩展。 </p>
+
+</div>
+</div>
+<a id="a7bcda30715302c4298ac2a016c1a9aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcda30715302c4298ac2a016c1a9aae">&#9670;&nbsp;</a></span>VENC_CHN_STATUS_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_h_n___s_t_a_t_u_s___s.html">arVENC_CHN_STATUS_S</a> <a class="el" href="ar__comm__venc_8h.html#a7bcda30715302c4298ac2a016c1a9aae">VENC_CHN_STATUS_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道SLICE分割结构体。 </p>
+
+</div>
+</div>
+<a id="a4d5343e8087e0c7f33a9c5cbb6db7f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5343e8087e0c7f33a9c5cbb6db7f70">&#9670;&nbsp;</a></span>VENC_CROP_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_r_o_p___i_n_f_o___s.html">arVENC_CROP_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#a4d5343e8087e0c7f33a9c5cbb6db7f70">VENC_CROP_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义通道帧率控制参数。 </p>
+
+</div>
+</div>
+<a id="a8f036704f4ce1a9358c3f6a8c5b5a881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f036704f4ce1a9358c3f6a8c5b5a881">&#9670;&nbsp;</a></span>VENC_CU_PREDICTION_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___c_u___p_r_e_d_i_c_t_i_o_n___s.html">arVENC_CU_PREDICTION_S</a> <a class="el" href="ar__comm__venc_8h.html#a8f036704f4ce1a9358c3f6a8c5b5a881">VENC_CU_PREDICTION_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SKIP倾向性配置结构体。 </p>
+
+</div>
+</div>
+<a id="a8ca856aca55a36bf9ef3e43e6f19ee17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca856aca55a36bf9ef3e43e6f19ee17">&#9670;&nbsp;</a></span>VENC_DATA_TYPE_U</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef union <a class="el" href="unionar_v_e_n_c___d_a_t_a___t_y_p_e___u.html">arVENC_DATA_TYPE_U</a> <a class="el" href="ar__comm__venc_8h.html#a8ca856aca55a36bf9ef3e43e6f19ee17">VENC_DATA_TYPE_U</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义当前码流数据中包含的其他类型码流包数据的结构体 </p>
+
+</div>
+</div>
+<a id="afe9ec7f941027aec51c5f910479326b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9ec7f941027aec51c5f910479326b7">&#9670;&nbsp;</a></span>VENC_DEBREATHEFFECT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___d_e_b_r_e_a_t_h_e_f_f_e_c_t___s.html">arVENC_DEBREATHEFFECT_S</a> <a class="el" href="ar__comm__venc_8h.html#afe9ec7f941027aec51c5f910479326b7">VENC_DEBREATHEFFECT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CU模式选择的倾向性配置结构体。 </p>
+
+</div>
+</div>
+<a id="ad86325af9940800029d6721d91e8d160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86325af9940800029d6721d91e8d160">&#9670;&nbsp;</a></span>VENC_FOREGROUND_PROTECT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___f_o_r_e_g_r_o_u_n_d___p_r_o_t_e_c_t___s.html">arVENC_FOREGROUND_PROTECT_S</a> <a class="el" href="ar__comm__venc_8h.html#ad86325af9940800029d6721d91e8d160">VENC_FOREGROUND_PROTECT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码模式场景。 </p>
+
+</div>
+</div>
+<a id="a9b04bf8c74d38fe003afd4d9fee54fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b04bf8c74d38fe003afd4d9fee54fbe">&#9670;&nbsp;</a></span>VENC_FRAME_RATE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___f_r_a_m_e___r_a_t_e___s.html">arVENC_FRAME_RATE_S</a> <a class="el" href="ar__comm__venc_8h.html#a9b04bf8c74d38fe003afd4d9fee54fbe">VENC_FRAME_RATE_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义Venc通道参数结构体。 </p>
+
+</div>
+</div>
+<a id="ae3afce7f00a29cfb946432013cb01738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3afce7f00a29cfb946432013cb01738">&#9670;&nbsp;</a></span>VENC_FRAME_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2">arVENC_FRAME_TYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#ae3afce7f00a29cfb946432013cb01738">VENC_FRAME_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>参数更新; 编码相关模块参数类型。 </dd></dl>
+
+</div>
+</div>
+<a id="a00c351908ffa7369bd6650bbe42160ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c351908ffa7369bd6650bbe42160ac">&#9670;&nbsp;</a></span>VENC_GOP_ADVSMARTP_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___a_d_v_s_m_a_r_t_p___s.html">arVENC_GOP_ADVSMARTP_S</a> <a class="el" href="ar__comm__venc_8h.html#a00c351908ffa7369bd6650bbe42160ac">VENC_GOP_ADVSMARTP_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码B帧GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a48b597f58a8b7eabd7d86e159319daea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b597f58a8b7eabd7d86e159319daea">&#9670;&nbsp;</a></span>VENC_GOP_ATTR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___a_t_t_r___s.html">arVENC_GOP_ATTR_S</a> <a class="el" href="ar__comm__venc_8h.html#a48b597f58a8b7eabd7d86e159319daea">VENC_GOP_ATTR_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码通道属性结构体。 </p>
+
+</div>
+</div>
+<a id="a4b3b8731f8bbb6b65595cdb087bfab73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3b8731f8bbb6b65595cdb087bfab73">&#9670;&nbsp;</a></span>VENC_GOP_BIPREDB_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___b_i_p_r_e_d_b___s.html">arVENC_GOP_BIPREDB_S</a> <a class="el" href="ar__comm__venc_8h.html#a4b3b8731f8bbb6b65595cdb087bfab73">VENC_GOP_BIPREDB_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码器GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a351dfa6725975976b626e92295831e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351dfa6725975976b626e92295831e11">&#9670;&nbsp;</a></span>VENC_GOP_DUALP_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___d_u_a_l_p___s.html">arVENC_GOP_DUALP_S</a> <a class="el" href="ar__comm__venc_8h.html#a351dfa6725975976b626e92295831e11">VENC_GOP_DUALP_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码智能P帧GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a47eea2b1d8114437a15b93af9390a572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47eea2b1d8114437a15b93af9390a572">&#9670;&nbsp;</a></span>VENC_GOP_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum arVENC_GOP_MODE_E <a class="el" href="ar__comm__venc_8h.html#a47eea2b1d8114437a15b93af9390a572">VENC_GOP_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码单参考帧P帧GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a8d697452096c8b8e613516eca4100805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d697452096c8b8e613516eca4100805">&#9670;&nbsp;</a></span>VENC_GOP_NORMALP_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___n_o_r_m_a_l_p___s.html">arVENC_GOP_NORMALP_S</a> <a class="el" href="ar__comm__venc_8h.html#a8d697452096c8b8e613516eca4100805">VENC_GOP_NORMALP_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码双参考帧P帧GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a8db52970bbfb75be2608811d32acfb77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db52970bbfb75be2608811d32acfb77">&#9670;&nbsp;</a></span>VENC_GOP_SMARTP_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___g_o_p___s_m_a_r_t_p___s.html">arVENC_GOP_SMARTP_S</a> <a class="el" href="ar__comm__venc_8h.html#a8db52970bbfb75be2608811d32acfb77">VENC_GOP_SMARTP_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码高级智能P帧GOP属性结构体。 </p>
+
+</div>
+</div>
+<a id="a1fa88bde983727dd522ee08f2ecee7c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa88bde983727dd522ee08f2ecee7c2">&#9670;&nbsp;</a></span>VENC_H264_DBLK_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___d_b_l_k___s.html">arVENC_H264_DBLK_S</a> <a class="el" href="ar__comm__venc_8h.html#a1fa88bde983727dd522ee08f2ecee7c2">VENC_H264_DBLK_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道Vui中Time_Info信息的结构体。 </p>
+
+</div>
+</div>
+<a id="ac0e7e45beaf745552ae88e17c8ae5ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e7e45beaf745552ae88e17c8ae5ae2">&#9670;&nbsp;</a></span>VENC_H264_ENTROPY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___e_n_t_r_o_p_y___s.html">arVENC_H264_ENTROPY_S</a> <a class="el" href="ar__comm__venc_8h.html#ac0e7e45beaf745552ae88e17c8ae5ae2">VENC_H264_ENTROPY_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section attention"><dt>注意</dt><dd>新添加参数; 定义H.264协议编码通道图像播放顺序配置结构体。 </dd></dl>
+
+</div>
+</div>
+<a id="ad2a1ee2aaed49c1e864e929be5235f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a1ee2aaed49c1e864e929be5235f2c">&#9670;&nbsp;</a></span>VENC_H264_INTRA_PRED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___i_n_t_r_a___p_r_e_d___s.html">arVENC_H264_INTRA_PRED_S</a> <a class="el" href="ar__comm__venc_8h.html#ad2a1ee2aaed49c1e864e929be5235f2c">VENC_H264_INTRA_PRED_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道变换、量化结构体。 </p>
+
+</div>
+</div>
+<a id="a301bfa274d96c63eae3744ac70243f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a301bfa274d96c63eae3744ac70243f7c">&#9670;&nbsp;</a></span>VENC_H264_POC_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___p_o_c___s.html">arVENC_H264_POC_S</a> <a class="el" href="ar__comm__venc_8h.html#a301bfa274d96c63eae3744ac70243f7c">VENC_H264_POC_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道Dblk结构体。 </p>
+
+</div>
+</div>
+<a id="a8ced0cefe7ded92b05e8600d4a9738ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ced0cefe7ded92b05e8600d4a9738ca">&#9670;&nbsp;</a></span>VENC_H264_SLICE_SPLIT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H264_SLICE_SPLIT_S</a> <a class="el" href="ar__comm__venc_8h.html#a8ced0cefe7ded92b05e8600d4a9738ca">VENC_H264_SLICE_SPLIT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道帧内预期结构体。 </p>
+
+</div>
+</div>
+<a id="a485a084778bcc9a2af739a809b44c138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485a084778bcc9a2af739a809b44c138">&#9670;&nbsp;</a></span>VENC_H264_TRANS_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___t_r_a_n_s___s.html">arVENC_H264_TRANS_S</a> <a class="el" href="ar__comm__venc_8h.html#a485a084778bcc9a2af739a809b44c138">VENC_H264_TRANS_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道熵编码结构体。 </p>
+
+</div>
+</div>
+<a id="ad3450fe14086f1e19b3c7470db9de95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3450fe14086f1e19b3c7470db9de95b">&#9670;&nbsp;</a></span>VENC_H264_VUI_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___v_u_i___s.html">arVENC_H264_VUI_S</a> <a class="el" href="ar__comm__venc_8h.html#ad3450fe14086f1e19b3c7470db9de95b">VENC_H264_VUI_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道Vui中Time_Info信息的结构体 </p>
+
+</div>
+</div>
+<a id="a5ca15ad88091570d01ab54b98dfab559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca15ad88091570d01ab54b98dfab559">&#9670;&nbsp;</a></span>VENC_H265_DBLK_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___d_b_l_k___s.html">arVENC_H265_DBLK_S</a> <a class="el" href="ar__comm__venc_8h.html#a5ca15ad88091570d01ab54b98dfab559">VENC_H265_DBLK_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道Sao的结构体 </p>
+
+</div>
+</div>
+<a id="acc828b8da2cc94e3dfafd1c59ff92973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc828b8da2cc94e3dfafd1c59ff92973">&#9670;&nbsp;</a></span>VENC_H265_ENTROPY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___e_n_t_r_o_p_y___s.html">arVENC_H265_ENTROPY_S</a> <a class="el" href="ar__comm__venc_8h.html#acc828b8da2cc94e3dfafd1c59ff92973">VENC_H265_ENTROPY_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道Deblocking的结构体。 </p>
+
+</div>
+</div>
+<a id="a21999e84254574e24928da7c1449d478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21999e84254574e24928da7c1449d478">&#9670;&nbsp;</a></span>VENC_H265_PU_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___p_u___s.html">arVENC_H265_PU_S</a> <a class="el" href="ar__comm__venc_8h.html#a21999e84254574e24928da7c1449d478">VENC_H265_PU_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道变换量化的结构体。 </p>
+
+</div>
+</div>
+<a id="a4e14b7bbb739bf500005ae3ed97967af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e14b7bbb739bf500005ae3ed97967af">&#9670;&nbsp;</a></span>VENC_H265_SAO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___s_a_o___s.html">arVENC_H265_SAO_S</a> <a class="el" href="ar__comm__venc_8h.html#a4e14b7bbb739bf500005ae3ed97967af">VENC_H265_SAO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>P帧刷I slice模式。 </p>
+
+</div>
+</div>
+<a id="ad508f8a38b119dbdf26a1812d6df2c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad508f8a38b119dbdf26a1812d6df2c8b">&#9670;&nbsp;</a></span>VENC_H265_SLICE_SPLIT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___s_l_i_c_e___s_p_l_i_t___s.html">arVENC_H265_SLICE_SPLIT_S</a> <a class="el" href="ar__comm__venc_8h.html#ad508f8a38b119dbdf26a1812d6df2c8b">VENC_H265_SLICE_SPLIT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道PU参数结构体。 </p>
+
+</div>
+</div>
+<a id="a28eeec9573f11f0899064785252c02de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28eeec9573f11f0899064785252c02de">&#9670;&nbsp;</a></span>VENC_H265_TRANS_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___t_r_a_n_s___s.html">arVENC_H265_TRANS_S</a> <a class="el" href="ar__comm__venc_8h.html#a28eeec9573f11f0899064785252c02de">VENC_H265_TRANS_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道熵编码的结构体。 </p>
+
+</div>
+</div>
+<a id="a7531fecc75b9d08992fc4e884dcd8b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7531fecc75b9d08992fc4e884dcd8b31">&#9670;&nbsp;</a></span>VENC_H265_VUI_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h265___v_u_i___s.html">arVENC_H265_VUI_S</a> <a class="el" href="ar__comm__venc_8h.html#a7531fecc75b9d08992fc4e884dcd8b31">VENC_H265_VUI_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG协议编码通道高级参数结构体。 </p>
+
+</div>
+</div>
+<a id="a26b3aecc6c776680189fb5deac536736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b3aecc6c776680189fb5deac536736">&#9670;&nbsp;</a></span>VENC_HIERARCHICAL_QP_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h_i_e_r_a_r_c_h_i_c_a_l___q_p___s.html">arVENC_HIERARCHICAL_QP_S</a> <a class="el" href="ar__comm__venc_8h.html#a26b3aecc6c776680189fb5deac536736">VENC_HIERARCHICAL_QP_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码通道绑定的VB池结构体。 </p>
+
+</div>
+</div>
+<a id="aaa2d395e3cd1b221c66e837cb6fbd3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2d395e3cd1b221c66e837cb6fbd3a9">&#9670;&nbsp;</a></span>VENC_INTRA_REFRESH_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650">arVENC_INTRA_REFRESH_MODE_E</a> <a class="el" href="ar__comm__venc_8h.html#aaa2d395e3cd1b221c66e837cb6fbd3a9">VENC_INTRA_REFRESH_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>P帧刷I slice控制参数。 </p>
+
+</div>
+</div>
+<a id="a8c79767548988c013abb6d318a362863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c79767548988c013abb6d318a362863">&#9670;&nbsp;</a></span>VENC_INTRA_REFRESH_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___i_n_t_r_a___r_e_f_r_e_s_h___s.html">arVENC_INTRA_REFRESH_S</a> <a class="el" href="ar__comm__venc_8h.html#a8c79767548988c013abb6d318a362863">VENC_INTRA_REFRESH_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码相关模块参数类型。 </p>
+
+</div>
+</div>
+<a id="adba2c7b1aaa4e142a82a74402f0b8ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba2c7b1aaa4e142a82a74402f0b8ec5">&#9670;&nbsp;</a></span>VENC_JPEG_ENCODE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bf">arVENC_JPEG_ENCODE_MODE_E</a> <a class="el" href="ar__comm__venc_8h.html#adba2c7b1aaa4e142a82a74402f0b8ec5">VENC_JPEG_ENCODE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义码流buffer信息的结构体。 </p>
+
+</div>
+</div>
+<a id="a0fbb35a5e045bc02c12c8bbbfbe72938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fbb35a5e045bc02c12c8bbbfbe72938">&#9670;&nbsp;</a></span>VENC_JPEG_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___j_p_e_g___p_a_r_a_m___s.html">arVENC_JPEG_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a0fbb35a5e045bc02c12c8bbbfbe72938">VENC_JPEG_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG协议编码通道高级参数结构体。 </p>
+
+</div>
+</div>
+<a id="a7d8031e0babd18683705b10332438927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8031e0babd18683705b10332438927">&#9670;&nbsp;</a></span>VENC_MJPEG_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_j_p_e_g___p_a_r_a_m___s.html">arVENC_MJPEG_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a7d8031e0babd18683705b10332438927">VENC_MJPEG_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义ProRes协议编码通道参数结构体。 </p>
+
+</div>
+</div>
+<a id="a856e7df8a5a1bdaa86add394a961b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856e7df8a5a1bdaa86add394a961b59a">&#9670;&nbsp;</a></span>VENC_MOD_EVENT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___e_v_e_n_t___s.html">arVENC_MOD_EVENT_S</a> <a class="el" href="ar__comm__venc_8h.html#a856e7df8a5a1bdaa86add394a961b59a">VENC_MOD_EVENT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码相关模块参数 </p>
+
+</div>
+</div>
+<a id="a8dd8abfe209fdf6b234cdf94424f85e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd8abfe209fdf6b234cdf94424f85e3">&#9670;&nbsp;</a></span>VENC_MOD_H264E_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___h264_e___s.html">arVENC_MOD_H264E_S</a> <a class="el" href="ar__comm__venc_8h.html#a8dd8abfe209fdf6b234cdf94424f85e3">VENC_MOD_H264E_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>h265e模块参数。 </p>
+
+</div>
+</div>
+<a id="aa301f5117469b882e28afe89f86f2983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa301f5117469b882e28afe89f86f2983">&#9670;&nbsp;</a></span>VENC_MOD_H265E_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___h265_e___s.html">arVENC_MOD_H265E_S</a> <a class="el" href="ar__comm__venc_8h.html#aa301f5117469b882e28afe89f86f2983">VENC_MOD_H265E_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>jpege模块参数。 </p>
+
+</div>
+</div>
+<a id="a64441b7712821e3835c3fb80c8b6862f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64441b7712821e3835c3fb80c8b6862f">&#9670;&nbsp;</a></span>VENC_MOD_JPEGE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___j_p_e_g_e___s.html">arVENC_MOD_JPEGE_S</a> <a class="el" href="ar__comm__venc_8h.html#a64441b7712821e3835c3fb80c8b6862f">VENC_MOD_JPEGE_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>rc模块参数。 </p>
+
+</div>
+</div>
+<a id="a9f2d0df429c044128bc7c4cf6bf95b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2d0df429c044128bc7c4cf6bf95b78">&#9670;&nbsp;</a></span>VENC_MOD_RC_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___r_c___s.html">arVENC_MOD_RC_S</a> <a class="el" href="ar__comm__venc_8h.html#a9f2d0df429c044128bc7c4cf6bf95b78">VENC_MOD_RC_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>venc模块参数。 </p>
+
+</div>
+</div>
+<a id="aea75ec8a3899cd5e88f7d03b41183663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea75ec8a3899cd5e88f7d03b41183663">&#9670;&nbsp;</a></span>VENC_MOD_VENC_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d___v_e_n_c___s.html">arVENC_MOD_VENC_S</a> <a class="el" href="ar__comm__venc_8h.html#aea75ec8a3899cd5e88f7d03b41183663">VENC_MOD_VENC_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section attention"><dt>注意</dt><dd>新添加参数; venc模块队列大小参数结构体。 </dd></dl>
+
+</div>
+</div>
+<a id="aa94e006c7e813ce12cf5c42dbb046ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94e006c7e813ce12cf5c42dbb046ebf">&#9670;&nbsp;</a></span>VENC_MODTYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9">arVENC_MODTYPE_E</a> <a class="el" href="ar__comm__venc_8h.html#aa94e006c7e813ce12cf5c42dbb046ebf">VENC_MODTYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>h264e模块参数。 </p>
+
+</div>
+</div>
+<a id="a16ec10ee65a6961cb517f153c55e81b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ec10ee65a6961cb517f153c55e81b8">&#9670;&nbsp;</a></span>VENC_MPF_CFG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_p_f___c_f_g___s.html">arVENC_MPF_CFG_S</a> <a class="el" href="ar__comm__venc_8h.html#a16ec10ee65a6961cb517f153c55e81b8">VENC_MPF_CFG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义RECEIVE MODE结构体。 </p>
+
+</div>
+</div>
+<a id="afe689f88f6dfbd9287fef1ff586739dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe689f88f6dfbd9287fef1ff586739dc">&#9670;&nbsp;</a></span>VENC_PACK_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___p_a_c_k___i_n_f_o___s.html">arVENC_PACK_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#afe689f88f6dfbd9287fef1ff586739dc">VENC_PACK_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义帧码流包结构体 </p>
+
+</div>
+</div>
+<a id="a9f85d2e25d90d356c8a38a05cbae9cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f85d2e25d90d356c8a38a05cbae9cd6">&#9670;&nbsp;</a></span>VENC_PACK_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___p_a_c_k___s.html">arVENC_PACK_S</a> <a class="el" href="ar__comm__venc_8h.html#a9f85d2e25d90d356c8a38a05cbae9cd6">VENC_PACK_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264跳帧参考码流的帧类型以及参考属性。 </p>
+
+</div>
+</div>
+<a id="a8fceadc87c68b8cddd93327937a77317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fceadc87c68b8cddd93327937a77317">&#9670;&nbsp;</a></span>VENC_PARAM_MOD_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___m_o_d_p_a_r_a_m___s.html">arVENC_MODPARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a8fceadc87c68b8cddd93327937a77317">VENC_PARAM_MOD_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>编码相关模块参数类型。 </p>
+
+</div>
+</div>
+<a id="af3bc11f0450c94feca379f8945aeb9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bc11f0450c94feca379f8945aeb9c3">&#9670;&nbsp;</a></span>VENC_PIC_RECEIVE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760e">arVENC_PIC_RECEIVE_MODE_E</a> <a class="el" href="ar__comm__venc_8h.html#af3bc11f0450c94feca379f8945aeb9c3">VENC_PIC_RECEIVE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG抓拍属性结构体。 </p>
+
+</div>
+</div>
+<a id="aaaf09855fbb467b2838937f933b37181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf09855fbb467b2838937f933b37181">&#9670;&nbsp;</a></span>VENC_PRORES_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___p_r_o_r_e_s___p_a_r_a_m___s.html">arVENC_PRORES_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#aaaf09855fbb467b2838937f933b37181">VENC_PRORES_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码感兴趣区域信息。 </p>
+
+</div>
+</div>
+<a id="a8b6fa78d46d695b0e0a3750614f4ba66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6fa78d46d695b0e0a3750614f4ba66">&#9670;&nbsp;</a></span>VENC_RC_ADVPARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_c___a_d_v_p_a_r_a_m___s.html">arVENC_RC_ADVPARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a8b6fa78d46d695b0e0a3750614f4ba66">VENC_RC_ADVPARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义VENC编码通道旋转角度参数 </p>
+
+</div>
+</div>
+<a id="aaeca0d07b36b37c19e2424e82b4b7a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeca0d07b36b37c19e2424e82b4b7a35">&#9670;&nbsp;</a></span>VENC_RECV_PIC_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_e_c_v___p_i_c___p_a_r_a_m___s.html">arVENC_RECV_PIC_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#aaeca0d07b36b37c19e2424e82b4b7a35">VENC_RECV_PIC_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码通道的状态结构体。 </p>
+
+</div>
+</div>
+<a id="a0f69d8d0bf35f0ab03e5df2378e0de3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f69d8d0bf35f0ab03e5df2378e0de3e">&#9670;&nbsp;</a></span>VENC_REF_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html">arVENC_REF_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a0f69d8d0bf35f0ab03e5df2378e0de3e">VENC_REF_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG编码通道的抓拍模式。 </p>
+
+</div>
+</div>
+<a id="a59f3ebd471844ea6c1b34e835f5c8342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f3ebd471844ea6c1b34e835f5c8342">&#9670;&nbsp;</a></span>VENC_ROI_ATTR_EX_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___e_x___s.html">arVENC_ROI_ATTR_EX_S</a> <a class="el" href="ar__comm__venc_8h.html#a59f3ebd471844ea6c1b34e835f5c8342">VENC_ROI_ATTR_EX_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义非编码感兴趣区域帧率。 </p>
+
+</div>
+</div>
+<a id="aaab4b7bfeac25690867968da2854d962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab4b7bfeac25690867968da2854d962">&#9670;&nbsp;</a></span>VENC_ROI_ATTR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i___a_t_t_r___s.html">arVENC_ROI_ATTR_S</a> <a class="el" href="ar__comm__venc_8h.html#aaab4b7bfeac25690867968da2854d962">VENC_ROI_ATTR_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码通道感兴趣区域编码高级属性。 </p>
+
+</div>
+</div>
+<a id="a87e30eeac6bad14aef176a0fb4aa27e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e30eeac6bad14aef176a0fb4aa27e2">&#9670;&nbsp;</a></span>VENC_ROIBG_FRAME_RATE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_o_i_b_g___f_r_a_m_e___r_a_t_e___s.html">arVENC_ROIBG_FRAME_RATE_S</a> <a class="el" href="ar__comm__venc_8h.html#a87e30eeac6bad14aef176a0fb4aa27e2">VENC_ROIBG_FRAME_RATE_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264/H.265编码的高级跳帧参考参数。 </p>
+
+</div>
+</div>
+<a id="a3ef9a62a53983af871aa983b3187df8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef9a62a53983af871aa983b3187df8a">&#9670;&nbsp;</a></span>VENC_ROTATION_PARAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___r_o_t_a_t_i_o_n___p_a_r_a_m___s.html">arVENC_ROTATION_PARAM_S</a> <a class="el" href="ar__comm__venc_8h.html#a3ef9a62a53983af871aa983b3187df8a">VENC_ROTATION_PARAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义VENC编码通道镜像参数 </p>
+
+</div>
+</div>
+<a id="a9133403e99802ae5b4425b42be71febd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9133403e99802ae5b4425b42be71febd">&#9670;&nbsp;</a></span>VENC_SCENE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079f">arVENC_SCENE_MODE_E</a> <a class="el" href="ar__comm__venc_8h.html#a9133403e99802ae5b4425b42be71febd">VENC_SCENE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>参数更新; 去除呼吸效应参数结构体。 </dd></dl>
+
+</div>
+</div>
+<a id="a93e2154947b5253090dcec8930960ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e2154947b5253090dcec8930960ea8">&#9670;&nbsp;</a></span>VENC_SKIP_BIAS_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_k_i_p___b_i_a_s___s.html">arVENC_SKIP_BIAS_S</a> <a class="el" href="ar__comm__venc_8h.html#a93e2154947b5253090dcec8930960ea8">VENC_SKIP_BIAS_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>QP分层参数结构体。 </p>
+
+</div>
+</div>
+<a id="a55f421dab2efdfcd3cbfa65cedfa1f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f421dab2efdfcd3cbfa65cedfa1f6a">&#9670;&nbsp;</a></span>VENC_SSE_CFG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_s_e___c_f_g___s.html">arVENC_SSE_CFG_S</a> <a class="el" href="ar__comm__venc_8h.html#a55f421dab2efdfcd3cbfa65cedfa1f6a">VENC_SSE_CFG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义通道截取（Crop）参数。 </p>
+
+</div>
+</div>
+<a id="ae2040ff4132307da8ec715303bff4c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2040ff4132307da8ec715303bff4c2c">&#9670;&nbsp;</a></span>VENC_SSE_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_s_e___i_n_f_o___s.html">arVENC_SSE_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#ae2040ff4132307da8ec715303bff4c2c">VENC_SSE_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264 协议码流高级特征信息。 </p>
+
+</div>
+</div>
+<a id="a5b69ace12426cc1b3cc35a90785db2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b69ace12426cc1b3cc35a90785db2d4">&#9670;&nbsp;</a></span>VENC_STREAM_ADVANCE_INFO_H264_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h264___s.html">arVENC_STREAM_ADVANCE_INFO_H264_S</a> <a class="el" href="ar__comm__venc_8h.html#a5b69ace12426cc1b3cc35a90785db2d4">VENC_STREAM_ADVANCE_INFO_H264_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG/MJPEG 协议码流高级特征信息。 </p>
+
+</div>
+</div>
+<a id="a13feeb32e7e2d49c49ff629cf9ebf3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13feeb32e7e2d49c49ff629cf9ebf3b6">&#9670;&nbsp;</a></span>VENC_STREAM_ADVANCE_INFO_H265_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___h265___s.html">arVENC_STREAM_ADVANCE_INFO_H265_S</a> <a class="el" href="ar__comm__venc_8h.html#a13feeb32e7e2d49c49ff629cf9ebf3b6">VENC_STREAM_ADVANCE_INFO_H265_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES 协议码流特征信息。 </p>
+
+</div>
+</div>
+<a id="ac917edc186872f850fb5f8ab9d65c5cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac917edc186872f850fb5f8ab9d65c5cb">&#9670;&nbsp;</a></span>VENC_STREAM_ADVANCE_INFO_JPEG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_ADVANCE_INFO_JPEG_S</a> <a class="el" href="ar__comm__venc_8h.html#ac917edc186872f850fb5f8ab9d65c5cb">VENC_STREAM_ADVANCE_INFO_JPEG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义PRORES 协议码流高级特征信息。 </p>
+
+</div>
+</div>
+<a id="a3fb9c3401445d340bb0c0f52d78fa3b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb9c3401445d340bb0c0f52d78fa3b3">&#9670;&nbsp;</a></span>VENC_STREAM_ADVANCE_INFO_PRORES_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___a_d_v_a_n_c_e___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_ADVANCE_INFO_PRORES_S</a> <a class="el" href="ar__comm__venc_8h.html#a3fb9c3401445d340bb0c0f52d78fa3b3">VENC_STREAM_ADVANCE_INFO_PRORES_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265 协议码流高级特征信息。 </p>
+
+</div>
+</div>
+<a id="a04f1f45d320905e393a9ca0acdbfe8c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f1f45d320905e393a9ca0acdbfe8c3">&#9670;&nbsp;</a></span>VENC_STREAM_BUF_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___b_u_f___i_n_f_o___s.html">arVENC_STREAM_BUF_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#a04f1f45d320905e393a9ca0acdbfe8c3">VENC_STREAM_BUF_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议编码通道SLICE分割结构体。 </p>
+
+</div>
+</div>
+<a id="ac2962ae3d20176a9f81c321465d9bde9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2962ae3d20176a9f81c321465d9bde9">&#9670;&nbsp;</a></span>VENC_STREAM_INFO_H264_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h264___s.html">arVENC_STREAM_INFO_H264_S</a> <a class="el" href="ar__comm__venc_8h.html#ac2962ae3d20176a9f81c321465d9bde9">VENC_STREAM_INFO_H264_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.265协议码流特征信息。 </p>
+
+</div>
+</div>
+<a id="aa4850a8e1f507ca33dc74b4cf935ac86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4850a8e1f507ca33dc74b4cf935ac86">&#9670;&nbsp;</a></span>VENC_STREAM_INFO_H265_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___h265___s.html">arVENC_STREAM_INFO_H265_S</a> <a class="el" href="ar__comm__venc_8h.html#aa4850a8e1f507ca33dc74b4cf935ac86">VENC_STREAM_INFO_H265_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H264/H265协议SSE信息。 </p>
+
+</div>
+</div>
+<a id="a62708381ffceb77edfd0ac55bdbbf220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62708381ffceb77edfd0ac55bdbbf220">&#9670;&nbsp;</a></span>VENC_STREAM_INFO_JPEG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___j_p_e_g___s.html">arVENC_STREAM_INFO_JPEG_S</a> <a class="el" href="ar__comm__venc_8h.html#a62708381ffceb77edfd0ac55bdbbf220">VENC_STREAM_INFO_JPEG_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义帧码流类型的结构体。 </p>
+
+</div>
+</div>
+<a id="a3d2ffaf3bb3c583163f91fb8c50de778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2ffaf3bb3c583163f91fb8c50de778">&#9670;&nbsp;</a></span>VENC_STREAM_INFO_PRORES_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___p_r_o_r_e_s___s.html">arVENC_STREAM_INFO_PRORES_S</a> <a class="el" href="ar__comm__venc_8h.html#a3d2ffaf3bb3c583163f91fb8c50de778">VENC_STREAM_INFO_PRORES_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG/MJPEG 协议码流特征信息。 </p>
+
+</div>
+</div>
+<a id="ac2e204c7d98d27ea3b30b07dec74b639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e204c7d98d27ea3b30b07dec74b639">&#9670;&nbsp;</a></span>VENC_STREAM_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___i_n_f_o___s.html">arVENC_STREAM_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#ac2e204c7d98d27ea3b30b07dec74b639">VENC_STREAM_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义JPEG MPF结构体。 </p>
+
+</div>
+</div>
+<a id="ab9b3ff17f45e65c1e804db95e39b80e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b3ff17f45e65c1e804db95e39b80e3">&#9670;&nbsp;</a></span>VENC_STREAM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___s_t_r_e_a_m___s.html">arVENC_STREAM_S</a> <a class="el" href="ar__comm__venc_8h.html#ab9b3ff17f45e65c1e804db95e39b80e3">VENC_STREAM_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码器码流特征信息，供外部查询使用。 </p>
+
+</div>
+</div>
+<a id="ad2ed217cc968d1305e96ab715a99b6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2ed217cc968d1305e96ab715a99b6bb">&#9670;&nbsp;</a></span>VENC_VUI_ASPECT_RATIO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___a_s_p_e_c_t___r_a_t_i_o___s.html">arVENC_VUI_ASPECT_RATIO_S</a> <a class="el" href="ar__comm__venc_8h.html#ad2ed217cc968d1305e96ab715a99b6bb">VENC_VUI_ASPECT_RATIO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264/H.265协议编码通道Vui中信息的Video_Signal结构体。 </p>
+
+</div>
+</div>
+<a id="add76515ebe97ac5cce845c038c8eb26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add76515ebe97ac5cce845c038c8eb26e">&#9670;&nbsp;</a></span>VENC_VUI_BITSTREAM_RESTRIC_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___b_i_t_s_t_r_e_a_m___r_e_s_t_r_i_c___s.html">arVENC_VUI_BITSTREAM_RESTRIC_S</a> <a class="el" href="ar__comm__venc_8h.html#add76515ebe97ac5cce845c038c8eb26e">VENC_VUI_BITSTREAM_RESTRIC_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道Vui接口体。 </p>
+
+</div>
+</div>
+<a id="ae04e1b5c7e1e660e6e162292b5fcbc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04e1b5c7e1e660e6e162292b5fcbc6b">&#9670;&nbsp;</a></span>VENC_VUI_H264_TIME_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___h264___v_u_i___t_i_m_e___i_n_f_o___s.html">arVENC_H264_VUI_TIME_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#ae04e1b5c7e1e660e6e162292b5fcbc6b">VENC_VUI_H264_TIME_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264/H.265协议编码通道Vui中AspectRatio信息的结构体。 </p>
+
+</div>
+</div>
+<a id="ac09b84b3939026d6a34656467610a312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09b84b3939026d6a34656467610a312">&#9670;&nbsp;</a></span>VENC_VUI_H265_TIME_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___h265___t_i_m_e___i_n_f_o___s.html">arVENC_VUI_H265_TIME_INFO_S</a> <a class="el" href="ar__comm__venc_8h.html#ac09b84b3939026d6a34656467610a312">VENC_VUI_H265_TIME_INFO_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264协议编码通道Vui接口体。 </p>
+
+</div>
+</div>
+<a id="a57a1a0ca169884091bd8ac038b7ad30d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a1a0ca169884091bd8ac038b7ad30d">&#9670;&nbsp;</a></span>VENC_VUI_VIDEO_SIGNAL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_e_n_c___v_u_i___v_i_d_e_o___s_i_g_n_a_l___s.html">arVENC_VUI_VIDEO_SIGNAL_S</a> <a class="el" href="ar__comm__venc_8h.html#a57a1a0ca169884091bd8ac038b7ad30d">VENC_VUI_VIDEO_SIGNAL_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264/H.265协议编码通道Vui中信息的Bitstream_Restriction结构体。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="abf16a456bf620d6c641f9ea25edc29d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf16a456bf620d6c641f9ea25edc29d2">&#9670;&nbsp;</a></span>arH264E_NALU_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#abf16a456bf620d6c641f9ea25edc29d2">arH264E_NALU_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2a30abee849e30d4dfab0185f52cf0c7b6"></a>H264E_NALU_BSLICE&#160;</td><td class="fielddoc"><p>B SLICE 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2aed2e3097696f563a3df55c91024046e1"></a>H264E_NALU_PSLICE&#160;</td><td class="fielddoc"><p>P SLICE 类型 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2a003fb6b59c28b68ea82f5a259eddbdae"></a>H264E_NALU_ISLICE&#160;</td><td class="fielddoc"><p>I SLICE 类型 ，帧类型为P帧 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2ab146fffb61f0e6f6157e35d780bc4236"></a>H264E_NALU_IDRSLICE&#160;</td><td class="fielddoc"><p>IDR SLICE 类型，帧类型为IDR帧 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2afb608a9897a3de06645dae34cdb4cc97"></a>H264E_NALU_SEI&#160;</td><td class="fielddoc"><p>SEI 类型 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2a60d59b16f7269a9f7b1f2fb811b289e2"></a>H264E_NALU_SPS&#160;</td><td class="fielddoc"><p>SPS 类型 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abf16a456bf620d6c641f9ea25edc29d2a52f7dc64a2dca6ee9001c85801283c9a"></a>H264E_NALU_PPS&#160;</td><td class="fielddoc"><p>PPS 类型 <br  />
+ </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a01ff8d2d414c4b63175a1e11109e5516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ff8d2d414c4b63175a1e11109e5516">&#9670;&nbsp;</a></span>arH264E_REF_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a01ff8d2d414c4b63175a1e11109e5516">arH264E_REF_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a45a0530f142b1f363db1a439c57a55d4"></a>BASE_IDRSLICE&#160;</td><td class="fielddoc"><p>base层中的IDR帧。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a89eb8d85843ca4ee29ac8f4d3975bcb4"></a>BASE_PSLICE_REFTOIDR&#160;</td><td class="fielddoc"><p>base层中的P帧，用于base层中其他帧的参考且只参考IDR帧。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a4389f3995986cab12089736640864685"></a>BASE_PSLICE_REFBYBASE&#160;</td><td class="fielddoc"><p>base层中的P帧，用于base层中其他帧的参考。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a7d105e0ec7ef7cc312d2196a2da28e3c"></a>BASE_PSLICE_REFBYENHANCE&#160;</td><td class="fielddoc"><p>base层中的P帧，永远忽enhance层中的帧的参考。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a9924f0326bf48dab39ac0eab9516e780"></a>ENHANCE_PSLICE_REFBYENHANCE&#160;</td><td class="fielddoc"><p>enhance层中的P帧，用于enhance层中其他帧的参考。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a01ff8d2d414c4b63175a1e11109e5516a9ea2ab8b7e2e65c02a9923b0ea19b239"></a>ENHANCE_PSLICE_NOTFORREF&#160;</td><td class="fielddoc"><p>enhance层中P帧，不用于参考。 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a00f38c1c767d81ea78666866d9cdf4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f38c1c767d81ea78666866d9cdf4ce">&#9670;&nbsp;</a></span>arH264E_REFSLICE_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a00f38c1c767d81ea78666866d9cdf4ce">arH264E_REFSLICE_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a00f38c1c767d81ea78666866d9cdf4ceaa1348aa480d40018f920bdae147f4ca1"></a>H264E_REFSLICE_FOR_1X&#160;</td><td class="fielddoc"><p>H264E_REF_MODE_1X参考条带类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a00f38c1c767d81ea78666866d9cdf4cead4718f8960833ba17d425c76fec9a6ef"></a>H264E_REFSLICE_FOR_2X&#160;</td><td class="fielddoc"><p>H264E_REF_MODE_2X参考条带类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a00f38c1c767d81ea78666866d9cdf4cea89be39cd64ca7c118ca22fe45a81e262"></a>H264E_REFSLICE_FOR_4X&#160;</td><td class="fielddoc"><p>H264E_REF_MODE_4X参考条带类型 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a82510ff859192fcfa8e002f013175260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82510ff859192fcfa8e002f013175260">&#9670;&nbsp;</a></span>arH265E_NALU_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a82510ff859192fcfa8e002f013175260">arH265E_NALU_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a346c461c353d7ef50b854f62826a3b83"></a>H265E_NALU_BSLICE&#160;</td><td class="fielddoc"><p>B SLICE 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a79bd6efcb63e7c0abda521b92342a09a"></a>H265E_NALU_PSLICE&#160;</td><td class="fielddoc"><p>P SLICE 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a2885bfec9c7fe8c19f8b682105eaf71a"></a>H265E_NALU_ISLICE&#160;</td><td class="fielddoc"><p>I SLICE 类型 ，帧类型为P帧 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a77fae44e343a1c99e8591670d5bc6525"></a>H265E_NALU_IDRSLICE&#160;</td><td class="fielddoc"><p>IDR SLICE 类型，帧类型为IDR帧 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a84fcb6fe28728822c522ee02a8bed56c"></a>H265E_NALU_VPS&#160;</td><td class="fielddoc"><p>VPS 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a3020c1a38915a2780d084b1a66e521d2"></a>H265E_NALU_SPS&#160;</td><td class="fielddoc"><p>SPS 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260a21beee8ac578d7258965817360a1544f"></a>H265E_NALU_PPS&#160;</td><td class="fielddoc"><p>PPS 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a82510ff859192fcfa8e002f013175260aceec4d2fb262a595af6cc8de9967b069"></a>H265E_NALU_SEI&#160;</td><td class="fielddoc"><p>SEI 类型 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ad79c59988b3a2a2e5da79ba4bc8b70a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad79c59988b3a2a2e5da79ba4bc8b70a5">&#9670;&nbsp;</a></span>arJPEGE_PACK_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#ad79c59988b3a2a2e5da79ba4bc8b70a5">arJPEGE_PACK_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5ae0baf276927228f7c920ea73d394a1c8"></a>JPEGE_PACK_ECS&#160;</td><td class="fielddoc"><p>ECS 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5a29a1d566e5e4ca29c0b383484e5172e5"></a>JPEGE_PACK_APP&#160;</td><td class="fielddoc"><p>APP 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5a4ad58d0c4d4fcd5e5b4fb8d90c33d54c"></a>JPEGE_PACK_VDO&#160;</td><td class="fielddoc"><p>VDO 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5aa2aed89b4f2986ac26fc04b2d67c3ec5"></a>JPEGE_PACK_PIC&#160;</td><td class="fielddoc"><p>PIC 类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5a08a97d6fafb3c6f730f50c8417e0bbbe"></a>JPEGE_PACK_DCF&#160;</td><td class="fielddoc"><p>DCF ECS类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad79c59988b3a2a2e5da79ba4bc8b70a5aa974c7247eeea54ec4951c1549d8eda1"></a>JPEGE_PACK_DCF_PIC&#160;</td><td class="fielddoc"><p>DCF 类型 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a6e9928797d24d6a2305bc721a9111e4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9928797d24d6a2305bc721a9111e4d">&#9670;&nbsp;</a></span>arPRORES_ASPECT_RATIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a6e9928797d24d6a2305bc721a9111e4d">arPRORES_ASPECT_RATIO</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a6e9928797d24d6a2305bc721a9111e4daa1b09212687ee153df86cf558c30c163"></a>PRORES_ASPECT_RATIO_UNKNOWN&#160;</td><td class="fielddoc"><p>未知/未声明 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6e9928797d24d6a2305bc721a9111e4da8262a48cc8ae6f0fd06657e94cd3f0d9"></a>PRORES_ASPECT_RATIO_SQUARE&#160;</td><td class="fielddoc"><p>方形 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6e9928797d24d6a2305bc721a9111e4da25471321d5b69115ab2523ca641da913"></a>PRORES_ASPECT_RATIO_4_3&#160;</td><td class="fielddoc"><p>4:3图像幅型比 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6e9928797d24d6a2305bc721a9111e4da8e481048adbc74dec40a5c91601cce1a"></a>PRORES_ASPECT_RATIO_16_9&#160;</td><td class="fielddoc"><p>16:9图像幅型比 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ad25e33706510615d313ce3f7cf785be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25e33706510615d313ce3f7cf785be8">&#9670;&nbsp;</a></span>arPRORES_FRAMERATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#ad25e33706510615d313ce3f7cf785be8">arPRORES_FRAMERATE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8aa3f18cf2b58ef7d45462f13d2b864a0f"></a>PRORES_FR_UNKNOWN&#160;</td><td class="fielddoc"><p>未知/未声明 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a02e6463a55b01c826918697dd952362e"></a>PRORES_FR_23_976&#160;</td><td class="fielddoc"><p>24/1.001（23.976） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a0fea0644ed5c16c4cc27bd58074d66cd"></a>PRORES_FR_24&#160;</td><td class="fielddoc"><p>24 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a2d80c4e1b407cbc15fc2b0bd8f549160"></a>PRORES_FR_25&#160;</td><td class="fielddoc"><p>25 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a6fb98463c8037f68cd623cc86495175e"></a>PRORES_FR_29_97&#160;</td><td class="fielddoc"><p>30/1.001（29.97） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a287f2bfbfa29813d59ed986bfb68afa4"></a>PRORES_FR_30&#160;</td><td class="fielddoc"><p>30 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8af806a02e49c56c130ecdc259cef16cac"></a>PRORES_FR_50&#160;</td><td class="fielddoc"><p>50 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8af6247f1c30709c2b0cd6e2c55b440de0"></a>PRORES_FR_59_94&#160;</td><td class="fielddoc"><p>60/1.001（59.94） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8a467ee5d04711724d5720cdf4cb3e0a73"></a>PRORES_FR_60&#160;</td><td class="fielddoc"><p>60 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8ac7c60712d0091628b88993bfdf851219"></a>PRORES_FR_100&#160;</td><td class="fielddoc"><p>100 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8aeb7ff24e766c844cf0cb1150dc945200"></a>PRORES_FR_119_88&#160;</td><td class="fielddoc"><p>120/1.001（119.88） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad25e33706510615d313ce3f7cf785be8ae931c2f5be1a1eef9244a0a4b5b9b876"></a>PRORES_FR_120&#160;</td><td class="fielddoc"><p>120 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a9bc0b1751ef3a49f22c8c7a81f3ad7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc0b1751ef3a49f22c8c7a81f3ad7d3">&#9670;&nbsp;</a></span>arPRORES_PACK_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a9bc0b1751ef3a49f22c8c7a81f3ad7d3">arPRORES_PACK_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a9bc0b1751ef3a49f22c8c7a81f3ad7d3a3237e7f080fec0bf9205268329b0f611"></a>PRORES_PACK_PIC&#160;</td><td class="fielddoc"><p>PRORES 数据包 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ae1c8fdaf4ab763338c803ddb55783ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c8fdaf4ab763338c803ddb55783ec2">&#9670;&nbsp;</a></span>arVENC_FRAME_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#ae1c8fdaf4ab763338c803ddb55783ec2">arVENC_FRAME_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ae1c8fdaf4ab763338c803ddb55783ec2a1f6977e8d715413d646af29bfdfdbcf2"></a>VENC_FRAME_TYPE_NONE&#160;</td><td class="fielddoc"><p>当前帧编码类型不指定，实际帧类型由驱动内部决定。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae1c8fdaf4ab763338c803ddb55783ec2a377d487b26f5abb49b3d6b704c9b5267"></a>VENC_FRAME_TYPE_IDR&#160;</td><td class="fielddoc"><p>指定当前帧编码为IDR帧。 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aad69d69c1da17ceb6aeaaee09af51650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad69d69c1da17ceb6aeaaee09af51650">&#9670;&nbsp;</a></span>arVENC_INTRA_REFRESH_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#aad69d69c1da17ceb6aeaaee09af51650">arVENC_INTRA_REFRESH_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aad69d69c1da17ceb6aeaaee09af51650ae88c2dcc8a0b3312a4a505d83ff2f6f7"></a>INTRA_REFRESH_ROW&#160;</td><td class="fielddoc"><p>按行刷新 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aad69d69c1da17ceb6aeaaee09af51650afc694e0efb237e7a77dc9db9ae959354"></a>INTRA_REFRESH_COLUMN&#160;</td><td class="fielddoc"><p>按列刷新 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aad69d69c1da17ceb6aeaaee09af51650ade05dc5b2d51a21b721de000d52639e2"></a>INTRA_REFRESH_NUM&#160;</td><td class="fielddoc"><p>CTU or MB Num </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a066b4317906197480f5b76cf713ae4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066b4317906197480f5b76cf713ae4bf">&#9670;&nbsp;</a></span>arVENC_JPEG_ENCODE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a066b4317906197480f5b76cf713ae4bf">arVENC_JPEG_ENCODE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a066b4317906197480f5b76cf713ae4bfa18695fbf037e4cd81c45e0d85590132b"></a>JPEG_ENCODE_ALL&#160;</td><td class="fielddoc"><p>全部抓拍模式, JPEG通道的默认抓拍模式。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a066b4317906197480f5b76cf713ae4bfae56141f9b6c71fa22d0c5b1e69b0951d"></a>JPEG_ENCODE_SNAP&#160;</td><td class="fielddoc"><p>抓拍模式，JPEG通道仅编码以标记为抓拍帧的图像。 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a044e8469aa27edd49bff36d740e763c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044e8469aa27edd49bff36d740e763c9">&#9670;&nbsp;</a></span>arVENC_MODTYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a044e8469aa27edd49bff36d740e763c9">arVENC_MODTYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a044e8469aa27edd49bff36d740e763c9a748b6a5aee43eef8c1b5b5119dbd6151"></a>MODTYPE_VENC&#160;</td><td class="fielddoc"><p>VENC模块参数类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a044e8469aa27edd49bff36d740e763c9a53b49b59ee330c2cb037c0b8171b4b62"></a>MODTYPE_H264E&#160;</td><td class="fielddoc"><p>H264e模块参数类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a044e8469aa27edd49bff36d740e763c9a15257093f8ece703c746c5de58cb0b4d"></a>MODTYPE_H265E&#160;</td><td class="fielddoc"><p>H265e模块参数类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a044e8469aa27edd49bff36d740e763c9aa2c8de38d2d0e2ccb8d551a773329437"></a>MODTYPE_JPEGE&#160;</td><td class="fielddoc"><p>Jpege模块参数类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a044e8469aa27edd49bff36d740e763c9a1c0302a47470fa30f5c9acd35ed50f0a"></a>MODTYPE_RC&#160;</td><td class="fielddoc"><p>Rc模块参数类型 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a47d36251005a830085fd6b5f1914760e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d36251005a830085fd6b5f1914760e">&#9670;&nbsp;</a></span>arVENC_PIC_RECEIVE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a47d36251005a830085fd6b5f1914760e">arVENC_PIC_RECEIVE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a47d36251005a830085fd6b5f1914760ea7d41f792a3c2a9bc5834ed291422cdf4"></a>VENC_PIC_RECEIVE_SINGLE&#160;</td><td class="fielddoc"><p>当前编码通道值允许从一个源接收图像; 静态参数。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a47d36251005a830085fd6b5f1914760ea3900bb388486166f13d0aa76413f335b"></a>VENC_PIC_RECEIVE_MULTI&#160;</td><td class="fielddoc"><p>当前编码通道允许从多个源接收图像; 静态属性。 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a44d726d36c5eb491354e73eee36a079f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d726d36c5eb491354e73eee36a079f">&#9670;&nbsp;</a></span>arVENC_SCENE_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a44d726d36c5eb491354e73eee36a079f">arVENC_SCENE_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a44d726d36c5eb491354e73eee36a079fa718ce70a4822792325ef041c94dd28a3"></a>SCENE_0&#160;</td><td class="fielddoc"><p>可读写; 摄像机不运动或周期性连续运动的场景。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a44d726d36c5eb491354e73eee36a079faf4b4ecae1bbc5ab7c0426c73dd69c9df"></a>SCENE_1&#160;</td><td class="fielddoc"><p>可读写; 高码率下运动场景。 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a44d726d36c5eb491354e73eee36a079fabde03e8f3722127c778be49fcbdf7b87"></a>SCENE_2&#160;</td><td class="fielddoc"><p>可读写; 中等码率下有规律的连续运动，且编码压力比较大场景。 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a4130fa5f2b4567425fddbd4a62c33e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4130fa5f2b4567425fddbd4a62c33e35">&#9670;&nbsp;</a></span>ENUM_MPI_VENC_EXTENSION_FLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ar__comm__venc_8h.html#a4130fa5f2b4567425fddbd4a62c33e35">ENUM_MPI_VENC_EXTENSION_FLAGS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>定义编码扩展参数比特位定义。 </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a4130fa5f2b4567425fddbd4a62c33e35aa3e938e3c83ee763691be28656a5cc27"></a>AR_VIDEO_CODEC_PARAM_MPI_EXT_INSTANCE_PARALLESIM&#160;</td><td class="fielddoc"><p>编码实例之间的并行编码开关, 26x有效，jpeg不支持 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

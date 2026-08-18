@@ -1,0 +1,17 @@
+#include <dt-bindings/power/ar9301-power.h>
+
+&soc {
+    pwr_ctrl: pwr_ctrl@01075000 {
+        compatible = "artosyn,ar9301-pwr_ctrl";
+        #power-domain-cells = <1>;
+        reg = <0x01075000 0x000C    // SOC PMU
+               0x010E0000 0x0050    // A53 CGU
+               0x010C3000 0x0080    // CEVA CORE0
+               >;
+        pwr-default-gating = <(AR9301_PWR_CTRL_SOC_VENC   | AR9301_PWR_CTRL_OFF)
+                              (AR9301_PWR_CTRL_SOC_ISP    | AR9301_PWR_CTRL_OFF)
+                              (AR9301_PWR_CTRL_SOC_DLA    | AR9301_PWR_CTRL_OFF)
+                              (AR9301_PWR_CTRL_CEVA_CORE0 | AR9301_PWR_CTRL_OFF)
+                              >;
+    };
+};

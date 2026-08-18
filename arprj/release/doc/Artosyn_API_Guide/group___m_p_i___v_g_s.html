@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: MPI_VGS</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">MPI_VGS</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>VGS对输入图像进行处理，如添加COVER，打OSD, 画线，旋转等处理  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___o_s_d___r_e_v_e_r_t___s.html">arVGS_OSD_REVERT_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___t_a_s_k___a_t_t_r___s.html">arVGS_TASK_ATTR_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___d_r_a_w___l_i_n_e___s.html">arVGS_DRAW_LINE_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___q_u_a_d_r_a_n_g_l_e___c_o_v_e_r___s.html">arVGS_QUADRANGLE_COVER_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___a_d_d___c_o_v_e_r___s.html">arVGS_ADD_COVER_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___a_d_d___o_s_d___s.html">arVGS_ADD_OSD_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_g_s___a_d_d___r_o_t_a_t_i_o_n___s.html">arVGS_ADD_ROTATION_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga4a8840e4288d3cd8226a50d87a31d9d3"><td class="memItemLeft" align="right" valign="top"><a id="ga4a8840e4288d3cd8226a50d87a31d9d3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_NOBUF</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOBUF)</td></tr>
+<tr class="separator:ga4a8840e4288d3cd8226a50d87a31d9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdf19211590dbd2f5590b9d50894b574"><td class="memItemLeft" align="right" valign="top"><a id="gafdf19211590dbd2f5590b9d50894b574"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_BUF_EMPTY</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_EMPTY)</td></tr>
+<tr class="separator:gafdf19211590dbd2f5590b9d50894b574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c27c421db9c0691a6daf97277994705"><td class="memItemLeft" align="right" valign="top"><a id="ga2c27c421db9c0691a6daf97277994705"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_NULL_PTR</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NULL_PTR)</td></tr>
+<tr class="separator:ga2c27c421db9c0691a6daf97277994705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa271623fb4066241df7e876df634d929"><td class="memItemLeft" align="right" valign="top"><a id="gaa271623fb4066241df7e876df634d929"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_ILLEGAL_PARAM</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_ILLEGAL_PARAM)</td></tr>
+<tr class="separator:gaa271623fb4066241df7e876df634d929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga357d765874c2877c18344f3e1a97f89a"><td class="memItemLeft" align="right" valign="top"><a id="ga357d765874c2877c18344f3e1a97f89a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_BUF_FULL</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_FULL)</td></tr>
+<tr class="separator:ga357d765874c2877c18344f3e1a97f89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44065909416fa9ad7eecac9661934a6d"><td class="memItemLeft" align="right" valign="top"><a id="ga44065909416fa9ad7eecac9661934a6d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_SYS_NOTREADY</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_SYS_NOTREADY)</td></tr>
+<tr class="separator:ga44065909416fa9ad7eecac9661934a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebd502f94f19ef9d42abe5086e6fce83"><td class="memItemLeft" align="right" valign="top"><a id="gaebd502f94f19ef9d42abe5086e6fce83"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_NOT_SUPPORT</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_SUPPORT)</td></tr>
+<tr class="separator:gaebd502f94f19ef9d42abe5086e6fce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4b65c9076f2b95136ad6bfc0211caa2"><td class="memItemLeft" align="right" valign="top"><a id="gaf4b65c9076f2b95136ad6bfc0211caa2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AR_ERR_VGS_NOT_PERMITTED</b>&#160;&#160;&#160;AR_MPP_DEF_ERR(AR_ID_VGS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_PERM)</td></tr>
+<tr class="separator:gaf4b65c9076f2b95136ad6bfc0211caa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a461e1b44b43f2d0d9a354924e5a947"><td class="memItemLeft" align="right" valign="top"><a id="ga5a461e1b44b43f2d0d9a354924e5a947"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VGS_PRIVATE_DATA_LEN</b>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:ga5a461e1b44b43f2d0d9a354924e5a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga3cfce7b521f482fab1afcfb5b488ddc2"><td class="memItemLeft" align="right" valign="top">typedef AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a></td></tr>
+<tr class="separator:ga3cfce7b521f482fab1afcfb5b488ddc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5c0c86a3f112b404458070b99b58cf0"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga6c7dd36c3942b0f73003793a62b4f28a">arVGS_COLOR_REVERT_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gac5c0c86a3f112b404458070b99b58cf0">VGS_COLOR_REVERT_MODE_E</a></td></tr>
+<tr class="separator:gac5c0c86a3f112b404458070b99b58cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90c522f56d273cf9d18cf70ea068fbf7"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___o_s_d___r_e_v_e_r_t___s.html">arVGS_OSD_REVERT_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga90c522f56d273cf9d18cf70ea068fbf7">VGS_OSD_REVERT_S</a></td></tr>
+<tr class="separator:ga90c522f56d273cf9d18cf70ea068fbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ebc7f80d6e300bd3f5057d46e9625bf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___t_a_s_k___a_t_t_r___s.html">arVGS_TASK_ATTR_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a></td></tr>
+<tr class="separator:ga6ebc7f80d6e300bd3f5057d46e9625bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33c1679fc50bccf44549bc55300761ed"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___d_r_a_w___l_i_n_e___s.html">arVGS_DRAW_LINE_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a></td></tr>
+<tr class="separator:ga33c1679fc50bccf44549bc55300761ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcb820c96360159b95a497060cb9a723"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga825877179ad23d7eec5f9953eeb7345d">arVGS_COVER_TYPE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gabcb820c96360159b95a497060cb9a723">VGS_COVER_TYPE_E</a></td></tr>
+<tr class="separator:gabcb820c96360159b95a497060cb9a723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaece8cca38efe8565229288ffe47adc43"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___q_u_a_d_r_a_n_g_l_e___c_o_v_e_r___s.html">arVGS_QUADRANGLE_COVER_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaece8cca38efe8565229288ffe47adc43">VGS_QUADRANGLE_COVER_S</a></td></tr>
+<tr class="separator:gaece8cca38efe8565229288ffe47adc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4c7036802820fbc4873fa3b0ae2d377"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___a_d_d___c_o_v_e_r___s.html">arVGS_ADD_COVER_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a></td></tr>
+<tr class="separator:gae4c7036802820fbc4873fa3b0ae2d377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64052995b685a3c971d00ee0f70c47b6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structar_v_g_s___a_d_d___o_s_d___s.html">arVGS_ADD_OSD_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a></td></tr>
+<tr class="separator:ga64052995b685a3c971d00ee0f70c47b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9caf7f881c2703117b78bddf2cd7c3b3"><td class="memItemLeft" align="right" valign="top"><a id="ga9caf7f881c2703117b78bddf2cd7c3b3"></a>
+typedef struct <a class="el" href="structar_v_g_s___a_d_d___r_o_t_a_t_i_o_n___s.html">arVGS_ADD_ROTATION_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VGS_ADD_ROTATION_S</b></td></tr>
+<tr class="separator:ga9caf7f881c2703117b78bddf2cd7c3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e847930d38d64b18c990f82821f5a84"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga5f07c60db09a719c6e78ba5cbd2cf13f">arVGS_SCLCOEF_MODE_E</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga9e847930d38d64b18c990f82821f5a84">VGS_SCLCOEF_MODE_E</a></td></tr>
+<tr class="separator:ga9e847930d38d64b18c990f82821f5a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ga6c7dd36c3942b0f73003793a62b4f28a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga6c7dd36c3942b0f73003793a62b4f28a">arVGS_COLOR_REVERT_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga6c7dd36c3942b0f73003793a62b4f28aaf0e2d8e1e9ca00f75e41f4b0c85fcb82">VGS_COLOR_REVERT_NONE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga6c7dd36c3942b0f73003793a62b4f28aaed8906cca8f911b8cb224aa6f0eaba22">VGS_COLOR_REVERT_RGB</a>, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga6c7dd36c3942b0f73003793a62b4f28aa298aad11a95b6dda039176aa8941c1cb">VGS_COLOR_REVERT_ALPHA</a>, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga6c7dd36c3942b0f73003793a62b4f28aadb71dd882cee4bbdfaecba01aa2eb742">VGS_COLOR_REVERT_BOTH</a>, 
+<br />
+&#160;&#160;<b>VGS_COLOR_REVERT_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ga6c7dd36c3942b0f73003793a62b4f28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga825877179ad23d7eec5f9953eeb7345d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga825877179ad23d7eec5f9953eeb7345d">arVGS_COVER_TYPE_E</a> { <br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga825877179ad23d7eec5f9953eeb7345da6fc3328bd389fb24ecda3a6e5926ece7">COVER_RECT</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga825877179ad23d7eec5f9953eeb7345da23a4cb9a21edc1314cad09b3e8a76e7f">COVER_QUAD_RANGLE</a>, 
+<br />
+&#160;&#160;<b>COVER_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ga825877179ad23d7eec5f9953eeb7345d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f07c60db09a719c6e78ba5cbd2cf13f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga5f07c60db09a719c6e78ba5cbd2cf13f">arVGS_SCLCOEF_MODE_E</a> { <br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga5f07c60db09a719c6e78ba5cbd2cf13faa44525a6c1855a8fd003e115ac1a29c0">VGS_SCLCOEF_NORMAL</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga5f07c60db09a719c6e78ba5cbd2cf13fa7e3a12dbbc9d4b038ceffcf616cacb74">VGS_SCLCOEF_TAP2</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga5f07c60db09a719c6e78ba5cbd2cf13fa471aec9bc3990f1daf446952569cf5fd">VGS_SCLCOEF_TAP4</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga5f07c60db09a719c6e78ba5cbd2cf13fab294a74d9ff05cf59b13dd26afc9af23">VGS_SCLCOEF_TAP6</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group___m_p_i___v_g_s.html#gga5f07c60db09a719c6e78ba5cbd2cf13fa5f143bcbcb0b32f0be1b6a643428d4c3">VGS_SCLCOEF_TAP8</a> = 4, 
+<br />
+&#160;&#160;<b>VGS_SCLCOEF_BUTT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ga5f07c60db09a719c6e78ba5cbd2cf13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaf4bcadc2137ba305efb7244e3692825d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaf4bcadc2137ba305efb7244e3692825d">AR_MPI_VGS_BeginJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> *phHandle)</td></tr>
+<tr class="memdesc:gaf4bcadc2137ba305efb7244e3692825d"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建vgs job  <a href="group___m_p_i___v_g_s.html#gaf4bcadc2137ba305efb7244e3692825d">更多...</a><br /></td></tr>
+<tr class="separator:gaf4bcadc2137ba305efb7244e3692825d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad166dfa1967fed3d7ff670927efd53c7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gad166dfa1967fed3d7ff670927efd53c7">AR_MPI_VGS_EndJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle)</td></tr>
+<tr class="memdesc:gad166dfa1967fed3d7ff670927efd53c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">结束vgs job，此接口为同步接口，vgs完成所有task后返回  <a href="group___m_p_i___v_g_s.html#gad166dfa1967fed3d7ff670927efd53c7">更多...</a><br /></td></tr>
+<tr class="separator:gad166dfa1967fed3d7ff670927efd53c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac032f24eb382200407a119874576da4b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gac032f24eb382200407a119874576da4b">AR_MPI_VGS_CancelJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle)</td></tr>
+<tr class="memdesc:gac032f24eb382200407a119874576da4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消vgs job，vgs中所有task将取消操作  <a href="group___m_p_i___v_g_s.html#gac032f24eb382200407a119874576da4b">更多...</a><br /></td></tr>
+<tr class="separator:gac032f24eb382200407a119874576da4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaa2c33ee8e1248b9fcb4733a1af10b18b">AR_MPI_VGS_AddScaleTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, <a class="el" href="group___m_p_i___v_g_s.html#ga9e847930d38d64b18c990f82821f5a84">VGS_SCLCOEF_MODE_E</a> enScaleCoefMode)</td></tr>
+<tr class="memdesc:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加缩放task到指定job中  <a href="group___m_p_i___v_g_s.html#gaa2c33ee8e1248b9fcb4733a1af10b18b">更多...</a><br /></td></tr>
+<tr class="separator:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf894d4650ca84f489eda63e2b0604a0a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaf894d4650ca84f489eda63e2b0604a0a">AR_MPI_VGS_AddDrawLineTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a> *pstVgsDrawLine)</td></tr>
+<tr class="memdesc:gaf894d4650ca84f489eda63e2b0604a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加画线task到指定job中  <a href="group___m_p_i___v_g_s.html#gaf894d4650ca84f489eda63e2b0604a0a">更多...</a><br /></td></tr>
+<tr class="separator:gaf894d4650ca84f489eda63e2b0604a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2728d04263648cc98ec03676dda2693d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga2728d04263648cc98ec03676dda2693d">AR_MPI_VGS_AddCoverTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a> *pstVgsAddCover)</td></tr>
+<tr class="memdesc:ga2728d04263648cc98ec03676dda2693d"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加cover task到指定job中  <a href="group___m_p_i___v_g_s.html#ga2728d04263648cc98ec03676dda2693d">更多...</a><br /></td></tr>
+<tr class="separator:ga2728d04263648cc98ec03676dda2693d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga623c4ea6bb6ab0814ef1190829e5e6b9">AR_MPI_VGS_AddOsdTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a> *pstVgsAddOsd)</td></tr>
+<tr class="memdesc:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加osd task到指定job中  <a href="group___m_p_i___v_g_s.html#ga623c4ea6bb6ab0814ef1190829e5e6b9">更多...</a><br /></td></tr>
+<tr class="separator:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga645a003172d24aab8f8935cc49134182"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga645a003172d24aab8f8935cc49134182">AR_MPI_VGS_AddDrawLineTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a> astVgsDrawLine[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:ga645a003172d24aab8f8935cc49134182"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加画线task数组到指定job中  <a href="group___m_p_i___v_g_s.html#ga645a003172d24aab8f8935cc49134182">更多...</a><br /></td></tr>
+<tr class="separator:ga645a003172d24aab8f8935cc49134182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa37d25365e0d767b9e255b26550476a3"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaa37d25365e0d767b9e255b26550476a3">AR_MPI_VGS_AddCoverTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a> astVgsAddCover[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:gaa37d25365e0d767b9e255b26550476a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加cover task到指定job中  <a href="group___m_p_i___v_g_s.html#gaa37d25365e0d767b9e255b26550476a3">更多...</a><br /></td></tr>
+<tr class="separator:gaa37d25365e0d767b9e255b26550476a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad14e8bf56f28ee781f27e9991c42daf"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaad14e8bf56f28ee781f27e9991c42daf">AR_MPI_VGS_AddOsdTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a> astVgsAddOsd[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:gaad14e8bf56f28ee781f27e9991c42daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加osd task到指定job中  <a href="group___m_p_i___v_g_s.html#gaad14e8bf56f28ee781f27e9991c42daf">更多...</a><br /></td></tr>
+<tr class="separator:gaad14e8bf56f28ee781f27e9991c42daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga5b967c1f744c1e5c3d797915ce7aad13">AR_MPI_VGS_AddRotationTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, ROTATION_E enRotationAngle)</td></tr>
+<tr class="memdesc:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加旋转task到指定job中  <a href="group___m_p_i___v_g_s.html#ga5b967c1f744c1e5c3d797915ce7aad13">更多...</a><br /></td></tr>
+<tr class="separator:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae937bae1cf22b81796e226f20672df2d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gae937bae1cf22b81796e226f20672df2d">AR_MPI_VGS_Suspend</a> (void)</td></tr>
+<tr class="memdesc:gae937bae1cf22b81796e226f20672df2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">使VGS模块进入睡眠状态  <a href="group___m_p_i___v_g_s.html#gae937bae1cf22b81796e226f20672df2d">更多...</a><br /></td></tr>
+<tr class="separator:gae937bae1cf22b81796e226f20672df2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga737251026783fe76a7d55b73ac84ae9f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga737251026783fe76a7d55b73ac84ae9f">AR_MPI_VGS_Resume</a> (void)</td></tr>
+<tr class="memdesc:ga737251026783fe76a7d55b73ac84ae9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">唤醒VGS模块  <a href="group___m_p_i___v_g_s.html#ga737251026783fe76a7d55b73ac84ae9f">更多...</a><br /></td></tr>
+<tr class="separator:ga737251026783fe76a7d55b73ac84ae9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f7381b914cb055b5e1c8ce8af9338b6"><td class="memItemLeft" align="right" valign="top"><a id="ga7f7381b914cb055b5e1c8ce8af9338b6"></a>
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_VGS_AddRotationTaskExt</b> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, <a class="el" href="structar_v_g_s___a_d_d___r_o_t_a_t_i_o_n___s.html">VGS_ADD_ROTATION_S</a> *pstRotation)</td></tr>
+<tr class="separator:ga7f7381b914cb055b5e1c8ce8af9338b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>VGS对输入图像进行处理，如添加COVER，打OSD, 画线，旋转等处理 </p>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gae4c7036802820fbc4873fa3b0ae2d377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4c7036802820fbc4873fa3b0ae2d377">&#9670;&nbsp;</a></span>VGS_ADD_COVER_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___a_d_d___c_o_v_e_r___s.html">arVGS_ADD_COVER_S</a> <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cover参数 </p>
+
+</div>
+</div>
+<a id="ga64052995b685a3c971d00ee0f70c47b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64052995b685a3c971d00ee0f70c47b6">&#9670;&nbsp;</a></span>VGS_ADD_OSD_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___a_d_d___o_s_d___s.html">arVGS_ADD_OSD_S</a> <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>osd参数 </p>
+
+</div>
+</div>
+<a id="gac5c0c86a3f112b404458070b99b58cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5c0c86a3f112b404458070b99b58cf0">&#9670;&nbsp;</a></span>VGS_COLOR_REVERT_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga6c7dd36c3942b0f73003793a62b4f28a">arVGS_COLOR_REVERT_MODE_E</a> <a class="el" href="group___m_p_i___v_g_s.html#gac5c0c86a3f112b404458070b99b58cf0">VGS_COLOR_REVERT_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>反色模式 </p>
+
+</div>
+</div>
+<a id="gabcb820c96360159b95a497060cb9a723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcb820c96360159b95a497060cb9a723">&#9670;&nbsp;</a></span>VGS_COVER_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga825877179ad23d7eec5f9953eeb7345d">arVGS_COVER_TYPE_E</a> <a class="el" href="group___m_p_i___v_g_s.html#gabcb820c96360159b95a497060cb9a723">VGS_COVER_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cover类型 </p>
+
+</div>
+</div>
+<a id="ga33c1679fc50bccf44549bc55300761ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33c1679fc50bccf44549bc55300761ed">&#9670;&nbsp;</a></span>VGS_DRAW_LINE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___d_r_a_w___l_i_n_e___s.html">arVGS_DRAW_LINE_S</a> <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>画线参数 </p>
+
+</div>
+</div>
+<a id="ga3cfce7b521f482fab1afcfb5b488ddc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cfce7b521f482fab1afcfb5b488ddc2">&#9670;&nbsp;</a></span>VGS_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef AR_S32 <a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>VGS句柄 </p>
+
+</div>
+</div>
+<a id="ga90c522f56d273cf9d18cf70ea068fbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90c522f56d273cf9d18cf70ea068fbf7">&#9670;&nbsp;</a></span>VGS_OSD_REVERT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___o_s_d___r_e_v_e_r_t___s.html">arVGS_OSD_REVERT_S</a> <a class="el" href="group___m_p_i___v_g_s.html#ga90c522f56d273cf9d18cf70ea068fbf7">VGS_OSD_REVERT_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>反色参数 </p>
+
+</div>
+</div>
+<a id="gaece8cca38efe8565229288ffe47adc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaece8cca38efe8565229288ffe47adc43">&#9670;&nbsp;</a></span>VGS_QUADRANGLE_COVER_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___q_u_a_d_r_a_n_g_l_e___c_o_v_e_r___s.html">arVGS_QUADRANGLE_COVER_S</a> <a class="el" href="group___m_p_i___v_g_s.html#gaece8cca38efe8565229288ffe47adc43">VGS_QUADRANGLE_COVER_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>四边形cover参数 </p>
+
+</div>
+</div>
+<a id="ga9e847930d38d64b18c990f82821f5a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e847930d38d64b18c990f82821f5a84">&#9670;&nbsp;</a></span>VGS_SCLCOEF_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group___m_p_i___v_g_s.html#ga5f07c60db09a719c6e78ba5cbd2cf13f">arVGS_SCLCOEF_MODE_E</a> <a class="el" href="group___m_p_i___v_g_s.html#ga9e847930d38d64b18c990f82821f5a84">VGS_SCLCOEF_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>缩放参数 </p>
+
+</div>
+</div>
+<a id="ga6ebc7f80d6e300bd3f5057d46e9625bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ebc7f80d6e300bd3f5057d46e9625bf">&#9670;&nbsp;</a></span>VGS_TASK_ATTR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structar_v_g_s___t_a_s_k___a_t_t_r___s.html">arVGS_TASK_ATTR_S</a> <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>task参数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ga6c7dd36c3942b0f73003793a62b4f28a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c7dd36c3942b0f73003793a62b4f28a">&#9670;&nbsp;</a></span>arVGS_COLOR_REVERT_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___m_p_i___v_g_s.html#ga6c7dd36c3942b0f73003793a62b4f28a">arVGS_COLOR_REVERT_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>反色模式 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga6c7dd36c3942b0f73003793a62b4f28aaf0e2d8e1e9ca00f75e41f4b0c85fcb82"></a>VGS_COLOR_REVERT_NONE&#160;</td><td class="fielddoc"><p>不反色 <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c7dd36c3942b0f73003793a62b4f28aaed8906cca8f911b8cb224aa6f0eaba22"></a>VGS_COLOR_REVERT_RGB&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>按RGB反色，暂不支持 </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c7dd36c3942b0f73003793a62b4f28aa298aad11a95b6dda039176aa8941c1cb"></a>VGS_COLOR_REVERT_ALPHA&#160;</td><td class="fielddoc"><p>按ALPHA反色 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c7dd36c3942b0f73003793a62b4f28aadb71dd882cee4bbdfaecba01aa2eb742"></a>VGS_COLOR_REVERT_BOTH&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>同时反色，暂不支持 </dd></dl>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga825877179ad23d7eec5f9953eeb7345d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga825877179ad23d7eec5f9953eeb7345d">&#9670;&nbsp;</a></span>arVGS_COVER_TYPE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___m_p_i___v_g_s.html#ga825877179ad23d7eec5f9953eeb7345d">arVGS_COVER_TYPE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cover类型 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga825877179ad23d7eec5f9953eeb7345da6fc3328bd389fb24ecda3a6e5926ece7"></a>COVER_RECT&#160;</td><td class="fielddoc"><p>矩形cover </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga825877179ad23d7eec5f9953eeb7345da23a4cb9a21edc1314cad09b3e8a76e7f"></a>COVER_QUAD_RANGLE&#160;</td><td class="fielddoc"><p>四边行cover </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga5f07c60db09a719c6e78ba5cbd2cf13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f07c60db09a719c6e78ba5cbd2cf13f">&#9670;&nbsp;</a></span>arVGS_SCLCOEF_MODE_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___m_p_i___v_g_s.html#ga5f07c60db09a719c6e78ba5cbd2cf13f">arVGS_SCLCOEF_MODE_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>缩放参数 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga5f07c60db09a719c6e78ba5cbd2cf13faa44525a6c1855a8fd003e115ac1a29c0"></a>VGS_SCLCOEF_NORMAL&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>暂不支持 </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5f07c60db09a719c6e78ba5cbd2cf13fa7e3a12dbbc9d4b038ceffcf616cacb74"></a>VGS_SCLCOEF_TAP2&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>暂不支持 <br  />
+ </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5f07c60db09a719c6e78ba5cbd2cf13fa471aec9bc3990f1daf446952569cf5fd"></a>VGS_SCLCOEF_TAP4&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>暂不支持 <br  />
+ </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5f07c60db09a719c6e78ba5cbd2cf13fab294a74d9ff05cf59b13dd26afc9af23"></a>VGS_SCLCOEF_TAP6&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>暂不支持 <br  />
+ </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5f07c60db09a719c6e78ba5cbd2cf13fa5f143bcbcb0b32f0be1b6a643428d4c3"></a>VGS_SCLCOEF_TAP8&#160;</td><td class="fielddoc"><dl class="section note"><dt>注解</dt><dd>暂不支持 <br  />
+ </dd></dl>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga2728d04263648cc98ec03676dda2693d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2728d04263648cc98ec03676dda2693d">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddCoverTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddCoverTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a> *&#160;</td>
+          <td class="paramname"><em>pstVgsAddCover</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加cover task到指定job中 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持实心四边形，不支持凸四边形 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>cover task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstVgsAddCover</td><td>cover参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa37d25365e0d767b9e255b26550476a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa37d25365e0d767b9e255b26550476a3">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddCoverTaskArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddCoverTaskArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a>&#160;</td>
+          <td class="paramname"><em>astVgsAddCover</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32ArraySize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加cover task到指定job中 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持实心四边形，不支持凸四边形 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>cover task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">astVgsAddCover</td><td>cover参数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32ArraySize</td><td>数组大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf894d4650ca84f489eda63e2b0604a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf894d4650ca84f489eda63e2b0604a0a">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddDrawLineTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddDrawLineTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a> *&#160;</td>
+          <td class="paramname"><em>pstVgsDrawLine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加画线task到指定job中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>画线task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstVgsDrawLine</td><td>画线参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga645a003172d24aab8f8935cc49134182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga645a003172d24aab8f8935cc49134182">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddDrawLineTaskArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddDrawLineTaskArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a>&#160;</td>
+          <td class="paramname"><em>astVgsDrawLine</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32ArraySize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加画线task数组到指定job中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>画线task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">astVgsDrawLine</td><td>画线参数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32ArraySize</td><td>数组大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga623c4ea6bb6ab0814ef1190829e5e6b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga623c4ea6bb6ab0814ef1190829e5e6b9">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddOsdTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddOsdTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a> *&#160;</td>
+          <td class="paramname"><em>pstVgsAddOsd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加osd task到指定job中 </p>
+<dl class="section note"><dt>注解</dt><dd>仅gray1支持u32BgAlpha, u32FgAlpha </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>osd task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstVgsAddOsd</td><td>cover参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaad14e8bf56f28ee781f27e9991c42daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad14e8bf56f28ee781f27e9991c42daf">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddOsdTaskArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddOsdTaskArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a>&#160;</td>
+          <td class="paramname"><em>astVgsAddOsd</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AR_U32&#160;</td>
+          <td class="paramname"><em>u32ArraySize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加osd task到指定job中 </p>
+<dl class="section note"><dt>注解</dt><dd>仅gray1支持u32BgAlpha, u32FgAlpha </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>osd task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">astVgsAddOsd</td><td>osd参数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u32ArraySize</td><td>数组大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5b967c1f744c1e5c3d797915ce7aad13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b967c1f744c1e5c3d797915ce7aad13">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddRotationTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddRotationTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROTATION_E&#160;</td>
+          <td class="paramname"><em>enRotationAngle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加旋转task到指定job中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>osd task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enRotationAngle</td><td>旋转角度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa2c33ee8e1248b9fcb4733a1af10b18b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2c33ee8e1248b9fcb4733a1af10b18b">&#9670;&nbsp;</a></span>AR_MPI_VGS_AddScaleTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_AddScaleTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *&#160;</td>
+          <td class="paramname"><em>pstTask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga9e847930d38d64b18c990f82821f5a84">VGS_SCLCOEF_MODE_E</a>&#160;</td>
+          <td class="paramname"><em>enScaleCoefMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加缩放task到指定job中 </p>
+<dl class="section note"><dt>注解</dt><dd>暂不支持enScaleCoefMode </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstTask</td><td>缩放task属性 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enScaleCoefMode</td><td>缩放模式 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf4bcadc2137ba305efb7244e3692825d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4bcadc2137ba305efb7244e3692825d">&#9670;&nbsp;</a></span>AR_MPI_VGS_BeginJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_BeginJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> *&#160;</td>
+          <td class="paramname"><em>phHandle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建vgs job </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac032f24eb382200407a119874576da4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac032f24eb382200407a119874576da4b">&#9670;&nbsp;</a></span>AR_MPI_VGS_CancelJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_CancelJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>取消vgs job，vgs中所有task将取消操作 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad166dfa1967fed3d7ff670927efd53c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad166dfa1967fed3d7ff670927efd53c7">&#9670;&nbsp;</a></span>AR_MPI_VGS_EndJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_EndJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>hHandle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>结束vgs job，此接口为同步接口，vgs完成所有task后返回 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">phHandle</td><td>VGS句柄 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga737251026783fe76a7d55b73ac84ae9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga737251026783fe76a7d55b73ac84ae9f">&#9670;&nbsp;</a></span>AR_MPI_VGS_Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_Resume </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>唤醒VGS模块 </p>
+<dl class="section attention"><dt>注意</dt><dd>新增接口 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae937bae1cf22b81796e226f20672df2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae937bae1cf22b81796e226f20672df2d">&#9670;&nbsp;</a></span>AR_MPI_VGS_Suspend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_S32 AR_MPI_VGS_Suspend </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使VGS模块进入睡眠状态 </p>
+<dl class="section attention"><dt>注意</dt><dd>新增接口 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 , 其它 失败. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

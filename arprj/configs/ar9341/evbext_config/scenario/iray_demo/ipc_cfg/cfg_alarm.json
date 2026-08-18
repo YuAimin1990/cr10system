@@ -1,0 +1,33 @@
+{
+	"alarmin":	{
+		"channel":	0,
+		"name":	"alarm",
+		"default_state":	0,
+		"active_state":	0,
+		"interval":	5,
+		"is_snap":	0,
+		"snap_num":	1,
+		"is_beep":	0,
+		"beep_time":	3
+	},
+	"alarmout":	{
+		"name":	0,
+		"default_state":	0,
+		"active_state":	0,
+		"poweron_state":	0,
+		"pulse_duration":	5000
+	},
+	"alarmcfg":	{
+		"gpio_enable":	0,
+		"in_level":	0,
+		"out_level":	0,
+		"io_linkage":	0,
+		"upload_interval":	0,
+		"alarmbymail":	0,
+		"schedule_enable":	0,
+		"snapshot_enable":	0,
+		"recorder_enable":	0,
+		"move_perset":	1,
+		"alarm_mute":	0
+	}
+}

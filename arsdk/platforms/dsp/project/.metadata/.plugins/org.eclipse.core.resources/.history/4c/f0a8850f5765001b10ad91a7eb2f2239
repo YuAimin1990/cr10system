@@ -1,0 +1,90 @@
+/******************************************************************************
+* Copyright (C), artosyn
+* File name: memory_attribution.c
+* Author : jianliu    Version:Initial Draft     Create: 2017骞�6鏈�15鏃�
+* Description : cofigure address region attribution
+* Others :
+* History :
+* 1.Date : 2017骞�6鏈�15鏃�   Author : jianliu   Modify content : Create File
+*
+******************************************************************************/
+
+/*----------------------------------------------*
+ * header file                                   *
+ *----------------------------------------------*/
+#include "memory_attribution.h"
+#include <vec-c.h>
+#include <stdio.h>
+#include "cpm_io.h"
+#include "cevaxm.h"
+
+int config_region_cacheable(unsigned int addr, unsigned int region_index)
+{
+	addx_start_t region1_start = { 0 };
+	addx_att1_t region1_att1 = { 0 };
+	unsigned int addr_offset = ADD_ADDR_OFFSET * region_index;
+	/* addr = start_addr * 4k  */
+	unsigned int start_addr = addr >> 12;
+	
+	region1_start.field.region_start = start_addr;
+	region1_start.field.region_mid=1;
+	region1_start.field.inactive = 0;
+	cpm_out((ADD0_START + addr_offset), region1_start.overlay);
+	/* write_back and no-allocate */
+	region1_att1.field.lxa_wr = 0x7;
+	region1_att1.field.lxa_rd = 0xb;
+	cpm_out((ADD0_ATT1 + addr_offset), region1_att1.overlay);
+
+	return 0;
+}
+
+unsigned int get_region_start_addr(const unsigned int region_index)
+{
+	unsigned int addr_offset = ADD_ADDR_OFFSET * region_index;
+	addx_start_t region1_start;
+
+	region1_start.overlay = cpm_in((ADD0_START + addr_offset));
+
+	return region1_start.field.region_start;
+}
+
+int config_region_noncacheable(unsigned int addr, unsigned int region_index)
+{
+	addx_start_t region1_start = { 0 };
+	addx_att1_t region1_att1 = { 0 };
+	unsigned int addr_offset = ADD_ADDR_OFFSET * region_index;
+	/* addr = start_addr * 4k  */
+	unsigned int start_addr = addr >> 12;
+
+	region1_start.field.region_start = start_addr;
+	region1_start.field.region_mid=1;
+	region1_start.field.inactive = 0;
+	cpm_out((ADD0_START + addr_offset), region1_start.overlay);
+	/* write_back and no-allocate */
+	region1_att1.field.lxa_wr = 0x2;
+	region1_att1.field.lxa_rd = 0x2;
+	cpm_out((ADD0_ATT1 + addr_offset), region1_att1.overlay);
+
+	return 0;
+}
+
+int config_region_program_cacheable(unsigned int addr, unsigned int region_index)
+{
+	p_addx_start_t region1_start = { 0 };
+	p_addx_attr0_t region1_att0 = { 0 };
+	unsigned int addr_offset = P_ADD_ADDR_OFFSET * region_index;
+	/* 	addr = start_addr * 4k  */
+	unsigned int start_addr = addr >> 12;
+
+	region1_start.field.region_start = start_addr;
+	region1_start.field.inactive = 0;
+	//debug_print("before P_ADD0_START\n");
+	cpm_out((P_ADD0_START + addr_offset), region1_start.overlay);
+	/* cacheable and no lock after cache-line fill */
+	region1_att0.field.cacheable = 1;
+	region1_att0.field.lock = 0;
+	//debug_print("before P_ADD0_ATT0\n");
+	cpm_out((P_ADD0_ATT0 + addr_offset), region1_att0.overlay);
+
+	return 0;
+}

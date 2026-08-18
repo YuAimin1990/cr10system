@@ -1,0 +1,21 @@
+# Feature.param
+#
+# add feature related macros here
+# CFLAGS or CXXFLAGS : for compiling app or lib
+# AR_DFLAGS : for compiling kmodule
+# DTS_CFLAGS : for compiling kernel dts
+# UDTS_FLAGS : for compiling uboot dts
+#
+
+ifeq ($(CONFIG_FEAT_EIS),y)
+export CFLAGS += -DAR_FEAT_EIS
+export UDTS_FLAGS += -DAR_FEAT_EIS
+export DTS_CFLAGS += -DAR_FEAT_EIS
+endif
+
+ifeq ($(CONFIG_FEAT_32BIT),y)
+CONFIG_BIT  = 32bits
+endif
+
+
+

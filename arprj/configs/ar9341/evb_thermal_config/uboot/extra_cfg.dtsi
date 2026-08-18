@@ -1,0 +1,19 @@
+#include <dt-bindings/gpio/gpio.h>
+
+&gpio_keys {
+
+};
+
+&soc {
+	vbus_regulator0: regulator@0 {
+		gpio = <&portb1 5 GPIO_ACTIVE_HIGH>;
+	};
+
+	vbus_regulator1: regulator@1 {
+		gpio = <&portb1 6 GPIO_ACTIVE_HIGH>;
+	};
+
+	vbus_regulator2: regulator@2 {
+		gpio = <&portb1 7 GPIO_ACTIVE_HIGH>;
+	};
+};

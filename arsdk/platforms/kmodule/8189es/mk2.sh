@@ -1,0 +1,1 @@
+make ARCH=arm64 CROSS_COMPILE=/opt/toolchain/7.5.0/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu- -C ../../kernel/linux-linaro-stable-lsk-v4.9-17.07/ M=/home/dymeng/work/9301/ar9301_submodule_new2/ar9301sw/arsdk/platforms/kmodule/8189es modules 

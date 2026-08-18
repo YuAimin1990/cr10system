@@ -1,0 +1,21 @@
+{
+	"network":	{
+		"id":"123",
+		"npubin":"ssd-mobilenet_caffe.npubin",
+		"priority":"normal",
+		"callback_to_arm":"yes",
+		"ifc-pre-process":"yes",
+		"mode":"live",
+                "vpss_grp":"0",
+                "vpss_chn":"4",
+		"devname":"/dev/video_yuv-0",
+		"local_path":"./",
+		"draw_osd":"yes",
+		"log_level":"5",
+		"sram_addr":"0x017c0000",
+		"sram_size":"0x40000",
+                "img_width":"300",
+                "img_height":"300"
+
+	}
+}

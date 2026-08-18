@@ -1,0 +1,7808 @@
+
+/*---------------header of imx307 tuning-------------------------*/
+
+/* version of the tuning header uint32_t header_version */
+0x20220308,
+/* tuning_ctl_t tuning_ctl */
+{
+  //float aec_trigger_tolerence;
+  3,
+  //float aec_trigger_tolerence_gain;
+  0.3,
+  //float awb_trigger_tolerence;
+  50,
+},
+/* isp_tuning_t isp_tuning */
+{
+  /* isp version */
+  0x00000001,
+    /* isp_sub_module_raw_crop_tuning_t isp_sub_module_raw_crop_tuning */
+    {
+       /* enable */
+       0,
+       /* interpolation enable */
+       0,
+    },
+    /* isp_sub_module_blc_tuning_t isp_sub_module_blc_tuning */
+    {
+       /* enable */
+       0,
+       /* interpolation_enable */
+       1,
+       /* count_ae */
+       5,
+       /* aec_trigger_mode_t trigger_mode : 0 gain trigger ,1 lux trigger */
+       0,
+       /* aec_trigger_t aec_trigger[MIDDLE_TRIGGER_COUNT] MIDDLE_TRIGGER_COUNT==5 */
+       {
+           /* aec trigger 0*/
+           {
+               1,
+               32,
+           },
+           /* aec trigger 1*/
+           {
+               120,
+               130,
+           },
+           /* aec trigger 2*/
+           {
+               510,
+               520,
+           },
+           /* aec trigger 3*/
+           {
+               1020,
+               1030,
+           },
+           /* aec trigger 4*/
+           {
+               2000,
+               2100,
+           },
+       },
+       /* isp_sub_module_blc_para para[MIDDLE_TRIGGER_COUNT] MIDDLE_TRIGGER_COUNT==5 */
+       {
+           /* para 0*/
+           {
+               961,//R
+               961,//B
+               961,//GR
+               961,//GB
+               272,//gian R
+               272,//gain B
+               272,//gain GR
+               272,//gain GB
+           },
+           /* para 1*/
+           {
+               946,//R
+               944,//B
+               946,//GR
+               944,//GB
+               272,//gian R
+               272,//gain B
+               272,//gain GR
+               272,//gain GB
+           },
+           /* para 2*/
+           {
+               1048,//R
+               1061,//B
+               1047,//GR
+               1063,//GB
+               274,//gian R
+               274,//gain B
+               274,//gain GR
+               274,//gain GB
+           },
+           /* para 3*/
+           {
+               1586,//R
+               1625,//B
+               1591,//GR
+               1624,//GB
+               284,//gian R
+               285,//gain B
+               284,//gain GR
+               285,//gain GB
+           },
+           /* para 4*/
+           {
+               2628,//R
+               2601,//B
+               2633,//GR
+               2591,//GB
+               305,//gian R
+               305,//gain B
+               306,//gain GR
+               305,//gain GB
+           },
+       },
+    },
+    /* isp_sub_module_hdr_mix_tuning_t isp_sub_module_hdr_mix_tuning */
+    {
+       /* enable */
+       0,
+       /* interpolation_enable */
+       1,
+       /* count_ae */
+       1,
+       /* tigger_mode : 0 gain ,1 lux */
+       0,
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             500,
+          },
+       },
+       /* isp_sub_module_hdr_para para[MAX_TRIGGER_COUNT] MAX_TRIGGER_COUNT==16 */
+       {
+           /* para 0*/
+           {
+              240,//blc_short_exp
+              240,//blc_mid_exp
+              240,//blc_long_exp
+              1,//hdr_motion_en_sm
+              25,//hdr_alpha_s_th_sm
+              867,//hdr_exp_value_th1_sm
+              682,//hdr_th2_th1_reverse_sm
+              16,//hdr_noise_sp_sm
+              19,//hdr_motion_mp_sm
+              1,//hdr_motion_en_sl
+              25,//hdr_alpha_s_th_sl
+              32,//hdr_exp_value_th1_sl
+              68,//hdr_th2_th1_reverse_sl
+              60,//hdr_noise_sp_sl
+              12,//hdr_motion_mp_sl
+              32,//hdr_md_th4_sl
+              27,//hdr_md_th9_sl
+              19,//hdr_md_th16_sl
+              15,//hdr_md_th25_sl
+              /* noise_profile_l[129] */
+              {
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+              },
+              /* noise_profile_m[129] */
+              {
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+              },
+              /* noise_profile_s[129] */
+              {
+                  13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
+                  13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14,
+                  14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14,
+              },
+              0,//hdr_policy
+              0,//enable_hdr_blc
+              0,//mv_fix_th
+              0,//mv_fix_value
+              0,//mv_fix_en
+              0,//use_long_exp_fix
+              0,//use_mv_fix_value_fix
+              0,//enable_sexp_denoise
+              /* gaus_coef[4] */
+              {
+                 0,0,0,0,
+              },
+           },
+       },
+    },
+    /* isp_sub_module_compander_tuning_t isp_sub_module_compander_tuning */
+    {
+    },
+    /* isp_sub_module_dpc_tuning_t isp_sub_module_dpc_tuning */
+    {
+       /* enable */
+       1,
+       /* interpolation_enable */
+       0,
+       /* count_ae */
+       5,
+       /* 0 for dynamic dpc, 1 for static dpc */
+       0,
+       /* tigger_mode : 0 gain ,1 lux */
+       0,
+       /* region enable */
+       {
+          0,
+          1,
+          1,
+          1,
+          1,
+       },
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             8,
+          },
+          /* aec trigger 1 */
+          {
+             10,
+             16,
+          },
+          /* aec trigger 2 */
+          {
+             20,
+             60,
+          },
+          /* aec trigger 3 */
+          {
+             64,
+             200,
+          },
+          /* aec trigger 4 */
+          {
+             256,
+             1000,
+          },
+       },
+       /* aec_trigger_t aec_trigger[MIDDLE_TRIGGER_COUNT] MIDDLE_TRIGGER_COUNT==5 */
+       {
+          /* parameter 0 */
+          {
+             0x0000004c,0x00000000,0x000003e8,0x00000578,0x00000640,0x000003e8,0x00000578,0x00000640,0x00000c00,0x00000028,
+             0x0000003c,0x00000bb8,0x000000c8,0x00000190,0x00000033,0x00000020,0x00000040,0x00000080,0x00000100,0x00000200,
+             0x00000000,0x00000020,0x00000060,0x000000a0,0x000000e0,
+          },
+          /* parameter 1 */
+          {
+             0x00000040,0x00000000,0x000003e8,0x00000578,0x00000640,0x000003e8,0x000000c8,0x00000320,0x00000bb8,0x000000c8,
+             0x00000190,0x000003e8,0x000000c8,0x00000320,0x00000033,0x00000020,0x00000040,0x00000080,0x00000100,0x00000200,
+             0x00000000,0x00000020,0x00000060,0x000000a0,0x000000e0,
+          },
+          /* parameter 2 */
+          {
+             0x00000040,0x00000000,0x000003e8,0x00000578,0x00000640,0x000003e8,0x000000c8,0x00000320,0x00000bb8,0x000000c8,
+             0x00000190,0x000003e8,0x000000c8,0x00000320,0x00000033,0x00000020,0x00000040,0x00000080,0x00000100,0x00000200,
+             0x00000000,0x00000020,0x00000060,0x000000a0,0x000000e0,
+          },
+          /* parameter 3 */
+          {
+             0x00000040,0x00000000,0x000003e8,0x00000578,0x00000640,0x000003e8,0x000000c8,0x00000320,0x00000bb8,0x000000c8,
+             0x00000190,0x000003e8,0x000000c8,0x00000320,0x00000033,0x00000020,0x00000040,0x00000080,0x00000100,0x00000200,
+             0x00000000,0x00000020,0x00000060,0x000000a0,0x000000e0,
+          },
+          /* parameter 4 */
+          {
+             0x00000020,0x00000000,0x000003e8,0x00000578,0x00000640,0x000003e8,0x000000c8,0x00000320,0x00000bb8,0x000000c8,
+             0x00000190,0x000003e8,0x000000c8,0x00000320,0x00000033,0x00000020,0x00000040,0x00000080,0x00000100,0x00000200,
+             0x00000000,0x00000020,0x00000060,0x000000a0,0x000000e0,
+          },
+       },
+    },
+    /* isp_sub_module_cac_tuning_t isp_sub_module_cac_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_ata_tuning_t isp_sub_module_ata_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_rnr_tuning_t isp_sub_module_rnr_tuning */
+    {
+       /* enable */
+       1,
+       /* interpolation_enable */
+       1,
+       /* grey mode */
+       1,
+       /* count_ae */
+       12,
+       /* tigger_mode : 0 gain ,1 lux */
+       0,
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             200,
+          },
+          /* aec trigger 1 */
+          {
+             210,
+             400,
+          },
+          /* aec trigger 2 */
+          {
+             410,
+             600,
+          },
+          /* aec trigger 3 */
+          {
+             610,
+             800,
+          },
+          /* aec trigger 4 */
+          {
+             810,
+             1000,
+          },
+          /* aec trigger 5 */
+          {
+             1010,
+             1400,
+          },
+          /* aec trigger 6 */
+          {
+             1410,
+             2000.1,
+          },
+          /* aec trigger 7 */
+          {
+             128,
+             128.1,
+          },
+          /* aec trigger 8 */
+          {
+             256,
+             256.1,
+          },
+          /* aec trigger 9 */
+          {
+             512,
+             512.1,
+          },
+          /* aec trigger 10 */
+          {
+             1024,
+             1024.1,
+          },
+          /* aec trigger 11 */
+          {
+             2048,
+             2048.1,
+          },
+       },
+       /* isp_sub_module_rnr_para para[MIDDLE_TRIGGER_COUNT] MIDDLE_TRIGGER_COUNT==5 */
+       {
+           /* para 0*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {80,80,80},
+                       /* channel 2 */
+                       {80,80,80},
+                       /* channel 3 */
+                       {80,80,80},
+                       /* channel 4 */
+                       {80,80,80},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {100,100,100},
+                       /* channel 2 */
+                       {100,100,100},
+                       /* channel 3 */
+                       {100,100,100},
+                       /* channel 4 */
+                       {100,100,100},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,150,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,150,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 1*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {50,50,50},
+                       /* channel 2 */
+                       {50,50,50},
+                       /* channel 3 */
+                       {50,50,50},
+                       /* channel 4 */
+                       {50,50,50},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {50,50,50},
+                       /* channel 2 */
+                       {50,50,50},
+                       /* channel 3 */
+                       {50,50,50},
+                       /* channel 4 */
+                       {50,50,50},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 2*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {50,50,50},
+                       /* channel 2 */
+                       {50,50,50},
+                       /* channel 3 */
+                       {50,50,50},
+                       /* channel 4 */
+                       {50,50,50},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {50,50,50},
+                       /* channel 2 */
+                       {50,50,50},
+                       /* channel 3 */
+                       {50,50,50},
+                       /* channel 4 */
+                       {50,50,50},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 3*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 4*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 5*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 6*/
+           {
+               2,//denoise_layer
+               1,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {40,40,40},
+                       /* channel 2 */
+                       {40,40,40},
+                       /* channel 3 */
+                       {40,40,40},
+                       /* channel 4 */
+                       {40,40,40},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {30,30,30},
+                       /* channel 2 */
+                       {30,30,30},
+                       /* channel 3 */
+                       {30,30,30},
+                       /* channel 4 */
+                       {30,30,30},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {2000,1500,1000},
+                       /* noise profile gain */
+                       {3,6,12,16},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {16,16,16,16,16,16,16,16,20},
+                   },
+               },
+           },
+           /* para 7*/
+           {
+               2,//denoise_layer
+               0,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {100,100,100},
+                       /* channel 2 */
+                       {100,100,100},
+                       /* channel 3 */
+                       {100,100,100},
+                       /* channel 4 */
+                       {100,100,100},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {300,300,300},
+                       /* channel 2 */
+                       {300,300,300},
+                       /* channel 3 */
+                       {300,300,300},
+                       /* channel 4 */
+                       {300,300,300},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+               },
+           },
+           /* para 8*/
+           {
+               2,//denoise_layer
+               0,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {150,150,150},
+                       /* channel 2 */
+                       {150,150,150},
+                       /* channel 3 */
+                       {150,150,150},
+                       /* channel 4 */
+                       {150,150,150},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {300,300,300},
+                       /* channel 2 */
+                       {300,300,300},
+                       /* channel 3 */
+                       {300,300,300},
+                       /* channel 4 */
+                       {300,300,300},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+               },
+           },
+           /* para 9*/
+           {
+               2,//denoise_layer
+               0,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {200,200,200},
+                       /* channel 2 */
+                       {200,200,200},
+                       /* channel 3 */
+                       {200,200,200},
+                       /* channel 4 */
+                       {200,200,200},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {300,300,300},
+                       /* channel 2 */
+                       {300,300,300},
+                       /* channel 3 */
+                       {300,300,300},
+                       /* channel 4 */
+                       {300,300,300},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+               },
+           },
+           /* para 10*/
+           {
+               2,//denoise_layer
+               0,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {200,200,200},
+                       /* channel 2 */
+                       {200,200,200},
+                       /* channel 3 */
+                       {200,200,200},
+                       /* channel 4 */
+                       {200,200,200},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {300,300,300},
+                       /* channel 2 */
+                       {300,300,300},
+                       /* channel 3 */
+                       {300,300,300},
+                       /* channel 4 */
+                       {300,300,300},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {3200,1600,600},
+                       /* noise profile gain */
+                       {16,13,10,6},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {13,26,40,60,90,120,160,200},
+                      /* edge_Level */
+                      {6,8,8,10,10,12,14,14,16},
+                   },
+               },
+           },
+           /* para 11*/
+           {
+               2,//denoise_layer
+               0,//profile_enable
+               /* isp_sub_module_rnr_lay lay[RNR_LAYER_COUNT_MAX][RNR_CHANNEL_COUMT] */
+               {
+                   /* layer 1 */
+                   {
+                       /* channel 1 */
+                       {450,450,450},
+                       /* channel 2 */
+                       {450,450,450},
+                       /* channel 3 */
+                       {450,450,450},
+                       /* channel 4 */
+                       {450,450,450},
+                   },
+                   /* layer 2 */
+                   {
+                       /* channel 1 */
+                       {650,650,650},
+                       /* channel 2 */
+                       {650,650,650},
+                       /* channel 3 */
+                       {650,650,650},
+                       /* channel 4 */
+                       {650,650,650},
+                   },
+               },
+               /* profile_t profile[RNR_CHANNEL_COUMT] */
+               {
+                   /* channel 1 */
+                   {
+                       /* noise profile */
+                       {0,0,0},
+                       /* noise profile gain */
+                       {0,0,0,0},
+                   },
+                   /* channel 2 */
+                   {
+                       /* noise profile */
+                       {0,0,0},
+                       /* noise profile gain */
+                       {0,0,0,0},
+                   },
+                   /* channel 3 */
+                   {
+                       /* noise profile */
+                       {0,0,0},
+                       /* noise profile gain */
+                       {0,0,0,0},
+                   },
+                   /* channel 4 */
+                   {
+                       /* noise profile */
+                       {0,0,0},
+                       /* noise profile gain */
+                       {0,0,0,0},
+                   },
+               },
+               /* edge_t edge */
+               {
+                   /* channel 1 */
+                   {
+                      /* edge_V */
+                      {0,0,0,0,0,0,0,0},
+                      /* edge_Level */
+                      {0,0,0,0,0,0,0,0,0},
+                   },
+                   /* channel 2 */
+                   {
+                      /* edge_V */
+                      {0,0,0,0,0,0,0,0},
+                      /* edge_Level */
+                      {0,0,0,0,0,0,0,0,0},
+                   },
+               },
+           },
+       },
+    },
+    /* isp_sub_module_compander_tuning_t isp_sub_module_compander_tuning */
+    {
+    },
+    /* isp_sub_module_lsc_tuning_t isp_sub_module_lsc_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       2,//count_ae
+       4,//count_awb
+       1,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             300,
+          },
+          /* aec trigger 1 */
+          {
+             390,
+             500,
+          },
+       },
+       /* awb trigger */
+       {
+          /* awb trigger 0 */
+          {
+             2700,
+             2900,
+          },
+          /* awb trigger 1 */
+          {
+             3700,
+             4300,
+          },
+          /* awb trigger 2 */
+          {
+             4700,
+             5300,
+          },
+          /* awb trigger 3 */
+          {
+             6200,
+             6800,
+          },
+       },
+       /* isp_sub_module_lsc_pra */
+       {
+          /* aec trigger 0 */
+          {
+             /* awb para 0 */
+             {
+                0.3,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.1992, 2.3433, 1.9121, 1.5298, 1.4131, 1.4233, 1.5537, 1.9023, 2.4263, 4.1050, 
+                   3.1421, 2.0850, 1.6104, 1.3647, 1.2305, 1.2461, 1.3516, 1.6318, 2.1030, 3.1899, 
+                   2.8296, 1.8955, 1.4897, 1.2407, 1.1377, 1.1323, 1.2539, 1.4883, 1.9395, 2.8428, 
+                   2.5220, 1.7749, 1.3657, 1.1577, 1.0308, 1.0361, 1.1577, 1.3940, 1.7847, 2.6113, 
+                   2.4526, 1.6831, 1.3301, 1.0957, 0.9961, 1.0024, 1.1006, 1.3301, 1.7251, 2.4331, 
+                   2.4526, 1.6948, 1.3179, 1.1001, 0.9995, 0.9907, 1.1050, 1.3281, 1.7026, 2.4526, 
+                   2.4761, 1.6992, 1.3330, 1.1157, 0.9922, 0.9971, 1.1094, 1.3228, 1.7305, 2.4478, 
+                   2.6470, 1.7856, 1.4067, 1.1729, 1.0654, 1.0669, 1.2046, 1.4087, 1.8306, 2.6416, 
+                   2.8472, 1.9229, 1.5029, 1.2622, 1.1470, 1.1445, 1.2500, 1.4946, 1.9546, 2.8765, 
+                   3.3706, 2.1104, 1.6577, 1.3687, 1.2622, 1.2603, 1.4233, 1.6392, 2.1929, 3.2603, 
+                   3.7437, 2.2642, 1.7798, 1.4980, 1.3921, 1.3823, 1.4985, 1.8442, 2.2637, 3.9390, 
+                   3.0400, 1.9692, 1.5884, 1.3345, 1.2163, 1.2207, 1.3511, 1.5649, 2.0352, 2.9741, 
+                   2.6152, 1.8320, 1.4404, 1.2212, 1.1313, 1.1309, 1.2285, 1.4644, 1.8540, 2.7119, 
+                   2.3862, 1.7114, 1.3472, 1.1450, 1.0313, 1.0356, 1.1504, 1.3643, 1.7402, 2.4795, 
+                   2.3403, 1.6436, 1.3008, 1.0933, 0.9976, 0.9878, 1.1060, 1.2998, 1.6680, 2.3350, 
+                   2.2754, 1.6333, 1.2959, 1.0869, 0.9897, 0.9985, 1.0933, 1.3110, 1.6694, 2.3560, 
+                   2.3408, 1.6431, 1.3013, 1.1055, 0.9888, 0.9937, 1.1084, 1.3154, 1.6753, 2.3394, 
+                   2.4731, 1.7427, 1.3721, 1.1719, 1.0522, 1.0625, 1.1563, 1.3931, 1.7476, 2.5264, 
+                   2.6890, 1.8286, 1.4668, 1.2324, 1.1372, 1.1460, 1.2505, 1.4727, 1.8833, 2.7197, 
+                   3.1987, 2.0332, 1.6094, 1.3706, 1.2510, 1.2393, 1.3496, 1.6387, 2.0278, 3.1948, 
+                   3.7358, 2.1665, 1.7969, 1.4893, 1.3394, 1.3931, 1.4990, 1.8223, 2.3691, 3.6719, 
+                   2.8809, 1.9331, 1.5830, 1.3003, 1.2417, 1.2202, 1.3589, 1.5513, 2.0581, 2.8774, 
+                   2.5972, 1.7915, 1.4209, 1.2251, 1.1172, 1.1396, 1.2104, 1.4858, 1.8511, 2.7061, 
+                   2.3564, 1.6665, 1.3550, 1.1245, 1.0332, 1.0527, 1.1563, 1.3613, 1.7632, 2.4351, 
+                   2.2788, 1.6338, 1.2773, 1.0908, 1.0044, 1.0063, 1.1016, 1.3271, 1.6738, 2.3555, 
+                   2.2368, 1.6030, 1.3018, 1.0752, 1.0098, 0.9995, 1.1152, 1.3193, 1.6763, 2.3662, 
+                   2.3076, 1.6309, 1.2998, 1.1104, 0.9790, 1.0112, 1.0996, 1.3164, 1.6553, 2.3730, 
+                   2.4287, 1.7217, 1.3726, 1.1621, 1.0713, 1.0654, 1.1792, 1.3955, 1.7524, 2.5547, 
+                   2.6240, 1.8091, 1.4648, 1.2363, 1.1387, 1.1479, 1.2310, 1.4722, 1.8638, 2.6611, 
+                   3.0371, 2.0659, 1.5962, 1.3877, 1.2427, 1.2788, 1.3477, 1.6167, 2.0439, 3.1831, 
+                },
+             },
+             /* awb para 1 */
+             {
+                0.3,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   3.8623, 2.3374, 1.7646, 1.5356, 1.3662, 1.4063, 1.5190, 1.8076, 2.3306, 3.7979, 
+                   3.0981, 2.0151, 1.5991, 1.3687, 1.2480, 1.2549, 1.3589, 1.6108, 2.0391, 3.0825, 
+                   2.6689, 1.8364, 1.4492, 1.2339, 1.1270, 1.1353, 1.2495, 1.4668, 1.8716, 2.6538, 
+                   2.4233, 1.7310, 1.3574, 1.1680, 1.0444, 1.0435, 1.1567, 1.3818, 1.7476, 2.4971, 
+                   2.3882, 1.6445, 1.3257, 1.1055, 0.9912, 1.0063, 1.1104, 1.3345, 1.6821, 2.3657, 
+                   2.3521, 1.6289, 1.3159, 1.0845, 1.0044, 0.9961, 1.0957, 1.3281, 1.6689, 2.3042, 
+                   2.3701, 1.6548, 1.3340, 1.1240, 1.0059, 1.0015, 1.1235, 1.3462, 1.6772, 2.4087, 
+                   2.5737, 1.7217, 1.3936, 1.1807, 1.0552, 1.0674, 1.1748, 1.3945, 1.7603, 2.4639, 
+                   2.7495, 1.8345, 1.4775, 1.2456, 1.1616, 1.1318, 1.2593, 1.4976, 1.8496, 2.7930, 
+                   3.3662, 2.0322, 1.6572, 1.3882, 1.2690, 1.2773, 1.4038, 1.6206, 2.0801, 3.1636, 
+                   3.7710, 2.2446, 1.7661, 1.5005, 1.3745, 1.3853, 1.5098, 1.8311, 2.2500, 3.8540, 
+                   2.9961, 1.9717, 1.5732, 1.3252, 1.2246, 1.2305, 1.3296, 1.5869, 2.0078, 2.9424, 
+                   2.6167, 1.8188, 1.4316, 1.2231, 1.1265, 1.1240, 1.2368, 1.4575, 1.8467, 2.7012, 
+                   2.4092, 1.6934, 1.3467, 1.1431, 1.0317, 1.0381, 1.1348, 1.3672, 1.7104, 2.4346, 
+                   2.3193, 1.6255, 1.3037, 1.0918, 0.9946, 0.9971, 1.1123, 1.3110, 1.6777, 2.3379, 
+                   2.2983, 1.6143, 1.2935, 1.0786, 1.0010, 0.9941, 1.0942, 1.3066, 1.6558, 2.3184, 
+                   2.3198, 1.6377, 1.3018, 1.1084, 0.9922, 0.9976, 1.1138, 1.3218, 1.6719, 2.3623, 
+                   2.4609, 1.7061, 1.3745, 1.1489, 1.0605, 1.0596, 1.1650, 1.3818, 1.7456, 2.5054, 
+                   2.6543, 1.8442, 1.4448, 1.2378, 1.1450, 1.1372, 1.2466, 1.4805, 1.8574, 2.7480, 
+                   3.1655, 2.0215, 1.6367, 1.3633, 1.2671, 1.2534, 1.3643, 1.6113, 2.0620, 3.0894, 
+                   3.7603, 2.1733, 1.7725, 1.4741, 1.3638, 1.3599, 1.4785, 1.7744, 2.2871, 3.6040, 
+                   2.8887, 1.9268, 1.5713, 1.3184, 1.2144, 1.2246, 1.3398, 1.5654, 2.0156, 2.9600, 
+                   2.6162, 1.7720, 1.4175, 1.2104, 1.1138, 1.1152, 1.2095, 1.4697, 1.8125, 2.7314, 
+                   2.3384, 1.6890, 1.3140, 1.1489, 1.0317, 1.0410, 1.1577, 1.3467, 1.7358, 2.4141, 
+                   2.3325, 1.6250, 1.3008, 1.1025, 0.9922, 0.9985, 1.0933, 1.3374, 1.6421, 2.4233, 
+                   2.2217, 1.6152, 1.2661, 1.0898, 0.9961, 0.9951, 1.1050, 1.3042, 1.6479, 2.3296, 
+                   2.2974, 1.6377, 1.2993, 1.1128, 0.9941, 1.0059, 1.0986, 1.3457, 1.6484, 2.4141, 
+                   2.4243, 1.6885, 1.3564, 1.1553, 1.0566, 1.0605, 1.1729, 1.3799, 1.7515, 2.5034, 
+                   2.6143, 1.8311, 1.4453, 1.2402, 1.1426, 1.1382, 1.2378, 1.4761, 1.8545, 2.6890, 
+                   3.0015, 2.0210, 1.5894, 1.3853, 1.2480, 1.2739, 1.3687, 1.6567, 2.0400, 3.2544, 
+                },
+             },
+             /* awb para 2 */
+             {
+                0.3,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.0791, 2.3071, 1.8794, 1.5049, 1.3950, 1.3872, 1.5635, 1.8208, 2.4116, 4.0425, 
+                   3.1987, 2.0659, 1.6440, 1.3647, 1.2593, 1.2534, 1.3638, 1.6455, 2.1035, 3.1821, 
+                   2.7422, 1.8774, 1.4590, 1.2212, 1.1260, 1.1079, 1.2446, 1.4629, 1.9092, 2.8193, 
+                   2.5249, 1.7588, 1.3857, 1.1650, 1.0464, 1.0562, 1.1606, 1.4067, 1.7891, 2.6040, 
+                   2.4614, 1.6870, 1.3330, 1.1035, 1.0103, 0.9897, 1.1304, 1.3320, 1.7393, 2.4697, 
+                   2.3799, 1.6724, 1.2988, 1.0830, 0.9878, 0.9883, 1.0928, 1.3125, 1.6870, 2.3818, 
+                   2.4946, 1.7061, 1.3535, 1.1392, 1.0078, 1.0161, 1.1318, 1.3677, 1.7480, 2.5322, 
+                   2.5493, 1.7900, 1.3804, 1.1616, 1.0654, 1.0586, 1.1782, 1.3984, 1.7974, 2.5869, 
+                   2.8740, 1.8994, 1.5127, 1.2642, 1.1489, 1.1479, 1.2666, 1.5166, 1.9575, 2.8789, 
+                   3.3486, 2.1646, 1.6880, 1.3999, 1.2983, 1.2808, 1.4082, 1.7100, 2.1621, 3.4326, 
+                   3.7246, 2.2808, 1.7480, 1.5278, 1.3652, 1.3857, 1.5112, 1.8262, 2.2856, 3.7935, 
+                   3.0601, 1.9766, 1.6162, 1.3364, 1.2378, 1.2466, 1.3389, 1.5986, 2.0483, 3.0044, 
+                   2.6060, 1.8096, 1.4214, 1.2163, 1.1104, 1.1191, 1.2319, 1.4580, 1.8481, 2.6851, 
+                   2.4604, 1.7153, 1.3770, 1.1509, 1.0483, 1.0522, 1.1533, 1.3892, 1.7456, 2.5171, 
+                   2.3057, 1.6431, 1.3013, 1.0981, 0.9966, 1.0000, 1.1177, 1.3159, 1.6968, 2.3809, 
+                   2.2690, 1.6211, 1.2920, 1.0757, 0.9829, 0.9976, 1.0894, 1.3145, 1.6499, 2.3667, 
+                   2.3545, 1.6606, 1.3223, 1.1152, 1.0112, 1.0122, 1.1299, 1.3418, 1.7090, 2.4395, 
+                   2.4199, 1.7129, 1.3667, 1.1455, 1.0503, 1.0537, 1.1636, 1.3906, 1.7383, 2.5439, 
+                   2.6929, 1.8569, 1.4580, 1.2485, 1.1431, 1.1548, 1.2661, 1.4912, 1.9077, 2.7798, 
+                   3.1938, 2.0444, 1.6431, 1.3701, 1.2788, 1.2588, 1.3706, 1.6611, 2.0649, 3.2065, 
+                   3.7676, 2.1494, 1.7959, 1.4575, 1.3784, 1.3604, 1.4849, 1.8022, 2.2222, 3.5879, 
+                   2.8955, 1.9805, 1.5562, 1.3379, 1.2290, 1.2344, 1.3447, 1.5879, 2.0161, 3.0039, 
+                   2.5591, 1.7646, 1.4189, 1.1973, 1.1206, 1.1182, 1.2227, 1.4443, 1.8276, 2.6543, 
+                   2.3511, 1.7134, 1.3359, 1.1577, 1.0361, 1.0483, 1.1626, 1.3647, 1.7427, 2.4536, 
+                   2.2734, 1.6343, 1.2954, 1.0913, 1.0000, 0.9990, 1.1133, 1.3164, 1.6733, 2.3857, 
+                   2.2153, 1.5972, 1.2783, 1.0781, 0.9951, 0.9912, 1.0894, 1.3018, 1.6392, 2.2881, 
+                   2.3003, 1.6680, 1.3169, 1.1230, 1.0068, 1.0229, 1.1274, 1.3267, 1.7017, 2.4043, 
+                   2.4150, 1.6978, 1.3374, 1.1655, 1.0420, 1.0562, 1.1563, 1.3745, 1.7373, 2.4756, 
+                   2.6450, 1.8271, 1.4756, 1.2261, 1.1631, 1.1484, 1.2549, 1.4868, 1.8643, 2.7544, 
+                   3.0923, 2.0610, 1.5869, 1.4268, 1.2461, 1.2861, 1.3608, 1.6191, 2.0957, 3.0503, 
+                },
+             },
+             /* awb para 3 */
+             {
+                0.3,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.0630, 2.3340, 1.8652, 1.5303, 1.3970, 1.4116, 1.5674, 1.8408, 2.4243, 4.0415, 
+                   3.1001, 2.0317, 1.6133, 1.3320, 1.2319, 1.2134, 1.3462, 1.6001, 2.0596, 3.1025, 
+                   2.7930, 1.8813, 1.4736, 1.2334, 1.1274, 1.1309, 1.2607, 1.4624, 1.9346, 2.7861, 
+                   2.5044, 1.7524, 1.3711, 1.1455, 1.0391, 1.0278, 1.1489, 1.3799, 1.7539, 2.5664, 
+                   2.4048, 1.6772, 1.3159, 1.0981, 0.9966, 0.9966, 1.1167, 1.3203, 1.7124, 2.4189, 
+                   2.3779, 1.6885, 1.3145, 1.0908, 1.0049, 1.0068, 1.1006, 1.3442, 1.6987, 2.4556, 
+                   2.4097, 1.6768, 1.3262, 1.1104, 1.0000, 0.9922, 1.1074, 1.3384, 1.6963, 2.4819, 
+                   2.5972, 1.7876, 1.4038, 1.1777, 1.0659, 1.0864, 1.1782, 1.4307, 1.7979, 2.6611, 
+                   2.7847, 1.9072, 1.4810, 1.2598, 1.1553, 1.1396, 1.2681, 1.5029, 1.9277, 2.9194, 
+                   3.2676, 2.0850, 1.6733, 1.3750, 1.2549, 1.3003, 1.3608, 1.6890, 2.1235, 3.2163, 
+                   3.7461, 2.2451, 1.7700, 1.4917, 1.3638, 1.3794, 1.4966, 1.8110, 2.3057, 3.7617, 
+                   2.9478, 1.9429, 1.5674, 1.3184, 1.2100, 1.2153, 1.3237, 1.5664, 1.9902, 2.9966, 
+                   2.6294, 1.8320, 1.4385, 1.2271, 1.1270, 1.1216, 1.2427, 1.4619, 1.8745, 2.6963, 
+                   2.4106, 1.6885, 1.3511, 1.1445, 1.0220, 1.0488, 1.1318, 1.3696, 1.7217, 2.5049, 
+                   2.2949, 1.6470, 1.2886, 1.0942, 0.9971, 0.9868, 1.1089, 1.3130, 1.6714, 2.3472, 
+                   2.3154, 1.6304, 1.3125, 1.0850, 0.9985, 1.0093, 1.0923, 1.3149, 1.6738, 2.3672, 
+                   2.2891, 1.6504, 1.2832, 1.1089, 0.9795, 0.9951, 1.1074, 1.3149, 1.6655, 2.3662, 
+                   2.5103, 1.7207, 1.3818, 1.1655, 1.0566, 1.0625, 1.1694, 1.3955, 1.7598, 2.5669, 
+                   2.6284, 1.8730, 1.4590, 1.2520, 1.1519, 1.1523, 1.2642, 1.4697, 1.8940, 2.7295, 
+                   3.2412, 1.9746, 1.5967, 1.3696, 1.2051, 1.2505, 1.3379, 1.6270, 2.0308, 3.1763, 
+                   3.6626, 2.2036, 1.7524, 1.4995, 1.3364, 1.3804, 1.4985, 1.7896, 2.3198, 3.6001, 
+                   2.8735, 1.8955, 1.5376, 1.2983, 1.2036, 1.2080, 1.3091, 1.5269, 1.9756, 2.8428, 
+                   2.5762, 1.7954, 1.4307, 1.2163, 1.1250, 1.1279, 1.2339, 1.4590, 1.8491, 2.6855, 
+                   2.3506, 1.6670, 1.3330, 1.1313, 1.0288, 1.0454, 1.1436, 1.3599, 1.7251, 2.4292, 
+                   2.2979, 1.5918, 1.2949, 1.0859, 0.9834, 0.9946, 1.1016, 1.2930, 1.6416, 2.3379, 
+                   2.2417, 1.6235, 1.2881, 1.0845, 1.0112, 1.0059, 1.1143, 1.3213, 1.6694, 2.3569, 
+                   2.2676, 1.6016, 1.2827, 1.0903, 0.9717, 1.0024, 1.0894, 1.3022, 1.6387, 2.3169, 
+                   2.4136, 1.6929, 1.3677, 1.1523, 1.0640, 1.0674, 1.1826, 1.3862, 1.7612, 2.4966, 
+                   2.6230, 1.8320, 1.4292, 1.2402, 1.1387, 1.1470, 1.2354, 1.4634, 1.8584, 2.6626, 
+                   3.0088, 1.9487, 1.6074, 1.3398, 1.2295, 1.2476, 1.3828, 1.5625, 2.0811, 3.0229, 
+                },
+             },
+          },
+          /* aec trigger 1 */
+          {
+             /* awb para 0 */
+             {
+                0,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.1992, 2.3433, 1.9121, 1.5298, 1.4131, 1.4233, 1.5537, 1.9023, 2.4263, 4.1050, 
+                   3.1421, 2.0850, 1.6104, 1.3647, 1.2305, 1.2461, 1.3516, 1.6318, 2.1030, 3.1899, 
+                   2.8296, 1.8955, 1.4897, 1.2407, 1.1377, 1.1323, 1.2539, 1.4883, 1.9395, 2.8428, 
+                   2.5220, 1.7749, 1.3657, 1.1577, 1.0308, 1.0361, 1.1577, 1.3940, 1.7847, 2.6113, 
+                   2.4526, 1.6831, 1.3301, 1.0957, 0.9961, 1.0024, 1.1006, 1.3301, 1.7251, 2.4331, 
+                   2.4526, 1.6948, 1.3179, 1.1001, 0.9995, 0.9907, 1.1050, 1.3281, 1.7026, 2.4526, 
+                   2.4761, 1.6992, 1.3330, 1.1157, 0.9922, 0.9971, 1.1094, 1.3228, 1.7305, 2.4478, 
+                   2.6470, 1.7856, 1.4067, 1.1729, 1.0654, 1.0669, 1.2046, 1.4087, 1.8306, 2.6416, 
+                   2.8472, 1.9229, 1.5029, 1.2622, 1.1470, 1.1445, 1.2500, 1.4946, 1.9546, 2.8765, 
+                   3.3706, 2.1104, 1.6577, 1.3687, 1.2622, 1.2603, 1.4233, 1.6392, 2.1929, 3.2603, 
+                   3.7437, 2.2642, 1.7798, 1.4980, 1.3921, 1.3823, 1.4985, 1.8442, 2.2637, 3.9390, 
+                   3.0400, 1.9692, 1.5884, 1.3345, 1.2163, 1.2207, 1.3511, 1.5649, 2.0352, 2.9741, 
+                   2.6152, 1.8320, 1.4404, 1.2212, 1.1313, 1.1309, 1.2285, 1.4644, 1.8540, 2.7119, 
+                   2.3862, 1.7114, 1.3472, 1.1450, 1.0313, 1.0356, 1.1504, 1.3643, 1.7402, 2.4795, 
+                   2.3403, 1.6436, 1.3008, 1.0933, 0.9976, 0.9878, 1.1060, 1.2998, 1.6680, 2.3350, 
+                   2.2754, 1.6333, 1.2959, 1.0869, 0.9897, 0.9985, 1.0933, 1.3110, 1.6694, 2.3560, 
+                   2.3408, 1.6431, 1.3013, 1.1055, 0.9888, 0.9937, 1.1084, 1.3154, 1.6753, 2.3394, 
+                   2.4731, 1.7427, 1.3721, 1.1719, 1.0522, 1.0625, 1.1563, 1.3931, 1.7476, 2.5264, 
+                   2.6890, 1.8286, 1.4668, 1.2324, 1.1372, 1.1460, 1.2505, 1.4727, 1.8833, 2.7197, 
+                   3.1987, 2.0332, 1.6094, 1.3706, 1.2510, 1.2393, 1.3496, 1.6387, 2.0278, 3.1948, 
+                   3.7358, 2.1665, 1.7969, 1.4893, 1.3394, 1.3931, 1.4990, 1.8223, 2.3691, 3.6719, 
+                   2.8809, 1.9331, 1.5830, 1.3003, 1.2417, 1.2202, 1.3589, 1.5513, 2.0581, 2.8774, 
+                   2.5972, 1.7915, 1.4209, 1.2251, 1.1172, 1.1396, 1.2104, 1.4858, 1.8511, 2.7061, 
+                   2.3564, 1.6665, 1.3550, 1.1245, 1.0332, 1.0527, 1.1563, 1.3613, 1.7632, 2.4351, 
+                   2.2788, 1.6338, 1.2773, 1.0908, 1.0044, 1.0063, 1.1016, 1.3271, 1.6738, 2.3555, 
+                   2.2368, 1.6030, 1.3018, 1.0752, 1.0098, 0.9995, 1.1152, 1.3193, 1.6763, 2.3662, 
+                   2.3076, 1.6309, 1.2998, 1.1104, 0.9790, 1.0112, 1.0996, 1.3164, 1.6553, 2.3730, 
+                   2.4287, 1.7217, 1.3726, 1.1621, 1.0713, 1.0654, 1.1792, 1.3955, 1.7524, 2.5547, 
+                   2.6240, 1.8091, 1.4648, 1.2363, 1.1387, 1.1479, 1.2310, 1.4722, 1.8638, 2.6611, 
+                   3.0371, 2.0659, 1.5962, 1.3877, 1.2427, 1.2788, 1.3477, 1.6167, 2.0439, 3.1831, 
+                },
+             },
+             /* awb para 1 */
+             {
+                0,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   3.8623, 2.3374, 1.7646, 1.5356, 1.3662, 1.4063, 1.5190, 1.8076, 2.3306, 3.7979, 
+                   3.0981, 2.0151, 1.5991, 1.3687, 1.2480, 1.2549, 1.3589, 1.6108, 2.0391, 3.0825, 
+                   2.6689, 1.8364, 1.4492, 1.2339, 1.1270, 1.1353, 1.2495, 1.4668, 1.8716, 2.6538, 
+                   2.4233, 1.7310, 1.3574, 1.1680, 1.0444, 1.0435, 1.1567, 1.3818, 1.7476, 2.4971, 
+                   2.3882, 1.6445, 1.3257, 1.1055, 0.9912, 1.0063, 1.1104, 1.3345, 1.6821, 2.3657, 
+                   2.3521, 1.6289, 1.3159, 1.0845, 1.0044, 0.9961, 1.0957, 1.3281, 1.6689, 2.3042, 
+                   2.3701, 1.6548, 1.3340, 1.1240, 1.0059, 1.0015, 1.1235, 1.3462, 1.6772, 2.4087, 
+                   2.5737, 1.7217, 1.3936, 1.1807, 1.0552, 1.0674, 1.1748, 1.3945, 1.7603, 2.4639, 
+                   2.7495, 1.8345, 1.4775, 1.2456, 1.1616, 1.1318, 1.2593, 1.4976, 1.8496, 2.7930, 
+                   3.3662, 2.0322, 1.6572, 1.3882, 1.2690, 1.2773, 1.4038, 1.6206, 2.0801, 3.1636, 
+                   3.7710, 2.2446, 1.7661, 1.5005, 1.3745, 1.3853, 1.5098, 1.8311, 2.2500, 3.8540, 
+                   2.9961, 1.9717, 1.5732, 1.3252, 1.2246, 1.2305, 1.3296, 1.5869, 2.0078, 2.9424, 
+                   2.6167, 1.8188, 1.4316, 1.2231, 1.1265, 1.1240, 1.2368, 1.4575, 1.8467, 2.7012, 
+                   2.4092, 1.6934, 1.3467, 1.1431, 1.0317, 1.0381, 1.1348, 1.3672, 1.7104, 2.4346, 
+                   2.3193, 1.6255, 1.3037, 1.0918, 0.9946, 0.9971, 1.1123, 1.3110, 1.6777, 2.3379, 
+                   2.2983, 1.6143, 1.2935, 1.0786, 1.0010, 0.9941, 1.0942, 1.3066, 1.6558, 2.3184, 
+                   2.3198, 1.6377, 1.3018, 1.1084, 0.9922, 0.9976, 1.1138, 1.3218, 1.6719, 2.3623, 
+                   2.4609, 1.7061, 1.3745, 1.1489, 1.0605, 1.0596, 1.1650, 1.3818, 1.7456, 2.5054, 
+                   2.6543, 1.8442, 1.4448, 1.2378, 1.1450, 1.1372, 1.2466, 1.4805, 1.8574, 2.7480, 
+                   3.1655, 2.0215, 1.6367, 1.3633, 1.2671, 1.2534, 1.3643, 1.6113, 2.0620, 3.0894, 
+                   3.7603, 2.1733, 1.7725, 1.4741, 1.3638, 1.3599, 1.4785, 1.7744, 2.2871, 3.6040, 
+                   2.8887, 1.9268, 1.5713, 1.3184, 1.2144, 1.2246, 1.3398, 1.5654, 2.0156, 2.9600, 
+                   2.6162, 1.7720, 1.4175, 1.2104, 1.1138, 1.1152, 1.2095, 1.4697, 1.8125, 2.7314, 
+                   2.3384, 1.6890, 1.3140, 1.1489, 1.0317, 1.0410, 1.1577, 1.3467, 1.7358, 2.4141, 
+                   2.3325, 1.6250, 1.3008, 1.1025, 0.9922, 0.9985, 1.0933, 1.3374, 1.6421, 2.4233, 
+                   2.2217, 1.6152, 1.2661, 1.0898, 0.9961, 0.9951, 1.1050, 1.3042, 1.6479, 2.3296, 
+                   2.2974, 1.6377, 1.2993, 1.1128, 0.9941, 1.0059, 1.0986, 1.3457, 1.6484, 2.4141, 
+                   2.4243, 1.6885, 1.3564, 1.1553, 1.0566, 1.0605, 1.1729, 1.3799, 1.7515, 2.5034, 
+                   2.6143, 1.8311, 1.4453, 1.2402, 1.1426, 1.1382, 1.2378, 1.4761, 1.8545, 2.6890, 
+                   3.0015, 2.0210, 1.5894, 1.3853, 1.2480, 1.2739, 1.3687, 1.6567, 2.0400, 3.2544, 
+                },
+             },
+             /* awb para 2 */
+             {
+                0,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.0791, 2.3071, 1.8794, 1.5049, 1.3950, 1.3872, 1.5635, 1.8208, 2.4116, 4.0425, 
+                   3.1987, 2.0659, 1.6440, 1.3647, 1.2593, 1.2534, 1.3638, 1.6455, 2.1035, 3.1821, 
+                   2.7422, 1.8774, 1.4590, 1.2212, 1.1260, 1.1079, 1.2446, 1.4629, 1.9092, 2.8193, 
+                   2.5249, 1.7588, 1.3857, 1.1650, 1.0464, 1.0562, 1.1606, 1.4067, 1.7891, 2.6040, 
+                   2.4614, 1.6870, 1.3330, 1.1035, 1.0103, 0.9897, 1.1304, 1.3320, 1.7393, 2.4697, 
+                   2.3799, 1.6724, 1.2988, 1.0830, 0.9878, 0.9883, 1.0928, 1.3125, 1.6870, 2.3818, 
+                   2.4946, 1.7061, 1.3535, 1.1392, 1.0078, 1.0161, 1.1318, 1.3677, 1.7480, 2.5322, 
+                   2.5493, 1.7900, 1.3804, 1.1616, 1.0654, 1.0586, 1.1782, 1.3984, 1.7974, 2.5869, 
+                   2.8740, 1.8994, 1.5127, 1.2642, 1.1489, 1.1479, 1.2666, 1.5166, 1.9575, 2.8789, 
+                   3.3486, 2.1646, 1.6880, 1.3999, 1.2983, 1.2808, 1.4082, 1.7100, 2.1621, 3.4326, 
+                   3.7246, 2.2808, 1.7480, 1.5278, 1.3652, 1.3857, 1.5112, 1.8262, 2.2856, 3.7935, 
+                   3.0601, 1.9766, 1.6162, 1.3364, 1.2378, 1.2466, 1.3389, 1.5986, 2.0483, 3.0044, 
+                   2.6060, 1.8096, 1.4214, 1.2163, 1.1104, 1.1191, 1.2319, 1.4580, 1.8481, 2.6851, 
+                   2.4604, 1.7153, 1.3770, 1.1509, 1.0483, 1.0522, 1.1533, 1.3892, 1.7456, 2.5171, 
+                   2.3057, 1.6431, 1.3013, 1.0981, 0.9966, 1.0000, 1.1177, 1.3159, 1.6968, 2.3809, 
+                   2.2690, 1.6211, 1.2920, 1.0757, 0.9829, 0.9976, 1.0894, 1.3145, 1.6499, 2.3667, 
+                   2.3545, 1.6606, 1.3223, 1.1152, 1.0112, 1.0122, 1.1299, 1.3418, 1.7090, 2.4395, 
+                   2.4199, 1.7129, 1.3667, 1.1455, 1.0503, 1.0537, 1.1636, 1.3906, 1.7383, 2.5439, 
+                   2.6929, 1.8569, 1.4580, 1.2485, 1.1431, 1.1548, 1.2661, 1.4912, 1.9077, 2.7798, 
+                   3.1938, 2.0444, 1.6431, 1.3701, 1.2788, 1.2588, 1.3706, 1.6611, 2.0649, 3.2065, 
+                   3.7676, 2.1494, 1.7959, 1.4575, 1.3784, 1.3604, 1.4849, 1.8022, 2.2222, 3.5879, 
+                   2.8955, 1.9805, 1.5562, 1.3379, 1.2290, 1.2344, 1.3447, 1.5879, 2.0161, 3.0039, 
+                   2.5591, 1.7646, 1.4189, 1.1973, 1.1206, 1.1182, 1.2227, 1.4443, 1.8276, 2.6543, 
+                   2.3511, 1.7134, 1.3359, 1.1577, 1.0361, 1.0483, 1.1626, 1.3647, 1.7427, 2.4536, 
+                   2.2734, 1.6343, 1.2954, 1.0913, 1.0000, 0.9990, 1.1133, 1.3164, 1.6733, 2.3857, 
+                   2.2153, 1.5972, 1.2783, 1.0781, 0.9951, 0.9912, 1.0894, 1.3018, 1.6392, 2.2881, 
+                   2.3003, 1.6680, 1.3169, 1.1230, 1.0068, 1.0229, 1.1274, 1.3267, 1.7017, 2.4043, 
+                   2.4150, 1.6978, 1.3374, 1.1655, 1.0420, 1.0562, 1.1563, 1.3745, 1.7373, 2.4756, 
+                   2.6450, 1.8271, 1.4756, 1.2261, 1.1631, 1.1484, 1.2549, 1.4868, 1.8643, 2.7544, 
+                   3.0923, 2.0610, 1.5869, 1.4268, 1.2461, 1.2861, 1.3608, 1.6191, 2.0957, 3.0503, 
+                },
+             },
+             /* awb para 3 */
+             {
+                0,//stength,register: [07:00]lsc_snr1_man_factor = floor(strength * 2^7) ,address:0x64804C40
+                1,//lsc_man_mode: [16]lsc_snr1_man_mode = lsc_man_mode,address:0x64804C40
+                /* lsc table */
+                {
+                   4.0630, 2.3340, 1.8652, 1.5303, 1.3970, 1.4116, 1.5674, 1.8408, 2.4243, 4.0415, 
+                   3.1001, 2.0317, 1.6133, 1.3320, 1.2319, 1.2134, 1.3462, 1.6001, 2.0596, 3.1025, 
+                   2.7930, 1.8813, 1.4736, 1.2334, 1.1274, 1.1309, 1.2607, 1.4624, 1.9346, 2.7861, 
+                   2.5044, 1.7524, 1.3711, 1.1455, 1.0391, 1.0278, 1.1489, 1.3799, 1.7539, 2.5664, 
+                   2.4048, 1.6772, 1.3159, 1.0981, 0.9966, 0.9966, 1.1167, 1.3203, 1.7124, 2.4189, 
+                   2.3779, 1.6885, 1.3145, 1.0908, 1.0049, 1.0068, 1.1006, 1.3442, 1.6987, 2.4556, 
+                   2.4097, 1.6768, 1.3262, 1.1104, 1.0000, 0.9922, 1.1074, 1.3384, 1.6963, 2.4819, 
+                   2.5972, 1.7876, 1.4038, 1.1777, 1.0659, 1.0864, 1.1782, 1.4307, 1.7979, 2.6611, 
+                   2.7847, 1.9072, 1.4810, 1.2598, 1.1553, 1.1396, 1.2681, 1.5029, 1.9277, 2.9194, 
+                   3.2676, 2.0850, 1.6733, 1.3750, 1.2549, 1.3003, 1.3608, 1.6890, 2.1235, 3.2163, 
+                   3.7461, 2.2451, 1.7700, 1.4917, 1.3638, 1.3794, 1.4966, 1.8110, 2.3057, 3.7617, 
+                   2.9478, 1.9429, 1.5674, 1.3184, 1.2100, 1.2153, 1.3237, 1.5664, 1.9902, 2.9966, 
+                   2.6294, 1.8320, 1.4385, 1.2271, 1.1270, 1.1216, 1.2427, 1.4619, 1.8745, 2.6963, 
+                   2.4106, 1.6885, 1.3511, 1.1445, 1.0220, 1.0488, 1.1318, 1.3696, 1.7217, 2.5049, 
+                   2.2949, 1.6470, 1.2886, 1.0942, 0.9971, 0.9868, 1.1089, 1.3130, 1.6714, 2.3472, 
+                   2.3154, 1.6304, 1.3125, 1.0850, 0.9985, 1.0093, 1.0923, 1.3149, 1.6738, 2.3672, 
+                   2.2891, 1.6504, 1.2832, 1.1089, 0.9795, 0.9951, 1.1074, 1.3149, 1.6655, 2.3662, 
+                   2.5103, 1.7207, 1.3818, 1.1655, 1.0566, 1.0625, 1.1694, 1.3955, 1.7598, 2.5669, 
+                   2.6284, 1.8730, 1.4590, 1.2520, 1.1519, 1.1523, 1.2642, 1.4697, 1.8940, 2.7295, 
+                   3.2412, 1.9746, 1.5967, 1.3696, 1.2051, 1.2505, 1.3379, 1.6270, 2.0308, 3.1763, 
+                   3.6626, 2.2036, 1.7524, 1.4995, 1.3364, 1.3804, 1.4985, 1.7896, 2.3198, 3.6001, 
+                   2.8735, 1.8955, 1.5376, 1.2983, 1.2036, 1.2080, 1.3091, 1.5269, 1.9756, 2.8428, 
+                   2.5762, 1.7954, 1.4307, 1.2163, 1.1250, 1.1279, 1.2339, 1.4590, 1.8491, 2.6855, 
+                   2.3506, 1.6670, 1.3330, 1.1313, 1.0288, 1.0454, 1.1436, 1.3599, 1.7251, 2.4292, 
+                   2.2979, 1.5918, 1.2949, 1.0859, 0.9834, 0.9946, 1.1016, 1.2930, 1.6416, 2.3379, 
+                   2.2417, 1.6235, 1.2881, 1.0845, 1.0112, 1.0059, 1.1143, 1.3213, 1.6694, 2.3569, 
+                   2.2676, 1.6016, 1.2827, 1.0903, 0.9717, 1.0024, 1.0894, 1.3022, 1.6387, 2.3169, 
+                   2.4136, 1.6929, 1.3677, 1.1523, 1.0640, 1.0674, 1.1826, 1.3862, 1.7612, 2.4966, 
+                   2.6230, 1.8320, 1.4292, 1.2402, 1.1387, 1.1470, 1.2354, 1.4634, 1.8584, 2.6626, 
+                   3.0088, 1.9487, 1.6074, 1.3398, 1.2295, 1.2476, 1.3828, 1.5625, 2.0811, 3.0229, 
+                },
+             },
+          },
+       },
+    },
+    /* isp_sub_module_drc_pra isp_sub_module_drc_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       6,//ae count
+       1,//trigger mode : 0 gain trigger 1 lux trigger
+       257,//drc_point_size
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             80,
+          },
+          /* aec trigger 1 */
+          {
+             100,
+             200,
+          },
+          /* aec trigger 2 */
+          {
+             210,
+             290,
+          },
+          /* aec trigger 3 */
+          {
+             320,
+             370,
+          },
+          /* aec trigger 4 */
+          {
+             390,
+             420,
+          },
+          /* aec trigger 5 */
+          {
+             430,
+             500,
+          },
+       },
+       /* isp_sub_module_drc_pra pra[MIDDLE_TRIGGER_COUNT] */
+       {
+           /* para 0*/
+           {
+              /* drc_low_LUT_point */
+              {
+                   6501,6501,6493,6485,6477,6469,6461,6453,6445,6437,6429,6422,6414,6406,6398,6390,6382,6374,6367,6359,6351,6343,6335,6328,6320,
+                   6312,6304,6297,6289,6281,6273,6266,6258,6250,6243,6235,6227,6220,6212,6204,6197,6189,6181,6174,6166,6159,6151,6144,6136,6129,
+                   6121,6113,6106,6098,6091,6083,6076,6069,6061,6054,6046,6039,6031,6024,6017,6009,6002,5994,5987,5980,5972,5965,5958,5950,5943,
+                   5936,5928,5921,5914,5907,5899,5892,5885,5878,5870,5863,5856,5849,5842,5834,5827,5820,5813,5806,5799,5792,5784,5777,5770,5763,
+                   5756,5749,5742,5735,5728,5721,5714,5707,5700,5693,5686,5679,5672,5665,5658,5651,5644,5637,5630,5623,5616,5609,5602,5595,5589,
+                   5582,5575,5568,5561,5554,5547,5541,5534,5527,5520,5513,5507,5500,5493,5486,5480,5473,5466,5459,5453,5446,5439,5433,5426,5419,
+                   5413,5406,5399,5393,5386,5379,5373,5366,5360,5353,5346,5340,5333,5327,5320,5314,5307,5301,5294,5288,5281,5275,5268,5262,5255,
+                   5249,5242,5236,5229,5223,5216,5210,5204,5197,5191,5184,5178,5172,5165,5159,5153,5146,5140,5134,5127,5121,5115,5108,5102,5096,
+                   5090,5083,5077,5071,5065,5058,5052,5046,5040,5034,5027,5021,5015,5009,5003,4996,4990,4984,4978,4972,4966,4960,4954,4947,4941,
+                   4935,4929,4923,4917,4911,4905,4899,4893,4887,4881,4875,4869,4863,4857,4851,4845,4839,4833,4827,4821,4815,4809,4803,4797,4792,
+                   4786,4780,4774,4768,4762,4756,4750,
+              },
+              /* drc_high_LUT_point */
+              {
+                   6382,6382,6258,6136,6016,5899,5784,5671,5561,5453,5346,5242,5140,5039,4941,4845,4750,4657,4566,4477,4390,4304,4220,4137,4056,
+                   3977,3899,3823,3748,3675,3603,3532,3463,3395,3329,3264,3200,3137,3075,3015,2956,2898,2841,2785,2730,2677,2624,2572,2522,2472,
+                   2423,2376,2329,2283,2238,2194,2151,2108,2066,2026,1986,1946,1908,1870,1833,1797,1761,1726,1692,1658,1625,1593,1561,1530,1500,
+                   1470,1441,1412,1384,1356,1329,1302,1276,1251,1226,1201,1177,1154,1130,1108,1085,1063,1042,1021,1000, 980, 960, 941, 922, 903,
+                    885, 867, 849, 832, 815, 798, 782, 766, 750, 735, 720, 705, 691, 676, 662, 649, 635, 622, 609, 597, 584, 572, 560, 548, 537,
+                    526, 515, 504, 493, 483, 473, 463, 453, 443, 434, 425, 415, 407, 398, 389, 381, 373, 365, 357, 349, 341, 334, 327, 319, 312,
+                    305, 299, 292, 285, 279, 273, 267, 261, 255, 249, 243, 238, 232, 227, 222, 216, 211, 206, 202, 197, 192, 188, 183, 179, 174,
+                    170, 166, 162, 158, 154, 150, 146, 143, 139, 136, 132, 129, 125, 122, 119, 116, 113, 109, 106, 104, 101,  98,  95,  92,  90,
+                     87,  85,  82,  80,  77,  75,  73,  70,  68,  66,  64,  62,  60,  58,  56,  54,  52,  50,  48,  46,  45,  43,  41,  39,  38,
+                     36,  35,  33,  32,  30,  29,  27,  26,  25,  23,  22,  21,  19,  18,  17,  16,  15,  13,  12,  11,  10,   9,   8,   7,   6,
+                      5,   4,   3,   2,   1,   0,   0,
+              },
+              /* saturation */
+              200,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0.8,
+              /* k2 */
+              5,
+              /* k3 */
+              1,
+           },
+           /* para 1*/
+           {
+              /* drc_low_LUT_point */
+              {
+                   6501,6501,6493,6485,6477,6469,6461,6453,6445,6437,6429,6422,6414,6406,6398,6390,6382,6374,6367,6359,6351,6343,6335,6328,6320,
+                   6312,6304,6297,6289,6281,6273,6266,6258,6250,6243,6235,6227,6220,6212,6204,6197,6189,6181,6174,6166,6159,6151,6144,6136,6129,
+                   6121,6113,6106,6098,6091,6083,6076,6069,6061,6054,6046,6039,6031,6024,6017,6009,6002,5994,5987,5980,5972,5965,5958,5950,5943,
+                   5936,5928,5921,5914,5907,5899,5892,5885,5878,5870,5863,5856,5849,5842,5834,5827,5820,5813,5806,5799,5792,5784,5777,5770,5763,
+                   5756,5749,5742,5735,5728,5721,5714,5707,5700,5693,5686,5679,5672,5665,5658,5651,5644,5637,5630,5623,5616,5609,5602,5595,5589,
+                   5582,5575,5568,5561,5554,5547,5541,5534,5527,5520,5513,5507,5500,5493,5486,5480,5473,5466,5459,5453,5446,5439,5433,5426,5419,
+                   5413,5406,5399,5393,5386,5379,5373,5366,5360,5353,5346,5340,5333,5327,5320,5314,5307,5301,5294,5288,5281,5275,5268,5262,5255,
+                   5249,5242,5236,5229,5223,5216,5210,5204,5197,5191,5184,5178,5172,5165,5159,5153,5146,5140,5134,5127,5121,5115,5108,5102,5096,
+                   5090,5083,5077,5071,5065,5058,5052,5046,5040,5034,5027,5021,5015,5009,5003,4996,4990,4984,4978,4972,4966,4960,4954,4947,4941,
+                   4935,4929,4923,4917,4911,4905,4899,4893,4887,4881,4875,4869,4863,4857,4851,4845,4839,4833,4827,4821,4815,4809,4803,4797,4792,
+                   4786,4780,4774,4768,4762,4756,4750,
+              },
+              /* drc_high_LUT_point */
+              {
+                   6382,6382,6258,6136,6016,5899,5784,5671,5561,5453,5346,5242,5140,5039,4941,4845,4750,4657,4566,4477,4390,4304,4220,4137,4056,
+                   3977,3899,3823,3748,3675,3603,3532,3463,3395,3329,3264,3200,3137,3075,3015,2956,2898,2841,2785,2730,2677,2624,2572,2522,2472,
+                   2423,2376,2329,2283,2238,2194,2151,2108,2066,2026,1986,1946,1908,1870,1833,1797,1761,1726,1692,1658,1625,1593,1561,1530,1500,
+                   1470,1441,1412,1384,1356,1329,1302,1276,1251,1226,1201,1177,1154,1130,1108,1085,1063,1042,1021,1000, 980, 960, 941, 922, 903,
+                    885, 867, 849, 832, 815, 798, 782, 766, 750, 735, 720, 705, 691, 676, 662, 649, 635, 622, 609, 597, 584, 572, 560, 548, 537,
+                    526, 515, 504, 493, 483, 473, 463, 453, 443, 434, 425, 415, 407, 398, 389, 381, 373, 365, 357, 349, 341, 334, 327, 319, 312,
+                    305, 299, 292, 285, 279, 273, 267, 261, 255, 249, 243, 238, 232, 227, 222, 216, 211, 206, 202, 197, 192, 188, 183, 179, 174,
+                    170, 166, 162, 158, 154, 150, 146, 143, 139, 136, 132, 129, 125, 122, 119, 116, 113, 109, 106, 104, 101,  98,  95,  92,  90,
+                     87,  85,  82,  80,  77,  75,  73,  70,  68,  66,  64,  62,  60,  58,  56,  54,  52,  50,  48,  46,  45,  43,  41,  39,  38,
+                     36,  35,  33,  32,  30,  29,  27,  26,  25,  23,  22,  21,  19,  18,  17,  16,  15,  13,  12,  11,  10,   9,   8,   7,   6,
+                      5,   4,   3,   2,   1,   0,   0,
+              },
+              /* saturation */
+              200,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0.8,
+              /* k2 */
+              5,
+              /* k3 */
+              1,
+           },
+           /* para 2*/
+           {
+              /* drc_low_LUT_point */
+              {
+                   6491,6491,6475,6460,6445,6431,6417,6404,6391,6378,6365,6352,6339,6327,6314,6302,6290,6278,6266,6254,6242,6230,6219,6207,6196,
+                   6184,6173,6162,6150,6139,6128,6117,6106,6095,6084,6073,6063,6052,6041,6030,6020,6009,5999,5988,5978,5968,5957,5947,5937,5926,
+                   5916,5906,5896,5886,5876,5866,5856,5846,5836,5826,5816,5806,5797,5787,5777,5768,5758,5748,5739,5729,5720,5710,5701,5691,5682,
+                   5672,5663,5654,5644,5635,5626,5617,5608,5598,5589,5580,5571,5562,5553,5544,5535,5526,5517,5508,5499,5490,5481,5473,5464,5455,
+                   5446,5438,5429,5420,5412,5403,5394,5386,5377,5369,5360,5351,5343,5335,5326,5318,5309,5301,5292,5284,5276,5267,5259,5251,5243,
+                   5234,5226,5218,5210,5202,5194,5185,5177,5169,5161,5153,5145,5137,5129,5121,5113,5105,5097,5090,5082,5074,5066,5058,5050,5043,
+                   5035,5027,5019,5012,5004,4996,4988,4981,4973,4966,4958,4950,4943,4935,4928,4920,4913,4905,4898,4890,4883,4875,4868,4860,4853,
+                   4846,4838,4831,4824,4816,4809,4802,4795,4787,4780,4773,4766,4758,4751,4744,4737,4730,4723,4716,4709,4701,4694,4687,4680,4673,
+                   4666,4659,4652,4645,4638,4631,4625,4618,4611,4604,4597,4590,4583,4576,4570,4563,4556,4549,4543,4536,4529,4522,4516,4509,4502,
+                   4496,4489,4482,4476,4469,4462,4456,4449,4443,4436,4430,4423,4416,4410,4403,4397,4391,4384,4378,4371,4365,4358,4352,4346,4339,
+                   4333,4326,4320,4314,4307,4301,4295,
+              },
+              /* drc_high_LUT_point */
+              {
+                   6290,6290,6106,5936,5777,5626,5481,5343,5210,5081,4958,4838,4722,4610,4502,4397,4294,4195,4099,4005,3914,3826,3739,3656,3574,
+                   3494,3417,3341,3268,3196,3126,3058,2991,2926,2863,2801,2741,2682,2625,2569,2514,2460,2408,2357,2307,2258,2211,2164,2119,2074,
+                   2031,1988,1947,1906,1867,1828,1790,1753,1716,1681,1646,1612,1579,1546,1514,1483,1453,1423,1394,1365,1337,1310,1283,1257,1231,
+                   1206,1182,1158,1134,1111,1088,1066,1044,1023,1002, 982, 962, 943, 923, 905, 886, 868, 851, 833, 817, 800, 784, 768, 752, 737,
+                    722, 707, 693, 679, 665, 652, 638, 625, 613, 600, 588, 576, 564, 553, 542, 530, 520, 509, 499, 488, 478, 469, 459, 449, 440,
+                    431, 422, 413, 405, 397, 388, 380, 372, 365, 357, 350, 342, 335, 328, 321, 314, 308, 301, 295, 289, 282, 276, 270, 265, 259,
+                    253, 248, 243, 237, 232, 227, 222, 217, 212, 208, 203, 199, 194, 190, 186, 181, 177, 173, 169, 165, 162, 158, 154, 151, 147,
+                    144, 140, 137, 133, 130, 127, 124, 121, 118, 115, 112, 109, 107, 104, 101,  99,  96,  93,  91,  89,  86,  84,  82,  79,  77,
+                     75,  73,  71,  69,  67,  65,  63,  61,  59,  57,  55,  53,  52,  50,  48,  47,  45,  43,  42,  40,  39,  37,  36,  35,  33,
+                     32,  30,  29,  28,  27,  25,  24,  23,  22,  20,  19,  18,  17,  16,  15,  14,  13,  12,  11,  10,   9,   8,   7,   6,   5,
+                      4,   4,   3,   2,   1,   0,   0,
+              },
+              /* saturation */
+              200,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0.8,
+              /* k2 */
+              5,
+              /* k3 */
+              0.9,
+           },
+           /* para 3*/
+           {
+              /* drc_low_LUT_point */
+              {
+                   3269,3269,3262,3256,3250,3243,3237,3231,3224,3218,3212,3206,3199,3193,3187,3181,3174,3168,3162,3156,3150,3144,3137,3131,3125,
+                   3119,3113,3107,3101,3095,3089,3083,3077,3071,3065,3059,3053,3047,3041,3035,3029,3023,3017,3011,3005,3000,2994,2988,2982,2976,
+                   2970,2965,2959,2953,2947,2942,2936,2930,2924,2919,2913,2907,2902,2896,2890,2885,2879,2873,2868,2862,2857,2851,2845,2840,2834,
+                   2829,2823,2818,2812,2807,2801,2796,2790,2785,2779,2774,2769,2763,2758,2752,2747,2742,2736,2731,2726,2720,2715,2710,2704,2699,
+                   2694,2689,2683,2678,2673,2668,2663,2657,2652,2647,2642,2637,2632,2626,2621,2616,2611,2606,2601,2596,2591,2586,2581,2576,2571,
+                   2566,2561,2556,2551,2546,2541,2536,2531,2526,2521,2516,2511,2506,2501,2496,2491,2487,2482,2477,2472,2467,2462,2458,2453,2448,
+                   2443,2438,2434,2429,2424,2419,2415,2410,2405,2401,2396,2391,2387,2382,2377,2373,2368,2363,2359,2354,2350,2345,2340,2336,2331,
+                   2327,2322,2318,2313,2309,2304,2300,2295,2291,2286,2282,2277,2273,2268,2264,2260,2255,2251,2246,2242,2238,2233,2229,2224,2220,
+                   2216,2211,2207,2203,2199,2194,2190,2186,2181,2177,2173,2169,2164,2160,2156,2152,2148,2143,2139,2135,2131,2127,2123,2118,2114,
+                   2110,2106,2102,2098,2094,2090,2086,2081,2077,2073,2069,2065,2061,2057,2053,2049,2045,2041,2037,2033,2029,2025,2021,2017,2013,
+                   2010,2006,2002,1998,1994,1990,1986,
+              },
+              /* drc_high_LUT_point */
+              {
+                   3174,3174,3077,2982,2890,2801,2715,2631,2550,2472,2396,2322,2251,2181,2114,2049,1986,1925,1865,1808,1752,1698,1646,1595,1546,
+                   1499,1452,1408,1364,1322,1282,1242,1204,1167,1131,1096,1062,1029, 998, 967, 937, 908, 880, 853, 827, 801, 777, 753, 730, 707,
+                    685, 664, 644, 624, 605, 586, 568, 550, 533, 517, 501, 485, 470, 456, 442, 428, 415, 402, 390, 378, 366, 355, 344, 333, 323,
+                    313, 303, 294, 285, 276, 267, 259, 251, 243, 236, 228, 221, 215, 208, 201, 195, 189, 183, 178, 172, 167, 162, 157, 152, 147,
+                    142, 138, 134, 129, 125, 122, 118, 114, 111, 107, 104, 100,  97,  94,  91,  88,  86,  83,  80,  78,  75,  73,  71,  69,  66,
+                     64,  62,  60,  58,  57,  55,  53,  51,  50,  48,  47,  45,  44,  42,  41,  40,  38,  37,  36,  35,  34,  33,  32,  31,  30,
+                     29,  28,  27,  26,  25,  24,  23,  23,  22,  21,  20,  20,  19,  19,  18,  17,  17,  16,  16,  15,  15,  14,  14,  13,  13,
+                     12,  12,  11,  11,  11,  10,  10,  10,   9,   9,   9,   8,   8,   8,   7,   7,   7,   7,   6,   6,   6,   6,   5,   5,   5,
+                      5,   5,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,   1,
+                      1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,
+              },
+              /* saturation */
+              100,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0.4,
+              /* k2 */
+              8,
+              /* k3 */
+              1,
+           },
+           /* para 4*/
+           {
+              /* drc_low_LUT_point */
+              {
+                   1634,1634,1631,1628,1625,1621,1618,1615,1612,1609,1606,1603,1599,1596,1593,1590,1587,1584,1581,1578,1575,1572,1568,1565,1562,
+                   1559,1556,1553,1550,1547,1544,1541,1538,1535,1532,1529,1526,1523,1520,1517,1514,1511,1508,1505,1502,1500,1497,1494,1491,1488,
+                   1485,1482,1479,1476,1473,1471,1468,1465,1462,1459,1456,1453,1451,1448,1445,1442,1439,1436,1434,1431,1428,1425,1422,1420,1417,
+                   1414,1411,1409,1406,1403,1400,1398,1395,1392,1389,1387,1384,1381,1379,1376,1373,1371,1368,1365,1363,1360,1357,1355,1352,1349,
+                   1347,1344,1341,1339,1336,1334,1331,1328,1326,1323,1321,1318,1316,1313,1310,1308,1305,1303,1300,1298,1295,1293,1290,1288,1285,
+                   1283,1280,1278,1275,1273,1270,1268,1265,1263,1260,1258,1255,1253,1250,1248,1245,1243,1241,1238,1236,1233,1231,1229,1226,1224,
+                   1221,1219,1217,1214,1212,1209,1207,1205,1202,1200,1198,1195,1193,1191,1188,1186,1184,1181,1179,1177,1175,1172,1170,1168,1165,
+                   1163,1161,1159,1156,1154,1152,1150,1147,1145,1143,1141,1138,1136,1134,1132,1130,1127,1125,1123,1121,1119,1116,1114,1112,1110,
+                   1108,1105,1103,1101,1099,1097,1095,1093,1090,1088,1086,1084,1082,1080,1078,1076,1074,1071,1069,1067,1065,1063,1061,1059,1057,
+                   1055,1053,1051,1049,1047,1045,1043,1040,1038,1036,1034,1032,1030,1028,1026,1024,1022,1020,1018,1016,1014,1012,1010,1008,1006,
+                   1005,1003,1001, 999, 997, 995, 993,
+              },
+              /* drc_high_LUT_point */
+              {
+                   1587,1587,1538,1491,1445,1400,1357,1315,1275,1236,1198,1161,1125,1090,1057,1024, 993, 962, 932, 904, 876, 849, 823, 797, 773,
+                    749, 726, 704, 682, 661, 641, 621, 602, 583, 565, 548, 531, 514, 499, 483, 468, 454, 440, 426, 413, 400, 388, 376, 365, 353,
+                    342, 332, 322, 312, 302, 293, 284, 275, 266, 258, 250, 242, 235, 228, 221, 214, 207, 201, 195, 189, 183, 177, 172, 166, 161,
+                    156, 151, 147, 142, 138, 133, 129, 125, 121, 118, 114, 110, 107, 104, 100,  97,  94,  91,  89,  86,  83,  81,  78,  76,  73,
+                     71,  69,  67,  64,  62,  61,  59,  57,  55,  53,  52,  50,  48,  47,  45,  44,  43,  41,  40,  39,  37,  36,  35,  34,  33,
+                     32,  31,  30,  29,  28,  27,  26,  25,  25,  24,  23,  22,  22,  21,  20,  20,  19,  18,  18,  17,  17,  16,  16,  15,  15,
+                     14,  14,  13,  13,  12,  12,  11,  11,  11,  10,  10,  10,   9,   9,   9,   8,   8,   8,   8,   7,   7,   7,   7,   6,   6,
+                      6,   6,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,
+                      2,   2,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,
+              },
+              /* saturation */
+              100,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0.2,
+              /* k2 */
+              8,
+              /* k3 */
+              1,
+           },
+           /* para 5*/
+           {
+              /* drc_low_LUT_point */
+              {
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,
+              },
+              /* drc_high_LUT_point */
+              {
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                      0,   0,   0,   0,   0,   0,   0,
+              },
+              /* saturation */
+              100,
+              /* fl1 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl2 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* fl3 */
+              {
+                   0,0,0,0,0,
+                   0,0,255,0,0,
+                   0,0,0,0,0,
+              },
+              /* k1 */
+              0,
+              /* k2 */
+              8,
+              /* k3 */
+              1,
+           },
+       },
+       0,//enable_auto_gen
+    },
+    /* isp_sub_module_gic_tuning_t isp_sub_module_gic_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       5,//ae count
+       0,//trigger mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             1.1,
+          },
+          /* aec trigger 1 */
+          {
+             4,
+             4.1,
+          },
+          /* aec trigger 2 */
+          {
+             8,
+             8.1,
+          },
+          /* aec trigger 3 */
+          {
+             32,
+             32.1,
+          },
+          /* aec trigger 4 */
+          {
+             64,
+             64.1,
+          },
+       },
+       /* isp_sub_module_gic_pra pra[MIDDLE_TRIGGER_COUNT] */
+       {
+           /* para 0*/
+           {
+              0,//enable
+              256,//alphfa1
+              128,//alphfa_red
+              0,//k_filter_power
+              9830,//b_value
+              10,//ge_thres
+              163,//g_slope
+              60,//max_thres
+              96,//k_thres
+              40,//limit_base_green
+              40,//limit_base_red
+              1400,//limit_end_green
+              1600,//limit_end_red
+              256,//weight_filterg
+              2048,//k_diff_base
+           },
+           /* para 1*/
+           {
+              0,//enable
+              256,//alphfa1
+              128,//alphfa_red
+              32,//k_filter_power
+              9830,//b_value
+              10,//ge_thres
+              163,//g_slope
+              60,//max_thres
+              120,//k_thres
+              50,//limit_base_green
+              50,//limit_base_red
+              1750,//limit_end_green
+              2000,//limit_end_red
+              256,//weight_filterg
+              2048,//k_diff_base
+           },
+           /* para 2*/
+           {
+              1,//enable
+              256,//alphfa1
+              128,//alphfa_red
+              72,//k_filter_power
+              9830,//b_value
+              10,//ge_thres
+              163,//g_slope
+              60,//max_thres
+              150,//k_thres
+              63,//limit_base_green
+              63,//limit_base_red
+              2188,//limit_end_green
+              2500,//limit_end_red
+              256,//weight_filterg
+              2048,//k_diff_base
+           },
+           /* para 3*/
+           {
+              1,//enable
+              256,//alphfa1
+              128,//alphfa_red
+              152,//k_filter_power
+              9830,//b_value
+              10,//ge_thres
+              163,//g_slope
+              60,//max_thres
+              210,//k_thres
+              88,//limit_base_green
+              88,//limit_base_red
+              3063,//limit_end_green
+              3500,//limit_end_red
+              256,//weight_filterg
+              2048,//k_diff_base
+           },
+           /* para 4*/
+           {
+              1,//enable
+              256,//alphfa1
+              128,//alphfa_red
+              232,//k_filter_power
+              9830,//b_value
+              10,//ge_thres
+              163,//g_slope
+              60,//max_thres
+              270,//k_thres
+              113,//limit_base_green
+              113,//limit_base_red
+              3938,//limit_end_green
+              4500,//limit_end_red
+              256,//weight_filterg
+              2048,//k_diff_base
+           },
+       },
+    },
+    /* isp_sub_module_cfa_tuning_t isp_sub_module_cfa_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       5,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             3,
+          },
+          /* aec trigger 1 */
+          {
+             4,
+             8.1,
+          },
+          /* aec trigger 2 */
+          {
+             13,
+             24.1,
+          },
+          /* aec trigger 3 */
+          {
+             48,
+             48.1,
+          },
+          /* aec trigger 4 */
+          {
+             80,
+             100.1,
+          },
+       },
+       /* isp_sub_module_cfa_pra pra[MIDDLE_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+              30,//edge_offset0
+              30,//edge_offset1
+              30,//edge_offset2
+              30,//edge_offset3
+              33,//gfilter_mid
+              26,//gfilter_peak
+              29,//gfilter_lrud
+              75,//gfactor_1
+              53,//gfactor_2
+              37,//gfactor_3
+              18,//gfactor_4
+              500,//th1_y
+              4000,//th2_y
+              10000,//th1_ny
+              900000,//th2_ny
+              1,//ny_correct_en
+              128,//ny_weight_factor
+              0,//ny_weight_factor_1minus
+              40,//ahd_th
+              6,//hvwt_th
+              128,//flat_hvwt_factor
+              0,//flat_hvwt_factor_1minus
+              64,//detail_same_factor
+              64,//detail_same_factor_1minus
+              128,//detail_diff_factor
+              0,//detail_diff_factor_1minus
+              64,//ny_same_factor
+              64,//ny_same_factor_1minus
+              115,//ny_diff_factor
+              13,//ny_diff_factor_1minus
+              0,//dpp_correct
+              1,//luma_detect_en
+              100,//th1_very_light
+              255,//th2_y_max
+              1,//rgb_diff_detect_en
+              30,//th1_rgb_diff
+              50,//th2_rgb_diff
+              1,//edge_detect_en
+              1000,//th1_edge
+              8000,//th2_edge
+              10,//dpp_strength
+          },
+          /* para 1 */
+          {
+              30,//edge_offset0
+              30,//edge_offset1
+              30,//edge_offset2
+              30,//edge_offset3
+              33,//gfilter_mid
+              26,//gfilter_peak
+              29,//gfilter_lrud
+              75,//gfactor_1
+              53,//gfactor_2
+              37,//gfactor_3
+              18,//gfactor_4
+              500,//th1_y
+              4000,//th2_y
+              10000,//th1_ny
+              3000000,//th2_ny
+              1,//ny_correct_en
+              128,//ny_weight_factor
+              0,//ny_weight_factor_1minus
+              70,//ahd_th
+              12,//hvwt_th
+              102,//flat_hvwt_factor
+              26,//flat_hvwt_factor_1minus
+              128,//detail_same_factor
+              0,//detail_same_factor_1minus
+              128,//detail_diff_factor
+              0,//detail_diff_factor_1minus
+              0,//ny_same_factor
+              128,//ny_same_factor_1minus
+              128,//ny_diff_factor
+              0,//ny_diff_factor_1minus
+              0,//dpp_correct
+              0,//luma_detect_en
+              0,//th1_very_light
+              0,//th2_y_max
+              0,//rgb_diff_detect_en
+              0,//th1_rgb_diff
+              0,//th2_rgb_diff
+              0,//edge_detect_en
+              0,//th1_edge
+              0,//th2_edge
+              0,//dpp_strength
+          },
+          /* para 2 */
+          {
+              30,//edge_offset0
+              30,//edge_offset1
+              30,//edge_offset2
+              30,//edge_offset3
+              33,//gfilter_mid
+              26,//gfilter_peak
+              29,//gfilter_lrud
+              75,//gfactor_1
+              53,//gfactor_2
+              37,//gfactor_3
+              18,//gfactor_4
+              500,//th1_y
+              4000,//th2_y
+              10000,//th1_ny
+              900000,//th2_ny
+              1,//ny_correct_en
+              12,//ny_weight_factor
+              116,//ny_weight_factor_1minus
+              70,//ahd_th
+              12,//hvwt_th
+              102,//flat_hvwt_factor
+              26,//flat_hvwt_factor_1minus
+              128,//detail_same_factor
+              0,//detail_same_factor_1minus
+              128,//detail_diff_factor
+              0,//detail_diff_factor_1minus
+              0,//ny_same_factor
+              128,//ny_same_factor_1minus
+              0,//ny_diff_factor
+              128,//ny_diff_factor_1minus
+              0,//dpp_correct
+              0,//luma_detect_en
+              0,//th1_very_light
+              0,//th2_y_max
+              0,//rgb_diff_detect_en
+              0,//th1_rgb_diff
+              0,//th2_rgb_diff
+              0,//edge_detect_en
+              0,//th1_edge
+              0,//th2_edge
+              0,//dpp_strength
+          },
+          /* para 3 */
+          {
+              30,//edge_offset0
+              30,//edge_offset1
+              30,//edge_offset2
+              30,//edge_offset3
+              33,//gfilter_mid
+              26,//gfilter_peak
+              29,//gfilter_lrud
+              75,//gfactor_1
+              53,//gfactor_2
+              37,//gfactor_3
+              18,//gfactor_4
+              500,//th1_y
+              4000,//th2_y
+              10000,//th1_ny
+              900000,//th2_ny
+              1,//ny_correct_en
+              6,//ny_weight_factor
+              122,//ny_weight_factor_1minus
+              70,//ahd_th
+              12,//hvwt_th
+              102,//flat_hvwt_factor
+              26,//flat_hvwt_factor_1minus
+              128,//detail_same_factor
+              0,//detail_same_factor_1minus
+              128,//detail_diff_factor
+              0,//detail_diff_factor_1minus
+              0,//ny_same_factor
+              128,//ny_same_factor_1minus
+              0,//ny_diff_factor
+              128,//ny_diff_factor_1minus
+              0,//dpp_correct
+              0,//luma_detect_en
+              0,//th1_very_light
+              0,//th2_y_max
+              0,//rgb_diff_detect_en
+              0,//th1_rgb_diff
+              0,//th2_rgb_diff
+              0,//edge_detect_en
+              0,//th1_edge
+              0,//th2_edge
+              0,//dpp_strength
+          },
+          /* para 4 */
+          {
+              30,//edge_offset0
+              30,//edge_offset1
+              30,//edge_offset2
+              30,//edge_offset3
+              33,//gfilter_mid
+              26,//gfilter_peak
+              29,//gfilter_lrud
+              75,//gfactor_1
+              53,//gfactor_2
+              37,//gfactor_3
+              18,//gfactor_4
+              500,//th1_y
+              4000,//th2_y
+              10000,//th1_ny
+              900000,//th2_ny
+              1,//ny_correct_en
+              128,//ny_weight_factor
+              0,//ny_weight_factor_1minus
+              40,//ahd_th
+              6,//hvwt_th
+              128,//flat_hvwt_factor
+              0,//flat_hvwt_factor_1minus
+              64,//detail_same_factor
+              64,//detail_same_factor_1minus
+              128,//detail_diff_factor
+              0,//detail_diff_factor_1minus
+              64,//ny_same_factor
+              64,//ny_same_factor_1minus
+              115,//ny_diff_factor
+              13,//ny_diff_factor_1minus
+              0,//dpp_correct
+              0,//luma_detect_en
+              0,//th1_very_light
+              0,//th2_y_max
+              0,//rgb_diff_detect_en
+              0,//th1_rgb_diff
+              0,//th2_rgb_diff
+              0,//edge_detect_en
+              0,//th1_edge
+              0,//th2_edge
+              0,//dpp_strength
+          },
+       },
+    },
+    /* isp_sub_module_depurple_tuning_t isp_sub_module_depurple_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_ccm1_tuning_t isp_sub_module_ccm1_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       1,//count_ae
+       3,//count_awb
+       1,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             455,
+          },
+       },
+       /* awb trigger */
+       {
+          /* awb trigger 0 */
+          {
+             2700,
+             2900,
+          },
+          /* awb trigger 1 */
+          {
+             3700,
+             4300,
+          },
+          /* awb trigger 2 */
+          {
+             4700,
+             5300,
+          },
+       },
+       /* isp_sub_module_ccm1_pra pra[5][7] */
+       {
+          /* aec trigger 0 */
+          {
+             /* awb para 0 */
+             {
+                1.9855,-1.0667,0.0812,
+                -0.5152,1.5129,0.0023,
+                -0.0087,-0.9356,1.9442,
+             },
+             /* awb para 1 */
+             {
+                2.0519,-1.1019,0.05,
+                -0.4379,1.659,-0.2211,
+                0.0435,-0.6991,1.6555,
+             },
+             /* awb para 2 */
+             {
+                2.0501,-0.9613,-0.0887,
+                -0.3137,1.5915,-0.2778,
+                -0.0082,-0.5219,1.53,
+             },
+          },
+       },
+    },
+    /* isp_sub_module_ccm2_tuning_t isp_sub_module_ccm2_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_gtm1_tuning_t isp_sub_module_gtm1_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       2,//count_ae
+       1,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             100,
+          },
+          /* aec trigger 1 */
+          {
+             180,
+             370,
+          },
+       },
+       /* isp_sub_module_gtm1_lut_pra pra[MIN_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             1,//grey_max_flag
+             /* gtm1 curve */
+             {
+                  16,  32,  48,  64,  80,  96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320,
+                 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512, 528, 544, 560, 576, 592, 608, 624, 640,
+                 656, 672, 688, 704, 720, 736, 752, 768, 784, 800, 816, 832, 848, 864, 880, 896, 912, 928, 944, 960,
+                 976, 992,1008,1024,1040,1056,1072,1088,1104,1120,1136,1152,1168,1184,1200,1216,1232,1248,1264,1280,
+                1296,1312,1328,1344,1360,1376,1392,1408,1424,1440,1456,1472,1488,1504,1520,1536,1552,1568,1584,1600,
+                1616,1632,1648,1664,1680,1696,1712,1728,1744,1760,1776,1792,1808,1824,1840,1856,1872,1888,1904,1920,
+                1936,1952,1968,1984,2000,2016,2032,2048,2064,2080,2096,2112,2128,2144,2160,2176,2192,2208,2224,2240,
+                2256,2272,2288,2304,2320,2336,2352,2368,2384,2400,2416,2432,2448,2464,2480,2496,2512,2528,2544,2560,
+                2576,2592,2608,2624,2640,2656,2672,2688,2704,2720,2736,2752,2768,2784,2800,2816,2832,2848,2864,2880,
+                2896,2912,2928,2944,2960,2976,2992,3008,3024,3040,3056,3072,3088,3104,3120,3136,3152,3168,3184,3200,
+                3216,3232,3248,3264,3280,3296,3312,3328,3344,3360,3376,3392,3408,3424,3440,3456,3472,3488,3504,3520,
+                3536,3552,3568,3584,3600,3616,3632,3648,3664,3680,3696,3712,3728,3744,3760,3776,3792,3808,3824,3840,
+                3856,3872,3888,3904,3920,3936,3952,3968,3984,4000,4016,4032,4048,4064,4080,4095,4095,
+             },
+          },
+          /* para 1 */
+          {
+             1,//grey_max_flag
+             /* gtm1 curve */
+             {
+                  13,  27,  40,  53,  66,  80,  93, 106, 119, 133, 146, 159, 172, 186, 199, 212, 226, 240, 255, 271,
+                 289, 307, 324, 343, 362, 381, 400, 420, 439, 458, 477, 496, 515, 534, 553, 573, 592, 611, 630, 649,
+                 668, 687, 706, 726, 745, 764, 783, 802, 821, 840, 860, 879, 898, 917, 936, 955, 974, 993,1013,1032,
+                1051,1070,1089,1108,1127,1147,1166,1185,1204,1223,1242,1261,1280,1300,1319,1338,1357,1376,1395,1414,
+                1434,1453,1472,1491,1510,1529,1548,1567,1587,1606,1625,1644,1663,1682,1701,1720,1740,1759,1778,1797,
+                1816,1835,1854,1874,1893,1912,1931,1950,1969,1988,2007,2027,2046,2065,2084,2103,2122,2141,2161,2178,
+                2197,2216,2234,2252,2271,2288,2308,2327,2346,2365,2384,2403,2422,2441,2458,2473,2490,2507,2525,2543,
+                2561,2578,2592,2606,2619,2632,2645,2659,2673,2687,2701,2715,2728,2741,2755,2768,2783,2796,2809,2823,
+                2836,2849,2862,2876,2889,2902,2915,2929,2942,2955,2968,2982,2995,3008,3021,3035,3048,3061,3075,3088,
+                3101,3114,3128,3141,3154,3167,3181,3194,3207,3220,3234,3247,3260,3274,3287,3300,3313,3327,3340,3353,
+                3366,3380,3393,3406,3419,3433,3446,3459,3473,3486,3499,3512,3526,3539,3552,3565,3579,3592,3605,3618,
+                3632,3645,3658,3672,3685,3698,3711,3725,3738,3751,3764,3778,3791,3804,3817,3831,3844,3857,3870,3884,
+                3897,3910,3924,3937,3950,3963,3977,3990,4003,4016,4030,4043,4056,4069,4083,4095,4095,
+             },
+          },
+       },
+    },
+    /* isp_sub_module_gamma_lut_tuning_t isp_sub_module_gamma_lut_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       5,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             200,
+          },
+          /* aec trigger 1 */
+          {
+             200,
+             400,
+          },
+          /* aec trigger 2 */
+          {
+             410,
+             600,
+          },
+          /* aec trigger 3 */
+          {
+             610,
+             1000,
+          },
+          /* aec trigger 4 */
+          {
+             1010,
+             2000,
+          },
+       },
+       4096,//gamma_lut_size
+       /* isp_sub_module_gamma_lut_pra pra[MIDDLE_TRIGGER_COUNT] */
+       {
+          /* aec trigger 0 */
+          {
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,
+                   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,
+                   4,   4,   4,   4,   4,   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   6,   6,
+                   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,
+                   5,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,
+                   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   2,   2,   3,   3,   4,   4,   5,   5,   6,   6,   7,   7,   8,   8,   9,
+                   9,   9,  10,  10,  11,  11,  12,  12,  12,  13,  13,  14,  14,  15,  15,  15,  16,  16,  17,  17,  17,  18,  18,  19,  19,  19,  20,  20,  20,  21,  21,  22,
+                  22,  22,  23,  23,  23,  24,  24,  24,  25,  25,  25,  26,  26,  26,  27,  27,  27,  28,  28,  28,  29,  29,  29,  30,  30,  30,  30,  31,  31,  31,  32,  32,
+                  32,  32,  33,  33,  33,  33,  34,  34,  34,  35,  35,  35,  35,  35,  36,  36,  35,  36,  37,  37,  38,  38,  39,  39,  40,  40,  41,  42,  42,  43,  43,  44,
+                  44,  45,  45,  46,  46,  47,  47,  48,  48,  49,  49,  50,  50,  51,  51,  52,  52,  53,  53,  54,  54,  55,  55,  56,  56,  56,  57,  57,  58,  58,  59,  59,
+                  60,  60,  60,  61,  61,  62,  62,  63,  63,  63,  64,  64,  65,  65,  66,  66,  66,  67,  67,  68,  68,  68,  69,  69,  69,  70,  70,  71,  71,  71,  72,  72,
+                  72,  73,  73,  74,  74,  74,  75,  75,  75,  76,  76,  76,  77,  77,  77,  78,  78,  78,  79,  79,  79,  80,  80,  80,  80,  81,  81,  81,  82,  82,  82,  83,
+                  83,  83,  83,  84,  84,  84,  84,  85,  85,  85,  86,  87,  87,  88,  89,  89,  90,  91,  91,  92,  93,  93,  94,  95,  95,  96,  97,  97,  98,  99,  99, 100,
+                 101, 101, 102, 102, 103, 104, 104, 105, 106, 106, 107, 107, 108, 109, 109, 110, 110, 111, 111, 112, 113, 113, 114, 114, 115, 115, 116, 116, 117, 117, 118, 118,
+                 119, 120, 120, 121, 121, 122, 122, 123, 123, 124, 124, 125, 125, 125, 126, 126, 127, 127, 128, 128, 129, 129, 130, 130, 130, 131, 131, 132, 132, 133, 133, 133,
+                 134, 134, 135, 135, 136, 136, 136, 137, 137, 137, 138, 138, 139, 139, 139, 140, 140, 140, 141, 141, 141, 142, 142, 142, 143, 143, 143, 144, 144, 144, 145, 145,
+                 144, 145, 145, 146, 146, 147, 147, 148, 148, 149, 149, 150, 150, 151, 151, 152, 152, 153, 153, 154, 154, 155, 155, 156, 156, 156, 157, 157, 158, 158, 159, 159,
+                 160, 160, 161, 161, 162, 162, 163, 163, 164, 164, 165, 165, 166, 166, 167, 167, 167, 168, 168, 169, 169, 170, 170, 171, 171, 172, 172, 173, 173, 174, 174, 175,
+                 175, 176, 176, 176, 177, 177, 178, 178, 179, 179, 180, 180, 181, 181, 182, 182, 183, 183, 184, 184, 185, 185, 185, 186, 186, 187, 187, 188, 188, 189, 189, 190,
+                 190, 191, 191, 192, 192, 193, 193, 193, 194, 194, 195, 195, 196, 196, 197, 197, 198, 198, 199, 199, 200, 200, 200, 201, 200, 201, 202, 202, 203, 203, 204, 205,
+                 205, 206, 206, 207, 207, 208, 209, 209, 210, 210, 211, 212, 212, 213, 213, 214, 215, 215, 216, 216, 217, 218, 218, 219, 219, 220, 221, 221, 222, 222, 223, 224,
+                 224, 225, 226, 226, 227, 227, 228, 229, 229, 230, 230, 231, 232, 232, 233, 234, 234, 235, 236, 236, 237, 237, 238, 239, 239, 240, 241, 241, 242, 243, 243, 244,
+                 244, 245, 246, 246, 247, 248, 248, 249, 250, 250, 251, 252, 252, 253, 254, 254, 255, 256, 256, 257, 258, 258, 259, 260, 260, 261, 262, 262, 263, 264, 264, 265,
+                 266, 266, 267, 268, 268, 269, 270, 270, 271, 272, 272, 273, 274, 275, 275, 276, 277, 277, 278, 279, 279, 280, 281, 281, 282, 283, 284, 284, 285, 286, 286, 287,
+                 288, 289, 289, 290, 291, 291, 292, 293, 293, 294, 295, 296, 296, 297, 298, 299, 299, 300, 301, 301, 302, 303, 304, 304, 305, 306, 307, 307, 308, 309, 309, 310,
+                 311, 312, 312, 313, 314, 315, 315, 316, 317, 318, 318, 319, 320, 321, 321, 322, 323, 324, 324, 325, 326, 327, 327, 328, 329, 330, 331, 331, 332, 333, 334, 334,
+                 335, 336, 337, 337, 338, 339, 340, 341, 341, 342, 343, 344, 344, 345, 346, 347, 348, 348, 349, 350, 351, 352, 352, 353, 354, 355, 356, 356, 357, 358, 359, 360,
+                 360, 361, 362, 363, 364, 364, 365, 366, 367, 368, 368, 369, 370, 371, 372, 372, 373, 374, 375, 376, 377, 377, 378, 379, 380, 381, 382, 382, 383, 384, 385, 386,
+                 387, 387, 388, 389, 390, 391, 392, 392, 393, 394, 395, 396, 397, 397, 398, 399, 400, 401, 402, 403, 403, 404, 405, 406, 407, 408, 409, 409, 410, 411, 412, 413,
+                 414, 415, 415, 416, 417, 418, 419, 420, 421, 422, 422, 423, 424, 425, 426, 427, 428, 429, 429, 430, 431, 432, 433, 434, 435, 436, 437, 437, 438, 439, 440, 441,
+                 442, 443, 444, 445, 446, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 466, 467, 468, 469, 470,
+                 471, 472, 473, 474, 475, 476, 477, 478, 479, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 497, 498, 499, 500,
+                 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532,
+                 533, 534, 535, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 549, 550, 551, 552, 553, 553, 554, 555, 556, 556, 557, 558, 559, 560, 560, 561,
+                 562, 563, 563, 564, 565, 566, 566, 567, 568, 569, 570, 570, 571, 572, 573, 574, 574, 575, 576, 577, 577, 578, 579, 580, 581, 581, 582, 583, 584, 585, 585, 586,
+                 587, 588, 588, 589, 590, 591, 592, 592, 593, 594, 595, 596, 596, 597, 598, 599, 600, 600, 601, 602, 603, 604, 604, 605, 606, 607, 608, 608, 609, 610, 611, 612,
+                 612, 613, 614, 615, 616, 616, 617, 618, 619, 620, 620, 621, 622, 623, 624, 625, 625, 626, 627, 628, 629, 629, 630, 631, 632, 633, 633, 634, 635, 636, 637, 638,
+                 638, 639, 640, 641, 642, 643, 643, 644, 645, 646, 647, 647, 648, 649, 650, 651, 652, 652, 653, 654, 655, 656, 657, 657, 658, 659, 660, 661, 662, 662, 663, 664,
+                 665, 666, 667, 667, 668, 669, 670, 671, 672, 672, 673, 674, 675, 676, 677, 677, 678, 679, 680, 681, 682, 683, 683, 684, 685, 686, 687, 688, 688, 689, 690, 691,
+                 692, 693, 694, 694, 695, 696, 697, 698, 699, 700, 700, 701, 702, 703, 704, 705, 706, 706, 707, 708, 709, 710, 711, 712, 712, 713, 714, 715, 716, 717, 718, 718,
+                 719, 720, 721, 722, 723, 724, 725, 725, 726, 727, 728, 729, 730, 731, 732, 732, 733, 734, 735, 736, 737, 738, 739, 739, 740, 741, 742, 743, 744, 745, 746, 746,
+                 747, 748, 749, 750, 751, 752, 753, 754, 754, 755, 756, 757, 758, 759, 760, 761, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 770, 771, 772, 773, 774, 775,
+                 776, 777, 778, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 797, 798, 799, 800, 801, 802, 803, 804,
+                 805, 806, 807, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 830, 831, 832, 833,
+                 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 857, 858, 859, 860, 861, 862, 863,
+                 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 893,
+                 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 920, 921, 922, 923, 924,
+                 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956,
+                 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988,
+                 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,
+                1021,1022,1023,1024,1025,1026,1027,1028,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,1040,1041,1042,1043,1044,1046,1047,1048,1049,1050,1051,1052,1053,
+                1054,1055,1056,1057,1058,1059,1060,1061,1062,1063,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1075,1076,1077,1078,1079,1080,1081,1082,1083,1084,1085,1086,
+                1087,1088,1089,1090,1091,1092,1093,1094,1096,1097,1097,1098,1099,1100,1101,1101,1102,1103,1104,1104,1105,1106,1107,1108,1108,1109,1110,1111,1112,1112,1113,1114,
+                1115,1115,1116,1117,1118,1119,1119,1120,1121,1122,1123,1123,1124,1125,1126,1127,1127,1128,1129,1130,1130,1131,1132,1133,1134,1134,1135,1136,1137,1138,1138,1139,
+                1140,1141,1142,1142,1143,1144,1145,1146,1146,1147,1148,1149,1150,1150,1151,1152,1153,1154,1154,1155,1156,1157,1158,1158,1159,1160,1161,1162,1162,1163,1164,1165,
+                1166,1166,1167,1168,1169,1170,1170,1171,1172,1173,1174,1174,1175,1176,1177,1178,1178,1179,1180,1181,1182,1182,1183,1184,1185,1186,1186,1187,1188,1189,1190,1190,
+                1191,1192,1193,1194,1195,1195,1196,1197,1198,1199,1199,1200,1201,1202,1203,1203,1204,1205,1206,1207,1208,1208,1209,1210,1211,1212,1212,1213,1214,1215,1216,1216,
+                1217,1218,1219,1220,1221,1221,1222,1223,1224,1225,1225,1226,1227,1228,1229,1230,1230,1231,1232,1233,1234,1234,1235,1236,1237,1238,1239,1239,1240,1241,1242,1243,
+                1244,1244,1245,1246,1247,1248,1248,1249,1250,1251,1252,1253,1253,1254,1255,1256,1257,1258,1258,1259,1260,1261,1262,1262,1263,1264,1265,1266,1267,1267,1268,1269,
+                1270,1271,1272,1272,1273,1274,1275,1276,1277,1277,1278,1279,1280,1281,1282,1282,1283,1284,1285,1286,1287,1287,1288,1289,1290,1291,1292,1292,1293,1294,1295,1296,
+                1297,1297,1298,1299,1300,1301,1302,1303,1303,1304,1305,1306,1307,1308,1308,1309,1310,1311,1312,1313,1313,1314,1315,1316,1317,1318,1318,1319,1320,1321,1322,1323,
+                1324,1324,1325,1326,1327,1328,1329,1329,1330,1331,1332,1333,1334,1335,1335,1336,1337,1338,1339,1340,1341,1342,1343,1343,1344,1345,1346,1347,1348,1349,1350,1351,
+                1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1372,1373,1374,1375,1376,1377,1378,1379,1380,
+                1381,1382,1383,1384,1385,1386,1387,1388,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,
+                1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425,1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,
+                1444,1445,1446,1447,1448,1449,1450,1451,1452,1453,1454,1455,1456,1457,1458,1459,1460,1461,1462,1463,1465,1466,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,
+                1477,1478,1479,1480,1481,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1508,1509,1510,1511,
+                1512,1513,1514,1515,1516,1518,1519,1520,1521,1522,1523,1524,1525,1527,1528,1529,1530,1531,1532,1533,1534,1536,1537,1538,1539,1540,1541,1542,1544,1545,1546,1547,
+                1548,1549,1550,1552,1553,1554,1555,1556,1557,1559,1560,1561,1562,1563,1564,1565,1567,1568,1569,1570,1571,1573,1574,1575,1576,1577,1578,1580,1581,1582,1583,1584,
+                1586,1587,1588,1589,1590,1592,1593,1594,1595,1596,1598,1599,1600,1601,1602,1604,1605,1606,1607,1608,1610,1611,1612,1613,1615,1616,1617,1618,1619,1621,1622,1623,
+                1624,1626,1627,1628,1629,1631,1632,1633,1634,1636,1637,1638,1639,1640,1642,1643,1644,1646,1647,1648,1649,1651,1652,1653,1654,1656,1657,1658,1659,1661,1662,1663,
+                1664,1666,1667,1668,1670,1671,1672,1673,1675,1676,1677,1679,1680,1681,1682,1684,1685,1686,1688,1689,1690,1692,1693,1694,1695,1697,1698,1699,1701,1702,1703,1705,
+                1706,1707,1709,1710,1711,1713,1714,1715,1717,1718,1719,1721,1722,1723,1725,1726,1727,1729,1730,1731,1733,1734,1735,1737,1738,1739,1741,1742,1743,1745,1746,1747,
+                1749,1750,1751,1753,1754,1756,1757,1758,1760,1761,1762,1764,1765,1767,1768,1769,1771,1772,1773,1775,1776,1778,1779,1780,1782,1783,1785,1786,1787,1789,1790,1791,
+                1793,1794,1796,1797,1799,1800,1801,1802,1803,1805,1806,1807,1808,1809,1811,1812,1813,1814,1815,1817,1818,1819,1820,1821,1823,1824,1825,1826,1828,1829,1830,1831,
+                1832,1834,1835,1836,1837,1838,1840,1841,1842,1843,1844,1846,1847,1848,1849,1851,1852,1853,1854,1855,1857,1858,1859,1860,1861,1863,1864,1865,1866,1868,1869,1870,
+                1871,1872,1874,1875,1876,1877,1878,1880,1881,1882,1883,1885,1886,1887,1888,1889,1891,1892,1893,1894,1896,1897,1898,1899,1901,1902,1903,1904,1905,1907,1908,1909,
+                1910,1912,1913,1914,1915,1916,1918,1919,1920,1921,1923,1924,1925,1926,1928,1929,1930,1931,1932,1934,1935,1936,1937,1939,1940,1941,1942,1944,1945,1946,1947,1949,
+                1950,1951,1952,1954,1955,1956,1957,1958,1960,1961,1962,1963,1965,1966,1967,1968,1970,1971,1972,1973,1975,1976,1977,1978,1980,1981,1982,1983,1985,1986,1987,1988,
+                1990,1991,1992,1993,1995,1996,1997,1998,2000,2001,2002,2003,2005,2006,2007,2008,2010,2011,2012,2013,2015,2016,2017,2018,2020,2021,2022,2023,2025,2026,2027,2028,
+                2030,2031,2032,2034,2035,2036,2037,2039,2040,2041,2042,2044,2045,2046,2047,2049,2050,2051,2052,2054,2055,2056,2058,2059,2060,2061,2063,2064,2065,2066,2068,2069,
+                2070,2071,2073,2074,2075,2077,2078,2079,2080,2082,2083,2084,2085,2087,2088,2089,2091,2092,2093,2094,2096,2097,2098,2099,2101,2102,2103,2105,2106,2107,2108,2110,
+                2111,2112,2113,2115,2116,2117,2119,2120,2121,2122,2124,2125,2126,2128,2129,2130,2131,2133,2134,2135,2137,2138,2139,2140,2142,2143,2144,2146,2147,2148,2149,2151,
+                2152,2153,2155,2156,2157,2158,2160,2161,2162,2164,2165,2166,2168,2169,2170,2171,2173,2174,2175,2177,2178,2179,2180,2182,2183,2184,2186,2187,2188,2190,2191,2192,
+                2193,2195,2196,2197,2199,2200,2201,2203,2204,2205,2206,2208,2209,2210,2212,2213,2214,2216,2217,2218,2219,2221,2222,2223,2225,2226,2227,2229,2230,2231,2233,2234,
+                2235,2236,2238,2239,2240,2242,2243,2244,2246,2247,2248,2250,2251,2252,2253,2255,2256,2257,2259,2260,2261,2263,2264,2265,2267,2268,2269,2271,2272,2273,2275,2276,
+                2277,2278,2280,2281,2282,2284,2285,2286,2288,2289,2290,2292,2293,2294,2296,2297,2298,2300,2301,2302,2304,2305,2306,2308,2309,2310,2312,2313,2314,2315,2317,2318,
+                2319,2321,2322,2323,2325,2326,2327,2329,2330,2331,2333,2334,2335,2337,2338,2339,2341,2342,2343,2345,2346,2347,2349,2350,2351,2353,2354,2355,2357,2358,2359,2361,
+                2362,2363,2365,2366,2367,2369,2370,2371,2373,2374,2376,2377,2378,2380,2381,2382,2384,2385,2386,2388,2389,2390,2392,2393,2394,2396,2397,2398,2400,2401,2402,2404,
+                2405,2406,2408,2409,2410,2412,2413,2415,2416,2417,2419,2420,2421,2423,2424,2425,2427,2428,2429,2431,2432,2433,2435,2436,2437,2439,2440,2442,2443,2444,2446,2447,
+                2448,2450,2451,2452,2454,2455,2456,2458,2459,2461,2462,2463,2465,2466,2467,2469,2470,2471,2473,2474,2476,2477,2478,2480,2481,2482,2484,2485,2486,2488,2489,2491,
+                2492,2493,2495,2496,2497,2499,2500,2501,2503,2504,2506,2507,2508,2510,2511,2512,2514,2515,2517,2518,2519,2521,2522,2523,2525,2526,2528,2529,2530,2532,2533,2534,
+                2536,2537,2539,2540,2541,2543,2544,2545,2547,2548,2550,2551,2552,2554,2555,2556,2558,2559,2561,2562,2563,2565,2566,2568,2569,2570,2572,2573,2574,2576,2577,2579,
+                2580,2581,2583,2584,2586,2587,2588,2590,2591,2592,2594,2595,2597,2598,2599,2601,2602,2604,2605,2606,2608,2609,2611,2612,2613,2615,2616,2617,2619,2620,2622,2623,
+                2624,2626,2627,2629,2630,2631,2633,2634,2636,2637,2638,2640,2641,2643,2644,2645,2647,2648,2650,2651,2652,2654,2655,2657,2658,2659,2661,2662,2664,2665,2666,2668,
+                2669,2671,2672,2673,2675,2676,2678,2679,2681,2682,2683,2685,2686,2688,2689,2690,2692,2693,2695,2696,2697,2699,2700,2702,2703,2704,2706,2707,2709,2710,2712,2713,
+                2714,2716,2717,2719,2720,2721,2723,2724,2726,2727,2729,2730,2731,2733,2734,2736,2737,2738,2740,2741,2743,2744,2746,2747,2748,2750,2751,2753,2754,2755,2757,2758,
+                2760,2761,2763,2764,2765,2767,2768,2770,2771,2773,2774,2775,2777,2778,2780,2781,2783,2784,2785,2787,2788,2790,2791,2793,2794,2795,2797,2798,2800,2801,2803,2804,
+                2805,2807,2808,2810,2811,2813,2814,2815,2817,2818,2820,2821,2823,2824,2826,2827,2828,2830,2831,2833,2834,2836,2837,2838,2840,2841,2843,2844,2846,2847,2849,2850,
+                2851,2853,2854,2856,2857,2859,2860,2862,2863,2864,2866,2867,2869,2870,2872,2873,2875,2876,2877,2879,2880,2882,2883,2885,2886,2888,2889,2890,2892,2893,2895,2896,
+                2898,2899,2901,2902,2904,2905,2906,2908,2909,2911,2912,2914,2915,2917,2918,2920,2921,2922,2924,2925,2927,2928,2930,2931,2933,2934,2936,2937,2939,2940,2941,2943,
+                2944,2946,2947,2949,2950,2952,2953,2955,2956,2958,2959,2960,2962,2963,2965,2966,2968,2969,2971,2972,2974,2975,2977,2978,2979,2981,2982,2984,2985,2987,2988,2990,
+                2991,2993,2994,2996,2997,2999,3000,3002,3003,3004,3006,3007,3009,3010,3012,3013,3015,3016,3018,3019,3021,3022,3024,3025,3027,3028,3030,3031,3033,3034,3035,3037,
+                3038,3040,3041,3043,3044,3046,3047,3049,3050,3052,3053,3055,3056,3058,3059,3061,3062,3064,3065,3067,3068,3070,3071,3073,3074,3075,3077,3078,3080,3081,3083,3084,
+                3086,3087,3089,3090,3092,3093,3095,3096,3098,3099,3101,3102,3104,3105,3107,3108,3110,3111,3113,3114,3116,3117,3119,3120,3122,3123,3125,3126,3128,3129,3131,3132,
+                3134,3135,3137,3138,3140,3141,3143,3144,3146,3147,3149,3150,3152,3153,3155,3156,3158,3159,3161,3162,3164,3165,3167,3168,3170,3171,3173,3174,3176,3177,3179,3180,
+                3182,3183,3185,3186,3188,3189,3191,3192,3194,3195,3197,3198,3200,3201,3203,3204,3206,3207,3209,3210,3212,3213,3215,3216,3218,3220,3221,3223,3224,3226,3227,3229,
+                3230,3232,3233,3235,3236,3238,3239,3241,3242,3244,3245,3247,3248,3250,3251,3253,3254,3256,3257,3259,3260,3262,3264,3265,3267,3268,3270,3271,3273,3274,3276,3277,
+                3279,3280,3282,3283,3285,3286,3288,3289,3291,3293,3294,3296,3297,3299,3300,3302,3303,3305,3306,3308,3309,3311,3312,3314,3315,3317,3319,3320,3322,3323,3325,3326,
+                3328,3329,3331,3332,3334,3335,3337,3338,3340,3342,3343,3345,3346,3348,3349,3351,3352,3354,3355,3357,3358,3360,3362,3363,3365,3366,3368,3369,3371,3372,3374,3375,
+                3377,3378,3380,3382,3383,3385,3386,3388,3389,3391,3392,3394,3395,3397,3399,3400,3402,3403,3405,3406,3408,3409,3411,3413,3414,3416,3417,3419,3420,3422,3423,3425,
+                3426,3428,3430,3431,3433,3434,3436,3437,3439,3440,3442,3444,3445,3447,3448,3450,3451,3453,3454,3456,3458,3459,3461,3462,3464,3465,3467,3468,3470,3472,3473,3475,
+                3476,3478,3479,3481,3483,3484,3486,3487,3489,3490,3492,3493,3495,3497,3498,3500,3501,3503,3504,3506,3508,3509,3511,3512,3514,3515,3517,3519,3520,3522,3523,3525,
+                3526,3528,3530,3531,3533,3534,3536,3537,3539,3541,3542,3544,3545,3547,3548,3550,3552,3553,3555,3556,3558,3559,3561,3563,3564,3566,3567,3569,3570,3572,3574,3575,
+                3577,3578,3580,3581,3583,3585,3586,3588,3589,3591,3593,3594,3596,3597,3599,3600,3602,3604,3605,3607,3608,3610,3612,3613,3615,3616,3618,3619,3621,3623,3624,3626,
+                3627,3629,3631,3632,3634,3635,3637,3639,3640,3642,3643,3645,3647,3648,3650,3651,3653,3654,3656,3658,3659,3661,3662,3664,3666,3667,3669,3670,3672,3674,3675,3677,
+                3678,3680,3682,3683,3685,3686,3688,3690,3691,3693,3694,3696,3698,3699,3701,3702,3704,3706,3707,3709,3710,3712,3714,3715,3717,3718,3720,3722,3723,3725,3726,3728,
+                3730,3731,3733,3734,3736,3738,3739,3741,3742,3744,3746,3747,3749,3751,3752,3754,3755,3757,3759,3760,3762,3763,3765,3767,3768,3770,3771,3773,3775,3776,3778,3780,
+                3781,3783,3784,3786,3788,3789,3791,3792,3794,3796,3797,3799,3801,3802,3804,3805,3807,3809,3810,3812,3813,3815,3817,3818,3820,3822,3823,3825,3826,3828,3830,3831,
+                3833,3835,3836,3838,3839,3841,3843,3844,3846,3848,3849,3851,3852,3854,3856,3857,3859,3861,3862,3864,3865,3867,3869,3870,3872,3874,3875,3877,3879,3880,3882,3883,
+                3885,3887,3888,3890,3892,3893,3895,3896,3898,3900,3901,3903,3905,3906,3908,3910,3911,3913,3914,3916,3918,3919,3921,3923,3924,3926,3928,3929,3931,3932,3934,3936,
+                3937,3939,3941,3942,3944,3946,3947,3949,3951,3952,3954,3955,3957,3959,3960,3962,3964,3965,3967,3969,3970,3972,3974,3975,3977,3978,3980,3982,3983,3985,3987,3988,
+                3990,3992,3993,3995,3997,3998,4000,4002,4003,4005,4007,4008,4010,4012,4013,4015,4016,4018,4020,4021,4023,4025,4026,4028,4030,4031,4033,4035,4036,4038,4040,4041,
+                4043,4045,4046,4048,4050,4051,4053,4055,4056,4058,4060,4061,4063,4065,4066,4068,4070,4071,4073,4075,4076,4078,4080,4081,4083,4085,4086,4088,4090,4091,4093,4095,
+          },
+          /* aec trigger 1 */
+          {
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,
+                   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,
+                   4,   4,   4,   4,   4,   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   6,   6,
+                   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,
+                   5,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,
+                   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   7,   7,   7,   7,   7,   7,   7,   8,   8,   8,   8,   8,   9,   9,
+                   9,   9,   9,  10,  10,  10,  10,  10,  11,  11,  11,  11,  11,  12,  12,  12,  12,  13,  13,  13,  13,  14,  14,  14,  15,  15,  15,  15,  16,  16,  16,  17,
+                  17,  17,  17,  18,  18,  18,  19,  19,  19,  20,  20,  20,  21,  21,  21,  22,  22,  23,  23,  23,  24,  24,  24,  25,  25,  24,  24,  24,  24,  24,  24,  25,
+                  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  26,  26,  26,  26,  26,  26,  26,  26,  27,  27,  27,  27,  27,  27,  28,  28,
+                  28,  28,  28,  28,  29,  29,  29,  29,  30,  30,  30,  30,  30,  31,  31,  31,  31,  32,  32,  32,  33,  33,  33,  33,  34,  34,  34,  35,  35,  35,  36,  36,
+                  36,  37,  37,  37,  38,  38,  39,  39,  39,  40,  40,  41,  41,  41,  42,  42,  43,  43,  43,  44,  44,  45,  45,  46,  46,  47,  47,  48,  48,  49,  49,  50,
+                  50,  51,  51,  52,  52,  53,  53,  54,  54,  55,  55,  56,  57,  57,  58,  58,  59,  60,  60,  61,  61,  62,  63,  63,  64,  64,  65,  66,  66,  67,  68,  68,
+                  69,  70,  70,  71,  68,  70,  72,  73,  75,  77,  78,  80,  82,  83,  85,  87,  88,  90,  92,  93,  95,  97,  98, 100, 101, 103, 105, 106, 108, 110, 111, 113,
+                 114, 116, 118, 119, 121, 123, 124, 126, 127, 129, 131, 132, 134, 135, 137, 138, 140, 142, 143, 145, 146, 148, 150, 151, 153, 154, 156, 157, 159, 161, 162, 164,
+                 165, 167, 168, 170, 171, 173, 175, 176, 178, 179, 181, 182, 184, 185, 187, 188, 190, 191, 193, 194, 196, 198, 199, 201, 202, 204, 205, 207, 208, 210, 211, 213,
+                 214, 216, 217, 219, 220, 222, 223, 225, 226, 228, 229, 231, 232, 233, 235, 236, 238, 239, 241, 242, 244, 245, 247, 248, 250, 251, 253, 254, 255, 257, 258, 260,
+                 261, 263, 264, 266, 267, 268, 270, 271, 273, 274, 276, 277, 278, 280, 281, 283, 284, 285, 287, 288, 290, 291, 292, 294, 295, 297, 298, 299, 301, 302, 304, 305,
+                 306, 308, 309, 311, 312, 313, 315, 316, 317, 319, 320, 321, 323, 324, 326, 327, 328, 330, 331, 332, 334, 335, 336, 338, 339, 340, 342, 343, 344, 346, 347, 348,
+                 350, 351, 352, 354, 355, 356, 358, 359, 360, 362, 363, 364, 365, 367, 368, 369, 371, 372, 373, 375, 376, 377, 378, 380, 381, 382, 384, 385, 386, 387, 389, 390,
+                 391, 392, 394, 395, 396, 398, 399, 400, 401, 403, 404, 405, 406, 408, 409, 410, 411, 412, 414, 415, 416, 417, 419, 420, 421, 422, 424, 425, 426, 427, 428, 430,
+                 431, 432, 433, 434, 436, 437, 438, 439, 440, 442, 443, 444, 445, 446, 448, 449, 450, 451, 452, 453, 455, 456, 457, 458, 459, 460, 462, 463, 464, 465, 466, 467,
+                 469, 470, 471, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 485, 486, 487, 488, 489, 490, 491, 493, 494, 495, 496, 497, 499, 500, 501, 502, 503, 505,
+                 506, 507, 508, 509, 510, 512, 513, 514, 515, 516, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 538, 539, 540, 541, 542,
+                 543, 545, 546, 547, 548, 549, 550, 551, 553, 554, 555, 556, 557, 558, 560, 561, 562, 563, 564, 565, 566, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579,
+                 580, 581, 582, 583, 585, 586, 587, 588, 589, 590, 591, 592, 594, 595, 596, 597, 598, 599, 600, 601, 602, 604, 605, 606, 607, 608, 609, 610, 611, 612, 614, 615,
+                 616, 617, 618, 619, 620, 621, 622, 623, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649,
+                 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683,
+                 684, 685, 686, 687, 688, 689, 690, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716,
+                 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748,
+                 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779,
+                 780, 781, 782, 783, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809,
+                 810, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 830, 831, 832, 833, 834, 835, 836, 837, 838,
+                 838, 839, 840, 841, 842, 843, 844, 845, 846, 846, 847, 848, 849, 850, 851, 852, 853, 853, 854, 855, 856, 857, 858, 859, 859, 860, 861, 862, 863, 864, 865, 865,
+                 866, 867, 868, 869, 870, 871, 871, 872, 873, 874, 875, 876, 877, 877, 878, 879, 880, 881, 882, 882, 883, 884, 885, 886, 887, 887, 888, 889, 890, 891, 892, 892,
+                 893, 894, 895, 896, 897, 897, 898, 899, 900, 901, 901, 902, 903, 904, 905, 906, 906, 907, 908, 909, 910, 910, 911, 912, 913, 914, 914, 915, 916, 917, 918, 918,
+                 919, 920, 921, 922, 922, 923, 924, 925, 926, 926, 927, 928, 929, 930, 930, 931, 932, 933, 933, 934, 935, 936, 937, 937, 938, 939, 940, 940, 941, 942, 943, 943,
+                 944, 945, 946, 947, 947, 948, 949, 950, 950, 951, 952, 953, 953, 954, 955, 956, 956, 957, 958, 959, 959, 960, 961, 962, 962, 963, 964, 965, 965, 966, 967, 967,
+                 968, 969, 970, 970, 971, 972, 973, 973, 974, 975, 976, 976, 977, 978, 978, 979, 980, 981, 981, 982, 983, 983, 984, 985, 986, 986, 987, 988, 988, 989, 990, 991,
+                 991, 992, 993, 993, 994, 995, 995, 996, 997, 998, 998, 999,1000,1000,1001,1002,1002,1003,1004,1004,1005,1006,1007,1007,1008,1009,1009,1010,1011,1011,1012,1013,
+                1013,1014,1015,1015,1016,1017,1017,1018,1019,1019,1020,1021,1021,1022,1023,1023,1024,1025,1025,1026,1027,1027,1028,1029,1029,1030,1031,1031,1032,1032,1033,1034,
+                1034,1035,1036,1036,1037,1038,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1050,1051,1052,1053,1054,1055,1056,1057,1058,1059,1060,1061,1062,
+                1063,1063,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1074,1075,1076,1077,1078,1079,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,
+                1093,1094,1095,1096,1097,1098,1098,1099,1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1112,1113,1114,1115,1116,1117,1118,1119,1120,1121,1122,1123,
+                1124,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1152,1153,1154,
+                1155,1156,1157,1158,1159,1160,1161,1162,1163,1164,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182,1183,1184,1185,1186,
+                1187,1188,1189,1190,1191,1192,1193,1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1210,1211,1212,1213,1214,1215,1216,1217,1218,
+                1219,1220,1221,1222,1223,1224,1225,1226,1227,1228,1229,1230,1231,1232,1233,1234,1235,1236,1237,1238,1239,1240,1241,1242,1243,1245,1246,1247,1248,1249,1250,1251,
+                1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1265,1266,1267,1268,1269,1270,1272,1273,1274,1275,1276,1277,1278,1279,1280,1281,1282,1283,1284,
+                1285,1286,1287,1288,1289,1290,1291,1292,1294,1295,1296,1297,1298,1299,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1311,1312,1313,1314,1315,1316,1317,1318,
+                1319,1320,1321,1322,1323,1324,1325,1327,1328,1329,1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1341,1342,1343,1343,1344,1345,1346,1347,1348,1349,1350,1351,
+                1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1372,1373,1374,1375,1376,1377,1378,1379,1380,
+                1381,1382,1383,1384,1385,1386,1387,1388,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,
+                1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425,1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,
+                1444,1445,1446,1447,1448,1449,1450,1451,1452,1453,1454,1455,1456,1457,1458,1459,1460,1461,1462,1463,1465,1466,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,
+                1477,1478,1479,1480,1481,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1508,1509,1510,1511,
+                1512,1513,1514,1515,1516,1518,1519,1520,1521,1522,1523,1524,1525,1527,1528,1529,1530,1531,1532,1533,1534,1536,1537,1538,1539,1540,1541,1542,1544,1545,1546,1547,
+                1548,1549,1550,1552,1553,1554,1555,1556,1557,1559,1560,1561,1562,1563,1564,1565,1567,1568,1569,1570,1571,1573,1574,1575,1576,1577,1578,1580,1581,1582,1583,1584,
+                1586,1587,1588,1589,1590,1592,1593,1594,1595,1596,1598,1599,1600,1601,1602,1604,1605,1606,1607,1608,1610,1611,1612,1613,1615,1616,1617,1618,1619,1621,1622,1623,
+                1624,1626,1627,1628,1629,1631,1632,1633,1634,1636,1637,1638,1639,1640,1642,1643,1644,1646,1647,1648,1649,1651,1652,1653,1654,1656,1657,1658,1659,1661,1662,1663,
+                1664,1666,1667,1668,1670,1671,1672,1673,1675,1676,1677,1679,1680,1681,1682,1684,1685,1686,1688,1689,1690,1692,1693,1694,1695,1697,1698,1699,1701,1702,1703,1705,
+                1706,1707,1709,1710,1711,1713,1714,1715,1717,1718,1719,1721,1722,1723,1725,1726,1727,1729,1730,1731,1733,1734,1735,1737,1738,1739,1741,1742,1743,1745,1746,1747,
+                1749,1750,1751,1753,1754,1756,1757,1758,1760,1761,1762,1764,1765,1767,1768,1769,1771,1772,1773,1775,1776,1778,1779,1780,1782,1783,1785,1786,1787,1789,1790,1791,
+                1793,1794,1796,1797,1799,1800,1801,1802,1803,1805,1806,1807,1808,1809,1811,1812,1813,1814,1815,1817,1818,1819,1820,1821,1823,1824,1825,1826,1828,1829,1830,1831,
+                1832,1834,1835,1836,1837,1838,1840,1841,1842,1843,1844,1846,1847,1848,1849,1851,1852,1853,1854,1855,1857,1858,1859,1860,1861,1863,1864,1865,1866,1868,1869,1870,
+                1871,1872,1874,1875,1876,1877,1878,1880,1881,1882,1883,1885,1886,1887,1888,1889,1891,1892,1893,1894,1896,1897,1898,1899,1901,1902,1903,1904,1905,1907,1908,1909,
+                1910,1912,1913,1914,1915,1916,1918,1919,1920,1921,1923,1924,1925,1926,1928,1929,1930,1931,1932,1934,1935,1936,1937,1939,1940,1941,1942,1944,1945,1946,1947,1949,
+                1950,1951,1952,1954,1955,1956,1957,1958,1960,1961,1962,1963,1965,1966,1967,1968,1970,1971,1972,1973,1975,1976,1977,1978,1980,1981,1982,1983,1985,1986,1987,1988,
+                1990,1991,1992,1993,1995,1996,1997,1998,2000,2001,2002,2003,2005,2006,2007,2008,2010,2011,2012,2013,2015,2016,2017,2018,2020,2021,2022,2023,2025,2026,2027,2028,
+                2030,2031,2032,2034,2035,2036,2037,2039,2040,2041,2042,2044,2045,2046,2047,2049,2050,2051,2052,2054,2055,2056,2058,2059,2060,2061,2063,2064,2065,2066,2068,2069,
+                2070,2071,2073,2074,2075,2077,2078,2079,2080,2082,2083,2084,2085,2087,2088,2089,2091,2092,2093,2094,2096,2097,2098,2099,2101,2102,2103,2105,2106,2107,2108,2110,
+                2111,2112,2113,2115,2116,2117,2119,2120,2121,2122,2124,2125,2126,2128,2129,2130,2131,2133,2134,2135,2137,2138,2139,2140,2142,2143,2144,2146,2147,2148,2149,2151,
+                2152,2153,2155,2156,2157,2158,2160,2161,2162,2164,2165,2166,2168,2169,2170,2171,2173,2174,2175,2177,2178,2179,2180,2182,2183,2184,2186,2187,2188,2190,2191,2192,
+                2193,2195,2196,2197,2199,2200,2201,2203,2204,2205,2206,2208,2209,2210,2212,2213,2214,2216,2217,2218,2219,2221,2222,2223,2225,2226,2227,2229,2230,2231,2233,2234,
+                2235,2236,2238,2239,2240,2242,2243,2244,2246,2247,2248,2250,2251,2252,2253,2255,2256,2257,2259,2260,2261,2263,2264,2265,2267,2268,2269,2271,2272,2273,2275,2276,
+                2277,2278,2280,2281,2282,2284,2285,2286,2288,2289,2290,2292,2293,2294,2296,2297,2298,2300,2301,2302,2304,2305,2306,2308,2309,2310,2312,2313,2314,2315,2317,2318,
+                2319,2321,2322,2323,2325,2326,2327,2329,2330,2331,2333,2334,2335,2337,2338,2339,2341,2342,2343,2345,2346,2347,2349,2350,2351,2353,2354,2355,2357,2358,2359,2361,
+                2362,2363,2365,2366,2367,2369,2370,2371,2373,2374,2376,2377,2378,2380,2381,2382,2384,2385,2386,2388,2389,2390,2392,2393,2394,2396,2397,2398,2400,2401,2402,2404,
+                2405,2406,2408,2409,2410,2412,2413,2415,2416,2417,2419,2420,2421,2423,2424,2425,2427,2428,2429,2431,2432,2433,2435,2436,2437,2439,2440,2442,2443,2444,2446,2447,
+                2448,2450,2451,2452,2454,2455,2456,2458,2459,2461,2462,2463,2465,2466,2467,2469,2470,2471,2473,2474,2476,2477,2478,2480,2481,2482,2484,2485,2486,2488,2489,2491,
+                2492,2493,2495,2496,2497,2499,2500,2501,2503,2504,2506,2507,2508,2510,2511,2512,2514,2515,2517,2518,2519,2521,2522,2523,2525,2526,2528,2529,2530,2532,2533,2534,
+                2536,2537,2539,2540,2541,2543,2544,2545,2547,2548,2550,2551,2552,2554,2555,2556,2558,2559,2561,2562,2563,2565,2566,2568,2569,2570,2572,2573,2574,2576,2577,2579,
+                2580,2581,2583,2584,2586,2587,2588,2590,2591,2592,2594,2595,2597,2598,2599,2601,2602,2604,2605,2606,2608,2609,2611,2612,2613,2615,2616,2617,2619,2620,2622,2623,
+                2624,2626,2627,2629,2630,2631,2633,2634,2636,2637,2638,2640,2641,2643,2644,2645,2647,2648,2650,2651,2652,2654,2655,2657,2658,2659,2661,2662,2664,2665,2666,2668,
+                2669,2671,2672,2673,2675,2676,2678,2679,2681,2682,2683,2685,2686,2688,2689,2690,2692,2693,2695,2696,2697,2699,2700,2702,2703,2704,2706,2707,2709,2710,2712,2713,
+                2714,2716,2717,2719,2720,2721,2723,2724,2726,2727,2729,2730,2731,2733,2734,2736,2737,2738,2740,2741,2743,2744,2746,2747,2748,2750,2751,2753,2754,2755,2757,2758,
+                2760,2761,2763,2764,2765,2767,2768,2770,2771,2773,2774,2775,2777,2778,2780,2781,2783,2784,2785,2787,2788,2790,2791,2793,2794,2795,2797,2798,2800,2801,2803,2804,
+                2805,2807,2808,2810,2811,2813,2814,2815,2817,2818,2820,2821,2823,2824,2826,2827,2828,2830,2831,2833,2834,2836,2837,2838,2840,2841,2843,2844,2846,2847,2849,2850,
+                2851,2853,2854,2856,2857,2859,2860,2862,2863,2864,2866,2867,2869,2870,2872,2873,2875,2876,2877,2879,2880,2882,2883,2885,2886,2888,2889,2890,2892,2893,2895,2896,
+                2898,2899,2901,2902,2904,2905,2906,2908,2909,2911,2912,2914,2915,2917,2918,2920,2921,2922,2924,2925,2927,2928,2930,2931,2933,2934,2936,2937,2939,2940,2941,2943,
+                2944,2946,2947,2949,2950,2952,2953,2955,2956,2958,2959,2960,2962,2963,2965,2966,2968,2969,2971,2972,2974,2975,2977,2978,2979,2981,2982,2984,2985,2987,2988,2990,
+                2991,2993,2994,2996,2997,2999,3000,3002,3003,3004,3006,3007,3009,3010,3012,3013,3015,3016,3018,3019,3021,3022,3024,3025,3027,3028,3030,3031,3033,3034,3035,3037,
+                3038,3040,3041,3043,3044,3046,3047,3049,3050,3052,3053,3055,3056,3058,3059,3061,3062,3064,3065,3067,3068,3070,3071,3073,3074,3075,3077,3078,3080,3081,3083,3084,
+                3086,3087,3089,3090,3092,3093,3095,3096,3098,3099,3101,3102,3104,3105,3107,3108,3110,3111,3113,3114,3116,3117,3119,3120,3122,3123,3125,3126,3128,3129,3131,3132,
+                3134,3135,3137,3138,3140,3141,3143,3144,3146,3147,3149,3150,3152,3153,3155,3156,3158,3159,3161,3162,3164,3165,3167,3168,3170,3171,3173,3174,3176,3177,3179,3180,
+                3182,3183,3185,3186,3188,3189,3191,3192,3194,3195,3197,3198,3200,3201,3203,3204,3206,3207,3209,3210,3212,3213,3215,3216,3218,3220,3221,3223,3224,3226,3227,3229,
+                3230,3232,3233,3235,3236,3238,3239,3241,3242,3244,3245,3247,3248,3250,3251,3253,3254,3256,3257,3259,3260,3262,3264,3265,3267,3268,3270,3271,3273,3274,3276,3277,
+                3279,3280,3282,3283,3285,3286,3288,3289,3291,3293,3294,3296,3297,3299,3300,3302,3303,3305,3306,3308,3309,3311,3312,3314,3315,3317,3319,3320,3322,3323,3325,3326,
+                3328,3329,3331,3332,3334,3335,3337,3338,3340,3342,3343,3345,3346,3348,3349,3351,3352,3354,3355,3357,3358,3360,3362,3363,3365,3366,3368,3369,3371,3372,3374,3375,
+                3377,3378,3380,3382,3383,3385,3386,3388,3389,3391,3392,3394,3395,3397,3399,3400,3402,3403,3405,3406,3408,3409,3411,3413,3414,3416,3417,3419,3420,3422,3423,3425,
+                3426,3428,3430,3431,3433,3434,3436,3437,3439,3440,3442,3444,3445,3447,3448,3450,3451,3453,3454,3456,3458,3459,3461,3462,3464,3465,3467,3468,3470,3472,3473,3475,
+                3476,3478,3479,3481,3483,3484,3486,3487,3489,3490,3492,3493,3495,3497,3498,3500,3501,3503,3504,3506,3508,3509,3511,3512,3514,3515,3517,3519,3520,3522,3523,3525,
+                3526,3528,3530,3531,3533,3534,3536,3537,3539,3541,3542,3544,3545,3547,3548,3550,3552,3553,3555,3556,3558,3559,3561,3563,3564,3566,3567,3569,3570,3572,3574,3575,
+                3577,3578,3580,3581,3583,3585,3586,3588,3589,3591,3593,3594,3596,3597,3599,3600,3602,3604,3605,3607,3608,3610,3612,3613,3615,3616,3618,3619,3621,3623,3624,3626,
+                3627,3629,3631,3632,3634,3635,3637,3639,3640,3642,3643,3645,3647,3648,3650,3651,3653,3654,3656,3658,3659,3661,3662,3664,3666,3667,3669,3670,3672,3674,3675,3677,
+                3678,3680,3682,3683,3685,3686,3688,3690,3691,3693,3694,3696,3698,3699,3701,3702,3704,3706,3707,3709,3710,3712,3714,3715,3717,3718,3720,3722,3723,3725,3726,3728,
+                3730,3731,3733,3734,3736,3738,3739,3741,3742,3744,3746,3747,3749,3751,3752,3754,3755,3757,3759,3760,3762,3763,3765,3767,3768,3770,3771,3773,3775,3776,3778,3780,
+                3781,3783,3784,3786,3788,3789,3791,3792,3794,3796,3797,3799,3801,3802,3804,3805,3807,3809,3810,3812,3813,3815,3817,3818,3820,3822,3823,3825,3826,3828,3830,3831,
+                3833,3835,3836,3838,3839,3841,3843,3844,3846,3848,3849,3851,3852,3854,3856,3857,3859,3861,3862,3864,3865,3867,3869,3870,3872,3874,3875,3877,3879,3880,3882,3883,
+                3885,3887,3888,3890,3892,3893,3895,3896,3898,3900,3901,3903,3905,3906,3908,3910,3911,3913,3914,3916,3918,3919,3921,3923,3924,3926,3928,3929,3931,3932,3934,3936,
+                3937,3939,3941,3942,3944,3946,3947,3949,3951,3952,3954,3955,3957,3959,3960,3962,3964,3965,3967,3969,3970,3972,3974,3975,3977,3978,3980,3982,3983,3985,3987,3988,
+                3990,3992,3993,3995,3997,3998,4000,4002,4003,4005,4007,4008,4010,4012,4013,4015,4016,4018,4020,4021,4023,4025,4026,4028,4030,4031,4033,4035,4036,4038,4040,4041,
+                4043,4045,4046,4048,4050,4051,4053,4055,4056,4058,4060,4061,4063,4065,4066,4068,4070,4071,4073,4075,4076,4078,4080,4081,4083,4085,4086,4088,4090,4091,4093,4095,
+          },
+          /* aec trigger 2 */
+          {
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,
+                   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,
+                   4,   4,   4,   4,   4,   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   6,   6,
+                   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,
+                   5,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,
+                   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   7,   7,   7,   7,   7,   7,   7,   8,   8,   8,   8,   8,   9,   9,
+                   9,   9,   9,  10,  10,  10,  10,  10,  11,  11,  11,  11,  11,  12,  12,  12,  12,  13,  13,  13,  13,  14,  14,  14,  15,  15,  15,  15,  16,  16,  16,  17,
+                  17,  17,  17,  18,  18,  18,  19,  19,  19,  20,  20,  20,  21,  21,  21,  22,  22,  23,  23,  23,  24,  24,  24,  25,  25,  24,  24,  24,  24,  24,  24,  25,
+                  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  26,  26,  26,  26,  26,  26,  26,  26,  27,  27,  27,  27,  27,  27,  28,  28,
+                  28,  28,  28,  28,  29,  29,  29,  29,  30,  30,  30,  30,  30,  31,  31,  31,  31,  32,  32,  32,  33,  33,  33,  33,  34,  34,  34,  35,  35,  35,  36,  36,
+                  36,  37,  37,  37,  38,  38,  39,  39,  39,  40,  40,  41,  41,  41,  42,  42,  43,  43,  43,  44,  44,  45,  45,  46,  46,  47,  47,  48,  48,  49,  49,  50,
+                  50,  51,  51,  52,  52,  53,  53,  54,  54,  55,  55,  56,  57,  57,  58,  58,  59,  60,  60,  61,  61,  62,  63,  63,  64,  64,  65,  66,  66,  67,  68,  68,
+                  69,  70,  70,  71,  68,  70,  72,  73,  75,  77,  78,  80,  82,  83,  85,  87,  88,  90,  92,  93,  95,  97,  98, 100, 101, 103, 105, 106, 108, 110, 111, 113,
+                 114, 116, 118, 119, 121, 123, 124, 126, 127, 129, 131, 132, 134, 135, 137, 138, 140, 142, 143, 145, 146, 148, 150, 151, 153, 154, 156, 157, 159, 161, 162, 164,
+                 165, 167, 168, 170, 171, 173, 175, 176, 178, 179, 181, 182, 184, 185, 187, 188, 190, 191, 193, 194, 196, 198, 199, 201, 202, 204, 205, 207, 208, 210, 211, 213,
+                 214, 216, 217, 219, 220, 222, 223, 225, 226, 228, 229, 231, 232, 233, 235, 236, 238, 239, 241, 242, 244, 245, 247, 248, 250, 251, 253, 254, 255, 257, 258, 260,
+                 261, 263, 264, 266, 267, 268, 270, 271, 273, 274, 276, 277, 278, 280, 281, 283, 284, 285, 287, 288, 290, 291, 292, 294, 295, 297, 298, 299, 301, 302, 304, 305,
+                 306, 308, 309, 311, 312, 313, 315, 316, 317, 319, 320, 321, 323, 324, 326, 327, 328, 330, 331, 332, 334, 335, 336, 338, 339, 340, 342, 343, 344, 346, 347, 348,
+                 350, 351, 352, 354, 355, 356, 358, 359, 360, 362, 363, 364, 365, 367, 368, 369, 371, 372, 373, 375, 376, 377, 378, 380, 381, 382, 384, 385, 386, 387, 389, 390,
+                 391, 392, 394, 395, 396, 398, 399, 400, 401, 403, 404, 405, 406, 408, 409, 410, 411, 412, 414, 415, 416, 417, 419, 420, 421, 422, 424, 425, 426, 427, 428, 430,
+                 431, 432, 433, 434, 436, 437, 438, 439, 440, 442, 443, 444, 445, 446, 448, 449, 450, 451, 452, 453, 455, 456, 457, 458, 459, 460, 462, 463, 464, 465, 466, 467,
+                 469, 470, 471, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 485, 486, 487, 488, 489, 490, 491, 493, 494, 495, 496, 497, 499, 500, 501, 502, 503, 505,
+                 506, 507, 508, 509, 510, 512, 513, 514, 515, 516, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 538, 539, 540, 541, 542,
+                 543, 545, 546, 547, 548, 549, 550, 551, 553, 554, 555, 556, 557, 558, 560, 561, 562, 563, 564, 565, 566, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579,
+                 580, 581, 582, 583, 585, 586, 587, 588, 589, 590, 591, 592, 594, 595, 596, 597, 598, 599, 600, 601, 602, 604, 605, 606, 607, 608, 609, 610, 611, 612, 614, 615,
+                 616, 617, 618, 619, 620, 621, 622, 623, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649,
+                 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683,
+                 684, 685, 686, 687, 688, 689, 690, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716,
+                 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748,
+                 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779,
+                 780, 781, 782, 783, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809,
+                 810, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 830, 831, 832, 833, 834, 835, 836, 837, 838,
+                 838, 839, 840, 841, 842, 843, 844, 845, 846, 846, 847, 848, 849, 850, 851, 852, 853, 853, 854, 855, 856, 857, 858, 859, 859, 860, 861, 862, 863, 864, 865, 865,
+                 866, 867, 868, 869, 870, 871, 871, 872, 873, 874, 875, 876, 877, 877, 878, 879, 880, 881, 882, 882, 883, 884, 885, 886, 887, 887, 888, 889, 890, 891, 892, 892,
+                 893, 894, 895, 896, 897, 897, 898, 899, 900, 901, 901, 902, 903, 904, 905, 906, 906, 907, 908, 909, 910, 910, 911, 912, 913, 914, 914, 915, 916, 917, 918, 918,
+                 919, 920, 921, 922, 922, 923, 924, 925, 926, 926, 927, 928, 929, 930, 930, 931, 932, 933, 933, 934, 935, 936, 937, 937, 938, 939, 940, 940, 941, 942, 943, 943,
+                 944, 945, 946, 947, 947, 948, 949, 950, 950, 951, 952, 953, 953, 954, 955, 956, 956, 957, 958, 959, 959, 960, 961, 962, 962, 963, 964, 965, 965, 966, 967, 967,
+                 968, 969, 970, 970, 971, 972, 973, 973, 974, 975, 976, 976, 977, 978, 978, 979, 980, 981, 981, 982, 983, 983, 984, 985, 986, 986, 987, 988, 988, 989, 990, 991,
+                 991, 992, 993, 993, 994, 995, 995, 996, 997, 998, 998, 999,1000,1000,1001,1002,1002,1003,1004,1004,1005,1006,1007,1007,1008,1009,1009,1010,1011,1011,1012,1013,
+                1013,1014,1015,1015,1016,1017,1017,1018,1019,1019,1020,1021,1021,1022,1023,1023,1024,1025,1025,1026,1027,1027,1028,1029,1029,1030,1031,1031,1032,1032,1033,1034,
+                1034,1035,1036,1036,1037,1038,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1050,1051,1052,1053,1054,1055,1056,1057,1058,1059,1060,1061,1062,
+                1063,1063,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1074,1075,1076,1077,1078,1079,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,
+                1093,1094,1095,1096,1097,1098,1098,1099,1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1112,1113,1114,1115,1116,1117,1118,1119,1120,1121,1122,1123,
+                1124,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1152,1153,1154,
+                1155,1156,1157,1158,1159,1160,1161,1162,1163,1164,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182,1183,1184,1185,1186,
+                1187,1188,1189,1190,1191,1192,1193,1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1210,1211,1212,1213,1214,1215,1216,1217,1218,
+                1219,1220,1221,1222,1223,1224,1225,1226,1227,1228,1229,1230,1231,1232,1233,1234,1235,1236,1237,1238,1239,1240,1241,1242,1243,1245,1246,1247,1248,1249,1250,1251,
+                1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1265,1266,1267,1268,1269,1270,1272,1273,1274,1275,1276,1277,1278,1279,1280,1281,1282,1283,1284,
+                1285,1286,1287,1288,1289,1290,1291,1292,1294,1295,1296,1297,1298,1299,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1311,1312,1313,1314,1315,1316,1317,1318,
+                1319,1320,1321,1322,1323,1324,1325,1327,1328,1329,1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1341,1342,1343,1343,1344,1345,1346,1347,1348,1349,1350,1351,
+                1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1372,1373,1374,1375,1376,1377,1378,1379,1380,
+                1381,1382,1383,1384,1385,1386,1387,1388,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,
+                1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425,1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,
+                1444,1445,1446,1447,1448,1449,1450,1451,1452,1453,1454,1455,1456,1457,1458,1459,1460,1461,1462,1463,1465,1466,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,
+                1477,1478,1479,1480,1481,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1508,1509,1510,1511,
+                1512,1513,1514,1515,1516,1518,1519,1520,1521,1522,1523,1524,1525,1527,1528,1529,1530,1531,1532,1533,1534,1536,1537,1538,1539,1540,1541,1542,1544,1545,1546,1547,
+                1548,1549,1550,1552,1553,1554,1555,1556,1557,1559,1560,1561,1562,1563,1564,1565,1567,1568,1569,1570,1571,1573,1574,1575,1576,1577,1578,1580,1581,1582,1583,1584,
+                1586,1587,1588,1589,1590,1592,1593,1594,1595,1596,1598,1599,1600,1601,1602,1604,1605,1606,1607,1608,1610,1611,1612,1613,1615,1616,1617,1618,1619,1621,1622,1623,
+                1624,1626,1627,1628,1629,1631,1632,1633,1634,1636,1637,1638,1639,1640,1642,1643,1644,1646,1647,1648,1649,1651,1652,1653,1654,1656,1657,1658,1659,1661,1662,1663,
+                1664,1666,1667,1668,1670,1671,1672,1673,1675,1676,1677,1679,1680,1681,1682,1684,1685,1686,1688,1689,1690,1692,1693,1694,1695,1697,1698,1699,1701,1702,1703,1705,
+                1706,1707,1709,1710,1711,1713,1714,1715,1717,1718,1719,1721,1722,1723,1725,1726,1727,1729,1730,1731,1733,1734,1735,1737,1738,1739,1741,1742,1743,1745,1746,1747,
+                1749,1750,1751,1753,1754,1756,1757,1758,1760,1761,1762,1764,1765,1767,1768,1769,1771,1772,1773,1775,1776,1778,1779,1780,1782,1783,1785,1786,1787,1789,1790,1791,
+                1793,1794,1796,1797,1799,1800,1801,1802,1803,1805,1806,1807,1808,1809,1811,1812,1813,1814,1815,1817,1818,1819,1820,1821,1823,1824,1825,1826,1828,1829,1830,1831,
+                1832,1834,1835,1836,1837,1838,1840,1841,1842,1843,1844,1846,1847,1848,1849,1851,1852,1853,1854,1855,1857,1858,1859,1860,1861,1863,1864,1865,1866,1868,1869,1870,
+                1871,1872,1874,1875,1876,1877,1878,1880,1881,1882,1883,1885,1886,1887,1888,1889,1891,1892,1893,1894,1896,1897,1898,1899,1901,1902,1903,1904,1905,1907,1908,1909,
+                1910,1912,1913,1914,1915,1916,1918,1919,1920,1921,1923,1924,1925,1926,1928,1929,1930,1931,1932,1934,1935,1936,1937,1939,1940,1941,1942,1944,1945,1946,1947,1949,
+                1950,1951,1952,1954,1955,1956,1957,1958,1960,1961,1962,1963,1965,1966,1967,1968,1970,1971,1972,1973,1975,1976,1977,1978,1980,1981,1982,1983,1985,1986,1987,1988,
+                1990,1991,1992,1993,1995,1996,1997,1998,2000,2001,2002,2003,2005,2006,2007,2008,2010,2011,2012,2013,2015,2016,2017,2018,2020,2021,2022,2023,2025,2026,2027,2028,
+                2030,2031,2032,2034,2035,2036,2037,2039,2040,2041,2042,2044,2045,2046,2047,2049,2050,2051,2052,2054,2055,2056,2058,2059,2060,2061,2063,2064,2065,2066,2068,2069,
+                2070,2071,2073,2074,2075,2077,2078,2079,2080,2082,2083,2084,2085,2087,2088,2089,2091,2092,2093,2094,2096,2097,2098,2099,2101,2102,2103,2105,2106,2107,2108,2110,
+                2111,2112,2113,2115,2116,2117,2119,2120,2121,2122,2124,2125,2126,2128,2129,2130,2131,2133,2134,2135,2137,2138,2139,2140,2142,2143,2144,2146,2147,2148,2149,2151,
+                2152,2153,2155,2156,2157,2158,2160,2161,2162,2164,2165,2166,2168,2169,2170,2171,2173,2174,2175,2177,2178,2179,2180,2182,2183,2184,2186,2187,2188,2190,2191,2192,
+                2193,2195,2196,2197,2199,2200,2201,2203,2204,2205,2206,2208,2209,2210,2212,2213,2214,2216,2217,2218,2219,2221,2222,2223,2225,2226,2227,2229,2230,2231,2233,2234,
+                2235,2236,2238,2239,2240,2242,2243,2244,2246,2247,2248,2250,2251,2252,2253,2255,2256,2257,2259,2260,2261,2263,2264,2265,2267,2268,2269,2271,2272,2273,2275,2276,
+                2277,2278,2280,2281,2282,2284,2285,2286,2288,2289,2290,2292,2293,2294,2296,2297,2298,2300,2301,2302,2304,2305,2306,2308,2309,2310,2312,2313,2314,2315,2317,2318,
+                2319,2321,2322,2323,2325,2326,2327,2329,2330,2331,2333,2334,2335,2337,2338,2339,2341,2342,2343,2345,2346,2347,2349,2350,2351,2353,2354,2355,2357,2358,2359,2361,
+                2362,2363,2365,2366,2367,2369,2370,2371,2373,2374,2376,2377,2378,2380,2381,2382,2384,2385,2386,2388,2389,2390,2392,2393,2394,2396,2397,2398,2400,2401,2402,2404,
+                2405,2406,2408,2409,2410,2412,2413,2415,2416,2417,2419,2420,2421,2423,2424,2425,2427,2428,2429,2431,2432,2433,2435,2436,2437,2439,2440,2442,2443,2444,2446,2447,
+                2448,2450,2451,2452,2454,2455,2456,2458,2459,2461,2462,2463,2465,2466,2467,2469,2470,2471,2473,2474,2476,2477,2478,2480,2481,2482,2484,2485,2486,2488,2489,2491,
+                2492,2493,2495,2496,2497,2499,2500,2501,2503,2504,2506,2507,2508,2510,2511,2512,2514,2515,2517,2518,2519,2521,2522,2523,2525,2526,2528,2529,2530,2532,2533,2534,
+                2536,2537,2539,2540,2541,2543,2544,2545,2547,2548,2550,2551,2552,2554,2555,2556,2558,2559,2561,2562,2563,2565,2566,2568,2569,2570,2572,2573,2574,2576,2577,2579,
+                2580,2581,2583,2584,2586,2587,2588,2590,2591,2592,2594,2595,2597,2598,2599,2601,2602,2604,2605,2606,2608,2609,2611,2612,2613,2615,2616,2617,2619,2620,2622,2623,
+                2624,2626,2627,2629,2630,2631,2633,2634,2636,2637,2638,2640,2641,2643,2644,2645,2647,2648,2650,2651,2652,2654,2655,2657,2658,2659,2661,2662,2664,2665,2666,2668,
+                2669,2671,2672,2673,2675,2676,2678,2679,2681,2682,2683,2685,2686,2688,2689,2690,2692,2693,2695,2696,2697,2699,2700,2702,2703,2704,2706,2707,2709,2710,2712,2713,
+                2714,2716,2717,2719,2720,2721,2723,2724,2726,2727,2729,2730,2731,2733,2734,2736,2737,2738,2740,2741,2743,2744,2746,2747,2748,2750,2751,2753,2754,2755,2757,2758,
+                2760,2761,2763,2764,2765,2767,2768,2770,2771,2773,2774,2775,2777,2778,2780,2781,2783,2784,2785,2787,2788,2790,2791,2793,2794,2795,2797,2798,2800,2801,2803,2804,
+                2805,2807,2808,2810,2811,2813,2814,2815,2817,2818,2820,2821,2823,2824,2826,2827,2828,2830,2831,2833,2834,2836,2837,2838,2840,2841,2843,2844,2846,2847,2849,2850,
+                2851,2853,2854,2856,2857,2859,2860,2862,2863,2864,2866,2867,2869,2870,2872,2873,2875,2876,2877,2879,2880,2882,2883,2885,2886,2888,2889,2890,2892,2893,2895,2896,
+                2898,2899,2901,2902,2904,2905,2906,2908,2909,2911,2912,2914,2915,2917,2918,2920,2921,2922,2924,2925,2927,2928,2930,2931,2933,2934,2936,2937,2939,2940,2941,2943,
+                2944,2946,2947,2949,2950,2952,2953,2955,2956,2958,2959,2960,2962,2963,2965,2966,2968,2969,2971,2972,2974,2975,2977,2978,2979,2981,2982,2984,2985,2987,2988,2990,
+                2991,2993,2994,2996,2997,2999,3000,3002,3003,3004,3006,3007,3009,3010,3012,3013,3015,3016,3018,3019,3021,3022,3024,3025,3027,3028,3030,3031,3033,3034,3035,3037,
+                3038,3040,3041,3043,3044,3046,3047,3049,3050,3052,3053,3055,3056,3058,3059,3061,3062,3064,3065,3067,3068,3070,3071,3073,3074,3075,3077,3078,3080,3081,3083,3084,
+                3086,3087,3089,3090,3092,3093,3095,3096,3098,3099,3101,3102,3104,3105,3107,3108,3110,3111,3113,3114,3116,3117,3119,3120,3122,3123,3125,3126,3128,3129,3131,3132,
+                3134,3135,3137,3138,3140,3141,3143,3144,3146,3147,3149,3150,3152,3153,3155,3156,3158,3159,3161,3162,3164,3165,3167,3168,3170,3171,3173,3174,3176,3177,3179,3180,
+                3182,3183,3185,3186,3188,3189,3191,3192,3194,3195,3197,3198,3200,3201,3203,3204,3206,3207,3209,3210,3212,3213,3215,3216,3218,3220,3221,3223,3224,3226,3227,3229,
+                3230,3232,3233,3235,3236,3238,3239,3241,3242,3244,3245,3247,3248,3250,3251,3253,3254,3256,3257,3259,3260,3262,3264,3265,3267,3268,3270,3271,3273,3274,3276,3277,
+                3279,3280,3282,3283,3285,3286,3288,3289,3291,3293,3294,3296,3297,3299,3300,3302,3303,3305,3306,3308,3309,3311,3312,3314,3315,3317,3319,3320,3322,3323,3325,3326,
+                3328,3329,3331,3332,3334,3335,3337,3338,3340,3342,3343,3345,3346,3348,3349,3351,3352,3354,3355,3357,3358,3360,3362,3363,3365,3366,3368,3369,3371,3372,3374,3375,
+                3377,3378,3380,3382,3383,3385,3386,3388,3389,3391,3392,3394,3395,3397,3399,3400,3402,3403,3405,3406,3408,3409,3411,3413,3414,3416,3417,3419,3420,3422,3423,3425,
+                3426,3428,3430,3431,3433,3434,3436,3437,3439,3440,3442,3444,3445,3447,3448,3450,3451,3453,3454,3456,3458,3459,3461,3462,3464,3465,3467,3468,3470,3472,3473,3475,
+                3476,3478,3479,3481,3483,3484,3486,3487,3489,3490,3492,3493,3495,3497,3498,3500,3501,3503,3504,3506,3508,3509,3511,3512,3514,3515,3517,3519,3520,3522,3523,3525,
+                3526,3528,3530,3531,3533,3534,3536,3537,3539,3541,3542,3544,3545,3547,3548,3550,3552,3553,3555,3556,3558,3559,3561,3563,3564,3566,3567,3569,3570,3572,3574,3575,
+                3577,3578,3580,3581,3583,3585,3586,3588,3589,3591,3593,3594,3596,3597,3599,3600,3602,3604,3605,3607,3608,3610,3612,3613,3615,3616,3618,3619,3621,3623,3624,3626,
+                3627,3629,3631,3632,3634,3635,3637,3639,3640,3642,3643,3645,3647,3648,3650,3651,3653,3654,3656,3658,3659,3661,3662,3664,3666,3667,3669,3670,3672,3674,3675,3677,
+                3678,3680,3682,3683,3685,3686,3688,3690,3691,3693,3694,3696,3698,3699,3701,3702,3704,3706,3707,3709,3710,3712,3714,3715,3717,3718,3720,3722,3723,3725,3726,3728,
+                3730,3731,3733,3734,3736,3738,3739,3741,3742,3744,3746,3747,3749,3751,3752,3754,3755,3757,3759,3760,3762,3763,3765,3767,3768,3770,3771,3773,3775,3776,3778,3780,
+                3781,3783,3784,3786,3788,3789,3791,3792,3794,3796,3797,3799,3801,3802,3804,3805,3807,3809,3810,3812,3813,3815,3817,3818,3820,3822,3823,3825,3826,3828,3830,3831,
+                3833,3835,3836,3838,3839,3841,3843,3844,3846,3848,3849,3851,3852,3854,3856,3857,3859,3861,3862,3864,3865,3867,3869,3870,3872,3874,3875,3877,3879,3880,3882,3883,
+                3885,3887,3888,3890,3892,3893,3895,3896,3898,3900,3901,3903,3905,3906,3908,3910,3911,3913,3914,3916,3918,3919,3921,3923,3924,3926,3928,3929,3931,3932,3934,3936,
+                3937,3939,3941,3942,3944,3946,3947,3949,3951,3952,3954,3955,3957,3959,3960,3962,3964,3965,3967,3969,3970,3972,3974,3975,3977,3978,3980,3982,3983,3985,3987,3988,
+                3990,3992,3993,3995,3997,3998,4000,4002,4003,4005,4007,4008,4010,4012,4013,4015,4016,4018,4020,4021,4023,4025,4026,4028,4030,4031,4033,4035,4036,4038,4040,4041,
+                4043,4045,4046,4048,4050,4051,4053,4055,4056,4058,4060,4061,4063,4065,4066,4068,4070,4071,4073,4075,4076,4078,4080,4081,4083,4085,4086,4088,4090,4091,4093,4095,
+          },
+          /* aec trigger 3 */
+          {
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,
+                   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,
+                   4,   4,   4,   4,   4,   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   6,   6,
+                   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,
+                   5,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,
+                   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   7,   7,   7,   7,   7,   7,   7,   8,   8,   8,   8,   8,   9,   9,
+                   9,   9,   9,  10,  10,  10,  10,  10,  11,  11,  11,  11,  11,  12,  12,  12,  12,  13,  13,  13,  13,  14,  14,  14,  15,  15,  15,  15,  16,  16,  16,  17,
+                  17,  17,  17,  18,  18,  18,  19,  19,  19,  20,  20,  20,  21,  21,  21,  22,  22,  23,  23,  23,  24,  24,  24,  25,  25,  24,  24,  24,  24,  24,  24,  25,
+                  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  26,  26,  26,  26,  26,  26,  26,  26,  27,  27,  27,  27,  27,  27,  28,  28,
+                  28,  28,  28,  28,  29,  29,  29,  29,  30,  30,  30,  30,  30,  31,  31,  31,  31,  32,  32,  32,  33,  33,  33,  33,  34,  34,  34,  35,  35,  35,  36,  36,
+                  36,  37,  37,  37,  38,  38,  39,  39,  39,  40,  40,  41,  41,  41,  42,  42,  43,  43,  43,  44,  44,  45,  45,  46,  46,  47,  47,  48,  48,  49,  49,  50,
+                  50,  51,  51,  52,  52,  53,  53,  54,  54,  55,  55,  56,  57,  57,  58,  58,  59,  60,  60,  61,  61,  62,  63,  63,  64,  64,  65,  66,  66,  67,  68,  68,
+                  69,  70,  70,  71,  68,  70,  72,  73,  75,  77,  78,  80,  82,  83,  85,  87,  88,  90,  92,  93,  95,  97,  98, 100, 101, 103, 105, 106, 108, 110, 111, 113,
+                 114, 116, 118, 119, 121, 123, 124, 126, 127, 129, 131, 132, 134, 135, 137, 138, 140, 142, 143, 145, 146, 148, 150, 151, 153, 154, 156, 157, 159, 161, 162, 164,
+                 165, 167, 168, 170, 171, 173, 175, 176, 178, 179, 181, 182, 184, 185, 187, 188, 190, 191, 193, 194, 196, 198, 199, 201, 202, 204, 205, 207, 208, 210, 211, 213,
+                 214, 216, 217, 219, 220, 222, 223, 225, 226, 228, 229, 231, 232, 233, 235, 236, 238, 239, 241, 242, 244, 245, 247, 248, 250, 251, 253, 254, 255, 257, 258, 260,
+                 261, 263, 264, 266, 267, 268, 270, 271, 273, 274, 276, 277, 278, 280, 281, 283, 284, 285, 287, 288, 290, 291, 292, 294, 295, 297, 298, 299, 301, 302, 304, 305,
+                 306, 308, 309, 311, 312, 313, 315, 316, 317, 319, 320, 321, 323, 324, 326, 327, 328, 330, 331, 332, 334, 335, 336, 338, 339, 340, 342, 343, 344, 346, 347, 348,
+                 350, 351, 352, 354, 355, 356, 358, 359, 360, 362, 363, 364, 365, 367, 368, 369, 371, 372, 373, 375, 376, 377, 378, 380, 381, 382, 384, 385, 386, 387, 389, 390,
+                 391, 392, 394, 395, 396, 398, 399, 400, 401, 403, 404, 405, 406, 408, 409, 410, 411, 412, 414, 415, 416, 417, 419, 420, 421, 422, 424, 425, 426, 427, 428, 430,
+                 431, 432, 433, 434, 436, 437, 438, 439, 440, 442, 443, 444, 445, 446, 448, 449, 450, 451, 452, 453, 455, 456, 457, 458, 459, 460, 462, 463, 464, 465, 466, 467,
+                 469, 470, 471, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 485, 486, 487, 488, 489, 490, 491, 493, 494, 495, 496, 497, 499, 500, 501, 502, 503, 505,
+                 506, 507, 508, 509, 510, 512, 513, 514, 515, 516, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 538, 539, 540, 541, 542,
+                 543, 545, 546, 547, 548, 549, 550, 551, 553, 554, 555, 556, 557, 558, 560, 561, 562, 563, 564, 565, 566, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579,
+                 580, 581, 582, 583, 585, 586, 587, 588, 589, 590, 591, 592, 594, 595, 596, 597, 598, 599, 600, 601, 602, 604, 605, 606, 607, 608, 609, 610, 611, 612, 614, 615,
+                 616, 617, 618, 619, 620, 621, 622, 623, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649,
+                 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683,
+                 684, 685, 686, 687, 688, 689, 690, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716,
+                 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748,
+                 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779,
+                 780, 781, 782, 783, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809,
+                 810, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 830, 831, 832, 833, 834, 835, 836, 837, 838,
+                 838, 839, 840, 841, 842, 843, 844, 845, 846, 846, 847, 848, 849, 850, 851, 852, 853, 853, 854, 855, 856, 857, 858, 859, 859, 860, 861, 862, 863, 864, 865, 865,
+                 866, 867, 868, 869, 870, 871, 871, 872, 873, 874, 875, 876, 877, 877, 878, 879, 880, 881, 882, 882, 883, 884, 885, 886, 887, 887, 888, 889, 890, 891, 892, 892,
+                 893, 894, 895, 896, 897, 897, 898, 899, 900, 901, 901, 902, 903, 904, 905, 906, 906, 907, 908, 909, 910, 910, 911, 912, 913, 914, 914, 915, 916, 917, 918, 918,
+                 919, 920, 921, 922, 922, 923, 924, 925, 926, 926, 927, 928, 929, 930, 930, 931, 932, 933, 933, 934, 935, 936, 937, 937, 938, 939, 940, 940, 941, 942, 943, 943,
+                 944, 945, 946, 947, 947, 948, 949, 950, 950, 951, 952, 953, 953, 954, 955, 956, 956, 957, 958, 959, 959, 960, 961, 962, 962, 963, 964, 965, 965, 966, 967, 967,
+                 968, 969, 970, 970, 971, 972, 973, 973, 974, 975, 976, 976, 977, 978, 978, 979, 980, 981, 981, 982, 983, 983, 984, 985, 986, 986, 987, 988, 988, 989, 990, 991,
+                 991, 992, 993, 993, 994, 995, 995, 996, 997, 998, 998, 999,1000,1000,1001,1002,1002,1003,1004,1004,1005,1006,1007,1007,1008,1009,1009,1010,1011,1011,1012,1013,
+                1013,1014,1015,1015,1016,1017,1017,1018,1019,1019,1020,1021,1021,1022,1023,1023,1024,1025,1025,1026,1027,1027,1028,1029,1029,1030,1031,1031,1032,1032,1033,1034,
+                1034,1035,1036,1036,1037,1038,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1050,1051,1052,1053,1054,1055,1056,1057,1058,1059,1060,1061,1062,
+                1063,1063,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1074,1075,1076,1077,1078,1079,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,
+                1093,1094,1095,1096,1097,1098,1098,1099,1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1112,1113,1114,1115,1116,1117,1118,1119,1120,1121,1122,1123,
+                1124,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1152,1153,1154,
+                1155,1156,1157,1158,1159,1160,1161,1162,1163,1164,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182,1183,1184,1185,1186,
+                1187,1188,1189,1190,1191,1192,1193,1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1210,1211,1212,1213,1214,1215,1216,1217,1218,
+                1219,1220,1221,1222,1223,1224,1225,1226,1227,1228,1229,1230,1231,1232,1233,1234,1235,1236,1237,1238,1239,1240,1241,1242,1243,1245,1246,1247,1248,1249,1250,1251,
+                1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1265,1266,1267,1268,1269,1270,1272,1273,1274,1275,1276,1277,1278,1279,1280,1281,1282,1283,1284,
+                1285,1286,1287,1288,1289,1290,1291,1292,1294,1295,1296,1297,1298,1299,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1311,1312,1313,1314,1315,1316,1317,1318,
+                1319,1320,1321,1322,1323,1324,1325,1327,1328,1329,1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1341,1342,1343,1343,1344,1345,1346,1347,1348,1349,1350,1351,
+                1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1372,1373,1374,1375,1376,1377,1378,1379,1380,
+                1381,1382,1383,1384,1385,1386,1387,1388,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,
+                1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425,1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,
+                1444,1445,1446,1447,1448,1449,1450,1451,1452,1453,1454,1455,1456,1457,1458,1459,1460,1461,1462,1463,1465,1466,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,
+                1477,1478,1479,1480,1481,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1508,1509,1510,1511,
+                1512,1513,1514,1515,1516,1518,1519,1520,1521,1522,1523,1524,1525,1527,1528,1529,1530,1531,1532,1533,1534,1536,1537,1538,1539,1540,1541,1542,1544,1545,1546,1547,
+                1548,1549,1550,1552,1553,1554,1555,1556,1557,1559,1560,1561,1562,1563,1564,1565,1567,1568,1569,1570,1571,1573,1574,1575,1576,1577,1578,1580,1581,1582,1583,1584,
+                1586,1587,1588,1589,1590,1592,1593,1594,1595,1596,1598,1599,1600,1601,1602,1604,1605,1606,1607,1608,1610,1611,1612,1613,1615,1616,1617,1618,1619,1621,1622,1623,
+                1624,1626,1627,1628,1629,1631,1632,1633,1634,1636,1637,1638,1639,1640,1642,1643,1644,1646,1647,1648,1649,1651,1652,1653,1654,1656,1657,1658,1659,1661,1662,1663,
+                1664,1666,1667,1668,1670,1671,1672,1673,1675,1676,1677,1679,1680,1681,1682,1684,1685,1686,1688,1689,1690,1692,1693,1694,1695,1697,1698,1699,1701,1702,1703,1705,
+                1706,1707,1709,1710,1711,1713,1714,1715,1717,1718,1719,1721,1722,1723,1725,1726,1727,1729,1730,1731,1733,1734,1735,1737,1738,1739,1741,1742,1743,1745,1746,1747,
+                1749,1750,1751,1753,1754,1756,1757,1758,1760,1761,1762,1764,1765,1767,1768,1769,1771,1772,1773,1775,1776,1778,1779,1780,1782,1783,1785,1786,1787,1789,1790,1791,
+                1793,1794,1796,1797,1799,1800,1801,1802,1803,1805,1806,1807,1808,1809,1811,1812,1813,1814,1815,1817,1818,1819,1820,1821,1823,1824,1825,1826,1828,1829,1830,1831,
+                1832,1834,1835,1836,1837,1838,1840,1841,1842,1843,1844,1846,1847,1848,1849,1851,1852,1853,1854,1855,1857,1858,1859,1860,1861,1863,1864,1865,1866,1868,1869,1870,
+                1871,1872,1874,1875,1876,1877,1878,1880,1881,1882,1883,1885,1886,1887,1888,1889,1891,1892,1893,1894,1896,1897,1898,1899,1901,1902,1903,1904,1905,1907,1908,1909,
+                1910,1912,1913,1914,1915,1916,1918,1919,1920,1921,1923,1924,1925,1926,1928,1929,1930,1931,1932,1934,1935,1936,1937,1939,1940,1941,1942,1944,1945,1946,1947,1949,
+                1950,1951,1952,1954,1955,1956,1957,1958,1960,1961,1962,1963,1965,1966,1967,1968,1970,1971,1972,1973,1975,1976,1977,1978,1980,1981,1982,1983,1985,1986,1987,1988,
+                1990,1991,1992,1993,1995,1996,1997,1998,2000,2001,2002,2003,2005,2006,2007,2008,2010,2011,2012,2013,2015,2016,2017,2018,2020,2021,2022,2023,2025,2026,2027,2028,
+                2030,2031,2032,2034,2035,2036,2037,2039,2040,2041,2042,2044,2045,2046,2047,2049,2050,2051,2052,2054,2055,2056,2058,2059,2060,2061,2063,2064,2065,2066,2068,2069,
+                2070,2071,2073,2074,2075,2077,2078,2079,2080,2082,2083,2084,2085,2087,2088,2089,2091,2092,2093,2094,2096,2097,2098,2099,2101,2102,2103,2105,2106,2107,2108,2110,
+                2111,2112,2113,2115,2116,2117,2119,2120,2121,2122,2124,2125,2126,2128,2129,2130,2131,2133,2134,2135,2137,2138,2139,2140,2142,2143,2144,2146,2147,2148,2149,2151,
+                2152,2153,2155,2156,2157,2158,2160,2161,2162,2164,2165,2166,2168,2169,2170,2171,2173,2174,2175,2177,2178,2179,2180,2182,2183,2184,2186,2187,2188,2190,2191,2192,
+                2193,2195,2196,2197,2199,2200,2201,2203,2204,2205,2206,2208,2209,2210,2212,2213,2214,2216,2217,2218,2219,2221,2222,2223,2225,2226,2227,2229,2230,2231,2233,2234,
+                2235,2236,2238,2239,2240,2242,2243,2244,2246,2247,2248,2250,2251,2252,2253,2255,2256,2257,2259,2260,2261,2263,2264,2265,2267,2268,2269,2271,2272,2273,2275,2276,
+                2277,2278,2280,2281,2282,2284,2285,2286,2288,2289,2290,2292,2293,2294,2296,2297,2298,2300,2301,2302,2304,2305,2306,2308,2309,2310,2312,2313,2314,2315,2317,2318,
+                2319,2321,2322,2323,2325,2326,2327,2329,2330,2331,2333,2334,2335,2337,2338,2339,2341,2342,2343,2345,2346,2347,2349,2350,2351,2353,2354,2355,2357,2358,2359,2361,
+                2362,2363,2365,2366,2367,2369,2370,2371,2373,2374,2376,2377,2378,2380,2381,2382,2384,2385,2386,2388,2389,2390,2392,2393,2394,2396,2397,2398,2400,2401,2402,2404,
+                2405,2406,2408,2409,2410,2412,2413,2415,2416,2417,2419,2420,2421,2423,2424,2425,2427,2428,2429,2431,2432,2433,2435,2436,2437,2439,2440,2442,2443,2444,2446,2447,
+                2448,2450,2451,2452,2454,2455,2456,2458,2459,2461,2462,2463,2465,2466,2467,2469,2470,2471,2473,2474,2476,2477,2478,2480,2481,2482,2484,2485,2486,2488,2489,2491,
+                2492,2493,2495,2496,2497,2499,2500,2501,2503,2504,2506,2507,2508,2510,2511,2512,2514,2515,2517,2518,2519,2521,2522,2523,2525,2526,2528,2529,2530,2532,2533,2534,
+                2536,2537,2539,2540,2541,2543,2544,2545,2547,2548,2550,2551,2552,2554,2555,2556,2558,2559,2561,2562,2563,2565,2566,2568,2569,2570,2572,2573,2574,2576,2577,2579,
+                2580,2581,2583,2584,2586,2587,2588,2590,2591,2592,2594,2595,2597,2598,2599,2601,2602,2604,2605,2606,2608,2609,2611,2612,2613,2615,2616,2617,2619,2620,2622,2623,
+                2624,2626,2627,2629,2630,2631,2633,2634,2636,2637,2638,2640,2641,2643,2644,2645,2647,2648,2650,2651,2652,2654,2655,2657,2658,2659,2661,2662,2664,2665,2666,2668,
+                2669,2671,2672,2673,2675,2676,2678,2679,2681,2682,2683,2685,2686,2688,2689,2690,2692,2693,2695,2696,2697,2699,2700,2702,2703,2704,2706,2707,2709,2710,2712,2713,
+                2714,2716,2717,2719,2720,2721,2723,2724,2726,2727,2729,2730,2731,2733,2734,2736,2737,2738,2740,2741,2743,2744,2746,2747,2748,2750,2751,2753,2754,2755,2757,2758,
+                2760,2761,2763,2764,2765,2767,2768,2770,2771,2773,2774,2775,2777,2778,2780,2781,2783,2784,2785,2787,2788,2790,2791,2793,2794,2795,2797,2798,2800,2801,2803,2804,
+                2805,2807,2808,2810,2811,2813,2814,2815,2817,2818,2820,2821,2823,2824,2826,2827,2828,2830,2831,2833,2834,2836,2837,2838,2840,2841,2843,2844,2846,2847,2849,2850,
+                2851,2853,2854,2856,2857,2859,2860,2862,2863,2864,2866,2867,2869,2870,2872,2873,2875,2876,2877,2879,2880,2882,2883,2885,2886,2888,2889,2890,2892,2893,2895,2896,
+                2898,2899,2901,2902,2904,2905,2906,2908,2909,2911,2912,2914,2915,2917,2918,2920,2921,2922,2924,2925,2927,2928,2930,2931,2933,2934,2936,2937,2939,2940,2941,2943,
+                2944,2946,2947,2949,2950,2952,2953,2955,2956,2958,2959,2960,2962,2963,2965,2966,2968,2969,2971,2972,2974,2975,2977,2978,2979,2981,2982,2984,2985,2987,2988,2990,
+                2991,2993,2994,2996,2997,2999,3000,3002,3003,3004,3006,3007,3009,3010,3012,3013,3015,3016,3018,3019,3021,3022,3024,3025,3027,3028,3030,3031,3033,3034,3035,3037,
+                3038,3040,3041,3043,3044,3046,3047,3049,3050,3052,3053,3055,3056,3058,3059,3061,3062,3064,3065,3067,3068,3070,3071,3073,3074,3075,3077,3078,3080,3081,3083,3084,
+                3086,3087,3089,3090,3092,3093,3095,3096,3098,3099,3101,3102,3104,3105,3107,3108,3110,3111,3113,3114,3116,3117,3119,3120,3122,3123,3125,3126,3128,3129,3131,3132,
+                3134,3135,3137,3138,3140,3141,3143,3144,3146,3147,3149,3150,3152,3153,3155,3156,3158,3159,3161,3162,3164,3165,3167,3168,3170,3171,3173,3174,3176,3177,3179,3180,
+                3182,3183,3185,3186,3188,3189,3191,3192,3194,3195,3197,3198,3200,3201,3203,3204,3206,3207,3209,3210,3212,3213,3215,3216,3218,3220,3221,3223,3224,3226,3227,3229,
+                3230,3232,3233,3235,3236,3238,3239,3241,3242,3244,3245,3247,3248,3250,3251,3253,3254,3256,3257,3259,3260,3262,3264,3265,3267,3268,3270,3271,3273,3274,3276,3277,
+                3279,3280,3282,3283,3285,3286,3288,3289,3291,3293,3294,3296,3297,3299,3300,3302,3303,3305,3306,3308,3309,3311,3312,3314,3315,3317,3319,3320,3322,3323,3325,3326,
+                3328,3329,3331,3332,3334,3335,3337,3338,3340,3342,3343,3345,3346,3348,3349,3351,3352,3354,3355,3357,3358,3360,3362,3363,3365,3366,3368,3369,3371,3372,3374,3375,
+                3377,3378,3380,3382,3383,3385,3386,3388,3389,3391,3392,3394,3395,3397,3399,3400,3402,3403,3405,3406,3408,3409,3411,3413,3414,3416,3417,3419,3420,3422,3423,3425,
+                3426,3428,3430,3431,3433,3434,3436,3437,3439,3440,3442,3444,3445,3447,3448,3450,3451,3453,3454,3456,3458,3459,3461,3462,3464,3465,3467,3468,3470,3472,3473,3475,
+                3476,3478,3479,3481,3483,3484,3486,3487,3489,3490,3492,3493,3495,3497,3498,3500,3501,3503,3504,3506,3508,3509,3511,3512,3514,3515,3517,3519,3520,3522,3523,3525,
+                3526,3528,3530,3531,3533,3534,3536,3537,3539,3541,3542,3544,3545,3547,3548,3550,3552,3553,3555,3556,3558,3559,3561,3563,3564,3566,3567,3569,3570,3572,3574,3575,
+                3577,3578,3580,3581,3583,3585,3586,3588,3589,3591,3593,3594,3596,3597,3599,3600,3602,3604,3605,3607,3608,3610,3612,3613,3615,3616,3618,3619,3621,3623,3624,3626,
+                3627,3629,3631,3632,3634,3635,3637,3639,3640,3642,3643,3645,3647,3648,3650,3651,3653,3654,3656,3658,3659,3661,3662,3664,3666,3667,3669,3670,3672,3674,3675,3677,
+                3678,3680,3682,3683,3685,3686,3688,3690,3691,3693,3694,3696,3698,3699,3701,3702,3704,3706,3707,3709,3710,3712,3714,3715,3717,3718,3720,3722,3723,3725,3726,3728,
+                3730,3731,3733,3734,3736,3738,3739,3741,3742,3744,3746,3747,3749,3751,3752,3754,3755,3757,3759,3760,3762,3763,3765,3767,3768,3770,3771,3773,3775,3776,3778,3780,
+                3781,3783,3784,3786,3788,3789,3791,3792,3794,3796,3797,3799,3801,3802,3804,3805,3807,3809,3810,3812,3813,3815,3817,3818,3820,3822,3823,3825,3826,3828,3830,3831,
+                3833,3835,3836,3838,3839,3841,3843,3844,3846,3848,3849,3851,3852,3854,3856,3857,3859,3861,3862,3864,3865,3867,3869,3870,3872,3874,3875,3877,3879,3880,3882,3883,
+                3885,3887,3888,3890,3892,3893,3895,3896,3898,3900,3901,3903,3905,3906,3908,3910,3911,3913,3914,3916,3918,3919,3921,3923,3924,3926,3928,3929,3931,3932,3934,3936,
+                3937,3939,3941,3942,3944,3946,3947,3949,3951,3952,3954,3955,3957,3959,3960,3962,3964,3965,3967,3969,3970,3972,3974,3975,3977,3978,3980,3982,3983,3985,3987,3988,
+                3990,3992,3993,3995,3997,3998,4000,4002,4003,4005,4007,4008,4010,4012,4013,4015,4016,4018,4020,4021,4023,4025,4026,4028,4030,4031,4033,4035,4036,4038,4040,4041,
+                4043,4045,4046,4048,4050,4051,4053,4055,4056,4058,4060,4061,4063,4065,4066,4068,4070,4071,4073,4075,4076,4078,4080,4081,4083,4085,4086,4088,4090,4091,4093,4095,
+          },
+          /* aec trigger 4 */
+          {
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,
+                   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,
+                   4,   4,   4,   4,   4,   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   6,   6,
+                   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   6,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,
+                   5,   5,   5,   5,   5,   5,   5,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   3,   3,   3,   3,   3,   3,   3,   3,   2,   2,   2,   2,   2,   2,   2,
+                   1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+                   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+                   1,   1,   1,   1,   1,   1,   1,   1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   3,   3,   3,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,   4,
+                   4,   5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   6,   6,   6,   6,   6,   6,   6,   7,   7,   7,   7,   7,   7,   7,   8,   8,   8,   8,   8,   9,   9,
+                   9,   9,   9,  10,  10,  10,  10,  10,  11,  11,  11,  11,  11,  12,  12,  12,  12,  13,  13,  13,  13,  14,  14,  14,  15,  15,  15,  15,  16,  16,  16,  17,
+                  17,  17,  17,  18,  18,  18,  19,  19,  19,  20,  20,  20,  21,  21,  21,  22,  22,  23,  23,  23,  24,  24,  24,  25,  25,  24,  24,  24,  24,  24,  24,  25,
+                  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  25,  26,  26,  26,  26,  26,  26,  26,  26,  27,  27,  27,  27,  27,  27,  28,  28,
+                  28,  28,  28,  28,  29,  29,  29,  29,  30,  30,  30,  30,  30,  31,  31,  31,  31,  32,  32,  32,  33,  33,  33,  33,  34,  34,  34,  35,  35,  35,  36,  36,
+                  36,  37,  37,  37,  38,  38,  39,  39,  39,  40,  40,  41,  41,  41,  42,  42,  43,  43,  43,  44,  44,  45,  45,  46,  46,  47,  47,  48,  48,  49,  49,  50,
+                  50,  51,  51,  52,  52,  53,  53,  54,  54,  55,  55,  56,  57,  57,  58,  58,  59,  60,  60,  61,  61,  62,  63,  63,  64,  64,  65,  66,  66,  67,  68,  68,
+                  69,  70,  70,  71,  68,  70,  72,  73,  75,  77,  78,  80,  82,  83,  85,  87,  88,  90,  92,  93,  95,  97,  98, 100, 101, 103, 105, 106, 108, 110, 111, 113,
+                 114, 116, 118, 119, 121, 123, 124, 126, 127, 129, 131, 132, 134, 135, 137, 138, 140, 142, 143, 145, 146, 148, 150, 151, 153, 154, 156, 157, 159, 161, 162, 164,
+                 165, 167, 168, 170, 171, 173, 175, 176, 178, 179, 181, 182, 184, 185, 187, 188, 190, 191, 193, 194, 196, 198, 199, 201, 202, 204, 205, 207, 208, 210, 211, 213,
+                 214, 216, 217, 219, 220, 222, 223, 225, 226, 228, 229, 231, 232, 233, 235, 236, 238, 239, 241, 242, 244, 245, 247, 248, 250, 251, 253, 254, 255, 257, 258, 260,
+                 261, 263, 264, 266, 267, 268, 270, 271, 273, 274, 276, 277, 278, 280, 281, 283, 284, 285, 287, 288, 290, 291, 292, 294, 295, 297, 298, 299, 301, 302, 304, 305,
+                 306, 308, 309, 311, 312, 313, 315, 316, 317, 319, 320, 321, 323, 324, 326, 327, 328, 330, 331, 332, 334, 335, 336, 338, 339, 340, 342, 343, 344, 346, 347, 348,
+                 350, 351, 352, 354, 355, 356, 358, 359, 360, 362, 363, 364, 365, 367, 368, 369, 371, 372, 373, 375, 376, 377, 378, 380, 381, 382, 384, 385, 386, 387, 389, 390,
+                 391, 392, 394, 395, 396, 398, 399, 400, 401, 403, 404, 405, 406, 408, 409, 410, 411, 412, 414, 415, 416, 417, 419, 420, 421, 422, 424, 425, 426, 427, 428, 430,
+                 431, 432, 433, 434, 436, 437, 438, 439, 440, 442, 443, 444, 445, 446, 448, 449, 450, 451, 452, 453, 455, 456, 457, 458, 459, 460, 462, 463, 464, 465, 466, 467,
+                 469, 470, 471, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 485, 486, 487, 488, 489, 490, 491, 493, 494, 495, 496, 497, 499, 500, 501, 502, 503, 505,
+                 506, 507, 508, 509, 510, 512, 513, 514, 515, 516, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 538, 539, 540, 541, 542,
+                 543, 545, 546, 547, 548, 549, 550, 551, 553, 554, 555, 556, 557, 558, 560, 561, 562, 563, 564, 565, 566, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579,
+                 580, 581, 582, 583, 585, 586, 587, 588, 589, 590, 591, 592, 594, 595, 596, 597, 598, 599, 600, 601, 602, 604, 605, 606, 607, 608, 609, 610, 611, 612, 614, 615,
+                 616, 617, 618, 619, 620, 621, 622, 623, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649,
+                 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683,
+                 684, 685, 686, 687, 688, 689, 690, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716,
+                 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748,
+                 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779,
+                 780, 781, 782, 783, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809,
+                 810, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 830, 831, 832, 833, 834, 835, 836, 837, 838,
+                 838, 839, 840, 841, 842, 843, 844, 845, 846, 846, 847, 848, 849, 850, 851, 852, 853, 853, 854, 855, 856, 857, 858, 859, 859, 860, 861, 862, 863, 864, 865, 865,
+                 866, 867, 868, 869, 870, 871, 871, 872, 873, 874, 875, 876, 877, 877, 878, 879, 880, 881, 882, 882, 883, 884, 885, 886, 887, 887, 888, 889, 890, 891, 892, 892,
+                 893, 894, 895, 896, 897, 897, 898, 899, 900, 901, 901, 902, 903, 904, 905, 906, 906, 907, 908, 909, 910, 910, 911, 912, 913, 914, 914, 915, 916, 917, 918, 918,
+                 919, 920, 921, 922, 922, 923, 924, 925, 926, 926, 927, 928, 929, 930, 930, 931, 932, 933, 933, 934, 935, 936, 937, 937, 938, 939, 940, 940, 941, 942, 943, 943,
+                 944, 945, 946, 947, 947, 948, 949, 950, 950, 951, 952, 953, 953, 954, 955, 956, 956, 957, 958, 959, 959, 960, 961, 962, 962, 963, 964, 965, 965, 966, 967, 967,
+                 968, 969, 970, 970, 971, 972, 973, 973, 974, 975, 976, 976, 977, 978, 978, 979, 980, 981, 981, 982, 983, 983, 984, 985, 986, 986, 987, 988, 988, 989, 990, 991,
+                 991, 992, 993, 993, 994, 995, 995, 996, 997, 998, 998, 999,1000,1000,1001,1002,1002,1003,1004,1004,1005,1006,1007,1007,1008,1009,1009,1010,1011,1011,1012,1013,
+                1013,1014,1015,1015,1016,1017,1017,1018,1019,1019,1020,1021,1021,1022,1023,1023,1024,1025,1025,1026,1027,1027,1028,1029,1029,1030,1031,1031,1032,1032,1033,1034,
+                1034,1035,1036,1036,1037,1038,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1050,1051,1052,1053,1054,1055,1056,1057,1058,1059,1060,1061,1062,
+                1063,1063,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1074,1075,1076,1077,1078,1079,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,
+                1093,1094,1095,1096,1097,1098,1098,1099,1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1112,1113,1114,1115,1116,1117,1118,1119,1120,1121,1122,1123,
+                1124,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1152,1153,1154,
+                1155,1156,1157,1158,1159,1160,1161,1162,1163,1164,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182,1183,1184,1185,1186,
+                1187,1188,1189,1190,1191,1192,1193,1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1210,1211,1212,1213,1214,1215,1216,1217,1218,
+                1219,1220,1221,1222,1223,1224,1225,1226,1227,1228,1229,1230,1231,1232,1233,1234,1235,1236,1237,1238,1239,1240,1241,1242,1243,1245,1246,1247,1248,1249,1250,1251,
+                1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1265,1266,1267,1268,1269,1270,1272,1273,1274,1275,1276,1277,1278,1279,1280,1281,1282,1283,1284,
+                1285,1286,1287,1288,1289,1290,1291,1292,1294,1295,1296,1297,1298,1299,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1311,1312,1313,1314,1315,1316,1317,1318,
+                1319,1320,1321,1322,1323,1324,1325,1327,1328,1329,1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1341,1342,1343,1343,1344,1345,1346,1347,1348,1349,1350,1351,
+                1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1372,1373,1374,1375,1376,1377,1378,1379,1380,
+                1381,1382,1383,1384,1385,1386,1387,1388,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,
+                1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425,1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,
+                1444,1445,1446,1447,1448,1449,1450,1451,1452,1453,1454,1455,1456,1457,1458,1459,1460,1461,1462,1463,1465,1466,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,
+                1477,1478,1479,1480,1481,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1508,1509,1510,1511,
+                1512,1513,1514,1515,1516,1518,1519,1520,1521,1522,1523,1524,1525,1527,1528,1529,1530,1531,1532,1533,1534,1536,1537,1538,1539,1540,1541,1542,1544,1545,1546,1547,
+                1548,1549,1550,1552,1553,1554,1555,1556,1557,1559,1560,1561,1562,1563,1564,1565,1567,1568,1569,1570,1571,1573,1574,1575,1576,1577,1578,1580,1581,1582,1583,1584,
+                1586,1587,1588,1589,1590,1592,1593,1594,1595,1596,1598,1599,1600,1601,1602,1604,1605,1606,1607,1608,1610,1611,1612,1613,1615,1616,1617,1618,1619,1621,1622,1623,
+                1624,1626,1627,1628,1629,1631,1632,1633,1634,1636,1637,1638,1639,1640,1642,1643,1644,1646,1647,1648,1649,1651,1652,1653,1654,1656,1657,1658,1659,1661,1662,1663,
+                1664,1666,1667,1668,1670,1671,1672,1673,1675,1676,1677,1679,1680,1681,1682,1684,1685,1686,1688,1689,1690,1692,1693,1694,1695,1697,1698,1699,1701,1702,1703,1705,
+                1706,1707,1709,1710,1711,1713,1714,1715,1717,1718,1719,1721,1722,1723,1725,1726,1727,1729,1730,1731,1733,1734,1735,1737,1738,1739,1741,1742,1743,1745,1746,1747,
+                1749,1750,1751,1753,1754,1756,1757,1758,1760,1761,1762,1764,1765,1767,1768,1769,1771,1772,1773,1775,1776,1778,1779,1780,1782,1783,1785,1786,1787,1789,1790,1791,
+                1793,1794,1796,1797,1799,1800,1801,1802,1803,1805,1806,1807,1808,1809,1811,1812,1813,1814,1815,1817,1818,1819,1820,1821,1823,1824,1825,1826,1828,1829,1830,1831,
+                1832,1834,1835,1836,1837,1838,1840,1841,1842,1843,1844,1846,1847,1848,1849,1851,1852,1853,1854,1855,1857,1858,1859,1860,1861,1863,1864,1865,1866,1868,1869,1870,
+                1871,1872,1874,1875,1876,1877,1878,1880,1881,1882,1883,1885,1886,1887,1888,1889,1891,1892,1893,1894,1896,1897,1898,1899,1901,1902,1903,1904,1905,1907,1908,1909,
+                1910,1912,1913,1914,1915,1916,1918,1919,1920,1921,1923,1924,1925,1926,1928,1929,1930,1931,1932,1934,1935,1936,1937,1939,1940,1941,1942,1944,1945,1946,1947,1949,
+                1950,1951,1952,1954,1955,1956,1957,1958,1960,1961,1962,1963,1965,1966,1967,1968,1970,1971,1972,1973,1975,1976,1977,1978,1980,1981,1982,1983,1985,1986,1987,1988,
+                1990,1991,1992,1993,1995,1996,1997,1998,2000,2001,2002,2003,2005,2006,2007,2008,2010,2011,2012,2013,2015,2016,2017,2018,2020,2021,2022,2023,2025,2026,2027,2028,
+                2030,2031,2032,2034,2035,2036,2037,2039,2040,2041,2042,2044,2045,2046,2047,2049,2050,2051,2052,2054,2055,2056,2058,2059,2060,2061,2063,2064,2065,2066,2068,2069,
+                2070,2071,2073,2074,2075,2077,2078,2079,2080,2082,2083,2084,2085,2087,2088,2089,2091,2092,2093,2094,2096,2097,2098,2099,2101,2102,2103,2105,2106,2107,2108,2110,
+                2111,2112,2113,2115,2116,2117,2119,2120,2121,2122,2124,2125,2126,2128,2129,2130,2131,2133,2134,2135,2137,2138,2139,2140,2142,2143,2144,2146,2147,2148,2149,2151,
+                2152,2153,2155,2156,2157,2158,2160,2161,2162,2164,2165,2166,2168,2169,2170,2171,2173,2174,2175,2177,2178,2179,2180,2182,2183,2184,2186,2187,2188,2190,2191,2192,
+                2193,2195,2196,2197,2199,2200,2201,2203,2204,2205,2206,2208,2209,2210,2212,2213,2214,2216,2217,2218,2219,2221,2222,2223,2225,2226,2227,2229,2230,2231,2233,2234,
+                2235,2236,2238,2239,2240,2242,2243,2244,2246,2247,2248,2250,2251,2252,2253,2255,2256,2257,2259,2260,2261,2263,2264,2265,2267,2268,2269,2271,2272,2273,2275,2276,
+                2277,2278,2280,2281,2282,2284,2285,2286,2288,2289,2290,2292,2293,2294,2296,2297,2298,2300,2301,2302,2304,2305,2306,2308,2309,2310,2312,2313,2314,2315,2317,2318,
+                2319,2321,2322,2323,2325,2326,2327,2329,2330,2331,2333,2334,2335,2337,2338,2339,2341,2342,2343,2345,2346,2347,2349,2350,2351,2353,2354,2355,2357,2358,2359,2361,
+                2362,2363,2365,2366,2367,2369,2370,2371,2373,2374,2376,2377,2378,2380,2381,2382,2384,2385,2386,2388,2389,2390,2392,2393,2394,2396,2397,2398,2400,2401,2402,2404,
+                2405,2406,2408,2409,2410,2412,2413,2415,2416,2417,2419,2420,2421,2423,2424,2425,2427,2428,2429,2431,2432,2433,2435,2436,2437,2439,2440,2442,2443,2444,2446,2447,
+                2448,2450,2451,2452,2454,2455,2456,2458,2459,2461,2462,2463,2465,2466,2467,2469,2470,2471,2473,2474,2476,2477,2478,2480,2481,2482,2484,2485,2486,2488,2489,2491,
+                2492,2493,2495,2496,2497,2499,2500,2501,2503,2504,2506,2507,2508,2510,2511,2512,2514,2515,2517,2518,2519,2521,2522,2523,2525,2526,2528,2529,2530,2532,2533,2534,
+                2536,2537,2539,2540,2541,2543,2544,2545,2547,2548,2550,2551,2552,2554,2555,2556,2558,2559,2561,2562,2563,2565,2566,2568,2569,2570,2572,2573,2574,2576,2577,2579,
+                2580,2581,2583,2584,2586,2587,2588,2590,2591,2592,2594,2595,2597,2598,2599,2601,2602,2604,2605,2606,2608,2609,2611,2612,2613,2615,2616,2617,2619,2620,2622,2623,
+                2624,2626,2627,2629,2630,2631,2633,2634,2636,2637,2638,2640,2641,2643,2644,2645,2647,2648,2650,2651,2652,2654,2655,2657,2658,2659,2661,2662,2664,2665,2666,2668,
+                2669,2671,2672,2673,2675,2676,2678,2679,2681,2682,2683,2685,2686,2688,2689,2690,2692,2693,2695,2696,2697,2699,2700,2702,2703,2704,2706,2707,2709,2710,2712,2713,
+                2714,2716,2717,2719,2720,2721,2723,2724,2726,2727,2729,2730,2731,2733,2734,2736,2737,2738,2740,2741,2743,2744,2746,2747,2748,2750,2751,2753,2754,2755,2757,2758,
+                2760,2761,2763,2764,2765,2767,2768,2770,2771,2773,2774,2775,2777,2778,2780,2781,2783,2784,2785,2787,2788,2790,2791,2793,2794,2795,2797,2798,2800,2801,2803,2804,
+                2805,2807,2808,2810,2811,2813,2814,2815,2817,2818,2820,2821,2823,2824,2826,2827,2828,2830,2831,2833,2834,2836,2837,2838,2840,2841,2843,2844,2846,2847,2849,2850,
+                2851,2853,2854,2856,2857,2859,2860,2862,2863,2864,2866,2867,2869,2870,2872,2873,2875,2876,2877,2879,2880,2882,2883,2885,2886,2888,2889,2890,2892,2893,2895,2896,
+                2898,2899,2901,2902,2904,2905,2906,2908,2909,2911,2912,2914,2915,2917,2918,2920,2921,2922,2924,2925,2927,2928,2930,2931,2933,2934,2936,2937,2939,2940,2941,2943,
+                2944,2946,2947,2949,2950,2952,2953,2955,2956,2958,2959,2960,2962,2963,2965,2966,2968,2969,2971,2972,2974,2975,2977,2978,2979,2981,2982,2984,2985,2987,2988,2990,
+                2991,2993,2994,2996,2997,2999,3000,3002,3003,3004,3006,3007,3009,3010,3012,3013,3015,3016,3018,3019,3021,3022,3024,3025,3027,3028,3030,3031,3033,3034,3035,3037,
+                3038,3040,3041,3043,3044,3046,3047,3049,3050,3052,3053,3055,3056,3058,3059,3061,3062,3064,3065,3067,3068,3070,3071,3073,3074,3075,3077,3078,3080,3081,3083,3084,
+                3086,3087,3089,3090,3092,3093,3095,3096,3098,3099,3101,3102,3104,3105,3107,3108,3110,3111,3113,3114,3116,3117,3119,3120,3122,3123,3125,3126,3128,3129,3131,3132,
+                3134,3135,3137,3138,3140,3141,3143,3144,3146,3147,3149,3150,3152,3153,3155,3156,3158,3159,3161,3162,3164,3165,3167,3168,3170,3171,3173,3174,3176,3177,3179,3180,
+                3182,3183,3185,3186,3188,3189,3191,3192,3194,3195,3197,3198,3200,3201,3203,3204,3206,3207,3209,3210,3212,3213,3215,3216,3218,3220,3221,3223,3224,3226,3227,3229,
+                3230,3232,3233,3235,3236,3238,3239,3241,3242,3244,3245,3247,3248,3250,3251,3253,3254,3256,3257,3259,3260,3262,3264,3265,3267,3268,3270,3271,3273,3274,3276,3277,
+                3279,3280,3282,3283,3285,3286,3288,3289,3291,3293,3294,3296,3297,3299,3300,3302,3303,3305,3306,3308,3309,3311,3312,3314,3315,3317,3319,3320,3322,3323,3325,3326,
+                3328,3329,3331,3332,3334,3335,3337,3338,3340,3342,3343,3345,3346,3348,3349,3351,3352,3354,3355,3357,3358,3360,3362,3363,3365,3366,3368,3369,3371,3372,3374,3375,
+                3377,3378,3380,3382,3383,3385,3386,3388,3389,3391,3392,3394,3395,3397,3399,3400,3402,3403,3405,3406,3408,3409,3411,3413,3414,3416,3417,3419,3420,3422,3423,3425,
+                3426,3428,3430,3431,3433,3434,3436,3437,3439,3440,3442,3444,3445,3447,3448,3450,3451,3453,3454,3456,3458,3459,3461,3462,3464,3465,3467,3468,3470,3472,3473,3475,
+                3476,3478,3479,3481,3483,3484,3486,3487,3489,3490,3492,3493,3495,3497,3498,3500,3501,3503,3504,3506,3508,3509,3511,3512,3514,3515,3517,3519,3520,3522,3523,3525,
+                3526,3528,3530,3531,3533,3534,3536,3537,3539,3541,3542,3544,3545,3547,3548,3550,3552,3553,3555,3556,3558,3559,3561,3563,3564,3566,3567,3569,3570,3572,3574,3575,
+                3577,3578,3580,3581,3583,3585,3586,3588,3589,3591,3593,3594,3596,3597,3599,3600,3602,3604,3605,3607,3608,3610,3612,3613,3615,3616,3618,3619,3621,3623,3624,3626,
+                3627,3629,3631,3632,3634,3635,3637,3639,3640,3642,3643,3645,3647,3648,3650,3651,3653,3654,3656,3658,3659,3661,3662,3664,3666,3667,3669,3670,3672,3674,3675,3677,
+                3678,3680,3682,3683,3685,3686,3688,3690,3691,3693,3694,3696,3698,3699,3701,3702,3704,3706,3707,3709,3710,3712,3714,3715,3717,3718,3720,3722,3723,3725,3726,3728,
+                3730,3731,3733,3734,3736,3738,3739,3741,3742,3744,3746,3747,3749,3751,3752,3754,3755,3757,3759,3760,3762,3763,3765,3767,3768,3770,3771,3773,3775,3776,3778,3780,
+                3781,3783,3784,3786,3788,3789,3791,3792,3794,3796,3797,3799,3801,3802,3804,3805,3807,3809,3810,3812,3813,3815,3817,3818,3820,3822,3823,3825,3826,3828,3830,3831,
+                3833,3835,3836,3838,3839,3841,3843,3844,3846,3848,3849,3851,3852,3854,3856,3857,3859,3861,3862,3864,3865,3867,3869,3870,3872,3874,3875,3877,3879,3880,3882,3883,
+                3885,3887,3888,3890,3892,3893,3895,3896,3898,3900,3901,3903,3905,3906,3908,3910,3911,3913,3914,3916,3918,3919,3921,3923,3924,3926,3928,3929,3931,3932,3934,3936,
+                3937,3939,3941,3942,3944,3946,3947,3949,3951,3952,3954,3955,3957,3959,3960,3962,3964,3965,3967,3969,3970,3972,3974,3975,3977,3978,3980,3982,3983,3985,3987,3988,
+                3990,3992,3993,3995,3997,3998,4000,4002,4003,4005,4007,4008,4010,4012,4013,4015,4016,4018,4020,4021,4023,4025,4026,4028,4030,4031,4033,4035,4036,4038,4040,4041,
+                4043,4045,4046,4048,4050,4051,4053,4055,4056,4058,4060,4061,4063,4065,4066,4068,4070,4071,4073,4075,4076,4078,4080,4081,4083,4085,4086,4088,4090,4091,4093,4095,
+          },
+       },
+       0,//exp_ratio_en
+       0,//exp_ratio_inter_en
+       0,//exp_ratio_count
+       /* exp_ratio_trigger */
+       {
+       },
+       /* isp_sub_module_gamma_lut_pra pra_exp_raion[MIDDLE_TRIGGER_COUNT] */
+       {
+       },
+    },
+    /* isp_sub_module_gtm2_tuning_t isp_sub_module_gtm2_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       5,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             200,
+          },
+          /* aec trigger 1 */
+          {
+             210,
+             400,
+          },
+          /* aec trigger 2 */
+          {
+             410,
+             600,
+          },
+          /* aec trigger 3 */
+          {
+             610,
+             1000,
+          },
+          /* aec trigger 4 */
+          {
+             1010,
+             2000,
+          },
+       },
+       /* isp_sub_module_gtm2_lut_pra pra[MAX_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             1,//enable_cdf_smooth
+             0.008,//cut_ration
+             0.1,//weight
+             1,//ration
+             1,//low_cut
+             1,//enable_free_haho
+             3,//filt_x
+             3,//filt_y
+             4,//param_filt
+             64,//bin_meger
+             1,//ltm_smooth
+             0,//ltm_dehighlight
+             0,//ltm_base
+             0.2,//ltm_smooth_fork
+             0.4,//ltm_smooth_spear
+             1,//ltm_smooth_gamma
+             0.6,//ltm_dehighlight_fork
+             0.8,//ltm_dehighlight_spear
+             2,//ltm_dehighlight_gamma
+             0,//ltm_dark_fork
+             0,//ltm_dark_spear
+             0,//ltm_smooth_noise_erode_area
+             0,//ltm_smooth_filter_area
+             0,//soft_sample_rate
+          },
+          /* para 1 */
+          {
+             1,//enable_cdf_smooth
+             0.01,//cut_ration
+             0.1,//weight
+             1,//ration
+             1,//low_cut
+             1,//enable_free_haho
+             3,//filt_x
+             3,//filt_y
+             4,//param_filt
+             64,//bin_meger
+             1,//ltm_smooth
+             0,//ltm_dehighlight
+             0,//ltm_base
+             0.2,//ltm_smooth_fork
+             0.4,//ltm_smooth_spear
+             1,//ltm_smooth_gamma
+             0.6,//ltm_dehighlight_fork
+             0.8,//ltm_dehighlight_spear
+             2,//ltm_dehighlight_gamma
+             0,//ltm_dark_fork
+             0,//ltm_dark_spear
+             0,//ltm_smooth_noise_erode_area
+             0,//ltm_smooth_filter_area
+             0,//soft_sample_rate
+          },
+          /* para 2 */
+          {
+             1,//enable_cdf_smooth
+             0.02,//cut_ration
+             0.1,//weight
+             1,//ration
+             1,//low_cut
+             1,//enable_free_haho
+             3,//filt_x
+             3,//filt_y
+             4,//param_filt
+             64,//bin_meger
+             1,//ltm_smooth
+             0,//ltm_dehighlight
+             0,//ltm_base
+             0.2,//ltm_smooth_fork
+             0.4,//ltm_smooth_spear
+             1,//ltm_smooth_gamma
+             0.6,//ltm_dehighlight_fork
+             0.8,//ltm_dehighlight_spear
+             2,//ltm_dehighlight_gamma
+             0,//ltm_dark_fork
+             0,//ltm_dark_spear
+             0,//ltm_smooth_noise_erode_area
+             0,//ltm_smooth_filter_area
+             0,//soft_sample_rate
+          },
+          /* para 3 */
+          {
+             1,//enable_cdf_smooth
+             0.025,//cut_ration
+             0.03,//weight
+             1,//ration
+             1,//low_cut
+             1,//enable_free_haho
+             3,//filt_x
+             3,//filt_y
+             4,//param_filt
+             64,//bin_meger
+             1,//ltm_smooth
+             0,//ltm_dehighlight
+             0,//ltm_base
+             0.2,//ltm_smooth_fork
+             0.4,//ltm_smooth_spear
+             1,//ltm_smooth_gamma
+             0.6,//ltm_dehighlight_fork
+             0.8,//ltm_dehighlight_spear
+             2,//ltm_dehighlight_gamma
+             0,//ltm_dark_fork
+             0,//ltm_dark_spear
+             0,//ltm_smooth_noise_erode_area
+             0,//ltm_smooth_filter_area
+             0,//soft_sample_rate
+          },
+          /* para 4 */
+          {
+             1,//enable_cdf_smooth
+             0.03,//cut_ration
+             0.03,//weight
+             1,//ration
+             1,//low_cut
+             1,//enable_free_haho
+             3,//filt_x
+             3,//filt_y
+             4,//param_filt
+             64,//bin_meger
+             1,//ltm_smooth
+             0,//ltm_dehighlight
+             0,//ltm_base
+             0.2,//ltm_smooth_fork
+             0.4,//ltm_smooth_spear
+             1,//ltm_smooth_gamma
+             0.6,//ltm_dehighlight_fork
+             0.8,//ltm_dehighlight_spear
+             2,//ltm_dehighlight_gamma
+             0,//ltm_dark_fork
+             0,//ltm_dark_spear
+             0,//ltm_smooth_noise_erode_area
+             0,//ltm_smooth_filter_area
+             0,//soft_sample_rate
+          },
+       },
+       1,//enable_tuning_mesh
+       4,//mesh_w
+       4,//mesh_h
+    },
+    /* isp_sub_module_3d_lut_tuning_t isp_sub_module_3d_lut_tuning */
+    {
+       0,//enable
+       0,//interpolation_enable
+       0,//count_ae
+       0,//count_awb
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+       },
+       /* awb trigger */
+       {
+       },
+       /* isp_sub_module_3d_lut_pra pra[MIN_TRIGGER_COUNT=3][MIN_TRIGGER_COUNT=3] */
+       {
+       },
+    },
+    /* isp_sub_module_rgbyuv_tuning_t isp_sub_module_rgbyuv_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_cm_tuning_t isp_sub_module_cm_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       5,//count_ae
+       7,//count_awb
+       1,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             180,
+          },
+          /* aec trigger 1 */
+          {
+             200,
+             300,
+          },
+          /* aec trigger 2 */
+          {
+             320,
+             360,
+          },
+          /* aec trigger 3 */
+          {
+             400,
+             450,
+          },
+          /* aec trigger 4 */
+          {
+             490,
+             550,
+          },
+       },
+       /* awb trigger */
+       {
+          /* awb trigger 0 */
+          {
+             0,
+             2000,
+          },
+          /* awb trigger 1 */
+          {
+             2900,
+             3100,
+          },
+          /* awb trigger 2 */
+          {
+             3900,
+             4000,
+          },
+          /* awb trigger 3 */
+          {
+             4900,
+             5000,
+          },
+          /* awb trigger 4 */
+          {
+             5500,
+             5700,
+          },
+          /* awb trigger 5 */
+          {
+             6400,
+             6500,
+          },
+          /* awb trigger 6 */
+          {
+             7400,
+             7500,
+          },
+       },
+       /* isp_sub_module_cm_pra pra[MIDDLE_TRIGGER_COUNT=5][MIDDLE_TRIGGER_COUNT=7] */
+       {
+          /* aec trigger 0 */
+          {
+             /* awb para 0 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 1 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 2 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 3 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 4 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 5 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 6 */
+             {
+                0,//saturation
+                0,//hue
+             },
+          },
+          /* aec trigger 1 */
+          {
+             /* awb para 0 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 1 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 2 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 3 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 4 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 5 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 6 */
+             {
+                0,//saturation
+                0,//hue
+             },
+          },
+          /* aec trigger 2 */
+          {
+             /* awb para 0 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 1 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 2 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 3 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 4 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 5 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 6 */
+             {
+                0,//saturation
+                0,//hue
+             },
+          },
+          /* aec trigger 3 */
+          {
+             /* awb para 0 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 1 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 2 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 3 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 4 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 5 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 6 */
+             {
+                0,//saturation
+                0,//hue
+             },
+          },
+          /* aec trigger 4 */
+          {
+             /* awb para 0 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 1 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 2 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 3 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 4 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 5 */
+             {
+                0,//saturation
+                0,//hue
+             },
+             /* awb para 6 */
+             {
+                0,//saturation
+                0,//hue
+             },
+          },
+       },
+    },
+    /* isp_sub_module_lee_tuning_t isp_sub_module_lee_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       11,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             200,
+          },
+          /* aec trigger 1 */
+          {
+             210,
+             400,
+          },
+          /* aec trigger 2 */
+          {
+             410,
+             600.1,
+          },
+          /* aec trigger 3 */
+          {
+             610,
+             800.1,
+          },
+          /* aec trigger 4 */
+          {
+             810,
+             1000.1,
+          },
+          /* aec trigger 5 */
+          {
+             1010,
+             1400.1,
+          },
+          /* aec trigger 6 */
+          {
+             1440,
+             2000.1,
+          },
+          /* aec trigger 7 */
+          {
+             128,
+             128.1,
+          },
+          /* aec trigger 8 */
+          {
+             256,
+             256.1,
+          },
+          /* aec trigger 9 */
+          {
+             512,
+             512.1,
+          },
+          /* aec trigger 10 */
+          {
+             1024,
+             1024.1,
+          },
+       },
+       /* isp_sub_module_lee_pra pra[MAX_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-234,-600,//bpf(3,1:4)
+                0,0,-600,3336,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             50,//strength_pos_edge
+             30,//strength_neg_edge
+             500,//overshoot_pos_edge
+             -500,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {32,32,32,32,40,53,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,12,12,12,12,14,16,20,24,28,32,38,42,48,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,24,12,12,0},//luma_weight[64]
+          },
+          /* para 1 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-234,-600,//bpf(3,1:4)
+                0,0,-600,3336,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             30,//strength_neg_edge
+             500,//overshoot_pos_edge
+             -500,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {32,32,32,32,40,53,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,12,12,12,12,14,16,20,61,61,64,64,63,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 2 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-284,-524,//bpf(3,1:4)
+                0,0,-524,3232,//bpf(4,1:4)
+             },
+             {
+                0,0,0,0,//hpf(1,1:4)
+                0,0,-284,-524,//hpf(2,1:4)
+                0,0,-524,3232,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             40,//strength_neg_edge
+             400,//overshoot_pos_edge
+             -400,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,28,40,52,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,33,61,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 3 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-284,-524,//bpf(3,1:4)
+                0,0,-524,3232,//bpf(4,1:4)
+             },
+             {
+                0,0,0,0,//hpf(1,1:4)
+                0,0,-284,-524,//hpf(2,1:4)
+                0,0,-524,3232,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             40,//strength_neg_edge
+             400,//overshoot_pos_edge
+             -400,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,28,40,52,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,33,61,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 4 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-284,-524,//bpf(3,1:4)
+                0,0,-524,3232,//bpf(4,1:4)
+             },
+             {
+                0,0,0,0,//hpf(1,1:4)
+                0,0,-284,-524,//hpf(2,1:4)
+                0,0,-524,3232,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             40,//strength_neg_edge
+             400,//overshoot_pos_edge
+             -400,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,28,40,52,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,33,61,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 5 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-284,-524,//bpf(3,1:4)
+                0,0,-524,3232,//bpf(4,1:4)
+             },
+             {
+                0,0,0,0,//hpf(1,1:4)
+                0,0,-284,-524,//hpf(2,1:4)
+                0,0,-524,3232,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             40,//strength_neg_edge
+             400,//overshoot_pos_edge
+             -400,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,28,40,52,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,33,61,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 6 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             0,//shrink enable
+             1,//enable_luma_weight_function
+             1,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,0,0,0,//bpf(1,1:4)
+                0,0,0,0,//bpf(2,1:4)
+                0,0,-284,-524,//bpf(3,1:4)
+                0,0,-524,3232,//bpf(4,1:4)
+             },
+             {
+                0,0,0,0,//hpf(1,1:4)
+                0,0,-284,-524,//hpf(2,1:4)
+                0,0,-524,3232,//hpf(3,1:4)
+             },
+             100,//strength_pos_edge
+             40,//strength_neg_edge
+             400,//overshoot_pos_edge
+             -400,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {3,5,12,18,22,30,44,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             150,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,28,40,52,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {12,12,12,12,12,12,12,33,61,63,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 7 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             1,//shrink enable
+             1,//enable_luma_weight_function
+             0,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,-4,-18,-30,//bpf(1,1:4)
+                -4,-44,-100,-120,//bpf(2,1:4)
+                -18,-100,-200,488,//bpf(3,1:4)
+                -30,-120,488,600,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             30,//strength_pos_edge
+             22,//strength_neg_edge
+             300,//overshoot_pos_edge
+             -300,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {0,0,0,0,0,0,0,0,0,8,16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             240,//adjust_strength
+             24,//coef_moving_c00
+             30,//coef_moving_c01
+             30,//coef_moving_c10
+             40,//coef_moving_c11
+             {16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {2,6,10,18,26,34,42,50,58,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 8 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             1,//shrink enable
+             1,//enable_luma_weight_function
+             0,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,-4,-18,-30,//bpf(1,1:4)
+                -4,-44,-100,-120,//bpf(2,1:4)
+                -18,-100,-200,488,//bpf(3,1:4)
+                -30,-120,488,600,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             27,//strength_pos_edge
+             18,//strength_neg_edge
+             300,//overshoot_pos_edge
+             -300,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {0,0,0,0,0,0,0,0,0,0,8,16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             250,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {2,6,10,18,26,34,42,50,58,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 9 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             1,//shrink enable
+             1,//enable_luma_weight_function
+             0,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,-4,-18,-30,//bpf(1,1:4)
+                -4,-44,-100,-120,//bpf(2,1:4)
+                -18,-100,-200,488,//bpf(3,1:4)
+                -30,-120,488,600,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             18,//strength_pos_edge
+             12,//strength_neg_edge
+             250,//overshoot_pos_edge
+             -250,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {0,0,0,0,0,0,0,0,0,0,0,0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             255,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {8,16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {2,6,10,18,26,34,42,50,58,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+          /* para 10 */
+          {
+             1,//enable_noise_level_weight_edge
+             0,//enable_skin_detection
+             1,//shrink enable
+             1,//enable_luma_weight_function
+             0,//enable_mono_mode
+             0,//skin_weight
+             {
+                0,-4,-18,-30,//bpf(1,1:4)
+                -4,-44,-100,-120,//bpf(2,1:4)
+                -18,-100,-200,488,//bpf(3,1:4)
+                -30,-120,488,600,//bpf(4,1:4)
+             },
+             {
+                -54,-186,-286,-286,//hpf(1,1:4)
+                -114,-286,166,694,//hpf(2,1:4)
+                -146,-286,694,1700,//hpf(3,1:4)
+             },
+             8,//strength_pos_edge
+             8,//strength_neg_edge
+             180,//overshoot_pos_edge
+             -180,//overshoot_neg_edge
+             {77,92,112,127},//colour_u_p[4]
+             {0,-422,128,797,0},//colour_u_pdes[5]
+             {0,5,0,-6,0},//colour_u_slop[5]
+             {133,143,163,173},//colour_v_p[4]
+             {0,-1154,128,1588,0},//colour_v_pdes[5]
+             {0,8,0,-9,0},//colour_v_slop[5]
+             114,//conv_3x3_ration_constant
+             146,//conv_1x7_ration_constant
+             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,6,8,10,12,16,20,24,28,32,36,40,44,48,52,56,60,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//edge_w[64]
+             0,//limitation_for_move_strength
+             255,//adjust_strength
+             28,//coef_moving_c00
+             29,//coef_moving_c01
+             29,//coef_moving_c10
+             28,//coef_moving_c11
+             {0,8,16,24,32,40,48,56,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64},//shrink_weight[64]
+             {2,6,10,18,26,34,42,50,58,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,56,48,36,24,12},//luma_weight[64]
+          },
+       },
+    },
+    /* isp_sub_module_cnf_tuning_t isp_sub_module_cnf_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       1,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* rgbyuv_cof */
+       {
+          256,//coef_r_y
+          1025,//coef_r_cb
+          358,//coef_r_cr
+          256,//coef_g_y
+          1113,//coef_g_cb
+          1207,//coef_g_cr
+          256,//coef_b_y
+          453,//coef_b_cb
+          0,//coef_b_cr
+          0,//y_offset
+          128,//cb_offset
+          128,//cr_offset
+       },
+       256,//lut_size
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             1,
+          },
+       },
+       /* isp_sub_module_cnf_pra pra[MAX_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             0,//enable
+             2,//zoom_par
+             0,//dn_level
+             {
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+             },//lut0
+             {
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+             },//lut1
+          },
+       },
+    },
+    /* isp_sub_module_3d_denoise_tuning_t isp_sub_module_3d_denoise_tuning */
+    {
+       1,//enable
+       1,//interpolation_enable
+       12,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             1,
+             200,
+          },
+          /* aec trigger 1 */
+          {
+             210,
+             400,
+          },
+          /* aec trigger 2 */
+          {
+             410,
+             800.1,
+          },
+          /* aec trigger 3 */
+          {
+             810,
+             1000.1,
+          },
+          /* aec trigger 4 */
+          {
+             1010,
+             1400.1,
+          },
+          /* aec trigger 5 */
+          {
+             1410,
+             2000,
+          },
+          /* aec trigger 6 */
+          {
+             64,
+             64.1,
+          },
+          /* aec trigger 7 */
+          {
+             128,
+             128.1,
+          },
+          /* aec trigger 8 */
+          {
+             256,
+             256.1,
+          },
+          /* aec trigger 9 */
+          {
+             512,
+             512.1,
+          },
+          /* aec trigger 10 */
+          {
+             1024,
+             1024.1,
+          },
+          /* aec trigger 11 */
+          {
+             2000,
+             2000.1,
+          },
+       },
+       /* isp_sub_module_3d_denoise_pra pra[MAX_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             7,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,6,6,6,6,8,8,8,8,9,9,9,9,10,12,12,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 1 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             16,//nr3d_ite
+             0,//nr3d_msr
+             240,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,8,8,10,10,12,12,14,14,14,15,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 2 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             7,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,6,6,6,6,8,8,8,8,9,9,9,9,10,12,12,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 3 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             7,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 4 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             7,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,6,6,6,6,8,8,8,8,9,9,9,9,10,12,12,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 5 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             12,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,6,6,6,6,8,8,8,8,9,9,9,9,10,12,12,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 6 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             10,//nr3d_npy_th1
+             60,//nr3d_npy_th2
+             5,//nr3d_mpy_th1
+             10,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             5,//nr3d_mpc_th1
+             12,//nr3d_mpc_th2
+             6,//nr3d_lamda2d
+             12,//nr3d_ite
+             0,//nr3d_msr
+             252,//nr3d_decay
+             0,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             8,//dbk_h_mv_diff
+             12,//dbk_h_mv_str
+             8,//dbk_v_mv_diff
+             12,//dbk_v_mv_str
+             20,//dbk_h_yy_flat
+             10,//dbk_h_yy_diff
+             20,//dbk_v_yy_flat
+             10,//dbk_v_yy_diff
+             10,//dbk_satu
+             0,//dbk_gaus_y_c11
+             0,//dbk_gaus_y_c12
+             1,//dbk_gaus_y_c13
+             0,//dbk_gaus_y_c21
+             252,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             0,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                1,1,1,1,1,5,6,6,6,6,8,8,8,8,9,9,9,9,10,12,12,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             2,//dbk_h_ed_thrd
+             2,//dbk_v_ed_thrd
+          },
+          /* para 7 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             15,//nr3d_npy_th1
+             80,//nr3d_npy_th2
+             60,//nr3d_mpy_th1
+             130,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             80,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             60,//nr3d_mpc_th1
+             130,//nr3d_mpc_th2
+             30,//nr3d_lamda2d
+             40,//nr3d_ite
+             0,//nr3d_msr
+             248,//nr3d_decay
+             10,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             50,//dbk_h_mv_diff
+             70,//dbk_h_mv_str
+             50,//dbk_v_mv_diff
+             70,//dbk_v_mv_str
+             85,//dbk_h_yy_flat
+             70,//dbk_h_yy_diff
+             85,//dbk_v_yy_flat
+             70,//dbk_v_yy_diff
+             30,//dbk_satu
+             1,//dbk_gaus_y_c11
+             14,//dbk_gaus_y_c12
+             31,//dbk_gaus_y_c13
+             3,//dbk_gaus_y_c21
+             66,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             1,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,
+             },
+             /* noise profile cbcr*/
+             {
+                0,0,0,0,0,0,0,1,4,6,8,11,13,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             24,//dbk_h_ed_thrd
+             24,//dbk_v_ed_thrd
+          },
+          /* para 8 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             30,//nr3d_npy_th1
+             100,//nr3d_npy_th2
+             60,//nr3d_mpy_th1
+             130,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             60,//nr3d_mpc_th1
+             130,//nr3d_mpc_th2
+             30,//nr3d_lamda2d
+             45,//nr3d_ite
+             0,//nr3d_msr
+             248,//nr3d_decay
+             20,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             1,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             252,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             60,//dbk_h_mv_diff
+             90,//dbk_h_mv_str
+             60,//dbk_v_mv_diff
+             90,//dbk_v_mv_str
+             100,//dbk_h_yy_flat
+             80,//dbk_h_yy_diff
+             100,//dbk_v_yy_flat
+             80,//dbk_v_yy_diff
+             50,//dbk_satu
+             3,//dbk_gaus_y_c11
+             16,//dbk_gaus_y_c12
+             30,//dbk_gaus_y_c13
+             5,//dbk_gaus_y_c21
+             50,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             1,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                0,0,0,0,0,0,0,0,0,0,1,2,3,3,4,4,5,5,6,7,8,9,10,11,12,13,14,15,16,16,16,16,16,17,18,18,18,18,19,19,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,
+             },
+             /* noise profile cbcr*/
+             {
+                0,0,0,0,0,0,0,1,4,6,8,11,13,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             24,//dbk_h_ed_thrd
+             24,//dbk_v_ed_thrd
+          },
+          /* para 9 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             50,//nr3d_npy_th1
+             130,//nr3d_npy_th2
+             85,//nr3d_mpy_th1
+             170,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             90,//nr3d_mpc_th1
+             180,//nr3d_mpc_th2
+             30,//nr3d_lamda2d
+             50,//nr3d_ite
+             0,//nr3d_msr
+             248,//nr3d_decay
+             40,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             4,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             240,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             60,//dbk_h_mv_diff
+             90,//dbk_h_mv_str
+             60,//dbk_v_mv_diff
+             90,//dbk_v_mv_str
+             100,//dbk_h_yy_flat
+             85,//dbk_h_yy_diff
+             100,//dbk_v_yy_flat
+             85,//dbk_v_yy_diff
+             70,//dbk_satu
+             7,//dbk_gaus_y_c11
+             18,//dbk_gaus_y_c12
+             25,//dbk_gaus_y_c13
+             10,//dbk_gaus_y_c21
+             36,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             1,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,16,16,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
+             },
+             /* noise profile cbcr*/
+             {
+                0,0,0,0,0,0,0,1,4,6,8,11,13,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             28,//dbk_h_ed_thrd
+             28,//dbk_v_ed_thrd
+          },
+          /* para 10 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             90,//nr3d_npy_th1
+             170,//nr3d_npy_th2
+             90,//nr3d_mpy_th1
+             180,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             90,//nr3d_mpc_th1
+             180,//nr3d_mpc_th2
+             30,//nr3d_lamda2d
+             55,//nr3d_ite
+             0,//nr3d_msr
+             248,//nr3d_decay
+             60,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             10,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             216,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             60,//dbk_h_mv_diff
+             90,//dbk_h_mv_str
+             60,//dbk_v_mv_diff
+             90,//dbk_v_mv_str
+             100,//dbk_h_yy_flat
+             90,//dbk_h_yy_diff
+             100,//dbk_v_yy_flat
+             90,//dbk_v_yy_diff
+             100,//dbk_satu
+             11,//dbk_gaus_y_c11
+             18,//dbk_gaus_y_c12
+             22,//dbk_gaus_y_c13
+             13,//dbk_gaus_y_c21
+             26,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             1,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,3,4,5,6,6,7,8,9,10,10,11,12,13,14,14,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                0,0,0,0,0,0,0,1,4,6,8,11,13,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             28,//dbk_h_ed_thrd
+             28,//dbk_v_ed_thrd
+          },
+          /* para 11 */
+          {
+             1,//enable_3d_noise
+             1,//nr3d_pp_en
+             1,//nr3d_md_en
+             100,//nr3d_npy_th1
+             180,//nr3d_npy_th2
+             120,//nr3d_mpy_th1
+             240,//nr3d_mpy_th2
+             30,//nr3d_npc_th1
+             60,//nr3d_npc_th2
+             150,//nr3d_npc_th3
+             180,//nr3d_npc_th4
+             120,//nr3d_mpc_th1
+             240,//nr3d_mpc_th2
+             40,//nr3d_lamda2d
+             60,//nr3d_ite
+             0,//nr3d_msr
+             240,//nr3d_decay
+             80,//nr3d_satu
+             0,//nr3d_gaus_y_c11
+             0,//nr3d_gaus_y_c12
+             10,//nr3d_gaus_y_c13
+             0,//nr3d_gaus_y_c21
+             216,//nr3d_gaus_y_c23
+             16383,//nr3d_tauhard_th
+             0,//md_blk_ave_sel
+             0,//bypass_saturation_adjust
+             0,//post_process_y_filter_sel
+             39,//pixel_weight_filter_c11
+             57,//pixel_weight_filter_c12
+             64,//pixel_weight_filter_c13
+             0,//disable_1st_media_filter
+             1,//dbk_h_en
+             1,//dbk_v_en
+             0,//dbk_wr2ddr
+             0,//dbk_bypass
+             60,//dbk_h_mv_diff
+             90,//dbk_h_mv_str
+             60,//dbk_v_mv_diff
+             90,//dbk_v_mv_str
+             100,//dbk_h_yy_flat
+             95,//dbk_h_yy_diff
+             100,//dbk_v_yy_flat
+             95,//dbk_v_yy_diff
+             120,//dbk_satu
+             11,//dbk_gaus_y_c11
+             18,//dbk_gaus_y_c12
+             22,//dbk_gaus_y_c13
+             13,//dbk_gaus_y_c21
+             26,//dbk_gaus_y_c23
+             0,//bypass_dbk_saturation_adjust
+             1,//md_yuv_sel
+             1,//md_1st_media_filter_disable
+             0,//md_noise_profile_selection
+             0,//md_divs_selection
+             0,//md_expand_ration
+             0,//md_sort_sel
+             /* noise profile y */
+             {
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,5,6,7,7,7,8,9,9,9,10,11,11,11,12,12,13,13,13,14,14,14,15,15,15,16,16,16,16,16,16,16,16,
+             },
+             /* noise profile cbcr*/
+             {
+                0,0,0,0,0,0,0,1,4,6,8,11,13,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+             },
+             1,//dbk_h_ed_en
+             1,//dbk_v_ed_en
+             0,//dbk_h_ed_sel
+             0,//dbk_v_ed_sel
+             28,//dbk_h_ed_thrd
+             28,//dbk_v_ed_thrd
+          },
+       },
+    },
+    /* isp_sub_module_dithering_tuning_t isp_sub_module_dithering_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_isp_vfe_tuning_t isp_sub_module_isp_vfe_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       1,//count_ae
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             0,
+          },
+       },
+       /* isp_sub_module_isp_vfe_tuning pra[MAX_TRIGGER_COUNT] */
+       {
+          /* para 0 */
+          {
+             /* isp_sub_module_hdr_mix_pra */
+             {
+                0,//blc_short_exp
+                0,//blc_mid_exp
+                0,//blc_long_exp
+                0,//hdr_motion_en_sm
+                0,//hdr_alpha_s_th_sm
+                0,//hdr_exp_value_th1_sm
+                0,//hdr_th2_th1_reverse_sm
+                0,//hdr_noise_sp_sm
+                0,//hdr_motion_mp_sm
+                0,//hdr_motion_en_sl
+                0,//hdr_alpha_s_th_sl
+                0,//hdr_exp_value_th1_sl
+                0,//hdr_th2_th1_reverse_sl
+                0,//hdr_noise_sp_sl
+                0,//hdr_motion_mp_sl
+                0,//hdr_md_th4_sl
+                0,//hdr_md_th9_sl
+                0,//hdr_md_th16_sl
+                0,//hdr_md_th25_sl
+                /* noise_profile_l[129] */
+                {
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                },
+                /* noise_profile_m[129] */
+                {
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                },
+                /* noise_profile_s[129] */
+                {
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                },
+                0,//hdr_policy
+                0,//enable_hdr_blc
+                0,//mv_fix_th
+                0,//mv_fix_value
+                0,//mv_fix_en
+                0,//use_long_exp_fix
+                0,//use_mv_fix_value_fix
+                0,//enable_sexp_denoise
+                /* gaus_coef[4] */
+                {
+                   0,0,0,0,
+                },
+             },
+             /* STRU_AI_ISP_PRA_T */
+             {
+                {""},//net_name
+                0,//scale
+                {
+                   0,//k_coeff[0]
+                   0,//k_coeff[1]
+                },
+                {
+                   0,//b_coeff[0]
+                   0,//b_coeff[1]
+                   0,//b_coeff[2]
+                },
+                /* blc */
+                {0,0,0,0},
+             },
+          },
+       },
+    },
+    /* isp_sub_module_scaler_tuning_t isp_sub_module_scaler_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_eis_ldc_tuning_t isp_sub_module_eis_ldc_tuning */
+    {
+       0,//enable
+    },
+    /* isp_sub_module_cm2_tuning_t isp_sub_module_cm2_tuning */
+    {
+       0,//enable
+       1,//interpolation_enable
+       5,//count_ae
+       1,//count_awb
+       1,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+          /* aec trigger 0 */
+          {
+             0,
+             170,
+          },
+          /* aec trigger 1 */
+          {
+             200,
+             300,
+          },
+          /* aec trigger 2 */
+          {
+             340,
+             370,
+          },
+          /* aec trigger 3 */
+          {
+             400,
+             430,
+          },
+          /* aec trigger 4 */
+          {
+             450,
+             500,
+          },
+       },
+       /* awb trigger */
+       {
+          /* awb trigger 0 */
+          {
+             0,
+             8000,
+          },
+       },
+       /* isp_sub_module_cm_pra pra[MIDDLE_TRIGGER_COUNT=5][MIDDLE_TRIGGER_COUNT=7] */
+       {
+          /* aec trigger 0 */
+          {
+             /* awb para 0 */
+             {
+                1.1,//saturation
+                0,//hue
+                10,//y_lo_th1
+                40,//y_lo_th2
+                1022,//y_hi_th1
+                1023,//y_hi_th2
+             },
+          },
+          /* aec trigger 1 */
+          {
+             /* awb para 0 */
+             {
+                1,//saturation
+                0,//hue
+                10,//y_lo_th1
+                40,//y_lo_th2
+                1022,//y_hi_th1
+                1023,//y_hi_th2
+             },
+          },
+          /* aec trigger 2 */
+          {
+             /* awb para 0 */
+             {
+                0.9,//saturation
+                0,//hue
+                10,//y_lo_th1
+                40,//y_lo_th2
+                1000,//y_hi_th1
+                1023,//y_hi_th2
+             },
+          },
+          /* aec trigger 3 */
+          {
+             /* awb para 0 */
+             {
+                0.7,//saturation
+                0,//hue
+                10,//y_lo_th1
+                40,//y_lo_th2
+                1000,//y_hi_th1
+                1023,//y_hi_th2
+             },
+          },
+          /* aec trigger 4 */
+          {
+             /* awb para 0 */
+             {
+                0.6,//saturation
+                0,//hue
+                10,//y_lo_th1
+                40,//y_lo_th2
+                1000,//y_hi_th1
+                1023,//y_hi_th2
+             },
+          },
+       },
+    },
+    /* isp_sub_module_lsc_pra isp_sub_module_hdr_lsc_tuning */
+    {
+       0,//enable
+       0,//interpolation_enable
+       0,//count_ae
+       0,//count_awb
+       0,//trigger_mode : 0 gain trigger 1 lux trigger
+       /* aec trigger */
+       {
+       },
+       /* awb trigger */
+       {
+       },
+       /* isp_sub_module_lsc_pra */
+       {
+       },
+    },
+},
+/* stats_config_t stats_config */
+{
+},
+/* aec_tuning_t aec_tuning */
+{
+   /* ae version */
+   0x00000001,
+   /* ae enable */
+   0,
+   /* ae start_exp_index */
+   100,
+   /* ae start_skip_count */
+   1,
+   /* ae torlerence */
+   2,
+   /* ae exp_table_para */
+   {
+      /* count */
+      496,
+      /* ev0_count */
+      496,
+      /* ev2_count */
+      496,
+      /* fix_fps_index */
+      25,
+      /* enable_isp_digital_gain */
+      0,
+      /* max_sensor_gain */
+      2500,
+      /* max_isp_gain1 */
+      1,
+      /* exp_table */
+      {
+      //1,1350
+      //500,1350
+         {    256,      1   },         /* Gain = 1.000000 Exposure Index = 0 */
+         {    264,      1   },         /* Gain = 1.031250 Exposure Index = 1 */
+         {    272,      1   },         /* Gain = 1.062500 Exposure Index = 2 */
+         {    281,      1   },         /* Gain = 1.097656 Exposure Index = 3 */
+         {    290,      1   },         /* Gain = 1.132812 Exposure Index = 4 */
+         {    299,      1   },         /* Gain = 1.167969 Exposure Index = 5 */
+         {    308,      1   },         /* Gain = 1.203125 Exposure Index = 6 */
+         {    318,      1   },         /* Gain = 1.242188 Exposure Index = 7 */
+         {    328,      1   },         /* Gain = 1.281250 Exposure Index = 8 */
+         {    338,      1   },         /* Gain = 1.320312 Exposure Index = 9 */
+         {    349,      1   },         /* Gain = 1.363281 Exposure Index = 10 */
+         {    360,      1   },         /* Gain = 1.406250 Exposure Index = 11 */
+         {    371,      1   },         /* Gain = 1.449219 Exposure Index = 12 */
+         {    383,      1   },         /* Gain = 1.496094 Exposure Index = 13 */
+         {    395,      1   },         /* Gain = 1.542969 Exposure Index = 14 */
+         {    407,      1   },         /* Gain = 1.589844 Exposure Index = 15 */
+         {    420,      1   },         /* Gain = 1.640625 Exposure Index = 16 */
+         {    433,      1   },         /* Gain = 1.691406 Exposure Index = 17 */
+         {    446,      1   },         /* Gain = 1.742188 Exposure Index = 18 */
+         {    460,      1   },         /* Gain = 1.796875 Exposure Index = 19 */
+         {    474,      1   },         /* Gain = 1.851562 Exposure Index = 20 */
+         {    489,      1   },         /* Gain = 1.910156 Exposure Index = 21 */
+         {    504,      1   },         /* Gain = 1.968750 Exposure Index = 22 */
+         {    260,      2   },         /* Gain = 1.015625 Exposure Index = 23 */
+         {    268,      2   },         /* Gain = 1.046875 Exposure Index = 24 */
+         {    277,      2   },         /* Gain = 1.082031 Exposure Index = 25 */
+         {    286,      2   },         /* Gain = 1.117188 Exposure Index = 26 */
+         {    295,      2   },         /* Gain = 1.152344 Exposure Index = 27 */
+         {    304,      2   },         /* Gain = 1.187500 Exposure Index = 28 */
+         {    314,      2   },         /* Gain = 1.226562 Exposure Index = 29 */
+         {    324,      2   },         /* Gain = 1.265625 Exposure Index = 30 */
+         {    334,      2   },         /* Gain = 1.304688 Exposure Index = 31 */
+         {    345,      2   },         /* Gain = 1.347656 Exposure Index = 32 */
+         {    356,      2   },         /* Gain = 1.390625 Exposure Index = 33 */
+         {    367,      2   },         /* Gain = 1.433594 Exposure Index = 34 */
+         {    379,      2   },         /* Gain = 1.480469 Exposure Index = 35 */
+         {    261,      3   },         /* Gain = 1.019531 Exposure Index = 36 */
+         {    269,      3   },         /* Gain = 1.050781 Exposure Index = 37 */
+         {    278,      3   },         /* Gain = 1.085938 Exposure Index = 38 */
+         {    287,      3   },         /* Gain = 1.121094 Exposure Index = 39 */
+         {    296,      3   },         /* Gain = 1.156250 Exposure Index = 40 */
+         {    305,      3   },         /* Gain = 1.191406 Exposure Index = 41 */
+         {    315,      3   },         /* Gain = 1.230469 Exposure Index = 42 */
+         {    325,      3   },         /* Gain = 1.269531 Exposure Index = 43 */
+         {    335,      3   },         /* Gain = 1.308594 Exposure Index = 44 */
+         {    259,      4   },         /* Gain = 1.011719 Exposure Index = 45 */
+         {    267,      4   },         /* Gain = 1.042969 Exposure Index = 46 */
+         {    276,      4   },         /* Gain = 1.078125 Exposure Index = 47 */
+         {    285,      4   },         /* Gain = 1.113281 Exposure Index = 48 */
+         {    294,      4   },         /* Gain = 1.148438 Exposure Index = 49 */
+         {    303,      4   },         /* Gain = 1.183594 Exposure Index = 50 */
+         {    313,      4   },         /* Gain = 1.222656 Exposure Index = 51 */
+         {    258,      5   },         /* Gain = 1.007812 Exposure Index = 52 */
+         {    266,      5   },         /* Gain = 1.039062 Exposure Index = 53 */
+         {    274,      5   },         /* Gain = 1.070312 Exposure Index = 54 */
+         {    283,      5   },         /* Gain = 1.105469 Exposure Index = 55 */
+         {    292,      5   },         /* Gain = 1.140625 Exposure Index = 56 */
+         {    301,      5   },         /* Gain = 1.175781 Exposure Index = 57 */
+         {    259,      6   },         /* Gain = 1.011719 Exposure Index = 58 */
+         {    267,      6   },         /* Gain = 1.042969 Exposure Index = 59 */
+         {    276,      6   },         /* Gain = 1.078125 Exposure Index = 60 */
+         {    285,      6   },         /* Gain = 1.113281 Exposure Index = 61 */
+         {    294,      6   },         /* Gain = 1.148438 Exposure Index = 62 */
+         {    260,      7   },         /* Gain = 1.015625 Exposure Index = 63 */
+         {    268,      7   },         /* Gain = 1.046875 Exposure Index = 64 */
+         {    277,      7   },         /* Gain = 1.082031 Exposure Index = 65 */
+         {    286,      7   },         /* Gain = 1.117188 Exposure Index = 66 */
+         {    258,      8   },         /* Gain = 1.007812 Exposure Index = 67 */
+         {    266,      8   },         /* Gain = 1.039062 Exposure Index = 68 */
+         {    274,      8   },         /* Gain = 1.070312 Exposure Index = 69 */
+         {    283,      8   },         /* Gain = 1.105469 Exposure Index = 70 */
+         {    260,      9   },         /* Gain = 1.015625 Exposure Index = 71 */
+         {    268,      9   },         /* Gain = 1.046875 Exposure Index = 72 */
+         {    277,      9   },         /* Gain = 1.082031 Exposure Index = 73 */
+         {    257,     10   },         /* Gain = 1.003906 Exposure Index = 74 */
+         {    265,     10   },         /* Gain = 1.035156 Exposure Index = 75 */
+         {    273,     10   },         /* Gain = 1.066406 Exposure Index = 76 */
+         {    256,     11   },         /* Gain = 1.000000 Exposure Index = 77 */
+         {    264,     11   },         /* Gain = 1.031250 Exposure Index = 78 */
+         {    272,     11   },         /* Gain = 1.062500 Exposure Index = 79 */
+         {    257,     12   },         /* Gain = 1.003906 Exposure Index = 80 */
+         {    265,     12   },         /* Gain = 1.035156 Exposure Index = 81 */
+         {    273,     12   },         /* Gain = 1.066406 Exposure Index = 82 */
+         {    260,     13   },         /* Gain = 1.015625 Exposure Index = 83 */
+         {    268,     13   },         /* Gain = 1.046875 Exposure Index = 84 */
+         {    257,     14   },         /* Gain = 1.003906 Exposure Index = 85 */
+         {    265,     14   },         /* Gain = 1.035156 Exposure Index = 86 */
+         {    273,     14   },         /* Gain = 1.066406 Exposure Index = 87 */
+         {    263,     15   },         /* Gain = 1.027344 Exposure Index = 88 */
+         {    271,     15   },         /* Gain = 1.058594 Exposure Index = 89 */
+         {    262,     16   },         /* Gain = 1.023438 Exposure Index = 90 */
+         {    270,     16   },         /* Gain = 1.054688 Exposure Index = 91 */
+         {    262,     17   },         /* Gain = 1.023438 Exposure Index = 92 */
+         {    270,     17   },         /* Gain = 1.054688 Exposure Index = 93 */
+         {    263,     18   },         /* Gain = 1.027344 Exposure Index = 94 */
+         {    257,     19   },         /* Gain = 1.003906 Exposure Index = 95 */
+         {    265,     19   },         /* Gain = 1.035156 Exposure Index = 96 */
+         {    260,     20   },         /* Gain = 1.015625 Exposure Index = 97 */
+         {    268,     20   },         /* Gain = 1.046875 Exposure Index = 98 */
+         {    263,     21   },         /* Gain = 1.027344 Exposure Index = 99 */
+         {    259,     22   },         /* Gain = 1.011719 Exposure Index = 100 */
+         {    267,     22   },         /* Gain = 1.042969 Exposure Index = 101 */
+         {    264,     23   },         /* Gain = 1.031250 Exposure Index = 102 */
+         {    261,     24   },         /* Gain = 1.019531 Exposure Index = 103 */
+         {    259,     25   },         /* Gain = 1.011719 Exposure Index = 104 */
+         {    257,     26   },         /* Gain = 1.003906 Exposure Index = 105 */
+         {    265,     26   },         /* Gain = 1.035156 Exposure Index = 106 */
+         {    263,     27   },         /* Gain = 1.027344 Exposure Index = 107 */
+         {    262,     28   },         /* Gain = 1.023438 Exposure Index = 108 */
+         {    261,     29   },         /* Gain = 1.019531 Exposure Index = 109 */
+         {    260,     30   },         /* Gain = 1.015625 Exposure Index = 110 */
+         {    260,     31   },         /* Gain = 1.015625 Exposure Index = 111 */
+         {    260,     32   },         /* Gain = 1.015625 Exposure Index = 112 */
+         {    260,     33   },         /* Gain = 1.015625 Exposure Index = 113 */
+         {    260,     34   },         /* Gain = 1.015625 Exposure Index = 114 */
+         {    261,     35   },         /* Gain = 1.019531 Exposure Index = 115 */
+         {    262,     36   },         /* Gain = 1.023438 Exposure Index = 116 */
+         {    256,     38   },         /* Gain = 1.000000 Exposure Index = 117 */
+         {    257,     39   },         /* Gain = 1.003906 Exposure Index = 118 */
+         {    259,     40   },         /* Gain = 1.011719 Exposure Index = 119 */
+         {    261,     41   },         /* Gain = 1.019531 Exposure Index = 120 */
+         {    257,     43   },         /* Gain = 1.003906 Exposure Index = 121 */
+         {    259,     44   },         /* Gain = 1.011719 Exposure Index = 122 */
+         {    261,     45   },         /* Gain = 1.019531 Exposure Index = 123 */
+         {    258,     47   },         /* Gain = 1.007812 Exposure Index = 124 */
+         {    261,     48   },         /* Gain = 1.019531 Exposure Index = 125 */
+         {    259,     50   },         /* Gain = 1.011719 Exposure Index = 126 */
+         {    257,     52   },         /* Gain = 1.003906 Exposure Index = 127 */
+         {    260,     53   },         /* Gain = 1.015625 Exposure Index = 128 */
+         {    259,     55   },         /* Gain = 1.011719 Exposure Index = 129 */
+         {    258,     57   },         /* Gain = 1.007812 Exposure Index = 130 */
+         {    257,     59   },         /* Gain = 1.003906 Exposure Index = 131 */
+         {    257,     61   },         /* Gain = 1.003906 Exposure Index = 132 */
+         {    257,     63   },         /* Gain = 1.003906 Exposure Index = 133 */
+         {    257,     65   },         /* Gain = 1.003906 Exposure Index = 134 */
+         {    257,     67   },         /* Gain = 1.003906 Exposure Index = 135 */
+         {    258,     69   },         /* Gain = 1.007812 Exposure Index = 136 */
+         {    259,     71   },         /* Gain = 1.011719 Exposure Index = 137 */
+         {    256,     74   },         /* Gain = 1.000000 Exposure Index = 138 */
+         {    257,     76   },         /* Gain = 1.003906 Exposure Index = 139 */
+         {    258,     78   },         /* Gain = 1.007812 Exposure Index = 140 */
+         {    256,     81   },         /* Gain = 1.000000 Exposure Index = 141 */
+         {    258,     83   },         /* Gain = 1.007812 Exposure Index = 142 */
+         {    257,     86   },         /* Gain = 1.003906 Exposure Index = 143 */
+         {    256,     89   },         /* Gain = 1.000000 Exposure Index = 144 */
+         {    258,     91   },         /* Gain = 1.007812 Exposure Index = 145 */
+         {    258,     94   },         /* Gain = 1.007812 Exposure Index = 146 */
+         {    258,     97   },         /* Gain = 1.007812 Exposure Index = 147 */
+         {    258,    100   },         /* Gain = 1.007812 Exposure Index = 148 */
+         {    258,    103   },         /* Gain = 1.007812 Exposure Index = 149 */
+         {    256,    107   },         /* Gain = 1.000000 Exposure Index = 150 */
+         {    257,    110   },         /* Gain = 1.003906 Exposure Index = 151 */
+         {    258,    113   },         /* Gain = 1.007812 Exposure Index = 152 */
+         {    257,    117   },         /* Gain = 1.003906 Exposure Index = 153 */
+         {    256,    121   },         /* Gain = 1.000000 Exposure Index = 154 */
+         {    258,    124   },         /* Gain = 1.007812 Exposure Index = 155 */
+         {    256,    129   },         /* Gain = 1.000000 Exposure Index = 156 */
+         {    256,    133   },         /* Gain = 1.000000 Exposure Index = 157 */
+         {    256,    137   },         /* Gain = 1.000000 Exposure Index = 158 */
+         {    257,    141   },         /* Gain = 1.003906 Exposure Index = 159 */
+         {    256,    146   },         /* Gain = 1.000000 Exposure Index = 160 */
+         {    257,    150   },         /* Gain = 1.003906 Exposure Index = 161 */
+         {    257,    155   },         /* Gain = 1.003906 Exposure Index = 162 */
+         {    257,    160   },         /* Gain = 1.003906 Exposure Index = 163 */
+         {    257,    165   },         /* Gain = 1.003906 Exposure Index = 164 */
+         {    257,    170   },         /* Gain = 1.003906 Exposure Index = 165 */
+         {    256,    176   },         /* Gain = 1.000000 Exposure Index = 166 */
+         {    257,    181   },         /* Gain = 1.003906 Exposure Index = 167 */
+         {    257,    187   },         /* Gain = 1.003906 Exposure Index = 168 */
+         {    257,    193   },         /* Gain = 1.003906 Exposure Index = 169 */
+         {    257,    199   },         /* Gain = 1.003906 Exposure Index = 170 */
+         {    257,    205   },         /* Gain = 1.003906 Exposure Index = 171 */
+         {    256,    212   },         /* Gain = 1.000000 Exposure Index = 172 */
+         {    257,    218   },         /* Gain = 1.003906 Exposure Index = 173 */
+         {    257,    225   },         /* Gain = 1.003906 Exposure Index = 174 */
+         {    257,    232   },         /* Gain = 1.003906 Exposure Index = 175 */
+         {    257,    239   },         /* Gain = 1.003906 Exposure Index = 176 */
+         {    257,    247   },         /* Gain = 1.003906 Exposure Index = 177 */
+         {    257,    255   },         /* Gain = 1.003906 Exposure Index = 178 */
+         {    256,    264   },         /* Gain = 1.000000 Exposure Index = 179 */
+         {    256,    272   },         /* Gain = 1.000000 Exposure Index = 180 */
+         {    256,    281   },         /* Gain = 1.000000 Exposure Index = 181 */
+         {    256,    290   },         /* Gain = 1.000000 Exposure Index = 182 */
+         {    256,    299   },         /* Gain = 1.000000 Exposure Index = 183 */
+         {    256,    308   },         /* Gain = 1.000000 Exposure Index = 184 */
+         {    256,    318   },         /* Gain = 1.000000 Exposure Index = 185 */
+         {    256,    328   },         /* Gain = 1.000000 Exposure Index = 186 */
+         {    256,    338   },         /* Gain = 1.000000 Exposure Index = 187 */
+         {    256,    349   },         /* Gain = 1.000000 Exposure Index = 188 */
+         {    256,    360   },         /* Gain = 1.000000 Exposure Index = 189 */
+         {    256,    371   },         /* Gain = 1.000000 Exposure Index = 190 */
+         {    256,    383   },         /* Gain = 1.000000 Exposure Index = 191 */
+         {    256,    395   },         /* Gain = 1.000000 Exposure Index = 192 */
+         {    256,    407   },         /* Gain = 1.000000 Exposure Index = 193 */
+         {    256,    420   },         /* Gain = 1.000000 Exposure Index = 194 */
+         {    256,    433   },         /* Gain = 1.000000 Exposure Index = 195 */
+         {    256,    446   },         /* Gain = 1.000000 Exposure Index = 196 */
+         {    256,    460   },         /* Gain = 1.000000 Exposure Index = 197 */
+         {    256,    474   },         /* Gain = 1.000000 Exposure Index = 198 */
+         {    256,    489   },         /* Gain = 1.000000 Exposure Index = 199 */
+         {    256,    504   },         /* Gain = 1.000000 Exposure Index = 200 */
+         {    256,    520   },         /* Gain = 1.000000 Exposure Index = 201 */
+         {    256,    536   },         /* Gain = 1.000000 Exposure Index = 202 */
+         {    256,    553   },         /* Gain = 1.000000 Exposure Index = 203 */
+         {    256,    570   },         /* Gain = 1.000000 Exposure Index = 204 */
+         {    256,    588   },         /* Gain = 1.000000 Exposure Index = 205 */
+         {    256,    606   },         /* Gain = 1.000000 Exposure Index = 206 */
+         {    256,    625   },         /* Gain = 1.000000 Exposure Index = 207 */
+         {    256,    644   },         /* Gain = 1.000000 Exposure Index = 208 */
+         {    256,    664   },         /* Gain = 1.000000 Exposure Index = 209 */
+         {    256,    684   },         /* Gain = 1.000000 Exposure Index = 210 */
+         {    256,    705   },         /* Gain = 1.000000 Exposure Index = 211 */
+         {    256,    727   },         /* Gain = 1.000000 Exposure Index = 212 */
+         {    256,    749   },         /* Gain = 1.000000 Exposure Index = 213 */
+         {    256,    772   },         /* Gain = 1.000000 Exposure Index = 214 */
+         {    256,    796   },         /* Gain = 1.000000 Exposure Index = 215 */
+         {    256,    820   },         /* Gain = 1.000000 Exposure Index = 216 */
+         {    256,    845   },         /* Gain = 1.000000 Exposure Index = 217 */
+         {    256,    871   },         /* Gain = 1.000000 Exposure Index = 218 */
+         {    256,    898   },         /* Gain = 1.000000 Exposure Index = 219 */
+         {    256,    925   },         /* Gain = 1.000000 Exposure Index = 220 */
+         {    256,    953   },         /* Gain = 1.000000 Exposure Index = 221 */
+         {    256,    982   },         /* Gain = 1.000000 Exposure Index = 222 */
+         {    256,   1012   },         /* Gain = 1.000000 Exposure Index = 223 */
+         {    256,   1043   },         /* Gain = 1.000000 Exposure Index = 224 */
+         {    256,   1075   },         /* Gain = 1.000000 Exposure Index = 225 */
+         {    256,   1108   },         /* Gain = 1.000000 Exposure Index = 226 */
+         {    256,   1142   },         /* Gain = 1.000000 Exposure Index = 227 */
+         {    256,   1177   },         /* Gain = 1.000000 Exposure Index = 228 */
+         {    256,   1213   },         /* Gain = 1.000000 Exposure Index = 229 */
+         {    256,   1250   },         /* Gain = 1.000000 Exposure Index = 230 */
+         {    256,   1288   },         /* Gain = 1.000000 Exposure Index = 231 */
+         {    256,   1327   },         /* Gain = 1.000000 Exposure Index = 232 */
+         {    260,   1350   },         /* Gain = 1.015625 Exposure Index = 233 */
+         {    268,   1350   },         /* Gain = 1.046875 Exposure Index = 234 */
+         {    277,   1350   },         /* Gain = 1.082031 Exposure Index = 235 */
+         {    286,   1350   },         /* Gain = 1.117188 Exposure Index = 236 */
+         {    295,   1350   },         /* Gain = 1.152344 Exposure Index = 237 */
+         {    304,   1350   },         /* Gain = 1.187500 Exposure Index = 238 */
+         {    314,   1350   },         /* Gain = 1.226562 Exposure Index = 239 */
+         {    324,   1350   },         /* Gain = 1.265625 Exposure Index = 240 */
+         {    334,   1350   },         /* Gain = 1.304688 Exposure Index = 241 */
+         {    345,   1350   },         /* Gain = 1.347656 Exposure Index = 242 */
+         {    356,   1350   },         /* Gain = 1.390625 Exposure Index = 243 */
+         {    367,   1350   },         /* Gain = 1.433594 Exposure Index = 244 */
+         {    379,   1350   },         /* Gain = 1.480469 Exposure Index = 245 */
+         {    391,   1350   },         /* Gain = 1.527344 Exposure Index = 246 */
+         {    403,   1350   },         /* Gain = 1.574219 Exposure Index = 247 */
+         {    416,   1350   },         /* Gain = 1.625000 Exposure Index = 248 */
+         {    429,   1350   },         /* Gain = 1.675781 Exposure Index = 249 */
+         {    442,   1350   },         /* Gain = 1.726562 Exposure Index = 250 */
+         {    456,   1350   },         /* Gain = 1.781250 Exposure Index = 251 */
+         {    470,   1350   },         /* Gain = 1.835938 Exposure Index = 252 */
+         {    485,   1350   },         /* Gain = 1.894531 Exposure Index = 253 */
+         {    500,   1350   },         /* Gain = 1.953125 Exposure Index = 254 */
+         {    515,   1350   },         /* Gain = 2.011719 Exposure Index = 255 */
+         {    531,   1350   },         /* Gain = 2.074219 Exposure Index = 256 */
+         {    547,   1350   },         /* Gain = 2.136719 Exposure Index = 257 */
+         {    564,   1350   },         /* Gain = 2.203125 Exposure Index = 258 */
+         {    581,   1350   },         /* Gain = 2.269531 Exposure Index = 259 */
+         {    599,   1350   },         /* Gain = 2.339844 Exposure Index = 260 */
+         {    617,   1350   },         /* Gain = 2.410156 Exposure Index = 261 */
+         {    636,   1350   },         /* Gain = 2.484375 Exposure Index = 262 */
+         {    656,   1350   },         /* Gain = 2.562500 Exposure Index = 263 */
+         {    676,   1350   },         /* Gain = 2.640625 Exposure Index = 264 */
+         {    697,   1350   },         /* Gain = 2.722656 Exposure Index = 265 */
+         {    718,   1350   },         /* Gain = 2.804688 Exposure Index = 266 */
+         {    740,   1350   },         /* Gain = 2.890625 Exposure Index = 267 */
+         {    763,   1350   },         /* Gain = 2.980469 Exposure Index = 268 */
+         {    786,   1350   },         /* Gain = 3.070312 Exposure Index = 269 */
+         {    810,   1350   },         /* Gain = 3.164062 Exposure Index = 270 */
+         {    835,   1350   },         /* Gain = 3.261719 Exposure Index = 271 */
+         {    861,   1350   },         /* Gain = 3.363281 Exposure Index = 272 */
+         {    887,   1350   },         /* Gain = 3.464844 Exposure Index = 273 */
+         {    914,   1350   },         /* Gain = 3.570312 Exposure Index = 274 */
+         {    942,   1350   },         /* Gain = 3.679688 Exposure Index = 275 */
+         {    971,   1350   },         /* Gain = 3.792969 Exposure Index = 276 */
+         {   1001,   1350   },         /* Gain = 3.910156 Exposure Index = 277 */
+         {   1032,   1350   },         /* Gain = 4.031250 Exposure Index = 278 */
+         {   1063,   1350   },         /* Gain = 4.152344 Exposure Index = 279 */
+         {   1095,   1350   },         /* Gain = 4.277344 Exposure Index = 280 */
+         {   1128,   1350   },         /* Gain = 4.406250 Exposure Index = 281 */
+         {   1162,   1350   },         /* Gain = 4.539062 Exposure Index = 282 */
+         {   1197,   1350   },         /* Gain = 4.675781 Exposure Index = 283 */
+         {   1233,   1350   },         /* Gain = 4.816406 Exposure Index = 284 */
+         {   1270,   1350   },         /* Gain = 4.960938 Exposure Index = 285 */
+         {   1309,   1350   },         /* Gain = 5.113281 Exposure Index = 286 */
+         {   1349,   1350   },         /* Gain = 5.269531 Exposure Index = 287 */
+         {   1390,   1350   },         /* Gain = 5.429688 Exposure Index = 288 */
+         {   1432,   1350   },         /* Gain = 5.593750 Exposure Index = 289 */
+         {   1475,   1350   },         /* Gain = 5.761719 Exposure Index = 290 */
+         {   1520,   1350   },         /* Gain = 5.937500 Exposure Index = 291 */
+         {   1566,   1350   },         /* Gain = 6.117188 Exposure Index = 292 */
+         {   1613,   1350   },         /* Gain = 6.300781 Exposure Index = 293 */
+         {   1662,   1350   },         /* Gain = 6.492188 Exposure Index = 294 */
+         {   1712,   1350   },         /* Gain = 6.687500 Exposure Index = 295 */
+         {   1764,   1350   },         /* Gain = 6.890625 Exposure Index = 296 */
+         {   1817,   1350   },         /* Gain = 7.097656 Exposure Index = 297 */
+         {   1872,   1350   },         /* Gain = 7.312500 Exposure Index = 298 */
+         {   1929,   1350   },         /* Gain = 7.535156 Exposure Index = 299 */
+         {   1987,   1350   },         /* Gain = 7.761719 Exposure Index = 300 */
+         {   2047,   1350   },         /* Gain = 7.996094 Exposure Index = 301 */
+         {   2109,   1350   },         /* Gain = 8.238281 Exposure Index = 302 */
+         {   2173,   1350   },         /* Gain = 8.488281 Exposure Index = 303 */
+         {   2239,   1350   },         /* Gain = 8.746094 Exposure Index = 304 */
+         {   2307,   1350   },         /* Gain = 9.011719 Exposure Index = 305 */
+         {   2377,   1350   },         /* Gain = 9.285156 Exposure Index = 306 */
+         {   2449,   1350   },         /* Gain = 9.566406 Exposure Index = 307 */
+         {   2523,   1350   },         /* Gain = 9.855469 Exposure Index = 308 */
+         {   2599,   1350   },         /* Gain = 10.152344 Exposure Index = 309 */
+         {   2677,   1350   },         /* Gain = 10.457031 Exposure Index = 310 */
+         {   2758,   1350   },         /* Gain = 10.773438 Exposure Index = 311 */
+         {   2841,   1350   },         /* Gain = 11.097656 Exposure Index = 312 */
+         {   2927,   1350   },         /* Gain = 11.433594 Exposure Index = 313 */
+         {   3015,   1350   },         /* Gain = 11.777344 Exposure Index = 314 */
+         {   3106,   1350   },         /* Gain = 12.132812 Exposure Index = 315 */
+         {   3200,   1350   },         /* Gain = 12.500000 Exposure Index = 316 */
+         {   3296,   1350   },         /* Gain = 12.875000 Exposure Index = 317 */
+         {   3395,   1350   },         /* Gain = 13.261719 Exposure Index = 318 */
+         {   3497,   1350   },         /* Gain = 13.660156 Exposure Index = 319 */
+         {   3602,   1350   },         /* Gain = 14.070312 Exposure Index = 320 */
+         {   3711,   1350   },         /* Gain = 14.496094 Exposure Index = 321 */
+         {   3823,   1350   },         /* Gain = 14.933594 Exposure Index = 322 */
+         {   3938,   1350   },         /* Gain = 15.382812 Exposure Index = 323 */
+         {   4057,   1350   },         /* Gain = 15.847656 Exposure Index = 324 */
+         {   4179,   1350   },         /* Gain = 16.324219 Exposure Index = 325 */
+         {   4305,   1350   },         /* Gain = 16.816406 Exposure Index = 326 */
+         {   4435,   1350   },         /* Gain = 17.324219 Exposure Index = 327 */
+         {   4569,   1350   },         /* Gain = 17.847656 Exposure Index = 328 */
+         {   4707,   1350   },         /* Gain = 18.386719 Exposure Index = 329 */
+         {   4849,   1350   },         /* Gain = 18.941406 Exposure Index = 330 */
+         {   4995,   1350   },         /* Gain = 19.511719 Exposure Index = 331 */
+         {   5145,   1350   },         /* Gain = 20.097656 Exposure Index = 332 */
+         {   5300,   1350   },         /* Gain = 20.703125 Exposure Index = 333 */
+         {   5459,   1350   },         /* Gain = 21.324219 Exposure Index = 334 */
+         {   5623,   1350   },         /* Gain = 21.964844 Exposure Index = 335 */
+         {   5792,   1350   },         /* Gain = 22.625000 Exposure Index = 336 */
+         {   5966,   1350   },         /* Gain = 23.304688 Exposure Index = 337 */
+         {   6145,   1350   },         /* Gain = 24.003906 Exposure Index = 338 */
+         {   6330,   1350   },         /* Gain = 24.726562 Exposure Index = 339 */
+         {   6520,   1350   },         /* Gain = 25.468750 Exposure Index = 340 */
+         {   6716,   1350   },         /* Gain = 26.234375 Exposure Index = 341 */
+         {   6918,   1350   },         /* Gain = 27.023438 Exposure Index = 342 */
+         {   7126,   1350   },         /* Gain = 27.835938 Exposure Index = 343 */
+         {   7340,   1350   },         /* Gain = 28.671875 Exposure Index = 344 */
+         {   7561,   1350   },         /* Gain = 29.535156 Exposure Index = 345 */
+         {   7788,   1350   },         /* Gain = 30.421875 Exposure Index = 346 */
+         {   8022,   1350   },         /* Gain = 31.335938 Exposure Index = 347 */
+         {   8263,   1350   },         /* Gain = 32.277344 Exposure Index = 348 */
+         {   8511,   1350   },         /* Gain = 33.246094 Exposure Index = 349 */
+         {   8767,   1350   },         /* Gain = 34.246094 Exposure Index = 350 */
+         {   9031,   1350   },         /* Gain = 35.277344 Exposure Index = 351 */
+         {   9302,   1350   },         /* Gain = 36.335938 Exposure Index = 352 */
+         {   9582,   1350   },         /* Gain = 37.429688 Exposure Index = 353 */
+         {   9870,   1350   },         /* Gain = 38.554688 Exposure Index = 354 */
+         {  10167,   1350   },         /* Gain = 39.714844 Exposure Index = 355 */
+         {  10473,   1350   },         /* Gain = 40.910156 Exposure Index = 356 */
+         {  10788,   1350   },         /* Gain = 42.140625 Exposure Index = 357 */
+         {  11112,   1350   },         /* Gain = 43.406250 Exposure Index = 358 */
+         {  11446,   1350   },         /* Gain = 44.710938 Exposure Index = 359 */
+         {  11790,   1350   },         /* Gain = 46.054688 Exposure Index = 360 */
+         {  12144,   1350   },         /* Gain = 47.437500 Exposure Index = 361 */
+         {  12509,   1350   },         /* Gain = 48.863281 Exposure Index = 362 */
+         {  12885,   1350   },         /* Gain = 50.332031 Exposure Index = 363 */
+         {  13272,   1350   },         /* Gain = 51.843750 Exposure Index = 364 */
+         {  13671,   1350   },         /* Gain = 53.402344 Exposure Index = 365 */
+         {  14082,   1350   },         /* Gain = 55.007812 Exposure Index = 366 */
+         {  14505,   1350   },         /* Gain = 56.660156 Exposure Index = 367 */
+         {  14941,   1350   },         /* Gain = 58.363281 Exposure Index = 368 */
+         {  15390,   1350   },         /* Gain = 60.117188 Exposure Index = 369 */
+         {  15852,   1350   },         /* Gain = 61.921875 Exposure Index = 370 */
+         {  16328,   1350   },         /* Gain = 63.781250 Exposure Index = 371 */
+         {  16818,   1350   },         /* Gain = 65.695312 Exposure Index = 372 */
+         {  17323,   1350   },         /* Gain = 67.667969 Exposure Index = 373 */
+         {  17843,   1350   },         /* Gain = 69.699219 Exposure Index = 374 */
+         {  18379,   1350   },         /* Gain = 71.792969 Exposure Index = 375 */
+         {  18931,   1350   },         /* Gain = 73.949219 Exposure Index = 376 */
+         {  19499,   1350   },         /* Gain = 76.167969 Exposure Index = 377 */
+         {  20084,   1350   },         /* Gain = 78.453125 Exposure Index = 378 */
+         {  20687,   1350   },         /* Gain = 80.808594 Exposure Index = 379 */
+         {  21308,   1350   },         /* Gain = 83.234375 Exposure Index = 380 */
+         {  21948,   1350   },         /* Gain = 85.734375 Exposure Index = 381 */
+         {  22607,   1350   },         /* Gain = 88.308594 Exposure Index = 382 */
+         {  23286,   1350   },         /* Gain = 90.960938 Exposure Index = 383 */
+         {  23985,   1350   },         /* Gain = 93.691406 Exposure Index = 384 */
+         {  24705,   1350   },         /* Gain = 96.503906 Exposure Index = 385 */
+         {  25447,   1350   },         /* Gain = 99.402344 Exposure Index = 386 */
+         {  26211,   1350   },         /* Gain = 102.386719 Exposure Index = 387 */
+         {  26998,   1350   },         /* Gain = 105.460938 Exposure Index = 388 */
+         {  27808,   1350   },         /* Gain = 108.625000 Exposure Index = 389 */
+         {  28643,   1350   },         /* Gain = 111.886719 Exposure Index = 390 */
+         {  29503,   1350   },         /* Gain = 115.246094 Exposure Index = 391 */
+         {  30389,   1350   },         /* Gain = 118.707031 Exposure Index = 392 */
+         {  31301,   1350   },         /* Gain = 122.269531 Exposure Index = 393 */
+         {  32241,   1350   },         /* Gain = 125.941406 Exposure Index = 394 */
+         {  33209,   1350   },         /* Gain = 129.722656 Exposure Index = 395 */
+         {  34206,   1350   },         /* Gain = 133.617188 Exposure Index = 396 */
+         {  35233,   1350   },         /* Gain = 137.628906 Exposure Index = 397 */
+         {  36290,   1350   },         /* Gain = 141.757812 Exposure Index = 398 */
+         {  37379,   1350   },         /* Gain = 146.011719 Exposure Index = 399 */
+         {  38501,   1350   },         /* Gain = 150.394531 Exposure Index = 400 */
+         {  39657,   1350   },         /* Gain = 154.910156 Exposure Index = 401 */
+         {  40847,   1350   },         /* Gain = 159.558594 Exposure Index = 402 */
+         {  42073,   1350   },         /* Gain = 164.347656 Exposure Index = 403 */
+         {  43336,   1350   },         /* Gain = 169.281250 Exposure Index = 404 */
+         {  44637,   1350   },         /* Gain = 174.363281 Exposure Index = 405 */
+         {  45977,   1350   },         /* Gain = 179.597656 Exposure Index = 406 */
+         {  47357,   1350   },         /* Gain = 184.988281 Exposure Index = 407 */
+         {  48778,   1350   },         /* Gain = 190.539062 Exposure Index = 408 */
+         {  50242,   1350   },         /* Gain = 196.257812 Exposure Index = 409 */
+         {  51750,   1350   },         /* Gain = 202.148438 Exposure Index = 410 */
+         {  53303,   1350   },         /* Gain = 208.214844 Exposure Index = 411 */
+         {  54903,   1350   },         /* Gain = 214.464844 Exposure Index = 412 */
+         {  56551,   1350   },         /* Gain = 220.902344 Exposure Index = 413 */
+         {  58248,   1350   },         /* Gain = 227.531250 Exposure Index = 414 */
+         {  59996,   1350   },         /* Gain = 234.359375 Exposure Index = 415 */
+         {  61796,   1350   },         /* Gain = 241.390625 Exposure Index = 416 */
+         {  63650,   1350   },         /* Gain = 248.632812 Exposure Index = 417 */
+         {  65560,   1350   },         /* Gain = 256.093750 Exposure Index = 418 */
+         {  67527,   1350   },         /* Gain = 263.777344 Exposure Index = 419 */
+         {  69553,   1350   },         /* Gain = 271.691406 Exposure Index = 420 */
+         {  71640,   1350   },         /* Gain = 279.843750 Exposure Index = 421 */
+         {  73790,   1350   },         /* Gain = 288.242188 Exposure Index = 422 */
+         {  76004,   1350   },         /* Gain = 296.890625 Exposure Index = 423 */
+         {  78285,   1350   },         /* Gain = 305.800781 Exposure Index = 424 */
+         {  80634,   1350   },         /* Gain = 314.976562 Exposure Index = 425 */
+         {  83054,   1350   },         /* Gain = 324.429688 Exposure Index = 426 */
+         {  85546,   1350   },         /* Gain = 334.164062 Exposure Index = 427 */
+         {  88113,   1350   },         /* Gain = 344.191406 Exposure Index = 428 */
+         {  90757,   1350   },         /* Gain = 354.519531 Exposure Index = 429 */
+         {  93480,   1350   },         /* Gain = 365.156250 Exposure Index = 430 */
+         {  96285,   1350   },         /* Gain = 376.113281 Exposure Index = 431 */
+         {  99174,   1350   },         /* Gain = 387.398438 Exposure Index = 432 */
+         { 102150,   1350   },         /* Gain = 399.023438 Exposure Index = 433 */
+         { 105215,   1350   },         /* Gain = 410.996094 Exposure Index = 434 */
+         { 108372,   1350   },         /* Gain = 423.328125 Exposure Index = 435 */
+         { 111624,   1350   },         /* Gain = 436.031250 Exposure Index = 436 */
+         { 114973,   1350   },         /* Gain = 449.113281 Exposure Index = 437 */
+         { 118423,   1350   },         /* Gain = 462.589844 Exposure Index = 438 */
+         { 121976,   1350   },         /* Gain = 476.468750 Exposure Index = 439 */
+         { 125636,   1350   },         /* Gain = 490.765625 Exposure Index = 440 */
+         { 129406,   1350   },         /* Gain = 505.492188 Exposure Index = 441 */
+         { 133289,   1350   },         /* Gain = 520.660156 Exposure Index = 442 */
+         { 137288,   1350   },         /* Gain = 536.281250 Exposure Index = 443 */
+         { 141407,   1350   },         /* Gain = 552.371094 Exposure Index = 444 */
+         { 145650,   1350   },         /* Gain = 568.945312 Exposure Index = 445 */
+         { 150020,   1350   },         /* Gain = 586.015625 Exposure Index = 446 */
+         { 154521,   1350   },         /* Gain = 603.597656 Exposure Index = 447 */
+         { 159157,   1350   },         /* Gain = 621.707031 Exposure Index = 448 */
+         { 163932,   1350   },         /* Gain = 640.359375 Exposure Index = 449 */
+         { 168850,   1350   },         /* Gain = 659.570312 Exposure Index = 450 */
+         { 173916,   1350   },         /* Gain = 679.359375 Exposure Index = 451 */
+         { 179134,   1350   },         /* Gain = 699.742188 Exposure Index = 452 */
+         { 184509,   1350   },         /* Gain = 720.738281 Exposure Index = 453 */
+         { 190045,   1350   },         /* Gain = 742.363281 Exposure Index = 454 */
+         { 195747,   1350   },         /* Gain = 764.636719 Exposure Index = 455 */
+         { 201620,   1350   },         /* Gain = 787.578125 Exposure Index = 456 */
+         { 207669,   1350   },         /* Gain = 811.207031 Exposure Index = 457 */
+         { 213900,   1350   },         /* Gain = 835.546875 Exposure Index = 458 */
+         { 220317,   1350   },         /* Gain = 860.613281 Exposure Index = 459 */
+         { 226927,   1350   },         /* Gain = 886.433594 Exposure Index = 460 */
+         { 233735,   1350   },         /* Gain = 913.027344 Exposure Index = 461 */
+         { 240748,   1350   },         /* Gain = 940.421875 Exposure Index = 462 */
+         { 247971,   1350   },         /* Gain = 968.636719 Exposure Index = 463 */
+         { 255411,   1350   },         /* Gain = 997.699219 Exposure Index = 464 */
+         { 263074,   1350   },         /* Gain = 1027.632812 Exposure Index = 465 */
+         { 270967,   1350   },         /* Gain = 1058.464844 Exposure Index = 466 */
+         { 279097,   1350   },         /* Gain = 1090.222656 Exposure Index = 467 */
+         { 287470,   1350   },         /* Gain = 1122.929688 Exposure Index = 468 */
+         { 296095,   1350   },         /* Gain = 1156.621094 Exposure Index = 469 */
+         { 304978,   1350   },         /* Gain = 1191.320312 Exposure Index = 470 */
+         { 314128,   1350   },         /* Gain = 1227.062500 Exposure Index = 471 */
+         { 323552,   1350   },         /* Gain = 1263.875000 Exposure Index = 472 */
+         { 333259,   1350   },         /* Gain = 1301.792969 Exposure Index = 473 */
+         { 343257,   1350   },         /* Gain = 1340.847656 Exposure Index = 474 */
+         { 353555,   1350   },         /* Gain = 1381.074219 Exposure Index = 475 */
+         { 364162,   1350   },         /* Gain = 1422.507812 Exposure Index = 476 */
+         { 375087,   1350   },         /* Gain = 1465.183594 Exposure Index = 477 */
+         { 386340,   1350   },         /* Gain = 1509.140625 Exposure Index = 478 */
+         { 397931,   1350   },         /* Gain = 1554.417969 Exposure Index = 479 */
+         { 409869,   1350   },         /* Gain = 1601.050781 Exposure Index = 480 */
+         { 422166,   1350   },         /* Gain = 1649.085938 Exposure Index = 481 */
+         { 434831,   1350   },         /* Gain = 1698.558594 Exposure Index = 482 */
+         { 447876,   1350   },         /* Gain = 1749.515625 Exposure Index = 483 */
+         { 461313,   1350   },         /* Gain = 1802.003906 Exposure Index = 484 */
+         { 475153,   1350   },         /* Gain = 1856.066406 Exposure Index = 485 */
+         { 489408,   1350   },         /* Gain = 1911.750000 Exposure Index = 486 */
+         { 504091,   1350   },         /* Gain = 1969.105469 Exposure Index = 487 */
+         { 519214,   1350   },         /* Gain = 2028.179688 Exposure Index = 488 */
+         { 534791,   1350   },         /* Gain = 2089.027344 Exposure Index = 489 */
+         { 550835,   1350   },         /* Gain = 2151.699219 Exposure Index = 490 */
+         { 567361,   1350   },         /* Gain = 2216.253906 Exposure Index = 491 */
+         { 584382,   1350   },         /* Gain = 2282.742188 Exposure Index = 492 */
+         { 601914,   1350   },         /* Gain = 2351.226562 Exposure Index = 493 */
+         { 619972,   1350   },         /* Gain = 2421.765625 Exposure Index = 494 */
+         { 638572,   1350   },         /* Gain = 2494.421875 Exposure Index = 495 */
+      },
+      /* enable_short_exp_table */
+      0,
+      /* short_exp_table */
+      {
+      },
+   },
+   /* ae_tuning_par para */
+   {
+      1,/* aec_stats_type; 0:BAYER_AEC; 1:HYBRID_AEC */
+      0,/* force_exp_forced */
+      0.1,/* force_exp_value */
+      1,/* preview_iso_enable */
+      {
+         31,/* outdoor_luma_target_compensated */
+         31,/* default_luma_target_compensated */
+         25,/* lowlight_luma_target */
+         110,/* outdoor_index */
+         200,/* indoor_index */
+         320,/* lowlight_start_idx */
+         400,/* lowlight_end_idx */
+         3,/* luma_target_short */
+         0,/* enable_luma _target_lut */
+         0,/* count */
+         /* luma target lut */
+         {
+         },
+      },
+      5,/* snow_scene_detect.extreme_luma_target_offset */
+      5,/* backlit_scene_detect.backlight_max_la_luma_target_offset */
+      1,/* motion_iso_threshold */
+      512,/* R_WEIGHT */
+      1024,/* G_WEIGHT */
+      512,/* B_WEIGHT */
+      11,/* WT_Q */
+      {
+         50,/* fast_conv.speed */
+         2,/* fast_conv.luma_tolerance */
+         0,/* fast_conv.frame_skip */
+         2,/* fast_conv.fine_adjust_skip */
+         0,/* fast_conv.luma_nostable_torlerance */
+         0,/* fast_conv.luma_nostable_torlerance_max */
+         0,/* fast_conv.settled_to_nosettle_skip_count */
+      },
+      1,/* metering_type 0:SPOT_METERING,1:CENTER_WEIGHTED,2: SIMPLE_FRAME_AVERAGE */
+      0,/* full_sweep_en ,set to 1 to fullsweep exp table */
+      77.894,/* exposure_index_adj_step ,NEED 1 / log10(1.03) */
+      0,/* 0: no antibanding; 1: 50Hz antibanding; 2: 60Hz antibanding */
+      {
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+      },
+      /* hist_target_t hist_target */
+      {
+         0,/* hist_target_adjust_enable */
+         1.2,/* outdoor_max_target_adjust_ratio */
+         0.8,/* outdoor_min_target_adjust_ratio */
+         1.2,/* indoor_max_target_adjust_ratio */
+         0.8,/* indoor_min_target_adjust_ratio */
+         1.2,/* lowlight_max_target_adjust_ratio */
+         0.8,/* lowlight_min_target_adjust_ratio */
+         0.5,/* target_filter_factor */
+         0.6,/* hist_sat_pct */
+         0.5,/* hist_dark_pct */
+         200,/* hist_sat_low_ref */
+         230,/* hist_sat_high_ref */
+         3,/* hist_dark_low_ref */
+         10,/* hist_dark_high_ref */
+      },
+      /* over_exp_t over_exp */
+      {
+         0,/* over_exp_enable */
+         245,/* high_luma_region_threshold */
+         1,/* outdoor_over_exp_adjust_ratio */
+         1,/* indoor_over_exp_adjust_ratio */
+         0.9,/* lowlight_over_exp_adjust_ratio */
+         15,/* outdoor_over_exp_adjust_offset */
+         12,/* indoor_over_exp_adjust_offset */
+         10,/* lowlight_over_exp_adjust_offset */
+         255,/* outdoor_over_exp_max_count */
+         230,/* indoor_over_exp_max_count */
+         144,/* lowlight_over_exp_max_count */
+         120,/* outdoor_over_exp_min_count */
+         100,/* indoor_over_exp_min_count */
+         60,/* lowlight_over_exp_min_count */
+      },
+      /* hdr_tuning_exp_t hdr_tuning_exp */
+      {
+         /* hdr enable */
+         0,
+         /* enable_hdr_luma_tartget */
+         0,
+         /* short_exp_max_index */
+         298,
+         /* max_exp_ration */
+         32,
+         /* enble_ration_table */
+         1,
+         /* ration_talbe_size */
+         6,
+         /* over_exp_per_high */
+         255,
+         /* over_exp_per_low */
+         245,
+         /* adjust_step */
+         1,
+         /* ration_interp_en */
+         1,
+         /* ration_table_t ration_table[HDR_RATION_TALBE_SIZE] */
+         {
+            /* short exp index  ration0 ration1 ration2 ration3 luma_target drc gain max  drc gain min  ceva_drc_gain_max1  luma convegence th */
+            {        52,           32,      1,      1,      1,       80,          4,           4,              4,                 5            },
+            {        76,           32,      1,      1,      1,       78,          4,           4,              4,                 5            },
+            {        86,           32,      1,      1,      1,       75,          4,           4,              4,                 5            },
+            {        96,           32,      1,      1,      1,       73,          4,           4,              4,                 5            },
+            {       110,           32,      1,      1,      1,       70,          6,           4,              4,                 5            },
+            {       121,           32,      1,      1,      1,       55,          90,           4,              4,                 5            },
+         },
+         /* over_exp_bin_th: max 127 min 0 */
+         60,
+         /* short_exp_skip_count */
+         0,
+         /* current_hist_weight */
+         0.5,
+         /* use_averge_hist */
+         0,
+         /* short_target_th */
+         4,
+         /* enable_short_exp_luma_adjust */
+         1,
+         /* full_sweep_en */
+         0,
+         /* enable_drc_gain_adjust */
+         0,
+         /* drc_gain_adjust_factor */
+         1.03,
+         /* use_over_exp_luma */
+         1,
+         /* hdr_detect_t hdr_detect */
+         {
+            0,//en_hdr_detect
+            256,//low_luma_hdr
+            256,//high_luma_hdr
+            256,//low_luma_normal
+            256,//high_luma_normal
+            50,//skip_count_hdr_detct
+            1,//use_lux_index
+            340,//low_lux_index_hdr
+            0,//high_lux_index_hdr
+            0,//low_lux_index
+            0,//high_lux_index
+         },
+         /* en_drc_gain_advance_adjust */
+         1,
+         /* AEC_HDR_FAST_PARAM_t aec_hdr_fast_param */
+         {
+         },
+         /* max_mid_exp_ration */
+         0,
+         /* enable_over_cut_long_exp */
+         0,
+         /* enable_short_gain_cut_max */
+         0,
+      },
+      /* night_detect_t night_detect */
+      {
+         0,/* enable */
+         0,/* lux_index_low */
+         0,/* lux_index_high */
+      },
+      /* motion_detect_t motion_detect */
+      {
+         0,/* enable */
+         0,/* abs_th */
+      },
+      /* face_aec_pra_t  face_ae */
+      {
+         0,/* use_face_pra */
+         0,/* face_luma_target */
+         0,/* face_weight */
+         0,/* face_skip_count */
+         0,/* filter_weight */
+         0,/* en_face_bright_dark_region */
+         0,/* bright_high_th */
+         0,/* bright_low_th */
+         0,/* dark_high_th */
+         0,/* dark_low_th */
+         0,/* bright_high_th_w */
+         0,/* bright_low_th_w */
+         0,/* dark_high_th_w */
+         0,/* dark_low_th_w */
+         0,/* en_face_luma_cut */
+         0,/* face_luma_high */
+         0,/* face_luma_low */
+         0,/* enable_w_dec */
+         0,/* enable_region_percent */
+         0,/* region_percent_low_limit */
+         0,/* region_percent_low */
+         0,/* region_percent_high */
+         0,/* region_percent_high_limit */
+         0,/* region_percent_low_limit_w */
+         0,/* region_percent_low_w */
+         0,/* region_percent_high_w */
+         0,/* region_percent_high_limit_w */
+         0,/* use_software_face_aec_stats */
+      },
+      /* extreme_color_t extreme_color */
+      {
+         0,//extreme_color_en
+         0,//extreme_color_en
+         0,//extreme_color_en
+         /* extreme_color_pra_t extreme_color_pra[MIDDLE_TRIGGER_COUNT] */
+         {
+         },
+      },
+      /* bright_dark_t bright_dark */
+      {
+         1,//bright_dark_en
+         4,//bright_dark_count
+         1,//bright_en
+         1,//dark_en
+         1,//inter_en
+         /* bright_dark_pra_t bright_dark_pra[MIDDLE_TRIGGER_COUNT] */
+         {
+            {
+               0,//lux_index
+               5,//dark_th_low
+               10,//dark_th_high
+               220,//bright_th_low
+               240,//bright_th_high
+               4.5,//dark_th_low_w
+               2,//dark_th_high_w
+               1,//bright_th_low_w
+               0.8,//bright_th_high_w
+            },
+            {
+               80,//lux_index
+               4,//dark_th_low
+               10,//dark_th_high
+               210,//bright_th_low
+               240,//bright_th_high
+               3,//dark_th_low_w
+               1.2,//dark_th_high_w
+               1,//bright_th_low_w
+               0.9,//bright_th_high_w
+            },
+            {
+               160,//lux_index
+               2,//dark_th_low
+               6,//dark_th_high
+               200,//bright_th_low
+               240,//bright_th_high
+               3,//dark_th_low_w
+               1.2,//dark_th_high_w
+               1,//bright_th_low_w
+               1,//bright_th_high_w
+            },
+            {
+               260,//lux_index
+               4,//dark_th_low
+               12,//dark_th_high
+               200,//bright_th_low
+               240,//bright_th_high
+               1,//dark_th_low_w
+               1,//dark_th_high_w
+               1,//bright_th_low_w
+               1,//bright_th_high_w
+            },
+         },
+      },
+      0,//aec algo type,0:fast smooth  1:fast plus
+      /* AEC_FAST_PLUS_PARAM_t aec_fast_plus_param */
+      {
+         2,//luma_tolerance
+         2,//frame_skip
+         2,//ddr_frame_skip_offset
+         {5,10,15},//interval_threshold[3]
+         {0.65,0.55,0.45},//speed_ratio[3]
+         0.35,//speed_ratio_others
+      },
+      2,//aec hdr algo type,0:org  1:fast  2 fast_advance
+      /* aec fast plus param short */
+      {
+         25,/* fast_conv_short.speed */
+         2,/* fast_conv_short.luma_tolerance */
+         0,/* fast_conv_short.frame_skip */
+         0,/* fast_conv_short.fine_adjust_skip */
+      },
+      /* bright_dark_t bright_dark_short */
+      {
+         0,//bright_dark_en
+         3,//bright_dark_count
+         1,//bright_en
+         1,//dark_en
+         1,//inter_en
+         /* bright_dark_pra_t bright_dark_short_pra[MIDDLE_TRIGGER_COUNT] */
+         {
+            {
+               0,//lux_index
+               5,//dark_th_low
+               10,//dark_th_high
+               200,//bright_th_low
+               220,//bright_th_high
+               0.5,//dark_th_low_w
+               0.5,//dark_th_high_w
+               2,//bright_th_low_w
+               4,//bright_th_high_w
+            },
+            {
+               150,//lux_index
+               5,//dark_th_low
+               10,//dark_th_high
+               200,//bright_th_low
+               220,//bright_th_high
+               0.5,//dark_th_low_w
+               0.5,//dark_th_high_w
+               2,//bright_th_low_w
+               4,//bright_th_high_w
+            },
+            {
+               300,//lux_index
+               5,//dark_th_low
+               10,//dark_th_high
+               200,//bright_th_low
+               220,//bright_th_high
+               1,//dark_th_low_w
+               1,//dark_th_high_w
+               1,//bright_th_low_w
+               1,//bright_th_high_w
+            },
+         },
+      },
+   },
+},
+/* awb_tuning_t awb_tuning */
+{
+   /* awb version */
+   0x00000001,
+   /* awb enable */
+   0,
+   /* interpolation enable */
+   0,
+   /*  num_point */
+   8,
+   /*  count_ae */
+   1,
+   /*  trigger_mode : 0 gain trigger 1 lux trigger */
+   1,
+   /* aec trigger */
+   {
+      /* aec trigger 0 */
+      {
+         0,
+         400,
+      },
+   },
+   /* awb_point */
+   {
+      { 0.4299, 0.7439 },   /* d75 */
+      { 0.4584, 0.6637 },   /* d65 */
+      { 0.5000, 0.5600 },   /* d50 */
+      { 0.5000, 0.5600 },   /* noon */
+      { 0.5576, 0.4089 },   /* cw */
+      { 0.6920, 0.4119 },   /* tl84 */
+      { 0.7673, 0.3319 },   /* a */
+      { 0.9240, 0.2230 },   /* h */
+      { 0.0000, 0.0000 },   /* custom1 */
+      { 0.0000, 0.0000 },   /* custom2 */
+   },
+   /* awb_gain_adj */
+   {
+      { 1.0000, 1.0000 },   /* d75 */
+      { 1.0200, 1.0000 },   /* d65 */
+      { 1.0000, 1.0000 },   /* d50 */
+      { 1.0000, 1.0000 },   /* noon */
+      { 1.0000, 1.0000 },   /* cw */
+      { 1.0000, 1.0000 },   /* tl84 */
+      { 1.0000, 1.0000 },   /* a */
+      { 1.0000, 1.0000 },   /* h */
+      { 1.0000, 1.0000 },   /* custom1 */
+      { 1.0000, 1.0000 },   /* custom2 */
+   },
+   /* awb cct */
+   {
+      7442,   /* d75 */
+      6575,   /* d65 */
+      5045,   /* d50 */
+      5045,   /* noon */
+      4050,   /* cw */
+      3960,   /* tl84 */
+      2892,   /* a */
+      2336,   /* h */
+      0,   /* custom1 */
+      0,   /* custom2 */
+   },
+   /* distance */
+   {
+   },
+   /* index name */
+   {
+      0,   /* d75 */
+      1,   /* d65 */
+      2,   /* d50 */
+      3,   /* noon */
+      4,   /* cw */
+      5,   /* tl84 */
+      6,   /* a */
+      7,   /* h */
+      8,   /* custom1 */
+      9,   /* custom2 */
+   },
+   /* light_weight_table */
+   {
+   },
+   /* light_weight_table2 */
+   {
+      /* Exp Index: 0, Outdoor_Index, Inoutdoor_Midpoint, Indoor_index */
+      { 0, 0, 0, 0 },   /* d75 */
+      { 2, 2, 2, 1 },   /* d65 */
+      { 4, 4, 2, 1 },   /* d50 */
+      { 4, 4, 2, 1 },   /* noon */
+      { 1, 1, 1, 1 },   /* cw */
+      { 1, 1, 1, 1 },   /* tl84 */
+      { 0, 0, 1, 1 },   /* a */
+      { 0, 0, 1, 5 },   /* h */
+      { 0, 0, 0, 0 },   /* custom1 */
+      { 0, 0, 0, 0 },   /* custom2 */
+   },
+   /* awb_lowlight_lut_t awb_lowlight_lut[AWB_LOWLIGHT_LUT_COUNT] */
+   {
+      /* awb_lowlight_lut 0 */
+      {
+         282,//lux index
+         0,//green_rg_offset_adj
+         0,//green_bg_offset_adj
+         0,//outlier_dist_adj
+         /* ref_point_rg_offset_adjust[AWB_MAX] */
+         {
+            0,   /* rg d75 */
+            0,   /* rg d65 */
+            0,   /* rg d50 */
+            0,   /* rg noon */
+            0,   /* rg cw */
+            0,   /* rg tl84 */
+            0,   /* rg a */
+            0,   /* rg h */
+            0,   /* rg custom1 */
+            0,   /* rg custom2 */
+         },
+         /* ref_point_bg_offset_adjust[AWB_MAX] */
+         {
+            0,   /* bg d75 */
+            0,   /* bg d65 */
+            0,   /* bg d50 */
+            0,   /* bg noon */
+            0,   /* bg cw */
+            0,   /* bg tl84 */
+            0,   /* bg a */
+            0,   /* bg h */
+            0,   /* bg custom1 */
+            0,   /* bg custom2 */
+         },
+      },
+   },
+   /* awb_tuning_para */
+   {
+      60,   /* outdoor_midpoint */
+      120,   /* outdoor_index */
+      190,   /* inoutdoor_midpoint */
+      280,   /* indoor_index */
+      10,   /* exposure_adjustment */
+      0.75,   /* awb_mesh_stats_percent_th */
+      0.5,   /* d50_d65_weighted_sample_boundary */
+      0.2,   /* blue_sky_pec */
+      0.15,   /* blue_sky_pec_buffer */
+      8,   /* num_of_reference_point */
+      /* outline */
+      {
+         1,   /* outline.count */
+         /* outline desion */
+         {
+            /* outline desion region 0 */
+            {
+               100,   /* lux_index */
+               /* outline sub desion */
+               {
+                  0.0036,0.0036,0.0048,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,
+                  0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,
+                  0.0016,
+               },
+               /* outline main desion */
+               {
+                  0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,0.0064,
+               },
+            },
+         },
+      },
+      1023,   /* white_stat_y_threshold_low */
+      1023,   /* white_stat_y_threshold_high */
+      2304,   /* dominant_cluster_threshold */
+      2304,   /* white_stat_cnt_th */
+      1,   /* grey_weight_day */
+      0,   /* white_weight_day */
+      1,   /* grey_weight_f */
+      0,   /* white_weight_f */
+      1,   /* grey_weight_h */
+      0,   /* white_weight_h */
+      1,   /* all_outlier_heuristic_flag */
+      0,   /* special_bayes_en */
+      0.2,   /* green_threshold */
+      0.2,   /* threshold_extreme_b_percent */
+      0.0064,   /* compact_to_grey_dis */
+      0.45,   /* cluster_high_pec */
+      0.25,   /* cluster_mid_pec */
+      0.15,   /* cluster_low_pec */
+      10,   /* BitsSum */
+      3,   /* FrameNum */
+      1,   /* enable_stats_filter */
+      1,   /* stats_filter_count */
+      /* stats_filter_t input_stats_filter[5] */
+      {
+         /* stats_filter_count 0 */
+         {
+            500,//lux index
+            0.2,//weight
+         },
+      },
+      1,   /* enable_gain_filter */
+      1,   /* awb_gain_filter_count */
+      /* stats_filter_t awb_gain_filter_weight[5] */
+      {
+         /* awb_gain_filter_count 0 */
+         {
+            500,//lux index
+            0.2,//weight
+         },
+      },
+      1,   /* enalbe_limit */
+      5,   /* rg_limit_max */
+      0.2,   /* rg_limit_min */
+      5,   /* bg_limit_max */
+      0.2,   /* bg_limit_min */
+      2,   /* default_cct */
+      2,   /* stats_filter_skip */
+      2,   /* gain_filter_skip */
+      /* awb_mesh_positon_w_table_t position_w_table */
+      {
+         0,   /* enable */
+         5,   /* count */
+      },
+   },
+   /* awb_statistics stats_awb[MIDDLE_TRIGGER_COUNT] */
+   {
+      /* awb_statistics 0 */
+      {
+         0x00000005,//coef_y_r
+         0x00000009,//coef_y_g
+         0x00000002,//coef_y_b
+         0x00000005,//coef_cb_r
+         0x0000000b,//coef_cb_g
+         0x00000010,//coef_cb_b
+         0x00000010,//coef_cr_r
+         0x0000000d,//coef_cr_g
+         0x00000003,//coef_cr_b
+         0x00000004,//coef_rsh
+         0x00000000,//rrBL
+         0x00000000,//grBL
+         0x00000000,//gbBL
+         0x00000000,//grBL
+         0x00000100,//rrGain
+         0x00000100,//grGain
+         0x00000100,//gbGain
+         0x00000100,//bbGain
+         0x000003e8,//Ymax
+         0x00000000,//Ymin
+         0x00000100,//Gray_m1
+         0x00010100,//Gray_m2
+         0x00000100,//Gray_m3
+         0x00010100,//Gray_m4
+         0x00000320,//Gray_c1
+         0x00010384,//Gray_c2
+         0x00010384,//Gray_c3
+         0x00000384,//Gray_c4
+         0x0000009e,//Green_BGmax
+         0x00000036,//Green_BGmin
+         0x00000086,//Green_RGmax
+         0x00000000,//Green_RGmin
+         0x00000156,//Green_Rmul
+         0x0000010f,//Green_Bmul
+         0x00001400,//ExtremeB_BGmax
+         0x00001400,//ExtremeB_RGmax
+         0x00001400,//ExtremeR_RGmax
+         0x00001400,//ExtremeR_BGmax
+         0,//zoom
+         64,//hdr_rrBL
+         64,//hdr_grBL
+         64,//hdr_gbBL
+         64,//hdr_bbBL
+         256,//hdr_rrGain
+         256,//hdr_grGain
+         256,//hdr_gbGain
+         256,//hdr_bbGain
+      },
+   },
+   1,//enable_distance_v1
+   1,//enable_awb_advace_average
+   /* awb_advance_weight_average_t advance_avg */
+   {
+      9,//luma_count
+      /* dist_w_t distance_w */
+      {
+         16,//distance_w.count
+         /* dist_percent[MAX_DISTANCE_COUNT] */
+         {
+            0,
+            0.0625,
+            0.125,
+            0.1875,
+            0.25,
+            0.3125,
+            0.375,
+            0.4375,
+            0.5,
+            0.5625,
+            0.625,
+            0.6875,
+            0.75,
+            0.8125,
+            0.875,
+            0.9375,
+         },
+         /* distance_w[MAX_DISTANCE_COUNT] */
+         {
+            16,
+            15,
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+         },
+      },
+      /* hybrid_decision_w_t  hybrid_decision_w[MAX_LUMA_HYBRID_DESION_W_COUNT] */
+      {
+         {
+            10,//exp_index
+            /* hybrid_decision_w */
+            {
+               0,
+               1,
+               1,
+               3,
+               5,
+               5,
+               5,
+               5,
+               5,
+               4,
+               3,
+               3,
+               3,
+               3,
+               2,
+               1,
+               1,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+            },
+         },
+         {
+            50,//exp_index
+            /* hybrid_decision_w */
+            {
+               0,
+               1,
+               1,
+               3,
+               5,
+               5,
+               5,
+               5,
+               5,
+               4,
+               3,
+               3,
+               3,
+               3,
+               2,
+               1,
+               1,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+            },
+         },
+         {
+            100,//exp_index
+            /* hybrid_decision_w */
+            {
+               1,
+               1,
+               1,
+               2,
+               5,
+               5,
+               5,
+               4,
+               3,
+               3,
+               3,
+               3,
+               3,
+               3,
+               2,
+               1,
+               1,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+            },
+         },
+         {
+            150,//exp_index
+            /* hybrid_decision_w */
+            {
+               1,
+               1,
+               1,
+               1,
+               2,
+               2,
+               2,
+               2,
+               3,
+               3,
+               3,
+               3,
+               3,
+               3,
+               2,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+            },
+         },
+         {
+            200,//exp_index
+            /* hybrid_decision_w */
+            {
+               1,
+               1,
+               1,
+               1,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               2,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+            },
+         },
+         {
+            250,//exp_index
+            /* hybrid_decision_w */
+            {
+               1,
+               1,
+               1,
+               1,
+               2,
+               2,
+               2,
+               2,
+               2,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0.8,
+               0.5,
+               0.2,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0,
+               0,
+            },
+         },
+         {
+            300,//exp_index
+            /* hybrid_decision_w */
+            {
+               0,
+               0,
+               0,
+               0,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0,
+               0,
+            },
+         },
+         {
+            350,//exp_index
+            /* hybrid_decision_w */
+            {
+               0,
+               0,
+               0,
+               0,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               2,
+               2,
+               2,
+               2,
+               0,
+               0,
+            },
+         },
+         {
+            400,//exp_index
+            /* hybrid_decision_w */
+            {
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               2,
+               2,
+               2,
+               2,
+               0,
+               0,
+            },
+         },
+      },
+      /* mesh_luma_w_t mesh_luma */
+      {
+         0,//enable
+         0,//dark_low_th
+         0,//dark_low_th_w
+         0,//dark_high_th
+         0,//dark_high_th_w
+         0,//bright_low_th
+         0,//bright_low_th_w
+         0,//bright_high_th
+         0,//bright_high_th_w
+      },
+      1,//enable_no_grey_keep_settle_decision
+      1,//enable_keep_no_grey_grey
+      0.05,//keep_th_no_grey_to_grey
+      0.05,//keep_th_grey_to_no_grey
+      1,//enable_subsample
+      4,//w_ration
+      4,//h_ration
+   },
+   0,//enable_gain_adjust
+   0,//enable_lowlight_lut
+   1,//lowlight_lut_count
+   0,//force_simple_grey_word
+   1,//enable_init_point
+   0,//use_init_point_count
+   /* init point */
+   {
+      0.4,//rg
+      0.62,//bg
+   },
+   /* awb_extrem_color_blue */
+   {
+      0,//enable
+      0,//th
+      0,//percent_th
+      {0,0},//ref_point
+   },
+   /* awb_extrem_color_red */
+   {
+      0,//enable
+      0,//th
+      0,//percent_th
+      {0,0},//ref_point
+   },
+   /* awb_misleading_t */
+   {
+      1,//misleading.enable
+      6,//misleading.aec_count
+      /* misleading region */
+      {
+         /* misleading region 0 */
+         {
+             80,//lux_index
+             4,//misleading_region_count
+             /* awb mesh reigon */
+             {
+                /* awb mesh region 0 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.742,//min_x
+                    0.3,//min_y
+                    0.952,//max_x
+                    0.441,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.742,0.376},
+                       {0.833,0.441},
+                       {0.952,0.386},
+                       {0.87,0.3},
+                    },
+                },
+                /* awb mesh region 1 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.6,//min_x
+                    0.42,//min_y
+                    0.75,//max_x
+                    0.53,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.6,0.5},
+                       {0.7,0.53},
+                       {0.75,0.45},
+                       {0.7,0.42},
+                    },
+                },
+                /* awb mesh region 2 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.743,//min_x
+                    0.277,//min_y
+                    1.0233,//max_x
+                    0.413,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.743,0.368},
+                       {0.839,0.413},
+                       {1.0233,0.323},
+                       {0.929,0.277},
+                    },
+                },
+                /* awb mesh region 3 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.719,//min_x
+                    0.308,//min_y
+                    0.889,//max_x
+                    0.404,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.719,0.371},
+                       {0.764,0.404},
+                       {0.889,0.345},
+                       {0.8435,0.308},
+                    },
+                },
+             },
+         },
+         /* misleading region 1 */
+         {
+             140,//lux_index
+             4,//misleading_region_count
+             /* awb mesh reigon */
+             {
+                /* awb mesh region 0 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.742,//min_x
+                    0.3,//min_y
+                    0.952,//max_x
+                    0.441,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.742,0.376},
+                       {0.833,0.441},
+                       {0.952,0.386},
+                       {0.87,0.3},
+                    },
+                },
+                /* awb mesh region 1 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.6,//min_x
+                    0.42,//min_y
+                    0.75,//max_x
+                    0.53,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.6,0.5},
+                       {0.7,0.53},
+                       {0.75,0.45},
+                       {0.7,0.42},
+                    },
+                },
+                /* awb mesh region 2 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.743,//min_x
+                    0.277,//min_y
+                    1.0233,//max_x
+                    0.413,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.743,0.368},
+                       {0.839,0.413},
+                       {1.0233,0.323},
+                       {0.929,0.277},
+                    },
+                },
+                /* awb mesh region 3 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.719,//min_x
+                    0.308,//min_y
+                    0.889,//max_x
+                    0.404,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.719,0.371},
+                       {0.764,0.404},
+                       {0.889,0.345},
+                       {0.8435,0.308},
+                    },
+                },
+             },
+         },
+         /* misleading region 2 */
+         {
+             200,//lux_index
+             4,//misleading_region_count
+             /* awb mesh reigon */
+             {
+                /* awb mesh region 0 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.742,//min_x
+                    0.3,//min_y
+                    0.952,//max_x
+                    0.441,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.742,0.376},
+                       {0.833,0.441},
+                       {0.952,0.386},
+                       {0.87,0.3},
+                    },
+                },
+                /* awb mesh region 1 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.6,//min_x
+                    0.42,//min_y
+                    0.75,//max_x
+                    0.53,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.6,0.5},
+                       {0.7,0.53},
+                       {0.75,0.45},
+                       {0.7,0.42},
+                    },
+                },
+                /* awb mesh region 2 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.743,//min_x
+                    0.277,//min_y
+                    1.0233,//max_x
+                    0.413,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.743,0.368},
+                       {0.839,0.413},
+                       {1.0233,0.323},
+                       {0.929,0.277},
+                    },
+                },
+                /* awb mesh region 3 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.719,//min_x
+                    0.308,//min_y
+                    0.889,//max_x
+                    0.404,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.719,0.371},
+                       {0.764,0.404},
+                       {0.889,0.345},
+                       {0.8435,0.308},
+                    },
+                },
+             },
+         },
+         /* misleading region 3 */
+         {
+             300,//lux_index
+             6,//misleading_region_count
+             /* awb mesh reigon */
+             {
+                /* awb mesh region 0 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.742,//min_x
+                    0.3,//min_y
+                    0.952,//max_x
+                    0.441,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.742,0.376},
+                       {0.833,0.441},
+                       {0.952,0.386},
+                       {0.87,0.3},
+                    },
+                },
+                /* awb mesh region 1 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.6,//min_x
+                    0.42,//min_y
+                    0.75,//max_x
+                    0.53,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.6,0.5},
+                       {0.7,0.53},
+                       {0.75,0.45},
+                       {0.7,0.42},
+                    },
+                },
+                /* awb mesh region 2 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.743,//min_x
+                    0.277,//min_y
+                    1.0233,//max_x
+                    0.413,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.743,0.368},
+                       {0.839,0.413},
+                       {1.0233,0.323},
+                       {0.929,0.277},
+                    },
+                },
+                /* awb mesh region 3 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.719,//min_x
+                    0.308,//min_y
+                    0.889,//max_x
+                    0.404,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.719,0.371},
+                       {0.764,0.404},
+                       {0.889,0.345},
+                       {0.8435,0.308},
+                    },
+                },
+                /* awb mesh region 4 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.562,//min_x
+                    0.451,//min_y
+                    0.76,//max_x
+                    0.587,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.562,0.55},
+                       {0.642,0.587},
+                       {0.76,0.496},
+                       {0.674,0.451},
+                    },
+                },
+                /* awb mesh region 5 */
+                {
+                    4,//point_num
+                    0,//is_square
+                    0.525,//min_x
+                    0.42,//min_y
+                    0.584,//max_x
+                    0.485,//max_y
+                    /* awb mesh point */
+                    {
+                       {0.547,0.485},
+                       {0.584,0.449},
+                       {0.561,0.426},
+                       {0.525,0.42},
+                    },
+                },
+             },
+         },
+         /* misleading region 4 */
+         {
+             400,//lux_index
+             0,//misleading_region_count
+             /* awb mesh reigon */
+             {
+             },
+         },
+         /* misleading region 5 */
+         {
+             500,//lux_index
+             0,//misleading_region_count
+             /* awb mesh reigon */
+             {
+             },
+         },
+      },
+   },
+   /* awb_green_region_tuning_t */
+   {
+      0,//green_region.enable
+      0,//green_region.luma_count
+      0,//green_region.enalbe_dta_light_inter
+      0,//green_region.green_percent_th
+      /* awb_mesh_green_region */
+      {
+      },
+   },
+   0,//enable_gain_adj_lux_wb
+   /* awb_gain_adjust_lux_wb_t */
+   {
+      0,//count
+      /* awb_gain_adjust_wb_t gain_adj[HIGH_TRIGGER_COUNT] */
+      {
+      },
+   },
+},
+{
+   /* af version */
+   0x00000001,
+   /* af enable */
+   0,
+   /* infinite */
+   100,
+   /* near */
+   512,
+   /* hyperfocal */
+   100,
+   /* init_skip */
+   5,
+   /* algo_type: 0-FOCUS_FULL_SWEEP, 1-FOCUS_SINGLE */
+   1,
+   /* fullswep_algo_tuning_t full_sweep_tuning_pra */
+   {
+      4,//code_per_step
+      5,//skip_count_after_lens_move
+   },
+   /* af_stats_type 1-AF_STATS_SHARPNES, 2-AF_STATS_FIR, 4-AF_STATS_IIR */
+   4,
+   /* roi_t roi */
+   {
+      0.35,//x
+      0.3,//y
+      0.3,//width
+      0.4,//height
+   },
+   /* stats_weight_table[AF_BLOCK_ROW*AF_BLOCK_COL] 16x9 */
+   {
+      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 2, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 2, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 
+      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+   },
+   /* actuator_tunning_pra_t atcuator */
+   {
+      1,//enable
+      0,//damping_enable
+      0,//init_dac
+      0,//infinit_dac
+      0,//hyperfocal_dac
+      512,//near_dac
+      0,//dmp_count
+      /* damping_t move_to_far_damping[16] */
+      {
+      },
+      /* damping_t move_to_near_damping[16] */
+      {
+      },
+   },
+   /* roi_type : 0-GENERAL 1-FACE 2-TOUCH */
+   0,
+   /* run_mode : 0-INIT 1-CAMERA 2-VIDEO 3-SNAPSHOT */
+   2,
+   /* af_monit_t af_monit */
+   {
+      /* af_tuning_sad_t af_par_sad */
+      {
+         1,//enable
+         2,//gain_min
+         30,//gain_max
+         2,//ref_gain_min
+         30,//ref_gain_max
+         2,//threshold_min
+         3,//threshold_max
+         2,//ref_threshold_min
+         4,//ref_threshold_max
+         5,//frames_to_wait
+      },
+   },
+   /* af_tuning_single_t  single_pra */
+   {
+      /* single_optic_t optics */
+      {
+         5,//far_zone
+         6,//mid_zone
+         7,//near_zone
+         8,//init_pos
+         9,//far_start_pos
+         10,//near_start_pos
+         11,//TAF_far_end
+         12,//TAF_near_end
+         13,//CAF_far_end
+         14,//CAF_near_end
+         15,//srch_rgn_1
+         16,//srch_rgn_2
+         17,//srch_rgn_3
+         18,//fine_srch_rgn
+      },
+      /* acturator_type: 0-ACT_TYPE_CLOSELOOP, 1-ACE_TYPE_OPENLOOP */
+      1,
+      /* index[50] */
+      {
+         512, 492, 412, 300, 100, 212, 262, 300, 100, 100, 
+         512, 100, 512, 100, 512, 300, 200, 100, 50, 0, 
+         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+      },
+      0,//is_hys_comp_needed
+      /* single_threshold_t hw */
+      {
+         40,//hist_dec_dec_thres
+         0.6,//drop_thres
+         /* dec_dec_3frame */
+         {
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+         },
+         /* inc_dec */
+         {
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+         },
+         /* inc_dec_3frame */
+         {
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+            0.85,
+         },
+         /* dec_dec */
+         {
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+         },
+         /* dec_dec_noise */
+         {
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+            0.93,
+         },
+         /* flat_threshold */
+         {
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+         },
+         40,//hist_inc_dec_thres
+         0.95,//flat_dec_thres
+         1.05,//flat_inc_thres
+         1.3,//macro_thres
+      },
+      /* BV_gain[10] */
+      {
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+         1000,
+      },
+      1,//step_index_per_um
+      /* step_size_table_t CAF_step_table */
+      {
+         /* step_rgn_t   Prescan_low_light */
+         {
+            18, 18, 18, 18, 18,
+         },
+         /* step_rgn_t   Prescan_normal_light */
+         {
+            17, 17, 17, 17, 17,
+         },
+         /* step_rgn_t   Finescan_low_light */
+         {
+            2, 2, 2, 2, 2,
+         },
+         /* step_rgn_t   Finescan_normal_light */
+         {
+            3, 3, 3, 3, 3,
+         },
+      },
+      /* step_size_table_t TAF_step_table */
+      {
+         /* step_rgn_t   Prescan_low_light */
+         {
+            16, 16, 16, 16, 16,
+         },
+         /* step_rgn_t   Prescan_normal_light */
+         {
+            15, 15, 15, 15, 15,
+         },
+         /* step_rgn_t   Finescan_low_light */
+         {
+            4, 4, 4, 4, 4,
+         },
+         /* step_rgn_t   Finescan_normal_light */
+         {
+            4, 4, 4, 4, 4,
+         },
+      },
+      /* skip_frame[3] */
+      {
+         3,//0-large
+         1,//1-small
+         1,//2-others
+      },
+   },
+   1,//count_ae
+   1,//trigger_mode 0-gain, 1-lux
+   0,//interpolation_enable
+   /* aec_trigger_t aec_trigger[MIN_TRIGGER_COUNT] */
+   {
+   /* aec trigger 0 */
+   {
+      0,
+      0,
+   },
+   },
+   /* af_stats_tuning_t af_stats_tuning_pra[MIN_TRIGGER_COUNT] */
+   {
+      /* para 0 */
+      {
+         0,//trigger_val not use
+         8,//coef_y_b
+         8,//coef_y_gb
+         8,//coef_y_gr
+         8,//coef_y_r
+         2,//fv_mode 0-fv_max 1-fv_acc 2-sqr
+         1,///ch_sel 0-R 1-GR 2-GB 3-B 4-Y
+         0,//zoom_en
+         0,//zoom_dwn
+         0,//compander_en
+         1,//lowfilter_en
+         460,//high_luma_th
+         0,//blc_b
+         0,//blc_gb
+         0,//blc_r
+         0,//blc_gr
+         0,//sharp_th
+         0,//sharp_bitshift
+         0,//sharp_sqr_bitshift
+         /* sharp_filter_coff[39] */
+         {
+            1, 1, 1, 1, 1, 1023, 1023, 1023, 1023, 1023, 1, 1, 1, 1, 1, 1023, 1023, 1023, 1023, 
+            1023, 1, 1, 1, 1, 1, 1023, 1023, 1023, 1023, 1023, 1, 1, 1, 1, 1, 1023, 1023, 1023, 
+            1023, 
+         },
+         0,//fir_th
+         0,//fir_bitshift
+         0,//fir_sqr_bitshift
+         /* fir_filter_coff[3] */
+         {
+            1023,
+            2,
+            1023,
+         },
+         1,//iir1_en
+         1,//iir0_en
+         14,//iir_bitshift_2
+         14,//iir_bitshift_1
+         0,//iir_th
+         /* iir_filter_coff[10] */
+         {
+            10868,
+            240409,
+            10868,
+            30536,
+            247611,
+            20111,
+            221920,
+            20111,
+            28277,
+            249899,
+         },
+         0,//iir_th
+         /* gamma[AF_STATS_TABLE_SIZE] 256 */
+         {
+            16384, 0, 0, 0, 32784, 0, 0, 0, 49184, 0, 0, 0, 65584, 0, 0, 0, 
+            81984, 0, 0, 0, 98384, 0, 0, 0, 114784, 0, 0, 0, 131184, 0, 0, 0, 
+            147584, 0, 0, 0, 163984, 0, 0, 0, 180384, 0, 0, 0, 196784, 0, 0, 0, 
+            213184, 0, 0, 0, 229584, 0, 0, 0, 245984, 0, 0, 0, 262384, 0, 0, 0, 
+            278784, 0, 0, 0, 295184, 0, 0, 0, 311584, 0, 0, 0, 327984, 0, 0, 0, 
+            344384, 0, 0, 0, 360784, 0, 0, 0, 377184, 0, 0, 0, 393584, 0, 0, 0, 
+            409984, 0, 0, 0, 426384, 0, 0, 0, 442784, 0, 0, 0, 459184, 0, 0, 0, 
+            475584, 0, 0, 0, 491984, 0, 0, 0, 508384, 0, 0, 0, 524784, 0, 0, 0, 
+            541184, 0, 0, 0, 557584, 0, 0, 0, 573984, 0, 0, 0, 590384, 0, 0, 0, 
+            606784, 0, 0, 0, 623184, 0, 0, 0, 639584, 0, 0, 0, 655984, 0, 0, 0, 
+            672384, 0, 0, 0, 688784, 0, 0, 0, 705184, 0, 0, 0, 721584, 0, 0, 0, 
+            737984, 0, 0, 0, 754384, 0, 0, 0, 770784, 0, 0, 0, 787184, 0, 0, 0, 
+            803584, 0, 0, 0, 819984, 0, 0, 0, 836384, 0, 0, 0, 852784, 0, 0, 0, 
+            869184, 0, 0, 0, 885584, 0, 0, 0, 901984, 0, 0, 0, 918384, 0, 0, 0, 
+            934784, 0, 0, 0, 951184, 0, 0, 0, 967584, 0, 0, 0, 983984, 0, 0, 0, 
+            1000384, 0, 0, 0, 1016784, 0, 0, 0, 1033184, 0, 0, 0, 1048560, 0, 0, 0, 
+         },
+      },
+   },
+},

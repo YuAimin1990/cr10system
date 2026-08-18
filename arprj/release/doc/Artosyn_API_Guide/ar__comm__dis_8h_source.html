@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: ar_comm_dis.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ar_comm_dis.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ar__comm__dis_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __AR_COMM_DIS_H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __AR_COMM_DIS_H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;hal_type.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__common_8h.html">ar_common.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;hal_errno.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ar__comm__video_8h.html">ar_comm_video.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/* failure caused by malloc buffer */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_NOBUF                AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOBUF)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_BUF_EMPTY            AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_EMPTY)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_NULL_PTR             AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NULL_PTR)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_ILLEGAL_PARAM        AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_ILLEGAL_PARAM)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_BUF_FULL             AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUF_FULL)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_SYS_NOTREADY         AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_SYS_NOTREADY)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_NOT_SUPPORT          AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_SUPPORT)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_NOT_PERMITTED        AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_NOT_PERM)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_BUSY                 AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_BUSY)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_INVALID_CHNID        AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_INVALID_CHNID)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define AR_ERR_DIS_CHN_UNEXIST          AR_MPP_DEF_ERR(AR_ID_DIS, HAL_ERR_LEVEL_ERROR, HAL_ERR_UNEXIST)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Different mode of DIS */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> arDIS_MODE_E</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    DIS_MODE_4_DOF_GME      = 0,    <span class="comment">/* Only use with GME in 4 dof  */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    DIS_MODE_6_DOF_GME,             <span class="comment">/* Only use with GME in 6 dof  */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    DIS_MODE_GYRO,                  <span class="comment">/* Only use with gryo in 6 dof  */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    DIS_MODE_HYBRID,                <span class="comment">/* Both use with GME and gyro in 6 dof */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DIS_MODE_DOF_BUTT,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} DIS_MODE_E;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* The motion level of camera */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> arDIS_MOTION_LEVEL_E</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    DIS_MOTION_LEVEL_LOW    = 0,    <span class="comment">/* Low motion level*/</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    DIS_MOTION_LEVEL_NORMAL,        <span class="comment">/* Normal motion level */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    DIS_MOTION_LEVEL_HIGH,          <span class="comment">/* High motion level */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    DIS_MOTION_LEVEL_BUTT</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}DIS_MOTION_LEVEL_E;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* Different product type used DIS */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> arDIS_PDT_TYPE_E</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    DIS_PDT_TYPE_IPC        = 0,    <span class="comment">/* IPC product type */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    DIS_PDT_TYPE_DV,                <span class="comment">/* DV product type */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    DIS_PDT_TYPE_DRONE,             <span class="comment">/* DRONE product type */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    DIS_PDT_TYPE_BUTT</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;} DIS_PDT_TYPE_E;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* The Attribute of DIS */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structar_d_i_s___a_t_t_r___s.html">   65</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_d_i_s___a_t_t_r___s.html">arDIS_ATTR_S</a></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    AR_BOOL     bEnable;                <span class="comment">/* RW; DIS enable */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    AR_BOOL     bGdcBypass;             <span class="comment">/* RW; gdc correction process , DIS = GME&amp;GDC correction*/</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    AR_U32      u32MovingSubjectLevel;  <span class="comment">/* RW; Range:[0,6]; Moving Subject level */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    AR_S32      s32RollingShutterCoef;  <span class="comment">/* RW; Range:[0,1000]; Rolling shutter coefficients */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    AR_U32      u32Timelag;             <span class="comment">/* RW; Range:[0,200000]; Timestamp delay between Gyro and Frame PTS */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    AR_U32      u32ViewAngle;           <span class="comment">/* Reserved */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    AR_U32      u32HorizontalLimit;     <span class="comment">/* RW; Range:[0,1000]; Parameter to limit horizontal drift by large foreground */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    AR_U32      u32VerticalLimit;       <span class="comment">/* RW; Range:[0,1000]; Parameter to limit vertical drift by large foreground */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    AR_BOOL     bStillCrop;             <span class="comment">/* RW; The stabilization will be not working ,but the output image still be cropped */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}<a class="code" href="structar_d_i_s___a_t_t_r___s.html">DIS_ATTR_S</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/* The Config of DIS */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structar_d_i_s___c_o_n_f_i_g___s.html">   79</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structar_d_i_s___c_o_n_f_i_g___s.html">arDIS_CONFIG_S</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    DIS_MODE_E              enMode;                             <span class="comment">/* RW; DIS Mode */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    DIS_MOTION_LEVEL_E      enMotionLevel;                      <span class="comment">/* RW; DIS Motion level of the camera */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    DIS_PDT_TYPE_E          enPdtType;                          <span class="comment">/* RW; DIS product type*/</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    AR_U32                  u32BufNum;                          <span class="comment">/* RW; Range:[5,10]; Buf num for DIS */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    AR_U32                  u32CropRatio;                       <span class="comment">/* RW; Range:[50,98]; Crop ratio of output image */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    AR_U32                  u32FrameRate;                       <span class="comment">/* RW; Range:[25,120]; The input framerate */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    AR_U32                  u32GyroOutputRange;                 <span class="comment">/* RW; Range:[0,360]; The range of Gyro output in degree */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    AR_U32                  u32GyroDataBitWidth;                <span class="comment">/* RW; Range:[0,32]; The bits used for gyro angular velocity output */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    AR_BOOL                 bCameraSteady;                      <span class="comment">/* RW; The camera is steady or not */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    AR_BOOL                 bScale;                             <span class="comment">/* RW; Scale output image or not*/</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}<a class="code" href="structar_d_i_s___c_o_n_f_i_g___s.html">DIS_CONFIG_S</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* End of #ifndef __AR_COMM_DIS_H__ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructar_d_i_s___c_o_n_f_i_g___s_html"><div class="ttname"><a href="structar_d_i_s___c_o_n_f_i_g___s.html">arDIS_CONFIG_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_dis.h:79</div></div>
+<div class="ttc" id="astructar_d_i_s___a_t_t_r___s_html"><div class="ttname"><a href="structar_d_i_s___a_t_t_r___s.html">arDIS_ATTR_S</a></div><div class="ttdef"><b>Definition:</b> ar_comm_dis.h:65</div></div>
+<div class="ttc" id="aar__comm__video_8h_html"><div class="ttname"><a href="ar__comm__video_8h.html">ar_comm_video.h</a></div><div class="ttdoc">描述视频相关的通用数据结构</div></div>
+<div class="ttc" id="aar__common_8h_html"><div class="ttname"><a href="ar__common_8h.html">ar_common.h</a></div><div class="ttdoc">描述通用的宏定义和数据结构</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

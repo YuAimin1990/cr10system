@@ -1,0 +1,23 @@
+/ {
+	reserved_memory: reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		icc_reserved: icc@0x22200000 {
+			compatible="icc-region";
+			reg = <0 0x22200000 0 0x200000>;
+		};
+
+		a53_rtos_reserved: a53_rtos@0x22400000 {
+			reg = <0 0x22400000 0 0x10000000>;
+		};
+
+		dsp_reserved: dsp@0x32400000 {
+                        reg = <0 0x32400000 0 0x2000000>;
+                };
+	};
+/* add MMZ dts node*/
+};
+
+

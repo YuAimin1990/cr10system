@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arISP_SNS_REGS_INFO_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arISP_SNS_REGS_INFO_S结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a44efe924419312022affdb1eec4261d9"><td class="memItemLeft" align="right" valign="top"><a id="a44efe924419312022affdb1eec4261d9"></a>
+ISP_SNS_TYPE_E&#160;</td><td class="memItemRight" valign="bottom"><b>enSnsType</b></td></tr>
+<tr class="separator:a44efe924419312022affdb1eec4261d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa4960010e3833ea012bf8c5642cc5c"><td class="memItemLeft" align="right" valign="top"><a id="a0aa4960010e3833ea012bf8c5642cc5c"></a>
+AR_U32&#160;</td><td class="memItemRight" valign="bottom"><b>u32RegNum</b></td></tr>
+<tr class="separator:a0aa4960010e3833ea012bf8c5642cc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ed5ce284c22aa6ebcbea66b383cc62"><td class="memItemLeft" align="right" valign="top"><a id="aa1ed5ce284c22aa6ebcbea66b383cc62"></a>
+AR_U8&#160;</td><td class="memItemRight" valign="bottom"><b>u8Cfg2ValidDelayMax</b></td></tr>
+<tr class="separator:aa1ed5ce284c22aa6ebcbea66b383cc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21069f61a5ebd5359d58667dc563e079"><td class="memItemLeft" align="right" valign="top"><a id="a21069f61a5ebd5359d58667dc563e079"></a>
+<a class="el" href="unionar_i_s_p___s_n_s___c_o_m_m_b_u_s___u.html">ISP_SNS_COMMBUS_U</a>&#160;</td><td class="memItemRight" valign="bottom"><b>unComBus</b></td></tr>
+<tr class="separator:a21069f61a5ebd5359d58667dc563e079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0559cc7a13905efde7d76d9afbd485"><td class="memItemLeft" ><a id="ada0559cc7a13905efde7d76d9afbd485"></a>
+union {</td></tr>
+<tr class="memitem:acaa95341fd291ce122f5bb91e5bf071b"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structar_i_s_p___i2_c___d_a_t_a___s.html">ISP_I2C_DATA_S</a>&#160;&#160;&#160;<b>astI2cData</b> [ISP_MAX_SNS_REGS]</td></tr>
+<tr class="separator:acaa95341fd291ce122f5bb91e5bf071b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d900fa240d736481d0908e1edfb765f"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structar_i_s_p___s_s_p___d_a_t_a___s.html">ISP_SSP_DATA_S</a>&#160;&#160;&#160;<b>astSspData</b> [ISP_MAX_SNS_REGS]</td></tr>
+<tr class="separator:a7d900fa240d736481d0908e1edfb765f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0559cc7a13905efde7d76d9afbd485"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ada0559cc7a13905efde7d76d9afbd485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaca55bc2ac512878a1f0c7ecb22a77b"><td class="memItemLeft" ><a id="aaaca55bc2ac512878a1f0c7ecb22a77b"></a>
+struct {</td></tr>
+<tr class="memitem:a916d5f3753046d77496b5a22c6bc148c"><td class="memItemLeft" >
+&#160;&#160;&#160;AR_BOOL&#160;&#160;&#160;<b>bUpdate</b></td></tr>
+<tr class="separator:a916d5f3753046d77496b5a22c6bc148c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e30f2941d3b05451eadf43872294e4e"><td class="memItemLeft" >
+&#160;&#160;&#160;AR_U8&#160;&#160;&#160;<b>u8DelayFrmNum</b></td></tr>
+<tr class="separator:a0e30f2941d3b05451eadf43872294e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf12c7dd294729d2a752850cc5495f43"><td class="memItemLeft" >
+&#160;&#160;&#160;AR_U32&#160;&#160;&#160;<b>u32SlaveVsTime</b></td></tr>
+<tr class="separator:acf12c7dd294729d2a752850cc5495f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7ccf589a725c277afebb4738382105"><td class="memItemLeft" >
+&#160;&#160;&#160;AR_U32&#160;&#160;&#160;<b>u32SlaveBindDev</b></td></tr>
+<tr class="separator:a9d7ccf589a725c277afebb4738382105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaca55bc2ac512878a1f0c7ecb22a77b"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>stSlvSync</b></td></tr>
+<tr class="separator:aaaca55bc2ac512878a1f0c7ecb22a77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ae49e6e779c98851fb9a7dbc3c6a60"><td class="memItemLeft" align="right" valign="top"><a id="ab6ae49e6e779c98851fb9a7dbc3c6a60"></a>
+AR_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>bConfig</b></td></tr>
+<tr class="separator:ab6ae49e6e779c98851fb9a7dbc3c6a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__isp_8h_source.html">ar_comm_isp.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

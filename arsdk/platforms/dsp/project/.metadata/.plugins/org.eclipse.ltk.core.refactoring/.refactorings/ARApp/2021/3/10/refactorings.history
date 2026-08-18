@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ARApp/App/src/backtrace.S&apos; to &apos;backtrace.asm&apos;" description="Rename resource &apos;backtrace.S&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="App/src/backtrace.S" name="backtrace.asm" stamp="1614569758314" updateReferences="true"/>
+</session>

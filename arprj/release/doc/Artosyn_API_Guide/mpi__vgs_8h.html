@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: mpi_vgs.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">mpi_vgs.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>描述视频图形处理系统.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ar__common_8h_source.html">ar_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ar__comm__video_8h_source.html">ar_comm_video.h</a>&quot;</code><br />
+<code>#include &quot;ar_comm_vgs.h&quot;</code><br />
+</div>
+<p><a href="mpi__vgs_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaf4bcadc2137ba305efb7244e3692825d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaf4bcadc2137ba305efb7244e3692825d">AR_MPI_VGS_BeginJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> *phHandle)</td></tr>
+<tr class="memdesc:gaf4bcadc2137ba305efb7244e3692825d"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建vgs job  <a href="group___m_p_i___v_g_s.html#gaf4bcadc2137ba305efb7244e3692825d">更多...</a><br /></td></tr>
+<tr class="separator:gaf4bcadc2137ba305efb7244e3692825d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad166dfa1967fed3d7ff670927efd53c7"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gad166dfa1967fed3d7ff670927efd53c7">AR_MPI_VGS_EndJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle)</td></tr>
+<tr class="memdesc:gad166dfa1967fed3d7ff670927efd53c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">结束vgs job，此接口为同步接口，vgs完成所有task后返回  <a href="group___m_p_i___v_g_s.html#gad166dfa1967fed3d7ff670927efd53c7">更多...</a><br /></td></tr>
+<tr class="separator:gad166dfa1967fed3d7ff670927efd53c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac032f24eb382200407a119874576da4b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gac032f24eb382200407a119874576da4b">AR_MPI_VGS_CancelJob</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle)</td></tr>
+<tr class="memdesc:gac032f24eb382200407a119874576da4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消vgs job，vgs中所有task将取消操作  <a href="group___m_p_i___v_g_s.html#gac032f24eb382200407a119874576da4b">更多...</a><br /></td></tr>
+<tr class="separator:gac032f24eb382200407a119874576da4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaa2c33ee8e1248b9fcb4733a1af10b18b">AR_MPI_VGS_AddScaleTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, <a class="el" href="group___m_p_i___v_g_s.html#ga9e847930d38d64b18c990f82821f5a84">VGS_SCLCOEF_MODE_E</a> enScaleCoefMode)</td></tr>
+<tr class="memdesc:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加缩放task到指定job中  <a href="group___m_p_i___v_g_s.html#gaa2c33ee8e1248b9fcb4733a1af10b18b">更多...</a><br /></td></tr>
+<tr class="separator:gaa2c33ee8e1248b9fcb4733a1af10b18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf894d4650ca84f489eda63e2b0604a0a"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaf894d4650ca84f489eda63e2b0604a0a">AR_MPI_VGS_AddDrawLineTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a> *pstVgsDrawLine)</td></tr>
+<tr class="memdesc:gaf894d4650ca84f489eda63e2b0604a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加画线task到指定job中  <a href="group___m_p_i___v_g_s.html#gaf894d4650ca84f489eda63e2b0604a0a">更多...</a><br /></td></tr>
+<tr class="separator:gaf894d4650ca84f489eda63e2b0604a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2728d04263648cc98ec03676dda2693d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga2728d04263648cc98ec03676dda2693d">AR_MPI_VGS_AddCoverTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a> *pstVgsAddCover)</td></tr>
+<tr class="memdesc:ga2728d04263648cc98ec03676dda2693d"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加cover task到指定job中  <a href="group___m_p_i___v_g_s.html#ga2728d04263648cc98ec03676dda2693d">更多...</a><br /></td></tr>
+<tr class="separator:ga2728d04263648cc98ec03676dda2693d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga623c4ea6bb6ab0814ef1190829e5e6b9">AR_MPI_VGS_AddOsdTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a> *pstVgsAddOsd)</td></tr>
+<tr class="memdesc:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加osd task到指定job中  <a href="group___m_p_i___v_g_s.html#ga623c4ea6bb6ab0814ef1190829e5e6b9">更多...</a><br /></td></tr>
+<tr class="separator:ga623c4ea6bb6ab0814ef1190829e5e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga645a003172d24aab8f8935cc49134182"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga645a003172d24aab8f8935cc49134182">AR_MPI_VGS_AddDrawLineTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga33c1679fc50bccf44549bc55300761ed">VGS_DRAW_LINE_S</a> astVgsDrawLine[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:ga645a003172d24aab8f8935cc49134182"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加画线task数组到指定job中  <a href="group___m_p_i___v_g_s.html#ga645a003172d24aab8f8935cc49134182">更多...</a><br /></td></tr>
+<tr class="separator:ga645a003172d24aab8f8935cc49134182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa37d25365e0d767b9e255b26550476a3"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaa37d25365e0d767b9e255b26550476a3">AR_MPI_VGS_AddCoverTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#gae4c7036802820fbc4873fa3b0ae2d377">VGS_ADD_COVER_S</a> astVgsAddCover[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:gaa37d25365e0d767b9e255b26550476a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加cover task到指定job中  <a href="group___m_p_i___v_g_s.html#gaa37d25365e0d767b9e255b26550476a3">更多...</a><br /></td></tr>
+<tr class="separator:gaa37d25365e0d767b9e255b26550476a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad14e8bf56f28ee781f27e9991c42daf"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gaad14e8bf56f28ee781f27e9991c42daf">AR_MPI_VGS_AddOsdTaskArray</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, const <a class="el" href="group___m_p_i___v_g_s.html#ga64052995b685a3c971d00ee0f70c47b6">VGS_ADD_OSD_S</a> astVgsAddOsd[], AR_U32 u32ArraySize)</td></tr>
+<tr class="memdesc:gaad14e8bf56f28ee781f27e9991c42daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加osd task到指定job中  <a href="group___m_p_i___v_g_s.html#gaad14e8bf56f28ee781f27e9991c42daf">更多...</a><br /></td></tr>
+<tr class="separator:gaad14e8bf56f28ee781f27e9991c42daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga5b967c1f744c1e5c3d797915ce7aad13">AR_MPI_VGS_AddRotationTask</a> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, ROTATION_E enRotationAngle)</td></tr>
+<tr class="memdesc:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加旋转task到指定job中  <a href="group___m_p_i___v_g_s.html#ga5b967c1f744c1e5c3d797915ce7aad13">更多...</a><br /></td></tr>
+<tr class="separator:ga5b967c1f744c1e5c3d797915ce7aad13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae937bae1cf22b81796e226f20672df2d"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#gae937bae1cf22b81796e226f20672df2d">AR_MPI_VGS_Suspend</a> (void)</td></tr>
+<tr class="memdesc:gae937bae1cf22b81796e226f20672df2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">使VGS模块进入睡眠状态  <a href="group___m_p_i___v_g_s.html#gae937bae1cf22b81796e226f20672df2d">更多...</a><br /></td></tr>
+<tr class="separator:gae937bae1cf22b81796e226f20672df2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga737251026783fe76a7d55b73ac84ae9f"><td class="memItemLeft" align="right" valign="top">AR_S32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_p_i___v_g_s.html#ga737251026783fe76a7d55b73ac84ae9f">AR_MPI_VGS_Resume</a> (void)</td></tr>
+<tr class="memdesc:ga737251026783fe76a7d55b73ac84ae9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">唤醒VGS模块  <a href="group___m_p_i___v_g_s.html#ga737251026783fe76a7d55b73ac84ae9f">更多...</a><br /></td></tr>
+<tr class="separator:ga737251026783fe76a7d55b73ac84ae9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f7381b914cb055b5e1c8ce8af9338b6"><td class="memItemLeft" align="right" valign="top">
+AR_S32&#160;</td><td class="memItemRight" valign="bottom"><b>AR_MPI_VGS_AddRotationTaskExt</b> (<a class="el" href="group___m_p_i___v_g_s.html#ga3cfce7b521f482fab1afcfb5b488ddc2">VGS_HANDLE</a> hHandle, const <a class="el" href="group___m_p_i___v_g_s.html#ga6ebc7f80d6e300bd3f5057d46e9625bf">VGS_TASK_ATTR_S</a> *pstTask, <a class="el" href="structar_v_g_s___a_d_d___r_o_t_a_t_i_o_n___s.html">VGS_ADD_ROTATION_S</a> *pstRotation)</td></tr>
+<tr class="separator:ga7f7381b914cb055b5e1c8ce8af9338b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>描述视频图形处理系统. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

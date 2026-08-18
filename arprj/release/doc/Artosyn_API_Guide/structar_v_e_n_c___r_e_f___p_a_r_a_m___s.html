@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Artosyn-93xx-sdk: arVENC_REF_PARAM_S结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Artosyn-93xx-sdk
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">arVENC_REF_PARAM_S结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a2ae2b19a3df1a785e3ae410897dc8735"><td class="memItemLeft" align="right" valign="top">AR_U32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html#a2ae2b19a3df1a785e3ae410897dc8735">u32Base</a></td></tr>
+<tr class="separator:a2ae2b19a3df1a785e3ae410897dc8735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a43fa18b1ecc398d991f35042499f5e"><td class="memItemLeft" align="right" valign="top">AR_U32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html#a6a43fa18b1ecc398d991f35042499f5e">u32Enhance</a></td></tr>
+<tr class="separator:a6a43fa18b1ecc398d991f35042499f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8388f86b7e5e9684e036f3b08b4cadcb"><td class="memItemLeft" align="right" valign="top">AR_BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar_v_e_n_c___r_e_f___p_a_r_a_m___s.html#a8388f86b7e5e9684e036f3b08b4cadcb">bEnablePred</a></td></tr>
+<tr class="separator:a8388f86b7e5e9684e036f3b08b4cadcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a8388f86b7e5e9684e036f3b08b4cadcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8388f86b7e5e9684e036f3b08b4cadcb">&#9670;&nbsp;</a></span>bEnablePred</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_BOOL bEnablePred</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 取值范围:[0, 1], 当bEnablePred设置为AR_FALSE时，等同于u32Base设置为无限大，base层的所有帧都参考IDR帧; 代表base层的帧是否被base层其他帧用作参考; 动态属性 </p>
+
+</div>
+</div>
+<a id="a2ae2b19a3df1a785e3ae410897dc8735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae2b19a3df1a785e3ae410897dc8735">&#9670;&nbsp;</a></span>u32Base</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U32 u32Base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 取值范围:[0,4294967295]; base层的周期; 动态属性 </p>
+
+</div>
+</div>
+<a id="a6a43fa18b1ecc398d991f35042499f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a43fa18b1ecc398d991f35042499f5e">&#9670;&nbsp;</a></span>u32Enhance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AR_U32 u32Enhance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可读写; 取值范围:NormalP [0,255] DualP [0,8]; enhance层的周期; 动态属性 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ar__comm__venc_8h_source.html">ar_comm_venc.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

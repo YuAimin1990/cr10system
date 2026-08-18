@@ -1,0 +1,1 @@
+make BOOT_MEDIA=emmc BASE_BOARD=cr20 BUILD_TYPE=debug APP=ipcam CHIP=ar9341 SEC_BOOT=n MPP_SERVICE=app all

@@ -1,0 +1,2 @@
+generate interrupt int0 every 2500 during 10
+generate interrupt int1 every 5500 during 10

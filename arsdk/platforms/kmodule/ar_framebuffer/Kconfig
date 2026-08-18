@@ -1,0 +1,8 @@
+#
+# Artosyn Display Support
+#
+menuconfig AR_FRAMEBUFFER
+	bool "Artosyn Display Support"
+    default y
+	help
+	   Driver of display.

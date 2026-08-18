@@ -1,0 +1,32 @@
+{
+    "all_rootfs":{
+        "component_list" : [ "prebuilds/rootfs/rootfs.tar.gz:",
+                             "out/middlewares/lib/*.so:usr/lib",
+                             "out/hal/lib/*.so:usr/lib",
+                             "out/mpp/lib/*.so:usr/lib",
+                             "out/hal/bin/*:usr/bin",
+                             "prebuilds/ko:mod",
+                             "prebuilds/apps/bin/artosyn_upgrade:usr/bin",
+                             "<BOARD_CONFIG_DIR>/scenario/sdk.version:etc",
+                             "<BOARD_CONFIG_DIR>/scenario/scripts/usb_gadget_configfs.sh:etc",
+                             "<BOARD_CONFIG_DIR>/scenario/scripts/init.d:etc/init.d"]
+    },
+	"usr_data":{
+        "component_list" : [ "<BOARD_CONFIG_DIR>/scenario/scripts/run.sh:",
+                             "<BOARD_CONFIG_DIR>/scenario/scripts/ir_led_ctrl.sh:bin",
+                             "<BOARD_CONFIG_DIR>/../common/tools/*:tools",
+                             "prebuilds/apps/lib/*.so*:lib",
+                             "prebuilds/apps/bin/rtcmd:bin",
+                             "prebuilds/apps/bin/bdcmd:bin",
+                             "prebuilds/apps/bin/camera:bin",
+                             "prebuilds/apps/bin/servicemanager:bin",
+                             "prebuilds/apps/bin/ar_iqtool_service:bin",
+                             "prebuilds/apps/bin/ar_wdt_service:bin",
+                             "prebuilds/apps/bin/ar_logcat:bin",
+                             "prebuilds/apps/bin/ar_top:bin",
+                             "prebuilds/apps/bin/uvc_service2:bin",
+                             "../apps/utils/tunning_gen/bin/imx307*.bin:local/factory/tunning/cam_imx307",
+                             "../apps/utils/tunning_gen/bin/sc132gs_tuning_preview_fam30.bin:local/factory/tunning/cam_sc132gs",
+                             "<BOARD_CONFIG_DIR>/scenario/cfg:cfg"]
+	}
+}

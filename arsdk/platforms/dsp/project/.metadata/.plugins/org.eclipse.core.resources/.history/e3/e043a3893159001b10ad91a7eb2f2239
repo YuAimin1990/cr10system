@@ -1,0 +1,16 @@
+
+#ifndef _MEMORY_ATTRIBUTION_H_
+#define _MEMORY_ATTRIBUTION_H_
+
+#
+
+
+
+
+extern int config_region_cacheable(unsigned int addr, unsigned int region_index);
+extern unsigned int get_region_start_addr(const unsigned int region_index);
+extern int config_region_noncacheable(unsigned int addr, unsigned int region_index);
+extern int config_region_program_cacheable(unsigned int addr, unsigned int region_index);
+
+#endif // _MEMORY_ATTRIBUTION_H_
+

@@ -1,0 +1,2562 @@
+
+ar_npu.ko:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000000 <ar_npu_dev_poll>:
+
+	return ret;
+}
+
+static unsigned int ar_npu_dev_poll(struct file * file, struct poll_table_struct * poll_table)
+{
+       0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+       4:	910003fd 	mov	x29, sp
+       8:	f9000bf3 	str	x19, [sp, #16]
+       c:	aa0003f3 	mov	x19, x0
+      10:	b40000e1 	cbz	x1, 2c <ar_npu_dev_poll+0x2c>
+      14:	f9400023 	ldr	x3, [x1]
+      18:	b40000a3 	cbz	x3, 2c <ar_npu_dev_poll+0x2c>
+      1c:	580002a4 	ldr	x4, 70 <ar_npu_dev_poll+0x70>
+      20:	aa0103e2 	mov	x2, x1
+      24:	91020081 	add	x1, x4, #0x80
+      28:	d63f0060 	blr	x3
+      2c:	f9406662 	ldr	x2, [x19, #200]
+      30:	b4000182 	cbz	x2, 60 <ar_npu_dev_poll+0x60>
+      34:	580001e0 	ldr	x0, 70 <ar_npu_dev_poll+0x70>
+	unsigned long _key;
+} poll_table;
+
+static inline void poll_wait(struct file * filp, wait_queue_head_t * wait_address, poll_table *p)
+{
+	if (p && p->_qproc && wait_address)
+      38:	f9400001 	ldr	x1, [x0]
+      3c:	91006021 	add	x1, x1, #0x18
+      40:	b9400021 	ldr	w1, [x1]
+		p->_qproc(filp, wait_address, p);
+      44:	d5033d9f 	dsb	ld
+      48:	52800000 	mov	w0, #0x0                   	// #0
+      4c:	eb21405f 	cmp	x2, w1, uxtw
+      50:	54000080 	b.eq	60 <ar_npu_dev_poll+0x60>  // b.none
+	unsigned int mask = 0;
+
+	poll_wait(file, &npu_dev.wait_queue, poll_table);
+	//check if it's my callback
+	if(file->private_data)
+      54:	f9400bf3 	ldr	x19, [sp, #16]
+      58:	a8c27bfd 	ldp	x29, x30, [sp], #32
+	{
+		if(file->private_data != readl(npu_dev.base + NPU_IRQ_NET_FRAME_ID_REG) & 0x0000ffff)
+      5c:	d65f03c0 	ret
+      60:	52800820 	mov	w0, #0x41                  	// #65
+      64:	f9400bf3 	ldr	x19, [sp, #16]
+
+#define __raw_readl __raw_readl
+static inline u32 __raw_readl(const volatile void __iomem *addr)
+{
+	u32 val;
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+      68:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      6c:	d65f03c0 	ret
+	...
+
+0000000000000078 <ar_npu_remove>:
+      78:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+	}
+
+	mask |= POLLIN | POLLRDNORM;
+
+	return mask; 
+}
+      7c:	910003fd 	mov	x29, sp
+      80:	f9000bf3 	str	x19, [sp, #16]
+      84:	580002f3 	ldr	x19, e0 <ar_npu_remove+0x68>
+	return mask; 
+      88:	f9400260 	ldr	x0, [x19]
+}
+      8c:	b4000060 	cbz	x0, 98 <ar_npu_remove+0x20>
+      90:	94000000 	bl	0 <__iounmap>
+      94:	f900027f 	str	xzr, [x19]
+      98:	f9400660 	ldr	x0, [x19, #8]
+      9c:	b4000060 	cbz	x0, a8 <ar_npu_remove+0x30>
+	
+	return ret;
+}
+
+static int ar_npu_remove(struct platform_device *pdev)
+{
+      a0:	94000000 	bl	0 <__iounmap>
+      a4:	f900067f 	str	xzr, [x19, #8]
+      a8:	f9404e60 	ldr	x0, [x19, #152]
+	if(npu_dev.base)
+      ac:	b4000040 	cbz	x0, b4 <ar_npu_remove+0x3c>
+      b0:	94000000 	bl	0 <kthread_stop>
+      b4:	f9405260 	ldr	x0, [x19, #160]
+    {
+    	iounmap(npu_dev.base);
+      b8:	b4000040 	cbz	x0, c0 <ar_npu_remove+0x48>
+    	npu_dev.base = NULL;
+      bc:	94000000 	bl	0 <kthread_stop>
+    }
+
+    if(npu_dev.global_ctrl)
+      c0:	91008260 	add	x0, x19, #0x20
+      c4:	94000000 	bl	0 <misc_deregister>
+    {
+    	iounmap(npu_dev.global_ctrl);
+      c8:	94000000 	bl	d48 <_ar_npu_poweroff>
+    	npu_dev.global_ctrl = NULL;
+      cc:	f9400bf3 	ldr	x19, [sp, #16]
+    }
+
+    if(g_normal_thread)
+      d0:	52800000 	mov	w0, #0x0                   	// #0
+      d4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    {
+    	kthread_stop(g_normal_thread);
+      d8:	d65f03c0 	ret
+    }
+    if(g_high_thread)
+      dc:	d503201f 	nop
+	...
+
+00000000000000e8 <ar_npu_dev_close>:
+    {
+    	kthread_stop(g_high_thread);
+    }
+	
+	misc_deregister(&npu_dev.miscdev);
+      e8:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+      ec:	910003fd 	mov	x29, sp
+		
+	_ar_npu_poweroff();
+      f0:	580000c0 	ldr	x0, 108 <ar_npu_dev_close+0x20>
+	return 0;
+}
+      f4:	94000000 	bl	0 <printk>
+      f8:	52800000 	mov	w0, #0x0                   	// #0
+      fc:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     100:	d65f03c0 	ret
+     104:	d503201f 	nop
+	...
+
+0000000000000110 <ar_npu_dev_open>:
+{
+     110:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+     114:	910003fd 	mov	x29, sp
+	printk(KERN_INFO "Close is called.\n");
+     118:	580000c0 	ldr	x0, 130 <ar_npu_dev_open+0x20>
+     11c:	94000000 	bl	0 <printk>
+}
+     120:	52800000 	mov	w0, #0x0                   	// #0
+     124:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     128:	d65f03c0 	ret
+     12c:	d503201f 	nop
+	...
+
+0000000000000138 <ar_npu_dev_write>:
+{
+     138:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+     13c:	910003fd 	mov	x29, sp
+	printk(KERN_INFO "Open is called.\n");
+     140:	580000c0 	ldr	x0, 158 <ar_npu_dev_write+0x20>
+     144:	94000000 	bl	0 <printk>
+}
+     148:	d2800000 	mov	x0, #0x0                   	// #0
+     14c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     150:	d65f03c0 	ret
+     154:	d503201f 	nop
+	...
+
+0000000000000160 <ar_npu_dev_read>:
+{
+     160:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+     164:	910003fd 	mov	x29, sp
+	printk(KERN_INFO "write is called.\n");
+     168:	580000c0 	ldr	x0, 180 <ar_npu_dev_read+0x20>
+     16c:	94000000 	bl	0 <printk>
+}
+     170:	d2800000 	mov	x0, #0x0                   	// #0
+     174:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     178:	d65f03c0 	ret
+     17c:	d503201f 	nop
+	...
+
+0000000000000188 <ar_npu_dev_ioctl>:
+{
+     188:	d10903ff 	sub	sp, sp, #0x240
+     18c:	2a0103e3 	mov	w3, w1
+	printk(KERN_INFO "Read is called.\n");
+     190:	52888024 	mov	w4, #0x4401                	// #17409
+     194:	72b80184 	movk	w4, #0xc00c, lsl #16
+}
+     198:	6b04003f 	cmp	w1, w4
+     19c:	a9007bfd 	stp	x29, x30, [sp]
+     1a0:	910003fd 	mov	x29, sp
+     1a4:	a90153f3 	stp	x19, x20, [sp, #16]
+     1a8:	aa0203f4 	mov	x20, x2
+     1ac:	f90017f6 	str	x22, [sp, #40]
+{
+     1b0:	aa0003f6 	mov	x22, x0
+     1b4:	d3507460 	ubfx	x0, x3, #16, #14
+	switch(cmd)
+     1b8:	54001240 	b.eq	400 <ar_npu_dev_ioctl+0x278>  // b.none
+     1bc:	540003e9 	b.ls	238 <ar_npu_dev_ioctl+0xb0>  // b.plast
+     1c0:	52888062 	mov	w2, #0x4403                	// #17411
+{
+     1c4:	72b80482 	movk	w2, #0xc024, lsl #16
+     1c8:	6b02003f 	cmp	w1, w2
+     1cc:	54000740 	b.eq	2b4 <ar_npu_dev_ioctl+0x12c>  // b.none
+     1d0:	54000f69 	b.ls	3bc <ar_npu_dev_ioctl+0x234>  // b.plast
+     1d4:	52888002 	mov	w2, #0x4400                	// #17408
+     1d8:	72b82502 	movk	w2, #0xc128, lsl #16
+	int size = _IOC_SIZE(cmd);
+     1dc:	6b02003f 	cmp	w1, w2
+	switch(cmd)
+     1e0:	540008a0 	b.eq	2f4 <ar_npu_dev_ioctl+0x16c>  // b.none
+     1e4:	52888082 	mov	w2, #0x4404                	// #17412
+     1e8:	72b84082 	movk	w2, #0xc204, lsl #16
+     1ec:	6b02003f 	cmp	w1, w2
+     1f0:	54000381 	b.ne	260 <ar_npu_dev_ioctl+0xd8>  // b.any
+     1f4:	7108101f 	cmp	w0, #0x204
+     1f8:	54002761 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     1fc:	d5384101 	mrs	x1, sp_el0
+     200:	aa1403e0 	mov	x0, x20
+     204:	f9400421 	ldr	x1, [x1, #8]
+     208:	b1081000 	adds	x0, x0, #0x204
+     20c:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     210:	9a9f87e2 	cset	x2, ls  // ls = plast
+     214:	b5001d42 	cbnz	x2, 5bc <ar_npu_dev_ioctl+0x434>
+     218:	d2804082 	mov	x2, #0x204                 	// #516
+		    if(size != sizeof(AR_NPU_IOCTL_CB_S))
+     21c:	52800001 	mov	w1, #0x0                   	// #0
+     220:	9100f3a0 	add	x0, x29, #0x3c
+ */
+static __always_inline struct task_struct *get_current(void)
+{
+	unsigned long sp_el0;
+
+	asm ("mrs %0, sp_el0" : "=r" (sp_el0));
+     224:	aa0203f3 	mov	x19, x2
+static inline unsigned long __must_check copy_from_user(void *to, const void __user *from, unsigned long n)
+{
+	unsigned long res = n;
+	kasan_check_write(to, n);
+
+	if (access_ok(VERIFY_READ, from, n)) {
+     228:	94000000 	bl	0 <memset>
+     22c:	580026a0 	ldr	x0, 700 <ar_npu_dev_ioctl+0x578>
+     230:	94000000 	bl	0 <printk>
+     234:	1400000e 	b	26c <ar_npu_dev_ioctl+0xe4>
+     238:	528880a2 	mov	w2, #0x4405                	// #17413
+     23c:	72b80102 	movk	w2, #0xc008, lsl #16
+		check_object_size(to, n, false);
+		res = __arch_copy_from_user(to, from, n);
+	}
+	if (unlikely(res))
+		memset(to + (n - res), 0, res);
+     240:	6b02003f 	cmp	w1, w2
+     244:	54000760 	b.eq	330 <ar_npu_dev_ioctl+0x1a8>  // b.none
+     248:	11000442 	add	w2, w2, #0x1
+     24c:	6b02003f 	cmp	w1, w2
+     250:	540001a0 	b.eq	284 <ar_npu_dev_ioctl+0xfc>  // b.none
+				printk(KERN_ERR"copy ioctl args error.\n");
+     254:	528880e0 	mov	w0, #0x4407                	// #17415
+     258:	6b00003f 	cmp	w1, w0
+			    return ret;
+     25c:	54000a00 	b.eq	39c <ar_npu_dev_ioctl+0x214>  // b.none
+	switch(cmd)
+     260:	58002540 	ldr	x0, 708 <ar_npu_dev_ioctl+0x580>
+     264:	d2800013 	mov	x19, #0x0                   	// #0
+     268:	94000000 	bl	0 <printk>
+     26c:	aa1303e0 	mov	x0, x19
+     270:	f94017f6 	ldr	x22, [sp, #40]
+     274:	a9407bfd 	ldp	x29, x30, [sp]
+     278:	a94153f3 	ldp	x19, x20, [sp, #16]
+     27c:	910903ff 	add	sp, sp, #0x240
+     280:	d65f03c0 	ret
+     284:	7100201f 	cmp	w0, #0x8
+			printk(KERN_ERR"No this ioctl.\n");
+     288:	540022e1 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+		break;
+     28c:	d5384101 	mrs	x1, sp_el0
+			printk(KERN_ERR"No this ioctl.\n");
+     290:	aa1403e0 	mov	x0, x20
+}
+     294:	f9400421 	ldr	x1, [x1, #8]
+     298:	b1002000 	adds	x0, x0, #0x8
+     29c:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     2a0:	9a9f87e2 	cset	x2, ls  // ls = plast
+     2a4:	b5000ea2 	cbnz	x2, 478 <ar_npu_dev_ioctl+0x2f0>
+     2a8:	d2800113 	mov	x19, #0x8                   	// #8
+		    if(size != sizeof(AR_NPU_IOCTL_DEBUG_S))
+     2ac:	f803c3bf 	stur	xzr, [x29, #60]
+     2b0:	17ffffdf 	b	22c <ar_npu_dev_ioctl+0xa4>
+     2b4:	7100901f 	cmp	w0, #0x24
+	if (access_ok(VERIFY_READ, from, n)) {
+     2b8:	54002161 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     2bc:	d5384101 	mrs	x1, sp_el0
+     2c0:	aa1403e0 	mov	x0, x20
+     2c4:	f9400421 	ldr	x1, [x1, #8]
+     2c8:	b1009000 	adds	x0, x0, #0x24
+     2cc:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+		memset(to + (n - res), 0, res);
+     2d0:	9a9f87e2 	cset	x2, ls  // ls = plast
+     2d4:	b50011a2 	cbnz	x2, 508 <ar_npu_dev_ioctl+0x380>
+     2d8:	9100f3a0 	add	x0, x29, #0x3c
+			if(size != sizeof(AR_NPU_IOCTL_STATUS_S))
+     2dc:	d2800493 	mov	x19, #0x24                  	// #36
+     2e0:	a9007c1f 	stp	xzr, xzr, [x0]
+     2e4:	910133a0 	add	x0, x29, #0x4c
+	if (access_ok(VERIFY_READ, from, n)) {
+     2e8:	a9007c1f 	stp	xzr, xzr, [x0]
+     2ec:	b9005fbf 	str	wzr, [x29, #92]
+     2f0:	17ffffcf 	b	22c <ar_npu_dev_ioctl+0xa4>
+     2f4:	7104a01f 	cmp	w0, #0x128
+     2f8:	54001f61 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     2fc:	d5384101 	mrs	x1, sp_el0
+		memset(to + (n - res), 0, res);
+     300:	aa1403e0 	mov	x0, x20
+     304:	f9400421 	ldr	x1, [x1, #8]
+     308:	b104a000 	adds	x0, x0, #0x128
+     30c:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     310:	9a9f87e2 	cset	x2, ls  // ls = plast
+     314:	b50012c2 	cbnz	x2, 56c <ar_npu_dev_ioctl+0x3e4>
+     318:	d2802502 	mov	x2, #0x128                 	// #296
+			if(size != sizeof(AR_NPU_IOCTL_CFG_S))
+     31c:	52800001 	mov	w1, #0x0                   	// #0
+     320:	9100f3a0 	add	x0, x29, #0x3c
+     324:	aa0203f3 	mov	x19, x2
+	if (access_ok(VERIFY_READ, from, n)) {
+     328:	94000000 	bl	0 <memset>
+     32c:	17ffffc0 	b	22c <ar_npu_dev_ioctl+0xa4>
+     330:	7100201f 	cmp	w0, #0x8
+     334:	54001d81 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     338:	d5384101 	mrs	x1, sp_el0
+     33c:	aa1403e0 	mov	x0, x20
+		memset(to + (n - res), 0, res);
+     340:	f9400421 	ldr	x1, [x1, #8]
+     344:	b1002000 	adds	x0, x0, #0x8
+     348:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     34c:	9a9f87e2 	cset	x2, ls  // ls = plast
+     350:	b4fffac2 	cbz	x2, 2a8 <ar_npu_dev_ioctl+0x120>
+     354:	f90013b5 	str	x21, [x29, #32]
+		    if(size != sizeof(AR_NPU_IOCTL_CB_DONE_S))
+     358:	9100f3b5 	add	x21, x29, #0x3c
+     35c:	d2800102 	mov	x2, #0x8                   	// #8
+     360:	aa1403e1 	mov	x1, x20
+	if (access_ok(VERIFY_READ, from, n)) {
+     364:	aa1503e0 	mov	x0, x21
+     368:	94000000 	bl	0 <__arch_copy_from_user>
+     36c:	aa0003f3 	mov	x19, x0
+     370:	b5001740 	cbnz	x0, 658 <ar_npu_dev_ioctl+0x4d0>
+     374:	aa1503e0 	mov	x0, x21
+     378:	94000000 	bl	12b0 <_ar_npu_cb_done>
+     37c:	93407c13 	sxtw	x19, w0
+		res = __arch_copy_from_user(to, from, n);
+     380:	f94013b5 	ldr	x21, [x29, #32]
+     384:	aa1303e0 	mov	x0, x19
+     388:	f94017f6 	ldr	x22, [sp, #40]
+     38c:	a9407bfd 	ldp	x29, x30, [sp]
+     390:	a94153f3 	ldp	x19, x20, [sp, #16]
+     394:	910903ff 	add	sp, sp, #0x240
+	if (unlikely(res))
+     398:	d65f03c0 	ret
+		    ret = _ar_npu_cb_done(&cb_done);
+     39c:	94000000 	bl	1580 <_ar_npu_sw_reset>
+     3a0:	93407c13 	sxtw	x19, w0
+     3a4:	aa1303e0 	mov	x0, x19
+		break;
+     3a8:	f94017f6 	ldr	x22, [sp, #40]
+}
+     3ac:	a9407bfd 	ldp	x29, x30, [sp]
+     3b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+     3b4:	910903ff 	add	sp, sp, #0x240
+     3b8:	d65f03c0 	ret
+     3bc:	52888042 	mov	w2, #0x4402                	// #17410
+     3c0:	72b80182 	movk	w2, #0xc00c, lsl #16
+	        ret = _ar_npu_sw_reset();		
+     3c4:	6b02003f 	cmp	w1, w2
+     3c8:	54fff4c1 	b.ne	260 <ar_npu_dev_ioctl+0xd8>  // b.any
+}
+     3cc:	7100301f 	cmp	w0, #0xc
+     3d0:	540018a1 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     3d4:	d5384101 	mrs	x1, sp_el0
+     3d8:	aa1403e0 	mov	x0, x20
+     3dc:	f9400421 	ldr	x1, [x1, #8]
+     3e0:	b1003000 	adds	x0, x0, #0xc
+	switch(cmd)
+     3e4:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     3e8:	9a9f87e2 	cset	x2, ls  // ls = plast
+     3ec:	b50006a2 	cbnz	x2, 4c0 <ar_npu_dev_ioctl+0x338>
+     3f0:	d2800193 	mov	x19, #0xc                   	// #12
+			if(size != sizeof(AR_NPU_IOCTL_RESUME_S))
+     3f4:	f803c3bf 	stur	xzr, [x29, #60]
+     3f8:	b90047bf 	str	wzr, [x29, #68]
+     3fc:	17ffff8c 	b	22c <ar_npu_dev_ioctl+0xa4>
+	if (access_ok(VERIFY_READ, from, n)) {
+     400:	7100301f 	cmp	w0, #0xc
+     404:	54001701 	b.ne	6e4 <ar_npu_dev_ioctl+0x55c>  // b.any
+     408:	d5384101 	mrs	x1, sp_el0
+     40c:	aa0203e0 	mov	x0, x2
+     410:	f9400421 	ldr	x1, [x1, #8]
+     414:	b1003000 	adds	x0, x0, #0xc
+		memset(to + (n - res), 0, res);
+     418:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     41c:	9a9f87e2 	cset	x2, ls  // ls = plast
+     420:	b4fffe82 	cbz	x2, 3f0 <ar_npu_dev_ioctl+0x268>
+     424:	f90013b5 	str	x21, [x29, #32]
+		    if(size != sizeof(AR_NPU_IOCTL_HANG_S))
+     428:	9100f3b5 	add	x21, x29, #0x3c
+     42c:	d2800182 	mov	x2, #0xc                   	// #12
+     430:	aa1403e1 	mov	x1, x20
+	if (access_ok(VERIFY_READ, from, n)) {
+     434:	aa1503e0 	mov	x0, x21
+     438:	94000000 	bl	0 <__arch_copy_from_user>
+     43c:	aa0003f3 	mov	x19, x0
+     440:	b5000fe0 	cbnz	x0, 63c <ar_npu_dev_ioctl+0x4b4>
+     444:	aa1503e0 	mov	x0, x21
+     448:	94000000 	bl	f90 <_ar_npu_hang>
+     44c:	350002a0 	cbnz	w0, 4a0 <ar_npu_dev_ioctl+0x318>
+		res = __arch_copy_from_user(to, from, n);
+     450:	d5384101 	mrs	x1, sp_el0
+     454:	aa1403e0 	mov	x0, x20
+     458:	f9400421 	ldr	x1, [x1, #8]
+     45c:	b1003000 	adds	x0, x0, #0xc
+     460:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     464:	9a9f87e2 	cset	x2, ls  // ls = plast
+	if (unlikely(res))
+     468:	b5000d42 	cbnz	x2, 610 <ar_npu_dev_ioctl+0x488>
+		    ret = _ar_npu_hang(&hang);
+     46c:	d2800013 	mov	x19, #0x0                   	// #0
+     470:	f94013b5 	ldr	x21, [x29, #32]
+		    if(ret == 0)
+     474:	17ffff7e 	b	26c <ar_npu_dev_ioctl+0xe4>
+     478:	f90013b5 	str	x21, [x29, #32]
+
+static inline unsigned long __must_check copy_to_user(void __user *to, const void *from, unsigned long n)
+{
+	kasan_check_read(from, n);
+
+	if (access_ok(VERIFY_WRITE, to, n)) {
+     47c:	9100f3b5 	add	x21, x29, #0x3c
+     480:	d2800102 	mov	x2, #0x8                   	// #8
+     484:	aa1403e1 	mov	x1, x20
+     488:	aa1503e0 	mov	x0, x21
+     48c:	94000000 	bl	0 <__arch_copy_from_user>
+     490:	aa0003f3 	mov	x19, x0
+		break;
+     494:	b50011a0 	cbnz	x0, 6c8 <ar_npu_dev_ioctl+0x540>
+     498:	aa1503e0 	mov	x0, x21
+     49c:	94000000 	bl	1348 <_ar_npu_debug_continue>
+     4a0:	93407c13 	sxtw	x19, w0
+		res = __arch_copy_from_user(to, from, n);
+     4a4:	f94013b5 	ldr	x21, [x29, #32]
+     4a8:	aa1303e0 	mov	x0, x19
+     4ac:	f94017f6 	ldr	x22, [sp, #40]
+     4b0:	a9407bfd 	ldp	x29, x30, [sp]
+     4b4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     4b8:	910903ff 	add	sp, sp, #0x240
+	if (unlikely(res))
+     4bc:	d65f03c0 	ret
+		    ret = _ar_npu_debug_continue(&debug);
+     4c0:	f90013b5 	str	x21, [x29, #32]
+     4c4:	9100f3b5 	add	x21, x29, #0x3c
+     4c8:	d2800182 	mov	x2, #0xc                   	// #12
+		break;
+     4cc:	aa1403e1 	mov	x1, x20
+}
+     4d0:	aa1503e0 	mov	x0, x21
+     4d4:	94000000 	bl	0 <__arch_copy_from_user>
+     4d8:	aa0003f3 	mov	x19, x0
+     4dc:	b5000cc0 	cbnz	x0, 674 <ar_npu_dev_ioctl+0x4ec>
+     4e0:	aa1503e0 	mov	x0, x21
+     4e4:	94000000 	bl	f98 <_ar_npu_resume>
+     4e8:	93407c13 	sxtw	x19, w0
+		res = __arch_copy_from_user(to, from, n);
+     4ec:	f94013b5 	ldr	x21, [x29, #32]
+     4f0:	aa1303e0 	mov	x0, x19
+     4f4:	f94017f6 	ldr	x22, [sp, #40]
+     4f8:	a9407bfd 	ldp	x29, x30, [sp]
+     4fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     500:	910903ff 	add	sp, sp, #0x240
+	if (unlikely(res))
+     504:	d65f03c0 	ret
+		    ret = _ar_npu_resume(&resume);
+     508:	f90013b5 	str	x21, [x29, #32]
+     50c:	9100f3b5 	add	x21, x29, #0x3c
+     510:	d2800482 	mov	x2, #0x24                  	// #36
+		break;
+     514:	aa1403e1 	mov	x1, x20
+}
+     518:	aa1503e0 	mov	x0, x21
+     51c:	94000000 	bl	0 <__arch_copy_from_user>
+     520:	aa0003f3 	mov	x19, x0
+     524:	b50007a0 	cbnz	x0, 618 <ar_npu_dev_ioctl+0x490>
+     528:	aa1503e0 	mov	x0, x21
+     52c:	94000000 	bl	ee0 <_ar_npu_query>
+     530:	35fffb80 	cbnz	w0, 4a0 <ar_npu_dev_ioctl+0x318>
+		res = __arch_copy_from_user(to, from, n);
+     534:	d5384101 	mrs	x1, sp_el0
+     538:	aa1403e0 	mov	x0, x20
+     53c:	f9400421 	ldr	x1, [x1, #8]
+     540:	b1009000 	adds	x0, x0, #0x24
+     544:	fa413002 	ccmp	x0, x1, #0x2, cc  // cc = lo, ul, last
+     548:	9a9f87e2 	cset	x2, ls  // ls = plast
+	if (unlikely(res))
+     54c:	b4fff902 	cbz	x2, 46c <ar_npu_dev_ioctl+0x2e4>
+		    ret = _ar_npu_query(&status);
+     550:	d2800482 	mov	x2, #0x24                  	// #36
+     554:	aa1503e1 	mov	x1, x21
+		    if(ret == 0)
+     558:	aa1403e0 	mov	x0, x20
+     55c:	d2800013 	mov	x19, #0x0                   	// #0
+	if (access_ok(VERIFY_WRITE, to, n)) {
+     560:	94000000 	bl	0 <__arch_copy_to_user>
+     564:	f94013b5 	ldr	x21, [x29, #32]
+     568:	17ffff41 	b	26c <ar_npu_dev_ioctl+0xe4>
+     56c:	f90013b5 	str	x21, [x29, #32]
+     570:	9100f3b5 	add	x21, x29, #0x3c
+     574:	d2802502 	mov	x2, #0x128                 	// #296
+		check_object_size(from, n, true);
+		n = __arch_copy_to_user(to, from, n);
+     578:	aa1403e1 	mov	x1, x20
+     57c:	aa1503e0 	mov	x0, x21
+     580:	94000000 	bl	0 <__arch_copy_from_user>
+     584:	aa0003f3 	mov	x19, x0
+     588:	b5000920 	cbnz	x0, 6ac <ar_npu_dev_ioctl+0x524>
+     58c:	f94066c0 	ldr	x0, [x22, #200]
+     590:	b40003a0 	cbz	x0, 604 <ar_npu_dev_ioctl+0x47c>
+     594:	aa1503e0 	mov	x0, x21
+		res = __arch_copy_from_user(to, from, n);
+     598:	94000000 	bl	13e0 <_ar_npu_start>
+     59c:	93407c13 	sxtw	x19, w0
+     5a0:	f94013b5 	ldr	x21, [x29, #32]
+     5a4:	aa1303e0 	mov	x0, x19
+     5a8:	f94017f6 	ldr	x22, [sp, #40]
+     5ac:	a9407bfd 	ldp	x29, x30, [sp]
+	if (unlikely(res))
+     5b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+			if(!file->private_data)
+     5b4:	910903ff 	add	sp, sp, #0x240
+     5b8:	d65f03c0 	ret
+		    ret = _ar_npu_start(&cfg);
+     5bc:	f90013b5 	str	x21, [x29, #32]
+     5c0:	9100f3b5 	add	x21, x29, #0x3c
+     5c4:	d2804082 	mov	x2, #0x204                 	// #516
+		break;
+     5c8:	aa1403e1 	mov	x1, x20
+}
+     5cc:	aa1503e0 	mov	x0, x21
+     5d0:	94000000 	bl	0 <__arch_copy_from_user>
+     5d4:	aa0003f3 	mov	x19, x0
+     5d8:	b50005c0 	cbnz	x0, 690 <ar_npu_dev_ioctl+0x508>
+     5dc:	aa1503e0 	mov	x0, x21
+     5e0:	94000000 	bl	d68 <_ar_npu_register_cb>
+     5e4:	93407c13 	sxtw	x19, w0
+		res = __arch_copy_from_user(to, from, n);
+     5e8:	f94013b5 	ldr	x21, [x29, #32]
+     5ec:	aa1303e0 	mov	x0, x19
+     5f0:	f94017f6 	ldr	x22, [sp, #40]
+     5f4:	a9407bfd 	ldp	x29, x30, [sp]
+     5f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     5fc:	910903ff 	add	sp, sp, #0x240
+	if (unlikely(res))
+     600:	d65f03c0 	ret
+		    ret = _ar_npu_register_cb(&cb);
+     604:	7942c3a0 	ldrh	w0, [x29, #352]
+     608:	f90066c0 	str	x0, [x22, #200]
+     60c:	17ffffe2 	b	594 <ar_npu_dev_ioctl+0x40c>
+		break;
+     610:	d2800182 	mov	x2, #0xc                   	// #12
+}
+     614:	17ffffd0 	b	554 <ar_npu_dev_ioctl+0x3cc>
+     618:	cb0002a0 	sub	x0, x21, x0
+     61c:	aa1303e2 	mov	x2, x19
+     620:	52800001 	mov	w1, #0x0                   	// #0
+     624:	91009000 	add	x0, x0, #0x24
+     628:	94000000 	bl	0 <memset>
+				file->private_data = cfg.u16NetworkId;
+     62c:	34fff7f3 	cbz	w19, 528 <ar_npu_dev_ioctl+0x3a0>
+     630:	93407e73 	sxtw	x19, w19
+     634:	f94013b5 	ldr	x21, [x29, #32]
+		n = __arch_copy_to_user(to, from, n);
+     638:	17fffefd 	b	22c <ar_npu_dev_ioctl+0xa4>
+     63c:	cb0002a0 	sub	x0, x21, x0
+		memset(to + (n - res), 0, res);
+     640:	aa1303e2 	mov	x2, x19
+     644:	52800001 	mov	w1, #0x0                   	// #0
+     648:	91003000 	add	x0, x0, #0xc
+     64c:	94000000 	bl	0 <memset>
+     650:	34ffefb3 	cbz	w19, 444 <ar_npu_dev_ioctl+0x2bc>
+		    if(ret)
+     654:	17fffff7 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     658:	cb0002a0 	sub	x0, x21, x0
+     65c:	aa1303e2 	mov	x2, x19
+     660:	52800001 	mov	w1, #0x0                   	// #0
+     664:	91002000 	add	x0, x0, #0x8
+     668:	94000000 	bl	0 <memset>
+     66c:	34ffe853 	cbz	w19, 374 <ar_npu_dev_ioctl+0x1ec>
+     670:	17fffff0 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     674:	cb0002a0 	sub	x0, x21, x0
+		    if(ret)
+     678:	aa1303e2 	mov	x2, x19
+     67c:	52800001 	mov	w1, #0x0                   	// #0
+     680:	91003000 	add	x0, x0, #0xc
+     684:	94000000 	bl	0 <memset>
+     688:	34fff2d3 	cbz	w19, 4e0 <ar_npu_dev_ioctl+0x358>
+     68c:	17ffffe9 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     690:	cb0002a0 	sub	x0, x21, x0
+		    if(ret)
+     694:	aa1303e2 	mov	x2, x19
+     698:	52800001 	mov	w1, #0x0                   	// #0
+     69c:	91081000 	add	x0, x0, #0x204
+     6a0:	94000000 	bl	0 <memset>
+     6a4:	34fff9d3 	cbz	w19, 5dc <ar_npu_dev_ioctl+0x454>
+     6a8:	17ffffe2 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     6ac:	cb0002a0 	sub	x0, x21, x0
+		    if(ret)
+     6b0:	aa1303e2 	mov	x2, x19
+     6b4:	52800001 	mov	w1, #0x0                   	// #0
+     6b8:	9104a000 	add	x0, x0, #0x128
+     6bc:	94000000 	bl	0 <memset>
+     6c0:	34fff673 	cbz	w19, 58c <ar_npu_dev_ioctl+0x404>
+     6c4:	17ffffdb 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     6c8:	cb0002a0 	sub	x0, x21, x0
+		    if(ret)
+     6cc:	aa1303e2 	mov	x2, x19
+     6d0:	52800001 	mov	w1, #0x0                   	// #0
+     6d4:	91002000 	add	x0, x0, #0x8
+     6d8:	94000000 	bl	0 <memset>
+     6dc:	34ffedf3 	cbz	w19, 498 <ar_npu_dev_ioctl+0x310>
+     6e0:	17ffffd4 	b	630 <ar_npu_dev_ioctl+0x4a8>
+     6e4:	580000a0 	ldr	x0, 6f8 <ar_npu_dev_ioctl+0x570>
+		    if(ret)
+     6e8:	928002b3 	mov	x19, #0xffffffffffffffea    	// #-22
+     6ec:	94000000 	bl	0 <printk>
+     6f0:	17fffedf 	b	26c <ar_npu_dev_ioctl+0xe4>
+     6f4:	d503201f 	nop
+	...
+
+0000000000000710 <ar_npu_probe>:
+				return -EINVAL;
+     710:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+				printk(KERN_ERR"ioctl cmd %d param mismatch.\n", cmd);
+     714:	910003fd 	mov	x29, sp
+				return -EINVAL;
+     718:	f9000ff4 	str	x20, [sp, #24]
+     71c:	29077fbf 	stp	wzr, wzr, [x29, #56]
+     720:	29087fbf 	stp	wzr, wzr, [x29, #64]
+     724:	b40018a0 	cbz	x0, a38 <ar_npu_probe+0x328>
+     728:	f9000bb3 	str	x19, [x29, #16]
+     72c:	aa0003f4 	mov	x20, x0
+     730:	58001a93 	ldr	x19, a80 <ar_npu_probe+0x370>
+     734:	52800002 	mov	w2, #0x0                   	// #0
+{
+     738:	52804001 	mov	w1, #0x200                 	// #512
+     73c:	a9007e7f 	stp	xzr, xzr, [x19]
+     740:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+  	unsigned int dma_ctrl = 0;
+     744:	a9027e7f 	stp	xzr, xzr, [x19, #32]
+  	unsigned int control = 0;
+     748:	a9037e7f 	stp	xzr, xzr, [x19, #48]
+	if(!pdev)
+     74c:	a9047e7f 	stp	xzr, xzr, [x19, #64]
+     750:	a9057e7f 	stp	xzr, xzr, [x19, #80]
+     754:	a9067e7f 	stp	xzr, xzr, [x19, #96]
+	memset(&dla_dev, 0, sizeof(dla_dev));
+     758:	a9077e7f 	stp	xzr, xzr, [x19, #112]
+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+     75c:	a9087e7f 	stp	xzr, xzr, [x19, #128]
+     760:	f9004a7f 	str	xzr, [x19, #144]
+	memset(&dla_dev, 0, sizeof(dla_dev));
+     764:	94000000 	bl	0 <platform_get_resource>
+     768:	b4001660 	cbz	x0, a34 <ar_npu_probe+0x324>
+     76c:	f9400401 	ldr	x1, [x0, #8]
+     770:	f9400000 	ldr	x0, [x0]
+     774:	91000421 	add	x1, x1, #0x1
+     778:	cb000021 	sub	x1, x1, x0
+     77c:	f13ffc3f 	cmp	x1, #0xfff
+     780:	54001609 	b.ls	a40 <ar_npu_probe+0x330>  // b.plast
+     784:	d280e0e2 	mov	x2, #0x707                 	// #1799
+     788:	d2820001 	mov	x1, #0x1000                	// #4096
+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+     78c:	f2e01d02 	movk	x2, #0xe8, lsl #48
+	if(!res)
+     790:	94000000 	bl	0 <__ioremap>
+	if((res->end - res->start + 1) < DLA_REG_SPACE_RANGE) {
+     794:	f9000260 	str	x0, [x19]
+     798:	b4001600 	cbz	x0, a58 <ar_npu_probe+0x348>
+     79c:	580017a1 	ldr	x1, a90 <ar_npu_probe+0x380>
+     7a0:	d2800004 	mov	x4, #0x0                   	// #0
+     7a4:	f940f680 	ldr	x0, [x20, #488]
+     7a8:	d2800023 	mov	x3, #0x1                   	// #1
+	dla_dev.base = ioremap_nocache(res->start, DLA_REG_SPACE_RANGE);
+     7ac:	910113a2 	add	x2, x29, #0x44
+     7b0:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     7b4:	37f80ac0 	tbnz	w0, #31, 90c <ar_npu_probe+0x1fc>
+     7b8:	b94047a0 	ldr	w0, [x29, #68]
+     7bc:	d280e0e2 	mov	x2, #0x707                 	// #1799
+	if(!dla_dev.base)
+     7c0:	d2900001 	mov	x1, #0x8000                	// #32768
+ */
+static inline int of_property_read_u32_array(const struct device_node *np,
+					     const char *propname,
+					     u32 *out_values, size_t sz)
+{
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     7c4:	f2e01d02 	movk	x2, #0xe8, lsl #48
+     7c8:	94000000 	bl	0 <__ioremap>
+     7cc:	f9000660 	str	x0, [x19, #8]
+     7d0:	b4000960 	cbz	x0, 8fc <ar_npu_probe+0x1ec>
+     7d4:	f90013b5 	str	x21, [x29, #32]
+     7d8:	d2800004 	mov	x4, #0x0                   	// #0
+						      sz, 0);
+	if (ret >= 0)
+     7dc:	580015e1 	ldr	x1, a98 <ar_npu_probe+0x388>
+     7e0:	d2800023 	mov	x3, #0x1                   	// #1
+	dla_dev.global_ctrl = ioremap_nocache(control, AR_GLOBAL_CONTROL_RANGE);
+     7e4:	f940f680 	ldr	x0, [x20, #488]
+     7e8:	9100e3a2 	add	x2, x29, #0x38
+     7ec:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     7f0:	37f80fc0 	tbnz	w0, #31, 9e8 <ar_npu_probe+0x2d8>
+     7f4:	b9403ba0 	ldr	w0, [x29, #56]
+	if(!dla_dev.global_ctrl)
+     7f8:	d2800004 	mov	x4, #0x0                   	// #0
+     7fc:	b9001260 	str	w0, [x19, #16]
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     800:	d2800023 	mov	x3, #0x1                   	// #1
+     804:	580014e1 	ldr	x1, aa0 <ar_npu_probe+0x390>
+     808:	9100f3a2 	add	x2, x29, #0x3c
+     80c:	f940f680 	ldr	x0, [x20, #488]
+     810:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     814:	37f80fc0 	tbnz	w0, #31, a0c <ar_npu_probe+0x2fc>
+	if (ret >= 0)
+     818:	b9403fa0 	ldr	w0, [x29, #60]
+		dla_dev.frequency = frequency;
+     81c:	d2800004 	mov	x4, #0x0                   	// #0
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     820:	b9001660 	str	w0, [x19, #20]
+     824:	d2800023 	mov	x3, #0x1                   	// #1
+     828:	58001401 	ldr	x1, aa8 <ar_npu_probe+0x398>
+     82c:	910103a2 	add	x2, x29, #0x40
+     830:	f940f680 	ldr	x0, [x20, #488]
+     834:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     838:	37f80fa0 	tbnz	w0, #31, a2c <ar_npu_probe+0x31c>
+	if (ret >= 0)
+     83c:	b94043a0 	ldr	w0, [x29, #64]
+		dla_dev.dma_ctrl = dma_ctrl;
+     840:	b9001a60 	str	w0, [x19, #24]
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     844:	52800001 	mov	w1, #0x0                   	// #0
+     848:	aa1403e0 	mov	x0, x20
+     84c:	94000000 	bl	0 <platform_get_irq>
+     850:	58001315 	ldr	x21, ab0 <ar_npu_probe+0x3a0>
+     854:	58001321 	ldr	x1, ab8 <ar_npu_probe+0x3a8>
+     858:	aa1303e5 	mov	x5, x19
+     85c:	aa1503e4 	mov	x4, x21
+	if (ret >= 0)
+     860:	d2800003 	mov	x3, #0x0                   	// #0
+		dla_dev.cb_to_arm = cb_to_arm;
+     864:	d2800002 	mov	x2, #0x0                   	// #0
+     868:	b9007260 	str	w0, [x19, #112]
+	dla_dev.irq = platform_get_irq(pdev, 0);
+     86c:	94000000 	bl	0 <request_threaded_irq>
+     870:	2a0003f4 	mov	w20, w0
+     874:	37f80f80 	tbnz	w0, #31, a64 <ar_npu_probe+0x354>
+
+static inline int __must_check
+request_irq(unsigned int irq, irq_handler_t handler, unsigned long flags,
+	    const char *name, void *dev)
+{
+	return request_threaded_irq(irq, handler, NULL, flags, name, dev);
+     878:	f9401661 	ldr	x1, [x19, #40]
+     87c:	52801fe2 	mov	w2, #0xff                  	// #255
+     880:	b94002a0 	ldr	w0, [x21]
+     884:	b9002262 	str	w2, [x19, #32]
+     888:	b84022a3 	ldur	w3, [x21, #2]
+     88c:	580011e2 	ldr	x2, ac8 <ar_npu_probe+0x3b8>
+     890:	b9000020 	str	w0, [x1]
+     894:	91008260 	add	x0, x19, #0x20
+     898:	b8002023 	stur	w3, [x1, #2]
+	if(ret < 0)
+     89c:	f9001a62 	str	x2, [x19, #48]
+	strcpy(dla_dev.miscdev.name, "ardla");
+     8a0:	94000000 	bl	0 <misc_register>
+	dla_dev.miscdev.minor = MISC_DYNAMIC_MINOR;	
+     8a4:	2a0003f4 	mov	w20, w0
+	strcpy(dla_dev.miscdev.name, "ardla");
+     8a8:	36f80440 	tbz	w0, #31, 930 <ar_npu_probe+0x220>
+	dla_dev.miscdev.minor = MISC_DYNAMIC_MINOR;	
+     8ac:	f9400260 	ldr	x0, [x19]
+	strcpy(dla_dev.miscdev.name, "ardla");
+     8b0:	f94013b5 	ldr	x21, [x29, #32]
+	dla_dev.miscdev.fops = &ar_npu_fops;
+     8b4:	b4000060 	cbz	x0, 8c0 <ar_npu_probe+0x1b0>
+	strcpy(dla_dev.miscdev.name, "ardla");
+     8b8:	94000000 	bl	0 <__iounmap>
+	ret = misc_register(&dla_dev.miscdev);
+     8bc:	f900027f 	str	xzr, [x19]
+	strcpy(dla_dev.miscdev.name, "ardla");
+     8c0:	f9400660 	ldr	x0, [x19, #8]
+	dla_dev.miscdev.fops = &ar_npu_fops;
+     8c4:	b4000060 	cbz	x0, 8d0 <ar_npu_probe+0x1c0>
+	ret = misc_register(&dla_dev.miscdev);
+     8c8:	94000000 	bl	0 <__iounmap>
+     8cc:	f900067f 	str	xzr, [x19, #8]
+	if(ret < 0)
+     8d0:	f9404e60 	ldr	x0, [x19, #152]
+    if(dla_dev.base)
+     8d4:	b4000040 	cbz	x0, 8dc <ar_npu_probe+0x1cc>
+     8d8:	94000000 	bl	0 <kthread_stop>
+     8dc:	f9405260 	ldr	x0, [x19, #160]
+    	iounmap(dla_dev.base);
+     8e0:	b40001e0 	cbz	x0, 91c <ar_npu_probe+0x20c>
+    	dla_dev.base = NULL;
+     8e4:	94000000 	bl	0 <kthread_stop>
+    if(dla_dev.global_ctrl)
+     8e8:	f9400bb3 	ldr	x19, [x29, #16]
+     8ec:	2a1403e0 	mov	w0, w20
+    	iounmap(dla_dev.global_ctrl);
+     8f0:	f9400ff4 	ldr	x20, [sp, #24]
+    	dla_dev.global_ctrl = NULL;
+     8f4:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    if(g_normal_thread)
+     8f8:	d65f03c0 	ret
+     8fc:	f9400260 	ldr	x0, [x19]
+    	kthread_stop(g_normal_thread);
+     900:	52800014 	mov	w20, #0x0                   	// #0
+    if(g_high_thread)
+     904:	b5fffda0 	cbnz	x0, 8b8 <ar_npu_probe+0x1a8>
+     908:	17fffff2 	b	8d0 <ar_npu_probe+0x1c0>
+    	kthread_stop(g_high_thread);
+     90c:	52a020e1 	mov	w1, #0x1070000             	// #17235968
+     910:	d2a020e0 	mov	x0, #0x1070000             	// #17235968
+}
+     914:	b90047a1 	str	w1, [x29, #68]
+     918:	17ffffa9 	b	7bc <ar_npu_probe+0xac>
+     91c:	f9400bb3 	ldr	x19, [x29, #16]
+     920:	2a1403e0 	mov	w0, w20
+    if(dla_dev.base)
+     924:	f9400ff4 	ldr	x20, [sp, #24]
+	int ret = 0;	
+     928:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    if(dla_dev.base)
+     92c:	d65f03c0 	ret
+     930:	58000d03 	ldr	x3, ad0 <ar_npu_probe+0x3c0>
+		control = AR_GLOBAL_CONTROL_BASE;	
+     934:	12800002 	mov	w2, #0xffffffff            	// #-1
+     938:	58000d00 	ldr	x0, ad8 <ar_npu_probe+0x3c8>
+     93c:	aa1303e1 	mov	x1, x19
+     940:	94000000 	bl	0 <kthread_create_on_node>
+     944:	aa0003f5 	mov	x21, x0
+}
+     948:	b140041f 	cmn	x0, #0x1, lsl #12
+     94c:	54000048 	b.hi	954 <ar_npu_probe+0x244>  // b.pmore
+     950:	94000000 	bl	0 <wake_up_process>
+     954:	58000c63 	ldr	x3, ae0 <ar_npu_probe+0x3d0>
+	g_normal_thread = kthread_run(_ar_npu_normal_thread, &dla_dev, "dla_normal_thread");
+     958:	12800002 	mov	w2, #0xffffffff            	// #-1
+     95c:	58000c60 	ldr	x0, ae8 <ar_npu_probe+0x3d8>
+     960:	aa1303e1 	mov	x1, x19
+     964:	f9004e75 	str	x21, [x19, #152]
+     968:	94000000 	bl	0 <kthread_create_on_node>
+     96c:	aa0003f5 	mov	x21, x0
+     970:	b140041f 	cmn	x0, #0x1, lsl #12
+     974:	54000048 	b.hi	97c <ar_npu_probe+0x26c>  // b.pmore
+     978:	94000000 	bl	0 <wake_up_process>
+	g_high_thread = kthread_run(_ar_npu_high_thread, &dla_dev, "dla_high_thread");
+     97c:	f9404e60 	ldr	x0, [x19, #152]
+     980:	f10002bf 	cmp	x21, #0x0
+     984:	f9005275 	str	x21, [x19, #160]
+     988:	fa401804 	ccmp	x0, #0x0, #0x4, ne  // ne = any
+	g_normal_thread = kthread_run(_ar_npu_normal_thread, &dla_dev, "dla_normal_thread");
+     98c:	54000720 	b.eq	a70 <ar_npu_probe+0x360>  // b.none
+	g_high_thread = kthread_run(_ar_npu_high_thread, &dla_dev, "dla_high_thread");
+     990:	52800644 	mov	w4, #0x32                  	// #50
+     994:	52800963 	mov	w3, #0x4b                  	// #75
+     998:	910123a2 	add	x2, x29, #0x48
+     99c:	29090fa4 	stp	w4, w3, [x29, #72]
+     9a0:	52800021 	mov	w1, #0x1                   	// #1
+	if(!g_normal_thread || !g_high_thread)
+     9a4:	94000000 	bl	0 <sched_setscheduler>
+     9a8:	f9405260 	ldr	x0, [x19, #160]
+	g_high_thread = kthread_run(_ar_npu_high_thread, &dla_dev, "dla_high_thread");
+     9ac:	910133a2 	add	x2, x29, #0x4c
+	if(!g_normal_thread || !g_high_thread)
+     9b0:	52800021 	mov	w1, #0x1                   	// #1
+     9b4:	52800014 	mov	w20, #0x0                   	// #0
+	normal_priority.sched_priority = 50;
+     9b8:	94000000 	bl	0 <sched_setscheduler>
+	high_priority.sched_priority = 75;
+     9bc:	580009e1 	ldr	x1, af8 <ar_npu_probe+0x3e8>
+	sched_setscheduler(g_normal_thread, SCHED_FIFO, &normal_priority);
+     9c0:	9102a262 	add	x2, x19, #0xa8
+	high_priority.sched_priority = 75;
+     9c4:	91020260 	add	x0, x19, #0x80
+	sched_setscheduler(g_normal_thread, SCHED_FIFO, &normal_priority);
+     9c8:	94000000 	bl	0 <__init_waitqueue_head>
+     9cc:	94000000 	bl	be8 <_ar_npu_poweron>
+	sched_setscheduler(g_high_thread, SCHED_FIFO, &high_priority);
+     9d0:	f9400bb3 	ldr	x19, [x29, #16]
+     9d4:	f94013b5 	ldr	x21, [x29, #32]
+     9d8:	2a1403e0 	mov	w0, w20
+	return 0;
+     9dc:	f9400ff4 	ldr	x20, [sp, #24]
+	sched_setscheduler(g_high_thread, SCHED_FIFO, &high_priority);
+     9e0:	a8c57bfd 	ldp	x29, x30, [sp], #80
+	init_waitqueue_head(&dla_dev.wait_queue);	
+     9e4:	d65f03c0 	ret
+     9e8:	52803e80 	mov	w0, #0x1f4                 	// #500
+     9ec:	580005a1 	ldr	x1, aa0 <ar_npu_probe+0x390>
+     9f0:	b9001260 	str	w0, [x19, #16]
+	_ar_npu_poweron();
+     9f4:	d2800004 	mov	x4, #0x0                   	// #0
+	return 0;
+     9f8:	f940f680 	ldr	x0, [x20, #488]
+     9fc:	d2800023 	mov	x3, #0x1                   	// #1
+}
+     a00:	9100f3a2 	add	x2, x29, #0x3c
+     a04:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     a08:	36fff080 	tbz	w0, #31, 818 <ar_npu_probe+0x108>
+     a0c:	580004e1 	ldr	x1, aa8 <ar_npu_probe+0x398>
+		dla_dev.frequency = AR_NPU_DEFAULT_FREQUENCY;
+     a10:	d2800004 	mov	x4, #0x0                   	// #0
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     a14:	f940f680 	ldr	x0, [x20, #488]
+     a18:	d2800023 	mov	x3, #0x1                   	// #1
+     a1c:	b900167f 	str	wzr, [x19, #20]
+     a20:	910103a2 	add	x2, x29, #0x40
+     a24:	94000000 	bl	0 <of_property_read_variable_u32_array>
+     a28:	36fff0a0 	tbz	w0, #31, 83c <ar_npu_probe+0x12c>
+     a2c:	b9001a7f 	str	wzr, [x19, #24]
+	if (ret >= 0)
+     a30:	17ffff85 	b	844 <ar_npu_probe+0x134>
+	int ret = of_property_read_variable_u32_array(np, propname, out_values,
+     a34:	f9400bb3 	ldr	x19, [x29, #16]
+     a38:	128002b4 	mov	w20, #0xffffffea            	// #-22
+     a3c:	17ffffac 	b	8ec <ar_npu_probe+0x1dc>
+     a40:	58000241 	ldr	x1, a88 <ar_npu_probe+0x378>
+		dla_dev.dma_ctrl = AR_NPU_DEFAULT_DMA_CTRL;//ch 0 nonsec no cache
+     a44:	91004280 	add	x0, x20, #0x10
+     a48:	128002b4 	mov	w20, #0xffffffea            	// #-22
+     a4c:	94000000 	bl	0 <dev_err>
+	if (ret >= 0)
+     a50:	f9400bb3 	ldr	x19, [x29, #16]
+		dla_dev.cb_to_arm = AR_NPU_DEFAULT_CB_DSP;
+     a54:	17ffffa6 	b	8ec <ar_npu_probe+0x1dc>
+     a58:	12800174 	mov	w20, #0xfffffff4            	// #-12
+     a5c:	f9400bb3 	ldr	x19, [x29, #16]
+		return -EINVAL;
+     a60:	17ffffa3 	b	8ec <ar_npu_probe+0x1dc>
+     a64:	580002e0 	ldr	x0, ac0 <ar_npu_probe+0x3b0>
+		dev_err(&pdev->dev, "I/O space is too small\n");
+     a68:	94000000 	bl	0 <printk>
+     a6c:	17ffff90 	b	8ac <ar_npu_probe+0x19c>
+		return -EINVAL;
+     a70:	58000400 	ldr	x0, af0 <ar_npu_probe+0x3e0>
+		dev_err(&pdev->dev, "I/O space is too small\n");
+     a74:	94000000 	bl	0 <printk>
+		return -EINVAL;
+     a78:	17ffff8d 	b	8ac <ar_npu_probe+0x19c>
+     a7c:	d503201f 	nop
+	...
+
+0000000000000b00 <_ar_npu_hw_start>:
+		goto fail;
+     b00:	d5033e9f 	dsb	st
+     b04:	91001003 	add	x3, x0, #0x4
+     b08:	b9400c22 	ldr	w2, [x1, #12]
+     b0c:	b9000062 	str	w2, [x3]
+     b10:	d5033e9f 	dsb	st
+     b14:	91003003 	add	x3, x0, #0xc
+     b18:	b9401022 	ldr	w2, [x1, #16]
+     b1c:	b9000062 	str	w2, [x3]
+     b20:	d5033e9f 	dsb	st
+     b24:	9100d003 	add	x3, x0, #0x34
+static void _ar_npu_hw_start(void __iomem * base, AR_NPU_IOCTL_CFG_S * cfg) 
+{    
+    int i = 0;
+    unsigned int val = 0;
+
+    writel(cfg->u32SCUAddrPhy, base + DLA_COMMAND_ADDR_REG);
+     b28:	b9401422 	ldr	w2, [x1, #20]
+     b2c:	b9000062 	str	w2, [x3]
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     b30:	d5033e9f 	dsb	st
+     b34:	9100e003 	add	x3, x0, #0x38
+    writel(cfg->u32SCUSize, base + DLA_COMMAND_LEN_REG);
+     b38:	b9401822 	ldr	w2, [x1, #24]
+     b3c:	b9000062 	str	w2, [x3]
+     b40:	91007022 	add	x2, x1, #0x1c
+     b44:	9102f003 	add	x3, x0, #0xbc
+    writel(cfg->u32RuntimeAddrPhy, base + DLA_RUNTIME_ADDR_REG);
+     b48:	9104f005 	add	x5, x0, #0x13c
+     b4c:	d503201f 	nop
+     b50:	b9400044 	ldr	w4, [x2]
+     b54:	340000a4 	cbz	w4, b68 <_ar_npu_hw_start+0x68>
+    writel(cfg->u32WeightsAddrPhy, base + DLA_PARAMS_ADDR_REG);
+     b58:	d5033e9f 	dsb	st
+     b5c:	d1020066 	sub	x6, x3, #0x80
+     b60:	b9400044 	ldr	w4, [x2]
+     b64:	b90000c4 	str	w4, [x6]
+     b68:	b9408044 	ldr	w4, [x2, #128]
+     b6c:	34000084 	cbz	w4, b7c <_ar_npu_hw_start+0x7c>
+     b70:	d5033e9f 	dsb	st
+     b74:	b9408044 	ldr	w4, [x2, #128]
+    for(i = 0; i < MAX_INPUT_NUM; i++)
+    {
+        if(cfg->au32InputAddrPhy[i])
+     b78:	b9000064 	str	w4, [x3]
+     b7c:	91001063 	add	x3, x3, #0x4
+        {
+            writel(cfg->au32InputAddrPhy[i], base + DLA_INPUT_ADDR_0_REG + i * 4);
+     b80:	91001042 	add	x2, x2, #0x4
+     b84:	eb05007f 	cmp	x3, x5
+     b88:	54fffe41 	b.ne	b50 <_ar_npu_hw_start+0x50>  // b.any
+     b8c:	d5033e9f 	dsb	st
+        }
+
+        if(cfg->au32OutputAddrPhy[i])
+     b90:	9100b003 	add	x3, x0, #0x2c
+     b94:	b9411c22 	ldr	w2, [x1, #284]
+        {
+            writel(cfg->au32OutputAddrPhy[i], base + DLA_OUTPUT_ADDR_0_REG + i * 4);
+     b98:	b9000062 	str	w2, [x3]
+     b9c:	d5033e9f 	dsb	st
+     ba0:	9100c003 	add	x3, x0, #0x30
+     ba4:	b9412022 	ldr	w2, [x1, #288]
+     ba8:	b9000062 	str	w2, [x3]
+    for(i = 0; i < MAX_INPUT_NUM; i++)
+     bac:	d5033e9f 	dsb	st
+     bb0:	d2800383 	mov	x3, #0x1c                  	// #28
+        }            
+    }
+    
+    writel(cfg->u32SramAddrPhy, base + DLA_SRAM_ADDR_REG);
+     bb4:	b9412422 	ldr	w2, [x1, #292]
+     bb8:	b9000062 	str	w2, [x3]
+     bbc:	b9400421 	ldr	w1, [x1, #4]
+     bc0:	7100043f 	cmp	w1, #0x1
+    writel(cfg->u32SramSize, base + DLA_SRAM_SIZE_REG);
+     bc4:	540000a0 	b.eq	bd8 <_ar_npu_hw_start+0xd8>  // b.none
+     bc8:	d5033e9f 	dsb	st
+     bcc:	52800021 	mov	w1, #0x1                   	// #1
+     bd0:	b9000001 	str	w1, [x0]
+       
+    //set frame id network id etc..
+    writel(cfg->u16NetworkId | (cfg->u16FrameId << 16), DLA_PROC_NET_FRAME_ID_REG);
+     bd4:	d65f03c0 	ret
+     bd8:	d5033e9f 	dsb	st
+     bdc:	52800121 	mov	w1, #0x9                   	// #9
+     be0:	b9000001 	str	w1, [x0]
+
+    //before start, should clear hang bit, so we just from '0' to start.
+    val = 0;
+    if(cfg->u32Debug == DLA_LAYER_DEBUG_ON) 
+     be4:	d65f03c0 	ret
+
+0000000000000be8 <_ar_npu_poweron>:
+     be8:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+     bec:	910003fd 	mov	x29, sp
+    {
+        writel(val | 0x9, base + DLA_START_REG);  
+    }
+    else
+    {
+        writel(val | 0x1, base + DLA_START_REG);
+     bf0:	a90153f3 	stp	x19, x20, [sp, #16]
+     bf4:	580009f4 	ldr	x20, d30 <_ar_npu_poweron+0x148>
+     bf8:	a9025bf5 	stp	x21, x22, [sp, #32]
+    }    
+}
+     bfc:	a90363f7 	stp	x23, x24, [sp, #48]
+        writel(val | 0x9, base + DLA_START_REG);  
+     c00:	a9046bf9 	stp	x25, x26, [sp, #64]
+     c04:	f9002bfb 	str	x27, [sp, #80]
+     c08:	f9400280 	ldr	x0, [x20]
+}
+     c0c:	b9401a83 	ldr	w3, [x20, #24]
+
+    return 0;
+}
+
+void _ar_npu_poweron(void)
+{
+     c10:	91008002 	add	x2, x0, #0x20
+     c14:	b9400041 	ldr	w1, [x2]
+     c18:	d5033d9f 	dsb	ld
+    //Power on and reset DLA 
+    //writel()
+
+    //set IRQ mask
+    _ar_npu_hw_irq_mask(dla_dev.base, dla_dev.cb_to_arm);
+     c1c:	d5033e9f 	dsb	st
+{
+     c20:	52960004 	mov	w4, #0xb000                	// #45056
+     c24:	2a040021 	orr	w1, w1, w4
+     c28:	b9000041 	str	w1, [x2]
+     c2c:	9106601b 	add	x27, x0, #0x198
+    _ar_npu_hw_irq_mask(dla_dev.base, dla_dev.cb_to_arm);
+     c30:	9106701a 	add	x26, x0, #0x19c
+     c34:	91068019 	add	x25, x0, #0x1a0
+    unsigned int mask = readl(base + DLA_IRQ_MASK_REG);
+     c38:	91069018 	add	x24, x0, #0x1a4
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     c3c:	9106a017 	add	x23, x0, #0x1a8
+     c40:	9106b016 	add	x22, x0, #0x1ac
+    writel(mask, base + DLA_IRQ_MASK_REG);
+     c44:	9106c015 	add	x21, x0, #0x1b0
+    mask |= DLA_IRQ_DONE_CEVA_MASK | DLA_IRQ_HANG_CEVA_MASK | DLA_IRQ_PAUSE_CEVA_MASK;    
+     c48:	9106d013 	add	x19, x0, #0x1b4
+     c4c:	350004a3 	cbnz	w3, ce0 <_ar_npu_poweron+0xf8>
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     c50:	58000780 	ldr	x0, d40 <_ar_npu_poweron+0x158>
+     c54:	94000000 	bl	0 <printk>
+     c58:	d5033e9f 	dsb	st
+     c5c:	12800000 	mov	w0, #0xffffffff            	// #-1
+     c60:	b9000360 	str	w0, [x27]
+     c64:	d5033e9f 	dsb	st
+     c68:	b9000340 	str	w0, [x26]
+     c6c:	d5033e9f 	dsb	st
+     c70:	b9000320 	str	w0, [x25]
+    if(cb_to_arm)
+     c74:	d5033e9f 	dsb	st
+        printk(KERN_INFO"Set CB to CEVA.\n");
+     c78:	b9000300 	str	w0, [x24]
+     c7c:	d5033e9f 	dsb	st
+        writel(0xFFFFFFFF, base + DLA_CALLBACK_MASK_ARM_0_REG);
+     c80:	b90002ff 	str	wzr, [x23]
+     c84:	d5033e9f 	dsb	st
+     c88:	b90002df 	str	wzr, [x22]
+        writel(0xFFFFFFFF, base + DLA_CALLBACK_MASK_ARM_1_REG);
+     c8c:	d5033e9f 	dsb	st
+     c90:	b90002bf 	str	wzr, [x21]
+        writel(0xFFFFFFFF, base + DLA_CALLBACK_MASK_ARM_2_REG);
+     c94:	d5033e9f 	dsb	st
+     c98:	b900027f 	str	wzr, [x19]
+        writel(0xFFFFFFFF, base + DLA_CALLBACK_MASK_ARM_3_REG);
+     c9c:	d5033e9f 	dsb	st
+     ca0:	f9400280 	ldr	x0, [x20]
+        writel(0, base + DLA_CALLBACK_MASK_CEVA_0_REG);
+     ca4:	52a02021 	mov	w1, #0x1010000             	// #16842752
+     ca8:	9106e000 	add	x0, x0, #0x1b8
+        writel(0, base + DLA_CALLBACK_MASK_CEVA_1_REG);
+     cac:	b9000001 	str	w1, [x0]
+     cb0:	d5033e9f 	dsb	st
+        writel(0, base + DLA_CALLBACK_MASK_CEVA_2_REG);
+     cb4:	f9400280 	ldr	x0, [x20]
+     cb8:	b9401681 	ldr	w1, [x20, #20]
+        writel(0, base + DLA_CALLBACK_MASK_CEVA_3_REG);
+     cbc:	9106f000 	add	x0, x0, #0x1bc
+     cc0:	b9000001 	str	w1, [x0]
+
+    //set dma channel and base
+    writel(DMAC_BASE_ADDR, dla_dev.base + DLA_DMAC_BASE_ADDR_REG);
+     cc4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     cc8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     ccc:	a94363f7 	ldp	x23, x24, [sp, #48]
+     cd0:	a9446bf9 	ldp	x25, x26, [sp, #64]
+     cd4:	f9402bfb 	ldr	x27, [sp, #80]
+    writel(dla_dev.dma_ctrl, dla_dev.base + DLA_DMAC_BASE_CTRL_REG);    
+     cd8:	a8c67bfd 	ldp	x29, x30, [sp], #96
+     cdc:	d65f03c0 	ret
+     ce0:	580002c0 	ldr	x0, d38 <_ar_npu_poweron+0x150>
+     ce4:	94000000 	bl	0 <printk>
+     ce8:	d5033e9f 	dsb	st
+}
+     cec:	b900037f 	str	wzr, [x27]
+     cf0:	d5033e9f 	dsb	st
+     cf4:	b900035f 	str	wzr, [x26]
+     cf8:	d5033e9f 	dsb	st
+     cfc:	b900033f 	str	wzr, [x25]
+     d00:	d5033e9f 	dsb	st
+     d04:	b900031f 	str	wzr, [x24]
+        printk(KERN_INFO"Set CB to ARM.\n");
+     d08:	d5033e9f 	dsb	st
+     d0c:	12800000 	mov	w0, #0xffffffff            	// #-1
+        writel(0, base + DLA_CALLBACK_MASK_ARM_0_REG);
+     d10:	b90002e0 	str	w0, [x23]
+     d14:	d5033e9f 	dsb	st
+        writel(0, base + DLA_CALLBACK_MASK_ARM_1_REG);
+     d18:	b90002c0 	str	w0, [x22]
+     d1c:	d5033e9f 	dsb	st
+        writel(0, base + DLA_CALLBACK_MASK_ARM_2_REG);
+     d20:	b90002a0 	str	w0, [x21]
+     d24:	d5033e9f 	dsb	st
+        writel(0, base + DLA_CALLBACK_MASK_ARM_3_REG);
+     d28:	b9000260 	str	w0, [x19]
+     d2c:	17ffffdc 	b	c9c <_ar_npu_poweron+0xb4>
+	...
+
+0000000000000d48 <_ar_npu_poweroff>:
+     d48:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+        writel(0xFFFFFFFF, base + DLA_CALLBACK_MASK_CEVA_3_REG);
+     d4c:	910003fd 	mov	x29, sp
+     d50:	58000080 	ldr	x0, d60 <_ar_npu_poweroff+0x18>
+     d54:	94000000 	bl	0 <printk>
+     d58:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     d5c:	d65f03c0 	ret
+	...
+
+0000000000000d68 <_ar_npu_register_cb>:
+     d68:	b9400005 	ldr	w5, [x0]
+     d6c:	340003e5 	cbz	w5, de8 <_ar_npu_register_cb+0x80>
+
+void _ar_npu_poweroff(void)
+{
+     d70:	58000887 	ldr	x7, e80 <_ar_npu_register_cb+0x118>
+     d74:	52800002 	mov	w2, #0x0                   	// #0
+    printk(KERN_INFO"Power off DLA\n");
+     d78:	52800028 	mov	w8, #0x1                   	// #1
+     d7c:	d503201f 	nop
+
+    //Power off DLA
+}
+     d80:	8b22c801 	add	x1, x0, w2, sxtw #2
+     d84:	f94000e3 	ldr	x3, [x7]
+     d88:	91052066 	add	x6, x3, #0x148
+     d8c:	b9400421 	ldr	w1, [x1, #4]
+{
+    int i = 0; 
+    int id = 0;
+    unsigned int mask = 0;
+
+    for(i = 0; i < pstCB->u32CBNum; i++)
+     d90:	51008024 	sub	w4, w1, #0x20
+     d94:	71007c3f 	cmp	w1, #0x1f
+     d98:	540002c9 	b.ls	df0 <_ar_npu_register_cb+0x88>  // b.plast
+     d9c:	51010026 	sub	w6, w1, #0x40
+        val &= ~(1<<(id - 96));
+     da0:	71007c9f 	cmp	w4, #0x1f
+     da4:	540003c9 	b.ls	e1c <_ar_npu_register_cb+0xb4>  // b.plast
+    {
+        id = pstCB->au32CBIDs[i];
+     da8:	51018021 	sub	w1, w1, #0x60
+        _ar_npu_hw_cb_mask(dla_dev.base, id);
+     dac:	71007cdf 	cmp	w6, #0x1f
+        val = readl(base + DLA_CALLBACK_ID_0_REG);
+     db0:	540004e9 	b.ls	e4c <_ar_npu_register_cb+0xe4>  // b.plast
+        id = pstCB->au32CBIDs[i];
+     db4:	91055063 	add	x3, x3, #0x154
+    else if(32 <= id && id < 64)
+     db8:	71007c3f 	cmp	w1, #0x1f
+    if(id < 32)
+     dbc:	54000108 	b.hi	ddc <_ar_npu_register_cb+0x74>  // b.pmore
+     dc0:	b9400064 	ldr	w4, [x3]
+    else if(64 <= id && id < 96)
+     dc4:	d5033d9f 	dsb	ld
+    else if(32 <= id && id < 64)
+     dc8:	d5033e9f 	dsb	st
+     dcc:	1ac12101 	lsl	w1, w8, w1
+    else if(96 <= id && id < 128)
+     dd0:	0a210081 	bic	w1, w4, w1
+    else if(64 <= id && id < 96)
+     dd4:	b9000061 	str	w1, [x3]
+     dd8:	b9400005 	ldr	w5, [x0]
+        val = readl(base + DLA_CALLBACK_ID_3_REG);
+     ddc:	11000442 	add	w2, w2, #0x1
+    else if(96 <= id && id < 128)
+     de0:	6b0200bf 	cmp	w5, w2
+     de4:	54fffce8 	b.hi	d80 <_ar_npu_register_cb+0x18>  // b.pmore
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     de8:	52800000 	mov	w0, #0x0                   	// #0
+        val = readl(base + DLA_CALLBACK_ID_3_REG);
+     dec:	d65f03c0 	ret
+        writel(val, base + DLA_CALLBACK_ID_3_REG);
+     df0:	b94000c3 	ldr	w3, [x6]
+        val &= ~(1<<(id - 96));
+     df4:	d5033d9f 	dsb	ld
+     df8:	d5033e9f 	dsb	st
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     dfc:	1ac12101 	lsl	w1, w8, w1
+     e00:	0a210061 	bic	w1, w3, w1
+    for(i = 0; i < pstCB->u32CBNum; i++)
+     e04:	b90000c1 	str	w1, [x6]
+     e08:	b9400005 	ldr	w5, [x0]
+     e0c:	11000442 	add	w2, w2, #0x1
+    }
+
+
+
+    return 0;
+}
+     e10:	6b0200bf 	cmp	w5, w2
+     e14:	54fffb68 	b.hi	d80 <_ar_npu_register_cb+0x18>  // b.pmore
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     e18:	17fffff4 	b	de8 <_ar_npu_register_cb+0x80>
+        val = readl(base + DLA_CALLBACK_ID_0_REG);
+     e1c:	91053063 	add	x3, x3, #0x14c
+        writel(val, base + DLA_CALLBACK_ID_0_REG);
+     e20:	b9400061 	ldr	w1, [x3]
+        val &= ~(1<<id);
+     e24:	d5033d9f 	dsb	ld
+     e28:	d5033e9f 	dsb	st
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     e2c:	1ac42104 	lsl	w4, w8, w4
+     e30:	0a240024 	bic	w4, w1, w4
+    for(i = 0; i < pstCB->u32CBNum; i++)
+     e34:	b9000064 	str	w4, [x3]
+     e38:	b9400005 	ldr	w5, [x0]
+     e3c:	11000442 	add	w2, w2, #0x1
+     e40:	6b0200bf 	cmp	w5, w2
+        val = readl(base + DLA_CALLBACK_ID_1_REG);
+     e44:	54fff9e8 	b.hi	d80 <_ar_npu_register_cb+0x18>  // b.pmore
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     e48:	17ffffe8 	b	de8 <_ar_npu_register_cb+0x80>
+     e4c:	91054063 	add	x3, x3, #0x150
+        writel(val, base + DLA_CALLBACK_ID_1_REG);
+     e50:	b9400061 	ldr	w1, [x3]
+        val &= ~(1<<(id - 32));
+     e54:	d5033d9f 	dsb	ld
+     e58:	d5033e9f 	dsb	st
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     e5c:	1ac62106 	lsl	w6, w8, w6
+     e60:	0a260026 	bic	w6, w1, w6
+    for(i = 0; i < pstCB->u32CBNum; i++)
+     e64:	b9000066 	str	w6, [x3]
+     e68:	b9400005 	ldr	w5, [x0]
+     e6c:	11000442 	add	w2, w2, #0x1
+     e70:	6b0200bf 	cmp	w5, w2
+        val = readl(base + DLA_CALLBACK_ID_2_REG);
+     e74:	54fff868 	b.hi	d80 <_ar_npu_register_cb+0x18>  // b.pmore
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     e78:	17ffffdc 	b	de8 <_ar_npu_register_cb+0x80>
+     e7c:	d503201f 	nop
+	...
+
+0000000000000e88 <_ar_npu_get_status>:
+        val &= ~(1<<(id - 64));
+     e88:	58000242 	ldr	x2, ed0 <_ar_npu_get_status+0x48>
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+     e8c:	12003c00 	and	w0, w0, #0xffff
+     e90:	52800001 	mov	w1, #0x0                   	// #0
+    for(i = 0; i < pstCB->u32CBNum; i++)
+     e94:	14000004 	b	ea4 <_ar_npu_get_status+0x1c>
+     e98:	11000421 	add	w1, w1, #0x1
+     e9c:	7102003f 	cmp	w1, #0x80
+     ea0:	54000120 	b.eq	ec4 <_ar_npu_get_status+0x3c>  // b.none
+     ea4:	79400043 	ldrh	w3, [x2]
+     ea8:	9104e042 	add	x2, x2, #0x138
+     eac:	6b00007f 	cmp	w3, w0
+
+//Since the status will be used by the caller, so lock should be done by callers.
+struct ar_npu_work_status * _ar_npu_get_status(unsigned short network_id)
+{
+     eb0:	54ffff41 	b.ne	e98 <_ar_npu_get_status+0x10>  // b.any
+     eb4:	58000120 	ldr	x0, ed8 <_ar_npu_get_status+0x50>
+    int i = 0;
+
+    for(i = 0; i < DLA_MAX_QUEUE_DEPTH; i++)
+     eb8:	52802702 	mov	w2, #0x138                 	// #312
+     ebc:	9b220020 	smaddl	x0, w1, w2, x0
+     ec0:	d65f03c0 	ret
+     ec4:	d2800000 	mov	x0, #0x0                   	// #0
+     ec8:	d65f03c0 	ret
+    {        
+        if(g_dla_status[i].network_id == network_id)
+     ecc:	d503201f 	nop
+	...
+
+0000000000000ee0 <_ar_npu_query>:
+        {
+            return &g_dla_status[i];
+     ee0:	58000502 	ldr	x2, f80 <_ar_npu_query+0xa0>
+     ee4:	52800001 	mov	w1, #0x0                   	// #0
+        }
+    }
+
+    return NULL;
+}
+     ee8:	79402004 	ldrh	w4, [x0, #16]
+    return NULL;
+     eec:	14000004 	b	efc <_ar_npu_query+0x1c>
+}
+     ef0:	11000421 	add	w1, w1, #0x1
+     ef4:	7102003f 	cmp	w1, #0x80
+     ef8:	540003c0 	b.eq	f70 <_ar_npu_query+0x90>  // b.none
+     efc:	79400043 	ldrh	w3, [x2]
+     f00:	9104e042 	add	x2, x2, #0x138
+     f04:	6b04007f 	cmp	w3, w4
+
+int _ar_npu_query(AR_NPU_IOCTL_STATUS_S * status)
+{
+     f08:	54ffff41 	b.ne	ef0 <_ar_npu_query+0x10>  // b.any
+    int i = 0; 
+    
+
+    for(i = 0; i<DLA_MAX_QUEUE_DEPTH; i++)
+     f0c:	93407c21 	sxtw	x1, w1
+    {
+        if(g_dla_status[i].network_id == status->stStatus.u16NetworkId)
+     f10:	580003c3 	ldr	x3, f88 <_ar_npu_query+0xa8>
+     f14:	8b010822 	add	x2, x1, x1, lsl #2
+    for(i = 0; i<DLA_MAX_QUEUE_DEPTH; i++)
+     f18:	d37df042 	lsl	x2, x2, #3
+     f1c:	cb010041 	sub	x1, x2, x1
+     f20:	d37df021 	lsl	x1, x1, #3
+        if(g_dla_status[i].network_id == status->stStatus.u16NetworkId)
+     f24:	8b010062 	add	x2, x3, x1
+     f28:	79400c44 	ldrh	w4, [x2, #6]
+     f2c:	79002404 	strh	w4, [x0, #18]
+     f30:	b9400844 	ldr	w4, [x2, #8]
+        {
+            status->stStatus.u16FrameId = g_dla_status[i].frame_id;
+     f34:	b9000404 	str	w4, [x0, #4]
+     f38:	b9400c44 	ldr	w4, [x2, #12]
+     f3c:	b9000804 	str	w4, [x0, #8]
+     f40:	b8616861 	ldr	w1, [x3, x1]
+     f44:	b9000c01 	str	w1, [x0, #12]
+     f48:	b9412841 	ldr	w1, [x2, #296]
+     f4c:	b9001401 	str	w1, [x0, #20]
+     f50:	b9412c41 	ldr	w1, [x2, #300]
+     f54:	b9001801 	str	w1, [x0, #24]
+            status->stStatus.u32CmpltLayerNum = g_dla_status[i].layer_num;
+     f58:	b9413041 	ldr	w1, [x2, #304]
+     f5c:	b9001c01 	str	w1, [x0, #28]
+            status->stStatus.u32RestartAddrPhy = g_dla_status[i].restart_addr;
+     f60:	b9413441 	ldr	w1, [x2, #308]
+     f64:	b9002001 	str	w1, [x0, #32]
+            memcpy(&status->stStatus.stIRQStatus, &g_dla_status[i].irq_status, sizeof(g_dla_status[i].irq_status));
+     f68:	52800000 	mov	w0, #0x0                   	// #0
+     f6c:	d65f03c0 	ret
+            status->stStatus.au32CBIDs[0] = g_dla_status[i].callback_id[0];
+     f70:	12800001 	mov	w1, #0xffffffff            	// #-1
+     f74:	b9001001 	str	w1, [x0, #16]
+            status->stStatus.au32CBIDs[1] = g_dla_status[i].callback_id[1];
+     f78:	52800000 	mov	w0, #0x0                   	// #0
+     f7c:	d65f03c0 	ret
+	...
+
+0000000000000f90 <_ar_npu_hang>:
+    //maybe it's still in the queue waiting.
+    status->stStatus.u16FrameId = 0xFFFF;
+    status->stStatus.u16NetworkId = 0xFFFF;
+
+    return 0;
+}
+     f90:	52800000 	mov	w0, #0x0                   	// #0
+     f94:	d65f03c0 	ret
+
+0000000000000f98 <_ar_npu_resume>:
+    status->stStatus.u16NetworkId = 0xFFFF;
+     f98:	52800000 	mov	w0, #0x0                   	// #0
+     f9c:	d65f03c0 	ret
+
+0000000000000fa0 <_ar_npu_irq_handler>:
+}
+     fa0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     fa4:	910003fd 	mov	x29, sp
+     fa8:	a90153f3 	stp	x19, x20, [sp, #16]
+     fac:	aa0103f3 	mov	x19, x1
+     fb0:	f90013f5 	str	x21, [sp, #32]
+     fb4:	f9400021 	ldr	x1, [x1]
+
+//hang and resume could be used for debugging
+int _ar_npu_hang(AR_NPU_IOCTL_HANG_S * hang)
+{
+    return 0;
+}
+     fb8:	91006021 	add	x1, x1, #0x18
+     fbc:	b9400021 	ldr	w1, [x1]
+     fc0:	d5033d9f 	dsb	ld
+     fc4:	580014a0 	ldr	x0, 1258 <_ar_npu_irq_handler+0x2b8>
+{
+    return 0;
+}
+
+irqreturn_t _ar_npu_irq_handler(int irq, void * dev) 
+{
+     fc8:	12003c23 	and	w3, w1, #0xffff
+     fcc:	53107c24 	lsr	w4, w1, #16
+     fd0:	52800002 	mov	w2, #0x0                   	// #0
+     fd4:	14000004 	b	fe4 <_ar_npu_irq_handler+0x44>
+     fd8:	11000442 	add	w2, w2, #0x1
+    unsigned short frame_id = 0;
+    struct ar_npu_dev * p_dla_dev = (struct ar_npu_dev *)dev;
+    unsigned int val = 0;
+    int i = 0;
+
+    val = readl(p_dla_dev->base + DLA_IRQ_NET_FRAME_ID_REG);
+     fdc:	7102005f 	cmp	w2, #0x80
+     fe0:	54001360 	b.eq	124c <_ar_npu_irq_handler+0x2ac>  // b.none
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+     fe4:	79400001 	ldrh	w1, [x0]
+     fe8:	9104e000 	add	x0, x0, #0x138
+     fec:	7100003f 	cmp	w1, #0x0
+    network_id = val & 0x0000FFFF;
+     ff0:	7a431024 	ccmp	w1, w3, #0x4, ne  // ne = any
+    frame_id = (val & 0xFFFF0000) >> 16;
+     ff4:	54ffff21 	b.ne	fd8 <_ar_npu_irq_handler+0x38>  // b.any
+
+    //Search for a right position to update the status
+    for(i = 0; i < DLA_MAX_QUEUE_DEPTH; i++)
+     ff8:	93407c54 	sxtw	x20, w2
+     ffc:	58001335 	ldr	x21, 1260 <_ar_npu_irq_handler+0x2c0>
+    1000:	8b140a81 	add	x1, x20, x20, lsl #2
+    1004:	d37df021 	lsl	x1, x1, #3
+    1008:	cb140021 	sub	x1, x1, x20
+    {
+        if(g_dla_status[i].network_id == network_id || g_dla_status[i].network_id == 0)
+    100c:	d37df021 	lsl	x1, x1, #3
+    1010:	8b0102a0 	add	x0, x21, x1
+    1014:	79000803 	strh	w3, [x0, #4]
+    1018:	79000c04 	strh	w4, [x0, #6]
+    101c:	f9400263 	ldr	x3, [x19]
+    {
+        printk(KERN_ERR"All queue been used.\n");
+        return;
+    }
+
+    g_dla_status[i].network_id = network_id;
+    1020:	91005063 	add	x3, x3, #0x14
+    1024:	b9400063 	ldr	w3, [x3]
+    1028:	d5033d9f 	dsb	ld
+    102c:	b8216aa3 	str	w3, [x21, x1]
+    1030:	f9400261 	ldr	x1, [x19]
+    1034:	91002021 	add	x1, x1, #0x8
+    1038:	b9400021 	ldr	w1, [x1]
+    103c:	d5033d9f 	dsb	ld
+    g_dla_status[i].frame_id = frame_id;
+    1040:	b9000801 	str	w1, [x0, #8]
+    g_dla_status[i].irq_status = readl(p_dla_dev->base + DLA_IRQ_STATUS_REG);
+    1044:	f9400261 	ldr	x1, [x19]
+    1048:	91004021 	add	x1, x1, #0x10
+    104c:	b9400021 	ldr	w1, [x1]
+    1050:	d5033d9f 	dsb	ld
+    1054:	b9000c01 	str	w1, [x0, #12]
+    g_dla_status[i].layer_num = readl(p_dla_dev->base + DLA_CMPLT_LAYER_NUM_REG);
+    1058:	f9400261 	ldr	x1, [x19]
+    105c:	91001021 	add	x1, x1, #0x4
+    1060:	b9400021 	ldr	w1, [x1]
+    1064:	d5033d9f 	dsb	ld
+    1068:	b9001001 	str	w1, [x0, #16]
+    g_dla_status[i].restart_addr = readl(p_dla_dev->base + DLA_RESTART_ADDR_REG);
+    106c:	f9400261 	ldr	x1, [x19]
+    1070:	91003021 	add	x1, x1, #0xc
+    1074:	b9400021 	ldr	w1, [x1]
+    1078:	d5033d9f 	dsb	ld
+    107c:	b9001401 	str	w1, [x0, #20]
+    g_dla_status[i].scu_addr = readl(p_dla_dev->base + DLA_COMMAND_ADDR_REG);
+    1080:	f9400261 	ldr	x1, [x19]
+    1084:	9100d021 	add	x1, x1, #0x34
+    1088:	b9400021 	ldr	w1, [x1]
+    108c:	d5033d9f 	dsb	ld
+    1090:	b9001801 	str	w1, [x0, #24]
+    g_dla_status[i].scu_size = readl(p_dla_dev->base + DLA_COMMAND_LEN_REG);
+    1094:	f9400261 	ldr	x1, [x19]
+    1098:	9100e021 	add	x1, x1, #0x38
+    109c:	b9400021 	ldr	w1, [x1]
+    10a0:	d5033d9f 	dsb	ld
+    10a4:	52802703 	mov	w3, #0x138                 	// #312
+    g_dla_status[i].runtime_addr = readl(p_dla_dev->base + DLA_RUNTIME_ADDR_REG);
+    10a8:	b9001c01 	str	w1, [x0, #28]
+    10ac:	d2800780 	mov	x0, #0x3c                  	// #60
+    10b0:	9b235442 	smaddl	x2, w2, w3, x21
+    10b4:	d503201f 	nop
+    10b8:	f9400261 	ldr	x1, [x19]
+    g_dla_status[i].weight_addr = readl(p_dla_dev->base + DLA_PARAMS_ADDR_REG);
+    10bc:	8b000021 	add	x1, x1, x0
+    10c0:	b9400021 	ldr	w1, [x1]
+    10c4:	d5033d9f 	dsb	ld
+    10c8:	8b000043 	add	x3, x2, x0
+    10cc:	91001000 	add	x0, x0, #0x4
+    10d0:	f102f01f 	cmp	x0, #0xbc
+    10d4:	b81e4061 	stur	w1, [x3, #-28]
+    10d8:	54ffff01 	b.ne	10b8 <_ar_npu_irq_handler+0x118>  // b.any
+    10dc:	d503201f 	nop
+
+    int j = 0;
+    for(j = 0; j < MAX_INPUT_NUM; j++)
+    {
+        g_dla_status[i].input_addr[j] = readl(p_dla_dev->base + DLA_INPUT_ADDR_0_REG + j*4);
+    10e0:	f9400261 	ldr	x1, [x19]
+    10e4:	8b000021 	add	x1, x1, x0
+    10e8:	b9400021 	ldr	w1, [x1]
+    10ec:	d5033d9f 	dsb	ld
+    10f0:	8b000043 	add	x3, x2, x0
+    10f4:	91001000 	add	x0, x0, #0x4
+    for(j = 0; j < MAX_INPUT_NUM; j++)
+    10f8:	f104f01f 	cmp	x0, #0x13c
+        g_dla_status[i].input_addr[j] = readl(p_dla_dev->base + DLA_INPUT_ADDR_0_REG + j*4);
+    10fc:	b81e4061 	stur	w1, [x3, #-28]
+    for(j = 0; j < MAX_INPUT_NUM; j++)
+    1100:	54ffff01 	b.ne	10e0 <_ar_npu_irq_handler+0x140>  // b.any
+    1104:	f9400262 	ldr	x2, [x19]
+    }
+
+    for(j = 0; j < MAX_OUTPUT_NUM; j++)
+    {
+        g_dla_status[i].output_addr[j] = readl(p_dla_dev->base + DLA_OUTPUT_ADDR_0_REG + j*4);
+    1108:	9100b042 	add	x2, x2, #0x2c
+    110c:	b9400042 	ldr	w2, [x2]
+    1110:	d5033d9f 	dsb	ld
+    1114:	8b140a80 	add	x0, x20, x20, lsl #2
+    1118:	d37df000 	lsl	x0, x0, #3
+    111c:	cb140000 	sub	x0, x0, x20
+    for(j = 0; j < MAX_OUTPUT_NUM; j++)
+    1120:	d37df000 	lsl	x0, x0, #3
+        g_dla_status[i].output_addr[j] = readl(p_dla_dev->base + DLA_OUTPUT_ADDR_0_REG + j*4);
+    1124:	8b0002a1 	add	x1, x21, x0
+    for(j = 0; j < MAX_OUTPUT_NUM; j++)
+    1128:	b9012022 	str	w2, [x1, #288]
+    }
+    
+    g_dla_status[i].sram_addr = readl(p_dla_dev->base + DLA_SRAM_ADDR_REG);
+    112c:	f9400262 	ldr	x2, [x19]
+    1130:	9100c042 	add	x2, x2, #0x30
+    1134:	b9400042 	ldr	w2, [x2]
+    1138:	d5033d9f 	dsb	ld
+    113c:	b9012422 	str	w2, [x1, #292]
+    1140:	f9400262 	ldr	x2, [x19]
+    1144:	91052042 	add	x2, x2, #0x148
+    1148:	b9400042 	ldr	w2, [x2]
+    114c:	d5033d9f 	dsb	ld
+    1150:	b9012822 	str	w2, [x1, #296]
+    g_dla_status[i].sram_size = readl(p_dla_dev->base + DLA_SRAM_SIZE_REG);
+    1154:	f9400262 	ldr	x2, [x19]
+    1158:	91053042 	add	x2, x2, #0x14c
+    115c:	b9400042 	ldr	w2, [x2]
+    1160:	d5033d9f 	dsb	ld
+    1164:	b9012c22 	str	w2, [x1, #300]
+
+    g_dla_status[i].callback_id[0] = readl(p_dla_dev->base + DLA_CALLBACK_ID_0_REG);
+    1168:	f9400262 	ldr	x2, [x19]
+    116c:	91054042 	add	x2, x2, #0x150
+    1170:	b9400042 	ldr	w2, [x2]
+    1174:	d5033d9f 	dsb	ld
+    1178:	b9013022 	str	w2, [x1, #304]
+    g_dla_status[i].callback_id[1] = readl(p_dla_dev->base + DLA_CALLBACK_ID_1_REG);
+    117c:	f9400262 	ldr	x2, [x19]
+    1180:	91055042 	add	x2, x2, #0x154
+    1184:	b9400042 	ldr	w2, [x2]
+    1188:	d5033d9f 	dsb	ld
+    118c:	b8606aa0 	ldr	w0, [x21, x0]
+    g_dla_status[i].callback_id[2] = readl(p_dla_dev->base + DLA_CALLBACK_ID_2_REG);
+    1190:	b9013422 	str	w2, [x1, #308]
+    1194:	37000500 	tbnz	w0, #0, 1234 <_ar_npu_irq_handler+0x294>
+    1198:	d5033e9f 	dsb	st
+    119c:	8b140a80 	add	x0, x20, x20, lsl #2
+    11a0:	f9400261 	ldr	x1, [x19]
+    g_dla_status[i].callback_id[3] = readl(p_dla_dev->base + DLA_CALLBACK_ID_3_REG);
+    11a4:	d37df000 	lsl	x0, x0, #3
+    11a8:	91052021 	add	x1, x1, #0x148
+    11ac:	cb140000 	sub	x0, x0, x20
+    11b0:	d37df000 	lsl	x0, x0, #3
+    
+    //TBD: if cb or debug, and if set to arm, notify linux 
+    if(g_dla_status[i].irq_status & (DLA_IRQ_CB_BIT | DLA_IRQ_PAUSE_BIT) != 0)
+    11b4:	8b0002a2 	add	x2, x21, x0
+    g_dla_status[i].callback_id[3] = readl(p_dla_dev->base + DLA_CALLBACK_ID_3_REG);
+    11b8:	b9412843 	ldr	w3, [x2, #296]
+    if(g_dla_status[i].irq_status & (DLA_IRQ_CB_BIT | DLA_IRQ_PAUSE_BIT) != 0)
+    11bc:	b9000023 	str	w3, [x1]
+    {
+        wake_up_interruptible(&p_dla_dev->wait_queue);
+    }
+    
+    //clear cb irq
+    writel(g_dla_status[i].callback_id[0], p_dla_dev->base + DLA_CALLBACK_ID_0_REG);
+    11c0:	d5033e9f 	dsb	st
+    11c4:	f9400261 	ldr	x1, [x19]
+    11c8:	b9412c43 	ldr	w3, [x2, #300]
+    11cc:	91053021 	add	x1, x1, #0x14c
+    11d0:	b9000023 	str	w3, [x1]
+    11d4:	d5033e9f 	dsb	st
+    11d8:	f9400261 	ldr	x1, [x19]
+    11dc:	b9413043 	ldr	w3, [x2, #304]
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    11e0:	91054021 	add	x1, x1, #0x150
+    11e4:	b9000023 	str	w3, [x1]
+    writel(g_dla_status[i].callback_id[1], p_dla_dev->base + DLA_CALLBACK_ID_1_REG);
+    11e8:	d5033e9f 	dsb	st
+    11ec:	f9400261 	ldr	x1, [x19]
+    11f0:	b9413442 	ldr	w2, [x2, #308]
+    11f4:	91055023 	add	x3, x1, #0x154
+    11f8:	b9000062 	str	w2, [x3]
+    writel(g_dla_status[i].callback_id[2], p_dla_dev->base + DLA_CALLBACK_ID_2_REG);
+    11fc:	91009021 	add	x1, x1, #0x24
+    1200:	b9400021 	ldr	w1, [x1]
+    1204:	d5033d9f 	dsb	ld
+    1208:	38606aa0 	ldrb	w0, [x21, x0]
+    120c:	2a010001 	orr	w1, w0, w1
+    writel(g_dla_status[i].callback_id[3], p_dla_dev->base + DLA_CALLBACK_ID_3_REG);
+    1210:	d5033e9f 	dsb	st
+    1214:	f9400260 	ldr	x0, [x19]
+    1218:	91009000 	add	x0, x0, #0x24
+    121c:	b9000001 	str	w1, [x0]
+    1220:	52800000 	mov	w0, #0x0                   	// #0
+
+    //clear irq
+    val = readl(p_dla_dev->base + DLA_IRQ_CLR_REG);
+    1224:	f94013f5 	ldr	x21, [sp, #32]
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    1228:	a94153f3 	ldp	x19, x20, [sp, #16]
+    122c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    val |= (g_dla_status[i].irq_status & 0x00FF); //bit 7:0 is for arm intr
+    1230:	d65f03c0 	ret
+    1234:	52800022 	mov	w2, #0x1                   	// #1
+    writel(val, p_dla_dev->base + DLA_IRQ_CLR_REG);    
+    1238:	d2800003 	mov	x3, #0x0                   	// #0
+    123c:	2a0203e1 	mov	w1, w2
+    1240:	91020260 	add	x0, x19, #0x80
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    1244:	94000000 	bl	0 <__wake_up>
+}
+    1248:	17ffffd4 	b	1198 <_ar_npu_irq_handler+0x1f8>
+    124c:	580000e0 	ldr	x0, 1268 <_ar_npu_irq_handler+0x2c8>
+    1250:	94000000 	bl	0 <printk>
+    1254:	17fffff3 	b	1220 <_ar_npu_irq_handler+0x280>
+	...
+
+0000000000001270 <_ar_npu_wait_done>:
+        wake_up_interruptible(&p_dla_dev->wait_queue);
+    1270:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+        printk(KERN_ERR"All queue been used.\n");
+    1274:	910003fd 	mov	x29, sp
+    1278:	f9000bf3 	str	x19, [sp, #16]
+        return;
+    127c:	52807d33 	mov	w19, #0x3e9                 	// #1001
+    1280:	528000a0 	mov	w0, #0x5                   	// #5
+    1284:	94000000 	bl	0 <msleep>
+    1288:	71000673 	subs	w19, w19, #0x1
+    128c:	54ffffa1 	b.ne	1280 <_ar_npu_wait_done+0x10>  // b.any
+    1290:	580000c0 	ldr	x0, 12a8 <_ar_npu_wait_done+0x38>
+    1294:	94000000 	bl	0 <printk>
+
+int _ar_npu_wait_done(unsigned short network_id, unsigned short frame_id)
+{
+    1298:	f9400bf3 	ldr	x19, [sp, #16]
+    129c:	128007a0 	mov	w0, #0xffffffc2            	// #-62
+    12a0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    12a4:	d65f03c0 	ret
+	...
+
+00000000000012b0 <_ar_npu_cb_done>:
+        {
+            break;
+        }
+
+        msleep(5);
+        if(timeout-- == 0)
+    12b0:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+    12b4:	910003fd 	mov	x29, sp
+        {
+            printk(KERN_ERR"Wait for DLA DONE timeout.\n");
+    12b8:	58000401 	ldr	x1, 1338 <_ar_npu_cb_done+0x88>
+    12bc:	f9400021 	ldr	x1, [x1]
+            return -ETIME;
+        }
+    }
+
+    return 0;
+}
+    12c0:	91006022 	add	x2, x1, #0x18
+    12c4:	b9400042 	ldr	w2, [x2]
+    12c8:	d5033d9f 	dsb	ld
+    12cc:	79400003 	ldrh	w3, [x0]
+    12d0:	6b22207f 	cmp	w3, w2, uxth
+    12d4:	54000240 	b.eq	131c <_ar_npu_cb_done+0x6c>  // b.none
+
+int _ar_npu_cb_done(AR_NPU_IOCTL_CB_DONE_S * cb_done)
+{
+    12d8:	b9400402 	ldr	w2, [x0, #4]
+    12dc:	71007c5f 	cmp	w2, #0x1f
+    return _ar_npu_hw_cb_done(dla_dev.base, cb_done);
+    12e0:	540001a9 	b.ls	1314 <_ar_npu_cb_done+0x64>  // b.plast
+    12e4:	91057021 	add	x1, x1, #0x15c
+    network_id = readl(base + DLA_IRQ_NET_FRAME_ID_REG) & 0x0000FFFF;
+    12e8:	b9400022 	ldr	w2, [x1]
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    12ec:	d5033d9f 	dsb	ld
+    12f0:	b9400403 	ldr	w3, [x0, #4]
+    if(network_id == cb_done->u16NetworkId)
+    12f4:	52800020 	mov	w0, #0x1                   	// #1
+    12f8:	1ac32000 	lsl	w0, w0, w3
+    12fc:	2a020000 	orr	w0, w0, w2
+    if(cb_done->u32CBId < 32)
+    1300:	d5033e9f 	dsb	st
+    1304:	b9000020 	str	w0, [x1]
+    1308:	52800000 	mov	w0, #0x0                   	// #0
+        val = readl(base + DLA_CALLBACK_ACK_ID_1_REG);
+    130c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+    1310:	d65f03c0 	ret
+    1314:	91056021 	add	x1, x1, #0x158
+        val |= (1<<(cb_done->u32CBId - 32));
+    1318:	17fffff4 	b	12e8 <_ar_npu_cb_done+0x38>
+    131c:	58000120 	ldr	x0, 1340 <_ar_npu_cb_done+0x90>
+    1320:	12003c42 	and	w2, w2, #0xffff
+    1324:	2a0203e1 	mov	w1, w2
+        writel(val, base + DLA_CALLBACK_ACK_ID_1_REG);
+    1328:	94000000 	bl	0 <printk>
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    132c:	12800000 	mov	w0, #0xffffffff            	// #-1
+    return 0;
+    1330:	17fffff7 	b	130c <_ar_npu_cb_done+0x5c>
+}
+    1334:	d503201f 	nop
+	...
+
+0000000000001348 <_ar_npu_debug_continue>:
+        printk(KERN_ERR"Current network id mismatch: %d/%d.", network_id, cb_done->u16NetworkId);
+    1348:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+    134c:	910003fd 	mov	x29, sp
+    1350:	58000401 	ldr	x1, 13d0 <_ar_npu_debug_continue+0x88>
+        return -1;
+    1354:	f9400022 	ldr	x2, [x1]
+    1358:	91006041 	add	x1, x2, #0x18
+    135c:	b9400021 	ldr	w1, [x1]
+    1360:	d5033d9f 	dsb	ld
+    1364:	79400003 	ldrh	w3, [x0]
+    1368:	6b21207f 	cmp	w3, w1, uxth
+    136c:	54000260 	b.eq	13b8 <_ar_npu_debug_continue+0x70>  // b.none
+
+int _ar_npu_debug_continue(AR_NPU_IOCTL_DEBUG_S * debug)
+{
+    1370:	b9400041 	ldr	w1, [x2]
+    1374:	d5033d9f 	dsb	ld
+    return _ar_npu_hw_debug_continue(dla_dev.base, debug);
+    1378:	b9400400 	ldr	w0, [x0, #4]
+    137c:	7100041f 	cmp	w0, #0x1
+    network_id = readl(base + DLA_IRQ_NET_FRAME_ID_REG) & 0x0000FFFF;
+    1380:	540000e0 	b.eq	139c <_ar_npu_debug_continue+0x54>  // b.none
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    1384:	d5033e9f 	dsb	st
+    1388:	32000021 	orr	w1, w1, #0x1
+    if(network_id == debug->u16NetworkId)
+    138c:	b9000041 	str	w1, [x2]
+    1390:	52800000 	mov	w0, #0x0                   	// #0
+    1394:	a8c17bfd 	ldp	x29, x30, [sp], #16
+    1398:	d65f03c0 	ret
+    val = readl(base + DLA_START_REG);
+    139c:	d5033e9f 	dsb	st
+    if(debug->u32Debug == DLA_LAYER_DEBUG_ON)
+    13a0:	52800120 	mov	w0, #0x9                   	// #9
+    13a4:	2a000021 	orr	w1, w1, w0
+    13a8:	b9000041 	str	w1, [x2]
+        writel(val | 0x1, base + DLA_START_REG);
+    13ac:	52800000 	mov	w0, #0x0                   	// #0
+    13b0:	a8c17bfd 	ldp	x29, x30, [sp], #16
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    13b4:	d65f03c0 	ret
+    return 0;
+    13b8:	58000100 	ldr	x0, 13d8 <_ar_npu_debug_continue+0x90>
+}
+    13bc:	12003c22 	and	w2, w1, #0xffff
+    13c0:	2a0203e1 	mov	w1, w2
+        writel(val | 0x9, base + DLA_START_REG);
+    13c4:	94000000 	bl	0 <printk>
+    13c8:	12800000 	mov	w0, #0xffffffff            	// #-1
+    13cc:	17fffff2 	b	1394 <_ar_npu_debug_continue+0x4c>
+	...
+
+00000000000013e0 <_ar_npu_start>:
+        printk(KERN_ERR"Current network id mismatch: %d/%d.", network_id, debug->u16NetworkId);
+    13e0:	79424801 	ldrh	w1, [x0, #292]
+    13e4:	529fffa2 	mov	w2, #0xfffd                	// #65533
+    13e8:	51000421 	sub	w1, w1, #0x1
+    13ec:	6b21205f 	cmp	w2, w1, uxth
+        return -1;
+    13f0:	54000943 	b.cc	1518 <_ar_npu_start+0x138>  // b.lo, b.ul, b.last
+    13f4:	a9a97bfd 	stp	x29, x30, [sp, #-368]!
+    13f8:	910003fd 	mov	x29, sp
+    13fc:	a90153f3 	stp	x19, x20, [sp, #16]
+    1400:	aa0003f3 	mov	x19, x0
+    1404:	a9025bf5 	stp	x21, x22, [sp, #32]
+{
+    unsigned int ret = 0;
+    unsigned int timeout = DLA_DEFAULT_TIMEOUT;
+    struct ar_npu_work_status * p_status = NULL;
+
+    if(cfg->u16NetworkId == 0 || cfg->u16NetworkId == 0xFFFF)
+    1408:	f9001bf7 	str	x23, [sp, #48]
+    140c:	d2802517 	mov	x23, #0x128                 	// #296
+    1410:	58000a55 	ldr	x21, 1558 <_ar_npu_start+0x178>
+    1414:	b9400800 	ldr	w0, [x0, #8]
+    1418:	7100041f 	cmp	w0, #0x1
+{
+    141c:	54000480 	b.eq	14ac <_ar_npu_start+0xcc>  // b.none
+    1420:	9100a2a0 	add	x0, x21, #0x28
+    1424:	94000000 	bl	0 <mutex_lock_interruptible>
+    1428:	aa1703e2 	mov	x2, x23
+    142c:	aa1303e1 	mov	x1, x19
+    1430:	910123a0 	add	x0, x29, #0x48
+    }
+
+    if(cfg->u32Priority == DLA_NETWORK_HIGH)
+    {
+        mutex_lock_interruptible(&g_fifo_high_lock);
+        ret = kfifo_put(&g_dla_high_fifo, *cfg);
+    1434:	94000000 	bl	0 <memcpy>
+        mutex_lock_interruptible(&g_fifo_high_lock);
+    1438:	58000994 	ldr	x20, 1568 <_ar_npu_start+0x188>
+    if(cfg->u32Priority == DLA_NETWORK_HIGH)
+    143c:	29400281 	ldp	w1, w0, [x20]
+    1440:	b9400a82 	ldr	w2, [x20, #8]
+    1444:	4b000020 	sub	w0, w1, w0
+        mutex_unlock(&g_fifo_high_lock);
+    }
+    else
+    {
+        mutex_lock_interruptible(&g_fifo_normal_lock);
+    1448:	6b00005f 	cmp	w2, w0
+    144c:	1a9f37f6 	cset	w22, cs  // cs = hs, nlast
+        ret = kfifo_put(&g_dla_normal_fifo, *cfg);
+    1450:	54000183 	b.cc	1480 <_ar_npu_start+0xa0>  // b.lo, b.ul, b.last
+    1454:	0a020020 	and	w0, w1, w2
+    1458:	91006283 	add	x3, x20, #0x18
+    145c:	aa1703e2 	mov	x2, x23
+    1460:	910123a1 	add	x1, x29, #0x48
+    1464:	9bb77c00 	umull	x0, w0, w23
+    1468:	8b000060 	add	x0, x3, x0
+    146c:	94000000 	bl	0 <memcpy>
+    1470:	d5033abf 	dmb	ishst
+    1474:	b9400280 	ldr	w0, [x20]
+    1478:	11000400 	add	w0, w0, #0x1
+    147c:	b9000280 	str	w0, [x20]
+    1480:	9100a2a0 	add	x0, x21, #0x28
+    1484:	94000000 	bl	0 <mutex_unlock>
+    1488:	34000616 	cbz	w22, 1548 <_ar_npu_start+0x168>
+    148c:	b9400261 	ldr	w1, [x19]
+    1490:	52800000 	mov	w0, #0x0                   	// #0
+    1494:	35000461 	cbnz	w1, 1520 <_ar_npu_start+0x140>
+    1498:	a94153f3 	ldp	x19, x20, [sp, #16]
+    149c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    14a0:	f9401bf7 	ldr	x23, [sp, #48]
+    14a4:	a8d77bfd 	ldp	x29, x30, [sp], #368
+        mutex_unlock(&g_fifo_normal_lock);
+    14a8:	d65f03c0 	ret
+    14ac:	aa1503e0 	mov	x0, x21
+    }
+
+    if(!ret) //0 means the fifo is full
+    14b0:	94000000 	bl	0 <mutex_lock_interruptible>
+        printk(KERN_ERR"The Fifo is full!\n");
+        return -ENOMEM;
+    }
+
+    //if blocked call, wait for finish
+    if(cfg->u32Block)
+    14b4:	aa1703e2 	mov	x2, x23
+    {
+        _ar_npu_wait_done(cfg->u16NetworkId, cfg->u16FrameId);
+    }
+
+    return 0;    
+    14b8:	aa1303e1 	mov	x1, x19
+    if(cfg->u32Block)
+    14bc:	910123a0 	add	x0, x29, #0x48
+}
+    14c0:	94000000 	bl	0 <memcpy>
+    14c4:	580004f4 	ldr	x20, 1560 <_ar_npu_start+0x180>
+    14c8:	29400281 	ldp	w1, w0, [x20]
+    14cc:	b9400a82 	ldr	w2, [x20, #8]
+    14d0:	4b000020 	sub	w0, w1, w0
+        mutex_lock_interruptible(&g_fifo_high_lock);
+    14d4:	6b00005f 	cmp	w2, w0
+    14d8:	1a9f37f6 	cset	w22, cs  // cs = hs, nlast
+        ret = kfifo_put(&g_dla_high_fifo, *cfg);
+    14dc:	54000183 	b.cc	150c <_ar_npu_start+0x12c>  // b.lo, b.ul, b.last
+    14e0:	0a020020 	and	w0, w1, w2
+    14e4:	91006283 	add	x3, x20, #0x18
+    14e8:	aa1703e2 	mov	x2, x23
+    14ec:	910123a1 	add	x1, x29, #0x48
+    14f0:	9bb77c00 	umull	x0, w0, w23
+    14f4:	8b000060 	add	x0, x3, x0
+    14f8:	94000000 	bl	0 <memcpy>
+    14fc:	d5033abf 	dmb	ishst
+    1500:	b9400280 	ldr	w0, [x20]
+    1504:	11000400 	add	w0, w0, #0x1
+    1508:	b9000280 	str	w0, [x20]
+    150c:	aa1503e0 	mov	x0, x21
+    1510:	94000000 	bl	0 <mutex_unlock>
+    1514:	17ffffdd 	b	1488 <_ar_npu_start+0xa8>
+    1518:	128002a0 	mov	w0, #0xffffffea            	// #-22
+    151c:	d65f03c0 	ret
+    1520:	52807d33 	mov	w19, #0x3e9                 	// #1001
+    1524:	d503201f 	nop
+    1528:	528000a0 	mov	w0, #0x5                   	// #5
+    152c:	94000000 	bl	0 <msleep>
+    1530:	71000673 	subs	w19, w19, #0x1
+        mutex_unlock(&g_fifo_high_lock);
+    1534:	54ffffa1 	b.ne	1528 <_ar_npu_start+0x148>  // b.any
+    1538:	58000200 	ldr	x0, 1578 <_ar_npu_start+0x198>
+    153c:	94000000 	bl	0 <printk>
+        return -EINVAL;
+    1540:	52800000 	mov	w0, #0x0                   	// #0
+}
+    1544:	17ffffd5 	b	1498 <_ar_npu_start+0xb8>
+    1548:	58000140 	ldr	x0, 1570 <_ar_npu_start+0x190>
+    154c:	94000000 	bl	0 <printk>
+        msleep(5);
+    1550:	12800160 	mov	w0, #0xfffffff4            	// #-12
+    1554:	17ffffd1 	b	1498 <_ar_npu_start+0xb8>
+	...
+
+0000000000001580 <_ar_npu_sw_reset>:
+        return -ENOMEM;
+    1580:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    1584:	910003fd 	mov	x29, sp
+    1588:	580002c1 	ldr	x1, 15e0 <_ar_npu_sw_reset+0x60>
+    158c:	f9000bf3 	str	x19, [sp, #16]
+    1590:	a9404c20 	ldp	x0, x19, [x1]
+    1594:	d5033e9f 	dsb	st
+    1598:	52800041 	mov	w1, #0x2                   	// #2
+    159c:	b9000001 	str	w1, [x0]
+    15a0:	b9400000 	ldr	w0, [x0]
+    15a4:	d5033d9f 	dsb	ld
+
+int _ar_npu_sw_reset()
+{
+    15a8:	d5033e9f 	dsb	st
+    15ac:	d2820a81 	mov	x1, #0x1054                	// #4180
+    return _ar_npu_hw_reset(dla_dev.global_ctrl, dla_dev.base);
+    15b0:	12800060 	mov	w0, #0xfffffffc            	// #-4
+{
+    15b4:	8b010273 	add	x19, x19, x1
+    return _ar_npu_hw_reset(dla_dev.global_ctrl, dla_dev.base);
+    15b8:	b9000260 	str	w0, [x19]
+    writel(0x2, base + DLA_START_REG);
+    15bc:	528000a0 	mov	w0, #0x5                   	// #5
+    15c0:	94000000 	bl	0 <msleep>
+    15c4:	d5033e9f 	dsb	st
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    15c8:	12800000 	mov	w0, #0xffffffff            	// #-1
+    while(readl(base + DLA_START_REG) & 0x10 == 0)
+    15cc:	b9000260 	str	w0, [x19]
+    writel(0xfffffffc, global_ctrl + DLA_RESET_CTRL);
+    15d0:	52800000 	mov	w0, #0x0                   	// #0
+    15d4:	f9400bf3 	ldr	x19, [sp, #16]
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    15d8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    15dc:	d65f03c0 	ret
+	...
+
+00000000000015e8 <_ar_npu_normal_thread>:
+    msleep(5);
+    15e8:	a9a87bfd 	stp	x29, x30, [sp, #-384]!
+    writel(0xffffffff, global_ctrl + DLA_RESET_CTRL);
+    15ec:	910003fd 	mov	x29, sp
+    15f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    15f4:	a9025bf5 	stp	x21, x22, [sp, #32]
+}
+    15f8:	580005d3 	ldr	x19, 16b0 <_ar_npu_normal_thread+0xc8>
+    15fc:	58000576 	ldr	x22, 16a8 <_ar_npu_normal_thread+0xc0>
+    1600:	a90363f7 	stp	x23, x24, [sp, #48]
+    1604:	91006278 	add	x24, x19, #0x18
+    1608:	58000595 	ldr	x21, 16b8 <_ar_npu_normal_thread+0xd0>
+    160c:	9100a2d4 	add	x20, x22, #0x28
+
+int _ar_npu_normal_thread(void * args)
+{
+    1610:	52802517 	mov	w23, #0x128                 	// #296
+    1614:	f90023f9 	str	x25, [sp, #64]
+    1618:	14000017 	b	1674 <_ar_npu_normal_thread+0x8c>
+    161c:	b9400a63 	ldr	w3, [x19, #8]
+    1620:	0a030021 	and	w1, w1, w3
+    1624:	9bb76021 	umaddl	x1, w1, w23, x24
+    1628:	94000000 	bl	0 <memcpy>
+
+    while(1)
+    {
+        //get task from fifo
+        mutex_lock_interruptible(&g_fifo_normal_lock);
+        ret = kfifo_get(&g_dla_normal_fifo, &params);
+    162c:	d5033abf 	dmb	ishst
+    1630:	b9400661 	ldr	w1, [x19, #4]
+        mutex_lock_interruptible(&g_fifo_normal_lock);
+    1634:	aa1403e0 	mov	x0, x20
+        ret = kfifo_get(&g_dla_normal_fifo, &params);
+    1638:	11000421 	add	w1, w1, #0x1
+{
+    163c:	b9000661 	str	w1, [x19, #4]
+    1640:	94000000 	bl	0 <mutex_unlock>
+        ret = kfifo_get(&g_dla_normal_fifo, &params);
+    1644:	f94002a0 	ldr	x0, [x21]
+    1648:	91005000 	add	x0, x0, #0x14
+    164c:	b9400000 	ldr	w0, [x0]
+    1650:	d5033d9f 	dsb	ld
+    1654:	910142d9 	add	x25, x22, #0x50
+    1658:	aa1903e0 	mov	x0, x25
+        mutex_unlock(&g_fifo_normal_lock);
+    165c:	94000000 	bl	0 <mutex_lock_interruptible>
+        ret = kfifo_get(&g_dla_normal_fifo, &params);
+    1660:	f94002a0 	ldr	x0, [x21]
+    1664:	910163a1 	add	x1, x29, #0x58
+        mutex_unlock(&g_fifo_normal_lock);
+    1668:	97fffd26 	bl	b00 <_ar_npu_hw_start>
+        val = readl(base + DLA_IRQ_STATUS_REG);        
+    166c:	aa1903e0 	mov	x0, x25
+    1670:	94000000 	bl	0 <mutex_unlock>
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    1674:	aa1403e0 	mov	x0, x20
+    1678:	94000000 	bl	0 <mutex_lock_interruptible>
+
+        //Here, at this moment, maybe the DLA is not idle anymore
+        //Because there are only two threads to start dla, so if not idle,
+        //that means high priority grab the DLA, so here must wait for the lock.
+        //try to get lock and cfg dla        
+        mutex_lock_interruptible(&g_dla_lock);
+    167c:	29400663 	ldp	w3, w1, [x19]
+    1680:	d2802502 	mov	x2, #0x128                 	// #296
+    1684:	910163a0 	add	x0, x29, #0x58
+        _ar_npu_hw_start(dla_dev.base, &params);
+    1688:	6b01007f 	cmp	w3, w1
+    168c:	54fffc81 	b.ne	161c <_ar_npu_normal_thread+0x34>  // b.any
+    1690:	aa1403e0 	mov	x0, x20
+        mutex_unlock(&g_dla_lock);        
+    1694:	94000000 	bl	0 <mutex_unlock>
+    1698:	52800060 	mov	w0, #0x3                   	// #3
+        mutex_lock_interruptible(&g_fifo_normal_lock);
+    169c:	94000000 	bl	0 <msleep>
+    16a0:	17fffff5 	b	1674 <_ar_npu_normal_thread+0x8c>
+        ret = kfifo_get(&g_dla_normal_fifo, &params);
+    16a4:	d503201f 	nop
+	...
+
+00000000000016c0 <_ar_npu_high_thread>:
+            msleep(3);
+    16c0:	d10ac3ff 	sub	sp, sp, #0x2b0
+    16c4:	a9007bfd 	stp	x29, x30, [sp]
+            continue;
+    16c8:	910003fd 	mov	x29, sp
+    16cc:	a90153f3 	stp	x19, x20, [sp, #16]
+    16d0:	58001214 	ldr	x20, 1910 <_ar_npu_high_thread+0x250>
+    16d4:	58001233 	ldr	x19, 1918 <_ar_npu_high_thread+0x258>
+    16d8:	a9025bf5 	stp	x21, x22, [sp, #32]
+    16dc:	91014296 	add	x22, x20, #0x50
+    16e0:	a90573fb 	stp	x27, x28, [sp, #80]
+    16e4:	580011f5 	ldr	x21, 1920 <_ar_npu_high_thread+0x260>
+
+    return 0;
+}
+
+int _ar_npu_high_thread(void * args)
+{
+    16e8:	5800125c 	ldr	x28, 1930 <_ar_npu_high_thread+0x270>
+    16ec:	a90363f7 	stp	x23, x24, [sp, #48]
+    16f0:	91006278 	add	x24, x19, #0x18
+    16f4:	a9046bf9 	stp	x25, x26, [sp, #64]
+    16f8:	52802517 	mov	w23, #0x128                 	// #296
+    16fc:	d503201f 	nop
+    1700:	aa1403e0 	mov	x0, x20
+            msleep(5);
+            continue;
+        }
+
+        //try to cfg dla        
+        mutex_lock_interruptible(&g_dla_lock);
+    1704:	94000000 	bl	0 <mutex_lock_interruptible>
+{
+    1708:	29400660 	ldp	w0, w1, [x19]
+    170c:	6b01001f 	cmp	w0, w1
+    1710:	54000420 	b.eq	1794 <_ar_npu_high_thread+0xd4>  // b.none
+    1714:	b9400a63 	ldr	w3, [x19, #8]
+        ret = kfifo_get(&g_dla_high_fifo, &params);
+    1718:	d2802502 	mov	x2, #0x128                 	// #296
+{
+    171c:	910183a0 	add	x0, x29, #0x60
+        ret = kfifo_get(&g_dla_high_fifo, &params);
+    1720:	0a030021 	and	w1, w1, w3
+    1724:	9bb76021 	umaddl	x1, w1, w23, x24
+        mutex_lock_interruptible(&g_fifo_high_lock);
+    1728:	94000000 	bl	0 <memcpy>
+    172c:	d5033abf 	dmb	ishst
+        ret = kfifo_get(&g_dla_high_fifo, &params);
+    1730:	b9400661 	ldr	w1, [x19, #4]
+    1734:	aa1403e0 	mov	x0, x20
+    1738:	11000421 	add	w1, w1, #0x1
+    173c:	b9000661 	str	w1, [x19, #4]
+    1740:	94000000 	bl	0 <mutex_unlock>
+    1744:	aa1603e0 	mov	x0, x22
+    1748:	94000000 	bl	0 <mutex_lock_interruptible>
+    174c:	f94002b9 	ldr	x25, [x21]
+    1750:	91006339 	add	x25, x25, #0x18
+    1754:	b9400339 	ldr	w25, [x25]
+    1758:	d5033d9f 	dsb	ld
+        mutex_unlock(&g_fifo_high_lock);
+    175c:	12003f3a 	and	w26, w25, #0xffff
+        ret = kfifo_get(&g_dla_high_fifo, &params);
+    1760:	53107f3b 	lsr	w27, w25, #16
+    1764:	2a1b0340 	orr	w0, w26, w27
+        mutex_unlock(&g_fifo_high_lock);
+    1768:	35000200 	cbnz	w0, 17a8 <_ar_npu_high_thread+0xe8>
+        mutex_lock_interruptible(&g_dla_lock);
+    176c:	f94002a0 	ldr	x0, [x21]
+    1770:	910183a1 	add	x1, x29, #0x60
+        //get the network id which will be interrupted.
+        reg = readl(dla_dev.base + DLA_IRQ_NET_FRAME_ID_REG);
+    1774:	97fffce3 	bl	b00 <_ar_npu_hw_start>
+    1778:	aa1603e0 	mov	x0, x22
+    177c:	94000000 	bl	0 <mutex_unlock>
+    1780:	aa1403e0 	mov	x0, x20
+        network_id = reg & 0x0000FFFF;
+    1784:	94000000 	bl	0 <mutex_lock_interruptible>
+        frame_id = (reg & 0xFFFF0000) >> 16;
+    1788:	29400660 	ldp	w0, w1, [x19]
+
+        //the dla is just ready from reset, start directly
+        if(network_id == 0 && frame_id == 0)
+    178c:	6b01001f 	cmp	w0, w1
+    1790:	54fffc21 	b.ne	1714 <_ar_npu_high_thread+0x54>  // b.any
+        {
+            _ar_npu_hw_start(dla_dev.base, &params);
+    1794:	aa1403e0 	mov	x0, x20
+    1798:	94000000 	bl	0 <mutex_unlock>
+    179c:	528000a0 	mov	w0, #0x5                   	// #5
+            mutex_unlock(&g_dla_lock);
+    17a0:	94000000 	bl	0 <msleep>
+    17a4:	17ffffd7 	b	1700 <_ar_npu_high_thread+0x40>
+        mutex_lock_interruptible(&g_fifo_high_lock);
+    17a8:	f94002a0 	ldr	x0, [x21]
+    17ac:	b9400001 	ldr	w1, [x0]
+        ret = kfifo_get(&g_dla_high_fifo, &params);
+    17b0:	d5033d9f 	dsb	ld
+    17b4:	d5033e9f 	dsb	st
+    17b8:	321e0021 	orr	w1, w1, #0x4
+        mutex_unlock(&g_fifo_high_lock);
+    17bc:	b9000001 	str	w1, [x0]
+    17c0:	91006002 	add	x2, x0, #0x18
+            msleep(5);
+    17c4:	b9400042 	ldr	w2, [x2]
+    17c8:	d5033d9f 	dsb	ld
+            continue;
+    17cc:	91002000 	add	x0, x0, #0x8
+            continue;
+        }
+
+        //net id and frame id will not be cleared after finished. 
+        //so the state maybe: done, running, if done already, hang it will do nothing.
+        _ar_npu_hw_hang(dla_dev.base);
+    17d0:	b9400001 	ldr	w1, [x0]
+    17d4:	d5033d9f 	dsb	ld
+    reg = readl(base + DLA_START_REG);
+    17d8:	58000a80 	ldr	x0, 1928 <_ar_npu_high_thread+0x268>
+    writel(reg, base + DLA_START_REG);
+    17dc:	53107c43 	lsr	w3, w2, #16
+    reg |= 0x4; //bit 2 for hang
+    17e0:	12003c42 	and	w2, w2, #0xffff
+	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
+    17e4:	94000000 	bl	0 <printk>
+    reg = readl(base + DLA_IRQ_NET_FRAME_ID_REG);
+    17e8:	aa1c03e1 	mov	x1, x28
+	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+    17ec:	52800000 	mov	w0, #0x0                   	// #0
+    17f0:	14000004 	b	1800 <_ar_npu_high_thread+0x140>
+        readl(base + DLA_CMPLT_LAYER_NUM_REG), network_id, frame_id);
+    17f4:	11000400 	add	w0, w0, #0x1
+    17f8:	7102001f 	cmp	w0, #0x80
+    17fc:	54000860 	b.eq	1908 <_ar_npu_high_thread+0x248>  // b.none
+    printk(KERN_INFO"DLA hangs at layer: %d of net %d frame %d\n", 
+    1800:	79400022 	ldrh	w2, [x1]
+    1804:	9104e021 	add	x1, x1, #0x138
+    1808:	6b1a005f 	cmp	w2, w26
+    180c:	54ffff41 	b.ne	17f4 <_ar_npu_high_thread+0x134>  // b.any
+    1810:	93407c02 	sxtw	x2, w0
+    for(i = 0; i < DLA_MAX_QUEUE_DEPTH; i++)
+    1814:	58000924 	ldr	x4, 1938 <_ar_npu_high_thread+0x278>
+    1818:	5280271a 	mov	w26, #0x138                 	// #312
+    181c:	79430fa3 	ldrh	w3, [x29, #390]
+    1820:	8b020841 	add	x1, x2, x2, lsl #2
+    1824:	9b3a101a 	smaddl	x26, w0, w26, x4
+        if(g_dla_status[i].network_id == network_id)
+    1828:	d37df020 	lsl	x0, x1, #3
+    182c:	cb020000 	sub	x0, x0, x2
+    1830:	8b000c80 	add	x0, x4, x0, lsl #3
+    1834:	79400c00 	ldrh	w0, [x0, #6]
+        //Check if the network is done or hanged
+        while(1)
+        {
+            p_status = _ar_npu_get_status(network_id);
+            //this op has not been updated to the status array.
+            if(!p_status || p_status->frame_id != params.u16FrameId)
+    1838:	6b03001f 	cmp	w0, w3
+            return &g_dla_status[i];
+    183c:	54000060 	b.eq	1848 <_ar_npu_high_thread+0x188>  // b.none
+    1840:	528000a0 	mov	w0, #0x5                   	// #5
+            if(!p_status || p_status->frame_id != params.u16FrameId)
+    1844:	94000000 	bl	0 <msleep>
+    1848:	580007c0 	ldr	x0, 1940 <_ar_npu_high_thread+0x280>
+            return &g_dla_status[i];
+    184c:	12003f23 	and	w3, w25, #0xffff
+            if(!p_status || p_status->frame_id != params.u16FrameId)
+    1850:	2a0303e1 	mov	w1, w3
+    1854:	2a1b03e2 	mov	w2, w27
+    1858:	52807d39 	mov	w25, #0x3e9                 	// #1001
+    185c:	94000000 	bl	0 <printk>
+    1860:	f94002a0 	ldr	x0, [x21]
+    1864:	910183a1 	add	x1, x29, #0x60
+            {
+                msleep(5);
+    1868:	97fffca6 	bl	b00 <_ar_npu_hw_start>
+    186c:	d503201f 	nop
+            {
+                need_resume = 1;                
+            }
+            else
+            {
+                printk(KERN_ERR"Trying to hang net %d frame %d error, will rerun net %d later.",
+    1870:	528000a0 	mov	w0, #0x5                   	// #5
+    1874:	94000000 	bl	0 <msleep>
+    1878:	71000739 	subs	w25, w25, #0x1
+    187c:	54ffffa1 	b.ne	1870 <_ar_npu_high_thread+0x1b0>  // b.any
+
+            break;            
+        }
+
+        //start this high-priority network
+        _ar_npu_hw_start(dla_dev.base, &params);
+    1880:	58000640 	ldr	x0, 1948 <_ar_npu_high_thread+0x288>
+                printk(KERN_ERR"Trying to hang net %d frame %d error, will rerun net %d later.",
+    1884:	94000000 	bl	0 <printk>
+        _ar_npu_hw_start(dla_dev.base, &params);
+    1888:	29418743 	ldp	w3, w1, [x26, #12]
+    188c:	52800046 	mov	w6, #0x2                   	// #2
+    1890:	29429740 	ldp	w0, w5, [x26, #20]
+    1894:	b9018fa6 	str	w6, [x29, #396]
+        msleep(5);
+    1898:	910403a6 	add	x6, x29, #0x100
+    189c:	b9401f44 	ldr	w4, [x26, #28]
+        if(timeout-- == 0)
+    18a0:	0b010000 	add	w0, w0, w1
+    18a4:	d2801002 	mov	x2, #0x80                  	// #128
+            printk(KERN_ERR"Wait for DLA DONE timeout.\n");
+    18a8:	4b030000 	sub	w0, w0, w3
+    18ac:	91008341 	add	x1, x26, #0x20
+        //try to re-run the hanged network since it has an error.
+        if(need_resume == 2)
+        {
+            prev_cfg.u32Debug = DLA_LAYER_DEBUG_OFF;
+            prev_cfg.u32SCUAddrPhy = p_status->restart_addr;
+            prev_cfg.u32SCUSize = p_status->scu_size - (p_status->restart_addr - p_status->scu_addr);
+    18b0:	291280c3 	stp	w3, w0, [x6, #148]
+            prev_cfg.u32Debug = DLA_LAYER_DEBUG_OFF;
+    18b4:	910693a0 	add	x0, x29, #0x1a4
+            prev_cfg.u32RuntimeAddrPhy = p_status->runtime_addr;
+    18b8:	291390c5 	stp	w5, w4, [x6, #156]
+            prev_cfg.u32Debug = DLA_LAYER_DEBUG_OFF;
+    18bc:	94000000 	bl	0 <memcpy>
+            prev_cfg.u32WeightsAddrPhy = p_status->weight_addr;
+    18c0:	91028341 	add	x1, x26, #0xa0
+    18c4:	d2801002 	mov	x2, #0x80                  	// #128
+            prev_cfg.u32SCUSize = p_status->scu_size - (p_status->restart_addr - p_status->scu_addr);
+    18c8:	910893a0 	add	x0, x29, #0x224
+            memcpy(prev_cfg.au32InputAddrPhy, p_status->input_addr, sizeof(prev_cfg.au32InputAddrPhy));
+    18cc:	94000000 	bl	0 <memcpy>
+            prev_cfg.u32SCUSize = p_status->scu_size - (p_status->restart_addr - p_status->scu_addr);
+    18d0:	79400b43 	ldrh	w3, [x26, #4]
+            memcpy(prev_cfg.au32InputAddrPhy, p_status->input_addr, sizeof(prev_cfg.au32InputAddrPhy));
+    18d4:	910623a1 	add	x1, x29, #0x188
+            prev_cfg.u32WeightsAddrPhy = p_status->weight_addr;
+    18d8:	79400f42 	ldrh	w2, [x26, #6]
+            memcpy(prev_cfg.au32InputAddrPhy, p_status->input_addr, sizeof(prev_cfg.au32InputAddrPhy));
+    18dc:	b9412345 	ldr	w5, [x26, #288]
+            prev_cfg.u32WeightsAddrPhy = p_status->weight_addr;
+    18e0:	b9412744 	ldr	w4, [x26, #292]
+            memcpy(prev_cfg.au32InputAddrPhy, p_status->input_addr, sizeof(prev_cfg.au32InputAddrPhy));
+    18e4:	f94002a0 	ldr	x0, [x21]
+            memcpy(prev_cfg.au32OutputAddrPhy, p_status->output_addr, sizeof(prev_cfg.au32OutputAddrPhy));
+    18e8:	b902a7a5 	str	w5, [x29, #676]
+    18ec:	b902aba4 	str	w4, [x29, #680]
+    18f0:	79055ba3 	strh	w3, [x29, #684]
+    18f4:	79055fa2 	strh	w2, [x29, #686]
+            prev_cfg.u32SramAddrPhy = p_status->sram_addr;
+            prev_cfg.u32SramSize = p_status->sram_size;
+            prev_cfg.u16NetworkId = p_status->network_id;
+    18f8:	97fffc82 	bl	b00 <_ar_npu_hw_start>
+            prev_cfg.u16FrameId = p_status->frame_id;
+            _ar_npu_hw_start(dla_dev.base, &prev_cfg);
+    18fc:	aa1603e0 	mov	x0, x22
+            prev_cfg.u16FrameId = p_status->frame_id;
+    1900:	94000000 	bl	0 <mutex_unlock>
+            prev_cfg.u32SramAddrPhy = p_status->sram_addr;
+    1904:	17ffff7f 	b	1700 <_ar_npu_high_thread+0x40>
+            prev_cfg.u32SramSize = p_status->sram_size;
+    1908:	d280001a 	mov	x26, #0x0                   	// #0
+            _ar_npu_hw_start(dla_dev.base, &prev_cfg);
+    190c:	17ffffcd 	b	1840 <_ar_npu_high_thread+0x180>
+	...
+
+0000000000001950 <ar_npu_proc_state_show>:
+    return NULL;
+    1950:	d100c3ff 	sub	sp, sp, #0x30
+    1954:	a9017bfd 	stp	x29, x30, [sp, #16]
+    1958:	910043fd 	add	x29, sp, #0x10
+    195c:	f90013f3 	str	x19, [sp, #32]
+    1960:	aa0003f3 	mov	x19, x0
+    1964:	58000560 	ldr	x0, 1a10 <ar_npu_proc_state_show+0xc0>
+    1968:	94000000 	bl	0 <printk>
+    196c:	58000560 	ldr	x0, 1a18 <ar_npu_proc_state_show+0xc8>
+    1970:	f9400002 	ldr	x2, [x0]
+    1974:	91007042 	add	x2, x2, #0x1c
+
+    return 0;
+}
+
+int ar_npu_proc_state_show(struct seq_file *s, void *p)
+{   
+    1978:	b9400042 	ldr	w2, [x2]
+    197c:	d5033d9f 	dsb	ld
+    1980:	f9400004 	ldr	x4, [x0]
+    1984:	91002084 	add	x4, x4, #0x8
+    1988:	b9400084 	ldr	w4, [x4]
+    unsigned int val = 0;
+    unsigned short network_id, frame_id;
+    unsigned int layer, status, input0, input1, output0, output1;
+
+    printk(KERN_INFO "Proc Read is called.\n");
+    198c:	d5033d9f 	dsb	ld
+    1990:	f9400005 	ldr	x5, [x0]
+    
+    val = readl(dla_dev.base + DLA_PROC_NET_FRAME_ID_REG);
+    1994:	910050a5 	add	x5, x5, #0x14
+    1998:	b94000a5 	ldr	w5, [x5]
+    199c:	d5033d9f 	dsb	ld
+    19a0:	f9400006 	ldr	x6, [x0]
+    19a4:	9100f0c6 	add	x6, x6, #0x3c
+    network_id = val & 0x0000FFFF;
+    frame_id = val >> 16;
+    layer = readl(dla_dev.base + DLA_CMPLT_LAYER_NUM_REG);
+    19a8:	b94000c6 	ldr	w6, [x6]
+    19ac:	d5033d9f 	dsb	ld
+    19b0:	f9400007 	ldr	x7, [x0]
+    19b4:	910100e7 	add	x7, x7, #0x40
+    status = readl(dla_dev.base + DLA_IRQ_STATUS_REG);
+    19b8:	b94000e7 	ldr	w7, [x7]
+    19bc:	d5033d9f 	dsb	ld
+    19c0:	f9400003 	ldr	x3, [x0]
+    19c4:	9102f063 	add	x3, x3, #0xbc
+    input0 = readl(dla_dev.base + DLA_INPUT_ADDR_0_REG);
+    19c8:	b9400063 	ldr	w3, [x3]
+    19cc:	d5033d9f 	dsb	ld
+    19d0:	f9400000 	ldr	x0, [x0]
+    19d4:	91030000 	add	x0, x0, #0xc0
+    input1 = readl(dla_dev.base + DLA_INPUT_ADDR_0_REG + 4);
+    19d8:	b9400000 	ldr	w0, [x0]
+    19dc:	d5033d9f 	dsb	ld
+    19e0:	58000201 	ldr	x1, 1a20 <ar_npu_proc_state_show+0xd0>
+    19e4:	b90003e3 	str	w3, [sp]
+    output0 = readl(dla_dev.base + DLA_OUTPUT_ADDR_0_REG);
+    19e8:	53107c43 	lsr	w3, w2, #16
+    19ec:	b9000be0 	str	w0, [sp, #8]
+    19f0:	12003c42 	and	w2, w2, #0xffff
+    19f4:	aa1303e0 	mov	x0, x19
+    output1 = readl(dla_dev.base + DLA_OUTPUT_ADDR_0_REG + 4);
+    19f8:	94000000 	bl	0 <seq_printf>
+    19fc:	f94013f3 	ldr	x19, [sp, #32]
+    1a00:	52800000 	mov	w0, #0x0                   	// #0
+    1a04:	a9417bfd 	ldp	x29, x30, [sp, #16]
+
+    seq_printf(s,
+    1a08:	9100c3ff 	add	sp, sp, #0x30
+    1a0c:	d65f03c0 	ret
+	...
+
+0000000000001a28 <ar_npu_proc_fifo_show>:
+        "Input:0x%x 0x%x\n"
+        "Output:0x%x 0x%x\n",
+        network_id, frame_id, layer, status, input0, input1, output0, output1);
+
+    return 0;
+}
+    1a28:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+    1a2c:	910003fd 	mov	x29, sp
+    1a30:	58000203 	ldr	x3, 1a70 <ar_npu_proc_fifo_show+0x48>
+    1a34:	58000222 	ldr	x2, 1a78 <ar_npu_proc_fifo_show+0x50>
+    1a38:	58000241 	ldr	x1, 1a80 <ar_npu_proc_fifo_show+0x58>
+    1a3c:	29401467 	ldp	w7, w5, [x3]
+    1a40:	b9400046 	ldr	w6, [x2]
+    1a44:	b9400864 	ldr	w4, [x3, #8]
+    1a48:	4b0500e5 	sub	w5, w7, w5
+    1a4c:	29408843 	ldp	w3, w2, [x2, #4]
+
+int ar_npu_proc_fifo_show(struct seq_file *s, void *p)
+{
+    1a50:	11000484 	add	w4, w4, #0x1
+    1a54:	4b0300c3 	sub	w3, w6, w3
+    seq_printf(s, 
+        "Normal FIFO: size %d used %d\n"
+        "High FIFO: size %d used %d\n",
+        kfifo_size(&g_dla_normal_fifo), kfifo_len(&g_dla_normal_fifo),
+        kfifo_size(&g_dla_high_fifo), kfifo_len(&g_dla_high_fifo));
+    1a58:	11000442 	add	w2, w2, #0x1
+        kfifo_size(&g_dla_normal_fifo), kfifo_len(&g_dla_normal_fifo),
+    1a5c:	94000000 	bl	0 <seq_printf>
+    seq_printf(s, 
+    1a60:	52800000 	mov	w0, #0x0                   	// #0
+        kfifo_size(&g_dla_high_fifo), kfifo_len(&g_dla_high_fifo));
+    1a64:	a8c17bfd 	ldp	x29, x30, [sp], #16
+        kfifo_size(&g_dla_normal_fifo), kfifo_len(&g_dla_normal_fifo),
+    1a68:	d65f03c0 	ret
+    seq_printf(s, 
+    1a6c:	d503201f 	nop
+	...
+
+0000000000001a88 <ar_npu_proc_result_show>:
+
+    return 0;
+}
+    1a88:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    1a8c:	910003fd 	mov	x29, sp
+    1a90:	a90153f3 	stp	x19, x20, [sp, #16]
+    1a94:	aa0003f4 	mov	x20, x0
+    1a98:	580002d3 	ldr	x19, 1af0 <ar_npu_proc_result_show+0x68>
+    1a9c:	d2938000 	mov	x0, #0x9c00                	// #39936
+    1aa0:	a9025bf5 	stp	x21, x22, [sp, #32]
+    1aa4:	580002b5 	ldr	x21, 1af8 <ar_npu_proc_result_show+0x70>
+    1aa8:	8b000276 	add	x22, x19, x0
+    1aac:	14000007 	b	1ac8 <ar_npu_proc_result_show+0x40>
+
+int ar_npu_proc_result_show(struct seq_file *s, void *p)
+{    
+    1ab0:	79400e63 	ldrh	w3, [x19, #6]
+    1ab4:	b9400264 	ldr	w4, [x19]
+    1ab8:	9104e273 	add	x19, x19, #0x138
+    1abc:	94000000 	bl	0 <seq_printf>
+    1ac0:	eb16027f 	cmp	x19, x22
+    1ac4:	540000c0 	b.eq	1adc <ar_npu_proc_result_show+0x54>  // b.none
+    1ac8:	79400a63 	ldrh	w3, [x19, #4]
+        if(g_dla_status[i].network_id == 0)
+        {
+            break;
+        }
+
+        seq_printf(s, 
+    1acc:	aa1503e1 	mov	x1, x21
+    1ad0:	aa1403e0 	mov	x0, x20
+    1ad4:	2a0303e2 	mov	w2, w3
+    1ad8:	35fffec3 	cbnz	w3, 1ab0 <ar_npu_proc_result_show+0x28>
+    1adc:	52800000 	mov	w0, #0x0                   	// #0
+    1ae0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1ae4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    for(i = 0; i < DLA_MAX_QUEUE_DEPTH; i++)
+    1ae8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    1aec:	d65f03c0 	ret
+	...
+
+Disassembly of section .init.text:
+
+0000000000000000 <init_module>:
+   0:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+   4:	910003fd 	mov	x29, sp
+   8:	580000c1 	ldr	x1, 20 <init_module+0x20>
+   c:	580000e0 	ldr	x0, 28 <init_module+0x28>
+  10:	9103c000 	add	x0, x0, #0xf0
+  14:	94000000 	bl	0 <__platform_driver_register>
+  18:	a8c17bfd 	ldp	x29, x30, [sp], #16
+  1c:	d65f03c0 	ret
+	...
+
+Disassembly of section .exit.text:
+
+0000000000000000 <cleanup_module>:
+   0:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+   4:	910003fd 	mov	x29, sp
+   8:	580000c0 	ldr	x0, 20 <cleanup_module+0x20>
+   c:	9103c000 	add	x0, x0, #0xf0
+  10:	94000000 	bl	0 <platform_driver_unregister>
+  14:	a8c17bfd 	ldp	x29, x30, [sp], #16
+  18:	d65f03c0 	ret
+  1c:	d503201f 	nop
+	...

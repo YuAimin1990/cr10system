@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xm6elftool", "xm6elftool\xm6elftool.vcxproj", "{5FA5B530-BCBD-4482-BC5E-EED48888793C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libelf", "..\libelf-master\VC\libelf.vcxproj", "{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FA5B530-BCBD-4482-BC5E-EED48888793C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5FA5B530-BCBD-4482-BC5E-EED48888793C}.Debug|Win32.Build.0 = Debug|Win32
+		{5FA5B530-BCBD-4482-BC5E-EED48888793C}.Release|Win32.ActiveCfg = Release|Win32
+		{5FA5B530-BCBD-4482-BC5E-EED48888793C}.Release|Win32.Build.0 = Release|Win32
+		{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}.Debug|Win32.Build.0 = Debug|Win32
+		{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}.Release|Win32.ActiveCfg = Release|Win32
+		{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

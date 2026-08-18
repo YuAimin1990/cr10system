@@ -1,0 +1,12 @@
+{
+	"audio":	{
+		"mode":	1,
+		"type":	2,
+		"chans":	1,
+		"sampleRate":	8000,
+		"sampleBitWidth":	16,
+		"inputVolume":	50,
+		"outputVolume":	60,
+		"rebootMute":	0
+	}
+}

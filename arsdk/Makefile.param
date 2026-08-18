@@ -1,0 +1,163 @@
+# Makefile.param
+#
+# Only global variable should be defined here.
+# All the variables must be used as "export" and "?=".
+# Otherwise, there will be some errors, when Makefile.param is nested.
+
+# Use this file as the following sample
+# ifeq ($(PARAM_FILE), )
+#     PARAM_FILE:=../Makefile.param
+#     include $(PARAM_FILE)
+# endif
+
+export PARAM_FILE
+export SDKDIR=$(shell pwd)/$(shell dirname $(PARAM_FILE))
+export PRJDIR=$(SDKDIR)/../arprj
+
+#======================================================================
+#== Product Config
+#======================================================================
+sinclude $(PRJDIR)/.product_profile
+sinclude $(PRJDIR)/.current_params
+sinclude $(gBUILD_CONFIG)
+sinclude $(PRJDIR)/configs/$(CHIP)/common/feature.config
+# Include feature param
+sinclude $(PRJDIR)/../arsdk/Feature.param
+
+
+export gBINARIES_DOWNLOAD_URL = ftp://192.168.200.228/data/arsdk/resources
+export gDOWNLOAD_TYPE         = wget
+
+#======================================================================
+#== PC Tools
+#======================================================================
+export MAKERY_DIR:=$(SDKDIR)/../arprj/hosts/makery
+export UTILITY_DIR:=$(SDKDIR)/../arprj/hosts/utility
+
+#======================================================================
+#== Generic Commands
+#======================================================================
+ifeq (${V},0)
+    Q:=@
+    ECHO:=@echo
+else
+    Q:=
+    ECHO:=@echo
+endif
+
+export Q:=$(Q)
+
+RM   = ${Q}rm -rf
+MAKE = ${Q}+make
+CP   = ${Q}cp
+
+#======================================================================
+#== Toolchain
+#======================================================================
+export gTOOLCHAIN_OPT_PATH    = /opt/toolchain/7.5.0/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin
+export gCROSS_COMPILER_PREFIX = aarch64-linux-gnu
+export gCROSS_COMPILE         = $(gTOOLCHAIN_OPT_PATH)/$(gCROSS_COMPILER_PREFIX)-
+export gCROSS_COMPILE_BASE    = $(gCROSS_COMPILE)
+
+export CONFIG_BIT  ?= 64bits
+ifeq ($(CONFIG_BIT), 32bits)
+	export gTOOLCHAIN_OPT_PATH_32    = /opt/toolchain/gcc-linaro-5.4.1-2017.05-x86_64_arm-linux-gnueabihf/bin
+	export gCROSS_COMPILER_PREFIX_32 = arm-linux-gnueabihf
+	export gCROSS_COMPILE_32         = $(gTOOLCHAIN_OPT_PATH_32)/$(gCROSS_COMPILER_PREFIX_32)-
+	export gCROSS_COMPILE_BASE       = $(gCROSS_COMPILE_32)
+	export CFLAGS  += -DCONFIG_BIT_32BITS
+	export CXXFLAGS  += -DCONFIG_BIT_32BITS
+endif
+
+export CC              = $(gCROSS_COMPILE_BASE)gcc
+export CXX             = $(gCROSS_COMPILE_BASE)g++
+export AR              = $(gCROSS_COMPILE_BASE)ar
+export AS              = $(gCROSS_COMPILE_BASE)as
+export LD              = $(gCROSS_COMPILE_BASE)ld
+export NM              = $(gCROSS_COMPILE_BASE)nm
+export STRIP           = $(gCROSS_COMPILE_BASE)strip
+export LIBTOOL         = $(gCROSS_COMPILE_BASE)libtool
+export RANLIB          = $(gCROSS_COMPILE_BASE)ranlib
+export OBJCOPY         = $(gCROSS_COMPILE_BASE)objcopy
+export OBJDUMP         = $(gCROSS_COMPILE_BASE)objdump
+export READELF         = $(gCROSS_COMPILE_BASE)readelf
+
+#======================================================================
+#== Output Dir
+#======================================================================
+export OUTPUT_DIR             ?= $(SDKDIR)/../arprj/release
+export OUTPUT_MIDDLEWARES_DIR ?= $(OUTPUT_DIR)/out//middlewares
+export OUTPUT_HAL_DIR         ?= $(OUTPUT_DIR)/out/hal
+export OUTPUT_MPP_DIR         ?= $(OUTPUT_DIR)/out/mpp
+export OUTPUT_KMODULE_DIR     ?= $(OUTPUT_DIR)/out/kmodule
+
+export OUTPUT_COMPONENET_DIR   ?= $(OUTPUT_DIR)/prebuilds
+
+export KMODULE_INSTALL_DIR     ?= $(OUTPUT_COMPONENET_DIR)/ko
+export MIDDLEWARES_INSTALL_DIR ?= $(OUTPUT_COMPONENET_DIR)/middlewares
+
+export APPLICATION_INSTALL_DIR       ?= $(OUTPUT_COMPONENET_DIR)/apps
+export OUTPUT_APPLICATION_HEADER_DIR ?= $(APPLICATION_INSTALL_DIR)/inc
+export OUTPUT_APPLICATION_LIB_DIR    ?= $(APPLICATION_INSTALL_DIR)/lib
+export OUTPUT_APPLICATION_BIN_DIR    ?= $(APPLICATION_INSTALL_DIR)/bin
+
+export OUTPUT_CORE_HEADER_DIR        ?= $(SDKDIR)/middlewares/hal/modules/core/out/inc
+export OUTPUT_CORE_LIB_DIR           ?= $(SDKDIR)/middlewares/hal/modules/core/out/lib
+
+export OUTPUT_INSIDE_HEADER_DIR      ?= $(SDKDIR)/middlewares/inside_header
+
+export BUSYBOX_INSTALL_DIR           ?= $(OUTPUT_COMPONENET_DIR)/busybox
+export ROOTFS_SKEL_INSTALL_DIR       ?= $(OUTPUT_COMPONENET_DIR)/rootfs_skel
+export SYSROOT_INSTALL_DIR           ?= $(OUTPUT_COMPONENET_DIR)/sysroot
+export ROOTFS_INSTALL_DIR            ?= $(OUTPUT_COMPONENET_DIR)/rootfs
+export FS_INSTALL_DIR                ?= $(OUTPUT_COMPONENET_DIR)/fs
+export KERNEL_INSTALL_DIR            ?= $(OUTPUT_COMPONENET_DIR)/kernel
+export UBOOT_INSTALL_DIR             ?= $(OUTPUT_COMPONENET_DIR)/uboot
+export IMAGE_INSTALL_DIR             ?= $(OUTPUT_COMPONENET_DIR)/image
+export ROM_CODE_INSTALL_DIR          ?= $(OUTPUT_COMPONENET_DIR)/rom_code
+export TROOT_INSTALL_DIR             ?= $(OUTPUT_COMPONENET_DIR)/troot
+export RTOS_INSTALL_DIR              ?= $(OUTPUT_COMPONENET_DIR)/rtos
+export ARM_TRUSTED_FIRMWARE_DIR      ?= $(SDKDIR)/platforms/security/arm-trusted-firmware-master
+
+#======================================================================
+#== Flags Defines
+#======================================================================
+export CFLAGS  += -I$(OUTPUT_MIDDLEWARES_DIR)/inc -I$(OUTPUT_MPP_DIR)/inc -I$(OUTPUT_HAL_DIR)/inc -I$(OUTPUT_KMODULE_DIR)/inc -I$(OUTPUT_CORE_HEADER_DIR) -I$(OUTPUT_INSIDE_HEADER_DIR)
+export CXXFLAGS  += -I$(OUTPUT_MIDDLEWARES_DIR)/inc -I$(OUTPUT_MPP_DIR)/inc -I$(OUTPUT_HAL_DIR)/inc -I$(OUTPUT_KMODULE_DIR)/inc -I$(OUTPUT_CORE_HEADER_DIR) -I$(OUTPUT_INSIDE_HEADER_DIR)
+export LDFLAGS += -L$(OUTPUT_MIDDLEWARES_DIR)/lib -L$(OUTPUT_MPP_DIR)/lib -L$(OUTPUT_HAL_DIR)/lib -L$(OUTPUT_CORE_LIB_DIR)
+
+ifeq (x$(BUILD_TYPE), xdebug1)
+export ASAN_CFLAGS = -fsanitize=address -fPIC -fno-omit-frame-pointer
+export ASAN_LDFLAGS = -lasan
+endif
+
+ifeq ($(CHIP),ar9341)
+export CFLAGS  += -D AR9341
+export AR_DFLAGS += -D AR9341
+else ifneq ($(findstring $(CHIP), ar9311 ars31),)
+export CFLAGS  += -D PROXIMA
+export AR_DFLAGS += -D PROXIMA
+
+    ifeq ($(CHIP),ar9311)
+	export CFLAGS  += -D AR9311
+	export AR_DFLAGS += -D AR9311
+    else ifeq ($(CHIP),ars31)
+	export CFLAGS  += -D ARS31
+	export AR_DFLAGS += -D ARS31
+    endif
+
+endif
+
+ifeq ($(gFPGA_SIMULATION),y)
+export CFLAGS += -D AR_FPGA
+endif
+
+# Include feature param
+sinclude $(PRJDIR)/../arsdk/Feature.param
+
+export N ?= 8
+
+export SECURITY_CFG_FILE := $(PRJDIR)/configs/$(CHIP)/common/security.config
+export SECURITY_CFG_MK := $(SECURITY_CFG_FILE:.config=.mk)
+
+export MPP_SERVICE ?= app

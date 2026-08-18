@@ -1,0 +1,4 @@
+config ARTOSYN_ICC
+	tristate "Icc for artosyn"
+	help
+	  Choose this option if you wish to use icc on artosyn Platform.

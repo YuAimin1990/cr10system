@@ -1,0 +1,23 @@
+if TARGET_EVB_AR9311
+
+# Note only one of these may be selected at a time! But hidden choices are
+# not supported by Kconfig
+#config ARTOSYN_GEN_SIRIUS
+#	bool
+
+config SYS_CLK_FREQ
+	default 1008000000
+
+config SYS_CONFIG_NAME
+	default "evb_ar9311"
+
+config SYS_BOARD
+	default "evb_ar9311"
+
+config GMAC_TX_DELAY
+	int "GMAC Transmit Clock Delay Chain"
+	default 0
+	---help---
+	Set the GMAC Transmit Clock Delay Chain value.
+
+endif
