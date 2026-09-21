@@ -33,6 +33,36 @@ unsigned int dsi_reg_read(unsigned int addr)
     return read_reg32(DSI_HOST_REG_BASE + addr);
 }
 
+/* DWC_mipi_dsi_host CMD_PKT_STATUS register bits */
+#define DSI_GEN_CMD_EMPTY       0x01
+#define DSI_GEN_CMD_FULL        0x02
+#define DSI_GEN_PLD_W_EMPTY     0x04
+#define DSI_GEN_PLD_W_FULL      0x08
+#define DSI_GEN_PLD_R_EMPTY     0x10
+#define DSI_GEN_PLD_R_FULL      0x20
+#define DSI_GEN_RD_CMD_BUSY     0x40
+
+#define DSI_PKT_STATUS_TIMEOUT_US   50000
+
+/* poll CMD_PKT_STATUS until (status & mask) == expect, -1 on timeout */
+static int dsi_wait_pkt_status(uint32_t mask, uint32_t expect)
+{
+    int timeout = DSI_PKT_STATUS_TIMEOUT_US / 10;
+    uint32_t reg = 0;
+
+    do
+    {
+        reg = dsi_reg_read(DSI_HOST_REG_CMD_PKT_STATUS);
+        if ((reg & mask) == expect)
+            return 0;
+        udelay(10);
+    } while (--timeout > 0);
+
+    ar_err("dsi pkt status timeout reg=0x%x mask=0x%x expect=0x%x",
+           reg, mask, expect);
+    return -1;
+}
+
 int dsi_set_timing(STRU_DSI_CFG *cfg)
 {
 #ifdef CONFIG_ARTOSYN_AR9311
@@ -102,6 +132,7 @@ int dsi_set_timing(STRU_DSI_CFG *cfg)
 
     ar_always("set dsi reg");
     dsi_reg_write(DSI_HOST_REG_PWR_UP, 0x0);   // reset
+    dsi_reg_write(DSI_HOST_REG_PHY_RSTZ, 0x0); // hold the dphy in reset while reprogramming
     dsi_reg_write(DSI_HOST_REG_DPI_VCID, 0x0); // [1:0] virtual channel id 0
 
     dsi_reg_write(DSI_HOST_REG_DPI_COLOR_CODING, 0x5); // [3:0]color coding;    24-bit
@@ -279,7 +310,9 @@ int dsi_set_timing(STRU_DSI_CFG *cfg)
     dsi_reg_write(DPHY_REG_PIXEL_DT_GEN_SEL, 0);
 
     dsi_reg_write(DSI_HOST_REG_PHY_RSTZ, 0xd);
+    ar_delay(1); /* phy_rstz must stay low for a while before release */
     dsi_reg_write(DSI_HOST_REG_PHY_RSTZ, 0xf);
+    ar_delay(5); /* allow the dphy pll to lock before issuing commands */
 
     dsi_reg_write(DSI_HOST_REG_BTA_TO_CNT, 0x10);
 
@@ -312,22 +345,28 @@ int dsi_exit_cmd_mode(void)
 /* note this command should execute in video mode */
 int dsi_short_cmd_without_pra(uint8_t data_type)
 {
+    if (dsi_wait_pkt_status(DSI_GEN_CMD_FULL, 0) != 0)
+        return -1;
     dsi_reg_write(DSI_HOST_REG_GEN_HDR, data_type);
-    return 0;
+    return dsi_wait_pkt_status(DSI_GEN_CMD_EMPTY, DSI_GEN_CMD_EMPTY);
 }
 
 /* note this command should execute in video mode */
 int dsi_short_cmd_1pra(uint8_t data_type, uint8_t para)
 {
+    if (dsi_wait_pkt_status(DSI_GEN_CMD_FULL, 0) != 0)
+        return -1;
     dsi_reg_write(DSI_HOST_REG_GEN_HDR, (((uint32_t)para) << 8) | data_type);
-    return 0;
+    return dsi_wait_pkt_status(DSI_GEN_CMD_EMPTY, DSI_GEN_CMD_EMPTY);
 }
 
 /* note this command should execute in video mode */
 int dsi_short_cmd_2pra(uint8_t data_type, uint8_t para1, uint8_t para2)
 {
+    if (dsi_wait_pkt_status(DSI_GEN_CMD_FULL, 0) != 0)
+        return -1;
     dsi_reg_write(DSI_HOST_REG_GEN_HDR, (((uint32_t)para2) << 16) | (((uint32_t)para1) << 8) | data_type);
-    return 0;
+    return dsi_wait_pkt_status(DSI_GEN_CMD_EMPTY, DSI_GEN_CMD_EMPTY);
 }
 
 int read_panel_id()
@@ -358,7 +397,6 @@ int read_panel_id1(uint8_t addr)
 int dsi_read(uint8_t data_type, uint8_t addr, uint8_t *data, uint32_t len)
 {
     uint32_t reg = 0;
-    uint32_t cnt = 0;
     uint32_t align_len = AR_ALIGN4(len);
     uint32_t left_len = len;
     uint32_t copy_len;
@@ -372,21 +410,19 @@ int dsi_read(uint8_t data_type, uint8_t addr, uint8_t *data, uint32_t len)
     dsi_reg_write(DSI_HOST_REG_GEN_HDR, (align_len << 8) | 0x37);
     ar_delay(1);
 
-    dsi_reg_write(DSI_HOST_REG_GEN_HDR, (((uint32_t)addr) << 8) | data_type);
-    reg = dsi_reg_read(DSI_HOST_REG_CMD_PKT_STATUS);
-    ar_debug("wait ready reg=0x%x.", reg);
-    while (reg & 0x50)
+    if (dsi_wait_pkt_status(DSI_GEN_CMD_FULL, 0) != 0)
     {
-        if (cnt++ >= 100)
-        {
-            ar_err("read timeout");
-            ret = -1;
-            goto End;
-        }
+        ret = -1;
+        goto End;
+    }
+    dsi_reg_write(DSI_HOST_REG_GEN_HDR, (((uint32_t)addr) << 8) | data_type);
 
-        reg = dsi_reg_read(DSI_HOST_REG_CMD_PKT_STATUS);
-        ar_debug("wait ready reg=0x%x.", reg);
-        ar_delay(1);
+    /* wait until the read command finished and the payload fifo has data */
+    if (dsi_wait_pkt_status(DSI_GEN_PLD_R_EMPTY | DSI_GEN_RD_CMD_BUSY, 0) != 0)
+    {
+        ar_err("read timeout");
+        ret = -1;
+        goto End;
     }
 
     for (int i = 0; i < align_len / 4; i++)
@@ -440,6 +476,10 @@ int dsi_long_cmd(uint8_t data_type, uint8_t *para, uint16_t len)
             if (mod == 3)
             {
                 ar_debug("data: 0x%x", data);
+                /* a write to GEN_PLD_DATA while the fifo is full is dropped
+                 * silently - wait for space before pushing each word */
+                if (dsi_wait_pkt_status(DSI_GEN_PLD_W_FULL, 0) != 0)
+                    return -1;
                 dsi_reg_write(DSI_HOST_REG_GEN_PLD_DATA, data);
             }
         }
@@ -449,10 +489,18 @@ int dsi_long_cmd(uint8_t data_type, uint8_t *para, uint16_t len)
     if (len % 4)
     {
         ar_debug("data1: 0x%x", data);
+        if (dsi_wait_pkt_status(DSI_GEN_PLD_W_FULL, 0) != 0)
+            return -1;
         dsi_reg_write(DSI_HOST_REG_GEN_PLD_DATA, data);
     }
 
+    /* the header starts the packet transmission, drop it if cmd fifo is full */
+    if (dsi_wait_pkt_status(DSI_GEN_CMD_FULL, 0) != 0)
+        return -1;
     dsi_reg_write(DSI_HOST_REG_GEN_HDR, ((len & 0xff00) << 16) | ((len & 0xff) << 8) | data_type);
     ar_debug("0x6c: 0x%x", ((len & 0xff00) << 16) | ((len & 0xff) << 8) | data_type);
-    return 0;
+
+    /* wait until the packet has been pushed out to the link */
+    return dsi_wait_pkt_status(DSI_GEN_CMD_EMPTY | DSI_GEN_PLD_W_EMPTY,
+                               DSI_GEN_CMD_EMPTY | DSI_GEN_PLD_W_EMPTY);
 }

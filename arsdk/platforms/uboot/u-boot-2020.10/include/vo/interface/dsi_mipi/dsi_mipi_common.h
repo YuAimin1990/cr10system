@@ -100,7 +100,10 @@ int dsi_init(void);
 int dsi_exit_cmd_mode(void);
 
 void dsi_reg_write(unsigned int addr, unsigned int data);
+unsigned int dsi_reg_read(unsigned int addr);
 int dsi_read(uint8_t data_type, uint8_t addr, uint8_t *data, uint32_t len);
+int read_panel_id(void);
+int read_panel_id1(uint8_t addr);
 int dsi_long_cmd(uint8_t data_type, uint8_t *para, uint16_t len);
 int dsi_short_cmd_without_pra(uint8_t data_type);
 int dsi_short_cmd_1pra(uint8_t data_type, uint8_t para);

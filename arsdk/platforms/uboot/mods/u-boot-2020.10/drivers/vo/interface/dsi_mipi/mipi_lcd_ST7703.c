@@ -3,6 +3,7 @@
 #include "vo/interface/dsi_mipi/dphy_reg.h"
 #include "vo/interface/dsi_mipi/dsi_mipi_common.h"
 #include <fdtdec.h>
+#include <env.h>
 #include <asm/arch-ar9301/gpio.h>
 
 // #ifdef CONFIG_ARTOSYN_AR9301
@@ -282,70 +283,71 @@ static int lcd_set_scan_mode(void)
     return 0;
 }
 
-static void init_mipi_port(void)
+static int init_mipi_port(void)
 {
+    int ret = 0;
     printf("%s: line:%d init mipi port:  LCD_ST7703\n", __FILE__, __LINE__);
 
     uint8_t para0[] = {0xB9, 0xF1, 0x12, 0x83};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para0, sizeof(para0));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para0, sizeof(para0));
     ar_delay(20);
     uint8_t para1[] = {0xBA, 0x33, 0x81, 0x05, 0xF9, 0x0e, 0x0e,
                        0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                        0x44, 0x25, 0x00, 0x91, 0x0a, 0x00, 0x00, 0x02,
                        0x4F, 0x11, 0x00, 0x00, 0x37};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para1, sizeof(para1));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para1, sizeof(para1));
     ar_delay(80);
 
     uint8_t para2[] = {0xB8, 0x25, 0x22, 0x20, 0x03};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para2, sizeof(para2));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para2, sizeof(para2));
     ar_delay(20);
 
     uint8_t para3[] = {0xB3, 0x10, 0x10, 0x05, 0x05, 0x03, 0xFF,
                        0x00, 0x00, 0x00, 0x00};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para3, sizeof(para3));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para3, sizeof(para3));
     ar_delay(40);
 
     uint8_t para4[] = {0xC0, 0x73, 0x73, 0x50, 0x50, 0x00, 0x00,
                        0x08, 0x70, 0x00};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para4, sizeof(para4));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para4, sizeof(para4));
     ar_delay(40);
 
     uint8_t para5[] = {0xBC, 0x4E};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para5, sizeof(para5));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para5, sizeof(para5));
     ar_delay(20);
 
     uint8_t para6[] = {0xCC, 0x0B};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para6, sizeof(para6));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para6, sizeof(para6));
     ar_delay(20);
 
     uint8_t para7[] = {0xB4, 0x80};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para7, sizeof(para7));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para7, sizeof(para7));
     ar_delay(20);
 
     uint8_t para8[] = {0xB2, 0xF0, 0x12, 0x30};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para8, sizeof(para8));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para8, sizeof(para8));
     ar_delay(20);
 
     uint8_t para9[] = {0xE3, 0x07, 0x07, 0x0B, 0x0B, 0x03, 0x0B,
                        0x00, 0x00, 0x00, 0x00, 0xFF, 0x00, 0xC0, 0x10};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para9, sizeof(para9));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para9, sizeof(para9));
     ar_delay(40);
 
     uint8_t para10[] = {0xC1, 0x54, 0x00, 0x1E, 0x1E, 0x77, 0xF1,
                         0xFF, 0xFF, 0xCC, 0xCC, 0x77, 0x77};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para10, sizeof(para10));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para10, sizeof(para10));
     ar_delay(40);
 
     uint8_t para11[] = {0xB5, 0x0D, 0x0D};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para11, sizeof(para11));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para11, sizeof(para11));
     ar_delay(20);
 
     uint8_t para12[] = {0xB6, 0x43, 0x43};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para12, sizeof(para12));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para12, sizeof(para12));
     ar_delay(20);
 
     uint8_t para13[] = {0xBF, 0x02, 0x11, 0x00};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para13, sizeof(para13));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para13, sizeof(para13));
     ar_delay(20);
 
     uint8_t para14[] = {0xE9, 0x82, 0x10, 0x06, 0x05, 0x9E, 0x0A,
@@ -357,7 +359,7 @@ static void init_mipi_port(void)
                         0x88, 0x88, 0x02, 0x88, 0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         0x00};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para14, sizeof(para14));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para14, sizeof(para14));
     ar_delay(180);
 
     uint8_t para15[] = {0xEA, 0x02, 0x21, 0x00, 0x00, 0x00, 0x00,
@@ -368,7 +370,7 @@ static void init_mipi_port(void)
                         0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         0x30, 0x0A, 0xA5, 0x00, 0x00, 0x00, 0x00};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para15, sizeof(para15));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para15, sizeof(para15));
     ar_delay(160);
 
     uint8_t para16[] = {0xE0, 0x00, 0x0F, 0x1A, 0x2D, 0x32, 0x3C,
@@ -376,20 +378,98 @@ static void init_mipi_port(void)
                         0x13, 0x12, 0x19, 0x00, 0x0F, 0x1A, 0x2D, 0x32,
                         0x3C, 0x51, 0x40, 0x08, 0x0E, 0x0E, 0x11, 0x13,
                         0x11, 0x13, 0x12, 0x19};
-    dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para16, sizeof(para16));
+    ret |= dsi_long_cmd(MIPI_DATA_TYPE_GENERIC_LONG_WRITE, para16, sizeof(para16));
     ar_delay(100);
 
-    dsi_short_cmd_1pra(MIPI_DATA_TYPE_GENERIC_SHORT_WRITE_1_PARA, 0x11); // Sleep Out
+    ret |= dsi_short_cmd_1pra(MIPI_DATA_TYPE_GENERIC_SHORT_WRITE_1_PARA, 0x11); // Sleep Out
     ar_delay(150);
 
-    dsi_short_cmd_1pra(MIPI_DATA_TYPE_GENERIC_SHORT_WRITE_1_PARA, 0x29); // Display On
+    ret |= dsi_short_cmd_1pra(MIPI_DATA_TYPE_GENERIC_SHORT_WRITE_1_PARA, 0x29); // Display On
     ar_delay(100);
-    return;
+    return ret;
+}
+
+/* The panel needs real power/reset settling time. On a warm reboot the
+ * rail may still be charged and the panel state machine is in an unknown
+ * state, so always do a full power cycle and wait long enough before
+ * pushing the init commands. */
+#define ST7703_INIT_MAX_RETRY    3
+#define ST7703_POWER_OFF_MS      120 /* rail discharge */
+#define ST7703_POWER_ON_MS       20  /* rail stabilization after power on */
+#define ST7703_POST_RESET_MS     120 /* RESX release to first command */
+#define ST7703_EXPECTED_PANEL_ID 0x1f2138 /* observed on known-good units */
+
+/* bidirectional link check: the panel must answer a read with its id */
+static int st7703_panel_alive(void)
+{
+    int id = read_panel_id();
+
+    if (id != ST7703_EXPECTED_PANEL_ID)
+    {
+        ar_err("st7703: bad panel id 0x%x, expect 0x%x",
+               id, ST7703_EXPECTED_PANEL_ID);
+        return -1;
+    }
+
+    /* read back a register we programmed (B4 = 0x80); mismatch only warns
+     * since some compatible panels map it differently */
+    id = read_panel_id1(0xB4);
+    if (id != -1 && (id & 0xff) != 0x80)
+        ar_err("st7703: B4 readback 0x%x, expect 0x80", id);
+
+    return 0;
+}
+
+static int st7703_init_once(void)
+{
+    int ret;
+
+    /* pull reset low and cut panel power, then wait for the rail to
+     * discharge - the old code toggled power with zero delay which never
+     * really reset the panel on a warm reboot */
+    gpio_set_val(lcd_rest_group, lcd_rest_port, lcd_rest_number, GPIO_DATA_LOW);
+    power_lcd(0);
+    ar_delay(ST7703_POWER_OFF_MS);
+
+    ar_always("poweron_lcd");
+    // power on the lcd
+    power_lcd(1);
+    backlight_lcd(0);
+    ar_delay(ST7703_POWER_ON_MS);
+
+    ar_always("reset_lcd");
+    // reset the lcd
+    reset_lcd(1, 10, 10);
+    ar_delay(ST7703_POST_RESET_MS);
+
+    /* configure host/dphy once with the real panel timing; dsi_set_timing
+     * already resets the whole host (PWR_UP=0) and holds the dphy in
+     * reset while reprogramming, so the extra dsi_init() with the wrong
+     * default timing is dropped */
+    ar_always("dsi_set_timing");
+    ret = dsi_set_timing(&g_dsi_cfg);
+    if (ret != 0)
+    {
+        ar_err("dsi_set_timing failed ret=%d", ret);
+        return ret;
+    }
+
+    dsi_reg_write(DSI_HOST_REG_MODE_CFG, 0x1); // command mode
+    ret = init_mipi_port();
+    dsi_exit_cmd_mode();
+    if (ret != 0)
+    {
+        ar_err("init_mipi_port failed ret=%d", ret);
+        return ret;
+    }
+
+    return st7703_panel_alive();
 }
 
 static int init_interface_dev(void)
 {
-    int ret = 0;
+    int ret = -1;
+    int i;
 
     // gpio_set_direct(lcd_standby_group,lcd_standby_port,lcd_standby_number, GPIO_DIR_OUTPUT);
     gpio_set_direct(lcd_backlight_group, lcd_backlight_port, lcd_backlight_number, GPIO_DIR_OUTPUT);
@@ -397,50 +477,41 @@ static int init_interface_dev(void)
     gpio_set_direct(lcd_rest_group, lcd_rest_port, lcd_rest_number, GPIO_DIR_OUTPUT);
     // gpio_set_direct(lcd_updown_scan_group,lcd_updown_scan_port,lcd_updown_scan_number, GPIO_DIR_OUTPUT);
 
-    power_lcd(0);
-    ar_always("poweron_lcd");
-    // power on the lcd
-    power_lcd(1);
-    backlight_lcd(0);
-
-    ar_always("reset_lcd");
-    // reset the lcd
-    reset_lcd(1, 10, 10);
-    ar_delay(10);
-
-    // ret = dsi_init();
-    // if (ret != 0)
-    // {
-    //     ar_err("dsi_init ret=%d", ret);
-    //     goto End;
-    // }
-
-    ret = dsi_init();
-    if (ret != 0)
+    for (i = 0; i < ST7703_INIT_MAX_RETRY; i++)
     {
-        ar_err("dsi_init failed ret=%d", ret);
-        goto End;
+        ret = st7703_init_once();
+        if (ret == 0)
+            break;
+        ar_err("st7703 init attempt %d/%d failed ret=%d",
+               i + 1, ST7703_INIT_MAX_RETRY, ret);
     }
-    ar_always("dsi_set_timing");
-    ret = dsi_set_timing(&g_dsi_cfg);
+
     if (ret != 0)
+        ar_err("st7703 init failed after %d attempts", ST7703_INIT_MAX_RETRY);
+
+    /* make the result visible to linux: lcd_init_status is always set so it
+     * can be referenced from bootcmd or read with fw_printenv; if bootargs
+     * already exists at this point, append lcd_init= so /proc/cmdline shows
+     * it directly on units without a serial console */
+    env_set("lcd_init_status", ret ? "fail" : "ok");
     {
-        ar_err("dsi_init failed ret=%d", ret);
-        goto End;
+        char *ba = env_get("bootargs");
+        if (ba && !strstr(ba, "lcd_init="))
+        {
+            char tmp[512];
+            snprintf(tmp, sizeof(tmp), "%s lcd_init=%s", ba,
+                     ret ? "fail" : "ok");
+            env_set("bootargs", tmp);
+        }
     }
-    ar_delay(10);
-    init_mipi_port();
-    dsi_exit_cmd_mode();
 
     // //standby the lcd
     // lcd_set_scan_mode();
     // standby_lcd(1);
     // ar_delay(10);
 
-    read_panel_id();
     ar_delay(10);
     ar_trace_line();
-End:
     return ret;
 }
 static int get_display_interface_desc_dev(display_interface_desc_t *desc)
